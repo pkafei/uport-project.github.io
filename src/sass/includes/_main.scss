@@ -1,0 +1,24 @@
+main {
+  border-bottom: 1px solid #333;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  > * { display: none; }
+
+  @import "includes/portal";
+  @import "includes/sidebar";
+  @import "includes/content";
+  @import "includes/guides";
+  // @import "includes/apidocs";
+  // @import "includes/myapps";
+  // @import "includes/gitter";
+
+  &.portal .portal { display: flex; flex-direction: column; flex: 1;}
+  &.guides .guides { display: flex; flex-direction: column; flex: 1;}
+  &.apidocs .apidocs{ display: flex; flex-direction: column; flex: 1;}
+  &.tools .tools{ display: flex; flex-direction: column; flex: 1;}
+  &.myapps .myapps { display: flex; flex-direction: column; flex: 1;}
+  &.gitter .gitter { display: flex; flex-direction: column; flex: 1;}
+
+  .pagewrap { display: flex; height: 100%;}
+}

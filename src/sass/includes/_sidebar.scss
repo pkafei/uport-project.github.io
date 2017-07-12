@@ -1,0 +1,21 @@
+.sidebar {
+  background: lightgray;
+  flex: 0 0 30%;
+  padding: 1rem;
+  max-width: 260px;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  ul {margin-bottom: 1rem;}
+  li {padding-left: 1rem;}
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+  span {
+    font-size: .9rem;
+  }
+}
