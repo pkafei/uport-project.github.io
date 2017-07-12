@@ -5,28 +5,28 @@ const $$ = (item) =>
 const pvd = (e) => e.preventDefault();
 
 // Button assignments
-const developersBtn =
+const developersNav =
   $$('a.logo-link')[0]
 
-const guidesBtn =
+const guidesNav =
   $$('[href="#guides"]')[0]
 
-const apidocsBtn =
+const apidocsNav =
   $$('[href="#apidocs"]')[0]
 
-const toolsBtn =
+const toolsNav =
   $$('[href="#tools"]')[0]
 
-const myappsBtn =
+const myappsNav =
   $$('[href="#myapps"]')[0]
 
-const gitterBtn =
+const gitterNav =
   $$('[href="#gitter"]')[0]
 
-const signInBtn =
+const signInNav =
   $$('.sign-in-link')[0]
 
-const logOutBtn =
+const logOutNav =
   $$('.log-out a')[0]
 
 // Main hook
@@ -34,7 +34,7 @@ const mainArea =
   $$('main')[0]
 
 // Navigation click handeling
-developersBtn.onclick = (e) => {
+developersNav.onclick = (e) => {
   pvd(e);
   mainArea.classList.add('portal')
   mainArea.classList.remove('guides')
@@ -44,7 +44,7 @@ developersBtn.onclick = (e) => {
   mainArea.classList.remove('gitter')
 }
 
-guidesBtn.onclick = (e) => {
+guidesNav.onclick = (e) => {
   pvd(e);
   mainArea.classList.remove('portal')
   mainArea.classList.add('guides')
@@ -54,7 +54,7 @@ guidesBtn.onclick = (e) => {
   mainArea.classList.remove('gitter')
 }
 
-apidocsBtn.onclick = (e) => {
+apidocsNav.onclick = (e) => {
   pvd(e);
   mainArea.classList.remove('portal')
   mainArea.classList.remove('guides')
@@ -64,7 +64,7 @@ apidocsBtn.onclick = (e) => {
   mainArea.classList.remove('gitter')
 }
 
-toolsBtn.onclick = (e) => {
+toolsNav.onclick = (e) => {
   pvd(e);
   mainArea.classList.remove('portal')
   mainArea.classList.remove('guides')
@@ -74,7 +74,7 @@ toolsBtn.onclick = (e) => {
   mainArea.classList.remove('gitter')
 }
 
-myappsBtn.onclick = (e) => {
+myappsNav.onclick = (e) => {
   pvd(e);
   mainArea.classList.remove('portal')
   mainArea.classList.remove('guides')
@@ -84,7 +84,7 @@ myappsBtn.onclick = (e) => {
   mainArea.classList.remove('gitter')
 }
 
-gitterBtn.onclick = (e) => {
+gitterNav.onclick = (e) => {
   pvd(e);
   mainArea.classList.remove('portal')
   mainArea.classList.remove('guides')
@@ -94,13 +94,13 @@ gitterBtn.onclick = (e) => {
   mainArea.classList.add('gitter')
 }
 
-signInBtn.onclick = (e) => {
+signInNav.onclick = (e) => {
   pvd(e);
   $$('.user-area')[0]
     .classList.add('menu-open')
 }
 
-logOutBtn.onclick = (e) => {
+logOutNav.onclick = (e) => {
   pvd(e);
   $$('.user-area')[0]
     .classList.remove('menu-open')

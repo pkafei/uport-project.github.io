@@ -10,27 +10,27 @@ var pvd = function pvd(e) {
 };
 
 // Button assignments
-var developersBtn = $$('a.logo-link')[0];
+var developersNav = $$('a.logo-link')[0];
 
-var guidesBtn = $$('[href="#guides"]')[0];
+var guidesNav = $$('[href="#guides"]')[0];
 
-var apidocsBtn = $$('[href="#apidocs"]')[0];
+var apidocsNav = $$('[href="#apidocs"]')[0];
 
-var toolsBtn = $$('[href="#tools"]')[0];
+var toolsNav = $$('[href="#tools"]')[0];
 
-var myappsBtn = $$('[href="#myapps"]')[0];
+var myappsNav = $$('[href="#myapps"]')[0];
 
-var gitterBtn = $$('[href="#gitter"]')[0];
+var gitterNav = $$('[href="#gitter"]')[0];
 
-var signInBtn = $$('.sign-in-link')[0];
+var signInNav = $$('.sign-in-link')[0];
 
-var logOutBtn = $$('.log-out a')[0];
+var logOutNav = $$('.log-out a')[0];
 
 // Main hook
 var mainArea = $$('main')[0];
 
 // Navigation click handeling
-developersBtn.onclick = function (e) {
+developersNav.onclick = function (e) {
   pvd(e);
   mainArea.classList.add('portal');
   mainArea.classList.remove('guides');
@@ -40,7 +40,7 @@ developersBtn.onclick = function (e) {
   mainArea.classList.remove('gitter');
 };
 
-guidesBtn.onclick = function (e) {
+guidesNav.onclick = function (e) {
   pvd(e);
   mainArea.classList.remove('portal');
   mainArea.classList.add('guides');
@@ -50,7 +50,7 @@ guidesBtn.onclick = function (e) {
   mainArea.classList.remove('gitter');
 };
 
-apidocsBtn.onclick = function (e) {
+apidocsNav.onclick = function (e) {
   pvd(e);
   mainArea.classList.remove('portal');
   mainArea.classList.remove('guides');
@@ -60,7 +60,7 @@ apidocsBtn.onclick = function (e) {
   mainArea.classList.remove('gitter');
 };
 
-toolsBtn.onclick = function (e) {
+toolsNav.onclick = function (e) {
   pvd(e);
   mainArea.classList.remove('portal');
   mainArea.classList.remove('guides');
@@ -70,7 +70,7 @@ toolsBtn.onclick = function (e) {
   mainArea.classList.remove('gitter');
 };
 
-myappsBtn.onclick = function (e) {
+myappsNav.onclick = function (e) {
   pvd(e);
   mainArea.classList.remove('portal');
   mainArea.classList.remove('guides');
@@ -80,7 +80,7 @@ myappsBtn.onclick = function (e) {
   mainArea.classList.remove('gitter');
 };
 
-gitterBtn.onclick = function (e) {
+gitterNav.onclick = function (e) {
   pvd(e);
   mainArea.classList.remove('portal');
   mainArea.classList.remove('guides');
@@ -90,12 +90,12 @@ gitterBtn.onclick = function (e) {
   mainArea.classList.add('gitter');
 };
 
-signInBtn.onclick = function (e) {
+signInNav.onclick = function (e) {
   pvd(e);
   $$('.user-area')[0].classList.add('menu-open');
 };
 
-logOutBtn.onclick = function (e) {
+logOutNav.onclick = function (e) {
   pvd(e);
   $$('.user-area')[0].classList.remove('menu-open');
 };
