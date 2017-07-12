@@ -9,6 +9,7 @@ main {
   @import "includes/sidebar";
   @import "includes/content";
   @import "includes/guides";
+  @import "includes/gitter";
   // @import "includes/apidocs";
   // @import "includes/myapps";
   // @import "includes/gitter";
@@ -20,5 +21,11 @@ main {
   &.myapps .myapps { display: flex; flex-direction: column; flex: 1;}
   &.gitter .gitter { display: flex; flex-direction: column; flex: 1;}
 
-  .pagewrap { display: flex; height: 100%;}
+  .pagewrap {
+    display: flex;
+    height: 100%;
+    .content {
+      flex: 1;
+    }
+  }
 }
