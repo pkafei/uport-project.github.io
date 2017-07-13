@@ -8,6 +8,7 @@ var gulp = require('gulp'),
   prefix = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   babel = require('gulp-babel'),
+  image = require('gulp-image'),
   browserSync = require('browser-sync');
 
 /*
@@ -18,6 +19,8 @@ var paths = {
   sass: './src/sass/',
   css: './public/css/',
   es6: './src/js/',
+  images: './src/images/',
+  img: './public/img/',
   js: './public/js/',
   data: './src/_data/'
 };
@@ -84,6 +87,12 @@ gulp.task('es6', () => {
     .pipe(gulp.dest(paths.js));
 });
 
+gulp.task('image', () => {
+  return gulp.src(paths.images + '*')
+    .pipe(image())
+    .pipe(gulp.dest(paths.img));
+});
+
 /**
  * Watch scss files for changes & recompile
  * Watch .pug files run pug-rebuild then reload BrowserSync
@@ -92,10 +101,11 @@ gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
   gulp.watch('./src/**/*.js', ['rebuild']);
+  gulp.watch('./src/images/*.**', ['rebuild']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'es6']);
+gulp.task('build', ['sass', 'pug', 'es6', 'image']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
