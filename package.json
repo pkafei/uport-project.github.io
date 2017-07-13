@@ -29,5 +29,8 @@
     "pug",
     "sass",
     "browsersync"
-  ]
+  ],
+  "dependencies": {
+    "prismjs": "^1.6.0"
+  }
 }
