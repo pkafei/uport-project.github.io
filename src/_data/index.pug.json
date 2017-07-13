@@ -1,6 +1,9 @@
 {
   "title": "UPort Documentation",
   "links": {
-    "link1": "https://hi"
+    "github": "https://www.github.com/uport-project",
+    "dif": "https://decentralized-identity.github.io/",
+    "marketingsite": "https://decentralized-identity.github.io/",
+    "docssite": "/docs"
   }
 }

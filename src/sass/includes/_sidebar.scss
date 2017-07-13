@@ -1,8 +1,8 @@
 .sidebar {
   background: lightgray;
-  flex: 0 0 30%;
   padding: 1rem;
-  max-width: 260px;
+  width: 260px;
+  overflow-y: scroll;
 
   ul, li {
     margin: 0;
