@@ -55,6 +55,14 @@ h6 {
   margin-top: 0;
 }
 
+p > code {
+  font-weight: bold;
+  font-size: 1rem !important;
+  background: #333;
+  color: lightgreen;
+  padding: .2rem .5rem;
+}
+
 /* ----- Plugins ------ */
 .gitter-chat-embed-action-bar-item {
   display: none;

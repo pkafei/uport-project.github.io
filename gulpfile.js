@@ -9,6 +9,7 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   babel = require('gulp-babel'),
   image = require('gulp-image'),
+  // markdownIt = require('gulp-markdown-it')
   browserSync = require('browser-sync');
 
 /*
@@ -81,17 +82,25 @@ gulp.task('sass', function () {
     }));
 });
 
+// Compile ES6 js files to ES2015 and copy over
 gulp.task('es6', () => {
   return gulp.src(paths.es6 + '*.js')
     .pipe(babel({presets: ['es2015']}))
     .pipe(gulp.dest(paths.js));
 });
 
+// Optimize and copy CSS over
 gulp.task('image', () => {
   return gulp.src(paths.images + '*')
     .pipe(image())
     .pipe(gulp.dest(paths.img));
 });
+
+// gulp.task('markdown', function () {
+//     gulp.src('./src/*.ext')
+//         .pipe(markdown-it({msg: 'More Coffee!'}))
+//         .pipe(gulp.dest("./dist"));
+// });
 
 /**
  * Watch scss files for changes & recompile

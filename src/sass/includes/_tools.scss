@@ -10,7 +10,8 @@
          li {
            flex-basis: 50%;
            text-align: center;
-           margin: 5% 0;
+           padding: 0;
+           max-width: 22rem;
            p {
              text-align: left;
            }
@@ -19,8 +20,8 @@
             display: block;
              img {
               //  display: block;
-               max-width: 10rem;
-               max-height: 10rem;
+               max-width: 8rem;
+               max-height: 8rem;
              }
              &:hover {
                 text-decoration: none;
