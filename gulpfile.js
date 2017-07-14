@@ -9,6 +9,8 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   babel = require('gulp-babel'),
   image = require('gulp-image'),
+  jsdoc = require('gulp-jsdoc3'),
+  replace = require('gulp-replace'),
   // markdownIt = require('gulp-markdown-it')
   browserSync = require('browser-sync');
 
@@ -96,11 +98,33 @@ gulp.task('image', () => {
     .pipe(gulp.dest(paths.img));
 });
 
-// gulp.task('markdown', function () {
-//     gulp.src('./src/*.ext')
-//         .pipe(markdown-it({msg: 'More Coffee!'}))
-//         .pipe(gulp.dest("./dist"));
-// });
+gulp.task('doc', function (cb) {
+  var config = require('./jsdoc.json');
+  gulp.src([
+    './node_modules/uport-connect/src/**/**/*.js',
+    './node_modules/uport-lite/READEME.md',
+    './node_modules/uport-registry/READEME.md',
+    './node_modules/uport/READEME.md'
+  ], {read: false})
+  .pipe(jsdoc(config, cb));
+});
+
+gulp.task('jsdocs', function () {
+  const fs = require('fs-then-native')
+  const jsdoc2md = require('jsdoc-to-markdown')
+  return jsdoc2md.render({files: [
+      './node_modules/uport-connect/src/Connect.js',
+      './node_modules/uport-connect/src/ConnectCore.js',
+      './node_modules/uport-connect/src/uportSubprovider.js']})
+    .then(output => fs.writeFile('./src/_partials/uport-connect-api.md', output))
+})
+
+gulp.task('codeblocks', function(){
+  gulp.src(['./src/_partials/*.md'])
+    .pipe(replace('<code>', '`'))
+    .pipe(replace('</code>', '`'))
+    .pipe(gulp.dest('./src/_partials/'));
+});
 
 /**
  * Watch scss files for changes & recompile
