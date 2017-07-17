@@ -22,7 +22,7 @@
 
 <a name="Connect"></a>
 
-## Connect ⇐ [`ConnectCore`](#ConnectCore)
+  ## Connect ⇐ [`ConnectCore`](#ConnectCore)
 Primary object for frontend interactions with uPort. Bundles all neccesary functionality.
 
 **Kind**: global class  
@@ -109,7 +109,7 @@ const req = {requested: ['name', 'country']}
      ...
  })
 
- 
+
 ```
 <a name="ConnectCore+requestAddress"></a>
 
@@ -154,7 +154,7 @@ const cred = {
    // response okay, received in uPort app
  })
 
- 
+
 ```
 <a name="ConnectCore+request"></a>
 
@@ -217,7 +217,7 @@ const txobject = {
    ...
  })
 
- 
+
 ```
 <a name="ConnectCore+addAppParameters"></a>
 
@@ -317,7 +317,7 @@ const req = {requested: ['name', 'country']}
      ...
  })
 
- 
+
 ```
 <a name="ConnectCore+requestAddress"></a>
 
@@ -362,7 +362,7 @@ const cred = {
    // response okay, received in uPort app
  })
 
- 
+
 ```
 <a name="ConnectCore+request"></a>
 
@@ -425,7 +425,7 @@ const txobject = {
    ...
  })
 
- 
+
 ```
 <a name="ConnectCore+addAppParameters"></a>
 
@@ -488,4 +488,3 @@ Overrides sendAsync to caputure the following RPC calls eth_coinbase, eth_accoun
 | --- | --- | --- |
 | payload | `Any` | request payload |
 | callback | `function` | called with response or error |
-
