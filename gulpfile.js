@@ -11,34 +11,46 @@ var gulp = require('gulp'),
   image = require('gulp-image'),
   jsdoc = require('gulp-jsdoc3'),
   replace = require('gulp-replace'),
-  // markdownIt = require('gulp-markdown-it')
-  browserSync = require('browser-sync');
+  // markdownIt = require('gulp-markdown-it'),
+  browserSync = require('browser-sync'),
+  fs = require('fs-then-native'),
+  jsdoc2md = require('jsdoc-to-markdown');
 
 /*
  * Directories here
  */
 var paths = {
   public: './public/',
-  sass: './src/sass/',
+
   css: './public/css/',
+  js: './public/js/',
+  img: './public/img/',
+
+  sass: './src/sass/',
   es6: './src/js/',
   images: './src/images/',
-  img: './public/img/',
-  js: './public/js/',
-  data: './src/_data/'
+
+  data: './src/_data/',
+  partials: './src/_partials/',
+
+  nodeMods: './node_modules/'
 };
 
 /**
  * Compile .pug files and pass in data from json file
  * matching file name. index.pug - index.pug.json
  */
-gulp.task('pug', function () {
+gulp.task('pug', () => {
   return gulp.src('./src/*.pug')
-    .pipe(data(function (file) {
-      return require(paths.data + path.basename(file.path) + '.json');
+    .pipe(
+      data((file) => {
+        return require(
+          paths.data +
+          path.basename(file.path) +
+          '.json');
     }))
     .pipe(pug())
-    .on('error', function (err) {
+    .on('error', (err) => {
       process.stderr.write(err.message + '\n');
       this.emit('end');
     })
@@ -48,18 +60,15 @@ gulp.task('pug', function () {
 /**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug'], function () {
-  browserSync.reload();
-});
+gulp.task('rebuild', ['pug'], () => {browserSync.reload();});
 
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['sass', 'pug', 'es6'], function () {
+gulp.task('browser-sync', ['sass', 'pug', 'es6'], () => {
   browserSync({
-    server: {
-      baseDir: paths.public
-    },
+    server: { baseDir: paths.public },
+    open: false,
     notify: false
   });
 });
@@ -68,20 +77,19 @@ gulp.task('browser-sync', ['sass', 'pug', 'es6'], function () {
  * Compile .scss files into public css directory With autoprefixer no
  * need for vendor prefixes then live reload the browser.
  */
-gulp.task('sass', function () {
+gulp.task('sass', () => {
   return gulp.src(paths.sass + '**/**.scss')
-    .pipe(sass({
-      includePaths: [paths.sass],
-      outputStyle: 'compressed'
-    }))
+    .pipe(
+      sass({
+        includePaths: [paths.sass],
+        outputStyle: 'compressed'}))
     .on('error', sass.logError)
-    .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
-      cascade: true
-    }))
+    .pipe(
+      prefix(
+        ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
+        { cascade: true }))
     .pipe(gulp.dest(paths.css))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+    .pipe(browserSync.reload({stream: true}));
 });
 
 // Compile ES6 js files to ES2015 and copy over
@@ -98,39 +106,48 @@ gulp.task('image', () => {
     .pipe(gulp.dest(paths.img));
 });
 
-gulp.task('doc', function (cb) {
+gulp.task('doc', (cb) => {
   var config = require('./jsdoc.json');
   gulp.src([
-    './node_modules/uport-connect/src/**/**/*.js',
-    './node_modules/uport-lite/READEME.md',
-    './node_modules/uport-registry/READEME.md',
-    './node_modules/uport/READEME.md'
+    paths.nodeMods + 'uport-connect/src/**/**/*.js',
+    paths.nodeMods + 'uport-lite/READEME.md',
+    paths.nodeMods + 'uport-registry/READEME.md',
+    paths.nodeMods + 'uport/READEME.md'
   ], {read: false})
   .pipe(jsdoc(config, cb));
 });
 
-gulp.task('jsdocs', function () {
-  const fs = require('fs-then-native')
-  const jsdoc2md = require('jsdoc-to-markdown')
-  return jsdoc2md.render({files: [
-      './node_modules/uport-connect/src/Connect.js',
-      './node_modules/uport-connect/src/ConnectCore.js',
-      './node_modules/uport-connect/src/uportSubprovider.js']})
-    .then(output => fs.writeFile('./src/_partials/uport-connect-api.md', output))
+gulp.task('jsdocs', () => {
+
+  var filesArray = [
+    paths.nodeMods + 'uport-connect/src/Connect.js',
+    paths.nodeMods + 'uport-connect/src/ConnectCore.js',
+    paths.nodeMods + 'uport-connect/src/uportSubprovider.js']
+
+  var options = {
+    "no-gfm": true,
+    "separators": true,
+    files: filesArray
+  }
+
+  return jsdoc2md.render(options)
+    .then(output => {
+      fs.writeFile(paths.partials + 'uport-connect-api.md', output)
+    })
 })
 
-gulp.task('codeblocks', function(){
-  gulp.src(['./src/_partials/*.md'])
-    .pipe(replace('<code>', '`'))
-    .pipe(replace('</code>', '`'))
-    .pipe(gulp.dest('./src/_partials/'));
+gulp.task('codeblocks', () => {
+  gulp.src([paths.partials + '*.md'])
+    .pipe(replace('<code>', ''))
+    .pipe(replace('</code>', ''))
+    .pipe(gulp.dest(paths.partials + ''));
 });
 
 /**
  * Watch scss files for changes & recompile
  * Watch .pug files run pug-rebuild then reload BrowserSync
  */
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
   gulp.watch('./src/**/*.js', ['rebuild']);
