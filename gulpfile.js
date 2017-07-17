@@ -134,11 +134,10 @@ gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
   gulp.watch('./src/**/*.js', ['rebuild']);
-  gulp.watch('./src/images/*.**', ['rebuild']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'es6', 'image']);
+gulp.task('build', ['sass', 'pug', 'es6']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
