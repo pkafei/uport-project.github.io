@@ -1,113 +1,117 @@
 'use strict';
 
-// Utils
+///////////////////////
+// Window URL Bar Clear
+///////////////////////
+window.history.pushState('', '', window.location.pathname);
+
+///////////////////////
+// Utilities
+///////////////////////
+var pvd = function pvd(e) {
+  return e.preventDefault();
+};
+var hide = function hide(item) {
+  item.style.display = 'none';
+};
+var show = function show(item) {
+  item.style.display = 'block';
+};
 var $$ = function $$(item) {
   return document.querySelectorAll(item);
 };
 
-var pvd = function pvd(e) {
-  return e.preventDefault();
+// TODO: Logo / Sign In
+// const developersNav =
+//   $$('a.logo-link')[0]
+//
+// const signInNav =
+//   $$('.sign-in-link')[0]
+//
+// const logOutNav =
+//   $$('.log-out a')[0]
+
+///////////////////////
+// DOM HOOKS
+///////////////////////
+
+var mainDOM = $$('main')[0];
+
+var navDOM = $$('header')[0];
+
+var userAreaDOM = $$('.user-area')[0];
+
+var sideBarDOM = $$('.sidebar')[0];
+
+var libDocDOM = $$('.lib-doc')[0];
+
+///////////////////////
+// Nav Router
+///////////////////////
+
+navDOM.onclick = function (evt) {
+  var desiredHash = evt.target.parentElement.hash;
+
+  if (desiredHash !== undefined) {
+    var desiredHashText = evt.target.parentElement.hash.replace('#', '');
+
+    mainDOM.classList.forEach(function (mainClass) {
+      mainClass !== 'main' ? mainDOM.classList.remove(mainClass) : null;
+    });
+    mainDOM.classList.add(desiredHashText);
+  }
+  pvd(evt);
 };
 
-// Button assignments
-var developersNav = $$('a.logo-link')[0];
+///////////////////////
+// Sidebar Populator
+///////////////////////
 
-var guidesNav = $$('[href="#guides"]')[0];
+var docTOCpath = '.lib-doc > ul:nth-of-type(1) li ul li a';
+var sidebarTOCpath = 'main .apidocs .sidebar section:nth-child(';
+var sidebarTOCpathEND = ') ul';
 
-var apidocsNav = $$('[href="#apidocs"]')[0];
+var ucContentLinks = $$('#uport-connect ' + docTOCpath);
+var sideBarLibADOM = $$(sidebarTOCpath + '1' + sidebarTOCpathEND)[0];
 
-var toolsNav = $$('[href="#tools"]')[0];
+var ujContentLinks = $$('#uport-js ' + docTOCpath);
+var sideBarLibBDOM = $$(sidebarTOCpath + '2' + sidebarTOCpathEND)[0];
 
-var myappsNav = $$('[href="#myapps"]')[0];
+var urContentLinks = $$('#uport-registry ' + docTOCpath);
+var sideBarLibCDOM = $$(sidebarTOCpath + '3' + sidebarTOCpathEND)[0];
 
-var gitterNav = $$('[href="#gitter"]')[0];
-
-var signInNav = $$('.sign-in-link')[0];
-
-var logOutNav = $$('.log-out a')[0];
-
-// Main hook
-var mainArea = $$('main')[0];
-
-var docmethodsParent = $$('.lib-doc ul:first-child')[0];
-
-var docmethodsList = $$('.lib-doc ul:first-child li ul li a');
-
-console.log('xxxx');
-console.dir(docmethodsList);
-
-docmethodsList.forEach(function (link) {
-  console.log(link.hash);
+ucContentLinks.forEach(function (el) {
+  var clone = el.cloneNode(true);
+  var li = document.createElement('li');
+  li.appendChild(clone);
+  sideBarLibADOM.appendChild(li);
 });
-console.log('ho');
 
-// Navigation click handeling
-developersNav.onclick = function (e) {
-  pvd(e);
-  mainArea.classList.add('portal');
-  mainArea.classList.remove('guides');
-  mainArea.classList.remove('apidocs');
-  mainArea.classList.remove('tools');
-  mainArea.classList.remove('myapps');
-  mainArea.classList.remove('gitter');
-};
+// TODO: Get JSDOC based stuff in there
+// ujContentLinks.forEach((el) => {
+//   var li = document.createElement('li')
+//       li.appendChild(el)
+//   sideBarLibBDOM.appendChild(li)
+// })
+//
+// urContentLinks.forEach((el) => {
+//   var li = document.createElement('li')
+//       li.appendChild(el)
+//   sideBarLibCDOM.appendChild(li)
+// })
 
-guidesNav.onclick = function (e) {
-  pvd(e);
-  mainArea.classList.remove('portal');
-  mainArea.classList.add('guides');
-  mainArea.classList.remove('apidocs');
-  mainArea.classList.remove('tools');
-  mainArea.classList.remove('myapps');
-  mainArea.classList.remove('gitter');
-};
+// signInNav.onclick = (e) => {userAreaDOM.classList.add('menu-open')}
+// logOutNav.onclick = (e) => {userAreaDOM.classList.remove('menu-open')}
 
-apidocsNav.onclick = function (e) {
-  pvd(e);
-  mainArea.classList.remove('portal');
-  mainArea.classList.remove('guides');
-  mainArea.classList.add('apidocs');
-  mainArea.classList.remove('tools');
-  mainArea.classList.remove('myapps');
-  mainArea.classList.remove('gitter');
-};
+///////////////////////
+// HAX
+///////////////////////
 
-toolsNav.onclick = function (e) {
-  pvd(e);
-  mainArea.classList.remove('portal');
-  mainArea.classList.remove('guides');
-  mainArea.classList.remove('apidocs');
-  mainArea.classList.add('tools');
-  mainArea.classList.remove('myapps');
-  mainArea.classList.remove('gitter');
-};
-
-myappsNav.onclick = function (e) {
-  pvd(e);
-  mainArea.classList.remove('portal');
-  mainArea.classList.remove('guides');
-  mainArea.classList.remove('apidocs');
-  mainArea.classList.remove('tools');
-  mainArea.classList.add('myapps');
-  mainArea.classList.remove('gitter');
-};
-
-gitterNav.onclick = function (e) {
-  pvd(e);
-  mainArea.classList.remove('portal');
-  mainArea.classList.remove('guides');
-  mainArea.classList.remove('apidocs');
-  mainArea.classList.remove('tools');
-  mainArea.classList.remove('myapps');
-  mainArea.classList.add('gitter');
-};
-
-signInNav.onclick = function (e) {
-  pvd(e);
-  $$('.user-area')[0].classList.add('menu-open');
-};
-
-logOutNav.onclick = function (e) {
-  pvd(e);
-  $$('.user-area')[0].classList.remove('menu-open');
-};
+// Hide dupe of ConnectCore
+var uch2cc = '.lib-section#uport-connect .lib-doc > h2:nth-of-type(3)';
+var uch2ccDOM = $$(uch2cc)[0];
+var uch2ccDOMPlusAll = $$(uch2cc + ' ~ *');
+hide(uch2ccDOM);
+uch2ccDOMPlusAll.forEach(function (el) {
+  hide(el);
+});

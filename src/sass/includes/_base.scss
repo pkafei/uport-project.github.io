@@ -55,28 +55,41 @@ h6 {
   margin-top: 0;
 }
 
-p > code {
-  font-weight: bold;
-  font-size: 1rem !important;
-  background: #333;
-  color: lightgreen;
-  padding: .2rem .5rem;
+h2:nth-of-type(2) {
+  display: none;
 }
 
-th, td {
-  padding: 0 .5rem;
+p > code,
+td > code {
+  font-size: 1.2rem !important;
+  padding: .2rem .3rem;
+  vertical-align: top;
 }
 
-tbody tr:nth-child(odd) {
-  background: rgba(171, 189, 203, .3);
+table {
+  border-collapse: collapse;
+  border: 1px solid #333;
+
+  th, td {
+    padding: 0 .5rem;
+  }
+
+  thead {
+    th {
+      text-align: left;
+      border-bottom: 1px solid #333;
+      border-left: 1px solid #333;
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd) {
+      background: rgba(171, 189, 203, .3);
+    }
+  }
 }
 
-th {
-  text-align: left;
-  border-bottom: 1px solid #333;
-  border-left: 1px solid #333;
 
-}
 
 /* ----- Plugins ------ */
 .gitter-chat-embed-action-bar-item {

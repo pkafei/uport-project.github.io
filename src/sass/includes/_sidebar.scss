@@ -1,7 +1,7 @@
 .sidebar {
   background: lightgray;
   padding: 1rem;
-  width: 260px;
+  width: 300px;
   overflow-y: scroll;
 
   ul, li {
@@ -9,7 +9,10 @@
     padding: 0;
   }
   ul {margin-bottom: 1rem;}
-  li {padding-left: 1rem;}
+  li {
+    padding-left: 1rem;
+    font-size: .8rem;
+  }
 
   h2 {
     font-size: 1rem;
