@@ -122,7 +122,6 @@ gulp.task('jsdocs', () => {
   var filesArray = [
     paths.nodeMods + 'uport-connect/src/Connect.js',
     paths.nodeMods + 'uport-connect/src/ConnectCore.js',
-    paths.nodeMods + 'uport-connect/src/uportSubprovider.js']
 
   var options = {
     "no-gfm": true,
