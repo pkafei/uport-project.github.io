@@ -16,5 +16,10 @@
     "metamask": "/img/metamask-logo.png",
     "remix": "/img/ethereum-logo.png",
     "mist": "/img/mist-logo.png"
+  },
+  "docNavLinks": {
+    "connect": "uport-connect",
+    "js": "uport-js",
+    "registry": "uport-registry"
   }
 }

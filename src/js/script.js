@@ -33,6 +33,20 @@ const logOutNav =
 const mainArea =
   $$('main')[0]
 
+const docmethodsParent =
+  $$('.lib-doc ul:first-child')[0]
+
+const docmethodsList = $$('.lib-doc ul:first-child li ul li a')
+
+console.log('xxxx')
+console.dir(docmethodsList)
+
+
+docmethodsList.forEach((link) => {
+    console.log(link.hash);
+});
+console.log('ho')
+
 // Navigation click handeling
 developersNav.onclick = (e) => {
   pvd(e);

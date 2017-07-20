@@ -29,6 +29,18 @@ var logOutNav = $$('.log-out a')[0];
 // Main hook
 var mainArea = $$('main')[0];
 
+var docmethodsParent = $$('.lib-doc ul:first-child')[0];
+
+var docmethodsList = $$('.lib-doc ul:first-child li ul li a');
+
+console.log('xxxx');
+console.dir(docmethodsList);
+
+docmethodsList.forEach(function (link) {
+  console.log(link.hash);
+});
+console.log('ho');
+
 // Navigation click handeling
 developersNav.onclick = function (e) {
   pvd(e);

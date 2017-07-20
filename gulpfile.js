@@ -11,7 +11,6 @@ var gulp = require('gulp'),
   image = require('gulp-image'),
   jsdoc = require('gulp-jsdoc3'),
   replace = require('gulp-replace'),
-  // markdownIt = require('gulp-markdown-it'),
   browserSync = require('browser-sync'),
   fs = require('fs-then-native'),
   jsdoc2md = require('jsdoc-to-markdown');
@@ -60,7 +59,7 @@ gulp.task('pug', () => {
 /**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug'], () => {browserSync.reload();});
+gulp.task('rebuild', ['pug','es6'], () => {browserSync.reload();});
 
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
@@ -121,7 +120,7 @@ gulp.task('jsdocs', () => {
 
   var filesArray = [
     paths.nodeMods + 'uport-connect/src/Connect.js',
-    paths.nodeMods + 'uport-connect/src/ConnectCore.js',
+    paths.nodeMods + 'uport-connect/src/ConnectCore.js' ]
 
   var options = {
     "no-gfm": true,
