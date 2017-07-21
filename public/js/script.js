@@ -50,7 +50,7 @@ var navDOM = $$('header')[0];
 
 var userAreaDOM = $$('.user-area')[0];
 
-var sideBarDOM = $$('.sidebar')[0];
+var sideBarsDOM = $$('.sidebar');
 
 var libDocDOM = $$('.lib-doc')[0];
 
@@ -80,20 +80,19 @@ navDOM.onclick = function (evt) {
 // Sidebar Populator
 ///////////////////////
 
-function createElements(currentSource, sourceFlag) {
+function createSidebarElements(currentSource, sourceFlag) {
   var contextArea = currentSource;
 
-  var section = document.createElement('section');
+  var createdSection = document.createElement('section');
 
   var contextAreaH1 = contextArea.querySelector('h1');
   var contextAreaH1Clone = contextAreaH1.cloneNode(true);
 
-  function createList(flag) {
+  function createSidebarList(flag) {
 
-    var list = document.createElement('ul');
+    if (flag === 'guide') {
 
-    if (flag === 'a') {} else {
-
+      var list = document.createElement('ul');
       var contextAreaH2s = contextArea.querySelectorAll('h2');
 
       contextAreaH2s.forEach(function (el) {
@@ -110,50 +109,68 @@ function createElements(currentSource, sourceFlag) {
         list.appendChild(listItem);
       });
     }
+    if (flag === 'doc') {
+
+      // console.log(contextArea);
+
+      var list = document.createElement('ul');
+
+      var docTOCpath = 'ul:nth-of-type(1) li ul li';
+      var ucContentListItems = contextArea.querySelectorAll(docTOCpath);
+
+      // console.log(ucContentListItems);
+      if (ucContentListItems.length > 0) {
+        // console.log(ucContentListItems);
+        ucContentListItems.forEach(function (item) {
+          list.appendChild(item);
+        });
+      }
+    }
     return list;
   }
 
-  var list = createList(sourceFlag);
-
+  // var createdlist = createSidebarList(sourceFlag)
   return {
-    section: section,
+    section: createdSection,
     header: contextAreaH1Clone,
-    list: list
+    list: createSidebarList(sourceFlag)
   };
 }
 
 function generateSidebars(sources) {
   sources.forEach(function (source) {
+    var flag;
+    source[0].parentNode.className === 'guide' ? flag = 'guide' : flag = 'doc';
     for (var i = 0; i < source.length; i++) {
-      var createdElements = createElements(source[i], 'h2');
+      var createdElements = createSidebarElements(source[i], flag);
       createdElements.section.appendChild(createdElements.header);
       createdElements.section.appendChild(createdElements.list);
-      sideBarDOM.appendChild(createdElements.section);
+      flag === 'guide' ? sideBarsDOM[0].appendChild(createdElements.section) : sideBarsDOM[1].appendChild(createdElements.section);
     }
   });
 }
 
 generateSidebars([guideAreaDOM, docAreaDOM]);
 
-var docTOCpath = '.lib-doc > ul:nth-of-type(1) li ul li a';
-var sidebarTOCpath = 'main .apidocs .sidebar section:nth-child(';
-var sidebarTOCpathEND = ') ul';
-
-var ucContentLinks = $$('#uport-connect ' + docTOCpath);
-var sideBarLibADOM = $$(sidebarTOCpath + '1' + sidebarTOCpathEND)[0];
-
-var ujContentLinks = $$('#uport-js ' + docTOCpath);
-var sideBarLibBDOM = $$(sidebarTOCpath + '2' + sidebarTOCpathEND)[0];
-
-var urContentLinks = $$('#uport-registry ' + docTOCpath);
-var sideBarLibCDOM = $$(sidebarTOCpath + '3' + sidebarTOCpathEND)[0];
-
-ucContentLinks.forEach(function (el) {
-  var clone = el.cloneNode(true);
-  var li = document.createElement('li');
-  li.appendChild(clone);
-  sideBarLibADOM.appendChild(li);
-});
+// const docTOCpath = 'ul:nth-of-type(1) li ul li a'
+// const sidebarTOCpath = 'main .apidocs .sidebar section:nth-child('
+// const sidebarTOCpathEND= ') ul'
+//
+// const ucContentLinks = $$(docTOCpath)
+// const sideBarLibADOM = $$(sidebarTOCpath + '1' + sidebarTOCpathEND)[0]
+//
+// const ujContentLinks = $$('#uport-js ' + docTOCpath)
+// const sideBarLibBDOM = $$(sidebarTOCpath + '2' + sidebarTOCpathEND)[0]
+//
+// const urContentLinks = $$('#uport-registry ' + docTOCpath)
+// const sideBarLibCDOM = $$(sidebarTOCpath + '3' + sidebarTOCpathEND)[0]
+//
+// ucContentLinks.forEach((el) => {
+//   var clone = el.cloneNode(true);
+//   var li = document.createElement('li')
+//       li.appendChild(clone)
+//   sideBarLibADOM.appendChild(li)
+// })
 
 // TODO: Get JSDOC based stuff in there
 // ujContentLinks.forEach((el) => {
@@ -179,10 +196,6 @@ ucContentLinks.forEach(function (el) {
 var uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)';
 var uch2ccDOM = $$(uch2cc)[0];
 var uch2ccDOMPlusAll = $$(uch2cc + ' ~ *');
-
-console.log(uch2ccDOM);
-console.log(uch2ccDOMPlusAll);
-
 hide(uch2ccDOM);
 uch2ccDOMPlusAll.forEach(function (el) {
   hide(el);

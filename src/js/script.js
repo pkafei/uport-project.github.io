@@ -44,8 +44,8 @@ const navDOM =
 const userAreaDOM =
   $$('.user-area')[0]
 
-const sideBarDOM =
-  $$('.sidebar')[0]
+const sideBarsDOM =
+  $$('.sidebar')
 
 const libDocDOM =
   $$('.lib-doc')[0]
@@ -80,24 +80,19 @@ navDOM.onclick = (evt) => {
 // Sidebar Populator
 ///////////////////////
 
-function createElements (currentSource, sourceFlag) {
+function createSidebarElements (currentSource, sourceFlag) {
   let contextArea = currentSource;
 
-  let section = document.createElement('section')
+  let createdSection = document.createElement('section')
 
   let contextAreaH1 = contextArea.querySelector('h1')
   let contextAreaH1Clone = contextAreaH1.cloneNode(true)
 
-  function createList (flag) {
+  function createSidebarList (flag) {
 
-    let list = document.createElement('ul')
+    if(flag === 'guide') {
 
-    if(flag === 'a') {
-
-
-
-    } else {
-
+      var list = document.createElement('ul')
       let contextAreaH2s = contextArea.querySelectorAll('h2')
 
       contextAreaH2s.forEach((el) => {
@@ -114,51 +109,73 @@ function createElements (currentSource, sourceFlag) {
         list.appendChild(listItem)
       })
     }
+    if(flag === 'doc') {
+
+      // console.log(contextArea);
+
+      var list = document.createElement('ul')
+
+      const docTOCpath = 'ul:nth-of-type(1) li ul li'
+      const ucContentListItems = contextArea.querySelectorAll(docTOCpath)
+
+      // console.log(ucContentListItems);
+      if(ucContentListItems.length > 0){
+        // console.log(ucContentListItems);
+        ucContentListItems.forEach((item) => {
+          list.appendChild(item)
+        })
+      }
+    }
     return list
   }
 
-  var list = createList(sourceFlag)
-
+  // var createdlist = createSidebarList(sourceFlag)
   return {
-    section,
+    section: createdSection,
     header: contextAreaH1Clone,
-    list
+    list: createSidebarList(sourceFlag)
   }
 }
 
 
 function generateSidebars (sources) {
   sources.forEach((source) => {
+    var flag
+    source[0].parentNode.className === 'guide'
+      ? flag = 'guide'
+      : flag = 'doc'
     for (var i = 0; i < source.length; i++) {
-      var createdElements = createElements(source[i], 'h2');
+      var createdElements = createSidebarElements(source[i], flag);
       createdElements.section.appendChild(createdElements.header)
       createdElements.section.appendChild(createdElements.list)
-      sideBarDOM.appendChild(createdElements.section)
+      flag === 'guide'
+        ? sideBarsDOM[0].appendChild(createdElements.section)
+        : sideBarsDOM[1].appendChild(createdElements.section)
     }
   })
 }
 
 generateSidebars([guideAreaDOM, docAreaDOM])
 
-const docTOCpath = '.lib-doc > ul:nth-of-type(1) li ul li a'
-const sidebarTOCpath = 'main .apidocs .sidebar section:nth-child('
-const sidebarTOCpathEND= ') ul'
-
-const ucContentLinks = $$('#uport-connect ' + docTOCpath)
-const sideBarLibADOM = $$(sidebarTOCpath + '1' + sidebarTOCpathEND)[0]
-
-const ujContentLinks = $$('#uport-js ' + docTOCpath)
-const sideBarLibBDOM = $$(sidebarTOCpath + '2' + sidebarTOCpathEND)[0]
-
-const urContentLinks = $$('#uport-registry ' + docTOCpath)
-const sideBarLibCDOM = $$(sidebarTOCpath + '3' + sidebarTOCpathEND)[0]
-
-ucContentLinks.forEach((el) => {
-  var clone = el.cloneNode(true);
-  var li = document.createElement('li')
-      li.appendChild(clone)
-  sideBarLibADOM.appendChild(li)
-})
+// const docTOCpath = 'ul:nth-of-type(1) li ul li a'
+// const sidebarTOCpath = 'main .apidocs .sidebar section:nth-child('
+// const sidebarTOCpathEND= ') ul'
+//
+// const ucContentLinks = $$(docTOCpath)
+// const sideBarLibADOM = $$(sidebarTOCpath + '1' + sidebarTOCpathEND)[0]
+//
+// const ujContentLinks = $$('#uport-js ' + docTOCpath)
+// const sideBarLibBDOM = $$(sidebarTOCpath + '2' + sidebarTOCpathEND)[0]
+//
+// const urContentLinks = $$('#uport-registry ' + docTOCpath)
+// const sideBarLibCDOM = $$(sidebarTOCpath + '3' + sidebarTOCpathEND)[0]
+//
+// ucContentLinks.forEach((el) => {
+//   var clone = el.cloneNode(true);
+//   var li = document.createElement('li')
+//       li.appendChild(clone)
+//   sideBarLibADOM.appendChild(li)
+// })
 
 // TODO: Get JSDOC based stuff in there
 // ujContentLinks.forEach((el) => {
@@ -184,9 +201,5 @@ ucContentLinks.forEach((el) => {
 const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
 const uch2ccDOM = $$(uch2cc)[0]
 const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
-
-console.log(uch2ccDOM)
-console.log(uch2ccDOMPlusAll)
-
 hide(uch2ccDOM);
 uch2ccDOMPlusAll.forEach((el) => {hide(el)})
