@@ -1,0 +1,24 @@
+.sidebar {
+  background: lightgray;
+  padding: 1rem;
+  width: 300px;
+  overflow-y: scroll;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  ul {margin-bottom: 1rem;}
+  li {
+    padding-left: 1rem;
+    font-size: .8rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+    margin-bottom: .5rem;
+  }
+  span {
+    font-size: .9rem;
+  }
+}
