@@ -4,6 +4,10 @@
   width: 300px;
   overflow-y: scroll;
 
+  code {
+    display: none;
+  }
+
   ul, li {
     margin: 0;
     padding: 0;
