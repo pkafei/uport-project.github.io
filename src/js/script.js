@@ -10,6 +10,9 @@ const pvd = (e) => e.preventDefault();
 const hide = (item) => { item.style.display = 'none' }
 const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)
+const sanitizeHash = (text) =>
+  text.toLowerCase().split(' ').join('-')
+
 const wrap = (toWrap, wrapper) => {
   wrapper = wrapper || document.createElement('div');
   toWrap.nextSibling
@@ -47,8 +50,11 @@ const sideBarDOM =
 const libDocDOM =
   $$('.lib-doc')[0]
 
-const guideSectionsDOM =
+const guideAreaDOM =
   $$('.guides .guide section')
+
+const docAreaDOM =
+  $$('.lib-section')
 
 ///////////////////////
 // Nav Router
@@ -74,34 +80,70 @@ navDOM.onclick = (evt) => {
 // Sidebar Populator
 ///////////////////////
 
-for (var i = 0; i < guideSectionsDOM.length; i++) {
 
-  var section = guideSectionsDOM[i];
 
-  var listA = document.createElement('ul')
+function generateSidebars (sources) {
 
-  var guideSectionAHeader= section.querySelectorAll('h1')[0]
-  var guideSectionAHeaders2 = section.querySelectorAll('h2')
 
-  guideSectionAHeaders2.forEach((el) => {
 
-    var url = el.innerHTML.toLowerCase().split(' ').join('-')
-    el.id = url
+  function createElements (currentSource, sourceFlag) {
+    let contextArea = currentSource;
 
-    var link = document.createElement('a')
-    link.innerHTML = el.innerHTML
-    link.href = '#' + url
+    let section = document.createElement('section')
 
-    var listItem = document.createElement('li')
-    listItem.appendChild(link)
+    let contextAreaH1 = contextArea.querySelector('h1')
+    let contextAreaH1Clone = contextAreaH1.cloneNode(true)
 
-    listA.appendChild(listItem)
+    function createList (flag) {
+
+      let list = document.createElement('ul')
+
+      if(flag === 'a') {
+
+      } else {
+
+        let contextAreaH2s = contextArea.querySelectorAll('h2')
+
+        contextAreaH2s.forEach((el) => {
+          var url = sanitizeHash(el.innerHTML)
+          el.id = url
+
+          var link = document.createElement('a')
+          link.innerHTML = el.innerHTML
+          link.href = '#' + url
+
+          var listItem = document.createElement('li')
+          listItem.appendChild(link)
+
+          list.appendChild(listItem)
+        })
+      }
+      return list
+    }
+
+    var list = createList(sourceFlag)
+
+    return {
+      section,
+      header: contextAreaH1Clone,
+      list
+    }
+  }
+
+  sources.forEach((source) => {
+    for (var i = 0; i < source.length; i++) {
+      var createdElements = createElements(source[i], 'h2');
+      console.log(createdElements);
+      createdElements.section.appendChild(createdElements.header)
+      createdElements.section.appendChild(createdElements.list)
+      sideBarDOM.appendChild(createdElements.section)
+    }
   })
-
-  var sidebarSection = sideBarDOM.querySelectorAll('section')[i]
-  sidebarSection.appendChild(guideSectionAHeader)
-  sidebarSection.appendChild(listA)
 }
+
+var sidebarsSources = [guideAreaDOM];
+generateSidebars(sidebarsSources)
+
 
 
 
