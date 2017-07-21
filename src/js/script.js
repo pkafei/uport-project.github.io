@@ -51,10 +51,10 @@ const libDocDOM =
   $$('.lib-doc')[0]
 
 const guideAreaDOM =
-  $$('.guides .guide section')
+  $$('.guide section')
 
 const docAreaDOM =
-  $$('.lib-section')
+  $$('.lib section')
 
 ///////////////////////
 // Nav Router
@@ -80,60 +80,57 @@ navDOM.onclick = (evt) => {
 // Sidebar Populator
 ///////////////////////
 
+function createElements (currentSource, sourceFlag) {
+  let contextArea = currentSource;
+
+  let section = document.createElement('section')
+
+  let contextAreaH1 = contextArea.querySelector('h1')
+  let contextAreaH1Clone = contextAreaH1.cloneNode(true)
+
+  function createList (flag) {
+
+    let list = document.createElement('ul')
+
+    if(flag === 'a') {
+
+
+
+    } else {
+
+      let contextAreaH2s = contextArea.querySelectorAll('h2')
+
+      contextAreaH2s.forEach((el) => {
+        var url = sanitizeHash(el.innerHTML)
+        el.id = url
+
+        var link = document.createElement('a')
+        link.innerHTML = el.innerHTML
+        link.href = '#' + url
+
+        var listItem = document.createElement('li')
+        listItem.appendChild(link)
+
+        list.appendChild(listItem)
+      })
+    }
+    return list
+  }
+
+  var list = createList(sourceFlag)
+
+  return {
+    section,
+    header: contextAreaH1Clone,
+    list
+  }
+}
 
 
 function generateSidebars (sources) {
-
-
-
-  function createElements (currentSource, sourceFlag) {
-    let contextArea = currentSource;
-
-    let section = document.createElement('section')
-
-    let contextAreaH1 = contextArea.querySelector('h1')
-    let contextAreaH1Clone = contextAreaH1.cloneNode(true)
-
-    function createList (flag) {
-
-      let list = document.createElement('ul')
-
-      if(flag === 'a') {
-
-      } else {
-
-        let contextAreaH2s = contextArea.querySelectorAll('h2')
-
-        contextAreaH2s.forEach((el) => {
-          var url = sanitizeHash(el.innerHTML)
-          el.id = url
-
-          var link = document.createElement('a')
-          link.innerHTML = el.innerHTML
-          link.href = '#' + url
-
-          var listItem = document.createElement('li')
-          listItem.appendChild(link)
-
-          list.appendChild(listItem)
-        })
-      }
-      return list
-    }
-
-    var list = createList(sourceFlag)
-
-    return {
-      section,
-      header: contextAreaH1Clone,
-      list
-    }
-  }
-
   sources.forEach((source) => {
     for (var i = 0; i < source.length; i++) {
       var createdElements = createElements(source[i], 'h2');
-      console.log(createdElements);
       createdElements.section.appendChild(createdElements.header)
       createdElements.section.appendChild(createdElements.list)
       sideBarDOM.appendChild(createdElements.section)
@@ -141,11 +138,7 @@ function generateSidebars (sources) {
   })
 }
 
-var sidebarsSources = [guideAreaDOM];
-generateSidebars(sidebarsSources)
-
-
-
+generateSidebars([guideAreaDOM, docAreaDOM])
 
 const docTOCpath = '.lib-doc > ul:nth-of-type(1) li ul li a'
 const sidebarTOCpath = 'main .apidocs .sidebar section:nth-child('
@@ -188,8 +181,12 @@ ucContentLinks.forEach((el) => {
 ///////////////////////
 
 // Hide dupe of ConnectCore
-const uch2cc = '.lib-section#uport-connect .lib-doc > h2:nth-of-type(3)'
+const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
 const uch2ccDOM = $$(uch2cc)[0]
 const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
+
+console.log(uch2ccDOM)
+console.log(uch2ccDOMPlusAll)
+
 hide(uch2ccDOM);
 uch2ccDOMPlusAll.forEach((el) => {hide(el)})

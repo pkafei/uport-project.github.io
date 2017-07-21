@@ -54,9 +54,9 @@ var sideBarDOM = $$('.sidebar')[0];
 
 var libDocDOM = $$('.lib-doc')[0];
 
-var guideAreaDOM = $$('.guides .guide section');
+var guideAreaDOM = $$('.guide section');
 
-var docAreaDOM = $$('.lib-section');
+var docAreaDOM = $$('.lib section');
 
 ///////////////////////
 // Nav Router
@@ -80,55 +80,52 @@ navDOM.onclick = function (evt) {
 // Sidebar Populator
 ///////////////////////
 
+function createElements(currentSource, sourceFlag) {
+  var contextArea = currentSource;
 
-function generateSidebars(sources) {
+  var section = document.createElement('section');
 
-  function createElements(currentSource, sourceFlag) {
-    var contextArea = currentSource;
+  var contextAreaH1 = contextArea.querySelector('h1');
+  var contextAreaH1Clone = contextAreaH1.cloneNode(true);
 
-    var section = document.createElement('section');
+  function createList(flag) {
 
-    var contextAreaH1 = contextArea.querySelector('h1');
-    var contextAreaH1Clone = contextAreaH1.cloneNode(true);
+    var list = document.createElement('ul');
 
-    function createList(flag) {
+    if (flag === 'a') {} else {
 
-      var list = document.createElement('ul');
+      var contextAreaH2s = contextArea.querySelectorAll('h2');
 
-      if (flag === 'a') {} else {
+      contextAreaH2s.forEach(function (el) {
+        var url = sanitizeHash(el.innerHTML);
+        el.id = url;
 
-        var contextAreaH2s = contextArea.querySelectorAll('h2');
+        var link = document.createElement('a');
+        link.innerHTML = el.innerHTML;
+        link.href = '#' + url;
 
-        contextAreaH2s.forEach(function (el) {
-          var url = sanitizeHash(el.innerHTML);
-          el.id = url;
+        var listItem = document.createElement('li');
+        listItem.appendChild(link);
 
-          var link = document.createElement('a');
-          link.innerHTML = el.innerHTML;
-          link.href = '#' + url;
-
-          var listItem = document.createElement('li');
-          listItem.appendChild(link);
-
-          list.appendChild(listItem);
-        });
-      }
-      return list;
+        list.appendChild(listItem);
+      });
     }
-
-    var list = createList(sourceFlag);
-
-    return {
-      section: section,
-      header: contextAreaH1Clone,
-      list: list
-    };
+    return list;
   }
 
+  var list = createList(sourceFlag);
+
+  return {
+    section: section,
+    header: contextAreaH1Clone,
+    list: list
+  };
+}
+
+function generateSidebars(sources) {
   sources.forEach(function (source) {
     for (var i = 0; i < source.length; i++) {
       var createdElements = createElements(source[i], 'h2');
-      console.log(createdElements);
       createdElements.section.appendChild(createdElements.header);
       createdElements.section.appendChild(createdElements.list);
       sideBarDOM.appendChild(createdElements.section);
@@ -136,8 +133,7 @@ function generateSidebars(sources) {
   });
 }
 
-var sidebarsSources = [guideAreaDOM];
-generateSidebars(sidebarsSources);
+generateSidebars([guideAreaDOM, docAreaDOM]);
 
 var docTOCpath = '.lib-doc > ul:nth-of-type(1) li ul li a';
 var sidebarTOCpath = 'main .apidocs .sidebar section:nth-child(';
@@ -180,9 +176,13 @@ ucContentLinks.forEach(function (el) {
 ///////////////////////
 
 // Hide dupe of ConnectCore
-var uch2cc = '.lib-section#uport-connect .lib-doc > h2:nth-of-type(3)';
+var uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)';
 var uch2ccDOM = $$(uch2cc)[0];
 var uch2ccDOMPlusAll = $$(uch2cc + ' ~ *');
+
+console.log(uch2ccDOM);
+console.log(uch2ccDOMPlusAll);
+
 hide(uch2ccDOM);
 uch2ccDOMPlusAll.forEach(function (el) {
   hide(el);
