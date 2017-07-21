@@ -20,6 +20,11 @@ var show = function show(item) {
 var $$ = function $$(item) {
   return document.querySelectorAll(item);
 };
+var wrap = function wrap(toWrap, wrapper) {
+  wrapper = wrapper || document.createElement('div');
+  toWrap.nextSibling ? toWrap.parentNode.insertBefore(wrapper, toWrap.nextSibling) : toWrap.parentNode.appendChild(wrapper);
+  return wrapper.appendChild(toWrap);
+};
 
 // TODO: Logo / Sign In
 // const developersNav =
@@ -45,6 +50,8 @@ var sideBarDOM = $$('.sidebar')[0];
 
 var libDocDOM = $$('.lib-doc')[0];
 
+var guideSectionsDOM = $$('.guides .guide section');
+
 ///////////////////////
 // Nav Router
 ///////////////////////
@@ -66,6 +73,35 @@ navDOM.onclick = function (evt) {
 ///////////////////////
 // Sidebar Populator
 ///////////////////////
+
+for (var i = 0; i < guideSectionsDOM.length; i++) {
+
+  var section = guideSectionsDOM[i];
+
+  var listA = document.createElement('ul');
+
+  var guideSectionAHeader = section.querySelectorAll('h1')[0];
+  var guideSectionAHeaders2 = section.querySelectorAll('h2');
+
+  guideSectionAHeaders2.forEach(function (el) {
+
+    var url = el.innerHTML.toLowerCase().split(' ').join('-');
+    el.id = url;
+
+    var link = document.createElement('a');
+    link.innerHTML = el.innerHTML;
+    link.href = '#' + url;
+
+    var listItem = document.createElement('li');
+    listItem.appendChild(link);
+
+    listA.appendChild(listItem);
+  });
+
+  var sidebarSection = sideBarDOM.querySelectorAll('section')[i];
+  sidebarSection.appendChild(guideSectionAHeader);
+  sidebarSection.appendChild(listA);
+}
 
 var docTOCpath = '.lib-doc > ul:nth-of-type(1) li ul li a';
 var sidebarTOCpath = 'main .apidocs .sidebar section:nth-child(';

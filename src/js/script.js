@@ -10,6 +10,13 @@ const pvd = (e) => e.preventDefault();
 const hide = (item) => { item.style.display = 'none' }
 const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)
+const wrap = (toWrap, wrapper) => {
+  wrapper = wrapper || document.createElement('div');
+  toWrap.nextSibling
+    ? toWrap.parentNode.insertBefore(wrapper, toWrap.nextSibling)
+    : toWrap.parentNode.appendChild(wrapper)
+  return wrapper.appendChild(toWrap)
+};
 
 // TODO: Logo / Sign In
   // const developersNav =
@@ -40,6 +47,9 @@ const sideBarDOM =
 const libDocDOM =
   $$('.lib-doc')[0]
 
+const guideSectionsDOM =
+  $$('.guides .guide section')
+
 ///////////////////////
 // Nav Router
 ///////////////////////
@@ -63,6 +73,37 @@ navDOM.onclick = (evt) => {
 ///////////////////////
 // Sidebar Populator
 ///////////////////////
+
+for (var i = 0; i < guideSectionsDOM.length; i++) {
+
+  var section = guideSectionsDOM[i];
+
+  var listA = document.createElement('ul')
+
+  var guideSectionAHeader= section.querySelectorAll('h1')[0]
+  var guideSectionAHeaders2 = section.querySelectorAll('h2')
+
+  guideSectionAHeaders2.forEach((el) => {
+
+    var url = el.innerHTML.toLowerCase().split(' ').join('-')
+    el.id = url
+
+    var link = document.createElement('a')
+    link.innerHTML = el.innerHTML
+    link.href = '#' + url
+
+    var listItem = document.createElement('li')
+    listItem.appendChild(link)
+
+    listA.appendChild(listItem)
+  })
+
+  var sidebarSection = sideBarDOM.querySelectorAll('section')[i]
+  sidebarSection.appendChild(guideSectionAHeader)
+  sidebarSection.appendChild(listA)
+}
+
+
 
 const docTOCpath = '.lib-doc > ul:nth-of-type(1) li ul li a'
 const sidebarTOCpath = 'main .apidocs .sidebar section:nth-child('

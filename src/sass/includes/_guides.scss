@@ -2,6 +2,13 @@
   background: white;
   padding: 1rem;
 
+  section {
+    border-bottom: 1px solid #333;
+    > a {
+      display: block;
+    }
+  }
+
   h1 {
     font-size: 2rem;
     margin-bottom: 0;

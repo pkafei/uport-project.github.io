@@ -16,296 +16,325 @@ mixin markdown
   .pagewrap
     .sidebar
       section
-        h2 Getting Started
-        ul
-          li
-            a(href='#')
-              span Download the Mobile App
-          li
-            a(href='#')
-              span Create your Identity
-          li
-            a(href='#')
-              span Register your App
-          li
-            a(href='#')
-              span Install the Library/SDK
-          li
-            a(href='#')
-              span Add your Keys
+        //- h2 Getting Started
+        //- ul
+        //-   li
+        //-     a(href='#') Download the Mobile App
+        //-   li
+        //-     a(href='#') Create your Identity
+        //-   li
+        //-     a(href='#') Register your App
+        //-   li
+        //-     a(href='#') Install the Library/SDK
+        //-   li
+        //-     a(href='#') Add your Keys
       section
-        h2 Requesting Credentials
-        ul
-          li
-            a(href='#')
-              span Calling the Method
-          li
-            a(href='#')
-              span Requesting specific crednetials
-          li
-            a(href='#')
-              span Enabling Push Notifications
-          li
-            a(href='#')
-              span Logging in via Desktop (web)
-          li
-            a(href='#')
-              span Custom QR Styling
-          li
-            a(href='#')
-              span Logging in via Mobile (web)
-          li
-            a(href='#')
-              span Logging in via Mobile (sdk)
+        //- h2 Requesting Credentials
+        //- ul
+        //-   li
+        //-     a(href='#') Calling the Method
+        //-   li
+        //-     a(href='#') Requesting specific crednetials
+        //-   li
+        //-     a(href='#') Enabling Push Notifications
+        //-   li
+        //-     a(href='#') Logging in via Desktop (web)
+        //-   li
+        //-     a(href='#') Custom QR Styling
+        //-   li
+        //-     a(href='#') Logging in via Mobile (web)
+        //-   li
+        //-     a(href='#') Logging in via Mobile (sdk)
       section
-        h2 Attesting Credentials
-        ul
-          li
-            a(href='#')
-              span Calling the Method
-          li
-            a(href='#')
-              span Attesting a credential
-          li
-            a(href='#')
-              span Setting an expiration date
-          li
-            a(href='#')
-              span Attesting multiple credentials
+        //- h2 Attesting Credentials
+        //- ul
+        //-   li
+        //-     a(href='#') Calling the Method
+        //-   li
+        //-     a(href='#') Attesting a credential
+        //-   li
+        //-     a(href='#') Setting an expiration date
+        //-   li
+        //-     a(href='#') Attesting multiple credentials
       section
-        h2 Signing Transactions
-        ul
-          li
-            a(href='#')
-              span Supply the contract ABI
-          li
-            a(href='#')
-              span Create the contract object
-          li
-            a(href='#')
-              span Call a method on the contract
-          li
-            a(href='#')
-              span Wait for mining to complete
+        //- h2 Signing Transactions
+        //- ul
+        //-   li
+        //-     a(href='#') Supply the contract ABI
+        //-   li
+        //-     a(href='#') Create the contract object
+        //-   li
+        //-     a(href='#') Call a method on the contract
+        //-   li
+        //-     a(href='#') Wait for mining to complete
     .content
-      section.guide
-        :markdown-it
-          # Getting Started
-
-          The interactive tutorials on this site require the use of the uPort mobile app.
-
-          If you don’t have the mobile app installed, [sign up for our alpha](http://uport.me/signup).
-
-          Once you have downloaded the mobile app, go ahead and create an app over at the [uPort App Manager](appmanager.uport.me).
-        hr
-        :markdown-it
-
-          ## User Guide - uport-connect
-
-          ### Install uport-connect
-
-          The first thing naturally is to go an download the library for use in your project.
-
-          `npm install --save uport-connect`
-        
-          alternatively you can (and should) use yarn
-
-          `yarn add uport-connect`
-
-          and then import the library like so...
-
-          ```js
-          import { Connect, SimpleSigner } from 'uport-connect'
-          ```
-
-          ### Setting the uPort object
-
-          Before making use of these features for yourself, we need to instantiate the uPort object with an identity.
-
-          Now grab the `Connect` function and feed in the App's name, id, and signing key.
-
-          The clientID is the public address of your app and the signer (wrapped with the SimpleSigner function) is the signing key of your app that you will help create JWT tokens. These bits of information are given to you after creating an application with the [uPort App Manager](appmanager.uport.me).
-
-          We should also export the `web3` object for signing transactions later.
-
-          > Make sure to replace **NAME_OF_DAPP** with the App's Name, **CLIENT_ID** with the public address of your App, and the **SIGNING KEY** with the private key of the App supplied by the App Manager.
-
-          ```js
-          const uport = new Connect('NAME_OF_DAPP', {
-            clientId: 'CLIENT_ID',
-            signer: SimpleSigner('SIGNING KEY')
-          })
-
-          const web3 = uport.getWeb3()
-          export { web3, uport }
-          ```
-
-          ### Connect with uPort
-
-          One of the most basic things you should do is allow your user to connect their uPort to your app.
-
-          **By default** the uport-connect library will fire a QR image inside of an injected global modal to help you get up an running quickly.
-
-          **This can be disabled** by intercepting the URI so you may use another library to customize the look and feel of the QR image.
-
-          You can request specific credentials by submitting an array of values in an array of the `requested` key of a passed object.
-
-          When a transaction is going to be signed, if the `notifications` flag is set to `true` **it will allow any future transaction signing to fire a prompt in the uPort mobile app.**
-
-          `uport.requestCredentials` documentation can be found [here](#requestCredentials).
-
-          > Once the user has scanned the displayed QR image, and has submitted their credentials, the promise should resolve with a Schema.org person JSON data payload. You can then handle this data however you desire in the then function.
-
-          ```js
-          // Basic usage with modal injection
-          uport.requestCredentials()
-               .then((credentials) => {
-                 // Do something after they have scanned in
-          })
-          ```
-
-          > Request specific credentials, enable notifications, and create a custom QR Code
-
-          ```js
-          uport.requestCredentials({
-            requested: ['name', 'phone', 'country'],
-            notifcations: true,
-            (uri) => {
-              // We have had success with the KJUA Library.
-              // https://larsjung.de/kjua/
-              const qr = kjua({
-                text: uri,
-                fill: '#000000',
-                size: 400,
-                back: 'rgba(255,255,255,1)'
-              })
-
-              // Create wrapping link for mobile touch
-              let aTag = document.createElement('a')
-              aTag.href = uri
-
-              // Nest QR in <a> and inject
-              aTag.appendChild(qr)
-              document.querySelector('#kqr').appendChild(aTag)
-            }
-            }).then((credentials) => {
-              // Do something after they have scanned
-          })
-          ```
-
-          ### Try Connecting Your uPort
-
-          Click the button below and scan the QR code with your uPort App.
-          This is how you will 'log in' into Web 3.0 applications
-
-          > The JSON Schema.org "Person" format you will see
-
-          ```js
-          {
-            "@context":"http://schema.org",
-            "@type":"Person",
-            "name":"Agent Smith",
-            "address":"23fga3r2hh87ddhq98dhas8dh101j9f449w0",
-            "network":"ropsten",
-            "publicKey":"0x04016751595cf2f1429367d6c83a826526g613b4f7574af55ded0364f0fb34600bceba9211e5864ae616d7e83b5e3c79f1c913b40c8d38c64952fef383fd3ad637",
-            "image":{
-              "@type":"ImageObject",
-              "name":"avatar",
-              "contentUrl":"/ipfs/QmeXP3C3S95zV9Wj9e2VTq9Z3CCCNoqksJrM5VQYJx2yM9"
-            }
-          }
-          ```
-
-          ### Signing Transactions
-
-
-
-          uPort comes pre-baked with a web3 instance that calls to [Infura](https://github.com/ethereumjs/testrpc) to make your life easy. All you need to do is grab our web3 object and instantiate a smart contract javascript object with a **provided ABI**.
-
-          An ABI (Application BINARY Interface) can be generated by compiling your smart contract with the [Remix](https://ethereum.github.io/browser-solidity/) Web IDE. Its on the "Contracts" tab down where it says `interface`. You can deploy this contract to the chain with the **Web3** deploy code just below that in your local Ethereum node console or with our build & deploy tool called [Truffle](http://truffleframework.com/).
-
-
-          ```js
-          function MyContractSetup () {
-            let MyContractABI = web3.eth.contract(PROVIDED_CONTRACT_ABI)
-            let MyContractObj = MyContractABI.at(DEPLOYED_CONTRACT_ADDRESS_LOCATION)
-            return MyContractObj
-          }
-          const MyContract = MyContractSetup()
-          ```
-
-
-          In a typical application, upon load, there is data usually being requested by a server to get the current state of the user's data. We must do the same here, but rather than reading a SQL database, we are instead reading the blockchain. At ConsenSys we use our Web 3.0 infrastructure stack called [Infura](https://github.com/uport-project/demo/blob/master/infura.io) to make the amount of possible calls scalable. You could otherwise have an Ethereum node local on your machine with a downloaded copy of the blockchain you could query. Calls can be simulated without having a copy of the blockchain though using a local [TestRPC](https://github.com/ethereumjs/testrpc) node, but thats out of scope for this explainer.
-
-
-          ```js
-          // Basic call to get some return data, no transaction signing
-          MyContract.someMethod.call(METHOD_INPUT_DATA, (error, response) => {
-            if (error) { throw error }
-            console.log(response)
-          })
-          ```
-
-
-          When a transaction is signed and submitted to a smart contract, the Ethereum network takes time to mine (confirm) the transaction (typically 15 seconds). During this time we will need to poll the Web3 node (aka provider and in our case, its Infura), to see if its been mined. We will keep checking it with a function called `waitForMined` and have a pending callback and a success callback to manage state.
-
-
-          ```js
-          // Transaction signing (that will fire a QR to scan or card in the mobile app)
-          MyContract.someMethod(METHOD_INPUT_DATA, (error, txHash) => {
-            if (error) { throw error }
-              waitForMined(txHash, { blockNumber: null },
-              function pendingCB () {
-                // Signal to the user you're still waiting
-                // for a block confirmation
-              },
-              function successCB (data) {
-                // Great Success!
-                // Likely you'll call some eventPublisherMethod(txHash, data)
-              }
-            )
-          })
-
-          // Callback handler for whether it was mined or not
-          const waitForMined = (txHash, response, pendingCB, successCB) => {
-            if (response.blockNumber) {
-              successCB()
-            } else {
-              pendingCB()
-                pollingLoop(txHash, response, pendingCB, successCB)
-            }
-          }
-
-          // Recursive polling to do continuous checks for when the transaction was mined
-          const pollingLoop = (txHash, response, pendingCB, successCB) => {
-            setTimeout(function () {
-              web3.eth.getTransaction(txHash, (error, response) => {
-                if (error) { throw error }
-                  if (response === null) {
-                    response = { blockNumber: null }
-                  } // Some ETH nodes do not return pending tx
-                  waitForMined(txHash, response, pendingCB, successCB)
-              })
-            }, 1000) // check again in one sec.
-          }
-          ```
-
-          ### Attesting Credentials
-
-          One of the core needs of Web 3.0 is to build trust in a self-soverign world. We establish facts which are not mathmatically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the `attestCredentials` function.
-
-          **NOTE:** Currently only one credential can be pushed at a time. We are working to fix this soon.
-
-          ```js
-          uport.attestCredentials({
-            sub: 'THE_RECEIVING_UPORT_ID',
-            claim: { CUSTOM_PROPERTY: PROPERTY_VALUE },
-            exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000,  // Optional expiration
-          })
-          ```
-
-          ### Congratulations
-
-          You have now have good grasp about how to use uPort and how to manage the user experience of Web 3.0 applications. Welcome!
+      .guide
+        section
+          :markdown-it
+            # Getting Started
+          
+            ## Download the Mobile App
+          
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          
+            ## Create your Identity
+          
+            ```js
+            const uport = new Connect('NAME_OF_DAPP', {
+              clientId: 'CLIENT_ID',
+              signer: SimpleSigner('SIGNING KEY')
+            })
+          
+            const web3 = uport.getWeb3()
+            export { web3, uport }
+            ```
+            ## Register your App
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            ## Install the Library/SDK
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            ## Add your Keys
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        section
+          :markdown-it
+            # Requesting Credentials
+            ## Calling the Method
+            ## Requesting specific crednetials
+            ## Enabling Push Notifications
+            ## Logging in via Desktop (web)
+            ## Custom QR Styling
+            ## Logging in via Mobile (web)
+            ## Logging in via Mobile (sdk)
+        section
+          :markdown-it
+            # Attesting Credentials
+            ## Calling the Method
+            ## Attesting a credential
+            ## Setting an expiration date
+            ## Attesting multiple credentials
+        section
+          :markdown-it
+            # Signing Transactions
+            ## Supply the contract ABI
+            ## Create the contract object
+            ## Call a method on the contract
+            ## Wait for mining to complete
+        //- :markdown-it
+        //-   # Getting Started
+        //- 
+        //-   The interactive tutorials on this site require the use of the uPort mobile app.
+        //- 
+        //-   If you don’t have the mobile app installed, [sign up for our alpha](http://uport.me/signup).
+        //- 
+        //-   Once you have downloaded the mobile app, go ahead and create an app over at the [uPort App Manager](appmanager.uport.me).
+        //- hr
+        //- :markdown-it
+        //- 
+        //-   ## User Guide - uport-connect
+        //- 
+        //-   ### Install uport-connect
+        //- 
+        //-   The first thing naturally is to go an download the library for use in your project.
+        //- 
+        //-   `npm install --save uport-connect`
+        //- 
+        //-   alternatively you can (and should) use yarn
+        //- 
+        //-   `yarn add uport-connect`
+        //- 
+        //-   and then import the library like so...
+        //- 
+        //-   ```js
+        //-   import { Connect, SimpleSigner } from 'uport-connect'
+        //-   ```
+        //- 
+        //-   ### Setting the uPort object
+        //- 
+        //-   Before making use of these features for yourself, we need to instantiate the uPort object with an identity.
+        //- 
+        //-   Now grab the `Connect` function and feed in the App's name, id, and signing key.
+        //- 
+        //-   The clientID is the public address of your app and the signer (wrapped with the SimpleSigner function) is the signing key of your app that you will help create JWT tokens. These bits of information are given to you after creating an application with the [uPort App Manager](appmanager.uport.me).
+        //- 
+        //-   We should also export the `web3` object for signing transactions later.
+        //- 
+        //-   > Make sure to replace **NAME_OF_DAPP** with the App's Name, **CLIENT_ID** with the public address of your App, and the **SIGNING KEY** with the private key of the App supplied by the App Manager.
+        //- 
+        //-   ```js
+        //-   const uport = new Connect('NAME_OF_DAPP', {
+        //-     clientId: 'CLIENT_ID',
+        //-     signer: SimpleSigner('SIGNING KEY')
+        //-   })
+        //- 
+        //-   const web3 = uport.getWeb3()
+        //-   export { web3, uport }
+        //-   ```
+        //- 
+        //-   ### Connect with uPort
+        //- 
+        //-   One of the most basic things you should do is allow your user to connect their uPort to your app.
+        //- 
+        //-   **By default** the uport-connect library will fire a QR image inside of an injected global modal to help you get up an running quickly.
+        //- 
+        //-   **This can be disabled** by intercepting the URI so you may use another library to customize the look and feel of the QR image.
+        //- 
+        //-   You can request specific credentials by submitting an array of values in an array of the `requested` key of a passed object.
+        //- 
+        //-   When a transaction is going to be signed, if the `notifications` flag is set to `true` **it will allow any future transaction signing to fire a prompt in the uPort mobile app.**
+        //- 
+        //-   `uport.requestCredentials` documentation can be found [here](#requestCredentials).
+        //- 
+        //-   > Once the user has scanned the displayed QR image, and has submitted their credentials, the promise should resolve with a Schema.org person JSON data payload. You can then handle this data however you desire in the then function.
+        //- 
+        //-   ```js
+        //-   // Basic usage with modal injection
+        //-   uport.requestCredentials()
+        //-        .then((credentials) => {
+        //-          // Do something after they have scanned in
+        //-   })
+        //-   ```
+        //- 
+        //-   > Request specific credentials, enable notifications, and create a custom QR Code
+        //- 
+        //-   ```js
+        //-   uport.requestCredentials({
+        //-     requested: ['name', 'phone', 'country'],
+        //-     notifcations: true,
+        //-     (uri) => {
+        //-       // We have had success with the KJUA Library.
+        //-       // https://larsjung.de/kjua/
+        //-       const qr = kjua({
+        //-         text: uri,
+        //-         fill: '#000000',
+        //-         size: 400,
+        //-         back: 'rgba(255,255,255,1)'
+        //-       })
+        //- 
+        //-       // Create wrapping link for mobile touch
+        //-       let aTag = document.createElement('a')
+        //-       aTag.href = uri
+        //- 
+        //-       // Nest QR in <a> and inject
+        //-       aTag.appendChild(qr)
+        //-       document.querySelector('#kqr').appendChild(aTag)
+        //-     }
+        //-     }).then((credentials) => {
+        //-       // Do something after they have scanned
+        //-   })
+        //-   ```
+        //- 
+        //-   ### Try Connecting Your uPort
+        //- 
+        //-   Click the button below and scan the QR code with your uPort App.
+        //-   This is how you will 'log in' into Web 3.0 applications
+        //- 
+        //-   > The JSON Schema.org "Person" format you will see
+        //- 
+        //-   ```js
+        //-   {
+        //-     "@context":"http://schema.org",
+        //-     "@type":"Person",
+        //-     "name":"Agent Smith",
+        //-     "address":"23fga3r2hh87ddhq98dhas8dh101j9f449w0",
+        //-     "network":"ropsten",
+        //-     "publicKey":"0x04016751595cf2f1429367d6c83a826526g613b4f7574af55ded0364f0fb34600bceba9211e5864ae616d7e83b5e3c79f1c913b40c8d38c64952fef383fd3ad637",
+        //-     "image":{
+        //-       "@type":"ImageObject",
+        //-       "name":"avatar",
+        //-       "contentUrl":"/ipfs/QmeXP3C3S95zV9Wj9e2VTq9Z3CCCNoqksJrM5VQYJx2yM9"
+        //-     }
+        //-   }
+        //-   ```
+        //- 
+        //-   ### Signing Transactions
+        //- 
+        //- 
+        //- 
+        //-   uPort comes pre-baked with a web3 instance that calls to [Infura](https://github.com/ethereumjs/testrpc) to make your life easy. All you need to do is grab our web3 object and instantiate a smart contract javascript object with a **provided ABI**.
+        //- 
+        //-   An ABI (Application BINARY Interface) can be generated by compiling your smart contract with the [Remix](https://ethereum.github.io/browser-solidity/) Web IDE. Its on the "Contracts" tab down where it says `interface`. You can deploy this contract to the chain with the **Web3** deploy code just below that in your local Ethereum node console or with our build & deploy tool called [Truffle](http://truffleframework.com/).
+        //- 
+        //- 
+        //-   ```js
+        //-   function MyContractSetup () {
+        //-     let MyContractABI = web3.eth.contract(PROVIDED_CONTRACT_ABI)
+        //-     let MyContractObj = MyContractABI.at(DEPLOYED_CONTRACT_ADDRESS_LOCATION)
+        //-     return MyContractObj
+        //-   }
+        //-   const MyContract = MyContractSetup()
+        //-   ```
+        //- 
+        //- 
+        //-   In a typical application, upon load, there is data usually being requested by a server to get the current state of the user's data. We must do the same here, but rather than reading a SQL database, we are instead reading the blockchain. At ConsenSys we use our Web 3.0 infrastructure stack called [Infura](https://github.com/uport-project/demo/blob/master/infura.io) to make the amount of possible calls scalable. You could otherwise have an Ethereum node local on your machine with a downloaded copy of the blockchain you could query. Calls can be simulated without having a copy of the blockchain though using a local [TestRPC](https://github.com/ethereumjs/testrpc) node, but thats out of scope for this explainer.
+        //- 
+        //- 
+        //-   ```js
+        //-   // Basic call to get some return data, no transaction signing
+        //-   MyContract.someMethod.call(METHOD_INPUT_DATA, (error, response) => {
+        //-     if (error) { throw error }
+        //-     console.log(response)
+        //-   })
+        //-   ```
+        //- 
+        //- 
+        //-   When a transaction is signed and submitted to a smart contract, the Ethereum network takes time to mine (confirm) the transaction (typically 15 seconds). During this time we will need to poll the Web3 node (aka provider and in our case, its Infura), to see if its been mined. We will keep checking it with a function called `waitForMined` and have a pending callback and a success callback to manage state.
+        //- 
+        //- 
+        //-   ```js
+        //-   // Transaction signing (that will fire a QR to scan or card in the mobile app)
+        //-   MyContract.someMethod(METHOD_INPUT_DATA, (error, txHash) => {
+        //-     if (error) { throw error }
+        //-       waitForMined(txHash, { blockNumber: null },
+        //-       function pendingCB () {
+        //-         // Signal to the user you're still waiting
+        //-         // for a block confirmation
+        //-       },
+        //-       function successCB (data) {
+        //-         // Great Success!
+        //-         // Likely you'll call some eventPublisherMethod(txHash, data)
+        //-       }
+        //-     )
+        //-   })
+        //- 
+        //-   // Callback handler for whether it was mined or not
+        //-   const waitForMined = (txHash, response, pendingCB, successCB) => {
+        //-     if (response.blockNumber) {
+        //-       successCB()
+        //-     } else {
+        //-       pendingCB()
+        //-         pollingLoop(txHash, response, pendingCB, successCB)
+        //-     }
+        //-   }
+        //- 
+        //-   // Recursive polling to do continuous checks for when the transaction was mined
+        //-   const pollingLoop = (txHash, response, pendingCB, successCB) => {
+        //-     setTimeout(function () {
+        //-       web3.eth.getTransaction(txHash, (error, response) => {
+        //-         if (error) { throw error }
+        //-           if (response === null) {
+        //-             response = { blockNumber: null }
+        //-           } // Some ETH nodes do not return pending tx
+        //-           waitForMined(txHash, response, pendingCB, successCB)
+        //-       })
+        //-     }, 1000) // check again in one sec.
+        //-   }
+        //-   ```
+        //- 
+        //-   ### Attesting Credentials
+        //- 
+        //-   One of the core needs of Web 3.0 is to build trust in a self-soverign world. We establish facts which are not mathmatically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the `attestCredentials` function.
+        //- 
+        //-   **NOTE:** Currently only one credential can be pushed at a time. We are working to fix this soon.
+        //- 
+        //-   ```js
+        //-   uport.attestCredentials({
+        //-     sub: 'THE_RECEIVING_UPORT_ID',
+        //-     claim: { CUSTOM_PROPERTY: PROPERTY_VALUE },
+        //-     exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000,  // Optional expiration
+        //-   })
+        //-   ```
+        //- 
+        //-   ### Congratulations
+        //- 
+        //-   You have now have good grasp about how to use uPort and how to manage the user experience of Web 3.0 applications. Welcome!
       section.guide
       section.guide
