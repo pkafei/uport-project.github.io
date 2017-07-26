@@ -13,7 +13,7 @@
 
             Web 3.0 and decentralized applications _require a fundamental rethinking_ of the moving parts of the web so it is important to read everything or you may miss some important elements around the design decisions of what you are working with.
 
-            **Also please note**: these libraries are in progress and are subject to change. `Gitter` on the other tab is a great place for the community to congregate and help each other. Lets get started.
+            **Also please note**: these libraries are in progress and are subject to change. Gitter is a great place for the community to congregate and help each other. Lets get started.
 
             ## Download the Mobile App
 
@@ -41,10 +41,13 @@
 
             ## Install the Library/SDK
 
-            We now have the mobile uPort app and and registered application. Let's install the library in our project.
+            We now have the mobile uPort app and a registered application. Let's install the library in our project.
 
-            __uPort and its depending libraries are dependent on the Node.Js ecosystem.__
-            __Native (iOS & Android) Application libraries are in the works__
+            **Please make sure you have Node.Js and NPM installed**
+
+            uPort and its depending libraries are dependent on the Node.Js ecosystem.
+
+            _Native (iOS & Android) Application libraries are in the works._
 
             Go to your Terminal and `cd` to your project folder.
 
@@ -54,9 +57,9 @@
 
             ## Add your Keys
 
-            Now that we have the needed dependency, lets go grab our keys from the app mananger.
+            Now that we have the needed dependency, lets go grab our keys from the app manager.
 
-            __You may copy the code with the injected keys in the accordian at the bottom of your created app's page to help you get started quickly or you can follow the directions below.__
+            **You may copy the code with the injected keys in the accordion at the bottom of your created app's page to help you get started quickly or you can follow the directions below.**
 
             We need to instantiate the uPort object with an app's identity.
 
@@ -81,9 +84,9 @@
           :markdown-it
             # Requesting Credentials
 
-              The first and most basic step you should take is to allow your user to connect their uPort to your app. The `requestCredentials` method is how you accomplish this, similiar in concept to logging in , except there is no server session for you to manage. All you need to do to "connect" is to disclose the requested credentials you have in your uport identity.
+              The first and most basic step you should take is to allow your user to connect their uPort to your app. The `requestCredentials` method is how you accomplish this, similar in concept to logging in , except there is no server session for you to manage. All you need to do to "connect" is to disclose the requested credentials you have in your uPort identity.
 
-            ## Calling the Method
+            ## Calling the request method
 
             **By default** the `uport-connect` library will fire a QR image inside of an injected global modal to help you get up and running quickly.
 
@@ -99,7 +102,7 @@
             })
             ```
 
-            The expected payload should look like
+            The expected payload should look like:
 
             ```js
             {
@@ -117,7 +120,7 @@
             }
             ```
 
-            ## Requesting specific crednetials
+            ## Requesting specific credentials
 
             You can request specific credentials by submitting an array of values in an array of the `requested` key of a passed object.
 
@@ -184,11 +187,11 @@
           :markdown-it
             # Attesting Credentials
 
-            One of the core needs of Web 3.0 is to build trust in a self-soverign world. We establish facts which are not mathematically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the `uport.attestCredentials` function.
+            One of the core needs of Web 3.0 is to build trust in a self-sovereign world. We establish facts which are not mathematically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the `uport.attestCredentials` function.
 
             **NOTE:** Currently only one credential can be pushed at a time. We are working to fix this soon.
 
-            ## Calling the Method
+            ## Calling the attest method
 
              ```js
              uport.attestCredentials({
