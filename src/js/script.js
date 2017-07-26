@@ -13,14 +13,6 @@ const $$ = (item) => document.querySelectorAll(item)
 const sanitizeHash = (text) =>
   text.toLowerCase().split(' ').join('-')
 
-const wrap = (toWrap, wrapper) => {
-  wrapper = wrapper || document.createElement('div');
-  toWrap.nextSibling
-    ? toWrap.parentNode.insertBefore(wrapper, toWrap.nextSibling)
-    : toWrap.parentNode.appendChild(wrapper)
-  return wrapper.appendChild(toWrap)
-};
-
 // TODO: Logo / Sign In
   // const developersNav =
   //   $$('a.logo-link')[0]

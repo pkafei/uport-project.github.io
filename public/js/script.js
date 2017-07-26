@@ -24,12 +24,6 @@ var sanitizeHash = function sanitizeHash(text) {
   return text.toLowerCase().split(' ').join('-');
 };
 
-var wrap = function wrap(toWrap, wrapper) {
-  wrapper = wrapper || document.createElement('div');
-  toWrap.nextSibling ? toWrap.parentNode.insertBefore(wrapper, toWrap.nextSibling) : toWrap.parentNode.appendChild(wrapper);
-  return wrapper.appendChild(toWrap);
-};
-
 // TODO: Logo / Sign In
 // const developersNav =
 //   $$('a.logo-link')[0]

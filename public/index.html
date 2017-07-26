@@ -1,39 +1,195 @@
-<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link rel="stylesheet" href="css/style.css"></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#tools"><span>Tools</span></a></li><li class="nav-item"><a class="nav-link" href="#myapps"><span>My Apps</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div class="user-area"><a class="sign-in-link" href="#"><span>Sign In</span></a><div class="user"><img class="user-pic" src="#"><div class="user-menu"><ul><li class="user"><b class="user-name">Jeff Scott Ward</b><span class="user-addr">0x9239812437981247</span></li><li class="log-out"><a href="#">Log Out</a></li></ul></div></div></div></div></div></header><!-- default to .main.______ page--><main class="main apidocs"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><img class="step-img" src="#"><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><img class="step-img" src="#"><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><img class="step-img" src="#"><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><img src="#"><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#"><span>Getting Started</span></a></li><li><a href="#"><span>Requesting Credentials</span></a></li><li><a href="#"><span>Attesting Credentials</span></a></li><li><a href="#"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><img src="#"><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#"><span>uport-connect</span></a></li><li><a href="#"><span>uport-js</span></a></li><li><a href="#"><span>uport-lite</span></a></li><li><a href="#"><span>uport-registry</span></a></li></ul></div></li><li class="tools"><div class="shortcut-wrap"><img src="#"><label>Tools</label></div><div class="list-wrap"><ul><li><a href="http://truffleframework.com"><span>Truffle</span></a></li><li><a href="http://metamask.io"><span>MetaMask</span></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js"><span>Remix</span></a></li><li><a href="https://github.com/ethereum/mist/releases"><span>Mist</span></a></li></ul></div></li></ul></div></div><div class="guides"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="guide"><section><h1>Getting Started</h1>
+<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link rel="stylesheet" href="css/style.css"></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#tools"><span>Tools</span></a></li><li class="nav-item"><a class="nav-link" href="#myapps"><span>My Apps</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div class="user-area"><a class="sign-in-link" href="#"><span>Sign In</span></a><div class="user"><img class="user-pic" src="#"><div class="user-menu"><ul><li class="user"><b class="user-name">Jeff Scott Ward</b><span class="user-addr">0x9239812437981247</span></li><li class="log-out"><a href="#">Log Out</a></li></ul></div></div></div></div></div></header><!-- default to .main.______ page--><main class="main guides"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><img class="step-img" src="#"><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><img class="step-img" src="#"><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><img class="step-img" src="#"><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><img src="#"><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#"><span>Getting Started</span></a></li><li><a href="#"><span>Requesting Credentials</span></a></li><li><a href="#"><span>Attesting Credentials</span></a></li><li><a href="#"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><img src="#"><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#"><span>uport-connect</span></a></li><li><a href="#"><span>uport-js</span></a></li><li><a href="#"><span>uport-lite</span></a></li><li><a href="#"><span>uport-registry</span></a></li></ul></div></li><li class="tools"><div class="shortcut-wrap"><img src="#"><label>Tools</label></div><div class="list-wrap"><ul><li><a href="http://truffleframework.com"><span>Truffle</span></a></li><li><a href="http://metamask.io"><span>MetaMask</span></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js"><span>Remix</span></a></li><li><a href="https://github.com/ethereum/mist/releases"><span>Mist</span></a></li></ul></div></li></ul></div></div><div class="guides"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="guide"><section><h1>Getting Started</h1>
+<p>Welcome to the uPort usage guide!</p>
+<p>Here we will walk you through all the necessary steps to get up and running with your first dapp.</p>
+<p>Web 3.0 and decentralized applications <em>require a fundamental rethinking</em> of the moving parts of the web so it is important to read everything or you may miss some important elements around the design decisions of what you are working with.</p>
+<p><strong>Also please note</strong>: these libraries are in progress and are subject to change. <code>Gitter</code> on the other tab is a great place for the community to congregate and help each other. Lets get started.</p>
 <h2>Download the Mobile App</h2>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<h2>Create your Identity</h2>
+<p>Firstly, we will download the uPort mobile app.</p>
+<p>The mobile app is where your <a href="https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet/">ECDSA private keys</a> are held (inside the secure enclave that's unlocked with your fingerprint). These keys are what controls the administrative layer between your device and the blockchain.</p>
+<p>You will also have locally stored data in the app that is relevant to you such as your contacts and verified credentials. Essentially, the phone is an extension of you, and uPort is your internet native passport to the secure, decentralized web.</p>
+<p>You can download the mobile app with one of the links below.</p>
+<p><a href="http://itunes.apple.com">uPort iOS</a> | <a href="http://play.google.com">uPort iOS</a></p>
+<p>Once you have downloaded the app, go ahead and create an identity. This identity will be resident on the <code>RINKEBY</code> Ethereum test network. You can create more identities on the same netowrk or on other Ethereum networks (<code>ROPSTEN</code> and <code>KOVAN</code>) in the settings menu so you can test counterparty interactions on the <strong>same network</strong>.</p>
+<h2>Register your App</h2>
+<p>Next we shall regsiter an application on the blockchain.</p>
+<p>When a users interacts with an app, they will desire to see relevant information, a picture, and any other helpful indicators on their transacation cards that this is the correct endpoint they wish to interact with. This registration process will create an identity for your app so that this becomes possible, and for your frontend to know where to listen to changes on the blockchain.</p>
+<p>Let's go create an app over at the <a href="appmanager.uport.me">uPort App Manager</a>.</p>
+<p><strong>Make sure to save the signing key somewhere secure! This will not be stored in browser for you for security reasons</strong>.</p>
+<h2>Install the Library/SDK</h2>
+<p>We now have the mobile uPort app and and registered application. Let's install the library in our project.</p>
+<p><strong>uPort and its depending libraries are dependent on the Node.Js ecosystem.</strong>
+<strong>Native (iOS &amp; Android) Application libraries are in the works</strong></p>
+<p>Go to your Terminal and <code>cd</code> to your project folder.</p>
+<pre><code class="language-bash">npm install --save uport-connect
+</code></pre>
+<h2>Add your Keys</h2>
+<p>Now that we have the needed dependency, lets go grab our keys from the app mananger.</p>
+<p><strong>You may copy the code with the injected keys in the accordian at the bottom of your created app's page to help you get started quickly or you can follow the directions below.</strong></p>
+<p>We need to instantiate the uPort object with an app's identity.</p>
+<p>Lets create an object from the <code>Connect</code> function and feed in the App's name, id, and signing key.</p>
 <pre><code class="language-js">const uport = new Connect('NAME_OF_DAPP', {
   clientId: 'CLIENT_ID',
   signer: SimpleSigner('SIGNING KEY')
 })
-
-const web3 = uport.getWeb3()
+</code></pre>
+<p>The clientID is the public address of your app and the signer (wrapped with the SimpleSigner function) is the signing key of your app that you will help create JWT tokens. These bits of information are given to you after registering an application.</p>
+<p><strong>We should also export the <code>web3</code> object from the resulting uport object for signing transactions later.</strong></p>
+<pre><code class="language-js">const web3 = uport.getWeb3()
 export { web3, uport }
 </code></pre>
-<h2>Register your App</h2>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<h2>Install the Library/SDK</h2>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<h2>Add your Keys</h2>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 </section><section><h1>Requesting Credentials</h1>
+<p>The first and most basic step you should take is to allow your user to connect their uPort to your app. The <code>requestCredentials</code> method is how you accomplish this, similiar in concept to logging in , except there is no server session for you to manage. All you need to do to &quot;connect&quot; is to disclose the requested credentials you have in your uport identity.</p>
 <h2>Calling the Method</h2>
+<p><strong>By default</strong> the <code>uport-connect</code> library will fire a QR image inside of an injected global modal to help you get up and running quickly.</p>
+<p><strong>This can be disabled</strong> by intercepting the URI so you may use another library to customize the look and feel of the QR image. See <a href="#custom-qr-styling">Custom QR Styling</a></p>
+<p>Once the user has scanned the displayed QR image, and has submitted their credentials, the promise should resolve with a Schema.org person JSON data payload. You can then handle this data however you desire in the then function.</p>
+<pre><code class="language-js">// Basic usage with modal injection
+uport.requestCredentials()
+     .then((credentials) =&gt; {
+       // Do something after they have disclosed credentials
+})
+</code></pre>
+<p>The expected payload should look like</p>
+<pre><code class="language-js">{
+  &quot;@context&quot;:&quot;http://schema.org&quot;,
+  &quot;@type&quot;:&quot;Person&quot;,
+  &quot;name&quot;:&quot;Agent Smith&quot;,
+  &quot;address&quot;:&quot;23fga3r2hh87ddhq98dhas8dh101j9f449w0&quot;,
+  &quot;network&quot;:&quot;ropsten&quot;,
+  &quot;publicKey&quot;:&quot;0x04016751595cf2f1429367d6c83a826526g613b4f7574af55ded0364f0fb34600bceba9211e5864ae616d7e83b5e3c79f1c913b40c8d38c64952fef383fd3ad637&quot;,
+  &quot;image&quot;:{
+    &quot;@type&quot;:&quot;ImageObject&quot;,
+    &quot;name&quot;:&quot;avatar&quot;,
+    &quot;contentUrl&quot;:&quot;/ipfs/QmeXP3C3S95zV9Wj9e2VTq9Z3CCCNoqksJrM5VQYJx2yM9&quot;
+  }
+}
+</code></pre>
 <h2>Requesting specific crednetials</h2>
+<p>You can request specific credentials by submitting an array of values in an array of the <code>requested</code> key of a passed object.</p>
+<pre><code class="language-js">uport.requestCredentials({
+  requested: ['name', 'phone', 'country'],
+  }).then((credentials) =&gt; {
+    // Do something after they have disclosed credentials
+})
+</code></pre>
 <h2>Enabling Push Notifications</h2>
-<h2>Logging in via Desktop (web)</h2>
-<h2>Custom QR Styling</h2>
-<h2>Logging in via Mobile (web)</h2>
+<p>When a transaction is going to be signed, if the <code>notifications</code> flag is set to <code>true</code> <strong>it will allow any future transaction signing to fire a prompt in the uPort mobile app.</strong> For UX considerations, we encourage developers to use this, otherwise your users will have to scan a QR code per each interaction.</p>
+<pre><code class="language-js">uport.requestCredentials({
+  requested: ['name', 'phone', 'country'],
+  notifcations: true
+  }).then((credentials) =&gt; {
+    // Do something after they have disclosed credentials
+})
+</code></pre>
+<h2>Custom QR Styling (web)</h2>
+<p>We have had success with the <a href="https://larsjung.de/kjua/">KJUA QR Library</a>. It's also recommended you wrap the QR or create a seperate button for mobile.</p>
+<pre><code class="language-js">uport.requestCredentials({
+  requested: ['name', 'phone', 'country'],
+  notifcations: true,
+  (uri) =&gt; {
+
+    const qr = kjua({
+      text: uri,
+      fill: '#000000',
+      size: 400,
+      back: 'rgba(255,255,255,1)'
+    })
+
+    // Create wrapping link for mobile touch
+    let aTag = document.createElement('a')
+    aTag.href = uri
+
+    // Nest QR in &lt;a&gt; and inject
+    aTag.appendChild(qr)
+    document.querySelector('#kqr').appendChild(aTag)
+  }
+  }).then((credentials) =&gt; {
+    // Do something after they have disclosed credentials
+})
+</code></pre>
 <h2>Logging in via Mobile (sdk)</h2>
-</section><section><h1>Attesting Credentials</h1>
+<p><strong>Under construction</strong></p>
+<h2>Playground</h2>
+<iframe style="width:100%; max-width:95%; height: 800px;" src="https://www.webpackbin.com/bins/-Kq-LKec34MlPK9_UMVr"></iframe></section><section><h1>Attesting Credentials</h1>
+<p>One of the core needs of Web 3.0 is to build trust in a self-soverign world. We establish facts which are not mathematically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the <code>uport.attestCredentials</code> function.</p>
+<p><strong>NOTE:</strong> Currently only one credential can be pushed at a time. We are working to fix this soon.</p>
 <h2>Calling the Method</h2>
-<h2>Attesting a credential</h2>
+<pre><code class="language-js">uport.attestCredentials({
+  sub: 'THE_RECEIVING_UPORT_ID',
+  claim: { CUSTOM_PROPERTY: PROPERTY_VALUE },
+})
+</code></pre>
 <h2>Setting an expiration date</h2>
+<pre><code class="language-js">uport.attestCredentials({
+  sub: 'THE_RECEIVING_UPORT_ID',
+  claim: { CUSTOM_PROPERTY: PROPERTY_VALUE },
+  exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000,  // Optional expiration
+})
+</code></pre>
 <h2>Attesting multiple credentials</h2>
+<p><strong>Under construction</strong></p>
 </section><section><h1>Signing Transactions</h1>
+<p>uPort comes pre-baked with a web3 instance that calls to <a href="https://github.com/ethereumjs/testrpc">Infura</a>, our p2p swarm of nodes we have built to make your life easy. All you need to do is grab our <code>web3</code> object and instantiate a smart contract javascript object with a <strong>provided ABI</strong>.</p>
 <h2>Supply the contract ABI</h2>
+<p>An ABI (Application BINARY Interface) can be generated by compiling your smart contract with the <a href="https://ethereum.github.io/browser-solidity/">Remix</a> Web IDE. Its on the &quot;Contracts&quot; tab down where it says <code>interface</code>. You can deploy this contract to the chain with the <strong>Web3</strong> deploy code just below that in your local Ethereum node console or with our build &amp; deploy tool called <a href="http://truffleframework.com/">Truffle</a>.</p>
+<pre><code class="language-js">function MyContractSetup () {
+  let MyContractABI = web3.eth.contract(PROVIDED_CONTRACT_ABI)
+  let MyContractObj = MyContractABI.at(DEPLOYED_CONTRACT_ADDRESS_LOCATION)
+  return MyContractObj
+}
+const MyContract = MyContractSetup()
+</code></pre>
 <h2>Create the contract object</h2>
+<p>In a typical application, upon load, there is data usually being requested by a server to get the current state of the user's data. We must do the same here, but rather than reading a SQL database, we are instead reading the blockchain.</p>
+<p>At ConsenSys we use our Web 3.0 infrastructure stack called <a href="https://github.com/uport-project/demo/blob/master/infura.io">Infura</a> to make the amount of possible calls scalable. You could otherwise have an Ethereum node local on your machine with a downloaded copy of the blockchain you could query. Calls can be simulated without having a copy of the blockchain though using a local <a href="https://github.com/ethereumjs/testrpc">TestRPC</a> node, but thats out of scope for this guide.</p>
+<pre><code class="language-js">// Basic call to get some return data, no transaction signing
+MyContract.someMethod.call(METHOD_INPUT_DATA, (error, response) =&gt; {
+  if (error) { throw error }
+  console.log(response)
+})
+</code></pre>
 <h2>Call a method on the contract</h2>
+<p>Calling a method on a smart contract is essentially no different than that of a javascript function, except that solidity contracts cannot handle JSON objects, only strings and numbers.</p>
+<pre><code class="language-js">// Transaction signing (that will fire a QR to scan or card in the mobile app)
+MyContract.someMethod(METHOD_INPUT_DATA, (error, txHash) =&gt; {
+  if (error) { throw error }
+    waitForMined(txHash, { blockNumber: null }, // see next area
+    function pendingCB () {
+      // Signal to the user you're still waiting
+      // for a block confirmation
+    },
+    function successCB (data) {
+      // Great Success!
+      // Likely you'll call some eventPublisherMethod(txHash, data)
+    }
+  )
+})
+</code></pre>
 <h2>Wait for mining to complete</h2>
+<p>When a transaction is signed and submitted to a smart contract, the Ethereum network takes time to mine (confirm) the transaction (typically 15 seconds). During this time we will need to poll the Web3 node (aka provider and in our case, its Infura), to see if its been mined. We will keep checking it with a function called <code>waitForMined</code> and have a pending callback and a success callback to manage state.</p>
+<pre><code class="language-js">// Callback handler for whether it was mined or not
+const waitForMined = (txHash, response, pendingCB, successCB) =&gt; {
+  if (response.blockNumber) {
+    successCB()
+  } else {
+    pendingCB()
+      pollingLoop(txHash, response, pendingCB, successCB)
+  }
+}
+
+// Recursive polling to do continuous checks for when the transaction was mined
+const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
+  setTimeout(function () {
+    web3.eth.getTransaction(txHash, (error, response) =&gt; {
+      if (error) { throw error }
+        if (response === null) {
+          response = { blockNumber: null }
+        } // Some ETH nodes do not return pending tx
+        waitForMined(txHash, response, pendingCB, successCB)
+    })
+  }, 1000) // check again in one sec.
+}
+</code></pre>
 </section></div><section class="guide"></section><section class="guide"></section></div></div></div><div class="apidocs"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="lib" id="uport-connect"><section><h1 class="lib-header">uport-connect</h1><div class="lib-doc"><h2>Classes</h2>
 <dl>
 <dt><a href="#Connect">Connect</a> ⇐ <code><a href="#ConnectCore">ConnectCore</a></code></dt>
