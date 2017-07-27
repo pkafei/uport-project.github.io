@@ -475,7 +475,7 @@ uport.requestCredentials()
 <h2>Logging in via Mobile (sdk)</h2>
 <p><strong>Under construction</strong></p>
 <h2>Playground</h2>
-<iframe style="width:100%; max-width:95%; height: 800px;" src="https://www.webpackbin.com/bins/-Kq-LKec34MlPK9_UMVr"></iframe></section><section><h1>Attesting Credentials</h1>
+<div class="iframeInject" id="rcIframeInject"></div></section><section><h1>Attesting Credentials</h1>
 <p>One of the core needs of Web 3.0 is to build trust in a self-sovereign world. We establish facts which are not mathematically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the <code>uport.attestCredentials</code> function.</p>
 <p><strong>NOTE:</strong> Currently only one credential can be pushed at a time. We are working to fix this soon.</p>
 <h2>Calling the attest method</h2>
@@ -559,15 +559,11 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
 </section></div></div></div><style>.guide {
   background: white;
   padding: 1rem; }
-  .guide section {
-    border-bottom: 1px solid #333; }
-    .guide section > a {
-      display: block; }
-    .guide section:nth-child(2) h1, .guide section:nth-child(2) ~ h1 {
-      margin-top: 2rem; }
+  .guide .iframeinject {
+    margin-bottom: 2rem; }
   .guide h1 {
     font-size: 2rem;
-    margin-bottom: 1.5rem; }
+    margin: 1.5rem 0; }
   .guide h1 ~ *:not(h1) {
     margin-left: 2rem; }
   .guide h2 {
@@ -575,6 +571,12 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
     border-top: 1px solid #333; }
   .guide p {
     font-size: 1rem; }
+  .guide section {
+    border-bottom: 1px solid #333; }
+    .guide section > a {
+      display: block; }
+    .guide section:nth-child(1) h1 {
+      margin-top: 0; }
 </style></div><div class="apidocs"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="lib" id="uport-connect"><section><h1 class="lib-header">uport-connect</h1><div class="lib-doc"><h2>Classes</h2>
 <dl>
 <dt><a href="#Connect">Connect</a> ⇐ <code><a href="#ConnectCore">ConnectCore</a></code></dt>

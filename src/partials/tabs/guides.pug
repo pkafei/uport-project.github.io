@@ -10,26 +10,14 @@
     .guide {
       background: white;
       padding: 1rem;
-  
-      section {
-        border-bottom: 1px solid #333;
-        
-        > a {
-          display: block;
-        }
-        
-        &:nth-child(2),
-        &:nth-child(2) ~ {
-          
-          h1 {
-            margin-top: 2rem;
-          }
-        }
+      
+      .iframeinject {
+        margin-bottom: 2rem;
       }
-  
+
       h1 {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
+        margin: 1.5rem 0;
       }
   
       h1 ~ *:not(h1) {
@@ -43,5 +31,20 @@
   
       p {
         font-size: 1rem;
+      }
+      
+      section {
+        border-bottom: 1px solid #333;
+        
+        > a {
+          display: block;
+        }
+        
+        &:nth-child(1) {
+        
+          h1 {
+            margin-top: 0;
+          }
+        }
       }
     }

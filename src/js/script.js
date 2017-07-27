@@ -48,6 +48,9 @@ const guideAreaDOM =
 const docAreaDOM =
   $$('.lib section')
 
+const rcIframeInjectDOM =
+  $$('#rcIframeInject')[0]
+
 ///////////////////////
 // Nav Router
 ///////////////////////
@@ -65,6 +68,12 @@ navDOM.onclick = (evt) => {
         : null
     })
     mainDOM.classList.add(desiredHashText)
+
+    // Late injection for webpackbin to render correct
+    if( desiredHashText === 'guides' &&
+        rcIframeInjectDOM.childNodes.length === 0 ) {
+        rcIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-Kq-LKec34MlPK9_UMVr'/>"
+    }
   }
 
   // Exception for external links
