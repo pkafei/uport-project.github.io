@@ -1,4 +1,368 @@
-<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link rel="stylesheet" href="css/style.css"></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#tools"><span>Tools</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div class="user-area"><a class="sign-in-link" href="#"><span>Sign In</span></a><div class="user"><img class="user-pic" src="#"><div class="user-menu"><ul><li class="user"><b class="user-name">Jeff Scott Ward</b><span class="user-addr">0x9239812437981247</span></li><li class="log-out"><a href="#">Log Out</a></li></ul></div></div></div></div></div></header><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><img class="step-img" src="#"><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><img class="step-img" src="#"><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><img class="step-img" src="#"><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><img src="#"><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#"><span>Getting Started</span></a></li><li><a href="#"><span>Requesting Credentials</span></a></li><li><a href="#"><span>Attesting Credentials</span></a></li><li><a href="#"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><img src="#"><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#"><span>uport-connect</span></a></li><li><a href="#"><span>uport-js</span></a></li><li><a href="#"><span>uport-lite</span></a></li><li><a href="#"><span>uport-registry</span></a></li></ul></div></li><li class="tools"><div class="shortcut-wrap"><img src="#"><label>Tools</label></div><div class="list-wrap"><ul><li><a href="http://truffleframework.com"><span>Truffle</span></a></li><li><a href="http://metamask.io"><span>MetaMask</span></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js"><span>Remix</span></a></li><li><a href="https://github.com/ethereum/mist/releases"><span>Mist</span></a></li></ul></div></li></ul></div></div><div class="guides"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="guide"><section><h1>Getting Started</h1>
+<style>/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc; }
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc; }
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none; } }
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto; }
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #f5f2f0; }
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal; }
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray; }
+
+.token.punctuation {
+  color: #999; }
+
+.namespace {
+  opacity: .7; }
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #905; }
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #690; }
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5); }
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #07a; }
+
+.token.function {
+  color: #DD4A68; }
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90; }
+
+.token.important,
+.token.bold {
+  font-weight: bold; }
+
+.token.italic {
+  font-style: italic; }
+
+.token.entity {
+  cursor: help; }
+</style><style>@charset "UTF-8";
+/*	FONTS
+------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+/*	TYPOGRAPHY
+–––––––––––––––––––––––––––*/
+html, body {
+  height: 100%; }
+
+body {
+  font-family: "Raleway", Arial, sans-serif;
+  color: #555;
+  font-size: 100%;
+  line-height: 1.5;
+  background-color: #f2f2f2;
+  margin: 0;
+  display: flex;
+  flex-direction: column; }
+
+/* ------ Normalize ----- */
+*,
+*:after,
+*:before {
+  box-sizing: border-box; }
+
+body header *,
+body footer * {
+  display: inline-block;
+  vertical-align: middle; }
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: darkblue; }
+  a:hover {
+    text-decoration: underline; }
+
+li {
+  list-style: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0; }
+
+.apidocs h2:nth-of-type(2) {
+  display: none; }
+
+p > code,
+td > code {
+  font-size: 1.2rem !important;
+  padding: .2rem .3rem;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #333; }
+  table th, table td {
+    padding: 0 .5rem; }
+  table thead th {
+    text-align: left;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333; }
+  table tbody tr:nth-child(odd) {
+    background: rgba(171, 189, 203, 0.3); }
+
+pre {
+  margin-bottom: 2rem !important; }
+
+/* ----- Plugins ------ */
+.gitter-chat-embed-action-bar-item {
+  display: none; }
+
+/*---- Hacks ------ */
+.footer {
+  display: none !important; }
+</style><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#tools"><span>Tools</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div class="user-area"><a class="sign-in-link" href="#"><span>Sign In</span></a><div class="user"><img class="user-pic" src="#"/><div class="user-menu"><ul><li class="user"><b class="user-name">Jeff Scott Ward</b><span class="user-addr">0x9239812437981247</span></li><li class="log-out"><a href="#">Log Out</a></li></ul></div></div></div></div></div></header><style>.header,
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #333;
+  justify-content: center;
+  padding: 10px 2rem 10px;
+  font-size: .8rem; }
+  .header *,
+  .footer * {
+    margin: 0;
+    padding: 0; }
+  .header .header-wrap,
+  .header .header-left,
+  .header .header-right,
+  .header .footer-wrap,
+  .header .footer-left,
+  .header .footer-right,
+  .footer .header-wrap,
+  .footer .header-left,
+  .footer .header-right,
+  .footer .footer-wrap,
+  .footer .footer-left,
+  .footer .footer-right {
+    display: flex;
+    flex-direction: row; }
+  .header .header-right,
+  .header .footer-right,
+  .header .nav,
+  .footer .header-right,
+  .footer .footer-right,
+  .footer .nav {
+    flex: 1; }
+  .header .logo-link,
+  .footer .logo-link {
+    padding-right: 2rem; }
+  .header .nav-item,
+  .footer .nav-item {
+    padding: 0 1rem; }
+  .header .logo-link,
+  .header .nav-list li a,
+  .header .sign-in-link,
+  .header .legal-area a,
+  .footer .logo-link,
+  .footer .nav-list li a,
+  .footer .sign-in-link,
+  .footer .legal-area a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .header .user-area,
+  .footer .user-area {
+    display: none; }
+  .header .user-area .user,
+  .header .legal-area .user,
+  .footer .user-area .user,
+  .footer .legal-area .user {
+    display: none; }
+    .header .user-area .user .user-pic,
+    .header .legal-area .user .user-pic,
+    .footer .user-area .user .user-pic,
+    .footer .legal-area .user .user-pic {
+      width: 25px;
+      height: 25px;
+      background: gray;
+      border-radius: 50%; }
+    .header .user-area .user .user-menu,
+    .header .legal-area .user .user-menu,
+    .footer .user-area .user .user-menu,
+    .footer .legal-area .user .user-menu {
+      position: absolute;
+      min-width: 150px;
+      top: 100%;
+      right: 2rem;
+      background: lightblue;
+      border: 1px solid darkblue; }
+      .header .user-area .user .user-menu ul, .header .user-area .user .user-menu li,
+      .header .user-area .user .user-menu .user-name,
+      .header .user-area .user .user-menu .user-addr,
+      .header .legal-area .user .user-menu ul,
+      .header .legal-area .user .user-menu li,
+      .header .legal-area .user .user-menu .user-name,
+      .header .legal-area .user .user-menu .user-addr,
+      .footer .user-area .user .user-menu ul,
+      .footer .user-area .user .user-menu li,
+      .footer .user-area .user .user-menu .user-name,
+      .footer .user-area .user .user-menu .user-addr,
+      .footer .legal-area .user .user-menu ul,
+      .footer .legal-area .user .user-menu li,
+      .footer .legal-area .user .user-menu .user-name,
+      .footer .legal-area .user .user-menu .user-addr {
+        display: block; }
+      .header .user-area .user .user-menu li,
+      .header .legal-area .user .user-menu li,
+      .footer .user-area .user .user-menu li,
+      .footer .legal-area .user .user-menu li {
+        padding: 10px; }
+        .header .user-area .user .user-menu li:first-child,
+        .header .legal-area .user .user-menu li:first-child,
+        .footer .user-area .user .user-menu li:first-child,
+        .footer .legal-area .user .user-menu li:first-child {
+          border-bottom: 1px solid darkblue; }
+  .header .user-area.menu-open .sign-in-link,
+  .header .legal-area.menu-open .sign-in-link,
+  .footer .user-area.menu-open .sign-in-link,
+  .footer .legal-area.menu-open .sign-in-link {
+    display: none; }
+  .header .user-area.menu-open .user,
+  .header .legal-area.menu-open .user,
+  .footer .user-area.menu-open .user,
+  .footer .legal-area.menu-open .user {
+    display: block; }
+  .header .legal-area,
+  .footer .legal-area {
+    display: flex; }
+    .header .legal-area a,
+    .footer .legal-area a {
+      margin-left: 2rem; }
+</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><img class="step-img" src="#"/><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><img class="step-img" src="#"/><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><img class="step-img" src="#"/><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><img src="#"/><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#"><span>Getting Started</span></a></li><li><a href="#"><span>Requesting Credentials</span></a></li><li><a href="#"><span>Attesting Credentials</span></a></li><li><a href="#"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><img src="#"/><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#"><span>uport-connect</span></a></li><li><a href="#"><span>uport-js</span></a></li><li><a href="#"><span>uport-lite</span></a></li><li><a href="#"><span>uport-registry</span></a></li></ul></div></li><li class="tools"><div class="shortcut-wrap"><img src="#"/><label>Tools</label></div><div class="list-wrap"><ul><li><a href="http://truffleframework.com"><span>Truffle</span></a></li><li><a href="http://metamask.io"><span>MetaMask</span></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js"><span>Remix</span></a></li><li><a href="https://github.com/ethereum/mist/releases"><span>Mist</span></a></li></ul></div></li></ul></div></div><style>.portal {
+  text-align: center; }
+  .portal .banner,
+  .portal .content-shortcuts,
+  .portal .whitepaper {
+    padding: 3rem 5rem; }
+  .portal .banner, .portal .whitepaper {
+    background: purple;
+    color: white; }
+  .portal .text-block {
+    max-width: 600px;
+    margin: 0 auto 3em auto; }
+  .portal .banner-steps ul {
+    display: flex;
+    justify-content: center; }
+  .portal .banner-steps li {
+    width: 20%;
+    margin: 3rem; }
+    .portal .banner-steps li .number {
+      position: relative;
+      border-radius: 50%;
+      border: 1px solid #CCC;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      margin: 0 auto 1rem auto; }
+      .portal .banner-steps li .number .number-text {
+        position: relative;
+        top: 5px; }
+    .portal .banner-steps li .step-img {
+      margin: 0 auto 1rem auto; }
+  .portal .content-shortcuts {
+    text-align: left; }
+    .portal .content-shortcuts img, .portal .content-shortcuts label {
+      display: block; }
+    .portal .content-shortcuts label {
+      border-bottom: 3px solid #CCC; }
+    .portal .content-shortcuts ul, .portal .content-shortcuts li {
+      margin: 0;
+      padding: 0; }
+    .portal .content-shortcuts > ul {
+      display: flex;
+      justify-content: center; }
+      .portal .content-shortcuts > ul > li {
+        flex: 1;
+        margin: 0 1rem; }
+    .portal .content-shortcuts .shortcut-wrap {
+      text-align: center; }
+    .portal .content-shortcuts .list-wrap li {
+      border-bottom: 1px solid #AAA;
+      padding: 1rem 0; }
+</style><div class="guides"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="guide"><section><h1>Getting Started</h1>
 <p>Welcome to the uPort usage guide!</p>
 <p>Here we will walk you through all the necessary steps to get up and running with your first dapp.</p>
 <p>Web 3.0 and decentralized applications <em>require a fundamental rethinking</em> of the moving parts of the web so it is important to read everything or you may miss some important elements around the design decisions of what you are working with.</p>
@@ -121,6 +485,7 @@ uport.requestCredentials()
 })
 </code></pre>
 <h2>Setting an expiration date</h2>
+<p>We can also optionally add an expiration date.</p>
 <pre><code class="language-js">uport.attestCredentials({
   sub: 'THE_RECEIVING_UPORT_ID',
   claim: { CUSTOM_PROPERTY: PROPERTY_VALUE },
@@ -130,7 +495,7 @@ uport.requestCredentials()
 <h2>Attesting multiple credentials</h2>
 <p><strong>Under construction</strong></p>
 </section><section><h1>Signing Transactions</h1>
-<p>uPort comes pre-baked with a web3 instance that calls to <a href="https://github.com/ethereumjs/testrpc">Infura</a>, our p2p swarm of nodes we have built to make your life easy. All you need to do is grab our <code>web3</code> object and instantiate a smart contract javascript object with a <strong>provided ABI</strong>.</p>
+<p>uPort comes pre-baked with a web3 instance that calls to <a href="https://github.com/ethereumjs/testrpc">Infura</a>, our p2p swarm of nodes we have built so you don't need to stand up your own. All you need to do is grab our <code>web3</code> object and instantiate a smart contract javascript object with a <strong>provided ABI</strong>.</p>
 <h2>Supply the contract ABI</h2>
 <p>An ABI (Application BINARY Interface) can be generated by compiling your smart contract with the <a href="https://ethereum.github.io/browser-solidity/">Remix</a> Web IDE. Its on the &quot;Contracts&quot; tab down where it says <code>interface</code>. You can deploy this contract to the chain with the <strong>Web3</strong> deploy code just below that in your local Ethereum node console or with our build &amp; deploy tool called <a href="http://truffleframework.com/">Truffle</a>.</p>
 <pre><code class="language-js">function MyContractSetup () {
@@ -191,7 +556,26 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
   }, 1000) // check again in one sec.
 }
 </code></pre>
-</section></div><section class="guide"></section><section class="guide"></section></div></div></div><div class="apidocs"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="lib" id="uport-connect"><section><h1 class="lib-header">uport-connect</h1><div class="lib-doc"><h2>Classes</h2>
+</section></div></div></div><style>.guide {
+  background: white;
+  padding: 1rem; }
+  .guide section {
+    border-bottom: 1px solid #333; }
+    .guide section > a {
+      display: block; }
+    .guide section:nth-child(2) h1, .guide section:nth-child(2) ~ h1 {
+      margin-top: 2rem; }
+  .guide h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem; }
+  .guide h1 ~ *:not(h1) {
+    margin-left: 2rem; }
+  .guide h2 {
+    padding-top: 2rem;
+    border-top: 1px solid #333; }
+  .guide p {
+    font-size: 1rem; }
+</style></div><div class="apidocs"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="lib" id="uport-connect"><section><h1 class="lib-header">uport-connect</h1><div class="lib-doc"><h2>Classes</h2>
 <dl>
 <dt><a href="#Connect">Connect</a> ⇐ <code><a href="#ConnectCore">ConnectCore</a></code></dt>
 <dd><p>Primary object for frontend interactions with uPort. Bundles all neccesary functionality.</p>
@@ -802,15 +1186,120 @@ when requests are created.</p>
     </tr>  </tbody>
 </table>
 <hr>
-</div></section></div></div></div></div><div class="tools"><div class="pagewrap"><div class="sidebar"></div><div class="content"><ul><li><a href="http://truffleframework.com" target="_blank"><img src="/img/truffle-logo.svg"><h3 class="title">Truffle</h3><p class="desc">Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.</p></a></li><li><a href="http://metamask.io" target="_blank"><img src="/img/metamask-logo.png"><h3 class="title">Metamask</h3><p class="desc">MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.</p></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js" target="_blank"><img src="/img/ethereum-logo.png"><h3 class="title">Remix</h3><p class="desc">Remix is an IDE for the smart contract programming language Solidity and has an integrated debugger and testing environment.</p></a></li><li><a href="https://github.com/ethereum/mist/releases" target="_blank"><img src="/img/mist-logo.png"><h3 class="title">Mist</h3><p class="desc">The Mist browser is a gateway to decentralized applications on the Ethereum blockchain. It allows you to hold and secure ether and other crypto-assets built on Ethereum, as well as write, deploy and use smart contracts.</p></a></li></ul></div></div></div><div class="myapps"><div class="pagewrap"><div class="sidebar"><section><h2>My Apps</h2><ul><li><a href="#"><span>Application 1</span></a></li><li><a href="#"><span>Application 2</span></a></li><li><a href="#"><span>Application 3</span></a></li><li><a href="#"><span>Application 4</span></a></li><li><a href="#"><span>Application 5</span></a></li></ul></section></div></div></div><div class="gitter"><div class="pagewrap"><div class="sidebar"></div><div class="content"></div></div></div></main><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>  ((window.gitter = {}).chat = {}).options = {
-    room: 'uport-project/Lobby',
-    activationElement: false,
-    showChatByDefault: true,
-    useStyles: false,
-    preload: true,
-    targetElement: '.gitter .content'
-  };
-
+</div></section></div></div></div></div><style>.lib {
+  background: white;
+  padding: 1rem; }
+  .lib .lib-doc {
+    padding-left: 1rem; }
+    .lib .lib-doc > ul {
+      padding-left: 1rem; }
+    .lib .lib-doc hr {
+      margin: 3rem 0; }
+    .lib .lib-doc p, .lib .lib-doc table, .lib .lib-doc pre {
+      margin-left: 1rem; }
+    .lib .lib-doc a code {
+      font-size: 1.5rem; }
+  .lib h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    text-decoration: underline; }
+  .lib dl, .lib h2:first-child {
+    display: none; }
+  .lib p {
+    font-size: 1rem; }
+</style><div class="tools"><div class="pagewrap"><div class="sidebar"></div><div class="content"><ul><li><a href="http://truffleframework.com" target="_blank"><img src="/img/truffle-logo.svg"/><h3 class="title">Truffle</h3><p class="desc">Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.</p></a></li><li><a href="http://metamask.io" target="_blank"><img src="/img/metamask-logo.png"/><h3 class="title">Metamask</h3><p class="desc">MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.</p></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js" target="_blank"><img src="/img/ethereum-logo.png"/><h3 class="title">Remix</h3><p class="desc">Remix is an IDE for the smart contract programming language Solidity and has an integrated debugger and testing environment.</p></a></li><li><a href="https://github.com/ethereum/mist/releases" target="_blank"><img src="/img/mist-logo.png"/><h3 class="title">Mist</h3><p class="desc">The Mist browser is a gateway to decentralized applications on the Ethereum blockchain. It allows you to hold and secure ether and other crypto-assets built on Ethereum, as well as write, deploy and use smart contracts.          </p></a></li></ul></div></div></div><style>.tools .content {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .tools .content ul {
+    display: flex;
+    flex-wrap: wrap; }
+    .tools .content ul li {
+      flex-basis: 50%;
+      text-align: center;
+      padding: 0;
+      max-width: 22rem; }
+      .tools .content ul li p {
+        text-align: left; }
+      .tools .content ul li a {
+        padding: 1rem;
+        display: block; }
+        .tools .content ul li a img {
+          max-width: 8rem;
+          max-height: 8rem; }
+        .tools .content ul li a:hover {
+          text-decoration: none;
+          background: #ccc;
+          border-radius: .5rem; }
+</style><div class="myapps"><div class="pagewrap"><div class="sidebar"><section><h2>My Apps</h2><ul><li><a href="#"><span>Application 1</span></a></li><li><a href="#"><span>Application 2</span></a></li><li><a href="#"><span>Application 3</span></a></li><li><a href="#"><span>Application 4</span></a></li><li><a href="#"><span>Application 5</span></a></li></ul></section></div></div></div><div class="gitter"><div class="pagewrap"><div class="sidebar"></div><div class="content"></div></div></div><style>.gitter .pagewrap .content {
+  position: relative;
+  padding: 0 !important; }
+  .gitter .pagewrap .content iframe {
+    width: 100%;
+    height: 100%; }
+</style></main><style>main {
+  border-bottom: 1px solid #333;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll; }
+  main > * {
+    display: none; }
+  main.portal .portal {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+  main.guides .guides {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+  main.apidocs .apidocs {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+  main.tools .tools {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+  main.myapps .myapps {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+  main.gitter .gitter {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+  main .pagewrap {
+    display: flex;
+    height: 100%; }
+    main .pagewrap .content {
+      overflow-y: scroll;
+      flex: 1; }
+  main .sidebar {
+    background: lightgray;
+    padding: 1rem;
+    width: 300px;
+    overflow-y: scroll; }
+    main .sidebar code {
+      display: none; }
+    main .sidebar ul, main .sidebar li {
+      margin: 0;
+      padding: 0; }
+    main .sidebar ul {
+      margin-bottom: 1rem; }
+    main .sidebar li {
+      padding-left: 1rem;
+      font-size: .8rem; }
+    main .sidebar h1 {
+      font-size: 1rem;
+      margin-bottom: .5rem; }
+    main .sidebar span {
+      font-size: .9rem; }
+  main .content {
+    padding: 1rem; }
+    main .content p, main .content code, main .content textarea, main .content input {
+      font-size: .8rem; }
+</style><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"/><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
 /* **********************************************
      Begin prism-core.js
 ********************************************** */
@@ -1605,4 +2094,12 @@ Prism.languages.js = Prism.languages.javascript;
 	document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
 
 })();
-</script><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script><script type="text/javascript" src="js/script.js"></script></body></html>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'uport-project/Lobby',
+    activationElement: false,
+    showChatByDefault: true,
+    useStyles: false,
+    preload: true,
+    targetElement: '.gitter .content'
+  };
+</script><script type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script><script type="text/javascript" src="js/script.js"></script><!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"></head><body></body></html>

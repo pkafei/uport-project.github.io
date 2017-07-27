@@ -55,7 +55,8 @@ const docAreaDOM =
 navDOM.onclick = (evt) => {
   const desiredHash = evt.target.parentElement.hash;
 
-  if(desiredHash !== undefined){
+  if(desiredHash !== undefined &&
+    desiredHash !== ''){
     const desiredHashText = evt.target.parentElement.hash.replace('#','');
 
     mainDOM.classList.forEach((mainClass) => {
@@ -65,7 +66,9 @@ navDOM.onclick = (evt) => {
     })
     mainDOM.classList.add(desiredHashText)
   }
-  pvd(evt);
+
+  // Exception for external links
+  if(desiredHash !== ''){ pvd(evt); }
 }
 
 ///////////////////////

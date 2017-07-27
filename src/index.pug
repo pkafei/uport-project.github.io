@@ -1,13 +1,26 @@
-extends _layouts/home
-
 block head_end
-	link(rel="stylesheet" href="css/style.css")
+  include:sass ../node_modules/prismjs/themes/prism.css
+  include:sass sass/_base.scss
 
 block content
-	include _partials/header
-	include _partials/main
-	include _partials/footer
+  include partials/blocks/header
+  include partials/blocks/main
+  include partials/blocks/footer
 
 block body_end
-	script(type="text/javascript" src="js/script.js")
+  script
+    include ../node_modules/prismjs/prism.js
+    include js/sidecarSetup.js
+  script(type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
+  script(type="text/javascript" src="js/script.js")
 	
+doctype html
+html
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
+    block head_end
+  body
+    block content
+    block body_end

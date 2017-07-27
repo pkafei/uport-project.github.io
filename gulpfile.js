@@ -6,7 +6,8 @@ var gulp = require('gulp'),
   data = require('gulp-data'),
   pug = require('gulp-pug'),
   prefix = require('gulp-autoprefixer'),
-  sass = require('gulp-sass'),
+  // sass = require('gulp-sass'),
+  transSass = require('jstransformer-scss'),
   babel = require('gulp-babel'),
   image = require('gulp-image'),
   jsdoc = require('gulp-jsdoc3'),
@@ -30,7 +31,7 @@ var paths = {
   images: './src/images/',
 
   data: './src/_data/',
-  partials: './src/_partials/',
+  partials: './src/partials/',
 
   nodeMods: './node_modules/'
 };
@@ -48,7 +49,19 @@ gulp.task('pug', () => {
           path.basename(file.path) +
           '.json');
     }))
-    .pipe(pug())
+    .pipe(
+      pug({
+        filters: {
+          "sass": (text, options) => {
+            return (
+              '<style>' +
+                transSass.render(text).body  +
+              '</style>'
+            )
+          }
+        }
+      })
+    )
     .on('error', (err) => {
       process.stderr.write(err.message + '\n');
       this.emit('end');
@@ -64,7 +77,7 @@ gulp.task('rebuild', ['pug','es6'], () => {browserSync.reload();});
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['sass', 'pug', 'es6'], () => {
+gulp.task('browser-sync', ['pug', 'es6'], () => {
   browserSync({
     server: { baseDir: paths.public },
     open: false,
@@ -76,20 +89,20 @@ gulp.task('browser-sync', ['sass', 'pug', 'es6'], () => {
  * Compile .scss files into public css directory With autoprefixer no
  * need for vendor prefixes then live reload the browser.
  */
-gulp.task('sass', () => {
-  return gulp.src(paths.sass + '**/**.scss')
-    .pipe(
-      sass({
-        includePaths: [paths.sass],
-        outputStyle: 'compressed'}))
-    .on('error', sass.logError)
-    .pipe(
-      prefix(
-        ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
-        { cascade: true }))
-    .pipe(gulp.dest(paths.css))
-    .pipe(browserSync.reload({stream: true}));
-});
+// gulp.task('sass', () => {
+//   return gulp.src(paths.sass + '**/**.scss')
+//     .pipe(
+//       sass({
+//         includePaths: [paths.sass],
+//         outputStyle: 'compressed'}))
+//     .on('error', sass.logError)
+//     .pipe(
+//       prefix(
+//         ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
+//         { cascade: true }))
+//     .pipe(gulp.dest(paths.css))
+//     .pipe(browserSync.reload({stream: true}));
+// });
 
 // Compile ES6 js files to ES2015 and copy over
 gulp.task('es6', () => {
@@ -130,7 +143,7 @@ gulp.task('jsdocs', () => {
 
   return jsdoc2md.render(options)
     .then(output => {
-      fs.writeFile(paths.partials + 'uport-connect-api.md', output)
+      fs.writeFile(paths.partials + 'docs/uport-connect-api.md', output)
     })
 })
 
@@ -146,13 +159,13 @@ gulp.task('codeblocks', () => {
  * Watch .pug files run pug-rebuild then reload BrowserSync
  */
 gulp.task('watch', () => {
-  gulp.watch(paths.sass + '**/*.scss', ['sass']);
+  // gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
   gulp.watch('./src/**/*.js', ['rebuild']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'es6']);
+gulp.task('build', ['pug', 'es6']);
 
 /**
  * Default task, running just `gulp` will compile the sass,

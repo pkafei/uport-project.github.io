@@ -1,0 +1,44 @@
+.guides
+  .pagewrap
+    .sidebar
+    .content
+      .guide
+        include ../guides/uport-connect/index
+        include ../guides/uport-lite/index
+        include ../guides/uport-registry/index
+  :sass
+    .guide {
+      background: white;
+      padding: 1rem;
+  
+      section {
+        border-bottom: 1px solid #333;
+        > a {
+          display: block;
+        }
+        &:nth-child(2),
+        &:nth-child(2) ~ {
+          h1 {
+            margin-top: 2rem;
+          }
+        }
+      }
+  
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+  
+      h1 ~ *:not(h1) {
+        margin-left: 2rem;
+      }
+  
+      h2 {
+        padding-top: 2rem;
+        border-top: 1px solid #333;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+    }
