@@ -8,23 +8,23 @@
         li.alpha
           .number
             span.number-text 1
-          img.step-img(src="#")
+          i.fa.fa-id-badge
           .step-desc Download the Mobile Wallet
         li.beta
           .number
             span.number-text 2
-          img.step-img(src="#")
+          i.fa.fa-id-card
           .step-desc Register Your App
         li.omega
           .number
             span.number-text 3
-          img.step-img(src="#")
+          i.fa.fa-laptop
           .step-desc Install the Libraries / SDK's
   .content-shortcuts
     ul
       li.guides
         .shortcut-wrap
-          img(src="#")
+          i.fa.fa-newspaper-o
           label Guides
         .list-wrap
           ul
@@ -42,7 +42,7 @@
                 span Signing Transactions
       li.api-docs
         .shortcut-wrap
-          img(src="#")
+          i.fa.fa-book
           label API Docs
         .list-wrap
           ul
@@ -58,24 +58,24 @@
             li
               a(href='#')
                 span uport-registry
-      li.tools
-        .shortcut-wrap
-          img(src="#")
-          label Tools
-        .list-wrap
-          ul
-            li
-              a(href=links.truffle)
-                span Truffle
-            li
-              a(href=links.metamask)
-                span MetaMask
-            li
-              a(href=links.remix)
-                span Remix
-            li
-              a(href=links.mist)
-                span Mist
+      //- li.tools
+      //-   .shortcut-wrap
+      //-     i.fa.fa-book
+      //-     label Tools
+      //-   .list-wrap
+      //-     ul
+      //-       li
+      //-         a(href=links.truffle)
+      //-           span Truffle
+      //-       li
+      //-         a(href=links.metamask)
+      //-           span MetaMask
+      //-       li
+      //-         a(href=links.remix)
+      //-           span Remix
+      //-       li
+      //-         a(href=links.mist)
+      //-           span Mist
 :sass
   .portal {
     text-align: center;
@@ -87,7 +87,7 @@
     }
 
     .banner, .whitepaper {
-      background: purple;
+      background: #004f80;
       color: white;
     }
 
@@ -97,6 +97,15 @@
     }
 
     .banner-steps{
+    
+      .fa {
+        font-size: 6rem;
+      }
+      
+      .step-desc {
+        margin-top: 2rem;
+        font-size: 1.3rem;
+      }
       
       ul {
         display: flex;
@@ -104,23 +113,28 @@
       }
       
       li {
-        width: 20%;
-        margin: 3rem;
+        width: 25%;
+        margin: 2rem;
 
         .number {
           position: relative;
           border-radius: 50%;
-          border: 1px solid #CCC;
-          width: 30px;
-          height: 30px;
+          border: 5px solid white;
+          width: 4rem;
+          height: 4rem;
           text-align: center;
           margin: 0 auto 1rem auto;
 
           .number-text {
             position: relative;
-            top: 5px;
+            top: -.75rem;
+            font-size: 3rem;
           }
         }
+        &:nth-child(3) .number-text {
+          top: -1rem;
+        }
+        
         .step-img {
           margin: 0 auto 1rem auto;
         }
@@ -129,6 +143,10 @@
     
     .content-shortcuts {
       text-align: left;
+      
+      .fa {
+      font-size: 8rem;
+      }
 
       img, label { display: block; }
 
