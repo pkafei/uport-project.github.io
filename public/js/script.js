@@ -54,6 +54,10 @@ var docAreaDOM = $$('.lib section');
 
 var rcIframeInjectDOM = $$('#rcIframeInject')[0];
 
+var acIframeInjectDOM = $$('#acIframeInject')[0];
+
+var stIframeInjectDOM = $$('#stIframeInject')[0];
+
 ///////////////////////
 // Nav Router
 ///////////////////////
@@ -70,8 +74,16 @@ navDOM.onclick = function (evt) {
     mainDOM.classList.add(desiredHashText);
 
     // Late injection for webpackbin to render correct
-    if (desiredHashText === 'guides' && rcIframeInjectDOM.childNodes.length === 0) {
-      rcIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-Kq-LKec34MlPK9_UMVr'/>";
+    if (desiredHashText === 'guides') {
+      if (rcIframeInjectDOM.childNodes.length === 0) {
+        rcIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-Kq-LKec34MlPK9_UMVr'/>";
+      }
+      if (acIframeInjectDOM.childNodes.length === 0) {
+        acIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-KqPA8lwzM77gVsDtV8V'/>";
+      }
+      if (stIframeInjectDOM.childNodes.length === 0) {
+        stIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-KqPKG4Ap74btrL3DU94'/>";
+      }
     }
   }
 
