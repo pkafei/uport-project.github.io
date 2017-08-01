@@ -57,24 +57,38 @@ const acIframeInjectDOM =
 const stIframeInjectDOM =
   $$('#stIframeInject')[0]
 
+const contentShortcutsDOM =
+  $$('.content-shortcuts')[0]
+
 ///////////////////////
-// Nav Router
+// Router Logic
 ///////////////////////
+
+function changeMainClass(desiredHashText) {
+  mainDOM.classList.forEach((mainClass) => {
+    mainClass !== 'main'
+      ? mainDOM.classList.remove(mainClass)
+      : null
+  })
+  mainDOM.classList.add(desiredHashText)
+}
+
+contentShortcutsDOM.onclick = (evt) => {
+  const tabArea = evt.target.parentElement
+                            .parentElement
+                            .parentElement
+                            .parentElement
+                            .parentElement
+                            .classList[0].split('-').join('')
+  changeMainClass(tabArea);
+}
 
 navDOM.onclick = (evt) => {
   const desiredHash = evt.target.parentElement.hash;
 
-  if(desiredHash !== undefined &&
-    desiredHash !== ''){
+  if (desiredHash !== undefined && desiredHash !== '') {
     const desiredHashText = evt.target.parentElement.hash.replace('#','');
-
-    mainDOM.classList.forEach((mainClass) => {
-      mainClass !== 'main'
-        ? mainDOM.classList.remove(mainClass)
-        : null
-    })
-    mainDOM.classList.add(desiredHashText)
-
+    changeMainClass(desiredHashText);
     // Late injection for webpackbin to render correct
     if( desiredHashText === 'guides') {
       if (rcIframeInjectDOM.childNodes.length === 0) {
@@ -146,12 +160,18 @@ function createSidebarAreas (currentSource, sourceFlag) {
   let createdSection = document.createElement('section')
 
   let contextAreaH1 = contextArea.querySelector('h1')
-  let contextAreaH1Clone = contextAreaH1.cloneNode(true)
+  contextAreaH1.id = contextAreaH1.textContent.toLowerCase().split(' ').join('-')
 
+  let contextAreaH1Clone = contextAreaH1.cloneNode(true)
+  contextAreaH1Clone.id = ''
+
+  let h1Link = document.createElement('a')
+  h1Link.href="#" + contextAreaH1.textContent.toLowerCase().split(' ').join('-')
+  h1Link.appendChild(contextAreaH1Clone)
 
   return {
     section: createdSection,
-    header: contextAreaH1Clone,
+    header: h1Link,
     list: createSidebarList(contextArea, sourceFlag)
   }
 }

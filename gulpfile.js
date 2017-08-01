@@ -12,7 +12,8 @@ var gulp = require('gulp'),
   image = require('gulp-image'),
   jsdoc = require('gulp-jsdoc3'),
   replace = require('gulp-replace'),
-  browserSync = require('browser-sync'),
+  browserSync = require('browser-sync').create(),
+  htmlInjector = require("bs-html-injector"),
   fs = require('fs-then-native'),
   jsdoc2md = require('jsdoc-to-markdown');
 
@@ -76,36 +77,32 @@ gulp.task('pug', () => {
 /**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug','es6'], () => {browserSync.reload();});
+gulp.task('rebuild', ['pug','es6'], () => {
+  // browserSync.reload();
+  // gulp.watch("public/index.html", htmlInjector);
+});
 
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
  */
 gulp.task('browser-sync', ['pug', 'es6'], () => {
-  browserSync({
+  browserSync.use(htmlInjector, {
+    files: "public/index.html"
+  });
+  browserSync.init({
     server: { baseDir: paths.public },
     open: false,
     notify: false
   });
 });
 
-/**
- * Compile .scss files into public css directory With autoprefixer no
- * need for vendor prefixes then live reload the browser.
- */
-// gulp.task('sass', () => {
-//   return gulp.src(paths.sass + '**/**.scss')
-//     .pipe(
-//       sass({
-//         includePaths: [paths.sass],
-//         outputStyle: 'compressed'}))
-//     .on('error', sass.logError)
-//     .pipe(
-//       prefix(
-//         ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
-//         { cascade: true }))
-//     .pipe(gulp.dest(paths.css))
-//     .pipe(browserSync.reload({stream: true}));
+// gulp.task("browser-sync", function () {
+//     browserSync.use(htmlInjector, {
+//         files: "app/*.html"
+//     });
+//     browserSync.init({
+//         server: "test/fixtures"
+//     });
 // });
 
 // Compile ES6 js files to ES2015 and copy over
@@ -120,17 +117,6 @@ gulp.task('image', () => {
   return gulp.src(paths.images + '*')
     .pipe(image())
     .pipe(gulp.dest(paths.img));
-});
-
-gulp.task('doc', (cb) => {
-  var config = require('./jsdoc.json');
-  gulp.src([
-    paths.nodeMods + 'uport-connect/src/**/**/*.js',
-    paths.nodeMods + 'uport-lite/READEME.md',
-    paths.nodeMods + 'uport-registry/READEME.md',
-    paths.nodeMods + 'uport/READEME.md'
-  ], {read: false})
-  .pipe(jsdoc(config, cb));
 });
 
 gulp.task('jsdocs', () => {
@@ -151,12 +137,16 @@ gulp.task('jsdocs', () => {
     })
 })
 
-gulp.task('codeblocks', () => {
-  gulp.src([paths.partials + '*.md'])
-    .pipe(replace('<code>', ''))
-    .pipe(replace('</code>', ''))
-    .pipe(gulp.dest(paths.partials + ''));
-});
+// gulp.task('doc', (cb) => {
+//   var config = require('./jsdoc.json');
+//   gulp.src([
+//     paths.nodeMods + 'uport-connect/src/**/**/*.js',
+//     paths.nodeMods + 'uport-lite/READEME.md',
+//     paths.nodeMods + 'uport-registry/READEME.md',
+//     paths.nodeMods + 'uport/READEME.md'
+//   ], {read: false})
+//   .pipe(jsdoc(config, cb));
+// });
 
 /**
  * Watch scss files for changes & recompile
@@ -176,4 +166,6 @@ gulp.task('build', ['pug', 'es6']);
  * compile the jekyll site, launch BrowserSync then watch
  * files for changes
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task("default", ['browser-sync', 'watch'], function () {
+    // gulp.watch("public/index.html", htmlInjector);
+});

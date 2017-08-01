@@ -58,21 +58,30 @@ var acIframeInjectDOM = $$('#acIframeInject')[0];
 
 var stIframeInjectDOM = $$('#stIframeInject')[0];
 
+var contentShortcutsDOM = $$('.content-shortcuts')[0];
+
 ///////////////////////
-// Nav Router
+// Router Logic
 ///////////////////////
+
+function changeMainClass(desiredHashText) {
+  mainDOM.classList.forEach(function (mainClass) {
+    mainClass !== 'main' ? mainDOM.classList.remove(mainClass) : null;
+  });
+  mainDOM.classList.add(desiredHashText);
+}
+
+contentShortcutsDOM.onclick = function (evt) {
+  var tabArea = evt.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList[0].split('-').join('');
+  changeMainClass(tabArea);
+};
 
 navDOM.onclick = function (evt) {
   var desiredHash = evt.target.parentElement.hash;
 
   if (desiredHash !== undefined && desiredHash !== '') {
     var desiredHashText = evt.target.parentElement.hash.replace('#', '');
-
-    mainDOM.classList.forEach(function (mainClass) {
-      mainClass !== 'main' ? mainDOM.classList.remove(mainClass) : null;
-    });
-    mainDOM.classList.add(desiredHashText);
-
+    changeMainClass(desiredHashText);
     // Late injection for webpackbin to render correct
     if (desiredHashText === 'guides') {
       if (rcIframeInjectDOM.childNodes.length === 0) {
@@ -146,11 +155,18 @@ function createSidebarAreas(currentSource, sourceFlag) {
   var createdSection = document.createElement('section');
 
   var contextAreaH1 = contextArea.querySelector('h1');
+  contextAreaH1.id = contextAreaH1.textContent.toLowerCase().split(' ').join('-');
+
   var contextAreaH1Clone = contextAreaH1.cloneNode(true);
+  contextAreaH1Clone.id = '';
+
+  var h1Link = document.createElement('a');
+  h1Link.href = "#" + contextAreaH1.textContent.toLowerCase().split(' ').join('-');
+  h1Link.appendChild(contextAreaH1Clone);
 
   return {
     section: createdSection,
-    header: contextAreaH1Clone,
+    header: h1Link,
     list: createSidebarList(contextArea, sourceFlag)
   };
 }
