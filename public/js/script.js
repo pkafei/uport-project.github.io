@@ -82,6 +82,11 @@ navDOM.onclick = function (evt) {
   if (desiredHash !== undefined && desiredHash !== '') {
     var desiredHashText = evt.target.parentElement.hash.replace('#', '');
     changeMainClass(desiredHashText);
+
+    // TODO: upgrade to scrolltop sniff
+    // Get the number of pixels scrolled
+    // var  intElemScrollTop = $$(someElement).scrollTop;
+
     // Late injection for webpackbin to render correct
     if (desiredHashText === 'guides') {
       if (rcIframeInjectDOM.childNodes.length === 0) {
