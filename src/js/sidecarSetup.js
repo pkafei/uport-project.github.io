@@ -4,5 +4,5 @@
     showChatByDefault: true,
     useStyles: false,
     preload: true,
-    targetElement: '.gitter .content'
+    targetElement: '#gitterinject'
   };

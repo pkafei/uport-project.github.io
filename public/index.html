@@ -2332,7 +2332,7 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: 'Raleway', Arial, sans-serif;
   color: #555;
   font-size: 100%;
   line-height: 1.5;
@@ -2394,6 +2394,10 @@ table {
 pre {
   margin-bottom: 2rem !important; }
 
+iframe {
+  position: relative;
+  z-index: 2; }
+
 /* ----- Plugins ------ */
 .gitter-chat-embed-action-bar-item {
   display: none; }
@@ -2401,7 +2405,59 @@ pre {
 /*---- Hacks ------ */
 .footer {
   display: none !important; }
-</style><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div class="user-area"><a class="sign-in-link" href="#"><span>Sign In</span></a><div class="user"><img class="user-pic" src="#"/><div class="user-menu"><ul><li class="user"><b class="user-name">Jeff Scott Ward</b><span class="user-addr">0x9239812437981247</span></li><li class="log-out"><a href="#">Log Out</a></li></ul></div></div></div></div></div></header><style>.header,
+
+.loading-wrapper-parent {
+  position: relative;
+  background: #ccc;
+  width: 100%;
+  height: 800px; }
+  .guides .loading-wrapper-parent {
+    max-width: 95%; }
+
+.loading-wrapper {
+  position: absolute;
+  left: calc(50% - 10rem);
+  top: calc(50% - 10rem); }
+  .gitter .loading-wrapper {
+    top: calc(50% - 10rem - (40px*2)); }
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem; }
+
+.loader {
+  font-size: 10px;
+  position: relative;
+  z-index: 1;
+  text-indent: -9999rem;
+  border-top: 2.5rem solid rgba(255, 255, 255, 0.2);
+  border-right: 2.5rem solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2.5rem solid rgba(255, 255, 255, 0.2);
+  border-left: 2.5rem solid #aaa;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear; }
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+</style><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
 .footer {
   position: relative;
   display: flex;
@@ -2520,7 +2576,7 @@ pre {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started"><span>Getting Started</span></a></li><li><a href="#requesting-credentials"><span>Requesting Credentials</span></a></li><li><a href="#attesting-credentials"><span>Attesting Credentials</span></a></li><li><a href="#signing-transactions"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect"><span>uport-connect</span></a></li><li><a href="#uport-js"><span>uport-js</span></a></li><li><a href="#uport-lite"><span>uport-lite</span></a></li><li><a href="#uport-registry"><span>uport-registry</span></a></li></ul></div></li></ul></div></div><style>.portal {
+</style><!-- default to .main.______ page--><main class="main guides"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started"><span>Getting Started</span></a></li><li><a href="#requesting-credentials"><span>Requesting Credentials</span></a></li><li><a href="#attesting-credentials"><span>Attesting Credentials</span></a></li><li><a href="#signing-transactions"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect"><span>uport-connect</span></a></li><li><a href="#uport-js"><span>uport-js</span></a></li><li><a href="#uport-lite"><span>uport-lite</span></a></li><li><a href="#uport-registry"><span>uport-registry</span></a></li></ul></div></li></ul></div></div><style>.portal {
   text-align: center; }
   .portal .banner,
   .portal .content-shortcuts,
@@ -2617,9 +2673,9 @@ pre {
 })
 </code></pre>
 <p>The clientID is the public address of your app and the signer (wrapped with the SimpleSigner function) is the signing key of your app that you will help create JWT tokens. These bits of information are given to you after registering an application.</p>
-<p><strong>We should also export the <code>web3</code> object from the resulting uport object for signing transactions later.</strong></p>
+<p><strong>We should also export the <code>web3</code> and <code>MNID</code> objects from the resulting uport object for signing transactions later.</strong></p>
 <pre><code class="language-js">const web3 = uport.getWeb3()
-export { web3, uport }
+export { web3, uport, MNID }
 </code></pre>
 </section><section><h1>Requesting Credentials</h1>
 <p>The first and most basic step you should take is to allow your user to connect their uPort to your app. The <code>requestCredentials</code> method is how you accomplish this, similar in concept to logging in , except there is no server session for you to manage. All you need to do to &quot;connect&quot; is to disclose the requested credentials you have in your uPort identity.</p>
@@ -2694,7 +2750,7 @@ uport.requestCredentials()
 <h2>Logging in via Mobile (sdk)</h2>
 <p><strong>Under construction</strong></p>
 <h2>RC Playground</h2>
-<div class="iframeInject" id="rcIframeInject"></div></section><section><h1>Attesting Credentials</h1>
+<div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="rcIframeInject"></iframe></div></section><section><h1>Attesting Credentials</h1>
 <p>One of the core needs of Web 3.0 is to build trust in a self-sovereign world. We establish facts which are not mathematically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the <code>uport.attestCredentials</code> function.</p>
 <p><strong>NOTE:</strong> Currently only one credential can be pushed at a time. We are working to fix this soon.</p>
 <h2>Calling the attest method</h2>
@@ -2714,7 +2770,7 @@ uport.requestCredentials()
 <h2>Attesting multiple credentials</h2>
 <p><strong>Under construction</strong></p>
 <h2>AC Playground</h2>
-<div class="iframeInject" id="acIframeInject"></div></section><section><h1>Signing Transactions</h1>
+<div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="acIframeInject"></iframe></div></section><section><h1>Signing Transactions</h1>
 <p>uPort comes pre-baked with a web3 instance that calls to <a href="https://github.com/ethereumjs/testrpc">Infura</a>, our p2p swarm of nodes we have built so you don't need to stand up your own. All you need to do is grab our <code>web3</code> object and instantiate a smart contract javascript object with a <strong>provided ABI</strong>.</p>
 <h2>Supply the contract ABI</h2>
 <p>An ABI (Application BINARY Interface) can be generated by compiling your smart contract with the <a href="https://ethereum.github.io/browser-solidity/">Remix</a> Web IDE. Its on the &quot;Contracts&quot; tab down where it says <code>interface</code>. You can deploy this contract to the chain with the <strong>Web3</strong> deploy code just below that in your local Ethereum node console or with our build &amp; deploy tool called <a href="http://truffleframework.com/">Truffle</a>.</p>
@@ -2778,11 +2834,20 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
 }
 </code></pre>
 <h2>ST Playground</h2>
-<div class="iframeInject" id="stIframeInject"></div></section></div></div></div><style>.guide {
+<div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="stIframeInject"></iframe></div></section></div></div></div><style>.guide {
   background: white;
   padding: 1rem; }
-  .guide .iframeinject {
-    margin-bottom: 2rem; }
+  .guide iframe {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 2rem;
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+    height: 800px; }
   .guide h1 {
     font-size: 2rem;
     margin: 1.5rem 0; }
@@ -3455,7 +3520,7 @@ when requests are created.</p>
           text-decoration: none;
           background: #ccc;
           border-radius: .5rem; }
-</style><div class="myapps"><div class="pagewrap"><div class="sidebar"><section><h2>My Apps</h2><ul><li><a href="#"><span>Application 1</span></a></li><li><a href="#"><span>Application 2</span></a></li><li><a href="#"><span>Application 3</span></a></li><li><a href="#"><span>Application 4</span></a></li><li><a href="#"><span>Application 5</span></a></li></ul></section></div></div></div><div class="gitter"><div class="pagewrap"><div class="sidebar"></div><div class="content"></div></div></div><style>.gitter .content {
+</style><div class="myapps"><div class="pagewrap"><div class="sidebar"><section><h2>My Apps</h2><ul><li><a href="#"><span>Application 1</span></a></li><li><a href="#"><span>Application 2</span></a></li><li><a href="#"><span>Application 3</span></a></li><li><a href="#"><span>Application 4</span></a></li><li><a href="#"><span>Application 5</span></a></li></ul></section></div></div></div><div class="gitter"><div class="pagewrap"><div class="sidebar"><p>Be respectful. Files bugs in github if you can validate with others. Beware of phishers. DO NOT PASTE ANY PRIVATE KEYS IN CHAT. </p></div><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><div id="gitterinject"></div></div></div></div></div><style>.gitter .content {
   position: relative;
   padding: 0 !important; }
   .gitter .content iframe {
@@ -4324,6 +4389,6 @@ Prism.languages.js = Prism.languages.javascript;
     showChatByDefault: true,
     useStyles: false,
     preload: true,
-    targetElement: '.gitter .content'
+    targetElement: '#gitterinject'
   };
-</script><script type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="async" defer="defer"></script><script type="text/javascript" src="js/script.js"></script><!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"></head><body></body></html>
+</script><script id="sidecarInject" type="text/javascript" async="async" defer="defer"></script><script type="text/javascript" src="js/script.js"></script><!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"></head><body></body></html>

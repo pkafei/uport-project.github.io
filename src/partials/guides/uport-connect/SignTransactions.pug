@@ -24,6 +24,8 @@ section
     In a typical application, upon load, there is data usually being requested by a server to get the current state of the user's data. We must do the same here, but rather than reading a SQL database, we are instead reading the blockchain.
 
     At ConsenSys we use our Web 3.0 infrastructure stack called [Infura](https://github.com/uport-project/demo/blob/master/infura.io) to make the amount of possible calls scalable. You could otherwise have an Ethereum node local on your machine with a downloaded copy of the blockchain you could query. Calls can be simulated without having a copy of the blockchain though using a local [TestRPC](https://github.com/ethereumjs/testrpc) node, but thats out of scope for this guide.
+    
+    
 
      ```js
      // Basic call to get some return data, no transaction signing
@@ -85,5 +87,7 @@ section
     
     ## ST Playground
     
-  .iframeInject#stIframeInject
-    
+  .loading-wrapper-parent
+    .loading-wrapper
+      .loader
+    iframe#stIframeInject

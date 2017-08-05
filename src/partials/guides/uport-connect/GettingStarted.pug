@@ -69,9 +69,9 @@ section
 
     The clientID is the public address of your app and the signer (wrapped with the SimpleSigner function) is the signing key of your app that you will help create JWT tokens. These bits of information are given to you after registering an application.
 
-    **We should also export the `web3` object from the resulting uport object for signing transactions later.**
+    **We should also export the `web3` and `MNID` objects from the resulting uport object for signing transactions later.**
 
     ```js
     const web3 = uport.getWeb3()
-    export { web3, uport }
+    export { web3, uport, MNID }
     ```          

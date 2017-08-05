@@ -1,7 +1,180 @@
 block head_end
   include:sass ../node_modules/prismjs/themes/prism.css
   include:sass ../node_modules/font-awesome/css/font-awesome.min.css
-  include:sass sass/_base.scss
+  :sass
+    /*	FONTS
+    ------------------------*/
+
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+    /*	TYPOGRAPHY
+    –––––––––––––––––––––––––––*/
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Raleway', Arial, sans-serif;
+      color: #555;
+      font-size: 100%;
+      line-height: 1.5;
+      background-color: #f2f2f2;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* ------ Normalize ----- */
+
+    *,
+    *:after,
+    *:before {
+      box-sizing: border-box;
+    }
+
+    body header *,
+    body footer * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: darkblue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    li { list-style: none; }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0;
+    }
+
+    .apidocs h2:nth-of-type(2) {
+      display: none;
+    }
+
+    p > code,
+    td > code {
+      font-size: 1.2rem !important;
+      padding: .2rem .3rem;
+      vertical-align: top;
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 1px solid #333;
+
+      th, td {
+        padding: 0 .5rem;
+      }
+
+      thead {
+        th {
+          text-align: left;
+          border-bottom: 1px solid #333;
+          border-left: 1px solid #333;
+        }
+      }
+
+      tbody {
+        tr:nth-child(odd) {
+          background: rgba(171, 189, 203, .3);
+        }
+      }
+    }
+
+    pre {
+      margin-bottom: 2rem !important;
+    }
+    
+    iframe {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ----- Plugins ------ */
+    .gitter-chat-embed-action-bar-item {
+      display: none;
+    }
+
+    /*---- Hacks ------ */
+    // temp
+    .footer { display: none !important; }
+    
+    .loading-wrapper-parent {
+      position: relative;
+      background: #ccc;
+      width: 100%;
+      height: 800px; 
+      
+      .guides & {
+        max-width: 95%;
+      }
+    }
+    
+    .loading-wrapper {
+      position: absolute;
+      left: calc(50% - 10rem);
+      top: calc(50% - 10rem);
+      
+      .gitter & {
+        top: calc(50% - 10rem - (40px*2));
+      }
+    }
+
+    .loader,
+    .loader:after {
+      border-radius: 50%;
+      width: 20rem;
+      height: 20rem;
+    }
+    .loader {
+      //- margin: 60px auto;
+      font-size: 10px;
+      position: relative;
+      z-index: 1;
+      text-indent: -9999rem;
+      border-top: 2.5rem solid rgba(255, 255, 255, 0.2);
+      border-right: 2.5rem solid rgba(255, 255, 255, 0.2);
+      border-bottom: 2.5rem solid rgba(255, 255, 255, 0.2);
+      border-left: 2.5rem solid #aaa;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation: load8 1.1s infinite linear;
+      animation: load8 1.1s infinite linear;
+    }
+    @-webkit-keyframes load8 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes load8 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
 
 block content
   include partials/blocks/header
@@ -12,7 +185,7 @@ block body_end
   script
     include ../node_modules/prismjs/prism.js
     include js/sidecarSetup.js
-  script(type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer)
+  script(id="sidecarInject" type="text/javascript" async defer)
   script(type="text/javascript" src="js/script.js")
 	
 doctype html

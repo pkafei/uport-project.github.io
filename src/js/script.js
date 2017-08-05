@@ -6,12 +6,11 @@ window.history.pushState('', '', window.location.pathname)
 ///////////////////////
 // Utilities
 ///////////////////////
-const pvd = (e) => e.preventDefault();
+const pvd = (e) => e.preventDefault()
 const hide = (item) => { item.style.display = 'none' }
 const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)
-const sanitizeHash = (text) =>
-  text.toLowerCase().split(' ').join('-')
+const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 
 // TODO: Logo / Sign In
   // const developersNav =
@@ -60,6 +59,55 @@ const stIframeInjectDOM =
 const contentShortcutsDOM =
   $$('.content-shortcuts')[0]
 
+const guideContentDOM =
+  $$('.guides .content')[0]
+
+const guideiFrameDOM =
+  $$('.guides iframe')
+
+const sidecarScriptInjectDOM =
+  $$('#sidecarInject')[0]
+
+///////////////////////
+// Global Event Listeners
+///////////////////////
+
+guideContentDOM.onscroll = () => iframeLazyLoad()
+
+///////////////////////
+// iFrame Lazy Loader
+///////////////////////
+
+function iframeLazyLoad () {
+  let guidestop = guideContentDOM.scrollTop
+  let viewArea = document.body.offsetHeight
+
+  guideiFrameDOM.forEach((item) => {
+   let iframetop = item.offsetTop
+   let bottomBar = guidestop + viewArea
+
+   if (!item.getAttribute('loaded') && bottomBar >= iframetop) {
+
+     const setIframe = (url) => {
+       item.setAttribute('src', 'https://www.webpackbin.com/bins/'+url)
+       item.setAttribute('loaded', true)
+     }
+
+     switch (item.id) {
+       case 'rcIframeInject':
+         setIframe('-Kq-LKec34MlPK9_UMVr')
+         break
+       case 'acIframeInject':
+         setIframe('-KqPA8lwzM77gVsDtV8V')
+         break
+       case 'stIframeInject':
+         setIframe('-Kqcukv7y_qg-05zwEci')
+         break
+     }
+   }
+  })
+}
+
 ///////////////////////
 // Router Logic
 ///////////////////////
@@ -80,36 +128,21 @@ contentShortcutsDOM.onclick = (evt) => {
                             .parentElement
                             .parentElement
                             .classList[0].split('-').join('')
-  changeMainClass(tabArea);
+  changeMainClass(tabArea)
 }
 
 navDOM.onclick = (evt) => {
-  const desiredHash = evt.target.parentElement.hash;
+  const desiredHashText = evt.target.parentElement.hash.replace('#','')
 
-  if (desiredHash !== undefined && desiredHash !== '') {
-    const desiredHashText = evt.target.parentElement.hash.replace('#','');
-    changeMainClass(desiredHashText);
-
-    // TODO: upgrade to scrolltop sniff
-    // Get the number of pixels scrolled
-    // var  intElemScrollTop = $$(someElement).scrollTop;
-
-    // Late injection for webpackbin to render correct
-    if( desiredHashText === 'guides') {
-      if (rcIframeInjectDOM.childNodes.length === 0) {
-        rcIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-Kq-LKec34MlPK9_UMVr'/>"
-      }
-      if (acIframeInjectDOM.childNodes.length === 0) {
-        acIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-KqPA8lwzM77gVsDtV8V'/>"
-      }
-      if (stIframeInjectDOM.childNodes.length === 0) {
-        stIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-KqPKG4Ap74btrL3DU94'/>"
-      }
-    }
+  if (desiredHashText !== undefined && desiredHashText !== '') {
+    changeMainClass(desiredHashText)
   }
 
   // Exception for external links
-  if(desiredHash !== ''){ pvd(evt); }
+  if (desiredHashText !== ''){ pvd(evt) }
+  if (desiredHashText === 'gitter') {
+    sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+  }
 }
 
 ///////////////////////
@@ -120,7 +153,7 @@ function createSidebarList (contextArea, flag) {
 
   let list = document.createElement('ul')
 
-  if(flag === 'guide') {
+  if (flag === 'guide') {
     let contextAreaH2s = contextArea.querySelectorAll('h2')
 
     contextAreaH2s.forEach((el) => {
@@ -137,7 +170,7 @@ function createSidebarList (contextArea, flag) {
     })
   }
 
-  if(flag === 'doc') {
+  if (flag === 'doc') {
     let docTOCpath = 'ul:nth-of-type(1) li ul li'
     let ucContentListItems = contextArea.querySelectorAll(docTOCpath)
     let cloneArry = []
@@ -146,9 +179,9 @@ function createSidebarList (contextArea, flag) {
       cloneArry.push(item.cloneNode(true))
     })
 
-    if(cloneArry.length > 0){
+    if (cloneArry.length > 0){
       cloneArry.forEach((item) => {
-        if(item.childNodes[1] !== undefined){
+        if (item.childNodes[1] !== undefined){
           item.childNodes[1].remove()
         }
         list.appendChild(item)
@@ -160,7 +193,7 @@ function createSidebarList (contextArea, flag) {
 }
 
 function createSidebarAreas (currentSource, sourceFlag) {
-  let contextArea = currentSource;
+  let contextArea = currentSource
 
   let createdSection = document.createElement('section')
 
@@ -182,15 +215,19 @@ function createSidebarAreas (currentSource, sourceFlag) {
 }
 
 function createSidebars (sources) {
+
   sources.forEach((source) => {
     let flag
     source[0].parentNode.className === 'guide'
       ? flag = 'guide'
       : flag = 'doc'
+
     for (let i = 0; i < source.length; i++) {
-      let createdElements = createSidebarAreas(source[i], flag);
+      let createdElements = createSidebarAreas(source[i], flag)
+
       createdElements.section.appendChild(createdElements.header)
       createdElements.section.appendChild(createdElements.list)
+
       flag === 'guide'
         ? sideBarsDOM[0].appendChild(createdElements.section)
         : sideBarsDOM[1].appendChild(createdElements.section)
@@ -224,5 +261,5 @@ createSidebars([guideAreaDOM, docAreaDOM])
 const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
 const uch2ccDOM = $$(uch2cc)[0]
 const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
-hide(uch2ccDOM);
+hide(uch2ccDOM)
 uch2ccDOMPlusAll.forEach((el) => {hide(el)})

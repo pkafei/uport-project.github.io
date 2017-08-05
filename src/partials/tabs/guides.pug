@@ -9,10 +9,19 @@
   :sass
     .guide {
       background: white;
-      padding: 1rem;
+      padding: 1rem;      
       
-      .iframeinject {
+      iframe {
+        position: relative;
+        z-index: 2;
         margin-bottom: 2rem;
+        background: transparent;
+        border: none;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        width: 100%;
+        height: 800px;
       }
 
       h1 {

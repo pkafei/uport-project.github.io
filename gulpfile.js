@@ -6,7 +6,6 @@ var gulp = require('gulp'),
   data = require('gulp-data'),
   pug = require('gulp-pug'),
   prefix = require('gulp-autoprefixer'),
-  // sass = require('gulp-sass'),
   transSass = require('jstransformer-scss'),
   babel = require('gulp-babel'),
   image = require('gulp-image'),
@@ -27,21 +26,16 @@ var paths = {
   js: './public/js/',
   img: './public/img/',
 
-  sass: './src/sass/',
   es6: './src/js/',
   images: './src/images/',
-
   data: './src/_data/',
   partials: './src/partials/',
 
   nodeMods: './node_modules/'
 };
 
-/**
- * Compile .pug files and pass in data from json file
- * matching file name. index.pug - index.pug.json
- */
 gulp.task('pug', () => {
+  // return gulp.src('./src/partials/tabs/tools.pug')
   return gulp.src('./src/*.pug')
     .pipe(
       data((file) => {
@@ -62,10 +56,10 @@ gulp.task('pug', () => {
           }
         }
       })
-      //     .pipe(
-      //       prefix(
-      //         ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
-      //         { cascade: true }))
+    // .pipe(
+    //   prefix(
+    //     ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
+    //     { cascade: true }))
     )
     .on('error', (err) => {
       process.stderr.write(err.message + '\n');
@@ -77,10 +71,7 @@ gulp.task('pug', () => {
 /**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug','es6'], () => {
-  // browserSync.reload();
-  // gulp.watch("public/index.html", htmlInjector);
-});
+gulp.task('rebuild', ['pug','es6'], () => { });
 
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
@@ -95,15 +86,6 @@ gulp.task('browser-sync', ['pug', 'es6'], () => {
     notify: false
   });
 });
-
-// gulp.task("browser-sync", function () {
-//     browserSync.use(htmlInjector, {
-//         files: "app/*.html"
-//     });
-//     browserSync.init({
-//         server: "test/fixtures"
-//     });
-// });
 
 // Compile ES6 js files to ES2015 and copy over
 gulp.task('es6', () => {
@@ -149,23 +131,12 @@ gulp.task('jsdocs', () => {
 // });
 
 /**
- * Watch scss files for changes & recompile
+ * Watch pug/es6 files for changes & recompile
  * Watch .pug files run pug-rebuild then reload BrowserSync
  */
 gulp.task('watch', () => {
-  // gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch('./src/**/*.pug', ['rebuild']);
   gulp.watch('./src/**/*.js', ['rebuild']);
 });
-
-// Build task compile sass and pug.
 gulp.task('build', ['pug', 'es6']);
-
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync then watch
- * files for changes
- */
-gulp.task("default", ['browser-sync', 'watch'], function () {
-    // gulp.watch("public/index.html", htmlInjector);
-});
+gulp.task("default", ['browser-sync', 'watch'], () => { });

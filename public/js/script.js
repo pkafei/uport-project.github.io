@@ -60,6 +60,54 @@ var stIframeInjectDOM = $$('#stIframeInject')[0];
 
 var contentShortcutsDOM = $$('.content-shortcuts')[0];
 
+var guideContentDOM = $$('.guides .content')[0];
+
+var guideiFrameDOM = $$('.guides iframe');
+
+var sidecarScriptInjectDOM = $$('#sidecarInject')[0];
+
+///////////////////////
+// Global Event Listeners
+///////////////////////
+
+guideContentDOM.onscroll = function () {
+  return iframeLazyLoad();
+};
+
+///////////////////////
+// iFrame Lazy Loader
+///////////////////////
+
+function iframeLazyLoad() {
+  var guidestop = guideContentDOM.scrollTop;
+  var viewArea = document.body.offsetHeight;
+
+  guideiFrameDOM.forEach(function (item) {
+    var iframetop = item.offsetTop;
+    var bottomBar = guidestop + viewArea;
+
+    if (!item.getAttribute('loaded') && bottomBar >= iframetop) {
+
+      var setIframe = function setIframe(url) {
+        item.setAttribute('src', 'https://www.webpackbin.com/bins/' + url);
+        item.setAttribute('loaded', true);
+      };
+
+      switch (item.id) {
+        case 'rcIframeInject':
+          setIframe('-Kq-LKec34MlPK9_UMVr');
+          break;
+        case 'acIframeInject':
+          setIframe('-KqPA8lwzM77gVsDtV8V');
+          break;
+        case 'stIframeInject':
+          setIframe('-Kqcukv7y_qg-05zwEci');
+          break;
+      }
+    }
+  });
+}
+
 ///////////////////////
 // Router Logic
 ///////////////////////
@@ -77,33 +125,18 @@ contentShortcutsDOM.onclick = function (evt) {
 };
 
 navDOM.onclick = function (evt) {
-  var desiredHash = evt.target.parentElement.hash;
+  var desiredHashText = evt.target.parentElement.hash.replace('#', '');
 
-  if (desiredHash !== undefined && desiredHash !== '') {
-    var desiredHashText = evt.target.parentElement.hash.replace('#', '');
+  if (desiredHashText !== undefined && desiredHashText !== '') {
     changeMainClass(desiredHashText);
-
-    // TODO: upgrade to scrolltop sniff
-    // Get the number of pixels scrolled
-    // var  intElemScrollTop = $$(someElement).scrollTop;
-
-    // Late injection for webpackbin to render correct
-    if (desiredHashText === 'guides') {
-      if (rcIframeInjectDOM.childNodes.length === 0) {
-        rcIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-Kq-LKec34MlPK9_UMVr'/>";
-      }
-      if (acIframeInjectDOM.childNodes.length === 0) {
-        acIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-KqPA8lwzM77gVsDtV8V'/>";
-      }
-      if (stIframeInjectDOM.childNodes.length === 0) {
-        stIframeInjectDOM.innerHTML = "<iframe style='width:100%; max-width:95%; height: 800px' src='https://www.webpackbin.com/bins/-KqPKG4Ap74btrL3DU94'/>";
-      }
-    }
   }
 
   // Exception for external links
-  if (desiredHash !== '') {
+  if (desiredHashText !== '') {
     pvd(evt);
+  }
+  if (desiredHashText === 'gitter') {
+    sidecarScriptInjectDOM.src = "https://sidecar.gitter.im/dist/sidecar.v1.js";
   }
 };
 
@@ -177,13 +210,17 @@ function createSidebarAreas(currentSource, sourceFlag) {
 }
 
 function createSidebars(sources) {
+
   sources.forEach(function (source) {
     var flag = void 0;
     source[0].parentNode.className === 'guide' ? flag = 'guide' : flag = 'doc';
+
     for (var i = 0; i < source.length; i++) {
       var createdElements = createSidebarAreas(source[i], flag);
+
       createdElements.section.appendChild(createdElements.header);
       createdElements.section.appendChild(createdElements.list);
+
       flag === 'guide' ? sideBarsDOM[0].appendChild(createdElements.section) : sideBarsDOM[1].appendChild(createdElements.section);
     }
   });
