@@ -71,12 +71,12 @@ gulp.task('pug', () => {
 /**
  * Recompile .pug files and live reload the browser
  */
-gulp.task('rebuild', ['pug','es6'], () => { });
+gulp.task('rebuild', ['pug'], () => { });
 
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['pug', 'es6'], () => {
+gulp.task('browser-sync', ['pug'], () => {
   browserSync.use(htmlInjector, {
     files: "public/index.html"
   });
@@ -88,11 +88,11 @@ gulp.task('browser-sync', ['pug', 'es6'], () => {
 });
 
 // Compile ES6 js files to ES2015 and copy over
-gulp.task('es6', () => {
-  return gulp.src(paths.es6 + '*.js')
-    .pipe(babel({presets: ['es2015']}))
-    .pipe(gulp.dest(paths.js));
-});
+// gulp.task('es6', () => {
+//   return gulp.src(paths.es6 + '*.js')
+//     .pipe(babel({presets: ['es2015']}))
+//     .pipe(gulp.dest(paths.js));
+// });
 
 // Optimize and copy CSS over
 gulp.task('image', () => {
@@ -138,5 +138,5 @@ gulp.task('watch', () => {
   gulp.watch('./src/**/*.pug', ['rebuild']);
   gulp.watch('./src/**/*.js', ['rebuild']);
 });
-gulp.task('build', ['pug', 'es6']);
+gulp.task('build', ['pug']);
 gulp.task("default", ['browser-sync', 'watch'], () => { });
