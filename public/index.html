@@ -1,4 +1,4 @@
-<style>/**
+<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><style>/**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
@@ -2463,7 +2463,7 @@ iframe {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
-</style><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
 .footer {
   position: relative;
   display: flex;
@@ -2691,7 +2691,7 @@ export { web3, uport, MNID }
 <p>Once the user has scanned the displayed QR image, and has submitted their credentials, the promise should resolve with a Schema.org person JSON data payload. You can then handle this data however you desire in the then function.</p>
 <pre><code class="language-js">// Basic usage with modal injection
 uport.requestCredentials()
-     .then((credentials) =&gt; {
+     .then((userProfile) =&gt; {
        // Do something after they have disclosed credentials
 })
 </code></pre>
@@ -2714,7 +2714,7 @@ uport.requestCredentials()
 <p>You can request specific credentials by submitting an array of values in an array of the <code>requested</code> key of a passed object.</p>
 <pre><code class="language-js">uport.requestCredentials({
   requested: ['name', 'phone', 'country'],
-  }).then((credentials) =&gt; {
+  }).then((userProfile) =&gt; {
     // Do something after they have disclosed credentials
 })
 </code></pre>
@@ -2723,7 +2723,7 @@ uport.requestCredentials()
 <pre><code class="language-js">uport.requestCredentials({
   requested: ['name', 'phone', 'country'],
   notifcations: true
-  }).then((credentials) =&gt; {
+  }).then((userProfile) =&gt; {
     // Do something after they have disclosed credentials
 })
 </code></pre>
@@ -2749,7 +2749,7 @@ uport.requestCredentials()
     aTag.appendChild(qr)
     document.querySelector('#kqr').appendChild(aTag)
   }
-  }).then((credentials) =&gt; {
+  }).then((userProfile) =&gt; {
     // Do something after they have disclosed credentials
 })
 </code></pre>
@@ -2791,6 +2791,14 @@ const MyContract = MyContractSetup()
 <h2>Call a basic method on the contract</h2>
 <p>In a typical application, upon load, there is data usually being requested by a server to get the current state of the user's data. We must do the same here, but rather than reading a SQL database, we are instead reading the blockchain.</p>
 <p>At ConsenSys we use our Web 3.0 infrastructure stack called <a href="https://github.com/uport-project/demo/blob/master/infura.io">Infura</a> to make the amount of possible calls scalable. You could otherwise have an Ethereum node local on your machine with a downloaded copy of the blockchain you could query. Calls can be simulated without having a copy of the blockchain though using a local <a href="https://github.com/ethereumjs/testrpc">TestRPC</a> node, but thats out of scope for this guide.</p>
+<p>It is important to note that Ethereum has many networks, such as &quot;intranet&quot; style private networks, tests networks, and the main network everyone knows. In order to call a contract with our ID to look up some data, we must match the network that the identity is on and the the network the contract is on. To do this we will grab the uport address and break it out using the MNID or &quot;Multi Netowork Identity&quot; module supplied with uPort. Remember our <code>requestCrednetials</code> callback that gave us a Schema.org/Persona JSON payload? Lets go dig into that.</p>
+<p>Lesson learned: uPort has 1 master address that is a hash of MANY addresses for all the different networks it exists on.</p>
+<pre><code class="language-js">.then((userProfile) =&gt; {
+  const decodedId = MNID.decode(userProfile.address)
+  const specificNetworkAddress = decodedId.address
+})
+</code></pre>
+<p>We could then supply <code>specificNetworkAddress</code> to where <code>METHOD_INPUT_DATA</code> is below.</p>
 <pre><code class="language-js">// Basic call to get some return data, no transaction signing
 MyContract.someMethod.call(METHOD_INPUT_DATA, (error, response) =&gt; {
   if (error) { throw error }
@@ -3497,7 +3505,7 @@ when requests are created.</p>
     display: none; }
   .lib p {
     font-size: 1rem; }
-</style><div class="tools"><div class="pagewrap"><div class="sidebar"></div><div class="content"><ul><li><a href="http://truffleframework.com" target="_blank"><img src="/img/truffle-logo.svg"/><h3 class="title">Truffle</h3><p class="desc">Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.</p></a></li><li><a href="http://metamask.io" target="_blank"><img src="/img/metamask-logo.png"/><h3 class="title">Metamask</h3><p class="desc">MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.</p></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js" target="_blank"><img src="/img/ethereum-logo.png"/><h3 class="title">Remix</h3><p class="desc">Remix is an IDE for the smart contract programming language Solidity and has an integrated debugger and testing environment.</p></a></li><li><a href="https://github.com/ethereum/mist/releases" target="_blank"><img src="/img/mist-logo.png"/><h3 class="title">Mist</h3><p class="desc">The Mist browser is a gateway to decentralized applications on the Ethereum blockchain. It allows you to hold and secure ether and other crypto-assets built on Ethereum, as well as write, deploy and use smart contracts.          </p></a></li></ul></div></div></div><style>.tools .content {
+</style><div class="tools"><div class="pagewrap"><div class="sidebar"></div><div class="content"><ul><li><a href="http://truffleframework.com" target="_blank"><img src="/img/truffle-logo.svg"><h3 class="title">Truffle</h3><p class="desc">Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.</p></a></li><li><a href="http://metamask.io" target="_blank"><img src="/img/metamask-logo.png"><h3 class="title">Metamask</h3><p class="desc">MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.</p></a></li><li><a href="https://remix.ethereum.org/#version=soljson-v0.4.13+commit.fb4cb1a.js" target="_blank"><img src="/img/ethereum-logo.png"><h3 class="title">Remix</h3><p class="desc">Remix is an IDE for the smart contract programming language Solidity and has an integrated debugger and testing environment.</p></a></li><li><a href="https://github.com/ethereum/mist/releases" target="_blank"><img src="/img/mist-logo.png"><h3 class="title">Mist</h3><p class="desc">The Mist browser is a gateway to decentralized applications on the Ethereum blockchain. It allows you to hold and secure ether and other crypto-assets built on Ethereum, as well as write, deploy and use smart contracts.          </p></a></li></ul></div></div></div><style>.tools .content {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -3589,7 +3597,7 @@ when requests are created.</p>
     padding: 1rem; }
     main .content p, main .content code, main .content textarea, main .content input {
       font-size: .8rem; }
-</style><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"/><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
+</style><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
 /* **********************************************
      Begin prism-core.js
 ********************************************** */
@@ -4487,7 +4495,7 @@ function iframeLazyLoad () {
 
      switch (item.id) {
        case 'rcIframeInject':
-         setIframe('-Kq-LKec34MlPK9_UMVr')
+         setIframe('-Kql3OAxjMEtK4Vn2M3o')
          break
        case 'acIframeInject':
          setIframe('-KqPA8lwzM77gVsDtV8V')
@@ -4524,18 +4532,24 @@ contentShortcutsDOM.onclick = (evt) => {
 }
 
 navDOM.onclick = (evt) => {
-  const desiredHashText = evt.target.parentElement.hash.replace('#','')
+  const desiredParent = evt.target.parentElement
 
-  if (desiredHashText !== undefined && desiredHashText !== '') {
-    changeMainClass(desiredHashText)
-  }
+  if (desiredParent.hash) {
+    const desiredHash = desiredParent.hash
+    const desiredHashText = desiredHash.replace('#','')
 
-  // Exception for external links
-  if (desiredHashText !== ''){ pvd(evt) }
-  if (desiredHashText === 'gitter') {
-    let sidecarScriptInjectDOM = document.createElement('script')
-    sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-    document.body.appendChild(sidecarScriptInjectDOM)
+    if (desiredHash !== undefined && desiredHash !== '') {
+      changeMainClass(desiredHashText)
+    }
+
+    // Exception for external links
+    if (desiredHash !== ''){ pvd(evt) }
+    if (desiredHashText === 'gitter' && $$('#sidecarScriptInject').length === 0) {
+      let sidecarScriptInjectDOM = document.createElement('script')
+      sidecarScriptInjectDOM.id="sidecarScriptInject"
+      sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+      document.body.appendChild(sidecarScriptInjectDOM)
+    }
   }
 }
 
@@ -4657,4 +4671,4 @@ const uch2ccDOM = $$(uch2cc)[0]
 const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
 hide(uch2ccDOM)
 uch2ccDOMPlusAll.forEach((el) => {hide(el)})
-</script><script id="sidecarInject" type="text/javascript" async="async" defer="defer"></script><!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"></head><body></body></html>
+</script></body></html>

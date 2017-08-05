@@ -94,7 +94,7 @@ function iframeLazyLoad() {
 
       switch (item.id) {
         case 'rcIframeInject':
-          setIframe('-Kq-LKec34MlPK9_UMVr');
+          setIframe('-Kql3OAxjMEtK4Vn2M3o');
           break;
         case 'acIframeInject':
           setIframe('-KqPA8lwzM77gVsDtV8V');
@@ -124,20 +124,26 @@ contentShortcutsDOM.onclick = function (evt) {
 };
 
 navDOM.onclick = function (evt) {
-  var desiredHashText = evt.target.parentElement.hash.replace('#', '');
+  var desiredParent = evt.target.parentElement;
 
-  if (desiredHashText !== undefined && desiredHashText !== '') {
-    changeMainClass(desiredHashText);
-  }
+  if (desiredParent.hash) {
+    var desiredHash = desiredParent.hash;
+    var desiredHashText = desiredHash.replace('#', '');
 
-  // Exception for external links
-  if (desiredHashText !== '') {
-    pvd(evt);
-  }
-  if (desiredHashText === 'gitter') {
-    var sidecarScriptInjectDOM = document.createElement('script');
-    sidecarScriptInjectDOM.src = "https://sidecar.gitter.im/dist/sidecar.v1.js";
-    document.body.appendChild(sidecarScriptInjectDOM);
+    if (desiredHash !== undefined && desiredHash !== '') {
+      changeMainClass(desiredHashText);
+    }
+
+    // Exception for external links
+    if (desiredHash !== '') {
+      pvd(evt);
+    }
+    if (desiredHashText === 'gitter' && $$('#sidecarScriptInject').length === 0) {
+      var sidecarScriptInjectDOM = document.createElement('script');
+      sidecarScriptInjectDOM.id = "sidecarScriptInject";
+      sidecarScriptInjectDOM.src = "https://sidecar.gitter.im/dist/sidecar.v1.js";
+      document.body.appendChild(sidecarScriptInjectDOM);
+    }
   }
 };
 
