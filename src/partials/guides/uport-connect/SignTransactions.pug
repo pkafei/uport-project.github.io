@@ -1,3 +1,5 @@
+//- include ../../mixins/iframeloader
+
 section
   :markdown-it
     # Signing Transactions
@@ -87,7 +89,4 @@ section
     
     ## ST Playground
     
-  .loading-wrapper-parent
-    .loading-wrapper
-      .loader
-    iframe#stIframeInject
+  +iframe('stIframeInject')

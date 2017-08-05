@@ -2396,7 +2396,9 @@ pre {
 
 iframe {
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  background: transparent;
+  border: none; }
 
 /* ----- Plugins ------ */
 .gitter-chat-embed-action-bar-item {
@@ -2406,13 +2408,17 @@ iframe {
 .footer {
   display: none !important; }
 
+/*---- Loader ------ */
 .loading-wrapper-parent {
   position: relative;
   background: #ccc;
   width: 100%;
-  height: 800px; }
+  height: 800px;
+  margin-bottom: 2rem; }
   .guides .loading-wrapper-parent {
     max-width: 95%; }
+  .gitter .loading-wrapper-parent {
+    margin-bottom: 0; }
 
 .loading-wrapper {
   position: absolute;
@@ -2838,11 +2844,6 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
   background: white;
   padding: 1rem; }
   .guide iframe {
-    position: relative;
-    z-index: 2;
-    margin-bottom: 2rem;
-    background: transparent;
-    border: none;
     display: flex;
     flex-direction: row;
     text-align: center;
