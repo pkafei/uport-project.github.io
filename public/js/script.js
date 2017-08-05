@@ -64,8 +64,6 @@ var guideContentDOM = $$('.guides .content')[0];
 
 var guideiFrameDOM = $$('.guides iframe');
 
-var sidecarScriptInjectDOM = $$('#sidecarInject')[0];
-
 ///////////////////////
 // Global Event Listeners
 ///////////////////////
@@ -81,10 +79,11 @@ guideContentDOM.onscroll = function () {
 function iframeLazyLoad() {
   var guidestop = guideContentDOM.scrollTop;
   var viewArea = document.body.offsetHeight;
+  var bottomBar = guidestop + viewArea;
 
   guideiFrameDOM.forEach(function (item) {
-    var iframetop = item.offsetTop;
-    var bottomBar = guidestop + viewArea;
+    var iframetop = item.parentElement.offsetTop;
+    var itop = item.id + ":" + iframetop;
 
     if (!item.getAttribute('loaded') && bottomBar >= iframetop) {
 
@@ -136,7 +135,9 @@ navDOM.onclick = function (evt) {
     pvd(evt);
   }
   if (desiredHashText === 'gitter') {
+    var sidecarScriptInjectDOM = document.createElement('script');
     sidecarScriptInjectDOM.src = "https://sidecar.gitter.im/dist/sidecar.v1.js";
+    document.body.appendChild(sidecarScriptInjectDOM);
   }
 };
 

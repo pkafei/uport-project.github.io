@@ -65,9 +65,6 @@ const guideContentDOM =
 const guideiFrameDOM =
   $$('.guides iframe')
 
-const sidecarScriptInjectDOM =
-  $$('#sidecarInject')[0]
-
 ///////////////////////
 // Global Event Listeners
 ///////////////////////
@@ -81,10 +78,11 @@ guideContentDOM.onscroll = () => iframeLazyLoad()
 function iframeLazyLoad () {
   let guidestop = guideContentDOM.scrollTop
   let viewArea = document.body.offsetHeight
+  let bottomBar = guidestop + viewArea
 
   guideiFrameDOM.forEach((item) => {
-   let iframetop = item.offsetTop
-   let bottomBar = guidestop + viewArea
+   let iframetop = item.parentElement.offsetTop
+   let itop = item.id + ":" + iframetop
 
    if (!item.getAttribute('loaded') && bottomBar >= iframetop) {
 
@@ -141,7 +139,9 @@ navDOM.onclick = (evt) => {
   // Exception for external links
   if (desiredHashText !== ''){ pvd(evt) }
   if (desiredHashText === 'gitter') {
+    let sidecarScriptInjectDOM = document.createElement('script')
     sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+    document.body.appendChild(sidecarScriptInjectDOM)
   }
 }
 
