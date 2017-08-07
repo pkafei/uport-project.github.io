@@ -2418,7 +2418,11 @@ iframe {
   .guides .loading-wrapper-parent {
     max-width: 95%; }
   .gitter .loading-wrapper-parent {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    height: 100%; }
+  .myapps .loading-wrapper-parent {
+    margin-bottom: 0;
+    height: 100%; }
 
 .loading-wrapper {
   position: absolute;
@@ -2463,7 +2467,7 @@ iframe {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#myapps"><span>My Apps</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
 .footer {
   position: relative;
   display: flex;
@@ -3529,15 +3533,32 @@ when requests are created.</p>
           text-decoration: none;
           background: #ccc;
           border-radius: .5rem; }
-</style><div class="myapps"><div class="pagewrap"><div class="sidebar"><section><h2>My Apps</h2><ul><li><a href="#"><span>Application 1</span></a></li><li><a href="#"><span>Application 2</span></a></li><li><a href="#"><span>Application 3</span></a></li><li><a href="#"><span>Application 4</span></a></li><li><a href="#"><span>Application 5</span></a></li></ul></section></div></div></div><div class="gitter"><div class="pagewrap"><div class="sidebar"><p>Be respectful. Files bugs in github if you can validate with others. Beware of phishers. DO NOT PASTE ANY PRIVATE KEYS IN CHAT. </p></div><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><div id="gitterinject"></div></div></div></div></div><style>.gitter .content {
+</style><div class="myapps"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="appmanagerinject"></iframe></div></div></div></div><style>.myapps .content {
   position: relative;
   padding: 0 !important; }
+  .myapps .content #appmanagerinject {
+    height: 100%; }
+  .myapps .content iframe {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+    height: 800px; }
+    .myapps .myapps .content iframe {
+      height: 100%; }
+</style><div class="gitter"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><div id="gitterinject"></div></div></div></div></div><style>.gitter .content {
+  position: relative;
+  padding: 0 !important; }
+  .gitter .content #gitterinject {
+    height: 100%; }
   .gitter .content iframe {
     display: flex;
     flex-direction: row;
     text-align: center;
     width: 100%;
     height: 800px; }
+    .gitter .gitter .content iframe {
+      height: 100%; }
 </style></main><style>main {
   border-bottom: 1px solid #333;
   flex: 1;
@@ -4470,6 +4491,9 @@ const guideContentDOM =
 const guideiFrameDOM =
   $$('.guides iframe')
 
+const appmanagerInjectDOM =
+  $$('#appmanagerinject')[0]
+
 ///////////////////////
 // Global Event Listeners
 ///////////////////////
@@ -4547,11 +4571,16 @@ navDOM.onclick = (evt) => {
 
     // Exception for external links
     if (desiredHash !== ''){ pvd(evt) }
+
     if (desiredHashText === 'gitter' && $$('#sidecarScriptInject').length === 0) {
       let sidecarScriptInjectDOM = document.createElement('script')
       sidecarScriptInjectDOM.id="sidecarScriptInject"
       sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
       document.body.appendChild(sidecarScriptInjectDOM)
+    }
+
+    if (desiredHashText === 'myapps' && appmanagerInjectDOM.childNodes.length === 0) {
+      appmanagerInjectDOM.src="http://appmanager.uport.me/"
     }
   }
 }

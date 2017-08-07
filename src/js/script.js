@@ -65,6 +65,9 @@ const guideContentDOM =
 const guideiFrameDOM =
   $$('.guides iframe')
 
+const appmanagerInjectDOM =
+  $$('#appmanagerinject')[0]
+
 ///////////////////////
 // Global Event Listeners
 ///////////////////////
@@ -142,11 +145,16 @@ navDOM.onclick = (evt) => {
 
     // Exception for external links
     if (desiredHash !== ''){ pvd(evt) }
+
     if (desiredHashText === 'gitter' && $$('#sidecarScriptInject').length === 0) {
       let sidecarScriptInjectDOM = document.createElement('script')
       sidecarScriptInjectDOM.id="sidecarScriptInject"
       sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
       document.body.appendChild(sidecarScriptInjectDOM)
+    }
+
+    if (desiredHashText === 'myapps' && appmanagerInjectDOM.childNodes.length === 0) {
+      appmanagerInjectDOM.src="http://appmanager.uport.me/"
     }
   }
 }
