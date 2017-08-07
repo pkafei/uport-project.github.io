@@ -4572,6 +4572,7 @@ navDOM.onclick = (evt) => {
     // Exception for external links
     if (desiredHash !== ''){ pvd(evt) }
 
+    // Gitter Inject
     if (desiredHashText === 'gitter' && $$('#sidecarScriptInject').length === 0) {
       let sidecarScriptInjectDOM = document.createElement('script')
       sidecarScriptInjectDOM.id="sidecarScriptInject"
@@ -4579,6 +4580,7 @@ navDOM.onclick = (evt) => {
       document.body.appendChild(sidecarScriptInjectDOM)
     }
 
+    // App Manager Inject
     if (desiredHashText === 'myapps' && appmanagerInjectDOM.childNodes.length === 0) {
       appmanagerInjectDOM.src="https://appmanager.uport.me/"
     }
