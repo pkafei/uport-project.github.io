@@ -154,7 +154,7 @@ navDOM.onclick = (evt) => {
     }
 
     if (desiredHashText === 'myapps' && appmanagerInjectDOM.childNodes.length === 0) {
-      appmanagerInjectDOM.src="http://appmanager.uport.me/"
+      appmanagerInjectDOM.src="https://appmanager.uport.me/"
     }
   }
 }
