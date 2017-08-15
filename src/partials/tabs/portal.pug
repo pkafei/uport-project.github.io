@@ -50,14 +50,14 @@
               a(href='#uport-connect')
                 span uport-connect
             li
-              a(href='#uport-js')
-                span uport-js
-            //- li
-            //-   a(href='#uport-lite')
-            //-     span uport-lite
-            //- li
-            //-   a(href='#uport-registry')
-            //-     span uport-registry
+              //- a(href='#uport-js' disabled)
+              span uport-js (coming soon)
+            li
+              //- a(href='#uport-lite' disabled)
+              span uport-lite (coming soon)
+            li
+              //- a(href='#uport-registry' disabled)
+              span uport-registry (coming soon)
       //- li.tools
       //-   .shortcut-wrap
       //-     i.fa.fa-book
@@ -77,6 +77,10 @@
       //-         a(href=links.mist)
       //-           span Mist
 :sass
+  @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+  $basic: 412px;
+  $pair: 320px 794px;
+  
   .portal {
     text-align: center;
 
@@ -84,6 +88,10 @@
     .content-shortcuts,
     .whitepaper {
       padding: 3rem 5rem;
+      
+      @include breakpoint($pair) {
+        padding: 5% 5% !important;
+      }
     }
 
     .banner, .whitepaper {
@@ -100,21 +108,37 @@
     
       .fa {
         font-size: 6rem;
+        
+        @include breakpoint($pair) {
+          font-size: 4rem !important;
+        }
       }
       
       .step-desc {
         margin-top: 2rem;
         font-size: 1.3rem;
+        
+        @include breakpoint($pair) {
+          font-size: 1rem !important;
+        }
       }
       
       ul {
         display: flex;
         justify-content: center;
+        padding: 0;
       }
       
       li {
         width: 25%;
         margin: 2rem;
+
+        @include breakpoint($pair) {
+          margin: 0rem !important;
+          flex: 1 !important;
+        }
+
+        // @include breakpoint($pair) {}
 
         .number {
           position: relative;

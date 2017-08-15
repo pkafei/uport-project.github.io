@@ -6,6 +6,8 @@
   "author": "Joshua Azemoh <joshazemoh@gmail.com> (http://azemoh.com)",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
+    "breakpoint-sass": "^2.7.1",
+    "breakpoint-slicer": "^2.0.0",
     "browser-sync": "^2.18.13",
     "bs-html-injector": "^3.0.3",
     "fs-then-native": "^2.0.0",
@@ -41,6 +43,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "gulp-jsdoc3": "^1.0.1",
+    "include-media": "^1.4.9",
     "jstransformer-markdown-it": "^2.0.0",
     "jstransformer-sass": "^0.1.1",
     "jstransformer-scss": "^0.1.4",

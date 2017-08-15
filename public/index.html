@@ -2586,12 +2586,17 @@ iframe {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started"><span>Getting Started</span></a></li><li><a href="#requesting-credentials"><span>Requesting Credentials</span></a></li><li><a href="#attesting-credentials"><span>Attesting Credentials</span></a></li><li><a href="#signing-transactions"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect"><span>uport-connect</span></a></li><li><a href="#uport-js"><span>uport-js</span></a></li></ul></div></li></ul></div></div><style>.portal {
+</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started"><span>Getting Started</span></a></li><li><a href="#requesting-credentials"><span>Requesting Credentials</span></a></li><li><a href="#attesting-credentials"><span>Attesting Credentials</span></a></li><li><a href="#signing-transactions"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect"><span>uport-connect</span></a></li><li><span>uport-js (coming soon)</span></li><li><span>uport-lite (coming soon)</span></li><li><span>uport-registry (coming soon)</span></li></ul></div></li></ul></div></div><style>.portal {
   text-align: center; }
   .portal .banner,
   .portal .content-shortcuts,
   .portal .whitepaper {
     padding: 3rem 5rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .banner,
+      .portal .content-shortcuts,
+      .portal .whitepaper {
+        padding: 5% 5% !important; } }
   .portal .banner, .portal .whitepaper {
     background: #004f80;
     color: white; }
@@ -2600,15 +2605,26 @@ iframe {
     margin: 0 auto 3em auto; }
   .portal .banner-steps .fa {
     font-size: 6rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .banner-steps .fa {
+        font-size: 4rem !important; } }
   .portal .banner-steps .step-desc {
     margin-top: 2rem;
     font-size: 1.3rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .banner-steps .step-desc {
+        font-size: 1rem !important; } }
   .portal .banner-steps ul {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    padding: 0; }
   .portal .banner-steps li {
     width: 25%;
     margin: 2rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .banner-steps li {
+        margin: 0rem !important;
+        flex: 1 !important; } }
     .portal .banner-steps li .number {
       position: relative;
       border-radius: 50%;

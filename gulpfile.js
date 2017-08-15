@@ -83,7 +83,7 @@ gulp.task('browser-sync', ['pug'], () => {
   browserSync.init({
     server: { baseDir: paths.public },
     open: false,
-    notify: false
+    notify: true
   });
 });
 

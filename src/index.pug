@@ -8,6 +8,8 @@ html
     include:sass ../node_modules/font-awesome/css/font-awesome.min.css
     include partials/mixins/iframeloader
     :sass
+        @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+        
         /*	FONTS
         ------------------------*/
 
@@ -15,6 +17,21 @@ html
 
         /*	TYPOGRAPHY
         –––––––––––––––––––––––––––*/
+        
+        //- $basic: 543px;
+        //- $pair: 456px 794px;
+        //- 
+        //- #foo {
+        //-   content: 'No Media Queries';
+        //- 
+        //-   @include breakpoint($basic) {
+        //-     content: 'Basic Media Query';
+        //-   }
+        //- 
+        //-   @include breakpoint($pair) {
+        //-     content: 'Paired Media Query';
+        //-   }
+        //- }
 
         html, body {
           height: 100%;
