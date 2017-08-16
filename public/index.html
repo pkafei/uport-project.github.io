@@ -2325,11 +2325,11 @@ pre[class*="language-"] {
 </style><style>@charset "UTF-8";
 /*	FONTS
 ------------------------*/
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 /*	TYPOGRAPHY
 –––––––––––––––––––––––––––*/
 html, body {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 body {
   font-family: 'Raleway', Arial, sans-serif;
@@ -2393,6 +2393,9 @@ table {
 
 pre {
   margin-bottom: 2rem !important; }
+
+pre[class*="language-"], code {
+  overflow-x: hidden; }
 
 iframe {
   position: relative;
@@ -2586,7 +2589,7 @@ iframe {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>uPort Documentation</h1><p class="text-block">uPort is an open source software project to establish a global, unified, sovereign identity system for people, businesses, organizations, devices, and bots.</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the Mobile Wallet</div></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started"><span>Getting Started</span></a></li><li><a href="#requesting-credentials"><span>Requesting Credentials</span></a></li><li><a href="#attesting-credentials"><span>Attesting Credentials</span></a></li><li><a href="#signing-transactions"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect"><span>uport-connect</span></a></li><li><span>uport-js (coming soon)</span></li><li><span>uport-lite (coming soon)</span></li><li><span>uport-registry (coming soon)</span></li></ul></div></li></ul></div></div><style>.portal {
+</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div><!-- TODO: Insert APPStore and Playstore images --></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started"><span>Getting Started</span></a></li><li><a href="#requesting-credentials"><span>Requesting Credentials</span></a></li><li><a href="#attesting-credentials"><span>Attesting Credentials</span></a></li><li><a href="#signing-transactions"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect"><span>uport-connect</span></a></li><li><span>uport-js (coming soon)</span></li><li><span>uport-lite (coming soon)</span></li><li><span>uport-registry (coming soon)</span></li></ul></div></li></ul></div></div><style>.portal {
   text-align: center; }
   .portal .banner,
   .portal .content-shortcuts,
@@ -2881,7 +2884,10 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
     font-size: 2rem;
     margin: 1.5rem 0; }
   .guide h1 ~ *:not(h1) {
-    margin-left: 2rem; }
+    margin-left: 1rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .guide h1 ~ *:not(h1) {
+        margin-left: 0 !important; } }
   .guide h2 {
     padding-top: 2rem;
     border-top: 1px solid #333; }
@@ -3608,8 +3614,7 @@ when requests are created.</p>
     flex-direction: column;
     flex: 1; }
   main .pagewrap {
-    display: flex;
-    height: 100%; }
+    display: flex; }
     main .pagewrap .content {
       overflow-y: scroll;
       flex: 1; }
@@ -3618,6 +3623,9 @@ when requests are created.</p>
     padding: 1rem;
     width: 300px;
     overflow-y: scroll; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      main .sidebar {
+        display: none !important; } }
     main .sidebar code {
       display: none; }
     main .sidebar ul, main .sidebar li {
@@ -4445,11 +4453,6 @@ analytics.page();
     targetElement: '#gitterinject'
   };
 ///////////////////////
-// Window URL Bar Clear
-///////////////////////
-window.history.pushState('', '', window.location.pathname)
-
-///////////////////////
 // Utilities
 ///////////////////////
 const pvd = (e) => e.preventDefault()
@@ -4458,15 +4461,31 @@ const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)
 const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 
-// TODO: Logo / Sign In
-  // const developersNav =
-  //   $$('a.logo-link')[0]
-  //
-  // const signInNav =
-  //   $$('.sign-in-link')[0]
-  //
-  // const logOutNav =
-  //   $$('.log-out a')[0]
+///////////////////////
+// Window URL Bar Clear
+///////////////////////
+window.history.pushState('', '', window.location.pathname)
+
+if(window.document.body.clientWidth < '794') {
+  $$('.loading-wrapper-parent').forEach((item) => {
+    const warningText = 'Interactive code playground not available in mobile'
+    const warningDom = document.createElement('p')
+    const warningDomChild = document.createElement('b')
+    warningDomChild.textContent = warningText
+    warningDom.appendChild(warningDomChild)
+    item.parentNode.appendChild(warningDom)
+    item.remove()
+  })
+}
+
+// window.onload = function () {
+//   const windowWidth = window.document.body.clientWidth
+//   if(windowWidth < '794') {
+//     $$('.loading-wrapper-parent').forEach((item) => {
+//       item.remove()
+//     })
+//   }
+// }
 
 ///////////////////////
 // DOM HOOKS
@@ -4517,8 +4536,9 @@ const appmanagerInjectDOM =
 ///////////////////////
 // Global Event Listeners
 ///////////////////////
-
-guideContentDOM.onscroll = () => iframeLazyLoad()
+if(window.document.body.clientWidth > '794') {
+  guideContentDOM.onscroll = () => iframeLazyLoad()
+}
 
 ///////////////////////
 // iFrame Lazy Loader

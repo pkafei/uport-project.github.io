@@ -7,6 +7,9 @@
         include ../guides/uport-lite/index
         include ../guides/uport-registry/index
   :sass
+    @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+    $pair: 320px 794px;
+    
     .guide {
       background: white;
       padding: 1rem;      
@@ -25,7 +28,11 @@
       }
   
       h1 ~ *:not(h1) {
-        margin-left: 2rem;
+        margin-left: 1rem;
+        
+        @include breakpoint($pair) {
+          margin-left: 0 !important;
+        }
       }
   
       h2 {

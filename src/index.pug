@@ -9,32 +9,20 @@ html
     include partials/mixins/iframeloader
     :sass
         @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+        $basic: 543px;
+        $pair: 456px 794px;
         
         /*	FONTS
         ------------------------*/
 
-        @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+        //- @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 
         /*	TYPOGRAPHY
         –––––––––––––––––––––––––––*/
-        
-        //- $basic: 543px;
-        //- $pair: 456px 794px;
-        //- 
-        //- #foo {
-        //-   content: 'No Media Queries';
-        //- 
-        //-   @include breakpoint($basic) {
-        //-     content: 'Basic Media Query';
-        //-   }
-        //- 
-        //-   @include breakpoint($pair) {
-        //-     content: 'Paired Media Query';
-        //-   }
-        //- }
 
         html, body {
           height: 100%;
+          overflow: hidden;
         }
 
         body {
@@ -118,6 +106,13 @@ html
 
         pre {
           margin-bottom: 2rem !important;
+        }
+        
+        pre[class*="language-"], code {
+          overflow-x: hidden;
+          //- @include breakpoint($pair) {
+          //-   overflow: hidden;
+          //- }
         }
         
         iframe {

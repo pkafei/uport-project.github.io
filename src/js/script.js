@@ -1,9 +1,4 @@
 ///////////////////////
-// Window URL Bar Clear
-///////////////////////
-window.history.pushState('', '', window.location.pathname)
-
-///////////////////////
 // Utilities
 ///////////////////////
 const pvd = (e) => e.preventDefault()
@@ -12,15 +7,31 @@ const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)
 const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 
-// TODO: Logo / Sign In
-  // const developersNav =
-  //   $$('a.logo-link')[0]
-  //
-  // const signInNav =
-  //   $$('.sign-in-link')[0]
-  //
-  // const logOutNav =
-  //   $$('.log-out a')[0]
+///////////////////////
+// Window URL Bar Clear
+///////////////////////
+window.history.pushState('', '', window.location.pathname)
+
+if(window.document.body.clientWidth < '794') {
+  $$('.loading-wrapper-parent').forEach((item) => {
+    const warningText = 'Interactive code playground not available in mobile'
+    const warningDom = document.createElement('p')
+    const warningDomChild = document.createElement('b')
+    warningDomChild.textContent = warningText
+    warningDom.appendChild(warningDomChild)
+    item.parentNode.appendChild(warningDom)
+    item.remove()
+  })
+}
+
+// window.onload = function () {
+//   const windowWidth = window.document.body.clientWidth
+//   if(windowWidth < '794') {
+//     $$('.loading-wrapper-parent').forEach((item) => {
+//       item.remove()
+//     })
+//   }
+// }
 
 ///////////////////////
 // DOM HOOKS
@@ -71,8 +82,9 @@ const appmanagerInjectDOM =
 ///////////////////////
 // Global Event Listeners
 ///////////////////////
-
-guideContentDOM.onscroll = () => iframeLazyLoad()
+if(window.document.body.clientWidth > '794') {
+  guideContentDOM.onscroll = () => iframeLazyLoad()
+}
 
 ///////////////////////
 // iFrame Lazy Loader

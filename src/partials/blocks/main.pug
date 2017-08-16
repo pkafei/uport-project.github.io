@@ -7,6 +7,9 @@ main.main.portal
   include ../tabs/myapps
   include ../tabs/gitter
 :sass
+  @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+  $pair: 320px 794px;
+  
   main {
     border-bottom: 1px solid #333;
     flex: 1;
@@ -24,7 +27,6 @@ main.main.portal
 
     .pagewrap {
       display: flex;
-      height: 100%;
       .content {
         overflow-y: scroll;
         flex: 1;
@@ -36,6 +38,10 @@ main.main.portal
       padding: 1rem;
       width: 300px;
       overflow-y: scroll;
+      
+      @include breakpoint($pair) {
+        display: none !important;
+      }
 
       code {
         display: none;
