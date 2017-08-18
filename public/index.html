@@ -3555,7 +3555,10 @@ when requests are created.</p>
           text-decoration: none;
           background: #ccc;
           border-radius: .5rem; }
-</style><div class="myapps"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="appmanagerinject"></iframe></div></div></div></div><style>.myapps .content {
+</style><div class="myapps"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="appmanagerinject"></iframe></div></div></div></div><style>.myapps .pagewrap {
+  height: 100%; }
+
+.myapps .content {
   position: relative;
   padding: 0 !important; }
   .myapps .content #appmanagerinject {
@@ -3568,7 +3571,10 @@ when requests are created.</p>
     height: 800px; }
     .myapps .myapps .content iframe {
       height: 100%; }
-</style><div class="gitter"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><div id="gitterinject"></div></div></div></div></div><style>.gitter .content {
+</style><div class="gitter"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><div id="gitterinject"></div></div></div></div></div><style>.gitter .pagewrap {
+  height: 100%; }
+
+.gitter .content {
   position: relative;
   padding: 0 !important; }
   .gitter .content #gitterinject {
@@ -4440,10 +4446,10 @@ Prism.languages.js = Prism.languages.javascript;
 	document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
 
 })();
-!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
-analytics.load("TP9aPQLX69CtFXTtQtRmqGjUjNgRiRo3");
-analytics.page();
-}}();
+// !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+// analytics.load("TP9aPQLX69CtFXTtQtRmqGjUjNgRiRo3");
+// analytics.page();
+// }}();
   ((window.gitter = {}).chat = {}).options = {
     room: 'uport-project/Lobby',
     activationElement: false,
