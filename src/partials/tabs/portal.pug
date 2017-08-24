@@ -1,89 +1,88 @@
 .portal
-  .banner
-    .banner-text
-      h1 Get started developing with Uport
-      p.text-block uPort is a decentralized identity platform built on Ethereum. Explore our docs for more
-    .banner-steps
+  .pagewrap
+    .banner
+      .banner-text
+        h1 Get started developing with Uport
+        p.text-block uPort is a decentralized identity platform built on Ethereum. Explore our docs for more
+      .banner-steps
+        ul
+          li.alpha
+            .number
+              span.number-text 1
+            i.fa.fa-id-badge
+            .step-desc Download the mobile app
+            <!-- TODO: Insert APPStore and Playstore images -->
+          li.beta
+            .number
+              span.number-text 2
+            i.fa.fa-id-card
+            .step-desc Register Your App
+          li.omega
+            .number
+              span.number-text 3
+            i.fa.fa-laptop
+            .step-desc Install the Libraries / SDK's
+    .content-shortcuts
       ul
-        li.alpha
-          .number
-            span.number-text 1
-          i.fa.fa-id-badge
-          .step-desc Download the mobile app
-          <!-- TODO: Insert APPStore and Playstore images -->
-        li.beta
-          .number
-            span.number-text 2
-          i.fa.fa-id-card
-          .step-desc Register Your App
-        li.omega
-          .number
-            span.number-text 3
-          i.fa.fa-laptop
-          .step-desc Install the Libraries / SDK's
-  .content-shortcuts
-    ul
-      li.guides
-        .shortcut-wrap
-          i.fa.fa-newspaper-o
-          label Guides
-        .list-wrap
-          ul
-            li
-              a(href='#getting-started')
-                span Getting Started
-            li
-              a(href='#requesting-credentials')
-                span Requesting Credentials
-            li
-              a(href='#attesting-credentials')
-                span Attesting Credentials
-            li
-              a(href='#signing-transactions')
-                span Signing Transactions
-      li.api-docs
-        .shortcut-wrap
-          i.fa.fa-book
-          label API Docs
-        .list-wrap
-          ul
-            li
-              a(href='#uport-connect')
-                span uport-connect
-            li
-              //- a(href='#uport-js' disabled)
-              span uport-js (coming soon)
-            li
-              //- a(href='#uport-lite' disabled)
-              span uport-lite (coming soon)
-            li
-              //- a(href='#uport-registry' disabled)
-              span uport-registry (coming soon)
-      //- li.tools
-      //-   .shortcut-wrap
-      //-     i.fa.fa-book
-      //-     label Tools
-      //-   .list-wrap
-      //-     ul
-      //-       li
-      //-         a(href=links.truffle)
-      //-           span Truffle
-      //-       li
-      //-         a(href=links.metamask)
-      //-           span MetaMask
-      //-       li
-      //-         a(href=links.remix)
-      //-           span Remix
-      //-       li
-      //-         a(href=links.mist)
-      //-           span Mist
+        li.guides
+          .shortcut-wrap
+            i.fa.fa-newspaper-o
+            label Guides
+          .list-wrap
+            ul
+              li
+                a(href='#getting-started') Getting Started
+              li
+                a(href='#requesting-credentials') Requesting Credentials
+              li
+                a(href='#attesting-credentials') Attesting Credentials
+              li
+                a(href='#signing-transactions') Signing Transactions
+        li.api-docs
+          .shortcut-wrap
+            i.fa.fa-book
+            label API Docs
+          .list-wrap
+            ul
+              li
+                a(href='#uport-connect') uport-connect
+              li
+                a(href='#uport-js' disabled) uport-js (coming soon)
+              li
+                a(href='#uport-lite' disabled) uport-lite (coming soon)
+              li
+                a(href='#uport-registry' disabled) uport-registry (coming soon)
+        //- li.tools
+        //-   .shortcut-wrap
+        //-     i.fa.fa-book
+        //-     label Tools
+        //-   .list-wrap
+        //-     ul
+        //-       li
+        //-         a(href=links.truffle)
+        //-           span Truffle
+        //-       li
+        //-         a(href=links.metamask)
+        //-           span MetaMask
+        //-       li
+        //-         a(href=links.remix)
+        //-           span Remix
+        //-       li
+        //-         a(href=links.mist)
+        //-           span Mist
 :sass
   @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
   $pair: 320px 794px;
   
   .portal {
     text-align: center;
-
+    
+    .pagewrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
     .banner,
     .content-shortcuts,
     .whitepaper {
@@ -151,12 +150,9 @@
 
           .number-text {
             position: relative;
-            top: -.75rem;
+            top: -.50rem;
             font-size: 3rem;
           }
-        }
-        &:nth-child(3) .number-text {
-          top: -1rem;
         }
         
         .step-img {
@@ -167,6 +163,7 @@
     
     .content-shortcuts {
       text-align: left;
+      background: #eaeaea;
       
       .fa {
       font-size: 8rem;
@@ -201,7 +198,11 @@
         
         li {
           border-bottom: 1px solid #AAA;
-          padding: 1rem 0;
+          
+          a {
+            padding: 1rem 0;
+            display: block;
+          }
         }
       }
     }

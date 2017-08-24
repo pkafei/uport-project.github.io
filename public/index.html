@@ -2470,14 +2470,12 @@ iframe {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#myapps"><span>My Apps</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="#portal"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="#guides"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="#apidocs"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="#myapps"><span>My Apps</span></a></li><li class="nav-item"><a class="nav-link" href="#gitter"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
 .footer {
   position: relative;
-  display: flex;
-  flex-direction: column;
   border-bottom: 1px solid #333;
   justify-content: center;
-  padding: 10px 2rem 10px;
+  padding: 10px 1rem 10px;
   font-size: .8rem; }
   .header *,
   .footer * {
@@ -2496,7 +2494,9 @@ iframe {
   .footer .footer-left,
   .footer .footer-right {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    max-width: 1440px;
+    margin: auto; }
   .header .header-right,
   .header .footer-right,
   .header .nav,
@@ -2510,6 +2510,16 @@ iframe {
   .header .nav-item,
   .footer .nav-item {
     padding: 0 1rem; }
+  .header .nav-item.active,
+  .footer .nav-item.active {
+    background: #004f80;
+    border-radius: 4px; }
+    .header .nav-item.active *,
+    .footer .nav-item.active * {
+      color: white; }
+    .header .nav-item.active:hover *,
+    .footer .nav-item.active:hover * {
+      text-decoration: none; }
   .header .logo-link,
   .header .nav-list li a,
   .header .sign-in-link,
@@ -2521,76 +2531,18 @@ iframe {
     display: flex;
     flex-direction: column;
     justify-content: center; }
-  .header .user-area,
-  .footer .user-area {
-    display: none; }
-  .header .user-area .user,
-  .header .legal-area .user,
-  .footer .user-area .user,
-  .footer .legal-area .user {
-    display: none; }
-    .header .user-area .user .user-pic,
-    .header .legal-area .user .user-pic,
-    .footer .user-area .user .user-pic,
-    .footer .legal-area .user .user-pic {
-      width: 25px;
-      height: 25px;
-      background: gray;
-      border-radius: 50%; }
-    .header .user-area .user .user-menu,
-    .header .legal-area .user .user-menu,
-    .footer .user-area .user .user-menu,
-    .footer .legal-area .user .user-menu {
-      position: absolute;
-      min-width: 150px;
-      top: 100%;
-      right: 2rem;
-      background: lightblue;
-      border: 1px solid darkblue; }
-      .header .user-area .user .user-menu ul, .header .user-area .user .user-menu li,
-      .header .user-area .user .user-menu .user-name,
-      .header .user-area .user .user-menu .user-addr,
-      .header .legal-area .user .user-menu ul,
-      .header .legal-area .user .user-menu li,
-      .header .legal-area .user .user-menu .user-name,
-      .header .legal-area .user .user-menu .user-addr,
-      .footer .user-area .user .user-menu ul,
-      .footer .user-area .user .user-menu li,
-      .footer .user-area .user .user-menu .user-name,
-      .footer .user-area .user .user-menu .user-addr,
-      .footer .legal-area .user .user-menu ul,
-      .footer .legal-area .user .user-menu li,
-      .footer .legal-area .user .user-menu .user-name,
-      .footer .legal-area .user .user-menu .user-addr {
-        display: block; }
-      .header .user-area .user .user-menu li,
-      .header .legal-area .user .user-menu li,
-      .footer .user-area .user .user-menu li,
-      .footer .legal-area .user .user-menu li {
-        padding: 10px; }
-        .header .user-area .user .user-menu li:first-child,
-        .header .legal-area .user .user-menu li:first-child,
-        .footer .user-area .user .user-menu li:first-child,
-        .footer .legal-area .user .user-menu li:first-child {
-          border-bottom: 1px solid darkblue; }
-  .header .user-area.menu-open .sign-in-link,
-  .header .legal-area.menu-open .sign-in-link,
-  .footer .user-area.menu-open .sign-in-link,
-  .footer .legal-area.menu-open .sign-in-link {
-    display: none; }
-  .header .user-area.menu-open .user,
-  .header .legal-area.menu-open .user,
-  .footer .user-area.menu-open .user,
-  .footer .legal-area.menu-open .user {
-    display: block; }
   .header .legal-area,
   .footer .legal-area {
     display: flex; }
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div><!-- TODO: Insert APPStore and Playstore images --></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started"><span>Getting Started</span></a></li><li><a href="#requesting-credentials"><span>Requesting Credentials</span></a></li><li><a href="#attesting-credentials"><span>Attesting Credentials</span></a></li><li><a href="#signing-transactions"><span>Signing Transactions</span></a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect"><span>uport-connect</span></a></li><li><span>uport-js (coming soon)</span></li><li><span>uport-lite (coming soon)</span></li><li><span>uport-registry (coming soon)</span></li></ul></div></li></ul></div></div><style>.portal {
+</style><!-- default to .main.______ page--><main class="main portal"><div class="portal"><div class="pagewrap"><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div><!-- TODO: Insert APPStore and Playstore images --></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started">Getting Started</a></li><li><a href="#requesting-credentials">Requesting Credentials</a></li><li><a href="#attesting-credentials">Attesting Credentials</a></li><li><a href="#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect">uport-connect</a></li><li><a href="#uport-js" disabled>uport-js (coming soon)</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
   text-align: center; }
+  .portal .pagewrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column; }
   .portal .banner,
   .portal .content-shortcuts,
   .portal .whitepaper {
@@ -2638,14 +2590,13 @@ iframe {
       margin: 0 auto 1rem auto; }
       .portal .banner-steps li .number .number-text {
         position: relative;
-        top: -.75rem;
+        top: -.50rem;
         font-size: 3rem; }
-    .portal .banner-steps li:nth-child(3) .number-text {
-      top: -1rem; }
     .portal .banner-steps li .step-img {
       margin: 0 auto 1rem auto; }
   .portal .content-shortcuts {
-    text-align: left; }
+    text-align: left;
+    background: #eaeaea; }
     .portal .content-shortcuts .fa {
       font-size: 8rem; }
     .portal .content-shortcuts img, .portal .content-shortcuts label {
@@ -2664,8 +2615,10 @@ iframe {
     .portal .content-shortcuts .shortcut-wrap {
       text-align: center; }
     .portal .content-shortcuts .list-wrap li {
-      border-bottom: 1px solid #AAA;
-      padding: 1rem 0; }
+      border-bottom: 1px solid #AAA; }
+      .portal .content-shortcuts .list-wrap li a {
+        padding: 1rem 0;
+        display: block; }
 </style><div class="guides"><div class="pagewrap"><div class="sidebar"></div><div class="content"><div class="guide"><section><h1>Getting Started</h1>
 <p>Welcome to the uPort usage guide!</p>
 <p>Here we will walk you through all the necessary steps to get up and running with your first dapp.</p>
@@ -3620,14 +3573,17 @@ when requests are created.</p>
     flex-direction: column;
     flex: 1; }
   main .pagewrap {
-    display: flex; }
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto; }
     main .pagewrap .content {
       overflow-y: scroll;
       flex: 1; }
   main .sidebar {
     background: lightgray;
     padding: 1rem;
-    width: 300px;
+    min-width: 300px;
     overflow-y: scroll; }
     @media (min-width: 320px) and (max-width: 794px) {
       main .sidebar {
@@ -4458,297 +4414,337 @@ Prism.languages.js = Prism.languages.javascript;
     preload: true,
     targetElement: '#gitterinject'
   };
-///////////////////////
-// Utilities
-///////////////////////
-const pvd = (e) => e.preventDefault()
-const hide = (item) => { item.style.display = 'none' }
-const show = (item) => { item.style.display = 'block' }
-const $$ = (item) => document.querySelectorAll(item)
-const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
+window.onload = () => {
 
-///////////////////////
-// Window URL Bar Clear
-///////////////////////
-window.history.pushState('', '', window.location.pathname)
+  ///////////////////////
+  // Utilities
+  ///////////////////////
+  const pvd = (e) => e.preventDefault()
+  const hide = (item) => { item.style.display = 'none' }
+  const show = (item) => { item.style.display = 'block' }
+  const $$ = (item) => document.querySelectorAll(item)
+  const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 
-if(window.document.body.clientWidth < '794') {
-  $$('.loading-wrapper-parent').forEach((item) => {
-    const warningText = 'Interactive code playground not available in mobile'
-    const warningDom = document.createElement('p')
-    const warningDomChild = document.createElement('b')
-    warningDomChild.textContent = warningText
-    warningDom.appendChild(warningDomChild)
-    item.parentNode.appendChild(warningDom)
-    item.remove()
-  })
-}
+  ///////////////////////
+  // DOM HOOKS
+  ///////////////////////
+  const mainDOM =
+    $$('main')[0]
 
-// window.onload = function () {
-//   const windowWidth = window.document.body.clientWidth
-//   if(windowWidth < '794') {
-//     $$('.loading-wrapper-parent').forEach((item) => {
-//       item.remove()
-//     })
-//   }
-// }
+  const headerDOM =
+    $$('header')[0]
 
-///////////////////////
-// DOM HOOKS
-///////////////////////
+  const navDOM =
+    $$('header nav')[0]
 
-const mainDOM =
-  $$('main')[0]
+  const navListDOM =
+    $$('header .nav-list')[0]
 
-const navDOM =
-  $$('header')[0]
+  const userAreaDOM =
+    $$('.user-area')[0]
 
-const userAreaDOM =
-  $$('.user-area')[0]
+  const sideBarsDOM =
+    $$('.sidebar')
 
-const sideBarsDOM =
-  $$('.sidebar')
+  const libDocDOM =
+    $$('.lib-doc')[0]
 
-const libDocDOM =
-  $$('.lib-doc')[0]
+  const guideAreaDOM =
+    $$('.guide section')
 
-const guideAreaDOM =
-  $$('.guide section')
+  const docAreaDOM =
+    $$('.lib section')
 
-const docAreaDOM =
-  $$('.lib section')
+  const rcIframeInjectDOM =
+    $$('#rcIframeInject')[0]
 
-const rcIframeInjectDOM =
-  $$('#rcIframeInject')[0]
+  const acIframeInjectDOM =
+    $$('#acIframeInject')[0]
 
-const acIframeInjectDOM =
-  $$('#acIframeInject')[0]
+  const stIframeInjectDOM =
+    $$('#stIframeInject')[0]
 
-const stIframeInjectDOM =
-  $$('#stIframeInject')[0]
+  const contentShortcutsDOM =
+    $$('.content-shortcuts')[0]
 
-const contentShortcutsDOM =
-  $$('.content-shortcuts')[0]
+  const guideContentDOM =
+    $$('.guides .content')[0]
 
-const guideContentDOM =
-  $$('.guides .content')[0]
+  const guideiFrameDOM =
+    $$('.guides iframe')
 
-const guideiFrameDOM =
-  $$('.guides iframe')
+  const appmanagerInjectDOM =
+    $$('#appmanagerinject')[0]
 
-const appmanagerInjectDOM =
-  $$('#appmanagerinject')[0]
+  const sidecarScriptInjectDOM =
+    $$('#sidecarScriptInject')[0]
 
-///////////////////////
-// Global Event Listeners
-///////////////////////
-if(window.document.body.clientWidth > '794') {
-  guideContentDOM.onscroll = () => iframeLazyLoad()
-}
+  const loadingWrapperParentDOM =
+    $$('.loading-wrapper-parent')
 
-///////////////////////
-// iFrame Lazy Loader
-///////////////////////
+  ///////////////////////
+  // iFrame Lazy Loader
+  ///////////////////////
 
-function iframeLazyLoad () {
-  let guidestop = guideContentDOM.scrollTop
-  let viewArea = document.body.offsetHeight
-  let bottomBar = guidestop + viewArea
-
-  guideiFrameDOM.forEach((item) => {
-   let iframetop = item.parentElement.offsetTop
-   let itop = item.id + ":" + iframetop
-
-   if (!item.getAttribute('loaded') && bottomBar >= iframetop) {
-
-     const setIframe = (url) => {
-       item.setAttribute('src', 'https://www.webpackbin.com/bins/'+url)
-       item.setAttribute('loaded', true)
-     }
-
-     switch (item.id) {
-       case 'rcIframeInject':
-         setIframe('-Kql3OAxjMEtK4Vn2M3o')
-         break
-       case 'acIframeInject':
-         setIframe('-Kql5WgV-D0sZrabxJ2_')
-         break
-       case 'stIframeInject':
-         setIframe('-Kqcukv7y_qg-05zwEci')
-         break
-     }
-   }
-  })
-}
-
-///////////////////////
-// Router Logic
-///////////////////////
-
-function changeMainClass(desiredHashText) {
-  mainDOM.classList.forEach((mainClass) => {
-    mainClass !== 'main'
-      ? mainDOM.classList.remove(mainClass)
-      : null
-  })
-  mainDOM.classList.add(desiredHashText)
-}
-
-contentShortcutsDOM.onclick = (evt) => {
-  const tabArea = evt.target.parentElement
-                            .parentElement
-                            .parentElement
-                            .parentElement
-                            .parentElement
-                            .classList[0].split('-').join('')
-  changeMainClass(tabArea)
-}
-
-navDOM.onclick = (evt) => {
-  const desiredParent = evt.target.parentElement
-
-  if (desiredParent.hash) {
-    const desiredHash = desiredParent.hash
-    const desiredHashText = desiredHash.replace('#','')
-
-    if (desiredHash !== undefined && desiredHash !== '') {
-      changeMainClass(desiredHashText)
-    }
-
-    // Exception for external links
-    if (desiredHash !== ''){ pvd(evt) }
-
-    // Gitter Inject
-    if (desiredHashText === 'gitter' && $$('#sidecarScriptInject').length === 0) {
-      let sidecarScriptInjectDOM = document.createElement('script')
-      sidecarScriptInjectDOM.id="sidecarScriptInject"
-      sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-      document.body.appendChild(sidecarScriptInjectDOM)
-    }
-
-    // App Manager Inject
-    if (desiredHashText === 'myapps' && appmanagerInjectDOM.childNodes.length === 0) {
-      appmanagerInjectDOM.src="https://appmanager.uport.me/"
-    }
-  }
-}
-
-///////////////////////
-// Sidebar Creator
-///////////////////////
-
-function createSidebarList (contextArea, flag) {
-
-  let list = document.createElement('ul')
-
-  if (flag === 'guide') {
-    let contextAreaH2s = contextArea.querySelectorAll('h2')
-
-    contextAreaH2s.forEach((el) => {
-      let url = sanitizeHash(el.innerHTML)
-      let listItem = document.createElement('li')
-      let link = document.createElement('a')
-
-      el.id = url
-      link.innerHTML = el.innerHTML
-      link.href = '#' + url
-
-      listItem.appendChild(link)
-      list.appendChild(listItem)
+  // Mobile Checker
+  if(window.document.body.clientWidth > '794') {
+    guideContentDOM.onscroll = () => iframeLazyLoad()
+  } else {
+    loadingWrapperParentDOM.forEach((item) => {
+      const warningText = 'Interactive code playground not available in mobile'
+      const warningDom = document.createElement('p')
+      const warningDomChild = document.createElement('b')
+      warningDomChild.textContent = warningText
+      warningDom.appendChild(warningDomChild)
+      item.parentNode.appendChild(warningDom)
+      item.remove()
     })
   }
 
-  if (flag === 'doc') {
-    let docTOCpath = 'ul:nth-of-type(1) li ul li'
-    let ucContentListItems = contextArea.querySelectorAll(docTOCpath)
-    let cloneArry = []
+  function iframeLazyLoad () {
+    let guidestop = guideContentDOM.scrollTop
+    let viewArea = document.body.offsetHeight
+    let bottomBar = guidestop + viewArea
 
-    ucContentListItems.forEach((item) => {
-      cloneArry.push(item.cloneNode(true))
+    guideiFrameDOM.forEach((item) => {
+     let iframetop = item.parentElement.offsetTop
+     let itop = item.id + ":" + iframetop
+
+     if (!item.getAttribute('loaded') && bottomBar >= iframetop) {
+
+       const setIframe = (url) => {
+         item.setAttribute('src', 'https://www.webpackbin.com/bins/'+url)
+         item.setAttribute('loaded', true)
+       }
+
+       switch (item.id) {
+         case 'rcIframeInject':
+           setIframe('-Kql3OAxjMEtK4Vn2M3o')
+           break
+         case 'acIframeInject':
+           setIframe('-Kql5WgV-D0sZrabxJ2_')
+           break
+         case 'stIframeInject':
+           setIframe('-Kqcukv7y_qg-05zwEci')
+           break
+       }
+     }
     })
+  }
 
-    if (cloneArry.length > 0){
-      cloneArry.forEach((item) => {
-        if (item.childNodes[1] !== undefined){
-          item.childNodes[1].remove()
-        }
-        list.appendChild(item)
+  ///////////////////////
+  // Router Logic
+  ///////////////////////
+
+  function changeMainClass(desiredHashText) {
+    mainDOM.classList.forEach((mainClass) => {
+      mainClass !== 'main'
+        ? mainDOM.classList.remove(mainClass)
+        : null
+    })
+    mainDOM.classList.add(desiredHashText)
+  }
+
+  function changeNavClass(desiredParent) {
+    navListDOM.childNodes.forEach((navItem) => {
+      if(navItem.classList.length >= 2) {
+        navItem.classList.remove('active')
+      }
+    })
+    desiredParent.classList.add('active')
+  }
+
+  ///////////////////////
+  // Nav Event Handlers
+  ///////////////////////
+
+  contentShortcutsDOM.onclick = (evt) => {
+    const tabArea =
+      evt.target.parentElement
+                .parentElement
+                .parentElement
+                .parentElement
+                .classList[0]
+                .split('-').join('')
+
+    changeMainClass(tabArea)
+  }
+
+  headerDOM.onclick = (evt) => {
+    const desiredElement = evt.target
+    const desiredParent = evt.target.parentElement
+
+    // Outbound link check
+    if (desiredParent.hash) {
+
+      // Hash isolation
+      const desiredGrandParent = desiredParent.parentElement
+      const desiredHash = desiredParent.hash
+      const desiredHashText = desiredHash.replace('#','')
+
+      // True links
+      if (desiredHash !== undefined &&
+          desiredHash !== '') {
+            changeNavClass(desiredGrandParent)
+            changeMainClass(desiredHashText)
+      }
+
+      // Exception for external links
+      if (desiredHash !== ''){ pvd(evt) }
+
+      // Gitter Inject
+      if (desiredHashText === 'gitter' &&
+          sidecarScriptInjectDOM === undefined) {
+            let sidecarScriptInjectDOM = document.createElement('script')
+            sidecarScriptInjectDOM.id="sidecarScriptInject"
+            sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+            document.body.appendChild(sidecarScriptInjectDOM)
+      }
+
+      // App Manager Inject
+      if (desiredHashText === 'myapps' &&
+          appmanagerInjectDOM.childNodes.length === 0) {
+              appmanagerInjectDOM.src="https://appmanager.uport.me/"
+      }
+    }
+  }
+
+  ///////////////////////
+  // Sidebar Creator
+  ///////////////////////
+
+  function createSidebarList (contextArea, flag) {
+
+    let list = document.createElement('ul')
+
+    if (flag === 'guide') {
+      let contextAreaH2s = contextArea.querySelectorAll('h2')
+
+      contextAreaH2s.forEach((el) => {
+        let url = sanitizeHash(el.innerHTML)
+        let listItem = document.createElement('li')
+        let link = document.createElement('a')
+
+        el.id = url
+        link.innerHTML = el.innerHTML
+        link.href = '#' + url
+
+        listItem.appendChild(link)
+        list.appendChild(listItem)
       })
     }
-  }
 
-  return list
-}
+    if (flag === 'doc') {
+      let docTOCpath = 'ul:nth-of-type(1) li ul li'
+      let ucContentListItems = contextArea.querySelectorAll(docTOCpath)
+      let cloneArry = []
 
-function createSidebarAreas (currentSource, sourceFlag) {
-  let contextArea = currentSource
+      ucContentListItems.forEach((item) => {
+        cloneArry.push(item.cloneNode(true))
+      })
 
-  let createdSection = document.createElement('section')
-
-  let contextAreaH1 = contextArea.querySelector('h1')
-  contextAreaH1.id = contextAreaH1.textContent.toLowerCase().split(' ').join('-')
-
-  let contextAreaH1Clone = contextAreaH1.cloneNode(true)
-  contextAreaH1Clone.id = ''
-
-  let h1Link = document.createElement('a')
-  h1Link.href="#" + contextAreaH1.textContent.toLowerCase().split(' ').join('-')
-  h1Link.appendChild(contextAreaH1Clone)
-
-  return {
-    section: createdSection,
-    header: h1Link,
-    list: createSidebarList(contextArea, sourceFlag)
-  }
-}
-
-function createSidebars (sources) {
-
-  sources.forEach((source) => {
-    let flag
-    source[0].parentNode.className === 'guide'
-      ? flag = 'guide'
-      : flag = 'doc'
-
-    for (let i = 0; i < source.length; i++) {
-      let createdElements = createSidebarAreas(source[i], flag)
-
-      createdElements.section.appendChild(createdElements.header)
-      createdElements.section.appendChild(createdElements.list)
-
-      flag === 'guide'
-        ? sideBarsDOM[0].appendChild(createdElements.section)
-        : sideBarsDOM[1].appendChild(createdElements.section)
+      if (cloneArry.length > 0){
+        cloneArry.forEach((item) => {
+          if (item.childNodes[1] !== undefined){
+            item.childNodes[1].remove()
+          }
+          list.appendChild(item)
+        })
+      }
     }
-  })
+
+    return list
+  }
+
+  function createSidebarAreas (currentSource, sourceFlag) {
+    let contextArea = currentSource
+
+    let createdSection = document.createElement('section')
+
+    let contextAreaH1 = contextArea.querySelector('h1')
+    contextAreaH1.id = contextAreaH1.textContent.toLowerCase().split(' ').join('-')
+
+    let contextAreaH1Clone = contextAreaH1.cloneNode(true)
+    contextAreaH1Clone.id = ''
+
+    let h1Link = document.createElement('a')
+    h1Link.href="#" + contextAreaH1.textContent.toLowerCase().split(' ').join('-')
+    h1Link.appendChild(contextAreaH1Clone)
+
+    return {
+      section: createdSection,
+      header: h1Link,
+      list: createSidebarList(contextArea, sourceFlag)
+    }
+  }
+
+  function createSidebars (sources) {
+
+    sources.forEach((source) => {
+      let flag
+      source[0].parentNode.className === 'guide'
+        ? flag = 'guide'
+        : flag = 'doc'
+
+      for (let i = 0; i < source.length; i++) {
+        let createdElements = createSidebarAreas(source[i], flag)
+
+        createdElements.section.appendChild(createdElements.header)
+        createdElements.section.appendChild(createdElements.list)
+
+        flag === 'guide'
+          ? sideBarsDOM[0].appendChild(createdElements.section)
+          : sideBarsDOM[1].appendChild(createdElements.section)
+      }
+    })
+  }
+
+  createSidebars([guideAreaDOM, docAreaDOM])
+
+  // TODO: Get JSDOC based stuff in there
+  // ujContentLinks.forEach((el) => {
+  //   let li = document.createElement('li')
+  //       li.appendChild(el)
+  //   sideBarLibBDOM.appendChild(li)
+  // })
+  //
+  // urContentLinks.forEach((el) => {
+  //   let li = document.createElement('li')
+  //       li.appendChild(el)
+  //   sideBarLibCDOM.appendChild(li)
+  // })
+
+  // signInNav.onclick = (e) => {userAreaDOM.classList.add('menu-open')}
+  // logOutNav.onclick = (e) => {userAreaDOM.classList.remove('menu-open')}
+
+  ///////////////////////
+  // HAX
+  ///////////////////////
+
+  // Hide dupe of ConnectCore
+  const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
+  const uch2ccDOM = $$(uch2cc)[0]
+  const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
+  hide(uch2ccDOM)
+  uch2ccDOMPlusAll.forEach((el) => {hide(el)})
+
+
+  // NOW GO
+
+  // Execute Nav if URL is full
+  if (!!window.location.hash) {
+    const goToElDOM = $$('*[href="'+ window.location.hash + '"]')[0]
+    const relevantPage = goToElDOM.closest('.pagewrap').parentElement.classList[0]
+    const relventPageTrigger = $$('*[href="'+ '#' + relevantPage + '"]')[0]
+    console.log(relevantPage,goToElDOM)
+    setTimeout(()=>{
+      relventPageTrigger.click()
+      console.log('relventPageTrigger click')
+    },3000)
+    setTimeout(()=>{
+      goToElDOM.click()
+      console.log('goToElDOM click')
+    },5000)
+  }
 }
-
-createSidebars([guideAreaDOM, docAreaDOM])
-
-// TODO: Get JSDOC based stuff in there
-// ujContentLinks.forEach((el) => {
-//   let li = document.createElement('li')
-//       li.appendChild(el)
-//   sideBarLibBDOM.appendChild(li)
-// })
-//
-// urContentLinks.forEach((el) => {
-//   let li = document.createElement('li')
-//       li.appendChild(el)
-//   sideBarLibCDOM.appendChild(li)
-// })
-
-// signInNav.onclick = (e) => {userAreaDOM.classList.add('menu-open')}
-// logOutNav.onclick = (e) => {userAreaDOM.classList.remove('menu-open')}
-
-///////////////////////
-// HAX
-///////////////////////
-
-// Hide dupe of ConnectCore
-const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
-const uch2ccDOM = $$(uch2cc)[0]
-const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
-hide(uch2ccDOM)
-uch2ccDOMPlusAll.forEach((el) => {hide(el)})
 </script></body></html>

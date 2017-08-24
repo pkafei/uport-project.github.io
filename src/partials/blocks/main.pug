@@ -27,6 +27,9 @@ main.main.portal
 
     .pagewrap {
       display: flex;
+      width: 100%;
+      max-width: 1440px;
+      margin: auto;
       .content {
         overflow-y: scroll;
         flex: 1;
@@ -36,7 +39,7 @@ main.main.portal
     .sidebar {
       background: lightgray;
       padding: 1rem;
-      width: 300px;
+      min-width: 300px;
       overflow-y: scroll;
       
       @include breakpoint($pair) {
