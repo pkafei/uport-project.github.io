@@ -1,5 +1,3 @@
-window.onload = () => {
-
   ///////////////////////
   // Utilities
   ///////////////////////
@@ -117,83 +115,6 @@ window.onload = () => {
   }
 
   ///////////////////////
-  // Router Logic
-  ///////////////////////
-
-  function changeMainClass(desiredHashText) {
-    mainDOM.classList.forEach((mainClass) => {
-      mainClass !== 'main'
-        ? mainDOM.classList.remove(mainClass)
-        : null
-    })
-    mainDOM.classList.add(desiredHashText)
-  }
-
-  function changeNavClass(desiredParent) {
-    navListDOM.childNodes.forEach((navItem) => {
-      if(navItem.classList.length >= 2) {
-        navItem.classList.remove('active')
-      }
-    })
-    desiredParent.classList.add('active')
-  }
-
-  ///////////////////////
-  // Nav Event Handlers
-  ///////////////////////
-
-  contentShortcutsDOM.onclick = (evt) => {
-    const tabArea =
-      evt.target.parentElement
-                .parentElement
-                .parentElement
-                .parentElement
-                .classList[0]
-                .split('-').join('')
-
-    changeMainClass(tabArea)
-  }
-
-  headerDOM.onclick = (evt) => {
-    const desiredElement = evt.target
-    const desiredParent = evt.target.parentElement
-
-    // Outbound link check
-    if (desiredParent.hash) {
-
-      // Hash isolation
-      const desiredGrandParent = desiredParent.parentElement
-      const desiredHash = desiredParent.hash
-      const desiredHashText = desiredHash.replace('#','')
-
-      // True links
-      if (desiredHash !== undefined &&
-          desiredHash !== '') {
-            changeNavClass(desiredGrandParent)
-            changeMainClass(desiredHashText)
-      }
-
-      // Exception for external links
-      if (desiredHash !== ''){ pvd(evt) }
-
-      // Gitter Inject
-      if (desiredHashText === 'gitter' &&
-          sidecarScriptInjectDOM === undefined) {
-            let sidecarScriptInjectDOM = document.createElement('script')
-            sidecarScriptInjectDOM.id="sidecarScriptInject"
-            sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-            document.body.appendChild(sidecarScriptInjectDOM)
-      }
-
-      // App Manager Inject
-      if (desiredHashText === 'myapps' &&
-          appmanagerInjectDOM.childNodes.length === 0) {
-              appmanagerInjectDOM.src="https://appmanager.uport.me/"
-      }
-    }
-  }
-
-  ///////////////////////
   // Sidebar Creator
   ///////////////////////
 
@@ -212,6 +133,9 @@ window.onload = () => {
         el.id = url
         link.innerHTML = el.innerHTML
         link.href = '#' + url
+        link.onclick = (evt) => {
+          changeSideBarLinkClass(evt.target)
+        }
 
         listItem.appendChild(link)
         list.appendChild(listItem)
@@ -224,7 +148,11 @@ window.onload = () => {
       let cloneArry = []
 
       ucContentListItems.forEach((item) => {
-        cloneArry.push(item.cloneNode(true))
+        let newClone = item.cloneNode(true)
+        newClone.childNodes[0].onclick = (evt) => {
+          changeSideBarLinkClass(evt.target)
+        }
+        cloneArry.push(newClone)
       })
 
       if (cloneArry.length > 0){
@@ -285,21 +213,99 @@ window.onload = () => {
 
   createSidebars([guideAreaDOM, docAreaDOM])
 
-  // TODO: Get JSDOC based stuff in there
-  // ujContentLinks.forEach((el) => {
-  //   let li = document.createElement('li')
-  //       li.appendChild(el)
-  //   sideBarLibBDOM.appendChild(li)
-  // })
-  //
-  // urContentLinks.forEach((el) => {
-  //   let li = document.createElement('li')
-  //       li.appendChild(el)
-  //   sideBarLibCDOM.appendChild(li)
-  // })
 
-  // signInNav.onclick = (e) => {userAreaDOM.classList.add('menu-open')}
-  // logOutNav.onclick = (e) => {userAreaDOM.classList.remove('menu-open')}
+  ///////////////////////
+  // Router Logic
+  ///////////////////////
+
+  function changeMainClass(desiredHashText) {
+    mainDOM.classList.forEach((mainClass) => {
+      mainClass !== 'main'
+        ? mainDOM.classList.remove(mainClass)
+        : null
+    })
+    mainDOM.classList.add(desiredHashText)
+  }
+
+  function changeNavClass(desiredParent) {
+    navListDOM.childNodes.forEach((navItem) => {
+      if(navItem.classList.length >= 2) {
+        navItem.classList.remove('active')
+      }
+    })
+    desiredParent.classList.add('active')
+  }
+
+  function changeSideBarLinkClass(sidebarLink) {
+    sidebarLink.closest('.sidebar')
+               .querySelectorAll('li a')
+               .forEach((aLink) => {
+                   aLink.parentElement
+                        .classList
+                        .remove('active')
+               })
+
+    sidebarLink.parentElement
+               .classList
+               .add('active')
+  }
+
+  ///////////////////////
+  // Nav Event Handlers
+  ///////////////////////
+
+  contentShortcutsDOM.onclick = (evt) => {
+    const tabArea =
+      evt.target.parentElement
+                .parentElement
+                .parentElement
+                .parentElement
+                .classList[0]
+                .split('-').join('')
+
+    changeMainClass(tabArea)
+  }
+
+  headerDOM.onclick = (evt) => {
+    const desiredElement = evt.target
+    const desiredParent = evt.target.parentElement
+
+    // Outbound link check
+    if (desiredParent.hash) {
+
+      // Hash isolation
+      const desiredGrandParent = desiredParent.parentElement
+      const desiredHash = desiredParent.hash
+      const desiredHashText = desiredHash.replace('#','')
+
+      // True links
+      if (desiredHash !== undefined &&
+          desiredHash !== '') {
+            changeNavClass(desiredGrandParent)
+            changeMainClass(desiredHashText)
+      }
+
+      // Exception for external links
+      if (desiredHash !== ''){ pvd(evt) }
+
+      // Gitter Inject
+      if (desiredHashText === 'gitter' &&
+          sidecarScriptInjectDOM === undefined) {
+            let sidecarScriptInjectDOM = document.createElement('script')
+            sidecarScriptInjectDOM.id="sidecarScriptInject"
+            sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+            document.body.appendChild(sidecarScriptInjectDOM)
+      }
+
+      // App Manager Inject
+      if (desiredHashText === 'myapps' &&
+          appmanagerInjectDOM.childNodes.length === 0) {
+              appmanagerInjectDOM.src="https://appmanager.uport.me/"
+      }
+    }
+  }
+
+  // TODO: Get JSDOC based stuff in there
 
   ///////////////////////
   // HAX
@@ -312,22 +318,17 @@ window.onload = () => {
   hide(uch2ccDOM)
   uch2ccDOMPlusAll.forEach((el) => {hide(el)})
 
-
-  // NOW GO
-
   // Execute Nav if URL is full
   if (!!window.location.hash) {
-    const goToElDOM = $$('*[href="'+ window.location.hash + '"]')[0]
-    const relevantPage = goToElDOM.closest('.pagewrap').parentElement.classList[0]
-    const relventPageTrigger = $$('*[href="'+ '#' + relevantPage + '"]')[0]
-    console.log(relevantPage,goToElDOM)
-    setTimeout(()=>{
-      relventPageTrigger.click()
-      console.log('relventPageTrigger click')
-    },3000)
-    setTimeout(()=>{
-      goToElDOM.click()
-      console.log('goToElDOM click')
-    },5000)
+    const sidebarLink =
+      $$('*[href="'+ window.location.hash + '"]')[0]
+    const relevantPage =
+      sidebarLink.closest('.pagewrap')
+                 .parentElement
+                 .classList[0]
+    const relventPageTrigger =
+      $$('*[href="'+ '#' + relevantPage + '"] span')[0]
+
+    setTimeout(()=>{relventPageTrigger.click()},1)
+    setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
   }
-}
