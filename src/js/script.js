@@ -300,7 +300,7 @@
       // App Manager Inject
       if (desiredHashText === 'myapps' &&
           appmanagerInjectDOM.childNodes.length === 0) {
-              appmanagerInjectDOM.src="https://appmanager.uport.me/"
+              appmanagerInjectDOM.src="https://appmanager.uport.space/"
       }
     }
   }
