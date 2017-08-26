@@ -35,68 +35,32 @@ Primary object for frontend interactions with uPort. Bundles all neccesary funct
     * [.sendTransaction(txobj)](#ConnectCore+sendTransaction) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
     * [.addAppParameters(txobj, callbackUrl)](#ConnectCore+addAppParameters) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
 
-
-* * *
-
 <a name="new_Connect_new"></a>
 
 ### new Connect(appName, [opts])
 Instantiates a new uPort connect object.
 
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>appName</td><td><code>String</code></td><td></td><td><p>the name of your app</p>
-</td>
-    </tr><tr>
-    <td>[opts]</td><td><code>Object</code></td><td></td><td><p>optional parameters</p>
-</td>
-    </tr><tr>
-    <td>opts.credentials</td><td><code>Object</code></td><td></td><td><p>pre-configured Credentials object from <a href="http://github.com/uport-project/uport-js">http://github.com/uport-project/uport-js</a> object. Configure this if you need to create signed requests</p>
-</td>
-    </tr><tr>
-    <td>opts.signer</td><td><code>function</code></td><td></td><td><p>signing function which will be used to sign JWT&#39;s in the credentials object</p>
-</td>
-    </tr><tr>
-    <td>opts.clientId</td><td><code>String</code></td><td></td><td><p>uport identifier for your application this will be used in the default credentials object</p>
-</td>
-    </tr><tr>
-    <td>[opts.network]</td><td><code>Object</code></td><td><code>&#x27;kovan&#x27;</code></td><td><p>network config object or string name, ie. { id: &#39;0x1&#39;, registry: &#39;0xab5c8051b9a1df1aab0149f8b0630848b7ecabf6&#39;, rpcUrl: &#39;<a href="https://mainnet.infura.io">https://mainnet.infura.io</a>&#39; } or &#39;kovan&#39;, &#39;mainnet&#39;, &#39;ropsten&#39;.</p>
-</td>
-    </tr><tr>
-    <td>opts.rpcUrl</td><td><code>String</code></td><td></td><td><p>JSON rpc url (defaults to <a href="https://ropsten.infura.io">https://ropsten.infura.io</a>)</p>
-</td>
-    </tr><tr>
-    <td>opts.infuraApiKey</td><td><code>String</code></td><td></td><td><p>Infura API Key (register here <a href="http://infura.io/register.html">http://infura.io/register.html</a>)</p>
-</td>
-    </tr><tr>
-    <td>opts.topicFactory</td><td><code>function</code></td><td></td><td><p>function which generates topics and deals with requests and response</p>
-</td>
-    </tr><tr>
-    <td>opts.uriHandler</td><td><code>function</code></td><td></td><td><p>default function to consume generated URIs for requests, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr><tr>
-    <td>opts.mobileUriHandler</td><td><code>function</code></td><td></td><td><p>default function to consume generated URIs for requests on mobile</p>
-</td>
-    </tr><tr>
-    <td>opts.closeUriHandler</td><td><code>function</code></td><td></td><td><p>default function called after a request receives a response, can be to close QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| appName | <code>String</code> |  | the name of your app |
+| [opts] | <code>Object</code> |  | optional parameters |
+| opts.credentials | <code>Object</code> |  | pre-configured Credentials object from http://github.com/uport-project/uport-js object. Configure this if you need to create signed requests |
+| opts.signer | <code>function</code> |  | signing function which will be used to sign JWT's in the credentials object |
+| opts.clientId | <code>String</code> |  | uport identifier for your application this will be used in the default credentials object |
+| [opts.network] | <code>Object</code> | <code>&#x27;kovan&#x27;</code> | network config object or string name, ie. { id: '0x1', registry: '0xab5c8051b9a1df1aab0149f8b0630848b7ecabf6', rpcUrl: 'https://mainnet.infura.io' } or 'kovan', 'mainnet', 'ropsten'. |
+| opts.rpcUrl | <code>String</code> |  | JSON rpc url (defaults to https://ropsten.infura.io) |
+| opts.infuraApiKey | <code>String</code> |  | Infura API Key (register here http://infura.io/register.html) |
+| opts.topicFactory | <code>function</code> |  | function which generates topics and deals with requests and response |
+| opts.uriHandler | <code>function</code> |  | default function to consume generated URIs for requests, can be used to display QR codes or other custom UX |
+| opts.mobileUriHandler | <code>function</code> |  | default function to consume generated URIs for requests on mobile |
+| opts.closeUriHandler | <code>function</code> |  | default function called after a request receives a response, can be to close QR codes or other custom UX |
 
 **Example**  
 ```js
 import { Connect } from 'uport-connect'
 const uPort = new Connect('Mydapp')
 ```
-
-* * *
-
 <a name="Connect+getWeb3"></a>
 
 ### connect.getWeb3() ⇒ <code>web3</code>
@@ -105,9 +69,6 @@ Instantiates and returns a web3 object wrapped with uPort functionality. For
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>web3</code> - A uPort web3 object  
-
-* * *
-
 <a name="ConnectCore+getProvider"></a>
 
 ### connect.getProvider() ⇒ <code>UportSubprovider</code>
@@ -119,9 +80,6 @@ Instantiates and returns a web3 styple provider wrapped with uPort functionality
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>UportSubprovider</code> - A web3 style provider wrapped with uPort functionality  
-
-* * *
-
 <a name="ConnectCore+requestCredentials"></a>
 
 ### connect.requestCredentials([request], [uriHandler]) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
@@ -131,21 +89,11 @@ Creates a request given a request object, will also always return the user's
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with a response object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>[request]</td><td><code>Object</code></td><td><code>{}</code></td><td><p>request object</p>
-</td>
-    </tr><tr>
-    <td>[uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [request] | <code>Object</code> | <code>{}</code> | request object |
+| [uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 **Example**  
 ```js
@@ -158,9 +106,6 @@ const req = {requested: ['name', 'country']}
 
  
 ```
-
-* * *
-
 <a name="ConnectCore+requestAddress"></a>
 
 ### connect.requestAddress([uriHandler]) ⇒ <code>Promise.&lt;String, Error&gt;</code>
@@ -169,21 +114,10 @@ Creates a request for only the address of the uPort identity. Calls given
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>Promise.&lt;String, Error&gt;</code> - a promise which resolves with an address or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>[uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 <a name="ConnectCore+attestCredentials"></a>
 
@@ -195,30 +129,14 @@ Consumes a credential object and generates a signed JWT. Creates a request
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with a resonse object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>credential</td><td><code>Object</code></td><td></td><td><p>credential object</p>
-</td>
-    </tr><tr>
-    <td>credential.sub</td><td><code>String</code></td><td></td><td><p>subject of this credential</p>
-</td>
-    </tr><tr>
-    <td>credential.claim</td><td><code>Object</code></td><td></td><td><p>statement(s) which this credential claims, contructed as {key: &#39;value&#39;, ...}</p>
-</td>
-    </tr><tr>
-    <td>credential.exp</td><td><code>String</code></td><td></td><td><p>expiry time of this credential</p>
-</td>
-    </tr><tr>
-    <td>[uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| credential | <code>Object</code> |  | credential object |
+| credential.sub | <code>String</code> |  | subject of this credential |
+| credential.claim | <code>Object</code> |  | statement(s) which this credential claims, contructed as {key: 'value', ...} |
+| credential.exp | <code>String</code> |  | expiry time of this credential |
+| [uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 **Example**  
 ```js
@@ -233,9 +151,6 @@ const cred = {
 
  
 ```
-
-* * *
-
 <a name="ConnectCore+request"></a>
 
 ### connect.request(request) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
@@ -245,30 +160,13 @@ Create a request and returns a promise which resolves the response. This
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - promise which resolves with a response object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>request</td><td><code>Object</code></td><td></td><td><p>request object</p>
-</td>
-    </tr><tr>
-    <td>request.uri</td><td><code>String</code></td><td></td><td><p>uPort URI</p>
-</td>
-    </tr><tr>
-    <td>request.topic</td><td><code>String</code></td><td></td><td><p>messaging server topic object</p>
-</td>
-    </tr><tr>
-    <td>[request.uriHandler]</td><td><code>String</code></td><td><code>this.uriHandler</code></td><td><p>function to consume URI, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| request | <code>Object</code> |  | request object |
+| request.uri | <code>String</code> |  | uPort URI |
+| request.topic | <code>String</code> |  | messaging server topic object |
+| [request.uriHandler] | <code>String</code> | <code>this.uriHandler</code> | function to consume URI, can be used to display QR codes or other custom UX |
 
 <a name="ConnectCore+contract"></a>
 
@@ -281,24 +179,11 @@ Builds and returns a contract object which can be used to interact with
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>Object</code> - contract object  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>abi</td><td><code>Object</code></td><td></td><td><p>contract ABI</p>
-</td>
-    </tr><tr>
-    <td>[request.uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| abi | <code>Object</code> |  | contract ABI |
+| [request.uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 <a name="ConnectCore+sendTransaction"></a>
 
@@ -309,21 +194,11 @@ Given a transaction object, similarly defined as the web3 transaction object,
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - A promise which resolves with a resonse object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>txobj</td><td><code>Object</code></td><td></td><td><p>transaction object, can also be wrapped using addAppParameters</p>
-</td>
-    </tr><tr>
-    <td>[request.uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| txobj | <code>Object</code> |  | transaction object, can also be wrapped using addAppParameters |
+| [request.uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 **Example**  
 ```js
@@ -339,9 +214,6 @@ const txobject = {
 
  
 ```
-
-* * *
-
 <a name="ConnectCore+addAppParameters"></a>
 
 ### connect.addAppParameters(txobj, callbackUrl) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
@@ -350,24 +222,11 @@ Adds application specific data to a transaction object. Then uses this data
 
 **Kind**: instance method of [<code>Connect</code>](#Connect)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - A promise which resolves with a resonse object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>txobj</td><td><code>Object</code></td><td><p>transaction object</p>
-</td>
-    </tr><tr>
-    <td>callbackUrl</td><td><code>String</code></td><td><p>application callback url</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Description |
+| --- | --- | --- |
+| txobj | <code>Object</code> | transaction object |
+| callbackUrl | <code>String</code> | application callback url |
 
 <a name="ConnectCore"></a>
 
@@ -393,65 +252,31 @@ Primary object for frontend interactions with uPort. ConnectCore excludes
     * [.sendTransaction(txobj)](#ConnectCore+sendTransaction) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
     * [.addAppParameters(txobj, callbackUrl)](#ConnectCore+addAppParameters) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
 
-
-* * *
-
 <a name="new_ConnectCore_new"></a>
 
 ### new ConnectCore(appName, [opts])
 Instantiates a new uPort connectCore object.
 
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>appName</td><td><code>String</code></td><td></td><td><p>the name of your app</p>
-</td>
-    </tr><tr>
-    <td>[opts]</td><td><code>Object</code></td><td></td><td><p>optional parameters</p>
-</td>
-    </tr><tr>
-    <td>opts.credentials</td><td><code>Object</code></td><td></td><td><p>pre-configured Credentials object from <a href="http://github.com/uport-project/uport-js">http://github.com/uport-project/uport-js</a> object. Configure this if you need to create signed requests</p>
-</td>
-    </tr><tr>
-    <td>opts.signer</td><td><code>function</code></td><td></td><td><p>signing function which will be used to sign JWT&#39;s in the credentials object</p>
-</td>
-    </tr><tr>
-    <td>opts.clientId</td><td><code>String</code></td><td></td><td><p>uport identifier for your application this will be used in the default credentials object</p>
-</td>
-    </tr><tr>
-    <td>[opts.network]</td><td><code>Object</code></td><td><code>&#x27;kovan&#x27;</code></td><td><p>network config object or string name, ie. { id: &#39;0x1&#39;, registry: &#39;0xab5c8051b9a1df1aab0149f8b0630848b7ecabf6&#39;, rpcUrl: &#39;<a href="https://mainnet.infura.io">https://mainnet.infura.io</a>&#39; } or &#39;kovan&#39;, &#39;mainnet&#39;, &#39;ropsten&#39;.</p>
-</td>
-    </tr><tr>
-    <td>opts.infuraApiKey</td><td><code>String</code></td><td></td><td><p>Infura API Key (register here <a href="http://infura.io/register.html">http://infura.io/register.html</a>)</p>
-</td>
-    </tr><tr>
-    <td>opts.topicFactory</td><td><code>function</code></td><td></td><td><p>function which generates topics and deals with requests and response</p>
-</td>
-    </tr><tr>
-    <td>opts.uriHandler</td><td><code>function</code></td><td></td><td><p>default function to consume generated URIs for requests, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr><tr>
-    <td>opts.mobileUriHandler</td><td><code>function</code></td><td></td><td><p>default function to consume generated URIs for requests on mobile</p>
-</td>
-    </tr><tr>
-    <td>opts.closeUriHandler</td><td><code>function</code></td><td></td><td><p>default function called after a request receives a response, can be to close QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| appName | <code>String</code> |  | the name of your app |
+| [opts] | <code>Object</code> |  | optional parameters |
+| opts.credentials | <code>Object</code> |  | pre-configured Credentials object from http://github.com/uport-project/uport-js object. Configure this if you need to create signed requests |
+| opts.signer | <code>function</code> |  | signing function which will be used to sign JWT's in the credentials object |
+| opts.clientId | <code>String</code> |  | uport identifier for your application this will be used in the default credentials object |
+| [opts.network] | <code>Object</code> | <code>&#x27;kovan&#x27;</code> | network config object or string name, ie. { id: '0x1', registry: '0xab5c8051b9a1df1aab0149f8b0630848b7ecabf6', rpcUrl: 'https://mainnet.infura.io' } or 'kovan', 'mainnet', 'ropsten'. |
+| opts.infuraApiKey | <code>String</code> |  | Infura API Key (register here http://infura.io/register.html) |
+| opts.topicFactory | <code>function</code> |  | function which generates topics and deals with requests and response |
+| opts.uriHandler | <code>function</code> |  | default function to consume generated URIs for requests, can be used to display QR codes or other custom UX |
+| opts.mobileUriHandler | <code>function</code> |  | default function to consume generated URIs for requests on mobile |
+| opts.closeUriHandler | <code>function</code> |  | default function called after a request receives a response, can be to close QR codes or other custom UX |
 
 **Example**  
 ```js
 import { ConnectCore } from 'uport-connect'
 const uPort = new ConnectCore('Mydapp')
 ```
-
-* * *
-
 <a name="ConnectCore+getProvider"></a>
 
 ### connectCore.getProvider() ⇒ <code>UportSubprovider</code>
@@ -463,9 +288,6 @@ Instantiates and returns a web3 styple provider wrapped with uPort functionality
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>UportSubprovider</code> - A web3 style provider wrapped with uPort functionality  
-
-* * *
-
 <a name="ConnectCore+requestCredentials"></a>
 
 ### connectCore.requestCredentials([request], [uriHandler]) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
@@ -475,21 +297,11 @@ Creates a request given a request object, will also always return the user's
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with a response object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>[request]</td><td><code>Object</code></td><td><code>{}</code></td><td><p>request object</p>
-</td>
-    </tr><tr>
-    <td>[uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [request] | <code>Object</code> | <code>{}</code> | request object |
+| [uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 **Example**  
 ```js
@@ -502,9 +314,6 @@ const req = {requested: ['name', 'country']}
 
  
 ```
-
-* * *
-
 <a name="ConnectCore+requestAddress"></a>
 
 ### connectCore.requestAddress([uriHandler]) ⇒ <code>Promise.&lt;String, Error&gt;</code>
@@ -513,21 +322,10 @@ Creates a request for only the address of the uPort identity. Calls given
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>Promise.&lt;String, Error&gt;</code> - a promise which resolves with an address or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>[uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 <a name="ConnectCore+attestCredentials"></a>
 
@@ -539,30 +337,14 @@ Consumes a credential object and generates a signed JWT. Creates a request
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with a resonse object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>credential</td><td><code>Object</code></td><td></td><td><p>credential object</p>
-</td>
-    </tr><tr>
-    <td>credential.sub</td><td><code>String</code></td><td></td><td><p>subject of this credential</p>
-</td>
-    </tr><tr>
-    <td>credential.claim</td><td><code>Object</code></td><td></td><td><p>statement(s) which this credential claims, contructed as {key: &#39;value&#39;, ...}</p>
-</td>
-    </tr><tr>
-    <td>credential.exp</td><td><code>String</code></td><td></td><td><p>expiry time of this credential</p>
-</td>
-    </tr><tr>
-    <td>[uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| credential | <code>Object</code> |  | credential object |
+| credential.sub | <code>String</code> |  | subject of this credential |
+| credential.claim | <code>Object</code> |  | statement(s) which this credential claims, contructed as {key: 'value', ...} |
+| credential.exp | <code>String</code> |  | expiry time of this credential |
+| [uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 **Example**  
 ```js
@@ -577,9 +359,6 @@ const cred = {
 
  
 ```
-
-* * *
-
 <a name="ConnectCore+request"></a>
 
 ### connectCore.request(request) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
@@ -589,30 +368,13 @@ Create a request and returns a promise which resolves the response. This
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - promise which resolves with a response object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>request</td><td><code>Object</code></td><td></td><td><p>request object</p>
-</td>
-    </tr><tr>
-    <td>request.uri</td><td><code>String</code></td><td></td><td><p>uPort URI</p>
-</td>
-    </tr><tr>
-    <td>request.topic</td><td><code>String</code></td><td></td><td><p>messaging server topic object</p>
-</td>
-    </tr><tr>
-    <td>[request.uriHandler]</td><td><code>String</code></td><td><code>this.uriHandler</code></td><td><p>function to consume URI, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| request | <code>Object</code> |  | request object |
+| request.uri | <code>String</code> |  | uPort URI |
+| request.topic | <code>String</code> |  | messaging server topic object |
+| [request.uriHandler] | <code>String</code> | <code>this.uriHandler</code> | function to consume URI, can be used to display QR codes or other custom UX |
 
 <a name="ConnectCore+contract"></a>
 
@@ -625,24 +387,11 @@ Builds and returns a contract object which can be used to interact with
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>Object</code> - contract object  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>abi</td><td><code>Object</code></td><td></td><td><p>contract ABI</p>
-</td>
-    </tr><tr>
-    <td>[request.uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| abi | <code>Object</code> |  | contract ABI |
+| [request.uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 <a name="ConnectCore+sendTransaction"></a>
 
@@ -653,21 +402,11 @@ Given a transaction object, similarly defined as the web3 transaction object,
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - A promise which resolves with a resonse object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Default</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>txobj</td><td><code>Object</code></td><td></td><td><p>transaction object, can also be wrapped using addAppParameters</p>
-</td>
-    </tr><tr>
-    <td>[request.uriHandler]</td><td><code>function</code></td><td><code>this.uriHandler</code></td><td><p>function to consume uri, can be used to display QR codes or other custom UX</p>
-</td>
-    </tr>  </tbody>
-</table>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| txobj | <code>Object</code> |  | transaction object, can also be wrapped using addAppParameters |
+| [request.uriHandler] | <code>function</code> | <code>this.uriHandler</code> | function to consume uri, can be used to display QR codes or other custom UX |
 
 **Example**  
 ```js
@@ -683,9 +422,6 @@ const txobject = {
 
  
 ```
-
-* * *
-
 <a name="ConnectCore+addAppParameters"></a>
 
 ### connectCore.addAppParameters(txobj, callbackUrl) ⇒ <code>Promise.&lt;Object, Error&gt;</code>
@@ -694,22 +430,9 @@ Adds application specific data to a transaction object. Then uses this data
 
 **Kind**: instance method of [<code>ConnectCore</code>](#ConnectCore)  
 **Returns**: <code>Promise.&lt;Object, Error&gt;</code> - A promise which resolves with a resonse object or rejects with an error.  
-<table>
-  <thead>
-    <tr>
-      <th>Param</th><th>Type</th><th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-<tr>
-    <td>txobj</td><td><code>Object</code></td><td><p>transaction object</p>
-</td>
-    </tr><tr>
-    <td>callbackUrl</td><td><code>String</code></td><td><p>application callback url</p>
-</td>
-    </tr>  </tbody>
-</table>
 
-
-* * *
+| Param | Type | Description |
+| --- | --- | --- |
+| txobj | <code>Object</code> | transaction object |
+| callbackUrl | <code>String</code> | application callback url |
 

@@ -1,6 +1,9 @@
 /*global require*/
 "use strict";
 
+////////////////////////
+// Modules
+////////////////////////
 var gulp = require('gulp'),
   path = require('path'),
   data = require('gulp-data'),
@@ -16,9 +19,9 @@ var gulp = require('gulp'),
   fs = require('fs-then-native'),
   jsdoc2md = require('jsdoc-to-markdown');
 
-/*
- * Directories here
- */
+////////////////////////
+// DIRECTORIES
+////////////////////////
 var paths = {
   public: './public/',
 
@@ -34,8 +37,10 @@ var paths = {
   nodeMods: './node_modules/'
 };
 
+////////////////////////
+// HTML/CSS Hot Inject
+////////////////////////
 gulp.task('pug', () => {
-  // return gulp.src('./src/partials/tabs/tools.pug')
   return gulp.src('./src/*.pug')
     .pipe(
       data((file) => {
@@ -68,14 +73,6 @@ gulp.task('pug', () => {
     .pipe(gulp.dest(paths.public));
 });
 
-/**
- * Recompile .pug files and live reload the browser
- */
-gulp.task('rebuild', ['pug'], () => { });
-
-/**
- * Wait for pug and sass tasks, then launch the browser-sync Server
- */
 gulp.task('browser-sync', ['pug'], () => {
   browserSync.use(htmlInjector, {
     files: "public/index.html"
@@ -87,56 +84,86 @@ gulp.task('browser-sync', ['pug'], () => {
   });
 });
 
-// Compile ES6 js files to ES2015 and copy over
-// gulp.task('es6', () => {
-//   return gulp.src(paths.es6 + '*.js')
-//     .pipe(babel({presets: ['es2015']}))
-//     .pipe(gulp.dest(paths.js));
-// });
-
-// Optimize and copy CSS over
+////////////////////////
+// IMAGES
+////////////////////////
 gulp.task('image', () => {
   return gulp.src(paths.images + '*')
     .pipe(image())
     .pipe(gulp.dest(paths.img));
 });
 
-gulp.task('jsdocs', () => {
-
-  var filesArray = [
+////////////////////////
+// JSDOCS
+////////////////////////
+gulp.task('jsdocs-uport-docs', () => {
+  var filesConnectArray = [
     paths.nodeMods + 'uport-connect/src/Connect.js',
-    paths.nodeMods + 'uport-connect/src/ConnectCore.js' ]
+    paths.nodeMods + 'uport-connect/src/ConnectCore.js'
+  ]
+  var filesJSArray = [
+    // paths.nodeMods + 'uport/src/JWT.js',
+    paths.nodeMods + 'uport/src/Credentials.js',
+    paths.nodeMods + 'uport/src/SimpleSigner.js'
+  ]
 
-  var options = {
+  var optionsBP = {
     "no-gfm": true,
-    "separators": true,
-    files: filesArray
+    "separators": true
   }
 
-  return jsdoc2md.render(options)
-    .then(output => {
-      fs.writeFile(paths.partials + 'docs/uport-connect-api.md', output)
-    })
+  var optionsConnect = Object.create(optionsBP)
+  var optionsJS = Object.create(optionsBP)
+  optionsConnect.files = filesConnectArray
+  optionsJS.files = filesJSArray
+
+  jsdoc2md.render(optionsConnect)
+          .then((output) => {
+            fs.writeFile(
+              paths.partials + 'docs/uport-connect-docs.md',
+              output
+            )
+  })
+
+  jsdoc2md.render(optionsJS)
+          .then((output) => {
+            fs.writeFile(
+              paths.partials + 'docs/uport-js-docs.md',
+              output
+            )
+  })
+
+  return true
 })
 
-// gulp.task('doc', (cb) => {
-//   var config = require('./jsdoc.json');
-//   gulp.src([
-//     paths.nodeMods + 'uport-connect/src/**/**/*.js',
-//     paths.nodeMods + 'uport-lite/READEME.md',
-//     paths.nodeMods + 'uport-registry/READEME.md',
-//     paths.nodeMods + 'uport/READEME.md'
-//   ], {read: false})
-//   .pipe(jsdoc(config, cb));
+////////////////////////
+// JS Compiler
+////////////////////////
+// gulp.task('es6', () => {
+//   return gulp.src(paths.es6 + 'script.js')
+//     .pipe(babel({presets: ['es2015']}))
+//     .pipe(gulp.dest(paths.es6 + 'es2015-compiled/'));
 // });
 
-/**
- * Watch pug/es6 files for changes & recompile
- * Watch .pug files run pug-rebuild then reload BrowserSync
- */
+////////////////////////
+// JS Reloader
+////////////////////////
+gulp.task('bsReload', () => {
+  browserSync.reload('*.html')
+})
+
+////////////////////////
+// WATCH
+////////////////////////
 gulp.task('watch', () => {
-  gulp.watch('./src/**/*.pug', ['rebuild']);
-  gulp.watch('./src/**/*.js', ['rebuild']);
+  gulp.watch('./src/**/*.pug',['pug']);
+  gulp.watch('./src/js/*.js', ['pug', 'bsReload']);
+  gulp.watch('./src/**/*.md', ['pug']);
 });
-gulp.task('build', ['pug']);
+
+////////////////////////
+// TASK MAPPING
+////////////////////////
+gulp.task('docs', ['jsdocs-uport-docs']);
+gulp.task('build', ['pug','docs']);
 gulp.task("default", ['browser-sync', 'watch'], () => { });
