@@ -3661,7 +3661,265 @@ when requests are created.</p>
 </tr>
 </tbody>
 </table>
-</div></section></div><div class="lib" id="uport-js"><section><h1 class="lib-header">uport-js</h1><div class="lib-doc"></div></section></div></div></div></div><style>.lib {
+</div></section></div><div class="lib" id="uport-js"><section><h1 class="lib-header">uport-js</h1><div class="lib-doc"><p><a name="Credentials"></a></p>
+<h2>Credentials</h2>
+<p>The Credentials class allows you to easily create the signed payloads used in uPort inlcuding
+credentials and signed mobile app requests (ex. selective disclosure requests
+for private data). It also provides signature verification over signed payloads and
+allows you to send push notifications to users.</p>
+<p><strong>Kind</strong>: global class</p>
+<ul>
+<li><a href="#Credentials">Credentials</a>
+<ul>
+<li><a href="#new_Credentials_new">new Credentials([settings])</a></li>
+<li><a href="#Credentials+createRequest">.createRequest([params])</a> ⇒ <code>Promise.&lt;Object, Error&gt;</code></li>
+<li><a href="#Credentials+receive">.receive(token, [callbackUrl])</a> ⇒ <code>Promise.&lt;Object, Error&gt;</code></li>
+<li><a href="#Credentials+push">.push(token)</a> ⇒ <code>Promise.&lt;Object, Error&gt;</code></li>
+<li><a href="#Credentials+attest">.attest([credential])</a> ⇒ <code>Promise.&lt;Object, Error&gt;</code></li>
+<li><a href="#Credentials+lookup">.lookup(address)</a> ⇒ <code>Promise.&lt;Object, Error&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_Credentials_new"></a></p>
+<h3>new Credentials([settings])</h3>
+<p>Instantiates a new uPort Credentials object</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[settings]</td>
+<td><code>Object</code></td>
+<td>setttings</td>
+</tr>
+<tr>
+<td>settings.networks</td>
+<td><code>Object</code></td>
+<td>networks config object, ie. {  '0x94365e3b': { rpcUrl: 'https://private.chain/rpc', address: '0x0101.... }}</td>
+</tr>
+<tr>
+<td>settings.registry</td>
+<td><code>UportLite</code></td>
+<td>a registry object from UportLite</td>
+</tr>
+<tr>
+<td>settings.signer</td>
+<td><code>SimpleSigner</code></td>
+<td>a signer object, see SimpleSigner.js</td>
+</tr>
+<tr>
+<td>settings.address</td>
+<td><code>Address</code></td>
+<td>your uPort address (may be the address of your application's uPort identity)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">import { Credentials, SimpleSigner } from 'uport'
+const networks = {  '0x94365e3b': { rpcUrl: 'https://private.chain/rpc', address: '0x0101.... }}
+const setttings = { networks, address: '5A8bRWU3F7j3REx3vkJ...', signer: new SimpleSigner(process.env.PRIVATE_KEY)}
+const credentials = new Credentials(settings)
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">import { Credentials } from 'uport'
+const credentials = new Credentials()
+</code></pre>
+<p><a name="Credentials+createRequest"></a></p>
+<h3>credentials.createRequest([params]) ⇒ <code>Promise.&lt;Object, Error&gt;</code></h3>
+<p>Creates a signed request token (JWT) given a request params object.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Credentials"><code>Credentials</code></a><br>
+<strong>Returns</strong>: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with a signed JSON Web Token or rejects with an error</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[params]</td>
+<td><code>Object</code></td>
+<td><code>{}</code></td>
+<td>request params object</td>
+</tr>
+<tr>
+<td>params.requested</td>
+<td><code>Array</code></td>
+<td></td>
+<td>an array of attributes for which you are requesting credentials to be shared for</td>
+</tr>
+<tr>
+<td>params.callbackUrl</td>
+<td><code>String</code></td>
+<td></td>
+<td>the url which you want to receive the response of this request</td>
+</tr>
+<tr>
+<td>params.notifications</td>
+<td><code>Boolean</code></td>
+<td></td>
+<td>boolean if you want to request the ability to send push notifications</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">const req = { requested: ['name', 'country'],
+               callbackUrl: 'https://myserver.com',
+               notifications: true }
+ credentials.createRequest(req).then(jwt =&gt; {
+     ...
+ })
+
+
+ requested: ['name','phone','identity_no'],
+    callbackUrl: 'https://....' // URL to send the response of the request to
+    notifications: true
+
+ 
+</code></pre>
+<p><a name="Credentials+receive"></a></p>
+<h3>credentials.receive(token, [callbackUrl]) ⇒ <code>Promise.&lt;Object, Error&gt;</code></h3>
+<p>Receive signed response token from mobile app. Verifies and parses the given response token.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Credentials"><code>Credentials</code></a><br>
+<strong>Returns</strong>: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with a parsed response or rejects with an error.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td><code>String</code></td>
+<td></td>
+<td>a response token</td>
+</tr>
+<tr>
+<td>[callbackUrl]</td>
+<td><code>String</code></td>
+<td><code></code></td>
+<td>callbackUrl</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">const resToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJyZXF1Z....'
+ credentials.receive(resToken).then(res =&gt; {
+     const credentials = res.verified
+         const name =  res.name
+     ...
+ })
+
+ 
+</code></pre>
+<p><a name="Credentials+push"></a></p>
+<h3>credentials.push(token) ⇒ <code>Promise.&lt;Object, Error&gt;</code></h3>
+<p>Send a push notification to a user, consumes a token which allows you to send push notifications
+and a url/uri request you want to send to the user.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Credentials"><code>Credentials</code></a><br>
+<strong>Returns</strong>: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with successful status or rejects with an error</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td><code>String</code></td>
+<td>a push notification token (get a pn token by requesting push permissions in a request)</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Credentials+attest"></a></p>
+<h3>credentials.attest([credential]) ⇒ <code>Promise.&lt;Object, Error&gt;</code></h3>
+<p>Create a credential (a signed JSON Web Token)</p>
+<p><strong>Kind</strong>: instance method of <a href="#Credentials"><code>Credentials</code></a><br>
+<strong>Returns</strong>: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with a credential (JWT) or rejects with an error</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[credential]</td>
+<td><code>Object</code></td>
+<td>a unsigned credential object</td>
+</tr>
+<tr>
+<td>credential.sub</td>
+<td><code>String</code></td>
+<td>subject of credential (a uPort address)</td>
+</tr>
+<tr>
+<td>credential.claim</td>
+<td><code>String</code></td>
+<td>claim about subject single key value or key mapping to object with multiple values (ie { address: {street: ..., zip: ..., country: ...}})</td>
+</tr>
+<tr>
+<td>credential.exp</td>
+<td><code>String</code></td>
+<td>time at which this claim expires and is no longer valid</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">credentials.attest({
+  sub: '5A8bRWU3F7j3REx3vkJ...', // uPort address of user, likely a MNID
+  exp: &lt;future timestamp&gt;,
+  claim: { name: 'John Smith' }
+ }).then( credential =&gt; {
+  ...
+ })
+</code></pre>
+<p><a name="Credentials+lookup"></a></p>
+<h3>credentials.lookup(address) ⇒ <code>Promise.&lt;Object, Error&gt;</code></h3>
+<p>Look up a profile in the registry for a given uPort address. Address must be MNID encoded.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Credentials"><code>Credentials</code></a><br>
+<strong>Returns</strong>: <code>Promise.&lt;Object, Error&gt;</code> - a promise which resolves with parsed profile or rejects with an error</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td><code>String</code></td>
+<td>a MNID encoded address</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">credentials.lookup('5A8bRWU3F7j3REx3vkJ...').then(profile =&gt; {
+    const name = profile.name
+    const pubkey = profile.pubkey
+    ...
+  })
+</code></pre>
+</div></section></div></div></div></div><style>.lib {
   background: white;
   padding: 1rem; }
   .lib .lib-doc {
