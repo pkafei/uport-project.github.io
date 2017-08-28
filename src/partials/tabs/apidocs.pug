@@ -1,0 +1,53 @@
+.apidocs
+  .pagewrap
+    .sidebar
+    .content
+      .lib(id=docNavLinks.connect)
+        section
+          h1.lib-header=docNavLinks.connect
+          .lib-doc
+            include:markdown-it(html) ../docs/uport-connect-docs.md
+      .lib(id=docNavLinks.js)
+        section
+          h1.lib-header=docNavLinks.js
+          .lib-doc
+            include:markdown-it(html) ../docs/uport-js-docs.md
+:sass
+  .lib {
+    background: white;
+    padding: 1rem;
+
+    .lib-doc {
+      padding-left: 1rem;
+
+      > ul {
+        padding-left: 1rem;
+      }
+
+      hr {
+        margin: 3rem 0;
+      }
+
+      p, table, pre {
+        margin-left: 1rem;
+      }
+
+      a code {
+        font-size: 1.5rem;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0;
+      text-decoration: underline;
+    }
+
+    dl, h2:first-child{
+      display: none;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }

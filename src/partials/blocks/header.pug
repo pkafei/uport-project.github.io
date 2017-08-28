@@ -1,0 +1,112 @@
+header.header
+  .header-wrap
+    .header-left
+      a.logo-link(href='#portal')
+        span uPort | Developers
+    .header-right
+      nav.nav
+        ul.nav-list
+          li.nav-item
+            a.nav-link(href="#guides")
+              span Guides
+          li.nav-item
+            a.nav-link(href="#apidocs")
+              span API Docs
+          //- li.nav-item
+          //-   a.nav-link(href="#tools")
+          //-     span Tools
+          li.nav-item
+            a.nav-link(href="#myapps")
+              span My Apps
+          li.nav-item
+            a.nav-link(href="#gitter")
+              span Gitter
+          li.nav-item
+            a.nav-link(href="https://medium.com/uport" target="_blank")
+              span Blog
+          li.nav-item
+            a.nav-link(href="https://github.com/uport-project" target="_blank")
+              span Github
+:sass
+  .header,
+  .footer {
+    position: relative;
+    border-bottom: 1px solid #333;
+    justify-content: center;
+    padding: 10px 1rem 10px;
+    font-size: .8rem;
+
+    // Reset
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-wrap,
+    .header-left,
+    .header-right,
+    .footer-wrap,
+    .footer-left,
+    .footer-right {
+      display: flex;
+      flex-direction: row;
+      max-width: 1440px;
+      margin: auto;
+    }
+
+    .header-right,
+    .footer-right,
+    .nav {
+      flex: 1;
+    }
+
+    .logo-link {
+      padding-right: 2rem;
+    }
+
+    .logo-link,
+    .nav-item {
+      // min-height: 50px;
+    }
+
+    .nav-item {
+      padding: 0 1rem;
+    }
+
+    .nav-list,
+    .nav-list li,
+    .nav-list li a,
+    .user-area,
+    .user-area .sign-in-link,
+    .legal-area a {
+      //- height: 100%;
+    }
+    
+    .nav-item {
+      &.active {
+        background: #004f80;
+        border-radius: 4px;
+        * { color: white; }
+        &:hover { 
+          * { text-decoration: none; }
+        }
+      }
+    }
+    
+    
+    .logo-link,
+    .nav-list li a,
+    .sign-in-link,
+    .legal-area a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .legal-area {
+      display: flex;
+      a {
+        margin-left: 2rem;
+      }
+    }
+  }

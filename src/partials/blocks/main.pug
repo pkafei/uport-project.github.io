@@ -1,0 +1,89 @@
+// default to .main.______ page
+main.main.portal
+  include ../tabs/portal
+  include ../tabs/guides
+  include ../tabs/apidocs
+  include ../tabs/tools
+  include ../tabs/myapps
+  include ../tabs/gitter
+:sass
+  @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+  $pair: 320px 794px;
+  
+  main {
+    border-bottom: 1px solid #333;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    > * { display: none; }
+
+    &.portal .portal { display: flex; flex-direction: column; flex: 1;}
+    &.guides .guides { display: flex; flex-direction: column; flex: 1;}
+    &.apidocs .apidocs{ display: flex; flex-direction: column; flex: 1;}
+    &.tools .tools{ display: flex; flex-direction: column; flex: 1;}
+    &.myapps .myapps { display: flex; flex-direction: column; flex: 1;}
+    &.gitter .gitter { display: flex; flex-direction: column; flex: 1;}
+
+    .pagewrap {
+      display: flex;
+      width: 100%;
+      max-width: 1440px;
+      margin: auto;
+      .content {
+        overflow-y: scroll;
+        flex: 1;
+      }
+    }
+
+    .sidebar {
+      background: lightgray;
+      padding: 1rem;
+      min-width: 300px;
+      overflow-y: scroll;
+      
+      @include breakpoint($pair) {
+        display: none !important;
+      }
+
+      code {
+        display: none;
+      }
+
+      ul, li {
+        margin: 0;
+        padding: 0;
+      }
+      ul {margin-bottom: 1rem;}
+      li {
+        padding-left: 1rem;
+        font-size: .9rem;
+      }
+
+      h1 {
+        font-size: 1rem;
+        margin-bottom: .5rem;
+      }
+      span {
+        font-size: .9rem;
+      }
+      
+      .active {
+        background: #004f80;
+        border-radius: 4px;
+        //- padding-top: 2px;
+        //- padding-bottom: 2px;
+        * { color: white; }
+        &:hover { 
+          * { text-decoration: none; }
+        }
+      }
+    }
+
+    .content {
+      padding: 1rem;
+      p, code, textarea, input {
+        font-size: .8rem;
+      }
+    }
+  }
