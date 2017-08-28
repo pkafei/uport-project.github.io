@@ -50,7 +50,7 @@
     "markdown-it-deflist": "^2.0.3",
     "prism-themes": "^1.0.0",
     "prismjs": "^1.6.0",
-    "uport": "^0.4.2",
+    "uport": "^0.5.1",
     "uport-connect": "^0.6.4",
     "uport-lite": "^1.0.1",
     "uport-registry": "^5.1.0"

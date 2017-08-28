@@ -1,3 +1,4 @@
+'use strict';
 ///////////////////////
 // Utilities
 ///////////////////////
@@ -7,41 +8,20 @@ const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)
 const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 
-///////////////////////
-// Window URL Bar Clear
-///////////////////////
-window.history.pushState('', '', window.location.pathname)
-
-if(window.document.body.clientWidth < '794') {
-  $$('.loading-wrapper-parent').forEach((item) => {
-    const warningText = 'Interactive code playground not available in mobile'
-    const warningDom = document.createElement('p')
-    const warningDomChild = document.createElement('b')
-    warningDomChild.textContent = warningText
-    warningDom.appendChild(warningDomChild)
-    item.parentNode.appendChild(warningDom)
-    item.remove()
-  })
-}
-
-// window.onload = function () {
-//   const windowWidth = window.document.body.clientWidth
-//   if(windowWidth < '794') {
-//     $$('.loading-wrapper-parent').forEach((item) => {
-//       item.remove()
-//     })
-//   }
-// }
-
-///////////////////////
+//////////////////////
 // DOM HOOKS
 ///////////////////////
-
 const mainDOM =
   $$('main')[0]
 
-const navDOM =
+const headerDOM =
   $$('header')[0]
+
+const navDOM =
+  $$('header nav')[0]
+
+const navListDOM =
+  $$('header .nav-list')[0]
 
 const userAreaDOM =
   $$('.user-area')[0]
@@ -79,16 +59,30 @@ const guideiFrameDOM =
 const appmanagerInjectDOM =
   $$('#appmanagerinject')[0]
 
-///////////////////////
-// Global Event Listeners
-///////////////////////
-if(window.document.body.clientWidth > '794') {
-  guideContentDOM.onscroll = () => iframeLazyLoad()
-}
+const sidecarScriptInjectDOM =
+  $$('#sidecarScriptInject')[0]
+
+const loadingWrapperParentDOM =
+  $$('.loading-wrapper-parent')
 
 ///////////////////////
 // iFrame Lazy Loader
 ///////////////////////
+
+// Mobile Checker
+if(window.document.body.clientWidth > '794') {
+  guideContentDOM.onscroll = () => iframeLazyLoad()
+} else {
+  loadingWrapperParentDOM.forEach((item) => {
+    const warningText = 'Interactive code playground not available in mobile'
+    const warningDom = document.createElement('p')
+    const warningDomChild = document.createElement('b')
+    warningDomChild.textContent = warningText
+    warningDom.appendChild(warningDomChild)
+    item.parentNode.appendChild(warningDom)
+    item.remove()
+  })
+}
 
 function iframeLazyLoad () {
   let guidestop = guideContentDOM.scrollTop
@@ -122,58 +116,6 @@ function iframeLazyLoad () {
 }
 
 ///////////////////////
-// Router Logic
-///////////////////////
-
-function changeMainClass(desiredHashText) {
-  mainDOM.classList.forEach((mainClass) => {
-    mainClass !== 'main'
-      ? mainDOM.classList.remove(mainClass)
-      : null
-  })
-  mainDOM.classList.add(desiredHashText)
-}
-
-contentShortcutsDOM.onclick = (evt) => {
-  const tabArea = evt.target.parentElement
-                            .parentElement
-                            .parentElement
-                            .parentElement
-                            .parentElement
-                            .classList[0].split('-').join('')
-  changeMainClass(tabArea)
-}
-
-navDOM.onclick = (evt) => {
-  const desiredParent = evt.target.parentElement
-
-  if (desiredParent.hash) {
-    const desiredHash = desiredParent.hash
-    const desiredHashText = desiredHash.replace('#','')
-
-    if (desiredHash !== undefined && desiredHash !== '') {
-      changeMainClass(desiredHashText)
-    }
-
-    // Exception for external links
-    if (desiredHash !== ''){ pvd(evt) }
-
-    // Gitter Inject
-    if (desiredHashText === 'gitter' && $$('#sidecarScriptInject').length === 0) {
-      let sidecarScriptInjectDOM = document.createElement('script')
-      sidecarScriptInjectDOM.id="sidecarScriptInject"
-      sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-      document.body.appendChild(sidecarScriptInjectDOM)
-    }
-
-    // App Manager Inject
-    if (desiredHashText === 'myapps' && appmanagerInjectDOM.childNodes.length === 0) {
-      appmanagerInjectDOM.src="https://appmanager.uport.me/"
-    }
-  }
-}
-
-///////////////////////
 // Sidebar Creator
 ///////////////////////
 
@@ -192,6 +134,9 @@ function createSidebarList (contextArea, flag) {
       el.id = url
       link.innerHTML = el.innerHTML
       link.href = '#' + url
+      link.onclick = (evt) => {
+        changeSideBarLinkClass(evt.target)
+      }
 
       listItem.appendChild(link)
       list.appendChild(listItem)
@@ -204,7 +149,11 @@ function createSidebarList (contextArea, flag) {
     let cloneArry = []
 
     ucContentListItems.forEach((item) => {
-      cloneArry.push(item.cloneNode(true))
+      let newClone = item.cloneNode(true)
+      newClone.childNodes[0].onclick = (evt) => {
+        changeSideBarLinkClass(evt.target)
+      }
+      cloneArry.push(newClone)
     })
 
     if (cloneArry.length > 0){
@@ -265,21 +214,99 @@ function createSidebars (sources) {
 
 createSidebars([guideAreaDOM, docAreaDOM])
 
-// TODO: Get JSDOC based stuff in there
-// ujContentLinks.forEach((el) => {
-//   let li = document.createElement('li')
-//       li.appendChild(el)
-//   sideBarLibBDOM.appendChild(li)
-// })
-//
-// urContentLinks.forEach((el) => {
-//   let li = document.createElement('li')
-//       li.appendChild(el)
-//   sideBarLibCDOM.appendChild(li)
-// })
 
-// signInNav.onclick = (e) => {userAreaDOM.classList.add('menu-open')}
-// logOutNav.onclick = (e) => {userAreaDOM.classList.remove('menu-open')}
+///////////////////////
+// Router Logic
+///////////////////////
+
+function changeMainClass(desiredHashText) {
+  mainDOM.classList.forEach((mainClass) => {
+    mainClass !== 'main'
+      ? mainDOM.classList.remove(mainClass)
+      : null
+  })
+  mainDOM.classList.add(desiredHashText)
+}
+
+function changeNavClass(desiredParent) {
+  navListDOM.childNodes.forEach((navItem) => {
+    if(navItem.classList.length >= 2) {
+      navItem.classList.remove('active')
+    }
+  })
+  desiredParent.classList.add('active')
+}
+
+function changeSideBarLinkClass(sidebarLink) {
+  sidebarLink.closest('.sidebar')
+             .querySelectorAll('li a')
+             .forEach((aLink) => {
+                 aLink.parentElement
+                      .classList
+                      .remove('active')
+             })
+
+  sidebarLink.parentElement
+             .classList
+             .add('active')
+}
+
+///////////////////////
+// Nav Event Handlers
+///////////////////////
+
+contentShortcutsDOM.onclick = (evt) => {
+  const tabArea =
+    evt.target.parentElement
+              .parentElement
+              .parentElement
+              .parentElement
+              .classList[0]
+              .split('-').join('')
+
+  changeMainClass(tabArea)
+}
+
+headerDOM.onclick = (evt) => {
+  const desiredElement = evt.target
+  const desiredParent = evt.target.parentElement
+
+  // Outbound link check
+  if (desiredParent.hash) {
+
+    // Hash isolation
+    const desiredGrandParent = desiredParent.parentElement
+    const desiredHash = desiredParent.hash
+    const desiredHashText = desiredHash.replace('#','')
+
+    // True links
+    if (desiredHash !== undefined &&
+        desiredHash !== '') {
+          changeNavClass(desiredGrandParent)
+          changeMainClass(desiredHashText)
+    }
+
+    // Exception for external links
+    if (desiredHash !== ''){ pvd(evt) }
+
+    // Gitter Inject
+    if (desiredHashText === 'gitter' &&
+        sidecarScriptInjectDOM === undefined) {
+          let sidecarScriptInjectDOM = document.createElement('script')
+          sidecarScriptInjectDOM.id="sidecarScriptInject"
+          sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+          document.body.appendChild(sidecarScriptInjectDOM)
+    }
+
+    // App Manager Inject
+    if (desiredHashText === 'myapps' &&
+        appmanagerInjectDOM.childNodes.length === 0) {
+            appmanagerInjectDOM.src="https://appmanager.uport.space/"
+    }
+  }
+}
+
+// TODO: Get JSDOC based stuff in there
 
 ///////////////////////
 // HAX
@@ -291,3 +318,18 @@ const uch2ccDOM = $$(uch2cc)[0]
 const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
 hide(uch2ccDOM)
 uch2ccDOMPlusAll.forEach((el) => {hide(el)})
+
+// Execute Nav if URL is full
+if (!!window.location.hash) {
+  const sidebarLink =
+    $$('*[href="'+ window.location.hash + '"]')[0]
+  const relevantPage =
+    sidebarLink.closest('.pagewrap')
+               .parentElement
+               .classList[0]
+  const relventPageTrigger =
+    $$('*[href="'+ '#' + relevantPage + '"] span')[0]
+
+  setTimeout(()=>{relventPageTrigger.click()},1)
+  setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
+}
