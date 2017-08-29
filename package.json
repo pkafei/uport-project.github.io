@@ -27,6 +27,7 @@
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy-test": "npm run build && npm run deploy-to-s3 developer.uport.space",
+    "deploy-production": "npm run build && npm run deploy-to-s3 developer.uport.me",
     "deploy-to-s3": "node_modules/.bin/s3-deploy './public/**' --cwd './public/' --region us-west-2 --bucket"
   },
   "repository": {
