@@ -2,31 +2,3 @@
   .pagewrap
     .content
       +iframe('gitterinject')
-:sass
-  .gitter{
-    
-    .pagewrap {
-      height: 100%;
-    }
-    
-    .content{
-      position: relative;
-      padding: 0 !important;
-      
-      #gitterinject {
-        height: 100%;
-      }
-    
-      iframe {
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
-        height: 800px;
-        
-        .gitter & {
-          height: 100%;
-        }
-      }
-    }
-  }

@@ -292,15 +292,19 @@ headerDOM.onclick = (evt) => {
     // Gitter Inject
     if (desiredHashText === 'gitter' &&
         sidecarScriptInjectDOM === undefined) {
-          let sidecarScriptInjectDOM = document.createElement('script')
-          sidecarScriptInjectDOM.id="sidecarScriptInject"
-          sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-          document.body.appendChild(sidecarScriptInjectDOM)
+          const elemID = 'sidecarScriptInject'
+          if (!($$('#' + elemID)[0])) {
+            let sidecarScriptInjectDOM = document.createElement('script')
+            sidecarScriptInjectDOM.id="sidecarScriptInject"
+            sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+            document.body.appendChild(sidecarScriptInjectDOM)
+          }
     }
 
     // App Manager Inject
     if (desiredHashText === 'myapps' &&
-        appmanagerInjectDOM.childNodes.length === 0) {
+        appmanagerInjectDOM.childNodes.length === 0 &&
+        !(appmanagerInjectDOM.src)) {
             appmanagerInjectDOM.src="https://appmanager.uport.space/"
     }
   }

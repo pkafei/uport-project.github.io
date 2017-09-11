@@ -184,6 +184,7 @@ html
         -webkit-animation: load8 1.1s infinite linear;
         animation: load8 1.1s infinite linear;
       }
+        
       @-webkit-keyframes load8 {
         0% {
           -webkit-transform: rotate(0deg);
@@ -204,6 +205,44 @@ html
           transform: rotate(360deg);
         }
       }
+      
+      /*---- iFrame Pages ------ */
+      
+      .myapps, 
+      .gitter {
+      
+        .pagewrap {
+          flex: 1;
+        }
+        
+        .content{
+          display: flex;
+          position: relative;
+          padding: 0 !important;
+          flex: 1;
+          
+          #gitterinject {
+            display: flex;
+            flex: 1;
+            height: 100%;
+          }
+        
+          iframe {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            width: 100%;
+            min-height: 100%;
+            
+            .gitter & {
+              flex: 1;
+              display: flex;
+            }
+          }
+        }
+      }
+      
+      
   body
     include partials/blocks/header
     include partials/blocks/main
