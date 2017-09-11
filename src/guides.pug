@@ -1,0 +1,13 @@
+extends layouts/layout-template
+
+block head-end
+  include partials/blocks/head-end
+
+block content
+  include partials/blocks/header
+  main.main.guides
+    include partials/tabs/guides
+  include partials/blocks/footer
+
+block body-end
+  include partials/blocks/body-end

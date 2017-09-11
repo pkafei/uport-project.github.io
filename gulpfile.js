@@ -43,12 +43,8 @@ var paths = {
 gulp.task('pug', () => {
   return gulp.src('./src/*.pug')
     .pipe(
-      data((file) => {
-        return require(
-          paths.data +
-          path.basename(file.path) +
-          '.json');
-    }))
+      data(() => require(paths.data + 'data.json')
+    ))
     .pipe(
       pug({
         filters: {
@@ -78,7 +74,16 @@ gulp.task('browser-sync', ['pug'], () => {
     files: "public/index.html"
   });
   browserSync.init({
-    server: { baseDir: paths.public },
+    server: {
+      baseDir: paths.public,
+      // routes: {
+      //   "/portal": "portal.html",
+      //   "/guides": "guides.html",
+      //   "/apidocs": "apidocs.html",
+      //   "/myapps": "myapps.html",
+      //   "/gitter": "gitter.html",
+      // }
+    },
     open: false,
     notify: true
   });
