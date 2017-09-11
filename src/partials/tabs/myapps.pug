@@ -23,14 +23,17 @@
 :sass
   .myapps {
     .pagewrap {
-      height: 100%;
+      //- height: 100%;
+      flex: 1;
     }
     .content{
+      display: flex;
       position: relative;
       padding: 0 !important;
+      flex: 1;
       
       #appmanagerinject {
-        height: 100%;
+        //- height: 100%;
       }
     
       iframe {
@@ -38,10 +41,11 @@
         flex-direction: row;
         text-align: center;
         width: 100%;
-        height: 800px;
+        min-height: 100%;
         
         .myapps & {
-          height: 100%;
+          flex: 1;
+          display: flex;
         }
       }
     }
