@@ -8,6 +8,44 @@ const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)
 const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 const WINDOW_WIDTH = window.document.body.clientWidth
+const SITE_NAME = 'Developer Platform'
+const analyticsFire = (name, link) => {
+  analytics.page(
+    SITE_NAME,
+    {
+      title: SITE_NAME + ' - ' + name,
+      url: link || window.location.href,
+    },
+    {
+      integrations: {
+        'All': false,
+        'Intercom': false,
+        'Crazy Egg': true,
+        'Mixpanel': true,
+        'Redshift': true,
+        'Google Analytics': true
+      }
+    }
+  )
+}
+const analyticsLinkFire = (link) => {
+  analytics.page(
+    SITE_NAME,
+    {
+      url: link
+    },
+    {
+      integrations: {
+        'All': false,
+        'Intercom': false,
+        'Crazy Egg': true,
+        'Mixpanel': true,
+        'Redshift': true,
+        'Google Analytics': true
+      }
+    }
+  )
+}
 const ifPage = (pagename, cb) => {
   location.pathname.split('/')[1] === pagename ||
   location.origin + '/'+pagename + '.html' === location.href
@@ -279,6 +317,8 @@ function changeSideBarLinkClass(sidebarLink) {
 // }
 
 ifPage('guides', () => {
+  analyticsPageFire('Guides')
+
   if(WINDOW_WIDTH > '794') {
     createSidebars([guideAreaDOM])
     guideContentDOM.onscroll = () => iframeLazyLoad()
@@ -295,6 +335,7 @@ ifPage('guides', () => {
   }
 })
 ifPage('apidocs', () => {
+  analyticsPageFire('API Docs')
   createSidebars([docAreaDOM])
 
   // Hack for hiding dupe of ConnectCore
@@ -305,12 +346,16 @@ ifPage('apidocs', () => {
   uch2ccDOMPlusAll.forEach((el) => {hide(el)})
 })
 ifPage('myapps', () => {
+  analyticsPageFire('My Apps')
+
   if (appmanagerInjectDOM.childNodes.length === 0 &&
     !(appmanagerInjectDOM.src)) {
       appmanagerInjectDOM.src="https://appmanager.uport.space/"
   }
 })
 ifPage('gitter', () => {
+  analyticsPageFire('Gitter')
+
   if (sidecarScriptInjectDOM === undefined) {
     const elemID = 'sidecarScriptInject'
     if (!($$('#' + elemID)[0])) {
@@ -321,6 +366,13 @@ ifPage('gitter', () => {
     }
   }
 })
+
+// Analytics for all links
+$$('body')[0].onclick = (evt) => {
+  evt.target.href
+    ? analyticsLinkFire(evt.target.href)
+    : null
+}
 
 // TODO - Nav highlights in server side style
 // Execute Nav if URL is full
