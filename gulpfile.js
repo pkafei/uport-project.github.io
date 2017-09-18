@@ -99,9 +99,9 @@ gulp.task('image', () => {
 });
 
 ////////////////////////
-// JSDOCS
+// DOCS
 ////////////////////////
-gulp.task('jsdocs-uport-docs', () => {
+gulp.task('docs', () => {
   var filesConnectArray = [
     paths.nodeMods + 'uport-connect/src/Connect.js',
     paths.nodeMods + 'uport-connect/src/ConnectCore.js'
@@ -169,6 +169,6 @@ gulp.task('watch', () => {
 ////////////////////////
 // TASK MAPPING
 ////////////////////////
-gulp.task('docs', ['jsdocs-uport-docs']);
+gulp.task('docs', ['docs']);
 gulp.task('build', ['pug','docs']);
 gulp.task("default", ['browser-sync', 'watch'], () => { });
