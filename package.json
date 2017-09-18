@@ -1,9 +1,9 @@
 {
-  "name": "gulp-pug-sass-starter",
+  "name": "uPort Documentation",
   "version": "2.0.1",
-  "description": "A Pug and Sass starter project using gulp for task automation.",
+  "description": "A complete destination to building with uPort",
   "main": "gulpfile.js",
-  "author": "Joshua Azemoh <joshazemoh@gmail.com> (http://azemoh.com)",
+  "author": "Jeff Scott Ward <jeffscottward@consensys.net> (http://consensys.net)",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "breakpoint-sass": "^2.7.1",
