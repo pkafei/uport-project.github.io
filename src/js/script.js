@@ -9,7 +9,7 @@ const $$ = (item) => document.querySelectorAll(item)
 const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 const WINDOW_WIDTH = window.document.body.clientWidth
 const SITE_NAME = 'Developer Platform'
-const analyticsFire = (name, link) => {
+const analyticsPageFire = (name, link) => {
   analytics.page(
     SITE_NAME,
     {
@@ -46,9 +46,20 @@ const analyticsLinkFire = (link) => {
     }
   )
 }
+
 const ifPage = (pagename, cb) => {
+  
+  // console.log(pagename)
+  // console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX')
+
+  // console.log(location.pathname.split('/')[1])
+  // console.log('--------------------')
+  // console.log(location.origin + '/'+pagename + '.html')
+  // console.log(location.href)
+  // console.log('000000000000000000000000000')
+
   location.pathname.split('/')[1] === pagename ||
-  location.origin + '/'+pagename + '.html' === location.href
+  location.origin + '/'+pagename + '.html' === location.href.split('#')[0]
     ? cb()
     : null
 }
@@ -246,13 +257,8 @@ function changeMainClass(desiredHashText) {
   mainDOM.classList.add(desiredHashText)
 }
 
-function changeNavClass(desiredParent) {
-  navListDOM.childNodes.forEach((navItem) => {
-    if(navItem.classList.length >= 2) {
-      navItem.classList.remove('active')
-    }
-  })
-  desiredParent.classList.add('active')
+function changeNavClass(pagename) {
+  $$('.nav-' + pagename)[0].classList.add('active')
 }
 
 function changeSideBarLinkClass(sidebarLink) {
@@ -317,7 +323,8 @@ function changeSideBarLinkClass(sidebarLink) {
 // }
 
 ifPage('guides', () => {
-  analyticsPageFire('Guides')
+  analyticsPageFire('Guides')  
+  changeNavClass('guides')
 
   if(WINDOW_WIDTH > '794') {
     createSidebars([guideAreaDOM])
@@ -336,8 +343,9 @@ ifPage('guides', () => {
 })
 ifPage('apidocs', () => {
   analyticsPageFire('API Docs')
+  changeNavClass('apidocs')
   createSidebars([docAreaDOM])
-
+  
   // Hack for hiding dupe of ConnectCore
   const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
   const uch2ccDOM = $$(uch2cc)[0]
@@ -347,14 +355,16 @@ ifPage('apidocs', () => {
 })
 ifPage('myapps', () => {
   analyticsPageFire('My Apps')
+  changeNavClass('myapps')
 
   if (appmanagerInjectDOM.childNodes.length === 0 &&
     !(appmanagerInjectDOM.src)) {
       appmanagerInjectDOM.src="https://appmanager.uport.space/"
   }
 })
-ifPage('gitter', () => {
+ifPage('gitter', () => { 
   analyticsPageFire('Gitter')
+  changeNavClass('gitter')
 
   if (sidecarScriptInjectDOM === undefined) {
     const elemID = 'sidecarScriptInject'
@@ -376,10 +386,9 @@ $$('body')[0].onclick = (evt) => {
 
 // TODO - Nav highlights in server side style
 // Execute Nav if URL is full
-// if (!!location.hash) {
-//   const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
-//   const relevantPage = sidebarLink.closest('.pagewrap').parentElement.classList[0]
+if (!!location.hash) {
+  const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
 //   const relventPageTrigger = $$('*[href="'+ '#' + relevantPage + '"] span')[0]
   // setTimeout(()=>{relventPageTrigger.click()},1)
-  // setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
-// }
+  setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
+}

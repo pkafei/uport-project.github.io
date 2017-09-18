@@ -1,5 +1,5 @@
 {
-  "name": "uPort Documentation",
+  "name": "uPortDocumentation",
   "version": "2.0.1",
   "description": "A complete destination to building with uPort",
   "main": "gulpfile.js",
@@ -35,14 +35,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/azemoh/gulp-pug-sass-seed.git"
+    "url": "https://github.com/uport-project/docs.git"
   },
   "keywords": [
-    "jade",
-    "gulp",
-    "pug",
-    "sass",
-    "browsersync"
+    "uport",
+    "self",
+    "civic",
+    "blockstack",
+    "ethereum",
+    "ipfs"
   ],
   "dependencies": {
     "breakpoint-sass": "^2.7.1",

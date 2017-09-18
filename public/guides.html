@@ -2569,7 +2569,7 @@ main {
     .gitter .content iframe {
       flex: 1;
       display: flex; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/portal.html"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/portal.html"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
 .footer {
   position: relative;
   border-bottom: 1px solid #333;
@@ -3719,12 +3719,12 @@ const $$ = (item) => document.querySelectorAll(item)
 const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 const WINDOW_WIDTH = window.document.body.clientWidth
 const SITE_NAME = 'Developer Platform'
-const analyticsPageFire = (name) => {
+const analyticsPageFire = (name, link) => {
   analytics.page(
     SITE_NAME,
     {
       title: SITE_NAME + ' - ' + name,
-      url: window.location.href,
+      url: link || window.location.href,
     },
     {
       integrations: {
@@ -3742,8 +3742,7 @@ const analyticsLinkFire = (link) => {
   analytics.page(
     SITE_NAME,
     {
-      title: SITE_NAME + ' - ' + name,
-      url: link,
+      url: link
     },
     {
       integrations: {
@@ -3757,9 +3756,20 @@ const analyticsLinkFire = (link) => {
     }
   )
 }
+
 const ifPage = (pagename, cb) => {
+  
+  // console.log(pagename)
+  // console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX')
+
+  // console.log(location.pathname.split('/')[1])
+  // console.log('--------------------')
+  // console.log(location.origin + '/'+pagename + '.html')
+  // console.log(location.href)
+  // console.log('000000000000000000000000000')
+
   location.pathname.split('/')[1] === pagename ||
-  location.origin + '/'+pagename + '.html' === location.href
+  location.origin + '/'+pagename + '.html' === location.href.split('#')[0]
     ? cb()
     : null
 }
@@ -3957,13 +3967,8 @@ function changeMainClass(desiredHashText) {
   mainDOM.classList.add(desiredHashText)
 }
 
-function changeNavClass(desiredParent) {
-  navListDOM.childNodes.forEach((navItem) => {
-    if(navItem.classList.length >= 2) {
-      navItem.classList.remove('active')
-    }
-  })
-  desiredParent.classList.add('active')
+function changeNavClass(pagename) {
+  $$('.nav-' + pagename)[0].classList.add('active')
 }
 
 function changeSideBarLinkClass(sidebarLink) {
@@ -4028,7 +4033,8 @@ function changeSideBarLinkClass(sidebarLink) {
 // }
 
 ifPage('guides', () => {
-  analyticsPageFire('Guides')
+  analyticsPageFire('Guides')  
+  changeNavClass('guides')
 
   if(WINDOW_WIDTH > '794') {
     createSidebars([guideAreaDOM])
@@ -4047,8 +4053,9 @@ ifPage('guides', () => {
 })
 ifPage('apidocs', () => {
   analyticsPageFire('API Docs')
+  changeNavClass('apidocs')
   createSidebars([docAreaDOM])
-
+  
   // Hack for hiding dupe of ConnectCore
   const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
   const uch2ccDOM = $$(uch2cc)[0]
@@ -4058,14 +4065,16 @@ ifPage('apidocs', () => {
 })
 ifPage('myapps', () => {
   analyticsPageFire('My Apps')
+  changeNavClass('myapps')
 
   if (appmanagerInjectDOM.childNodes.length === 0 &&
     !(appmanagerInjectDOM.src)) {
       appmanagerInjectDOM.src="https://appmanager.uport.space/"
   }
 })
-ifPage('gitter', () => {
+ifPage('gitter', () => { 
   analyticsPageFire('Gitter')
+  changeNavClass('gitter')
 
   if (sidecarScriptInjectDOM === undefined) {
     const elemID = 'sidecarScriptInject'
@@ -4087,11 +4096,10 @@ $$('body')[0].onclick = (evt) => {
 
 // TODO - Nav highlights in server side style
 // Execute Nav if URL is full
-// if (!!location.hash) {
-//   const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
-//   const relevantPage = sidebarLink.closest('.pagewrap').parentElement.classList[0]
+if (!!location.hash) {
+  const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
 //   const relventPageTrigger = $$('*[href="'+ '#' + relevantPage + '"] span')[0]
   // setTimeout(()=>{relventPageTrigger.click()},1)
-  // setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
-// }
+  setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
+}
 </script></body></html>
