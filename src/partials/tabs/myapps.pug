@@ -1,48 +1,4 @@
 .myapps
   .pagewrap
-    //- .sidebar
-      //- h2 My Apps
-      //- ul
-      //-   li
-      //-     a(href='#')
-      //-       span Application 1
-      //-   li
-      //-     a(href='#')
-      //-       span Application 2
-      //-   li
-      //-     a(href='#')
-      //-       span Application 3
-      //-   li
-      //-     a(href='#')
-      //-       span Application 4
-      //-   li
-      //-     a(href='#')
-      //-       span Application 5
     .content
       +iframe('appmanagerinject')
-:sass
-  .myapps {
-    .pagewrap {
-      height: 100%;
-    }
-    .content{
-      position: relative;
-      padding: 0 !important;
-      
-      #appmanagerinject {
-        height: 100%;
-      }
-    
-      iframe {
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
-        height: 800px;
-        
-        .myapps & {
-          height: 100%;
-        }
-      }
-    }
-  }
