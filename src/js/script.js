@@ -10,41 +10,45 @@ const sanitizeHash = (text) => text.toLowerCase().split(' ').join('-')
 const WINDOW_WIDTH = window.document.body.clientWidth
 const SITE_NAME = 'Developer Platform'
 const analyticsPageFire = (name, link) => {
-  analytics.page(
-    SITE_NAME,
-    {
-      title: SITE_NAME + ' - ' + name,
-      url: link || window.location.href,
-    },
-    {
-      integrations: {
-        'All': false,
-        'Intercom': false,
-        'Crazy Egg': true,
-        'Mixpanel': true,
-        'Redshift': true,
-        'Google Analytics': true
+  if(window.location.hostname === 'developer.uport.me') {
+    analytics.page(
+      SITE_NAME,
+      {
+        title: SITE_NAME + ' - ' + name,
+        url: link || window.location.href,
+      },
+      {
+        integrations: {
+          'All': false,
+          'Intercom': false,
+          'Crazy Egg': true,
+          'Mixpanel': true,
+          'Redshift': true,
+          'Google Analytics': true
+        }
       }
-    }
-  )
+    )
+  }
 }
 const analyticsLinkFire = (link) => {
-  analytics.page(
-    SITE_NAME,
-    {
-      url: link
-    },
-    {
-      integrations: {
-        'All': false,
-        'Intercom': false,
-        'Crazy Egg': true,
-        'Mixpanel': true,
-        'Redshift': true,
-        'Google Analytics': true
+  if(window.location.hostname === 'developer.uport.me') {
+    analytics.page(
+      SITE_NAME,
+      {
+        url: link
+      },
+      {
+        integrations: {
+          'All': false,
+          'Intercom': false,
+          'Crazy Egg': true,
+          'Mixpanel': true,
+          'Redshift': true,
+          'Google Analytics': true
+        }
       }
-    }
-  )
+    )
+  }
 }
 
 const ifPage = (pagename, cb) => {
@@ -149,7 +153,6 @@ function iframeLazyLoad () {
 }
 
 function sidebarStateCheckerOnScroll (scrollContainer) {
-  console.log('sidebarStateCheckerOnScroll')
   
   // Set visiable area
   let topBar = scrollContainer.scrollTop
