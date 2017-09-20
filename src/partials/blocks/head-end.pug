@@ -254,17 +254,33 @@ include ../mixins/iframeloader
       span {
         font-size: .9rem;
       }
+
+      ////////////////////
+      // START : Same but diff DOM
+      ////////////////////
       
       li.active, a.active {
         background: #004f80;
         border-radius: 4px;
-        //- padding-top: 2px;
-        //- padding-bottom: 2px;
         * { color: white; }
         &:hover { 
           * { text-decoration: none; }
         }
       }
+
+      section.active {
+        > a {
+          h1 { background: #004f80; }
+          border-radius: 4px;
+          * { color: white; }
+          &:hover { 
+            * { text-decoration: none; }
+          }
+        }
+      }
+      ////////////////////
+      // END : Same but diff DOM
+      ////////////////////
     }
 
     .content {

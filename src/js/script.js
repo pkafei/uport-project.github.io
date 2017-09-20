@@ -125,7 +125,6 @@ function iframeLazyLoad () {
 
   guideiFrameDOM.forEach((item) => {
    let iframetop = item.parentElement.offsetTop
-   let itop = item.id + ":" + iframetop
 
    if (!item.getAttribute('loaded') && bottomBar >= iframetop) {
 
@@ -147,6 +146,72 @@ function iframeLazyLoad () {
      }
    }
   })
+}
+
+function sidebarStateCheckerOnScroll (scrollContainer) {
+  console.log('sidebarStateCheckerOnScroll')
+  
+  // Set visiable area
+  let topBar = scrollContainer.scrollTop
+  let viewArea = document.body.offsetHeight
+  let bottomBar = topBar + viewArea
+
+  const headers = scrollContainer.querySelectorAll('h1, h2[id], h3')
+
+  // State vars
+  let invisibleHeadersByID = []
+  let visibleHeadersByID = []
+  
+  headers
+    .forEach((item) => {
+
+     // Specific item's top
+     let itemTopBar = item.offsetTop
+
+     if(item.id) {
+      visibleHeadersByID.push(item.id) 
+     }
+     else { 
+      visibleHeadersByID.push(
+        item.previousElementSibling.querySelectorAll('a[name]')[0].name
+      )
+     }
+     
+     // List invisible headers
+    if(item.id) {
+      topBar >= itemTopBar
+       ? invisibleHeadersByID.push(item.id)
+       : null
+      bottomBar <= itemTopBar
+       ? invisibleHeadersByID.push(item.id)
+       : null
+     }
+     else {
+      topBar >= itemTopBar
+       ? invisibleHeadersByID.push(item.previousElementSibling.querySelectorAll('a[name]')[0].name)
+       : null
+      bottomBar <= itemTopBar
+       ? invisibleHeadersByID.push(item.previousElementSibling.querySelectorAll('a[name]')[0].name)
+       : null
+     }
+
+     // Filter out only visible headers
+     for (var i = invisibleHeadersByID.length - 1; i >= 0; i--) {
+       invisibleHeadersByID[i] === visibleHeadersByID[visibleHeadersByID.length-1]
+         ? visibleHeadersByID.pop()
+         : null
+     }
+  })
+  
+  // Clear any active class
+  $$('.sidebar *.active').forEach((item) => {item.classList.remove('active')})
+  
+  // Get the current item
+  let currentSideBarItemToHighlight = $$('a[href="#' + visibleHeadersByID[0] + '"]')[0]
+
+  if(currentSideBarItemToHighlight !== undefined) {
+    currentSideBarItemToHighlight.parentElement.classList.add('active')  
+  }  
 }
 
 ///////////////////////
@@ -328,7 +393,10 @@ ifPage('guides', () => {
 
   if(WINDOW_WIDTH > '794') {
     createSidebars([guideAreaDOM])
-    guideContentDOM.onscroll = () => iframeLazyLoad()
+    guideContentDOM.onscroll = () => {
+      iframeLazyLoad()
+      sidebarStateCheckerOnScroll(guideContentDOM)
+    }
   } else {
     loadingWrapperParentDOM.forEach((item) => {
       const warningText = 'Interactive code playground not available in mobile'
@@ -341,18 +409,30 @@ ifPage('guides', () => {
     })
   }
 })
+
 ifPage('apidocs', () => {
   analyticsPageFire('API Docs')
   changeNavClass('apidocs')
   createSidebars([docAreaDOM])
-  
+
   // Hack for hiding dupe of ConnectCore
   const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
   const uch2ccDOM = $$(uch2cc)[0]
   const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
-  hide(uch2ccDOM)
-  uch2ccDOMPlusAll.forEach((el) => {hide(el)})
+  // hide(uch2ccDOM)
+  // uch2ccDOMPlusAll.forEach((el) => {hide(el)})
+
+  uch2ccDOM.remove()
+  uch2ccDOMPlusAll.forEach((el) => {el.remove()})
+
+  if(WINDOW_WIDTH > '794') {
+    const docsContent = $$('.apidocs .content')[0]
+    docsContent.onscroll = () => {
+      sidebarStateCheckerOnScroll(docsContent)
+    }
+  }
 })
+
 ifPage('myapps', () => {
   analyticsPageFire('My Apps')
   changeNavClass('myapps')
@@ -362,6 +442,7 @@ ifPage('myapps', () => {
       appmanagerInjectDOM.src="https://appmanager.uport.space/"
   }
 })
+
 ifPage('gitter', () => { 
   analyticsPageFire('Gitter')
   changeNavClass('gitter')
