@@ -49,6 +49,7 @@
     "breakpoint-sass": "^2.7.1",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2",
+    "gulp": "^3.9.1",
     "gulp-jsdoc3": "^1.0.1",
     "include-media": "^1.4.9",
     "jstransformer-markdown-it": "^2.0.0",
