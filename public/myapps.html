@@ -2473,8 +2473,7 @@ main {
   border-bottom: 1px solid #333;
   flex: 1;
   display: flex;
-  flex-direction: column;
-  overflow-y: scroll; }
+  flex-direction: column; }
   main > * {
     display: none; }
   main.portal .portal {
@@ -2512,8 +2511,7 @@ main {
   main .sidebar {
     background: lightgray;
     padding: 1rem;
-    min-width: 300px;
-    overflow-y: scroll; }
+    min-width: 300px; }
     @media (min-width: 320px) and (max-width: 794px) {
       main .sidebar {
         display: none !important; } }
@@ -2532,12 +2530,12 @@ main {
       margin-bottom: .5rem; }
     main .sidebar span {
       font-size: .9rem; }
-    main .sidebar .active {
+    main .sidebar li.active, main .sidebar a.active {
       background: #004f80;
       border-radius: 4px; }
-      main .sidebar .active * {
+      main .sidebar li.active *, main .sidebar a.active * {
         color: white; }
-      main .sidebar .active:hover * {
+      main .sidebar li.active:hover *, main .sidebar a.active:hover * {
         text-decoration: none; }
   main .content p, main .content code, main .content textarea, main .content input {
     font-size: .8rem; }
@@ -2569,7 +2567,7 @@ main {
     .gitter .content iframe {
       flex: 1;
       display: flex; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/portal.html"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
 .footer {
   position: relative;
   border-bottom: 1px solid #333;
@@ -2636,7 +2634,9 @@ main {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><main class="main myapps"><div class="myapps"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="appmanagerinject"></iframe></div></div></div></div></main><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
+</style><main class="main myapps"><div class="myapps"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><iframe id="appmanagerinject"></iframe></div></div></div></div><style>.myapps .pagewrap .content {
+  overflow-y: auto; }
+</style></main><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
 /* **********************************************
      Begin prism-core.js
 ********************************************** */

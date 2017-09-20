@@ -204,7 +204,6 @@ include ../mixins/iframeloader
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
     > * { display: none; }
 
     &.portal .portal { display: flex; flex-direction: column; flex: 1;}
@@ -229,7 +228,6 @@ include ../mixins/iframeloader
       background: lightgray;
       padding: 1rem;
       min-width: 300px;
-      overflow-y: scroll;
       
       @include breakpoint($pair) {
         display: none !important;
@@ -257,7 +255,7 @@ include ../mixins/iframeloader
         font-size: .9rem;
       }
       
-      .active {
+      li.active, a.active {
         background: #004f80;
         border-radius: 4px;
         //- padding-top: 2px;

@@ -2473,8 +2473,7 @@ main {
   border-bottom: 1px solid #333;
   flex: 1;
   display: flex;
-  flex-direction: column;
-  overflow-y: scroll; }
+  flex-direction: column; }
   main > * {
     display: none; }
   main.portal .portal {
@@ -2512,8 +2511,7 @@ main {
   main .sidebar {
     background: lightgray;
     padding: 1rem;
-    min-width: 300px;
-    overflow-y: scroll; }
+    min-width: 300px; }
     @media (min-width: 320px) and (max-width: 794px) {
       main .sidebar {
         display: none !important; } }
@@ -2532,12 +2530,12 @@ main {
       margin-bottom: .5rem; }
     main .sidebar span {
       font-size: .9rem; }
-    main .sidebar .active {
+    main .sidebar li.active, main .sidebar a.active {
       background: #004f80;
       border-radius: 4px; }
-      main .sidebar .active * {
+      main .sidebar li.active *, main .sidebar a.active * {
         color: white; }
-      main .sidebar .active:hover * {
+      main .sidebar li.active:hover *, main .sidebar a.active:hover * {
         text-decoration: none; }
   main .content p, main .content code, main .content textarea, main .content input {
     font-size: .8rem; }
@@ -2569,7 +2567,7 @@ main {
     .gitter .content iframe {
       flex: 1;
       display: flex; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/portal.html"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
 .footer {
   position: relative;
   border-bottom: 1px solid #333;
@@ -2636,7 +2634,7 @@ main {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div><!-- TODO: Insert APPStore and Playstore images --></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="#getting-started">Getting Started</a></li><li><a href="#requesting-credentials">Requesting Credentials</a></li><li><a href="#attesting-credentials">Attesting Credentials</a></li><li><a href="#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="#uport-connect">uport-connect</a></li><li><a href="#uport-js" disabled>uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
+</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div><!-- TODO: Insert APPStore and Playstore images --></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
   text-align: center; }
   .portal .pagewrap {
     flex: 1;
