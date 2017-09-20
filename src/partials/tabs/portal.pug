@@ -7,21 +7,23 @@
       .banner-steps
         ul
           li.alpha
-            .number
-              span.number-text 1
-            i.fa.fa-id-badge
-            .step-desc Download the mobile app
-            <!-- TODO: Insert APPStore and Playstore images -->
+            a(href="/guides.html#download-the-mobile-app")
+              .number
+                span.number-text 1
+              i.fa.fa-id-badge
+              .step-desc Download the mobile app
           li.beta
-            .number
-              span.number-text 2
-            i.fa.fa-id-card
-            .step-desc Register Your App
+            a(href="/guides.html#register-your-app")
+              .number
+                span.number-text 2
+              i.fa.fa-id-card
+              .step-desc Register Your App
           li.omega
-            .number
-              span.number-text 3
-            i.fa.fa-laptop
-            .step-desc Install the Libraries / SDK's
+            a(href="/guides.html#install-the-library/sdk")
+              .number
+                span.number-text 3
+              i.fa.fa-laptop
+              .step-desc Install the Libraries / SDK's
     .content-shortcuts
       ul
         li.guides
@@ -81,6 +83,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      overflow-y: scroll;
     }
     
     .banner,
@@ -104,6 +107,11 @@
     }
 
     .banner-steps{
+
+      * {
+        color: white;
+        text-decoration: none;
+      }
     
       .fa {
         font-size: 6rem;
@@ -164,6 +172,14 @@
     .content-shortcuts {
       text-align: left;
       background: #eaeaea;
+
+      *[disabled] {
+        color: gray;
+        &:hover {
+          text-decoration: none;
+          cursor: no-drop;
+        }
+      }
       
       .fa {
       font-size: 8rem;

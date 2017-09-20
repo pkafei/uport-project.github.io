@@ -2642,12 +2642,13 @@ main {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div><!-- TODO: Insert APPStore and Playstore images --></li><li class="beta"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></li><li class="omega"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
+</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
   text-align: center; }
   .portal .pagewrap {
     flex: 1;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    overflow-y: scroll; }
   .portal .banner,
   .portal .content-shortcuts,
   .portal .whitepaper {
@@ -2663,6 +2664,9 @@ main {
   .portal .text-block {
     max-width: 600px;
     margin: 0 auto 3em auto; }
+  .portal .banner-steps * {
+    color: white;
+    text-decoration: none; }
   .portal .banner-steps .fa {
     font-size: 6rem; }
     @media (min-width: 320px) and (max-width: 794px) {
@@ -2702,6 +2706,11 @@ main {
   .portal .content-shortcuts {
     text-align: left;
     background: #eaeaea; }
+    .portal .content-shortcuts *[disabled] {
+      color: gray; }
+      .portal .content-shortcuts *[disabled]:hover {
+        text-decoration: none;
+        cursor: no-drop; }
     .portal .content-shortcuts .fa {
       font-size: 8rem; }
     .portal .content-shortcuts img, .portal .content-shortcuts label {
@@ -3543,21 +3552,9 @@ Prism.languages.js = Prism.languages.javascript;
 	document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
 
 })();
-
 !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
-analytics.load("TP9aPQLX69CtFXTtQtRmqGjUjNgRiRo3");
-if(window.location.hostname === 'developer.uport.me') {
-  analytics.page('Developer Platform',
-               {},
-               {integrations: {'All': false,
-                               'Intercom': false,
-                               'Crazy Egg': true,
-                               'Mixpanel': true,
-                               'Redshift': true,
-                               'Google Analytics': true
-                              }});
-  }}();
-}
+  analytics.load("TP9aPQLX69CtFXTtQtRmqGjUjNgRiRo3");
+}}();
   ((window.gitter = {}).chat = {}).options = {
     room: 'uport-project/Lobby',
     activationElement: false,
@@ -3566,11 +3563,7 @@ if(window.location.hostname === 'developer.uport.me') {
     preload: true,
     targetElement: '#gitterinject'
   };
-</script><script>'use strict';
-///////////////////////
-// Utilities
-///////////////////////
-const pvd = (e) => e.preventDefault()
+</script><script>const pvd = (e) => e.preventDefault()
 const hide = (item) => { item.style.display = 'none' }
 const show = (item) => { item.style.display = 'block' }
 const $$ = (item) => document.querySelectorAll(item)

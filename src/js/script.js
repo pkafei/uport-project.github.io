@@ -1,7 +1,3 @@
-'use strict';
-///////////////////////
-// Utilities
-///////////////////////
 const pvd = (e) => e.preventDefault()
 const hide = (item) => { item.style.display = 'none' }
 const show = (item) => { item.style.display = 'block' }
