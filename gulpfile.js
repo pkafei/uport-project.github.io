@@ -137,8 +137,6 @@ gulp.task('docs', () => {
               output
             )
   })
-
-  return true
 })
 
 ////////////////////////
