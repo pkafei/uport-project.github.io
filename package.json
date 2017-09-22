@@ -55,6 +55,7 @@
     "jstransformer-markdown-it": "^2.0.0",
     "jstransformer-sass": "^0.1.1",
     "jstransformer-scss": "^0.1.4",
+    "kjua": "^0.1.2",
     "markdown-it": "^8.4.0",
     "markdown-it-deflist": "^2.0.3",
     "prism-themes": "^1.0.0",
