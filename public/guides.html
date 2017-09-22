@@ -2477,9 +2477,10 @@ main {
   main > * {
     display: none; }
   main.portal .portal {
-    display: flex;
-    flex-direction: column;
-    flex: 1; }
+    overflow-y: scroll;
+    display: block; }
+    main.portal .portal .pagewrap {
+      display: block; }
   main.guides .guides {
     display: flex;
     flex-direction: column;

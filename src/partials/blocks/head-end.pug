@@ -206,7 +206,8 @@ include ../mixins/iframeloader
     flex-direction: column;
     > * { display: none; }
 
-    &.portal .portal { display: flex; flex-direction: column; flex: 1;}
+    // &.portal .portal { display: flex; flex-direction: column; flex: 1;}
+    &.portal .portal { overflow-y: scroll; display: block; .pagewrap{display:block;}}
     &.guides .guides { display: flex; flex-direction: column; flex: 1;}
     &.apidocs .apidocs{ display: flex; flex-direction: column; flex: 1;}
     &.tools .tools{ display: flex; flex-direction: column; flex: 1;}

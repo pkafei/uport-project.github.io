@@ -1,5 +1,10 @@
 .portal
   .pagewrap
+    .splash
+      .splash-focus
+        img.logo(src="img/logo-white-2x.svg")
+        //- img.name(src="img/uport-name.png")
+        p.text-block Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.
     .banner
       .banner-text
         h1 Get started developing with Uport
@@ -80,15 +85,29 @@
     text-align: center;
     
     .pagewrap {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      overflow-y: scroll;
+      // flex: 1;
+      // display: flex;
+      // flex-direction: column;
+      // overflow-y: scroll;
+    }
+
+    .splash{
+      // flex-basis: 500px;
+      background: #5756C3;
+      color: white;
+
+      .splash-focus{
+        margin: auto;
+        width: 80%;
+
+        img { display: block; margin: auto;}
+        img.logo { max-width: 200px; }
+      }
     }
     
+    .splash,
     .banner,
-    .content-shortcuts,
-    .whitepaper {
+    .content-shortcuts {
       padding: 3rem 5rem;
       
       @include breakpoint($pair) {
@@ -96,13 +115,15 @@
       }
     }
 
-    .banner, .whitepaper {
-      background: #004f80;
+    .banner {
+      background: #3A3942;
       color: white;
     }
 
+    .banner-text { padding-top: 40px;}
+
     .text-block {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 3em auto;
     }
 
