@@ -2531,19 +2531,23 @@ main {
       margin-bottom: .5rem; }
     main .sidebar span {
       font-size: .9rem; }
+    main .sidebar section > a > * {
+      display: block;
+      padding-left: 10px; }
     main .sidebar li.active, main .sidebar a.active {
-      background: #004f80;
-      border-radius: 4px; }
+      background: #595DC3;
+      border-radius: 5px; }
       main .sidebar li.active *, main .sidebar a.active * {
         color: white; }
       main .sidebar li.active:hover *, main .sidebar a.active:hover * {
         text-decoration: none; }
     main .sidebar section.active > a {
-      border-radius: 4px; }
-      main .sidebar section.active > a h1 {
-        background: #004f80; }
+      border-radius: 10px; }
       main .sidebar section.active > a * {
         color: white; }
+      main .sidebar section.active > a h1 {
+        background: #595DC3;
+        border-radius: 5px; }
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
   main .content p, main .content code, main .content textarea, main .content input {
@@ -2576,7 +2580,12 @@ main {
     .gitter .content iframe {
       flex: 1;
       display: flex; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header,
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
+  background: #616069; }
+  .header * {
+    color: white; }
+
+.header,
 .footer {
   position: relative;
   border-bottom: 1px solid #333;
@@ -2618,7 +2627,7 @@ main {
     padding: 0 1rem; }
   .header .nav-item.active,
   .footer .nav-item.active {
-    background: #004f80;
+    background: #3A3942;
     border-radius: 4px; }
     .header .nav-item.active *,
     .footer .nav-item.active * {

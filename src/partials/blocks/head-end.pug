@@ -260,10 +260,15 @@ include ../mixins/iframeloader
       ////////////////////
       // START : Same but diff DOM
       ////////////////////
+
+      section > a > * {
+        display: block;
+        padding-left: 10px;
+      }
       
       li.active, a.active {
-        background: #004f80;
-        border-radius: 4px;
+        background: #595DC3;
+        border-radius: 5px;
         * { color: white; }
         &:hover { 
           * { text-decoration: none; }
@@ -272,9 +277,12 @@ include ../mixins/iframeloader
 
       section.active {
         > a {
-          h1 { background: #004f80; }
-          border-radius: 4px;
+          border-radius: 10px;
           * { color: white; }
+          h1 { 
+            background: #595DC3; 
+            border-radius: 5px;
+          }
           &:hover { 
             * { text-decoration: none; }
           }
