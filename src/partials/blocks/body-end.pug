@@ -1,7 +1,12 @@
 script
   include ../../../node_modules/prismjs/prism.js
   include ../../../node_modules/kjua/dist/kjua.min.js
+  include ../../../node_modules/uport-connect/dist/uport-connect.min.js
+
+// DO NOT COMBINE - BUILD ERRORS WILL HAPPEN
+script
   include ../../js/segment.js
   include ../../js/sidecarSetup.js
-script(src="https://unpkg.com/uport-connect/dist/uport-connect.min.js")
+  include ../../js/script.js
+  include ../../js/webpackexamples.js
   

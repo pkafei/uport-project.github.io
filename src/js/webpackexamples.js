@@ -14,7 +14,6 @@ const web3 = uport.getWeb3()
 // Contract setup BTN
 ////////////////////
 
-
 function MyContractSetup () {
   let MyContractABI = web3.eth.contract([
     {
@@ -53,42 +52,18 @@ function MyContractSetup () {
   return MyContractObj
 }
 
-
-////////////////////
-// UIToggles
-////////////////////
-
-
-function togglePostLoggedInUI () {
-  document.querySelectorAll('.signBtn')[0].style.display = 'block'
-  document.querySelectorAll('.loginBtn')[0].style.display = 'none'
-  document.querySelector('#kqr').style.display = 'none'
-}
-
-function toggleExistingDataLoad (data) {
-  document.querySelectorAll('.currentShares')[0].textContent = data
-  document.querySelectorAll('.sharesArea')[0].style.display = 'block'
-}
-
-
+const MyContract = MyContractSetup()
 
 ////////////////////
 // LOGIN BTN
 ////////////////////
 
-import { uport, MNID } from './uportSetup.js'
-import kjua from 'kjua'
-
-import { getCurrentDataFromChain } from './utilities.js'
-
-import { MyContractSetup } from './contractSetup.js'
-const MyContract = MyContractSetup()
+// import kjua from 'kjua'
 
 // Simple button onclick handler
-window.loginBtn = () => {
-  
+window.loginRequest = () => {
   // Only allow button click once
-  document.querySelectorAll('.loginBtn')[0].disabled = true
+  // document.querySelectorAll('.loginBtn')[0].disabled = true
   
   // uport based login with...
   // specific credential requests
@@ -104,9 +79,9 @@ window.loginBtn = () => {
       
       const qr = kjua({
         text: uri,
-        fill: '#0619ac',
+        fill: '#FFFFFF',
         size: 300,
-        back: 'rgba(255,255,255,1)'
+        back: 'rgba(255,255,255,0)'
       })
 
       // Create wrapping link for mobile touch
@@ -118,22 +93,14 @@ window.loginBtn = () => {
       document.querySelector('#kqr').appendChild(aTag)
       
     }).then((userProfile) => {
-      setUser(userProfile)
-      togglePostLoggedInUI()
-      getCurrentDataFromChain(window.loggedInUser.rinkebyID)
 
+      console.log(userProfile)
 
-      // Attest Code
-
-      // Do something after they have disclosed credentials
-      window.attestationReceiver = userProfile.address
-    
-      document.querySelectorAll('.attestBtn')[0].style.display = 'block';
-      document.querySelectorAll('.loginBtn')[0].style.display = 'none';
-      document.querySelector('#kqr').style.display = 'none';
-
+      if(window.location.pathname === '/') {
+        setUser(userProfile)
+        togglePostLoggedIn_PORTAL_UI()
+      }
   })
-
 }
 
 
@@ -157,19 +124,9 @@ window.attestationBtn = () => {
 
 
 
-
-
-
 ////////////////////
 // Sign BTN
 ////////////////////
-
-import { web3, uport } from './uportSetup.js'
-import { waitForMined, pollingLoop } from './contractHandeling.js'
-import { getCurrentDataFromChain } from './utilities.js'
-
-import { MyContractSetup } from './contractSetup.js'
-const MyContract = MyContractSetup()
 
 window.signBtn = () => { 
     // Transaction signing (that will fire a QR to scan or card in the mobile app)
@@ -244,9 +201,6 @@ function getCurrentDataFromChain (userID) {
   })  
 }
 
-export { getCurrentDataFromChain }
-
-
 
 
 ////////////////////
@@ -278,4 +232,47 @@ const pollingLoop = (txHash, response, pendingCB, successCB) => {
   }, 1000) // check again in one sec.
 }
 
-export { waitForMined, pollingLoop }
+
+
+////////////////////
+// UIToggles
+////////////////////
+
+function togglePostLoggedIn_PORTAL_UI () {
+  
+  $$('#kqr')[0].style.display = 'none'
+
+  // JSON DATA
+  $$('#userProfileData')[0].innerHTML = 
+    JSON.stringify(window.loggedInUser, undefined, 2)
+  
+  // AVATAR
+  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
+    $$('.user-wrap .avatar')[0].src = 
+      "data:image/png;base64, " + 
+      window.loggedInUser.avatar.data
+  }
+
+  // NAME
+  $$('.user-wrap .name')[0].innerHTML = 
+    window.loggedInUser.name;
+
+  $$('.data-wrap')[0].style.display = 'block'
+  $$('.user-wrap')[0].style.display = 'block'
+}
+
+// function togglePostLoggedInUI () {
+//   document.querySelectorAll('.signBtn')[0].style.display = 'block'
+//   document.querySelectorAll('.loginBtn')[0].style.display = 'none'
+//   document.querySelector('#kqr').style.display = 'none'
+// }
+
+function toggleExistingDataLoad (data) {
+  document.querySelectorAll('.currentShares')[0].textContent = data
+  document.querySelectorAll('.sharesArea')[0].style.display = 'block'
+}
+
+
+window.onload = () => {
+  window.loginRequest()
+}

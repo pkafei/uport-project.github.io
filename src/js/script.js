@@ -393,7 +393,7 @@ ifPage('guides', () => {
   if(WINDOW_WIDTH > '794') {
     createSidebars([guideAreaDOM])
     guideContentDOM.onscroll = () => {
-      iframeLazyLoad()
+      // iframeLazyLoad()
       sidebarStateCheckerOnScroll(guideContentDOM)
     }
   } else {

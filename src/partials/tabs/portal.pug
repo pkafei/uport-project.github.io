@@ -5,6 +5,21 @@
         img.logo(src="img/logo-white-2x.svg")
         //- img.name(src="img/uport-name.png")
         p.text-block Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.
+    .testdrive
+      .testdrive-focus
+        h1 Connect Your uPort ID
+        .ex-wrap
+          #kqr
+          .data-wrap
+            pre#userProfileData
+          .user-wrap
+            .avatar-wrap
+              img.avatar
+              .name
+        .testdrive-ex2
+        .testdrive-ex3
+        .testdrive-ex4
+        .testdrive-ex5
     .banner
       .banner-text
         h1 Get started developing with Uport
@@ -92,7 +107,6 @@
     }
 
     .splash{
-      // flex-basis: 500px;
       background: #5756C3;
       color: white;
 
@@ -104,9 +118,69 @@
         img.logo { max-width: 200px; }
       }
     }
+
+    .testdrive {
+      background: #333;
+      color: white;
+
+      .testdrive-focus {
+        // max-width: 600px;
+        margin: auto;
+      }
+
+      .ex-wrap {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+
+        .data-wrap { margin-right: 3rem; }
+
+        .data-wrap, 
+        .user-wrap { 
+          display: none; 
+        }
+        
+        #userProfileData {
+          overflow: hidden !important;
+          overflow-y: scroll !important;
+          text-align: left;
+          margin: 0;
+          overflow: auto; 
+          padding: .5rem;
+          background: #222;
+          border: 3px solid white;
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+          color: white;
+          width: 300px;
+          height: 300px;
+        }
+        .avatar-wrap {
+          background: #333;
+          border-radius: 50%;
+          overflow: hidden;
+          position: relative;
+          border: 3px solid white;
+        }
+        .avatar { 
+          background: #222; 
+          display: block; 
+          height: 300px;
+          width: 300px;
+        }
+        .name {
+          position: absolute;
+          top: 70%;
+          z-index: 1;
+          background: rgba(0, 0, 0, 0.5);
+          width: 100%;
+        }
+      }
+    }
     
     .splash,
     .banner,
+    .testdrive,
     .content-shortcuts {
       padding: 3rem 5rem;
       
