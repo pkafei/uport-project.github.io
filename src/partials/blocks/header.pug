@@ -25,6 +25,10 @@ header.header
             a.nav-link(href="https://github.com/uport-project" target="_blank")
               span Github
 :sass
+  .header {
+    background: #616069;
+    * { color: white; }
+  }
   .header,
   .footer {
     position: relative;
@@ -47,7 +51,7 @@ header.header
     .footer-right {
       display: flex;
       flex-direction: row;
-      max-width: 1440px;
+      max-width: 1260px;
       margin: auto;
     }
 
@@ -81,7 +85,7 @@ header.header
     
     .nav-item {
       &.active {
-        background: #004f80;
+        background: #3A3942;
         border-radius: 4px;
         * { color: white; }
         &:hover { 
@@ -89,7 +93,6 @@ header.header
         }
       }
     }
-    
     
     .logo-link,
     .nav-list li a,
