@@ -1,4 +1,50 @@
-<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><style>/**
+<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><style>/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+</style><style>/**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
@@ -2322,12 +2368,7 @@ pre[class*="language-"] {
   margin: 0;
   overflow: visible;
   clip: auto; }
-</style><style>@charset "UTF-8";
-/*	FONTS
-------------------------*/
-/*	TYPOGRAPHY
-–––––––––––––––––––––––––––*/
-html, body {
+</style><style>html, body {
   height: 100%;
   overflow: hidden; }
 
@@ -2341,7 +2382,6 @@ body {
   display: flex;
   flex-direction: column; }
 
-/* ------ Normalize ----- */
 *,
 *:after,
 *:before {
@@ -2362,21 +2402,56 @@ a {
 li {
   list-style: none; }
 
+h1 {
+  font-size: 2rem; }
+
+h2 {
+  font-size: 1.5rem; }
+
+h3 {
+  font-size: 1.2rem; }
+
+h4,
+h5,
+h6 {
+  font-size: 1rem; }
+
+p,
+span,
+a,
+b,
+code,
+textarea,
+input {
+  font-size: 1rem; }
+
+a code {
+  font-size: 1.5rem; }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 0; }
+  margin: 1rem 0; }
 
-.apidocs h2:nth-of-type(2) {
-  display: none; }
+p,
+span,
+a,
+b,
+code,
+textarea,
+input {
+  margin: 0; }
+
+p {
+  margin: 1rem 0 1rem 1rem; }
 
 p > code,
 td > code {
-  font-size: 1.2rem !important;
-  padding: .2rem .3rem;
+  font-weight: bold;
+  margin-top: -5px;
   vertical-align: top; }
 
 table {
@@ -2403,15 +2478,12 @@ iframe {
   background: transparent;
   border: none; }
 
-/* ----- Plugins ------ */
 .gitter-chat-embed-action-bar-item {
   display: none; }
 
-/*---- Hacks ------ */
 .footer {
   display: none !important; }
 
-/*---- Loader ------ */
 .loading-wrapper-parent {
   position: relative;
   background: #ccc;
@@ -2473,7 +2545,10 @@ main {
   border-bottom: 1px solid #333;
   flex: 1;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  /*---- iFrame Pages ------ */ }
   main > * {
     display: none; }
   main.portal .portal {
@@ -2481,26 +2556,18 @@ main {
     display: block; }
     main.portal .portal .pagewrap {
       display: block; }
-  main.guides .guides {
-    display: flex;
-    flex-direction: column;
-    flex: 1; }
-  main.apidocs .apidocs {
-    display: flex;
-    flex-direction: column;
-    flex: 1; }
-  main.tools .tools {
-    display: flex;
-    flex-direction: column;
-    flex: 1; }
-  main.myapps .myapps {
-    display: flex;
-    flex-direction: column;
-    flex: 1; }
+  main.guides .guides,
+  main.apidocs .apidocs,
+  main.tools .tools,
+  main.myapps .myapps,
   main.gitter .gitter {
     display: flex;
     flex-direction: column;
     flex: 1; }
+  main > *,
+  main > * > *,
+  main > * > * > * {
+    overflow: hidden; }
   main .pagewrap {
     display: flex;
     width: 100%;
@@ -2508,13 +2575,43 @@ main {
     margin: auto;
     justify-content: center; }
     main .pagewrap .content {
-      max-width: 880px;
+      max-width: 900px;
       overflow-y: scroll;
       flex: 1; }
+      main .pagewrap .content .lib, main .pagewrap .content .guide {
+        background: white;
+        padding: 2rem; }
+  main .myapps .pagewrap,
+  main .gitter .pagewrap {
+    flex: 1; }
+  main .myapps .content,
+  main .gitter .content {
+    display: flex;
+    flex: 1;
+    position: relative;
+    padding: 0 !important;
+    overflow-y: auto;
+    max-width: 1260px; }
+    main .myapps .content #gitterinject,
+    main .gitter .content #gitterinject {
+      display: flex;
+      flex: 1;
+      height: 100%; }
+    main .myapps .content iframe,
+    main .gitter .content iframe {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      width: 100%;
+      min-height: 100%; }
+      .gitter main .myapps .content iframe, .gitter
+      main .gitter .content iframe {
+        flex: 1;
+        display: flex; }
   main .sidebar {
     background: lightgray;
     padding: 1rem;
-    min-width: 300px;
+    min-width: 360px;
     overflow: auto; }
     @media (min-width: 320px) and (max-width: 794px) {
       main .sidebar {
@@ -2530,8 +2627,11 @@ main {
       padding-left: 1rem;
       font-size: .9rem; }
     main .sidebar h1 {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
       margin-bottom: .5rem; }
+      main .sidebar h1:first-child {
+        margin-top: 0; }
     main .sidebar span {
       font-size: .9rem; }
     main .sidebar section > a > * {
@@ -2553,36 +2653,6 @@ main {
         border-radius: 5px; }
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
-  main .content p, main .content code, main .content textarea, main .content input {
-    font-size: .8rem; }
-
-/*---- iFrame Pages ------ */
-.myapps .pagewrap,
-.gitter .pagewrap {
-  flex: 1; }
-
-.myapps .content,
-.gitter .content {
-  display: flex;
-  position: relative;
-  padding: 0 !important;
-  flex: 1; }
-  .myapps .content #gitterinject,
-  .gitter .content #gitterinject {
-    display: flex;
-    flex: 1;
-    height: 100%; }
-  .myapps .content iframe,
-  .gitter .content iframe {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    width: 100%;
-    min-height: 100%; }
-    .gitter .myapps .content iframe, .gitter
-    .gitter .content iframe {
-      flex: 1;
-      display: flex; }
 </style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
   background: #616069; }
   .header * {
@@ -2613,7 +2683,7 @@ main {
   .footer .footer-right {
     display: flex;
     flex-direction: row;
-    max-width: 1180px;
+    max-width: 1260px;
     margin: auto; }
   .header .header-right,
   .header .footer-right,
@@ -2655,7 +2725,7 @@ main {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="splash-focus"><img class="logo" src="img/logo-white-2x.svg"><p class="text-block">Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.</p></div></div><div class="testdrive"><div class="testdrive-focus"><h1>Connect Your uPort ID</h1><div class="ex-wrap"><div id="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div><div class="testdrive-ex2"></div><div class="testdrive-ex3"></div><div class="testdrive-ex4"></div><div class="testdrive-ex5"></div></div></div><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
+</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="splash-focus"><img class="logo" src="img/logo-white-2x.svg"><p class="text-block">Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.</p></div></div><div class="testdrive"><div class="testdrive-focus"><h1>Connect Your uPort ID</h1><div>(with the uPort app) </div><div class="ex-wrap"><div id="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
   text-align: center; }
   .portal .splash {
     background: #5756C3;
@@ -2673,10 +2743,15 @@ main {
     color: white; }
     .portal .testdrive .testdrive-focus {
       margin: auto; }
+    .portal .testdrive h1 {
+      margin-bottom: 0; }
     .portal .testdrive .ex-wrap {
       display: flex;
       margin: auto;
       justify-content: center; }
+      .portal .testdrive .ex-wrap #kqr {
+        min-width: 300px;
+        min-height: 307px; }
       .portal .testdrive .ex-wrap .data-wrap {
         margin-right: 3rem; }
       .portal .testdrive .ex-wrap .data-wrap,
@@ -2727,8 +2802,6 @@ main {
   .portal .banner {
     background: #3A3942;
     color: white; }
-  .portal .banner-text {
-    padding-top: 40px; }
   .portal .text-block {
     max-width: 650px;
     margin: 0 auto 3em auto; }
@@ -3720,18 +3793,7 @@ const analyticsLinkFire = (link) => {
     )
   }
 }
-
 const ifPage = (pagename, cb) => {
-  
-  // console.log(pagename)
-  // console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX')
-
-  // console.log(location.pathname.split('/')[1])
-  // console.log('--------------------')
-  // console.log(location.origin + '/'+pagename + '.html')
-  // console.log(location.href)
-  // console.log('000000000000000000000000000')
-
   location.pathname.split('/')[1] === pagename ||
   location.origin + '/'+pagename + '.html' === location.href.split('#')[0]
     ? cb()
@@ -3983,17 +4045,8 @@ function createSidebars (sources) {
 }
 
 ///////////////////////
-// Router Logic
+// Router functions
 ///////////////////////
-
-function changeMainClass(desiredHashText) {
-  mainDOM.classList.forEach((mainClass) => {
-    mainClass !== 'main'
-      ? mainDOM.classList.remove(mainClass)
-      : null
-  })
-  mainDOM.classList.add(desiredHashText)
-}
 
 function changeNavClass(pagename) {
   $$('.nav-' + pagename)[0].classList.add('active')
@@ -4013,52 +4066,9 @@ function changeSideBarLinkClass(sidebarLink) {
              .add('active')
 }
 
-///////////////////////
-// Nav Event Handlers
-///////////////////////
-
-// headerDOM.onclick = (evt) => {
-//   const desiredElement = evt.target
-//   const desiredParent = evt.target.parentElement
-//
-//   // Outbound link check
-//   if (desiredParent.hash) {
-//
-//     // Hash isolation
-//     const desiredGrandParent = desiredParent.parentElement
-//     const desiredHash = desiredParent.hash
-//     const desiredHashText = desiredHash.replace('#','')
-//
-//     // True links
-//     if (desiredHash !== undefined &&
-//         desiredHash !== '') {
-//           changeNavClass(desiredGrandParent)
-//           changeMainClass(desiredHashText)
-//     }
-//
-//     // Exception for external links
-//     if (desiredHash !== ''){ pvd(evt) }
-//
-//     // Gitter Inject
-//     if (desiredHashText === 'gitter' &&
-//         sidecarScriptInjectDOM === undefined) {
-//           const elemID = 'sidecarScriptInject'
-//           if (!($$('#' + elemID)[0])) {
-//             let sidecarScriptInjectDOM = document.createElement('script')
-//             sidecarScriptInjectDOM.id="sidecarScriptInject"
-//             sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-//             document.body.appendChild(sidecarScriptInjectDOM)
-//           }
-//     }
-//
-//     // App Manager Inject
-//     if (desiredHashText === 'myapps' &&
-//         appmanagerInjectDOM.childNodes.length === 0 &&
-//         !(appmanagerInjectDOM.src)) {
-//             appmanagerInjectDOM.src="https://appmanager.uport.space/"
-//     }
-//   }
-// }
+//////////////////////
+// ROUTER Logic
+//////////////////////
 
 ifPage('guides', () => {
   analyticsPageFire('Guides')  
@@ -4067,7 +4077,7 @@ ifPage('guides', () => {
   if(WINDOW_WIDTH > '794') {
     createSidebars([guideAreaDOM])
     guideContentDOM.onscroll = () => {
-      // iframeLazyLoad()
+      iframeLazyLoad()
       sidebarStateCheckerOnScroll(guideContentDOM)
     }
   } else {
@@ -4131,20 +4141,26 @@ ifPage('gitter', () => {
   }
 })
 
-// Analytics for all links
-$$('body')[0].onclick = (evt) => {
-  evt.target.href
-    ? analyticsLinkFire(evt.target.href)
-    : null
-}
-
 // TODO - Nav highlights in server side style
 // Execute Nav if URL is full
 if (!!location.hash) {
   const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
-//   const relventPageTrigger = $$('*[href="'+ '#' + relevantPage + '"] span')[0]
-  // setTimeout(()=>{relventPageTrigger.click()},1)
-  setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
+  setTimeout(() => {
+      sidebarLink.click()
+      changeSideBarLinkClass(sidebarLink)
+  },2)
+} else {
+  ifPage('guides', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
+  ifPage('apidocs', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
+}
+
+//////////////////////
+// ANALYTICS
+//////////////////////
+$$('body')[0].onclick = (evt) => {
+  evt.target.href
+    ? analyticsLinkFire(evt.target.href)
+    : null
 }
 ////////////////////
 // uPort Setup
@@ -4206,7 +4222,7 @@ const MyContract = MyContractSetup()
 // LOGIN BTN
 ////////////////////
 
-// import kjua from 'kjua'
+console.log('TEST')
 
 // Simple button onclick handler
 window.loginRequest = () => {
@@ -4218,6 +4234,9 @@ window.loginRequest = () => {
   // notifcations
   // custom QR
   // Clickable as a link for mobile
+
+  console.log(kjua)
+
   uport.requestCredentials(
     {
       requested: ['name', 'avatar', 'phone', 'country'],
@@ -4232,13 +4251,17 @@ window.loginRequest = () => {
         back: 'rgba(255,255,255,0)'
       })
 
-      // Create wrapping link for mobile touch
-      let aTag = document.createElement('a')
-      aTag.href = uri
+      if(window.location.pathname === '/') {
+        console.log(qr)
 
-      // Nest QR in <a> and inject
-      aTag.appendChild(qr)
-      document.querySelector('#kqr').appendChild(aTag)
+        // Create wrapping link for mobile touch
+        let aTag = document.createElement('a')
+        aTag.href = uri
+
+        // Nest QR in <a> and inject
+        aTag.appendChild(qr)
+        document.querySelector('#kqr').appendChild(aTag)
+      }
       
     }).then((userProfile) => {
 
@@ -4421,7 +4444,7 @@ function toggleExistingDataLoad (data) {
 }
 
 
-window.onload = () => {
-  window.loginRequest()
-}
+// window.onload = () => {
+  window.loginRequest();
+// }
 </script></body></html>

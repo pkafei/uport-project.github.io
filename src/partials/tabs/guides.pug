@@ -4,56 +4,34 @@
     .content
       .guide
         include ../guides/index
-  :sass
-    @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
-    $pair: 320px 794px;
+:sass
+  .guide {
     
-    .guide {
-      background: white;
-      padding: 1rem;      
-      
-      iframe {
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        width: 100%;
-        height: 800px;
-      }
+    iframe {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      width: 100%;
+      height: 800px;
+    }
 
-      h1 {
-        font-size: 2rem;
-        margin: 1.5rem 0;
-      }
-  
-      h1 ~ *:not(h1) {
-        margin-left: 1rem;
-        
-        @include breakpoint($pair) {
-          margin-left: 0 !important;
-        }
-      }
-  
-      h2 {
-        padding-top: 2rem;
-        border-top: 1px solid #333;
-      }
-  
-      p {
-        font-size: 1rem;
+    h2 {
+      padding-top: 1rem;
+      border-top: 1px solid #333;
+    }
+      
+    section {
+      border-bottom: 1px solid #333;
+      
+      > a {
+        display: block;
       }
       
-      section {
-        border-bottom: 1px solid #333;
-        
-        > a {
-          display: block;
-        }
-        
-        &:nth-child(1) {
-        
-          h1 {
-            margin-top: 0;
-          }
+      &:nth-child(1) {
+      
+        h1 {
+          margin-top: 0;
         }
       }
     }
+  }

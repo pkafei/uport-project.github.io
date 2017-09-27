@@ -14,9 +14,11 @@
             include:markdown-it(html) ../docs/uport-js-docs.md
 :sass
   .lib {
-    background: white;
-    padding: 1rem;
 
+    h2:nth-of-type(2) {
+      display: none;
+    }
+    
     .lib-doc {
       padding-left: 1rem;
 
@@ -38,16 +40,14 @@
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0;
       text-decoration: underline;
+      
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     dl, h2:first-child{
       display: none;
-    }
-
-    p {
-      font-size: 1rem;
     }
   }

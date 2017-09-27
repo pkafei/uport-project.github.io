@@ -46,18 +46,7 @@ const analyticsLinkFire = (link) => {
     )
   }
 }
-
 const ifPage = (pagename, cb) => {
-  
-  // console.log(pagename)
-  // console.log('XXXXXXXXXXXXXXXXXXXXXXXXXX')
-
-  // console.log(location.pathname.split('/')[1])
-  // console.log('--------------------')
-  // console.log(location.origin + '/'+pagename + '.html')
-  // console.log(location.href)
-  // console.log('000000000000000000000000000')
-
   location.pathname.split('/')[1] === pagename ||
   location.origin + '/'+pagename + '.html' === location.href.split('#')[0]
     ? cb()
@@ -309,17 +298,8 @@ function createSidebars (sources) {
 }
 
 ///////////////////////
-// Router Logic
+// Router functions
 ///////////////////////
-
-function changeMainClass(desiredHashText) {
-  mainDOM.classList.forEach((mainClass) => {
-    mainClass !== 'main'
-      ? mainDOM.classList.remove(mainClass)
-      : null
-  })
-  mainDOM.classList.add(desiredHashText)
-}
 
 function changeNavClass(pagename) {
   $$('.nav-' + pagename)[0].classList.add('active')
@@ -339,52 +319,9 @@ function changeSideBarLinkClass(sidebarLink) {
              .add('active')
 }
 
-///////////////////////
-// Nav Event Handlers
-///////////////////////
-
-// headerDOM.onclick = (evt) => {
-//   const desiredElement = evt.target
-//   const desiredParent = evt.target.parentElement
-//
-//   // Outbound link check
-//   if (desiredParent.hash) {
-//
-//     // Hash isolation
-//     const desiredGrandParent = desiredParent.parentElement
-//     const desiredHash = desiredParent.hash
-//     const desiredHashText = desiredHash.replace('#','')
-//
-//     // True links
-//     if (desiredHash !== undefined &&
-//         desiredHash !== '') {
-//           changeNavClass(desiredGrandParent)
-//           changeMainClass(desiredHashText)
-//     }
-//
-//     // Exception for external links
-//     if (desiredHash !== ''){ pvd(evt) }
-//
-//     // Gitter Inject
-//     if (desiredHashText === 'gitter' &&
-//         sidecarScriptInjectDOM === undefined) {
-//           const elemID = 'sidecarScriptInject'
-//           if (!($$('#' + elemID)[0])) {
-//             let sidecarScriptInjectDOM = document.createElement('script')
-//             sidecarScriptInjectDOM.id="sidecarScriptInject"
-//             sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-//             document.body.appendChild(sidecarScriptInjectDOM)
-//           }
-//     }
-//
-//     // App Manager Inject
-//     if (desiredHashText === 'myapps' &&
-//         appmanagerInjectDOM.childNodes.length === 0 &&
-//         !(appmanagerInjectDOM.src)) {
-//             appmanagerInjectDOM.src="https://appmanager.uport.space/"
-//     }
-//   }
-// }
+//////////////////////
+// ROUTER Logic
+//////////////////////
 
 ifPage('guides', () => {
   analyticsPageFire('Guides')  
@@ -393,7 +330,7 @@ ifPage('guides', () => {
   if(WINDOW_WIDTH > '794') {
     createSidebars([guideAreaDOM])
     guideContentDOM.onscroll = () => {
-      // iframeLazyLoad()
+      iframeLazyLoad()
       sidebarStateCheckerOnScroll(guideContentDOM)
     }
   } else {
@@ -457,18 +394,24 @@ ifPage('gitter', () => {
   }
 })
 
-// Analytics for all links
-$$('body')[0].onclick = (evt) => {
-  evt.target.href
-    ? analyticsLinkFire(evt.target.href)
-    : null
-}
-
 // TODO - Nav highlights in server side style
 // Execute Nav if URL is full
 if (!!location.hash) {
   const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
-//   const relventPageTrigger = $$('*[href="'+ '#' + relevantPage + '"] span')[0]
-  // setTimeout(()=>{relventPageTrigger.click()},1)
-  setTimeout(()=>{sidebarLink.click(); changeSideBarLinkClass(sidebarLink)},2)
+  setTimeout(() => {
+      sidebarLink.click()
+      changeSideBarLinkClass(sidebarLink)
+  },2)
+} else {
+  ifPage('guides', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
+  ifPage('apidocs', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
+}
+
+//////////////////////
+// ANALYTICS
+//////////////////////
+$$('body')[0].onclick = (evt) => {
+  evt.target.href
+    ? analyticsLinkFire(evt.target.href)
+    : null
 }

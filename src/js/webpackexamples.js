@@ -58,7 +58,7 @@ const MyContract = MyContractSetup()
 // LOGIN BTN
 ////////////////////
 
-// import kjua from 'kjua'
+console.log('TEST')
 
 // Simple button onclick handler
 window.loginRequest = () => {
@@ -70,6 +70,9 @@ window.loginRequest = () => {
   // notifcations
   // custom QR
   // Clickable as a link for mobile
+
+  console.log(kjua)
+
   uport.requestCredentials(
     {
       requested: ['name', 'avatar', 'phone', 'country'],
@@ -84,13 +87,17 @@ window.loginRequest = () => {
         back: 'rgba(255,255,255,0)'
       })
 
-      // Create wrapping link for mobile touch
-      let aTag = document.createElement('a')
-      aTag.href = uri
+      if(window.location.pathname === '/') {
+        console.log(qr)
 
-      // Nest QR in <a> and inject
-      aTag.appendChild(qr)
-      document.querySelector('#kqr').appendChild(aTag)
+        // Create wrapping link for mobile touch
+        let aTag = document.createElement('a')
+        aTag.href = uri
+
+        // Nest QR in <a> and inject
+        aTag.appendChild(qr)
+        document.querySelector('#kqr').appendChild(aTag)
+      }
       
     }).then((userProfile) => {
 
@@ -273,6 +280,6 @@ function toggleExistingDataLoad (data) {
 }
 
 
-window.onload = () => {
-  window.loginRequest()
-}
+// window.onload = () => {
+  window.loginRequest();
+// }

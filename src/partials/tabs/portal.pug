@@ -3,11 +3,11 @@
     .splash
       .splash-focus
         img.logo(src="img/logo-white-2x.svg")
-        //- img.name(src="img/uport-name.png")
         p.text-block Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.
     .testdrive
       .testdrive-focus
         h1 Connect Your uPort ID
+        div (with the uPort app) 
         .ex-wrap
           #kqr
           .data-wrap
@@ -16,10 +16,6 @@
             .avatar-wrap
               img.avatar
               .name
-        .testdrive-ex2
-        .testdrive-ex3
-        .testdrive-ex4
-        .testdrive-ex5
     .banner
       .banner-text
         h1 Get started developing with Uport
@@ -98,13 +94,6 @@
   
   .portal {
     text-align: center;
-    
-    .pagewrap {
-      // flex: 1;
-      // display: flex;
-      // flex-direction: column;
-      // overflow-y: scroll;
-    }
 
     .splash{
       background: #5756C3;
@@ -124,14 +113,22 @@
       color: white;
 
       .testdrive-focus {
-        // max-width: 600px;
         margin: auto;
+      }
+
+      h1 {
+        margin-bottom: 0;
       }
 
       .ex-wrap {
         display: flex;
         margin: auto;
         justify-content: center;
+
+        #kqr {
+          min-width: 300px;
+          min-height: 307px;
+        }
 
         .data-wrap { margin-right: 3rem; }
 
@@ -193,8 +190,6 @@
       background: #3A3942;
       color: white;
     }
-
-    .banner-text { padding-top: 40px;}
 
     .text-block {
       max-width: 650px;
