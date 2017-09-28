@@ -5165,16 +5165,6 @@ console.log('TEST')
 
 // Simple button onclick handler
 window.loginRequest = () => {
-  // Only allow button click once
-  // document.querySelectorAll('.loginBtn')[0].disabled = true
-  
-  // uport based login with...
-  // specific credential requests
-  // notifcations
-  // custom QR
-  // Clickable as a link for mobile
-
-  console.log(kjua)
 
   uport.requestCredentials(
     {
@@ -5183,32 +5173,36 @@ window.loginRequest = () => {
     },
     (uri) => {
       
-      const qr = kjua({
+      const qrKJUA = kjua({
         text: uri,
-        fill: '#FFFFFF',
+        fill: '#595DC3',
         size: 300,
         back: 'rgba(255,255,255,0)'
       })
 
-      if(window.location.pathname === '/') {
-        console.log(qr)
+      if(window.location.pathname === '/' || 
+         window.location.pathname === '/guides' || 
+         window.location.pathname === '/guides.html') {
 
-        // Create wrapping link for mobile touch
-        let aTag = document.createElement('a')
-        aTag.href = uri
+        $$('.kqr').forEach((qr) => {
 
-        // Nest QR in <a> and inject
-        aTag.appendChild(qr)
-        document.querySelector('#kqr').appendChild(aTag)
+          let aTag = document.createElement('a')
+              aTag.href = uri
+              aTag.appendChild(qrKJUA)
+
+          qr.appendChild(aTag)
+        })
+        
       }
       
     }).then((userProfile) => {
-
-      console.log(userProfile)
-
+      setUser(userProfile)
       if(window.location.pathname === '/') {
-        setUser(userProfile)
         togglePostLoggedIn_PORTAL_UI()
+      }
+      if(window.location.pathname === '/guides' || 
+         window.location.pathname === '/guides.html') {
+        togglePostLoggedIn_GUIDES()
       }
   })
 }
@@ -5221,9 +5215,11 @@ window.loginRequest = () => {
 ////////////////////
 
 window.attestationBtn = () => {
-  if(window.attestationReceiver){
+  console.log('attestationBtn')
+  if(window.loggedInUser.decodedID){
+    console.log('window.loggedInUser.decodedID: ' + window.loggedInUser.decodedID)
     uport.attestCredentials({
-      sub: window.attestationReceiver,
+      sub: window.loggedInUser.address,
       claim: { "Docs Demo": "Unlocked Achievement" },
       exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
     })
@@ -5280,7 +5276,7 @@ function setUser (credentials) {
   // of the ID to match the network the contract is on!
   
   const decodedId = uportconnect.MNID.decode(window.loggedInUser.address)
-  window.loggedInUser.rinkebyID = decodedId.address
+  window.loggedInUser.decodedID = decodedId.address
   
   console.log(window.loggedInUser)
   
@@ -5291,7 +5287,7 @@ function setUser (credentials) {
   // Kovan   (network: 0x42)
   
   console.log("uPort master address: " + window.loggedInUser.address)
-  console.log("uPort Rinkeby address: " + window.loggedInUser.rinkebyID)
+  console.log("uPort Rinkeby address: " + window.loggedInUser.decodedID)
 }
 
 
@@ -5343,32 +5339,71 @@ const pollingLoop = (txHash, response, pendingCB, successCB) => {
 }
 
 
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+
+function hideQRs () {
+  $$('.kqr').forEach((qr) => qr.style.display = 'none')
+}
+
+function userProfileDataInjection () {
+  $$('#userProfileData')[0].innerHTML = 
+    JSON.stringify(window.loggedInUser, undefined, 2)
+}
+
+function avatarSafeInject(domImgElement) {
+  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
+    domImgElement.src = 
+      "data:image/png;base64, " + 
+      window.loggedInUser.avatar.data
+  } else {
+    domImgElement.src =
+      window.loggedInUser.avatar.uri
+  }
+}
+
+function injectName () {
+    $$('.user-wrap .name')[0].innerHTML = 
+    window.loggedInUser.name;
+}
+
+function showDataAndUser () {
+  show($$('.data-wrap')[0])
+  show($$('.user-wrap')[0])
+}
+
+function showAttestationArea() {
+  show($$('.attestation-area')[0])
+
+}
+function showSignTxArea() {
+  show($$('.signTx-area')[0])
+
+}
+
+
 
 ////////////////////
 // UIToggles
 ////////////////////
 
 function togglePostLoggedIn_PORTAL_UI () {
-  
-  $$('#kqr')[0].style.display = 'none'
+  hideQRs()
+  userProfileDataInjection()
+  avatarSafeInject($$('.user-wrap .avatar')[0])
+  injectName()
+  showDataAndUser()
+}
 
-  // JSON DATA
-  $$('#userProfileData')[0].innerHTML = 
-    JSON.stringify(window.loggedInUser, undefined, 2)
-  
-  // AVATAR
-  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    $$('.user-wrap .avatar')[0].src = 
-      "data:image/png;base64, " + 
-      window.loggedInUser.avatar.data
-  }
-
-  // NAME
-  $$('.user-wrap .name')[0].innerHTML = 
-    window.loggedInUser.name;
-
-  $$('.data-wrap')[0].style.display = 'block'
-  $$('.user-wrap')[0].style.display = 'block'
+function togglePostLoggedIn_GUIDES () {
+  hideQRs()
+  userProfileDataInjection()
+  avatarSafeInject($$('.user-wrap .avatar')[0])
+  injectName()
+  showDataAndUser()
+  showAttestationArea()
+  // showSignTxArea()
 }
 
 // function togglePostLoggedInUI () {
