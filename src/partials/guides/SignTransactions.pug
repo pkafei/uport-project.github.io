@@ -100,4 +100,40 @@ section
     
     ## ST Playground
     
-  +iframe('stIframeInject')
+  //- +iframe('stIframeInject')
+  .testdrive
+    .testdrive-focus
+      span Connect Your uPort ID
+      div (with the uPort app) 
+      .ex-wrap
+        .kqr
+        .signTx-area
+          .signTxCurrent
+            span You have 
+            span.number
+            span  shares
+          button.signTxBtn(onclick='signTxBtn()') Buy 10 Shares
+          .signTxMessage Please accept on your phone.
+          .signTxPending.pulse.animated Mining... please wait
+          .signTxConfirm Purchase completed
+:sass
+  .signTx-area, 
+  .signTxMessage,
+  .signTxConfirm,
+  .signTxPending { display: none; }
+  .updated { 
+    color: green; 
+    font-weight: bold; 
+  }
+
+  @keyframes pulse {
+    0% {color: orange}
+    50% {color: black}
+    to {color: orange}
+  }
+  .pulse {
+    animation-name: pulse; 
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }

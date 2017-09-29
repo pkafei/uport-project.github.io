@@ -58,8 +58,6 @@ const MyContract = MyContractSetup()
 // LOGIN BTN
 ////////////////////
 
-console.log('TEST')
-
 // Simple button onclick handler
 window.loginRequest = () => {
 
@@ -85,7 +83,8 @@ window.loginRequest = () => {
 
           let aTag = document.createElement('a')
               aTag.href = uri
-              aTag.appendChild(qrKJUA)
+              aTag.style.display = 'block'
+              aTag.appendChild(qrKJUA.cloneNode())
 
           qr.appendChild(aTag)
         })
@@ -112,26 +111,15 @@ window.loginRequest = () => {
 ////////////////////
 
 window.attestationBtn = () => {
-  
-  console.log('attestationBtn')
-  
   if(window.loggedInUser.decodedID){
-    
-    console.log(
-      'window.loggedInUser.decodedID: ' +
-      window.loggedInUser.decodedID
-    )
-  
     uport.attestCredentials({
       sub: window.loggedInUser.decodedID,
       claim: { "Docs Demo": "Unlocked Achievement" },
       exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
     })
-  
-    document.querySelectorAll('.attestMessage')[0].style.display = 'block'; 
+    $$('.attestMessage')[0].style.display = 'block'; 
   }
 }
-
 
 
 
@@ -139,7 +127,7 @@ window.attestationBtn = () => {
 // Sign BTN
 ////////////////////
 
-window.signBtn = () => { 
+window.signTxBtn = () => { 
     // Transaction signing (that will fire a QR to scan or card in the mobile app)
     MyContract.updateShares('10', (error, txHash) => {
       if (error) { throw error }
@@ -147,19 +135,20 @@ window.signBtn = () => {
         function pendingCB () {
           // Signal to the user you're still waiting
           // for a block confirmation
-          document.querySelectorAll('.signMessage')[0].style.display = 'block';
+          show($$('.signTxPending')[0])
         },
         function successCB (data) {
           // Great Success!
           // Likely you'll call some eventPublisherMethod(txHash, data)
-          document.querySelectorAll('.signComplete')[0].style.display = 'block';
-          getCurrentDataFromChain(window.loggedInUser.rinkebyID)
-          document.querySelectorAll('.updated')[0].style.display = 'inlin{e';
+          show($$('.signTxConfirm')[0])
+          hide($$('.signTxPending')[0])
+          getCurrentDataFromChain(window.loggedInUser.decodedID)
+          $$('.signTxCurrent .number')[0].classList.add('updated')
         }
       )
     })
     
-    document.querySelectorAll('.signMessage')[0].style.display = 'block'; 
+    show($$('.signTxMessage')[0])
 }
 
 
@@ -183,7 +172,7 @@ function setUser (credentials) {
   const decodedId = uportconnect.MNID.decode(window.loggedInUser.address)
   window.loggedInUser.decodedID = decodedId.address
   
-  console.log(window.loggedInUser)
+  // console.log(window.loggedInUser)
   
   // The networks are identified as such
   // Mainnet (network: 0x1)
@@ -191,8 +180,8 @@ function setUser (credentials) {
   // Rinkeby (network: 0x4)
   // Kovan   (network: 0x42)
   
-  console.log("uPort master address: " + window.loggedInUser.address)
-  console.log("uPort Rinkeby address: " + window.loggedInUser.decodedID)
+  // console.log("uPort master address: " + window.loggedInUser.address)
+  // console.log("uPort Rinkeby address: " + window.loggedInUser.decodedID)
 }
 
 
@@ -207,8 +196,14 @@ function setUser (credentials) {
 function getCurrentDataFromChain (userID) {
   MyContract.getShares.call(userID, (error, response) => {
     if (error) { throw error }
-    console.log(response.c)
-    toggleExistingDataLoad(response.c)
+    console.log(response.c[0])
+    if(response.c[0] === 0) {
+      console.log('try again')
+      getCurrentDataFromChain(userID)
+    } else {
+      console.log('OK')
+      $$('.signTxCurrent .number')[0].textContent = response.c[0]  
+    }
   })  
 }
 
@@ -308,18 +303,8 @@ function togglePostLoggedIn_GUIDES () {
   injectName()
   showDataAndUser()
   showAttestationArea()
-  // showSignTxArea()
-}
-
-// function togglePostLoggedInUI () {
-//   document.querySelectorAll('.signBtn')[0].style.display = 'block'
-//   document.querySelectorAll('.loginBtn')[0].style.display = 'none'
-//   document.querySelector('#kqr').style.display = 'none'
-// }
-
-function toggleExistingDataLoad (data) {
-  document.querySelectorAll('.currentShares')[0].textContent = data
-  document.querySelectorAll('.sharesArea')[0].style.display = 'block'
+  showSignTxArea()
+  getCurrentDataFromChain(window.loggedInUser.decodedID)
 }
 
 
