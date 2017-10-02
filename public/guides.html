@@ -2838,7 +2838,7 @@ uport.requestCredentials()
 <h2>Logging in via Mobile (sdk)</h2>
 <p><strong>Under construction</strong></p>
 <h2>RC Playground</h2>
-<div class="testdrive"><div class="testdrive-focus"><span>Connect Your uPort ID</span><div>(with the uPort app) </div><div class="ex-wrap"><div class="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div></section><section><h1>Attesting Credentials</h1>
+<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div></section><section><h1>Attesting Credentials</h1>
 <p>One of the core needs of Web 3.0 is to build trust in a self-sovereign world. We establish facts which are not mathematically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the <code>uport.attestCredentials</code> function.</p>
 <p><strong>NOTE:</strong> Currently only one credential can be pushed at a time. We are working to fix this soon.</p>
 <h2>Calling the attest method</h2>
@@ -2858,7 +2858,7 @@ uport.requestCredentials()
 <h2>Attesting multiple credentials</h2>
 <p><strong>Under construction</strong></p>
 <h2>AC Playground</h2>
-<div class="testdrive"><div class="testdrive-focus"><span>Connect Your uPort ID</span><div>(with the uPort app) </div><div class="ex-wrap"><div class="kqr"></div><div class="attestation-area"><button class="attest" onclick="attestationBtn()">Attest User Read Docs</button><div class="attestMessage">Please accept on your phone.</div></div></div></div></div></section><style>.attestation-area, .attestMessage {
+<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="attestation-area"><button class="attest" onclick="attestationBtn()">Attest User Read Docs</button><div class="attestMessage">Please accept on your phone.</div></div></div></div></div></section><style>.attestation-area, .attestMessage {
   display: none; }
 </style><section><h1>Signing Transactions</h1>
 <p>uPort comes pre-baked with a web3 instance that calls to <a href="https://github.com/ethereumjs/testrpc">Infura</a>, our p2p swarm of nodes we have built so you don't need to stand up your own. All you need to do is grab our <code>web3</code> object and instantiate a smart contract javascript object with a <strong>provided ABI</strong>.</p>
@@ -2932,7 +2932,7 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
 }
 </code></pre>
 <h2>ST Playground</h2>
-<div class="testdrive"><div class="testdrive-focus"><span>Connect Your uPort ID</span><div>(with the uPort app) </div><div class="ex-wrap"><div class="kqr"></div><div class="signTx-area"><div class="signTxCurrent"><span>You have </span><span class="number"></span><span> shares</span></div><button class="signTxBtn" onclick="signTxBtn()">Buy 10 Shares</button><div class="signTxMessage">Please accept on your phone.</div><div class="signTxPending pulse animated">Mining... please wait</div><div class="signTxConfirm">Purchase completed</div></div></div></div></div></section><style>.signTx-area,
+<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="signTx-area"><div class="signTxCurrent"><span>You have </span><span class="number"></span><span> shares</span></div><button class="signTxBtn" onclick="signTxBtn()">Buy 10 Shares</button><div class="signTxMessage">Please accept on your phone.</div><div class="signTxPending pulse animated">Mining... please wait</div><div class="signTxConfirm">Purchase completed</div></div></div></div></div></section><style>.signTx-area,
 .signTxMessage,
 .signTxConfirm,
 .signTxPending {
@@ -3012,7 +3012,69 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
 </code></pre>
 <p>in the console. Congratulations, you have verified the credential!</p>
 <p>To test out everything, try checking for a different attestation and make sure it fails. Also try waiting longer than 60 seconds before sending the response to see if it fails - it should throw an error in this case.</p>
-</section></div></div></div></div><style>.guide iframe {
+</section></div></div></div></div><style>.guide .testdrive-header * {
+  text-align: center;
+  display: block; }
+
+.guide .ex-wrap {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  text-align: center; }
+  .guide .ex-wrap #kqr {
+    min-width: 300px;
+    min-height: 307px; }
+  .guide .ex-wrap .data-wrap {
+    margin-right: 3rem; }
+  .guide .ex-wrap .data-wrap,
+  .guide .ex-wrap .user-wrap {
+    display: none; }
+  .guide .ex-wrap #userProfileData {
+    overflow: hidden !important;
+    overflow-y: scroll !important;
+    text-align: left;
+    margin: 0;
+    overflow: auto;
+    padding: .5rem;
+    background: #222;
+    border: 3px solid #595DC3;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    color: white;
+    width: 300px;
+    height: 300px; }
+  .guide .ex-wrap .avatar-wrap {
+    background: #333;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #595DC3; }
+  .guide .ex-wrap .avatar {
+    background: #222;
+    display: block;
+    height: 300px;
+    width: 300px; }
+  .guide .ex-wrap .name {
+    position: absolute;
+    top: 70%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    color: white; }
+
+.guide .attestation-area {
+  margin-bottom: 2rem; }
+  .guide .attestation-area button {
+    background: #595DC3;
+    color: white;
+    font-size: 1.1rem;
+    margin: 1rem auto;
+    border-radius: .3rem;
+    padding: .4rem .6rem;
+    border: none;
+    cursor: pointer; }
+
+.guide iframe {
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -4387,12 +4449,23 @@ window.loginRequest = () => {
     },
     (uri) => {
       
-      const qrKJUA = kjua({
-        text: uri,
-        fill: '#595DC3',
-        size: 300,
-        back: 'rgba(255,255,255,0)'
-      })
+      let qrKJUA;
+      
+      if(window.location.pathname === '/') {
+        qrKJUA = kjua({
+          text: uri,
+          fill: '#000000',
+          size: 300,
+          back: 'rgba(255,255,255,1)'
+        })  
+      } else {
+        qrKJUA = kjua({
+          text: uri,
+          fill: '#595DC3',
+          size: 300,
+          back: 'rgba(255,255,255,0)'
+        })
+      }
 
       if(window.location.pathname === '/' || 
          window.location.pathname === '/guides' || 

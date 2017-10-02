@@ -4083,12 +4083,23 @@ window.loginRequest = () => {
     },
     (uri) => {
       
-      const qrKJUA = kjua({
-        text: uri,
-        fill: '#595DC3',
-        size: 300,
-        back: 'rgba(255,255,255,0)'
-      })
+      let qrKJUA;
+      
+      if(window.location.pathname === '/') {
+        qrKJUA = kjua({
+          text: uri,
+          fill: '#000000',
+          size: 300,
+          back: 'rgba(255,255,255,1)'
+        })  
+      } else {
+        qrKJUA = kjua({
+          text: uri,
+          fill: '#595DC3',
+          size: 300,
+          back: 'rgba(255,255,255,0)'
+        })
+      }
 
       if(window.location.pathname === '/' || 
          window.location.pathname === '/guides' || 

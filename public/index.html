@@ -2725,7 +2725,7 @@ main {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="splash-focus"><img class="logo" src="img/logo-white-2x.svg"><p class="text-block">Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.</p></div></div><div class="testdrive"><div class="testdrive-focus"><h1>Connect Your uPort ID</h1><div>(with the uPort app) </div><div class="ex-wrap"><div class="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
+</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="splash-focus"><img class="logo" src="img/logo-white-2x.svg"><p class="text-block">Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.</p></div></div><div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
   text-align: center; }
   .portal .splash {
     background: #5756C3;
@@ -2787,7 +2787,8 @@ main {
         top: 70%;
         z-index: 1;
         background: rgba(0, 0, 0, 0.5);
-        width: 100%; }
+        width: 100%;
+        color: white; }
   .portal .splash,
   .portal .banner,
   .portal .testdrive,
@@ -4232,12 +4233,23 @@ window.loginRequest = () => {
     },
     (uri) => {
       
-      const qrKJUA = kjua({
-        text: uri,
-        fill: '#595DC3',
-        size: 300,
-        back: 'rgba(255,255,255,0)'
-      })
+      let qrKJUA;
+      
+      if(window.location.pathname === '/') {
+        qrKJUA = kjua({
+          text: uri,
+          fill: '#000000',
+          size: 300,
+          back: 'rgba(255,255,255,1)'
+        })  
+      } else {
+        qrKJUA = kjua({
+          text: uri,
+          fill: '#595DC3',
+          size: 300,
+          back: 'rgba(255,255,255,0)'
+        })
+      }
 
       if(window.location.pathname === '/' || 
          window.location.pathname === '/guides' || 
