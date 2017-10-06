@@ -252,7 +252,14 @@ include ../mixins/iframeloader
     &.portal .portal {
       overflow-y: scroll;
       display: block;
-      .pagewrap { display:block; }
+      .pagewrap { 
+        display:block; 
+        max-width: 100%;
+        .inner-row {
+          max-width: 1260px;
+          margin: auto;
+        }
+      }
     }
 
     &.guides .guides, 

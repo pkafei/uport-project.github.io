@@ -2555,7 +2555,11 @@ main {
     overflow-y: scroll;
     display: block; }
     main.portal .portal .pagewrap {
-      display: block; }
+      display: block;
+      max-width: 100%; }
+      main.portal .portal .pagewrap .inner-row {
+        max-width: 1260px;
+        margin: auto; }
   main.guides .guides,
   main.apidocs .apidocs,
   main.tools .tools,
@@ -2654,16 +2658,15 @@ main {
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
 </style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
-  background: #616069; }
+  background: #34344F; }
   .header * {
-    color: white; }
+    color: #F8F8F9; }
 
 .header,
 .footer {
   position: relative;
-  border-bottom: 1px solid #333;
   justify-content: center;
-  padding: 10px 1rem 10px;
+  padding: 1.5rem 1rem;
   font-size: .8rem; }
   .header *,
   .footer * {
@@ -2685,6 +2688,10 @@ main {
     flex-direction: row;
     max-width: 1260px;
     margin: auto; }
+  .header .nav,
+  .footer .nav {
+    justify-content: flex-end;
+    display: flex; }
   .header .header-right,
   .header .footer-right,
   .header .nav,
@@ -2725,11 +2732,31 @@ main {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="splash-focus"><img class="logo" src="img/logo-white-2x.svg"><p class="text-block">Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.</p></div></div><div class="testdrive"><div class="testdrive-focus"><h1>Connect Your uPort ID</h1><div>(with the uPort app) </div><div class="ex-wrap"><div id="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
+</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="inner-row"><div class="splash-focus"><div class="floatinglogo"></div><h4>Simple and secure login for your Ethereum app</h4><p class="text-block">Uport ID makes blockchain easy on desktop and mobile</p></div></div></div><div class="testdrive"><div class="inner-row"><div class="testdrive-focus"><h1>Connect Your uPort ID</h1><div>(with the uPort app) </div><div class="ex-wrap"><div id="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div></div><div class="banner"><div class="inner-row"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div></div><div class="content-shortcuts"><div class="inner-row"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li><script>document.querySelector('header').style.background = 'none'
+document.querySelector('body').style.background = '#34344F'</script></ul></div></div></div></div><style>.portal {
   text-align: center; }
+  .portal .floatinglogo {
+    position: fixed;
+    top: -3%;
+    left: 50%;
+    margin-left: -30%;
+    background-image: url(img/logo-white-2x.svg);
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    width: 400px;
+    height: 360px;
+    z-index: 1;
+    opacity: .06; }
+  .portal h4 {
+    font-size: 32px;
+    width: 400px;
+    margin: auto; }
   .portal .splash {
-    background: #5756C3;
-    color: white; }
+    color: white;
+    background: #34344F; }
+    .portal .splash .text-block {
+      margin-bottom: 0; }
     .portal .splash .splash-focus {
       margin: auto;
       width: 80%; }
@@ -2740,7 +2767,9 @@ main {
         max-width: 200px; }
   .portal .testdrive {
     background: #333;
-    color: white; }
+    color: white;
+    position: relative;
+    z-index: 2; }
     .portal .testdrive .testdrive-focus {
       margin: auto; }
     .portal .testdrive h1 {

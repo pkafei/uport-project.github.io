@@ -2555,7 +2555,11 @@ main {
     overflow-y: scroll;
     display: block; }
     main.portal .portal .pagewrap {
-      display: block; }
+      display: block;
+      max-width: 100%; }
+      main.portal .portal .pagewrap .inner-row {
+        max-width: 1260px;
+        margin: auto; }
   main.guides .guides,
   main.apidocs .apidocs,
   main.tools .tools,
@@ -2654,16 +2658,15 @@ main {
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
 </style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
-  background: #616069; }
+  background: #34344F; }
   .header * {
-    color: white; }
+    color: #F8F8F9; }
 
 .header,
 .footer {
   position: relative;
-  border-bottom: 1px solid #333;
   justify-content: center;
-  padding: 10px 1rem 10px;
+  padding: 1.5rem 1rem;
   font-size: .8rem; }
   .header *,
   .footer * {
@@ -2685,6 +2688,10 @@ main {
     flex-direction: row;
     max-width: 1260px;
     margin: auto; }
+  .header .nav,
+  .footer .nav {
+    justify-content: flex-end;
+    display: flex; }
   .header .header-right,
   .header .footer-right,
   .header .nav,

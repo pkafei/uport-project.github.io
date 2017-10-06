@@ -26,15 +26,17 @@ header.header
               span Github
 :sass
   .header {
-    background: #616069;
-    * { color: white; }
+    background: #34344F;
+    * { 
+      color: #F8F8F9;
+    }
   }
   .header,
   .footer {
     position: relative;
-    border-bottom: 1px solid #333;
+    // border-bottom: 1px solid #333;
     justify-content: center;
-    padding: 10px 1rem 10px;
+    padding: 1.5rem 1rem;
     font-size: .8rem;
 
     // Reset
@@ -53,6 +55,11 @@ header.header
       flex-direction: row;
       max-width: 1260px;
       margin: auto;
+    }
+
+    .nav {
+      justify-content: flex-end;
+      display: flex;
     }
 
     .header-right,

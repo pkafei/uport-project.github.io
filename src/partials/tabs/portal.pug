@@ -1,93 +1,101 @@
 .portal
   .pagewrap
     .splash
-      .splash-focus
-        img.logo(src="img/logo-white-2x.svg")
-        p.text-block Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.
+      .inner-row
+        .splash-focus
+          .floatinglogo
+          h4 Simple and secure login for your Ethereum app
+          p.text-block Uport ID makes blockchain easy on desktop and mobile
     .testdrive
-      .testdrive-focus
-        h1 Connect Your uPort ID
-        div (with the uPort app) 
-        .ex-wrap
-          #kqr
-          .data-wrap
-            pre#userProfileData
-          .user-wrap
-            .avatar-wrap
-              img.avatar
-              .name
+      .inner-row
+        .testdrive-focus
+          h1 Connect Your uPort ID
+          div (with the uPort app) 
+          .ex-wrap
+            #kqr
+            .data-wrap
+              pre#userProfileData
+            .user-wrap
+              .avatar-wrap
+                img.avatar
+                .name
     .banner
-      .banner-text
-        h1 Get started developing with Uport
-        p.text-block uPort is a decentralized identity platform built on Ethereum. Explore our docs for more
-      .banner-steps
-        ul
-          li.alpha
-            a(href="/guides.html#download-the-mobile-app")
-              .number
-                span.number-text 1
-              i.fa.fa-id-badge
-              .step-desc Download the mobile app
-          li.beta
-            a(href="/guides.html#register-your-app")
-              .number
-                span.number-text 2
-              i.fa.fa-id-card
-              .step-desc Register Your App
-          li.omega
-            a(href="/guides.html#install-the-library/sdk")
-              .number
-                span.number-text 3
-              i.fa.fa-laptop
-              .step-desc Install the Libraries / SDK's
+      .inner-row
+        .banner-text
+          h1 Get started developing with Uport
+          p.text-block uPort is a decentralized identity platform built on Ethereum. Explore our docs for more
+        .banner-steps
+          ul
+            li.alpha
+              a(href="/guides.html#download-the-mobile-app")
+                .number
+                  span.number-text 1
+                i.fa.fa-id-badge
+                .step-desc Download the mobile app
+            li.beta
+              a(href="/guides.html#register-your-app")
+                .number
+                  span.number-text 2
+                i.fa.fa-id-card
+                .step-desc Register Your App
+            li.omega
+              a(href="/guides.html#install-the-library/sdk")
+                .number
+                  span.number-text 3
+                i.fa.fa-laptop
+                .step-desc Install the Libraries / SDK's
     .content-shortcuts
-      ul
-        li.guides
-          .shortcut-wrap
-            i.fa.fa-newspaper-o
-            label Guides
-          .list-wrap
-            ul
-              li
-                a(href='/guides.html#getting-started') Getting Started
-              li
-                a(href='/guides.html#requesting-credentials') Requesting Credentials
-              li
-                a(href='/guides.html#attesting-credentials') Attesting Credentials
-              li
-                a(href='/guides.html#signing-transactions') Signing Transactions
-        li.api-docs
-          .shortcut-wrap
-            i.fa.fa-book
-            label API Docs
-          .list-wrap
-            ul
-              li
-                a(href='/apidocs.html#uport-connect') uport-connect
-              li
-                a(href='/apidocs.html#uport-js') uport-js
-              li
-                a(href='#uport-lite' disabled) uport-lite (coming soon)
-              li
-                a(href='#uport-registry' disabled) uport-registry (coming soon)
-        //- li.tools
-        //-   .shortcut-wrap
-        //-     i.fa.fa-book
-        //-     label Tools
-        //-   .list-wrap
-        //-     ul
-        //-       li
-        //-         a(href=links.truffle)
-        //-           span Truffle
-        //-       li
-        //-         a(href=links.metamask)
-        //-           span MetaMask
-        //-       li
-        //-         a(href=links.remix)
-        //-           span Remix
-        //-       li
-        //-         a(href=links.mist)
-        //-           span Mist
+      .inner-row
+        ul
+          li.guides
+            .shortcut-wrap
+              i.fa.fa-newspaper-o
+              label Guides
+            .list-wrap
+              ul
+                li
+                  a(href='/guides.html#getting-started') Getting Started
+                li
+                  a(href='/guides.html#requesting-credentials') Requesting Credentials
+                li
+                  a(href='/guides.html#attesting-credentials') Attesting Credentials
+                li
+                  a(href='/guides.html#signing-transactions') Signing Transactions
+          li.api-docs
+            .shortcut-wrap
+              i.fa.fa-book
+              label API Docs
+            .list-wrap
+              ul
+                li
+                  a(href='/apidocs.html#uport-connect') uport-connect
+                li
+                  a(href='/apidocs.html#uport-js') uport-js
+                li
+                  a(href='#uport-lite' disabled) uport-lite (coming soon)
+                li
+                  a(href='#uport-registry' disabled) uport-registry (coming soon)
+          //- li.tools
+          //-   .shortcut-wrap
+          //-     i.fa.fa-book
+          //-     label Tools
+          //-   .list-wrap
+          //-     ul
+          //-       li
+          //-         a(href=links.truffle)
+          //-           span Truffle
+          //-       li
+          //-         a(href=links.metamask)
+          //-           span MetaMask
+          //-       li
+          //-         a(href=links.remix)
+          //-           span Remix
+          //-       li
+          //-         a(href=links.mist)
+          //-           span Mist
+          script.
+            document.querySelector('header').style.background = 'none'
+            document.querySelector('body').style.background = '#34344F'
 :sass
   @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
   $pair: 320px 794px;
@@ -95,9 +103,37 @@
   .portal {
     text-align: center;
 
+    .floatinglogo {
+      position: fixed;
+      top: -3%;
+      left: 50%;
+      margin-left: -30%; 
+      background-image: url(img/logo-white-2x.svg);
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+      background-size: cover;
+      width: 400px;
+      height: 360px;
+      z-index: 1;
+      opacity: .06;
+    }
+
+    h4 {
+      font-size: 32px;
+      width: 400px;
+      margin: auto;
+    }
+
     .splash{
-      background: #5756C3;
       color: white;
+      background: #34344F;
+      .text-block {
+        margin-bottom: 0;
+      }
+      // background-image: url(img/logo-white-2x.svg);
+      // background-position: 30% 10%;    
+      // background-repeat: no-repeat;
+      // background-blend-mode: overlay;
 
       .splash-focus{
         margin: auto;
@@ -111,6 +147,8 @@
     .testdrive {
       background: #333;
       color: white;
+      position: relative;
+      z-index: 2;
 
       .testdrive-focus {
         margin: auto;
