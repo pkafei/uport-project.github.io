@@ -4,52 +4,102 @@
       .inner-row
         .splash-focus
           .floatinglogo
-          h4 Simple and secure login for your Ethereum app
+          h1 Simple and secure login for your Ethereum app
           p.text-block Uport ID makes blockchain easy on desktop and mobile
-    .testdrive
+    //- .testdrive
+      //-   .inner-row
+      //-     .testdrive-focus
+      //-       h1 Connect Your uPort ID
+      //-       div (with the uPort app) 
+      //-       .ex-wrap
+      //-         #kqr
+      //-         .data-wrap
+      //-           pre#userProfileData
+      //-         .user-wrap
+      //-           .avatar-wrap
+      //-             img.avatar
+      //-             .name
+    .area-white.alpha
       .inner-row
-        .testdrive-focus
-          h1 Connect Your uPort ID
-          div (with the uPort app) 
-          .ex-wrap
-            #kqr
-            .data-wrap
-              pre#userProfileData
-            .user-wrap
-              .avatar-wrap
-                img.avatar
-                .name
-    .banner
-      .inner-row
+        .banner-box
+          .banner-text
+            h1 Start developing today
+          .banner-steps
+            ul
+              li.alpha
+                a(href="/guides.html#download-the-mobile-app")
+                  img(src='icon.svg')
+                  .step-title Download uPort Mobile
+                  .step-desc Download the uPort mobile app and create your identity on the blockchain.
+              li.beta
+                a(href="/guides.html#register-your-app")
+                  img(src='icon.svg')
+                  .step-title Register your app
+                  .step-desc Go to uPort AppManager, connect using uPort mobile and register your applicaton.
+              li.omega
+                a(href="/guides.html#install-the-library/sdk")
+                  img(src='icon.svg')
+                  .step-title Install the libraries / SDK's
+                  .step-desc Get started developing with uPort installing the required libraries and SDK's.
         .banner-text
-          h1 Get started developing with Uport
-          p.text-block uPort is a decentralized identity platform built on Ethereum. Explore our docs for more
-        .banner-steps
-          ul
-            li.alpha
-              a(href="/guides.html#download-the-mobile-app")
-                .number
-                  span.number-text 1
-                i.fa.fa-id-badge
-                .step-desc Download the mobile app
-            li.beta
-              a(href="/guides.html#register-your-app")
-                .number
-                  span.number-text 2
-                i.fa.fa-id-card
-                .step-desc Register Your App
-            li.omega
-              a(href="/guides.html#install-the-library/sdk")
-                .number
-                  span.number-text 3
-                i.fa.fa-laptop
-                .step-desc Install the Libraries / SDK's
+          h2 Try Our Demo
+          p After you've downloaded uPort, you can try our demo right away or simply review the code.
+    .area-lightgray.beta
+      .inner-row
+        .example-box
+          table
+            thead
+              tr
+                td Code
+                td Result
+            tbbdy
+              tr
+                td
+                  pre
+                    code
+                      | // Use this area to explain content of what the user is being shown.
+                      | uport.requestCredentials({
+                      |  requested: ['name', 'avatar', 'phone', 'country'],
+                      |  notifcations: true
+                      | })
+                td
+                  h3 Login with uPort
+                  button.btn View sample uPort ID
+                  .or or
+                  button.btn Connect with your uPort ID
+        .banner-text
+          h2 Download uPort
+          p Download uPort to try our demo and beign testing within your app.
+          img(src='ios.svg' alt='ios app store')
+          img(src='ios.svg' alt='andoird play store')
+    .area-white.delta
+      .inner-row
+        h2 Why uPort?
+        .explainer-section
+          .exp-graphic
+          .exp-text
+            h3 Simple to integrate
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    .area-lightgray.omega
+      .inner-row
+        .explainer-section
+          .exp-text
+            h3 Gives users control
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .exp-graphic
+    .area-white.zeta
+      .inner-row
+        .explainer-section
+          .exp-graphic
+          .exp-text
+            h3 Hackproof by design
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     .content-shortcuts
       .inner-row
+        img.logo(src='uport.svg')
         ul
           li.guides
             .shortcut-wrap
-              i.fa.fa-newspaper-o
               label Guides
             .list-wrap
               ul
@@ -63,7 +113,6 @@
                   a(href='/guides.html#signing-transactions') Signing Transactions
           li.api-docs
             .shortcut-wrap
-              i.fa.fa-book
               label API Docs
             .list-wrap
               ul
@@ -75,24 +124,6 @@
                   a(href='#uport-lite' disabled) uport-lite (coming soon)
                 li
                   a(href='#uport-registry' disabled) uport-registry (coming soon)
-          //- li.tools
-          //-   .shortcut-wrap
-          //-     i.fa.fa-book
-          //-     label Tools
-          //-   .list-wrap
-          //-     ul
-          //-       li
-          //-         a(href=links.truffle)
-          //-           span Truffle
-          //-       li
-          //-         a(href=links.metamask)
-          //-           span MetaMask
-          //-       li
-          //-         a(href=links.remix)
-          //-           span Remix
-          //-       li
-          //-         a(href=links.mist)
-          //-           span Mist
           script.
             document.querySelector('header').style.background = 'none'
             document.querySelector('body').style.background = '#34344F'
@@ -103,249 +134,333 @@
   .portal {
     text-align: center;
 
-    .floatinglogo {
-      position: fixed;
-      top: -3%;
-      left: 50%;
-      margin-left: -30%; 
-      background-image: url(img/logo-white-2x.svg);
-      background-repeat: no-repeat;
-      background-blend-mode: overlay;
-      background-size: cover;
-      width: 400px;
-      height: 360px;
-      z-index: 1;
-      opacity: .06;
-    }
+    .pagewrap {
 
-    h4 {
-      font-size: 32px;
-      width: 400px;
-      margin: auto;
-    }
-
-    .splash{
-      color: white;
-      background: #34344F;
-      .text-block {
-        margin-bottom: 0;
+      .area-white,
+      .area-lightgray {
+        position: relative;
+        z-index: 2;
+        overflow: visible;
+        height: 350px;
       }
-      // background-image: url(img/logo-white-2x.svg);
-      // background-position: 30% 10%;    
-      // background-repeat: no-repeat;
-      // background-blend-mode: overlay;
 
-      .splash-focus{
-        margin: auto;
-        width: 80%;
+      .area-white { background: white; }
+      .area-lightgray { background: #F6F6F8; }
 
-        img { display: block; margin: auto;}
-        img.logo { max-width: 200px; }
+      .area-white,
+      .area-lightgray { * { color: #414141;} }
+
+      .floatinglogo {
+        position: fixed;
+        top: -3%;
+        left: 50%;
+        margin-left: -30%; 
+        background-image: url(img/logo-white-2x.svg);
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+        background-size: cover;
+        width: 400px;
+        height: 360px;
+        z-index: 1;
+        opacity: .06;
       }
-    }
 
-    .testdrive {
-      background: #333;
-      color: white;
-      position: relative;
-      z-index: 2;
-
-      .testdrive-focus {
+      .banner-box {
+        border: 1px solid #D8D8E4;
+        width: 1000px;
         margin: auto;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,0.11);
+        position: relative;
+        top: -170px;
+        z-index: 2;
+        background: white;
+      }
+
+      .banner-text {
+        position: relative;
+        // top: -100px;
+        // max-width: 450px;
+        margin: auto;
+      }
+
+      .example-box {
+        border: 1px solid #D8D8E4;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,0.11);
+        width: 800px;
+        margin: auto;
+        table { 
+          width: 100%; 
+          border: none;
+          pre, code, thead { text-align: left; }
+          pre { margin: 0; }
+          tbody td { padding: 0rem !important; }
+          td:nth-child(1) { width: 50%; }
+          td:nth-child(2) { width: 50%; }
+        }
       }
 
       h1 {
-        margin-bottom: 0;
-      }
-
-      .ex-wrap {
-        display: flex;
+        font-size: 32px;
+        width: 400px;
         margin: auto;
-        justify-content: center;
-
-        #kqr {
-          min-width: 300px;
-          min-height: 307px;
-        }
-
-        .data-wrap { margin-right: 3rem; }
-
-        .data-wrap, 
-        .user-wrap { 
-          display: none; 
-        }
-        
-        #userProfileData {
-          overflow: hidden !important;
-          overflow-y: scroll !important;
-          text-align: left;
-          margin: 0;
-          overflow: auto; 
-          padding: .5rem;
-          background: #222;
-          border: 3px solid white;
-          border-top-left-radius: 1rem;
-          border-bottom-left-radius: 1rem;
-          color: white;
-          width: 300px;
-          height: 300px;
-        }
-        .avatar-wrap {
-          background: #333;
-          border-radius: 50%;
-          overflow: hidden;
-          position: relative;
-          border: 3px solid white;
-        }
-        .avatar { 
-          background: #222; 
-          display: block; 
-          height: 300px;
-          width: 300px;
-        }
-        .name {
-          position: absolute;
-          top: 70%;
-          z-index: 1;
-          background: rgba(0, 0, 0, 0.5);
-          width: 100%;
-        }
       }
-    }
-    
-    .splash,
-    .banner,
-    .testdrive,
-    .content-shortcuts {
-      padding: 3rem 5rem;
-      
-      @include breakpoint($pair) {
-        padding: 5% 5% !important;
+      h2, h3, h4 {
+        margin-top: 0;
       }
-    }
 
-    .banner {
-      background: #3A3942;
-      color: white;
-    }
+      .banner-text {
+        margin-bottom: 0;
+        padding-bottom: 1rem;
+      }
 
-    .text-block {
-      max-width: 650px;
-      margin: 0 auto 3em auto;
-    }
-
-    .banner-steps{
-
-      * {
+      .splash{
         color: white;
-        text-decoration: none;
-      }
-    
-      .fa {
-        font-size: 6rem;
+        background: #34344F;
+        position: relative;
+        z-index: 1;
+        .inner-row { margin-bottom: 200px !important; }
         
-        @include breakpoint($pair) {
-          font-size: 4rem !important;
+        .text-block { margin-bottom: 0; }
+
+        .splash-focus{
+          margin: auto;
+          width: 80%;
+
+          img { display: block; margin: auto;}
+          img.logo { max-width: 200px; }
         }
       }
-      
-      .step-desc {
-        margin-top: 2rem;
-        font-size: 1.3rem;
-        
-        @include breakpoint($pair) {
-          font-size: 1rem !important;
-        }
-      }
-      
-      ul {
-        display: flex;
-        justify-content: center;
-        padding: 0;
-      }
-      
-      li {
-        width: 25%;
-        margin: 2rem;
 
-        @include breakpoint($pair) {
-          margin: 0rem !important;
-          flex: 1 !important;
+      .testdrive {
+        background: #333;
+        color: white;
+        position: relative;
+        z-index: 2;
+
+        .testdrive-focus {
+          margin: auto;
         }
 
-        // @include breakpoint($pair) {}
+        h1 {
+          margin-bottom: 0;
+        }
 
-        .number {
-          position: relative;
-          border-radius: 50%;
-          border: 5px solid white;
-          width: 4rem;
-          height: 4rem;
-          text-align: center;
-          margin: 0 auto 1rem auto;
+        .ex-wrap {
+          display: flex;
+          margin: auto;
+          justify-content: center;
 
-          .number-text {
+          #kqr {
+            min-width: 300px;
+            min-height: 307px;
+          }
+
+          .data-wrap { margin-right: 3rem; }
+
+          .data-wrap, 
+          .user-wrap { 
+            display: none; 
+          }
+          
+          #userProfileData {
+            overflow: hidden !important;
+            overflow-y: scroll !important;
+            text-align: left;
+            margin: 0;
+            overflow: auto; 
+            padding: .5rem;
+            background: #222;
+            border: 3px solid white;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            color: white;
+            width: 300px;
+            height: 300px;
+          }
+          .avatar-wrap {
+            background: #333;
+            border-radius: 50%;
+            overflow: hidden;
             position: relative;
-            top: -.50rem;
-            font-size: 3rem;
+            border: 3px solid white;
+          }
+          .avatar { 
+            background: #222; 
+            display: block; 
+            height: 300px;
+            width: 300px;
+          }
+          .name {
+            position: absolute;
+            top: 70%;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+          }
+        }
+      }
+      
+      .splash,
+      .banner,
+      .testdrive,
+      .content-shortcuts {
+        padding: 3rem 5rem;
+        
+        @include breakpoint($pair) {
+          padding: 5% 5% !important;
+        }
+      }
+
+      .banner {
+        background: #3A3942;
+        color: white;
+      }
+
+      .text-block {
+        max-width: 650px;
+        margin: 0 auto 3em auto;
+      }
+
+      .banner-steps{
+
+        * {
+          // color: white;
+          text-align: left;
+          text-decoration: none;
+        }
+      
+        img {
+          float: left;
+          width: 100px;
+          height: 150px;
+          background: gray;
+          margin-right: 1rem;
+        }
+        
+        .step-title {
+          margin-bottom: 1rem;
+          font-size: 1.3rem;
+          
+          @include breakpoint($pair) {
+            font-size: 1rem !important;
           }
         }
         
-        .step-img {
-          margin: 0 auto 1rem auto;
+        ul {
+          display: flex;
+          justify-content: center;
+          padding: 0;
         }
-      }
-    }
-    
-    .content-shortcuts {
-      text-align: left;
-      background: #eaeaea;
+        
+        li {
+          width: 25%;
+          margin: 2rem;
 
-      *[disabled] {
-        color: gray;
-        &:hover {
-          text-decoration: none;
-          cursor: no-drop;
+          @include breakpoint($pair) {
+            margin: 0rem !important;
+            flex: 1 !important;
+          }
+
+          // @include breakpoint($pair) {}
+
+          .number {
+            position: relative;
+            border-radius: 50%;
+            border: 5px solid white;
+            width: 4rem;
+            height: 4rem;
+            text-align: center;
+            margin: 0 auto 1rem auto;
+
+            .number-text {
+              position: relative;
+              top: -.50rem;
+              font-size: 3rem;
+            }
+          }
+          
+          .step-img {
+            margin: 0 auto 1rem auto;
+          }
         }
       }
       
-      .fa {
-      font-size: 8rem;
-      }
-
-      img, label { display: block; }
-
-      label {
-        border-bottom: 3px solid #CCC;
-      }
-
-      ul, li {
-        margin: 0;
-        padding: 0;
-      }
-
-      > ul {
-        display: flex;
-        justify-content: center;
+      .content-shortcuts {
         
-        > li {
-          flex: 1;
-          margin: 0 1rem;
+        * { 
+          text-align: left;
+          color: #FFFFFF;
         }
-      }
 
-      .shortcut-wrap {
-          text-align: center;
-      }
+        .logo { 
+          width: 100px;
+          height: 150px;
+          background: gray;
+        }
 
-      .list-wrap {
-        
-        li {
-          border-bottom: 1px solid #AAA;
-          
-          a {
-            padding: 1rem 0;
+        .inner-row,
+        ul {
+          display: flex;
+          li ,
+          li * {
             display: block;
+          }
+        }
+
+        .inner-row { 
+          justify-content: space-between;
+          > ul > li {
+            margin-left: 2rem;
+          }
+        }
+
+        *[disabled] {
+          color: gray;
+          &:hover {
+            text-decoration: none;
+            cursor: no-drop;
+          }
+        }
+        
+        .fa {
+        font-size: 8rem;
+        }
+
+        img, label { display: block; }
+
+
+        ul, li {
+          margin: 0;
+          padding: 0;
+        }
+
+        ul, li { 
+          margin-left: 2rem; 
+          ul, li {
+            margin-left: 0; 
+          }
+        }
+
+        > ul {
+          display: flex;
+          justify-content: center;
+          
+          > li {
+            flex: 1;
+            margin: 0 1rem;
+          }
+        }
+
+        .shortcut-wrap {
+          text-align: center;
+        }
+
+        .list-wrap {
+          li {
+            a {
+              padding: 1rem 0;
+              display: block;
+            }
           }
         }
       }

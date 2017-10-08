@@ -2466,9 +2466,6 @@ table {
   table tbody tr:nth-child(odd) {
     background: rgba(171, 189, 203, 0.3); }
 
-pre {
-  margin-bottom: 2rem !important; }
-
 pre[class*="language-"], code {
   overflow-x: hidden; }
 
@@ -2732,10 +2729,27 @@ main {
     .header .legal-area a,
     .footer .legal-area a {
       margin-left: 2rem; }
-</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="inner-row"><div class="splash-focus"><div class="floatinglogo"></div><h4>Simple and secure login for your Ethereum app</h4><p class="text-block">Uport ID makes blockchain easy on desktop and mobile</p></div></div></div><div class="testdrive"><div class="inner-row"><div class="testdrive-focus"><h1>Connect Your uPort ID</h1><div>(with the uPort app) </div><div class="ex-wrap"><div id="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div></div><div class="banner"><div class="inner-row"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div></div><div class="content-shortcuts"><div class="inner-row"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li><script>document.querySelector('header').style.background = 'none'
+</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="inner-row"><div class="splash-focus"><div class="floatinglogo"></div><h1>Simple and secure login for your Ethereum app</h1><p class="text-block">Uport ID makes blockchain easy on desktop and mobile</p></div></div></div><div class="area-white alpha"><div class="inner-row"><div class="banner-box"><div class="banner-text"><h1>Start developing today</h1></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><img src="icon.svg"><div class="step-title">Download uPort Mobile</div><div class="step-desc">Download the uPort mobile app and create your identity on the blockchain.</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><img src="icon.svg"><div class="step-title">Register your app</div><div class="step-desc">Go to uPort AppManager, connect using uPort mobile and register your applicaton.</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><img src="icon.svg"><div class="step-title">Install the libraries / SDK's</div><div class="step-desc">Get started developing with uPort installing the required libraries and SDK's.</div></a></li></ul></div></div><div class="banner-text"><h2>Try Our Demo</h2><p>After you've downloaded uPort, you can try our demo right away or simply review the code.</p></div></div></div><div class="area-lightgray beta"><div class="inner-row"><div class="example-box"><table><thead><tr><td>Code</td><td>Result</td></tr></thead><tbbdy><tr><td><pre><code>// Use this area to explain content of what the user is being shown.
+uport.requestCredentials({
+ requested: ['name', 'avatar', 'phone', 'country'],
+ notifcations: true
+})</code></pre></td><td><h3>Login with uPort</h3><button class="btn">View sample uPort ID</button><div class="or">or</div><button class="btn">Connect with your uPort ID</button></td></tr></tbbdy></table></div><div class="banner-text"><h2>Download uPort</h2><p>Download uPort to try our demo and beign testing within your app.</p><img src="ios.svg" alt="ios app store"><img src="ios.svg" alt="andoird play store"></div></div></div><div class="area-white delta"><div class="inner-row"><h2>Why uPort?</h2><div class="explainer-section"><div class="exp-graphic"></div><div class="exp-text"><h3>Simple to integrate</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div></div></div><div class="area-lightgray omega"><div class="inner-row"><div class="explainer-section"><div class="exp-text"><h3>Gives users control</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div><div class="exp-graphic"></div></div></div></div><div class="area-white zeta"><div class="inner-row"><div class="explainer-section"><div class="exp-graphic"></div><div class="exp-text"><h3>Hackproof by design</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div></div></div></div><div class="content-shortcuts"><div class="inner-row"><img class="logo" src="uport.svg"><ul><li class="guides"><div class="shortcut-wrap"><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li><script>document.querySelector('header').style.background = 'none'
 document.querySelector('body').style.background = '#34344F'</script></ul></div></div></div></div><style>.portal {
   text-align: center; }
-  .portal .floatinglogo {
+  .portal .pagewrap .area-white,
+  .portal .pagewrap .area-lightgray {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+    height: 350px; }
+  .portal .pagewrap .area-white {
+    background: white; }
+  .portal .pagewrap .area-lightgray {
+    background: #F6F6F8; }
+  .portal .pagewrap .area-white *,
+  .portal .pagewrap .area-lightgray * {
+    color: #414141; }
+  .portal .pagewrap .floatinglogo {
     position: fixed;
     top: -3%;
     left: 50%;
@@ -2748,45 +2762,84 @@ document.querySelector('body').style.background = '#34344F'</script></ul></div><
     height: 360px;
     z-index: 1;
     opacity: .06; }
-  .portal h4 {
+  .portal .pagewrap .banner-box {
+    border: 1px solid #D8D8E4;
+    width: 1000px;
+    margin: auto;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+    position: relative;
+    top: -170px;
+    z-index: 2;
+    background: white; }
+  .portal .pagewrap .banner-text {
+    position: relative;
+    margin: auto; }
+  .portal .pagewrap .example-box {
+    border: 1px solid #D8D8E4;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+    width: 800px;
+    margin: auto; }
+    .portal .pagewrap .example-box table {
+      width: 100%;
+      border: none; }
+      .portal .pagewrap .example-box table pre, .portal .pagewrap .example-box table code, .portal .pagewrap .example-box table thead {
+        text-align: left; }
+      .portal .pagewrap .example-box table pre {
+        margin: 0; }
+      .portal .pagewrap .example-box table tbody td {
+        padding: 0rem !important; }
+      .portal .pagewrap .example-box table td:nth-child(1) {
+        width: 50%; }
+      .portal .pagewrap .example-box table td:nth-child(2) {
+        width: 50%; }
+  .portal .pagewrap h1 {
     font-size: 32px;
     width: 400px;
     margin: auto; }
-  .portal .splash {
+  .portal .pagewrap h2, .portal .pagewrap h3, .portal .pagewrap h4 {
+    margin-top: 0; }
+  .portal .pagewrap .banner-text {
+    margin-bottom: 0;
+    padding-bottom: 1rem; }
+  .portal .pagewrap .splash {
     color: white;
-    background: #34344F; }
-    .portal .splash .text-block {
+    background: #34344F;
+    position: relative;
+    z-index: 1; }
+    .portal .pagewrap .splash .inner-row {
+      margin-bottom: 200px !important; }
+    .portal .pagewrap .splash .text-block {
       margin-bottom: 0; }
-    .portal .splash .splash-focus {
+    .portal .pagewrap .splash .splash-focus {
       margin: auto;
       width: 80%; }
-      .portal .splash .splash-focus img {
+      .portal .pagewrap .splash .splash-focus img {
         display: block;
         margin: auto; }
-      .portal .splash .splash-focus img.logo {
+      .portal .pagewrap .splash .splash-focus img.logo {
         max-width: 200px; }
-  .portal .testdrive {
+  .portal .pagewrap .testdrive {
     background: #333;
     color: white;
     position: relative;
     z-index: 2; }
-    .portal .testdrive .testdrive-focus {
+    .portal .pagewrap .testdrive .testdrive-focus {
       margin: auto; }
-    .portal .testdrive h1 {
+    .portal .pagewrap .testdrive h1 {
       margin-bottom: 0; }
-    .portal .testdrive .ex-wrap {
+    .portal .pagewrap .testdrive .ex-wrap {
       display: flex;
       margin: auto;
       justify-content: center; }
-      .portal .testdrive .ex-wrap #kqr {
+      .portal .pagewrap .testdrive .ex-wrap #kqr {
         min-width: 300px;
         min-height: 307px; }
-      .portal .testdrive .ex-wrap .data-wrap {
+      .portal .pagewrap .testdrive .ex-wrap .data-wrap {
         margin-right: 3rem; }
-      .portal .testdrive .ex-wrap .data-wrap,
-      .portal .testdrive .ex-wrap .user-wrap {
+      .portal .pagewrap .testdrive .ex-wrap .data-wrap,
+      .portal .pagewrap .testdrive .ex-wrap .user-wrap {
         display: none; }
-      .portal .testdrive .ex-wrap #userProfileData {
+      .portal .pagewrap .testdrive .ex-wrap #userProfileData {
         overflow: hidden !important;
         overflow-y: scroll !important;
         text-align: left;
@@ -2800,66 +2853,67 @@ document.querySelector('body').style.background = '#34344F'</script></ul></div><
         color: white;
         width: 300px;
         height: 300px; }
-      .portal .testdrive .ex-wrap .avatar-wrap {
+      .portal .pagewrap .testdrive .ex-wrap .avatar-wrap {
         background: #333;
         border-radius: 50%;
         overflow: hidden;
         position: relative;
         border: 3px solid white; }
-      .portal .testdrive .ex-wrap .avatar {
+      .portal .pagewrap .testdrive .ex-wrap .avatar {
         background: #222;
         display: block;
         height: 300px;
         width: 300px; }
-      .portal .testdrive .ex-wrap .name {
+      .portal .pagewrap .testdrive .ex-wrap .name {
         position: absolute;
         top: 70%;
         z-index: 1;
         background: rgba(0, 0, 0, 0.5);
         width: 100%; }
-  .portal .splash,
-  .portal .banner,
-  .portal .testdrive,
-  .portal .content-shortcuts {
+  .portal .pagewrap .splash,
+  .portal .pagewrap .banner,
+  .portal .pagewrap .testdrive,
+  .portal .pagewrap .content-shortcuts {
     padding: 3rem 5rem; }
     @media (min-width: 320px) and (max-width: 794px) {
-      .portal .splash,
-      .portal .banner,
-      .portal .testdrive,
-      .portal .content-shortcuts {
+      .portal .pagewrap .splash,
+      .portal .pagewrap .banner,
+      .portal .pagewrap .testdrive,
+      .portal .pagewrap .content-shortcuts {
         padding: 5% 5% !important; } }
-  .portal .banner {
+  .portal .pagewrap .banner {
     background: #3A3942;
     color: white; }
-  .portal .text-block {
+  .portal .pagewrap .text-block {
     max-width: 650px;
     margin: 0 auto 3em auto; }
-  .portal .banner-steps * {
-    color: white;
+  .portal .pagewrap .banner-steps * {
+    text-align: left;
     text-decoration: none; }
-  .portal .banner-steps .fa {
-    font-size: 6rem; }
-    @media (min-width: 320px) and (max-width: 794px) {
-      .portal .banner-steps .fa {
-        font-size: 4rem !important; } }
-  .portal .banner-steps .step-desc {
-    margin-top: 2rem;
+  .portal .pagewrap .banner-steps img {
+    float: left;
+    width: 100px;
+    height: 150px;
+    background: gray;
+    margin-right: 1rem; }
+  .portal .pagewrap .banner-steps .step-title {
+    margin-bottom: 1rem;
     font-size: 1.3rem; }
     @media (min-width: 320px) and (max-width: 794px) {
-      .portal .banner-steps .step-desc {
+      .portal .pagewrap .banner-steps .step-title {
         font-size: 1rem !important; } }
-  .portal .banner-steps ul {
+  .portal .pagewrap .banner-steps ul {
     display: flex;
     justify-content: center;
     padding: 0; }
-  .portal .banner-steps li {
+  .portal .pagewrap .banner-steps li {
     width: 25%;
     margin: 2rem; }
     @media (min-width: 320px) and (max-width: 794px) {
-      .portal .banner-steps li {
+      .portal .pagewrap .banner-steps li {
         margin: 0rem !important;
         flex: 1 !important; } }
-    .portal .banner-steps li .number {
+    .portal .pagewrap .banner-steps li .number {
       position: relative;
       border-radius: 50%;
       border: 5px solid white;
@@ -2867,42 +2921,58 @@ document.querySelector('body').style.background = '#34344F'</script></ul></div><
       height: 4rem;
       text-align: center;
       margin: 0 auto 1rem auto; }
-      .portal .banner-steps li .number .number-text {
+      .portal .pagewrap .banner-steps li .number .number-text {
         position: relative;
         top: -.50rem;
         font-size: 3rem; }
-    .portal .banner-steps li .step-img {
+    .portal .pagewrap .banner-steps li .step-img {
       margin: 0 auto 1rem auto; }
-  .portal .content-shortcuts {
+  .portal .pagewrap .content-shortcuts * {
     text-align: left;
-    background: #eaeaea; }
-    .portal .content-shortcuts *[disabled] {
-      color: gray; }
-      .portal .content-shortcuts *[disabled]:hover {
-        text-decoration: none;
-        cursor: no-drop; }
-    .portal .content-shortcuts .fa {
-      font-size: 8rem; }
-    .portal .content-shortcuts img, .portal .content-shortcuts label {
+    color: #FFFFFF; }
+  .portal .pagewrap .content-shortcuts .logo {
+    width: 100px;
+    height: 150px;
+    background: gray; }
+  .portal .pagewrap .content-shortcuts .inner-row,
+  .portal .pagewrap .content-shortcuts ul {
+    display: flex; }
+    .portal .pagewrap .content-shortcuts .inner-row li,
+    .portal .pagewrap .content-shortcuts .inner-row li *,
+    .portal .pagewrap .content-shortcuts ul li,
+    .portal .pagewrap .content-shortcuts ul li * {
       display: block; }
-    .portal .content-shortcuts label {
-      border-bottom: 3px solid #CCC; }
-    .portal .content-shortcuts ul, .portal .content-shortcuts li {
-      margin: 0;
-      padding: 0; }
-    .portal .content-shortcuts > ul {
-      display: flex;
-      justify-content: center; }
-      .portal .content-shortcuts > ul > li {
-        flex: 1;
-        margin: 0 1rem; }
-    .portal .content-shortcuts .shortcut-wrap {
-      text-align: center; }
-    .portal .content-shortcuts .list-wrap li {
-      border-bottom: 1px solid #AAA; }
-      .portal .content-shortcuts .list-wrap li a {
-        padding: 1rem 0;
-        display: block; }
+  .portal .pagewrap .content-shortcuts .inner-row {
+    justify-content: space-between; }
+    .portal .pagewrap .content-shortcuts .inner-row > ul > li {
+      margin-left: 2rem; }
+  .portal .pagewrap .content-shortcuts *[disabled] {
+    color: gray; }
+    .portal .pagewrap .content-shortcuts *[disabled]:hover {
+      text-decoration: none;
+      cursor: no-drop; }
+  .portal .pagewrap .content-shortcuts .fa {
+    font-size: 8rem; }
+  .portal .pagewrap .content-shortcuts img, .portal .pagewrap .content-shortcuts label {
+    display: block; }
+  .portal .pagewrap .content-shortcuts ul, .portal .pagewrap .content-shortcuts li {
+    margin: 0;
+    padding: 0; }
+  .portal .pagewrap .content-shortcuts ul, .portal .pagewrap .content-shortcuts li {
+    margin-left: 2rem; }
+    .portal .pagewrap .content-shortcuts ul ul, .portal .pagewrap .content-shortcuts ul li, .portal .pagewrap .content-shortcuts li ul, .portal .pagewrap .content-shortcuts li li {
+      margin-left: 0; }
+  .portal .pagewrap .content-shortcuts > ul {
+    display: flex;
+    justify-content: center; }
+    .portal .pagewrap .content-shortcuts > ul > li {
+      flex: 1;
+      margin: 0 1rem; }
+  .portal .pagewrap .content-shortcuts .shortcut-wrap {
+    text-align: center; }
+  .portal .pagewrap .content-shortcuts .list-wrap li a {
+    padding: 1rem 0;
+    display: block; }
 </style></main><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
 /* **********************************************
      Begin prism-core.js
