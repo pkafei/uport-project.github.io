@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><style>/* http://meyerweb.com/eric/tools/css/reset/
+<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet"><style>/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -2373,7 +2373,7 @@ pre[class*="language-"] {
   overflow: hidden; }
 
 body {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   color: #555;
   font-size: 100%;
   line-height: 1.5;
@@ -2654,7 +2654,7 @@ main {
         border-radius: 5px; }
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort </span><span>&nbsp;|&nbsp;</span><span style="font-weight:bold; font-size:1.2rem;">Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
   background: #34344F; }
   .header * {
     color: #F8F8F9; }
@@ -2699,6 +2699,13 @@ main {
   .header .logo-link,
   .footer .logo-link {
     padding-right: 2rem; }
+    .header .logo-link span:first-child,
+    .footer .logo-link span:first-child {
+      font-size: 1rem; }
+    .header .logo-link *,
+    .footer .logo-link * {
+      display: inline-block;
+      vertical-align: baseline; }
   .header .nav-item,
   .footer .nav-item {
     padding: 0 1rem; }
@@ -2712,11 +2719,9 @@ main {
     .header .nav-item.active:hover *,
     .footer .nav-item.active:hover * {
       text-decoration: none; }
-  .header .logo-link,
   .header .nav-list li a,
   .header .sign-in-link,
   .header .legal-area a,
-  .footer .logo-link,
   .footer .nav-list li a,
   .footer .sign-in-link,
   .footer .legal-area a {

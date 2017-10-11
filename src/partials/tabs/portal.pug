@@ -23,24 +23,27 @@
       .inner-row
         .banner-box
           .banner-text
-            h1 Start developing today
+            h2 Start developing today
           .banner-steps
             ul
               li.alpha
                 a(href="/guides.html#download-the-mobile-app")
-                  img(src='icon.svg')
-                  .step-title Download uPort Mobile
-                  .step-desc Download the uPort mobile app and create your identity on the blockchain.
+                  img(src='img/download-uport.svg')
+                  .step-wrap
+                    .step-title Download uPort Mobile
+                    .step-desc Download the uPort mobile app and create your identity on the blockchain.
               li.beta
                 a(href="/guides.html#register-your-app")
-                  img(src='icon.svg')
-                  .step-title Register your app
-                  .step-desc Go to uPort AppManager, connect using uPort mobile and register your applicaton.
+                  img(src='img/register-app.svg')
+                  .step-wrap
+                    .step-title Register your app
+                    .step-desc Go to uPort AppManager, connect using uPort mobile and register your applicaton.
               li.omega
                 a(href="/guides.html#install-the-library/sdk")
-                  img(src='icon.svg')
-                  .step-title Install the libraries / SDK's
-                  .step-desc Get started developing with uPort installing the required libraries and SDK's.
+                  img(src='img/install-sdk.svg')
+                  .step-wrap
+                    .step-title Install the libraries / SDK's
+                    .step-desc Get started developing with uPort installing the required libraries and SDK's.
         .banner-text
           h2 Try Our Demo
           p After you've downloaded uPort, you can try our demo right away or simply review the code.
@@ -52,12 +55,14 @@
               tr
                 td Code
                 td Result
-            tbbdy
+            tbody
               tr
                 td
                   pre
                     code
-                      | // Use this area to explain content of what the user is being shown.
+                      | // Use this area to explain content of what 
+                      | // the user is being shown.
+                      | 
                       | uport.requestCredentials({
                       |  requested: ['name', 'avatar', 'phone', 'country'],
                       |  notifcations: true
@@ -67,11 +72,11 @@
                   button.btn View sample uPort ID
                   .or or
                   button.btn Connect with your uPort ID
-        .banner-text
+        .banner-text.download
           h2 Download uPort
           p Download uPort to try our demo and beign testing within your app.
-          img(src='ios.svg' alt='ios app store')
-          img(src='ios.svg' alt='andoird play store')
+          img(src='img/app-store-badge.svg' alt='ios app store')
+          img(src='img/google-play-badge.svg' alt='andoird play store')
     .area-white.delta
       .inner-row
         h2 Why uPort?
@@ -96,7 +101,7 @@
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     .content-shortcuts
       .inner-row
-        img.logo(src='uport.svg')
+        img.logo(src='img/logo-white-2x.svg')
         ul
           li.guides
             .shortcut-wrap
@@ -141,7 +146,7 @@
         position: relative;
         z-index: 2;
         overflow: visible;
-        height: 350px;
+        // height: 350px;
       }
 
       .area-white { background: white; }
@@ -149,6 +154,34 @@
 
       .area-white,
       .area-lightgray { * { color: #414141;} }
+
+      .alpha {
+        .banner-text { top: -120px; width: 500px;}
+      }
+
+      .delta,
+      .omega,
+      .zeta {
+        h2 {
+          padding-top: 4rem;
+        }
+        .explainer-section {
+          display: flex;
+          justify-content: space-between;
+          max-width: 850px;
+          margin: auto;
+          padding: 6rem 0;
+          .exp-graphic {
+            width: 250px;
+            background: gray;
+          }
+          .exp-text {
+            width: 500px;
+            text-align: left;
+            p { margin-left: 0; }
+          }
+        }
+      }
 
       .floatinglogo {
         position: fixed;
@@ -174,26 +207,56 @@
         top: -170px;
         z-index: 2;
         background: white;
+        padding: 2rem;
       }
 
       .banner-text {
         position: relative;
         // top: -100px;
         // max-width: 450px;
+        &.download {
+          padding: 6rem 0;
+          img{margin-right: 2rem;}
+        }
         margin: auto;
+        h1 { }
       }
 
       .example-box {
-        border: 1px solid #D8D8E4;
+        // border: 1px solid #D8D8E4;
         box-shadow: 0 0 4px 0 rgba(0,0,0,0.11);
         width: 800px;
         margin: auto;
+        position: relative;
+        top: -120px;
         table { 
           width: 100%; 
+          min-height: 250px;
           border: none;
           pre, code, thead { text-align: left; }
           pre { margin: 0; }
-          tbody td { padding: 0rem !important; }
+          thead {
+            td{
+              font-family: courier;
+              background: white;
+              border-bottom: 0.5px solid #DDDDE7;
+            }
+          }
+          tbody {
+            td { 
+              padding: 1rem !important; 
+              background: white;
+              width: 50%;
+              code {
+                font-family: courier;
+                font-size: 14px;
+                width: 300px;
+              }
+              &:first-child {
+                background: #F9F9F9;
+              }
+            }
+          }
           td:nth-child(1) { width: 50%; }
           td:nth-child(2) { width: 50%; }
         }
@@ -323,6 +386,10 @@
 
       .banner-steps{
 
+        li a {
+          display: flex;
+        }
+
         * {
           // color: white;
           text-align: left;
@@ -330,11 +397,13 @@
         }
       
         img {
-          float: left;
-          width: 100px;
-          height: 150px;
-          background: gray;
+          display: inline-block;
+          height: 75px;
           margin-right: 1rem;
+        }
+
+        .step-wrap {
+          display: inline-block;
         }
         
         .step-title {
@@ -348,13 +417,13 @@
         
         ul {
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
           padding: 0;
+          // margin: 2rem;
         }
         
         li {
-          width: 25%;
-          margin: 2rem;
+          margin: .5rem;
 
           @include breakpoint($pair) {
             margin: 0rem !important;
@@ -393,9 +462,8 @@
         }
 
         .logo { 
-          width: 100px;
           height: 150px;
-          background: gray;
+          // background: gray;
         }
 
         .inner-row,
@@ -460,6 +528,8 @@
             a {
               padding: 1rem 0;
               display: block;
+              font-size: .8rem;
+              font-weight: 100;
             }
           }
         }

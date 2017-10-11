@@ -92,7 +92,7 @@ gulp.task('browser-sync', ['pug'], () => {
 ////////////////////////
 // IMAGES
 ////////////////////////
-gulp.task('image', () => {
+gulp.task('images', () => {
   return gulp.src(paths.images + '*')
     .pipe(image())
     .pipe(gulp.dest(paths.img));

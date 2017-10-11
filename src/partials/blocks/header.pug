@@ -2,7 +2,9 @@ header.header
   .header-wrap
     .header-left
       a.logo-link(href='/')
-        span uPort | Developers
+        span uPort 
+        span &nbsp;|&nbsp;
+        span(style="font-weight:bold; font-size:1.2rem;") Developers
     .header-right
       nav.nav
         ul.nav-list
@@ -69,6 +71,13 @@ header.header
 
     .logo-link {
       padding-right: 2rem;
+      span:first-child{
+        font-size: 1rem;
+      }
+      * {
+        display: inline-block;
+        vertical-align: baseline;
+      }
     }
 
     .logo-link,
@@ -100,7 +109,6 @@ header.header
       }
     }
     
-    .logo-link,
     .nav-list li a,
     .sign-in-link,
     .legal-area a {
