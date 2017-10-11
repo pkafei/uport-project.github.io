@@ -27,19 +27,19 @@
           .banner-steps
             ul
               li.alpha
-                a(href="/guides.html#download-the-mobile-app")
+                a(href='/guides.html#download-the-mobile-app')
                   img(src='img/download-uport.svg')
                   .step-wrap
                     .step-title Download uPort Mobile
                     .step-desc Download the uPort mobile app and create your identity on the blockchain.
               li.beta
-                a(href="/guides.html#register-your-app")
+                a(href='/guides.html#register-your-app')
                   img(src='img/register-app.svg')
                   .step-wrap
                     .step-title Register your app
                     .step-desc Go to uPort AppManager, connect using uPort mobile and register your applicaton.
               li.omega
-                a(href="/guides.html#install-the-library/sdk")
+                a(href='/guides.html#install-the-library/sdk')
                   img(src='img/install-sdk.svg')
                   .step-wrap
                     .step-title Install the libraries / SDK's
@@ -75,8 +75,10 @@
         .banner-text.download
           h2 Download uPort
           p Download uPort to try our demo and beign testing within your app.
-          img(src='img/app-store-badge.svg' alt='ios app store')
-          img(src='img/google-play-badge.svg' alt='andoird play store')
+          a(href='https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8')
+            img(src='img/app-store-badge.svg' alt='ios app store')
+          a(href='https://play.google.com/store/apps/details?id=com.uportMobile&hl=en')
+            img(src='img/google-play-badge.svg' alt='andoird play store')
     .area-white.delta
       .inner-row
         h2 Why uPort?
@@ -156,7 +158,8 @@
       .area-lightgray { * { color: #414141;} }
 
       .alpha {
-        .banner-text { top: -120px; width: 500px;}
+        .banner-text  { top: -120px; width: 500px; }
+        .banner-box .banner-text { top: 0px;}
       }
 
       .delta,
@@ -215,8 +218,9 @@
         // top: -100px;
         // max-width: 450px;
         &.download {
-          padding: 6rem 0;
+          padding: 0 0 6rem 0;
           img{margin-right: 2rem;}
+          p { margin: 2rem 0 ;}
         }
         margin: auto;
         h1 { }
@@ -228,10 +232,24 @@
         width: 800px;
         margin: auto;
         position: relative;
-        top: -120px;
+        top: -100px;
+        .or {
+          margin: 1rem 0;
+        }
+        .btn {
+          // height: 27px;
+          width: 250px;
+          border-radius: 2px;
+          background-color: #5C58CA;
+          color: #FFFFFF;
+          border-radius: 4px;
+          padding: 1rem;
+          border: none;
+          font-size: 1rem;
+        }
         table { 
           width: 100%; 
-          min-height: 250px;
+          min-height: 300px;
           border: none;
           pre, code, thead { text-align: left; }
           pre { margin: 0; }
