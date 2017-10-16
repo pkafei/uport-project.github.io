@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="287px" height="233px" viewBox="0 0 287 233" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>hackproof</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="36.8399 0.5 0 0.5 0 97 36.8399 97 73.6798 97 73.6798 0.5"></polygon>
+    </defs>
+    <g id="Latest-Designs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dev-portal-home-v5.0-@2x" transform="translate(-111.000000, -2508.000000)">
+            <g id="hackproof" transform="translate(111.000000, 2508.000000)">
+                <g id="Group-14-Copy">
+                    <text id="Your-App" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#4A4A4A">
+                        <tspan x="95.388" y="71">Your App</tspan>
+                    </text>
+                    <g id="Group-2" transform="translate(43.000000, 104.000000)">
+                        <rect id="Rectangle-4" fill="#5C58CA" x="1.42108547e-13" y="0" width="179" height="33" rx="6"></rect>
+                        <text id="Login-with-uPort" font-family="Avenir-Heavy, Avenir" font-size="12" font-weight="600" fill="#FFFFFF">
+                            <tspan x="42.832" y="18.9393939">Login with uPort</tspan>
+                        </text>
+                    </g>
+                    <g id="Group-4">
+                        <rect id="Rectangle-4-Copy" stroke="#3B395A" stroke-width="2" x="1" y="1" width="257" height="190" rx="4"></rect>
+                        <rect id="Rectangle-5-Copy-2" fill="#3B395A" x="1.02923977" y="28.9016393" width="257.97076" height="2.01562678"></rect>
+                        <g id="Group-5" transform="translate(11.000000, 14.311475)" stroke-width="2" stroke="#3B395A">
+                            <circle id="Oval-3" cx="2" cy="2" r="2"></circle>
+                            <circle id="Oval-3-Copy" cx="12" cy="2" r="2"></circle>
+                            <circle id="Oval-3-Copy-2" cx="22" cy="2" r="2"></circle>
+                        </g>
+                    </g>
+                </g>
+                <g id="Page-1" transform="translate(213.000000, 135.000000)">
+                    <g id="Group-3" transform="translate(0.000000, 0.500000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M36.8398,0.5 C36.0208,0.5 35.2008,0.668 34.4338,1.003 L3.5938,14.503 C1.4108,15.459 -0.0002,17.617 -0.0002,20 L-0.0002,45.552 C-0.0002,62.848 8.5348,78.985 22.8308,88.72 L33.4628,95.959 C34.4818,96.653 35.6608,97 36.8398,97 C38.0188,97 39.1978,96.653 40.2168,95.959 L50.8488,88.72 C65.1448,78.985 73.6798,62.848 73.6798,45.552 L73.6798,20 C73.6798,17.617 72.2688,15.459 70.0858,14.503 L39.2458,1.003 C38.4788,0.668 37.6588,0.5 36.8398,0.5 M36.8398,6.5 L67.6798,20 L67.6798,45.552 C67.6798,60.847 60.1138,75.151 47.4718,83.76 L36.8398,91 L26.2078,83.76 C13.5658,75.151 5.9998,60.847 5.9998,45.552 L5.9998,20 L36.8398,6.5" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                    </g>
+                    <path d="M47.4721,84.2603 L36.8401,91.5003 L26.2071,84.2603 C13.5651,75.6523 6.0001,61.3473 6.0001,46.0523 L6.0001,20.5003 L36.8401,7.0003 L67.6801,20.5003 L67.6801,46.0523 C67.6801,61.3473 60.1141,75.6523 47.4721,84.2603" id="Fill-4" fill="#FFFFFF"></path>
+                    <path d="M47.4721,84.2603 L36.8401,91.5003 L26.2071,84.2603 C13.5651,75.6523 6.0001,61.3473 6.0001,46.0523 L6.0001,20.5003 L36.8401,7.0003 L67.6801,20.5003 L67.6801,46.0523 C67.6801,61.3473 60.1141,75.6523 47.4721,84.2603 Z" id="Stroke-6" stroke="#3B395A" stroke-width="2" stroke-linejoin="round"></path>
+                    <g id="Group-11" transform="translate(20.000000, 35.500000)">
+                        <polyline id="Fill-8" fill="#FFFFFF" points="0.4921 13.4727 10.2721 23.2527 33.4651 0.0597"></polyline>
+                        <polyline id="Stroke-10" stroke="#5C58CA" stroke-width="3.534" stroke-linecap="round" stroke-linejoin="round" points="5 12.27985 13 24.5 33.4651 0.0597"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -50,28 +50,57 @@
     .area-lightgray.beta
       .inner-row
         .example-box
-          table
-            thead
-              tr
-                td Code
-                td Result
-            tbody
-              tr
-                td
+          .table
+            .thead
+              .tr
+                .td Code
+                .td Result
+            .tbody
+              .tr
+                .td
                   pre
+                    | // Use this area to explain content of what 
+                    | // the user is being shown.
+                    | 
+                    | 
                     code
-                      | // Use this area to explain content of what 
-                      | // the user is being shown.
-                      | 
                       | uport.requestCredentials({
                       |  requested: ['name', 'avatar', 'phone', 'country'],
                       |  notifcations: true
                       | })
-                td
-                  h3 Login with uPort
-                  button.btn View sample uPort ID
-                  .or or
-                  button.btn Connect with your uPort ID
+                .td.example-demo
+                  .example-demo-wrap
+                    .state-1.choose
+                      h3 Login with uPort
+                      button.btn.sample-choice(onclick="viewSample()") View sample uPort ID
+                      .or or
+                      button.btn.connect-choice(onclick="loginRequest()") Connect with your uPort ID
+                    .state-2a.sample
+                      .status-text Status: Logged In
+                      .status-user-box
+                        img.user-pic(src='https://placekitten.com/75/75')
+                        .user-name Phoebe Olson 
+                      .user-data-text User Data
+                      pre.user-data-payload
+                        | {
+                        |   "@context": "http://schema.org",
+                        |   "@type": "Person",
+                        |   "publicKey": "0x044c31ed1499dce76ee7711c72388fda86e6c1d4f9ecc105c4abe2f63cfe79638822dcf21b7c29b3d208fc01d4e0506d4e8f6234a912727a36cf347e61956d5f2f",
+                        |   "publicEncKey": "Py+NXzHgacNMTzj9Ufe4S2KPuzR39dDMd1o+rWBJnmM=",
+                        |   "name": "Christian Jeria"
+                        | }
+                    .state-2b1.qr-scan
+                      h3 Scan QR with uPort Mobile app
+                      #kqr
+                    .state-2b2.results
+                      .status-text Status: Logged In
+                      .status-user-box
+                        img.user-pic(src='#')
+                        .user-name 
+                      .user-data-text User Data
+                      pre.user-data-payload
+
+                    
         .banner-text.download
           h2 Download uPort
           p Download uPort to try our demo and beign testing within your app.
@@ -83,7 +112,7 @@
       .inner-row
         h2 Why uPort?
         .explainer-section
-          .exp-graphic
+          img.exp-graphic(src='img/gives-users-control.svg')
           .exp-text
             h3 Simple to integrate
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -93,11 +122,11 @@
           .exp-text
             h3 Gives users control
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          .exp-graphic
+          img.exp-graphic(src='img/hackproof.svg')
     .area-white.zeta
       .inner-row
         .explainer-section
-          .exp-graphic
+          img.exp-graphic(src='img/simple-to-integrate.svg')
           .exp-text
             h3 Hackproof by design
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -176,7 +205,7 @@
           padding: 6rem 0;
           .exp-graphic {
             width: 250px;
-            background: gray;
+            // background: gray;
           }
           .exp-text {
             width: 500px;
@@ -229,7 +258,7 @@
       .example-box {
         // border: 1px solid #D8D8E4;
         box-shadow: 0 0 4px 0 rgba(0,0,0,0.11);
-        width: 800px;
+        width: 920px;
         margin: auto;
         position: relative;
         top: -100px;
@@ -247,37 +276,70 @@
           border: none;
           font-size: 1rem;
         }
-        table { 
-          width: 100%; 
-          min-height: 300px;
-          border: none;
-          pre, code, thead { text-align: left; }
-          pre { margin: 0; }
-          thead {
-            td{
-              font-family: courier;
-              background: white;
-              border-bottom: 0.5px solid #DDDDE7;
+          .table { 
+            width: 100%; 
+            border: none;
+            // overflow-x: hidden;
+            pre, code, .thead { text-align: left; }
+            pre { 
+              margin: 0; 
+              color: #939393;
+              max-width: 100%;
             }
-          }
-          tbody {
-            td { 
-              padding: 1rem !important; 
-              background: white;
-              width: 50%;
-              code {
+            .thead {
+              .tr { display: flex; }
+              .td{
                 font-family: courier;
-                font-size: 14px;
-                width: 300px;
-              }
-              &:first-child {
-                background: #F9F9F9;
+                background: white;
+                border-bottom: 0.5px solid #DDDDE7;
               }
             }
+            .tbody {
+              .tr { display: flex; }
+              .td { 
+                .example-demo-wrap { 
+                  overflow-x: hidden; 
+                  pre { color: black; }
+                }
+                padding: 1rem !important; 
+                background: white;
+                width: 50%;
+                min-height: 300px;
+
+                .state-2a,
+                .state-2b1,
+                .state-2b2 { display: none; }
+                
+                .status-text,
+                .user-data-text { text-align: left; margin: 1rem 0;}
+                .status-user-box { 
+                  border-radius: 4px; 
+                  border: 0.5px solid #DDDDE7;
+                  display: flex;
+                  align-items: center;
+                  padding: 1rem;
+                  margin: 1rem 0;
+                }
+                .status-text { margin-top: 0; }
+                .user-name { font-weight: bold; font-size: 1.3rem; }
+                .user-pic { border-radius: 50%; margin-right: 1rem; }
+                .user-data-payload {}
+
+                code {
+                  font-family: courier;
+                  font-size: 14px;
+                  width: 300px;
+                  font-weight: bold;
+                }
+                &:first-child {
+                  background: #F9F9F9;
+                }
+              }
+            }
+            .td:nth-child(1) { width: 50%; }
+            .td:nth-child(2) { width: 50%; }
           }
-          td:nth-child(1) { width: 50%; }
-          td:nth-child(2) { width: 50%; }
-        }
+
       }
 
       h1 {

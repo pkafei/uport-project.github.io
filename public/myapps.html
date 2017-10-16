@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet"><style>/* http://meyerweb.com/eric/tools/css/reset/
+<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5147c3"><meta name="theme-color" content="#ffffff"><link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet"><style>/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -2402,6 +2402,9 @@ a {
 li {
   list-style: none; }
 
+button {
+  cursor: pointer; }
+
 h1 {
   font-size: 2rem; }
 
@@ -4106,13 +4109,16 @@ window.loginRequest = () => {
       
       const qr = kjua({
         text: uri,
-        fill: '#FFFFFF',
+        fill: '#000000',
         size: 300,
         back: 'rgba(255,255,255,0)'
       })
 
       if(window.location.pathname === '/') {
         console.log(qr)
+
+        document.querySelector('.state-1').style.display='none';
+        document.querySelector('.state-2b1').style.display='block';
 
         // Create wrapping link for mobile touch
         let aTag = document.createElement('a')
@@ -4270,26 +4276,27 @@ const pollingLoop = (txHash, response, pendingCB, successCB) => {
 ////////////////////
 
 function togglePostLoggedIn_PORTAL_UI () {
+
+  $$('.state-2b2')[0].style.display='block';
   
-  $$('#kqr')[0].style.display = 'none'
+  $$('.state-2b1')[0].style.display = 'none'
+
+  console.log(window.loggedInUser)
 
   // JSON DATA
-  $$('#userProfileData')[0].innerHTML = 
+  $$('.user-data-payload')[0].innerHTML = 
     JSON.stringify(window.loggedInUser, undefined, 2)
   
   // AVATAR
   if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    $$('.user-wrap .avatar')[0].src = 
-      "data:image/png;base64, " + 
-      window.loggedInUser.avatar.data
+    $$('.status-user-box .user-pic')[0].src = 
+      "data:image/png;base64, " + window.loggedInUser.avatar.data
+  } else {
+     $$('.status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
   }
 
   // NAME
-  $$('.user-wrap .name')[0].innerHTML = 
-    window.loggedInUser.name;
-
-  $$('.data-wrap')[0].style.display = 'block'
-  $$('.user-wrap')[0].style.display = 'block'
+  $$('.status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
 }
 
 // function togglePostLoggedInUI () {
@@ -4303,8 +4310,8 @@ function toggleExistingDataLoad (data) {
   document.querySelectorAll('.sharesArea')[0].style.display = 'block'
 }
 
-
-// window.onload = () => {
-  window.loginRequest();
-// }
+function viewSample () {
+  document.querySelector('.state-2a.sample').style.display='block';
+  document.querySelector('.state-1').style.display='none';
+}
 </script></body></html>
