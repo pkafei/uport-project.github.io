@@ -26,6 +26,24 @@ header.header
           li.nav-item.nav-github
             a.nav-link(href="https://github.com/uport-project" target="_blank")
               span Github
+      //- script.
+      //-   $("#menu").hide();
+      //-   $("#menu-btn").click(function(){$("#menu").slideToggle();});
+
+      //- #menu-btn
+      //-   .menu-btn-line
+      //-   .menu-btn-line
+      //-   .menu-btn-line
+      //- nav#menu
+      //-   ul
+      //-     li What we do
+      //-     li About us
+      //-     li Data sets
+      //-     li Share your data
+      //-     li Latest news
+      //-     li Contact
+      //-     li Subscribe
+
 :sass
   .header {
     background: #34344F;
@@ -68,6 +86,12 @@ header.header
     .footer-right,
     .nav {
       flex: 1;
+    }
+
+    .nav {
+      @include breakpoint($pair) {
+        width: 100%;
+      }
     }
 
     .logo-link {
@@ -122,6 +146,80 @@ header.header
       display: flex;
       a {
         margin-left: 2rem;
+      }
+    }
+  }
+
+  /*Menu toggle button*/
+
+  #menu-btn {
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    width: 3em;
+    padding: 1.5em;
+    border-radius: 100%;
+    transition: all .2s ease-out;
+    &:hover {
+      cursor: pointer;
+      .menu-line {
+        background-color: #999999;
+      }
+    }
+    &:active {
+      box-shadow: 0 0 5px black;
+      background-color: #524a88;
+    }
+  }
+
+  /*Cursor on toggle button hover*/
+
+  /*Changing color of hamburger lines on hover*/
+
+  /*Styles for the hamburger lines*/
+
+  .menu-btn-line {
+    height: .5em;
+    background-color: #00FFCA;
+    margin-bottom: .5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /*No margin-bottom for last hamburger line.*/
+
+  /*List container*/
+
+  #menu {
+    position: absolute;
+    top: 7em;
+    left: 1em;
+    border: .5em solid #00FFCA;
+    width: 10em;
+    padding: 1em;
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style-type: none;
+        left: 0;
+        padding: .5em;
+        color: #00FFCA;
+        transition: all .3s ease-out;
+        &:last-child {
+          margin-top: .5em;
+          padding-top: 1em;
+          border-top: 1px solid #00FFCA;
+        }
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        &:active {
+          background-color: #00FFCA;
+          color: rgba(52, 73, 94, 1);
+        }
       }
     }
   }

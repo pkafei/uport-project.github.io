@@ -6,19 +6,6 @@
           .floatinglogo
           h1 Simple and secure login for your Ethereum app
           p.text-block Uport ID makes blockchain easy on desktop and mobile
-    //- .testdrive
-      //-   .inner-row
-      //-     .testdrive-focus
-      //-       h1 Connect Your uPort ID
-      //-       div (with the uPort app) 
-      //-       .ex-wrap
-      //-         #kqr
-      //-         .data-wrap
-      //-           pre#userProfileData
-      //-         .user-wrap
-      //-           .avatar-wrap
-      //-             img.avatar
-      //-             .name
     .area-white.alpha
       .inner-row
         .banner-box
@@ -112,24 +99,24 @@
       .inner-row
         h2 Why uPort?
         .explainer-section
-          img.exp-graphic(src='img/gives-users-control.svg')
+          img.exp-graphic(src='img/simple-to-integrate.svg')
           .exp-text
-            h3 Simple to integrate
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            h3 Give users control over their identity and data.
+            p Uport is Ethereum's identity platform. Self-sovereign, user centric keys and data management using Ethereum smart contracts. Support decentralized identity and user data. Self-sovereign identity platform built using Ethereum. User-centric data and reputation protocol.
     .area-lightgray.omega
       .inner-row
         .explainer-section
           .exp-text
-            h3 Gives users control
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          img.exp-graphic(src='img/hackproof.svg')
+            h3 User onboarding, single sign on, authentication, and signatures.
+            p Uport will help you scale your app beyond the technical ethereum developer community to more mainstream users.Ethereum apps force users to manage private keys and deal with complexities like interacting with gas. Uport eliminates most of this complexity from the equation, making your app truly scalable. Support for blockchain or server apps. Uport Connect... Accept digital signatures from users. 2FA, sign terms,
+          img.exp-graphic(src='img/gives-users-control.svg')
     .area-white.zeta
       .inner-row
         .explainer-section
-          img.exp-graphic(src='img/simple-to-integrate.svg')
+          img.exp-graphic(src='img/hackproof.svg')
           .exp-text
-            h3 Hackproof by design
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            h3 Support for blockchain and client-server apps.
+            p Your app likely requires users to securely interact with servers and smart contracts. That's why Uport supports users across Ethereum and client-server apps. We bridge Ethereum and the rest of the world.
     .content-shortcuts
       .inner-row
         img.logo(src='img/logo-white-2x.svg')
@@ -177,7 +164,6 @@
         position: relative;
         z-index: 2;
         overflow: visible;
-        // height: 350px;
       }
 
       .area-white { background: white; }
@@ -187,30 +173,63 @@
       .area-lightgray { * { color: #414141;} }
 
       .alpha {
-        .banner-text  { top: -120px; width: 500px; }
+        .banner-text  { 
+          top: -120px;
+          width: 500px; 
+          @include breakpoint ($pair) {
+            width: 100%; 
+          }
+        }
         .banner-box .banner-text { top: 0px;}
       }
 
       .delta,
       .omega,
       .zeta {
+        
         h2 {
           padding-top: 4rem;
+
+          @include breakpoint($pair) {
+            padding-top: 1rem;
+          }
         }
+        
         .explainer-section {
           display: flex;
           justify-content: space-between;
           max-width: 850px;
           margin: auto;
           padding: 6rem 0;
+          
           .exp-graphic {
             width: 250px;
-            // background: gray;
+
+            ~ .exp-text {
+              @include breakpoint($pair) {
+                margin-top: 2rem;
+              }
+            }
+            
+            @include breakpoint($pair) {
+              width: 100%;
+            }
           }
+          
           .exp-text {
             width: 500px;
             text-align: left;
+            
             p { margin-left: 0; }
+            
+            @include breakpoint($pair) {
+              width: 100%;
+            }
+          }
+
+          @include breakpoint($pair) {
+            padding: 1rem 0;
+            flex-direction: column;
           }
         }
       }
@@ -240,6 +259,10 @@
         z-index: 2;
         background: white;
         padding: 2rem;
+
+        @include breakpoint ($pair) {
+          width: 100%; 
+        }
       }
 
       .banner-text {
@@ -256,12 +279,16 @@
       }
 
       .example-box {
-        // border: 1px solid #D8D8E4;
         box-shadow: 0 0 4px 0 rgba(0,0,0,0.11);
         width: 920px;
         margin: auto;
         position: relative;
         top: -100px;
+
+        @include breakpoint($pair) {
+          width: 100%;
+        }
+
         .or {
           margin: 1rem 0;
         }
@@ -287,24 +314,41 @@
               max-width: 100%;
             }
             .thead {
-              .tr { display: flex; }
+              .tr { 
+                display: flex; 
+                @include breakpoint($pair) {
+                  flex-direction: column;
+                }
+              }
               .td{
                 font-family: courier;
                 background: white;
                 border-bottom: 0.5px solid #DDDDE7;
+
+                &:nth-child(2) { 
+                  @include breakpoint($pair) {
+                    display: none;
+                  }
+                }
               }
             }
             .tbody {
-              .tr { display: flex; }
-              .td { 
-                .example-demo-wrap { 
-                  overflow-x: hidden; 
-                  pre { color: black; }
+              .tr { 
+                display: flex;
+                @include breakpoint($pair) {
+                  flex-direction: column;
                 }
+              }
+              .td { 
                 padding: 1rem !important; 
                 background: white;
                 width: 50%;
                 min-height: 300px;
+
+                .example-demo-wrap { 
+                  overflow-x: hidden; 
+                  pre { color: black; }
+                }
 
                 .state-2a,
                 .state-2b1,
@@ -340,13 +384,29 @@
                   width: 300px;
                   font-weight: bold;
                 }
+
                 &:first-child {
                   background: #F9F9F9;
                 }
+
+                @include breakpoint($pair) {
+                  overflow-x: scroll;
+                  min-height: 0;
+                }
               }
             }
-            .td:nth-child(1) { width: 50%; }
-            .td:nth-child(2) { width: 50%; }
+            .td:nth-child(1) { 
+              width: 50%;
+              @include breakpoint($pair) {
+                width: 100%;
+              }
+            }
+            .td:nth-child(2) { 
+              width: 50%;
+              @include breakpoint($pair) {
+                width: 100%;
+              }
+            }
           }
 
       }
@@ -355,14 +415,12 @@
         font-size: 32px;
         width: 400px;
         margin: auto;
+        @include breakpoint($pair) {
+          width: 100%;
+        }
       }
       h2, h3, h4 {
         margin-top: 0;
-      }
-
-      .banner-text {
-        margin-bottom: 0;
-        padding-bottom: 1rem;
       }
 
       .splash{
@@ -382,80 +440,13 @@
           img.logo { max-width: 200px; }
         }
       }
-
-      .testdrive {
-        background: #333;
-        color: white;
-        position: relative;
-        z-index: 2;
-
-        .testdrive-focus {
-          margin: auto;
-        }
-
-        h1 {
-          margin-bottom: 0;
-        }
-
-        .ex-wrap {
-          display: flex;
-          margin: auto;
-          justify-content: center;
-
-          #kqr {
-            min-width: 300px;
-            min-height: 307px;
-          }
-
-          .data-wrap { margin-right: 3rem; }
-
-          .data-wrap, 
-          .user-wrap { 
-            display: none; 
-          }
-          
-          #userProfileData {
-            overflow: hidden !important;
-            overflow-y: scroll !important;
-            text-align: left;
-            margin: 0;
-            overflow: auto; 
-            padding: .5rem;
-            background: #222;
-            border: 3px solid white;
-            border-top-left-radius: 1rem;
-            border-bottom-left-radius: 1rem;
-            color: white;
-            width: 300px;
-            height: 300px;
-          }
-          .avatar-wrap {
-            background: #333;
-            border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-            border: 3px solid white;
-          }
-          .avatar { 
-            background: #222; 
-            display: block; 
-            height: 300px;
-            width: 300px;
-          }
-          .name {
-            position: absolute;
-            top: 70%;
-            z-index: 1;
-            background: rgba(0, 0, 0, 0.5);
-            width: 100%;
-          }
-        }
-      }
       
       .splash,
       .banner,
       .testdrive,
-      .content-shortcuts {
+      .content-shortcuts,
+      .area-white,
+      .area-lightgray {
         padding: 3rem 5rem;
         
         @include breakpoint($pair) {
@@ -466,6 +457,11 @@
       .banner {
         background: #3A3942;
         color: white;
+      }
+
+      .banner-text {
+        margin-bottom: 0;
+        padding-bottom: 1rem;
       }
 
       .text-block {
@@ -488,6 +484,7 @@
         img {
           display: inline-block;
           height: 75px;
+          min-width: 84px;
           margin-right: 1rem;
         }
 
@@ -508,7 +505,10 @@
           display: flex;
           justify-content: space-between;
           padding: 0;
-          // margin: 2rem;
+          
+          @include breakpoint($pair) {
+            flex-direction: column;
+          }
         }
         
         li {
@@ -517,6 +517,8 @@
           @include breakpoint($pair) {
             margin: 0rem !important;
             flex: 1 !important;
+            border-bottom: 1px solid #ccc;
+            padding: 1rem 0;
           }
 
           // @include breakpoint($pair) {}
