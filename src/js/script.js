@@ -51,6 +51,7 @@ const ifPage = (pagename, cb) => {
   location.origin + '/'+pagename + '.html' === location.href.split('#')[0]
     ? cb()
     : null
+  if(pagename === 'index' || pagename === 'portal'){cb()}
 }
 
 //////////////////////
@@ -322,6 +323,36 @@ function changeSideBarLinkClass(sidebarLink) {
 //////////////////////
 // ROUTER Logic
 //////////////////////
+
+ifPage('index', () => {
+  
+  // Scroll area
+  let portalDOM = mainDOM.querySelector('.portal')
+  
+  // Last know position
+  let lastScrollTop = 0;
+  
+  // Event listener
+  portalDOM.onscroll = () => { 
+
+    // Current position
+    let scrolltop = portalDOM.scrollTop;
+
+    // Clear pre-existing page-load state
+    if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}           
+
+    // Logic of scrolling up or down
+    if (scrolltop > lastScrollTop){ lastScrollTop = lastScrollTop + 1}
+    if (scrolltop < lastScrollTop){ lastScrollTop = lastScrollTop - 1}
+
+    // Set last known position
+    lastScrollTop = scrolltop;
+  
+    // Change the color 
+    headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';  
+  }
+})
+
 
 ifPage('guides', () => {
   analyticsPageFire('Guides')  

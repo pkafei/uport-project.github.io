@@ -2658,7 +2658,8 @@ main {
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
 </style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort </span><span>&nbsp;|&nbsp;</span><span style="font-weight:bold; font-size:1.2rem;">Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Help</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
-  background: #34344F; }
+  background: #34344F;
+  z-index: 2; }
   .header * {
     color: #F8F8F9; }
 
@@ -4009,6 +4010,7 @@ const ifPage = (pagename, cb) => {
   location.origin + '/'+pagename + '.html' === location.href.split('#')[0]
     ? cb()
     : null
+  if(pagename === 'index' || pagename === 'portal'){cb()}
 }
 
 //////////////////////
@@ -4280,6 +4282,36 @@ function changeSideBarLinkClass(sidebarLink) {
 //////////////////////
 // ROUTER Logic
 //////////////////////
+
+ifPage('index', () => {
+  
+  // Scroll area
+  let portalDOM = mainDOM.querySelector('.portal')
+  
+  // Last know position
+  let lastScrollTop = 0;
+  
+  // Event listener
+  portalDOM.onscroll = () => { 
+
+    // Current position
+    let scrolltop = portalDOM.scrollTop;
+
+    // Clear pre-existing page-load state
+    if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}           
+
+    // Logic of scrolling up or down
+    if (scrolltop > lastScrollTop){ lastScrollTop = lastScrollTop + 1}
+    if (scrolltop < lastScrollTop){ lastScrollTop = lastScrollTop - 1}
+
+    // Set last known position
+    lastScrollTop = scrolltop;
+  
+    // Change the color 
+    headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';  
+  }
+})
+
 
 ifPage('guides', () => {
   analyticsPageFire('Guides')  
