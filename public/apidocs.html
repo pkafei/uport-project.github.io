@@ -5398,25 +5398,24 @@ const pollingLoop = (txHash, response, pendingCB, successCB) => {
 function togglePostLoggedIn_PORTAL_UI () {
 
   $$('.state-2b2')[0].style.display='block';
-  
   $$('.state-2b1')[0].style.display = 'none'
 
   console.log(window.loggedInUser)
 
   // JSON DATA
-  $$('.user-data-payload')[0].innerHTML = 
+  $$('.state-2b2 .user-data-payload')[0].innerHTML = 
     JSON.stringify(window.loggedInUser, undefined, 2)
   
   // AVATAR
   if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    $$('.status-user-box .user-pic')[0].src = 
+    $$('.state-2b2 .status-user-box .user-pic')[0].src = 
       "data:image/png;base64, " + window.loggedInUser.avatar.data
   } else {
-     $$('.status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
+     $$('.state-2b2 .status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
   }
 
   // NAME
-  $$('.status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
+  $$('.state-2b2 .status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
 }
 
 // function togglePostLoggedInUI () {
