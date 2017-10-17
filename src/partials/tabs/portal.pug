@@ -106,10 +106,11 @@
     .area-lightgray.omega
       .inner-row
         .explainer-section
+          img.exp-graphic.mobile-only(src='img/gives-users-control.svg')
           .exp-text
             h3 User onboarding, single sign on, authentication, and signatures.
             p Uport will help you scale your app beyond the technical ethereum developer community to more mainstream users.Ethereum apps force users to manage private keys and deal with complexities like interacting with gas. Uport eliminates most of this complexity from the equation, making your app truly scalable. Support for blockchain or server apps. Uport Connect... Accept digital signatures from users. 2FA, sign terms,
-          img.exp-graphic(src='img/gives-users-control.svg')
+          img.exp-graphic.desktop-only(src='img/gives-users-control.svg')
     .area-white.zeta
       .inner-row
         .explainer-section
@@ -205,6 +206,20 @@
           
           .exp-graphic {
             width: 250px;
+            
+            &.mobile-only {
+              display: none;
+
+              @include breakpoint($pair) {
+                display: block;
+              }
+            }
+            
+            &.desktop-only {
+              @include breakpoint($pair) {
+                display: none;
+              }
+            }
 
             ~ .exp-text {
               @include breakpoint($pair) {

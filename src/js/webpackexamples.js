@@ -189,6 +189,13 @@ function setUser (credentials) {
   // Ropsten (network: 0x3)
   // Rinkeby (network: 0x4)
   // Kovan   (network: 0x42)
+
+  // Put the object into storage
+  localStorage.setItem('loggedInUser', JSON.stringify(window.loggedInUser));
+
+  var retrievedObject = JSON.parse(localStorage.getItem('loggedInUser'));
+
+  console.log('retrievedObject: ', retrievedObject);
   
   console.log("uPort master address: " + window.loggedInUser.address)
   console.log("uPort Rinkeby address: " + window.loggedInUser.rinkebyID)
@@ -269,6 +276,8 @@ function togglePostLoggedIn_PORTAL_UI () {
 
   // NAME
   $$('.state-2b2 .status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
+
+  window.showUserinHeader()
 }
 
 // function togglePostLoggedInUI () {

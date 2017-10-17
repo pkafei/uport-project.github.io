@@ -84,6 +84,43 @@ script.
       
       .nav-item {
         padding: 0 1rem;
+
+        .Luser {
+          position: relative;
+          cursor: pointer;
+
+          .Luser > * {
+            display: block;
+          }
+          .Luser-pic {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              border: 1px solid white;
+              margin-right: 1rem;
+            }
+          .Luser-menu {
+            
+            .log-out {
+              display: none;
+              background: #a4005b;
+              text-align: center;
+              border-radius: 8px;
+              border: 1px solid white;
+              position: absolute;
+              padding: .25rem 1rem;
+              
+              @include breakpoint($pair) {
+                display: block;
+                position: absolute;
+                top: 55px;
+                width: 100%;
+                margin-left: calc(-70px);
+                padding: .5rem 0;
+              }
+            }
+          }
+        }
         
         @include breakpoint($pair) {
           padding: 1rem 2rem;

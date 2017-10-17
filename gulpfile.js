@@ -84,8 +84,7 @@ gulp.task('browser-sync', ['pug'], () => {
       //   "/gitter": "gitter.html",
       // }
     },
-    open: false,
-    notify: true
+    open: false
   });
 });
 
