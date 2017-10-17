@@ -3755,7 +3755,7 @@ const ifPage = (pagename, cb) => {
 }
 
 const toggleVisible = (elem) => {
-  if(elem.style.display === 'none') {
+  if(elem.style.display === 'none' || elem.style.display === '') {
     show(elem)
   } else {
     hide(elem)
