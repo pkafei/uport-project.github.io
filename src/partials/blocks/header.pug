@@ -26,32 +26,27 @@ header.header
           li.nav-item.nav-github
             a.nav-link(href="https://github.com/uport-project" target="_blank")
               span Github
-      //- script.
-      //-   $("#menu").hide();
-      //-   $("#menu-btn").click(function(){$("#menu").slideToggle();});
-
-      //- #menu-btn
-      //-   .menu-btn-line
-      //-   .menu-btn-line
-      //-   .menu-btn-line
-      //- nav#menu
-      //-   ul
-      //-     li What we do
-      //-     li About us
-      //-     li Data sets
-      //-     li Share your data
-      //-     li Latest news
-      //-     li Contact
-      //-     li Subscribe
-
+      #menu-btn
+        .menu-btn-line
+        .menu-btn-line
+        .menu-btn-line
+script.
+  document.querySelector("#menu-btn").onclick = (evt) => {
+    document.querySelector(".header .nav").classList.contains('active-touch')
+      ? document.querySelector(".header .nav").classList.remove('active-touch')
+      : document.querySelector(".header .nav").classList.add('active-touch');
+  }
 :sass
+  @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+  $pair: 320px 794px;
+  
   .header {
     background: #34344F;
-    z-index: 2;
-    * { 
-      color: #F8F8F9;
-    }
+    z-index: 2000;
+  
+    * { color: #F8F8F9; }
   }
+  
   .header,
   .footer {
     position: relative;
@@ -80,6 +75,48 @@ header.header
     .nav {
       justify-content: flex-end;
       display: flex;
+
+      .nav-list li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .nav-item {
+        padding: 0 1rem;
+        
+        @include breakpoint($pair) {
+          padding: 1rem 2rem;
+        }
+
+        &.active {
+          background: #3A3942;
+          border-radius: 4px;
+        
+          * { color: white; }
+        
+          &:hover { 
+            * { text-decoration: none; }
+          }
+        }
+      }
+
+      @include breakpoint($pair) {
+        display: none;
+
+        &.active-touch {
+          display: block;
+          position: fixed;
+          z-index: 2000;
+          top: 4rem;
+          right: 1rem;
+          background: lighten(#2E2E46, 20%);
+          border: 1px solid white;
+          border-radius: 8px;
+          padding: .5rem;
+          li { display: block; }
+        }
+      }
     }
 
     .header-right,
@@ -88,9 +125,9 @@ header.header
       flex: 1;
     }
 
-    .nav {
+    .header-right {
       @include breakpoint($pair) {
-        width: 100%;
+        justify-content: flex-end;
       }
     }
 
@@ -104,122 +141,55 @@ header.header
         vertical-align: baseline;
       }
     }
-
-    .logo-link,
-    .nav-item {
-      // min-height: 50px;
-    }
-
-    .nav-item {
-      padding: 0 1rem;
-    }
-
-    .nav-list,
-    .nav-list li,
-    .nav-list li a,
-    .user-area,
-    .user-area .sign-in-link,
-    .legal-area a {
-      //- height: 100%;
-    }
-    
-    .nav-item {
-      &.active {
-        background: #3A3942;
-        border-radius: 4px;
-        * { color: white; }
-        &:hover { 
-          * { text-decoration: none; }
-        }
-      }
-    }
-    
-    .nav-list li a,
-    .sign-in-link,
-    .legal-area a {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .legal-area {
-      display: flex;
-      a {
-        margin-left: 2rem;
-      }
-    }
   }
 
   /*Menu toggle button*/
-
   #menu-btn {
     position: absolute;
-    left: 1em;
-    top: 1em;
     width: 3em;
-    padding: 1.5em;
+    height: 3em;
+    top: 1.5em;
+    background: lighten(#2E2E46, 20%);
+    border: 3px solid white;
     border-radius: 100%;
     transition: all .2s ease-out;
+    z-index: 101;
+    text-align: right;
+    display: none;
+    
+    @include breakpoint($pair) {
+      display: block;
+    }
+
     &:hover {
       cursor: pointer;
       .menu-line {
         background-color: #999999;
       }
     }
+
     &:active {
       box-shadow: 0 0 5px black;
       background-color: #524a88;
     }
   }
 
-  /*Cursor on toggle button hover*/
-
-  /*Changing color of hamburger lines on hover*/
-
-  /*Styles for the hamburger lines*/
-
   .menu-btn-line {
-    height: .5em;
-    background-color: #00FFCA;
-    margin-bottom: .5em;
+    height: 3px;
+    background-color: white;
+    position: relative;
+    z-index: 20002;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 3px;
+    display: block;
+
+    &:first-child {
+      margin-top: 9px;
+    }
+    
     &:last-child {
       margin-bottom: 0;
     }
   }
 
-  /*No margin-bottom for last hamburger line.*/
-
-  /*List container*/
-
-  #menu {
-    position: absolute;
-    top: 7em;
-    left: 1em;
-    border: .5em solid #00FFCA;
-    width: 10em;
-    padding: 1em;
-    ul {
-      padding: 0;
-      margin: 0;
-      li {
-        list-style-type: none;
-        left: 0;
-        padding: .5em;
-        color: #00FFCA;
-        transition: all .3s ease-out;
-        &:last-child {
-          margin-top: .5em;
-          padding-top: 1em;
-          border-top: 1px solid #00FFCA;
-        }
-        &:hover {
-          cursor: pointer;
-          text-decoration: underline;
-        }
-        &:active {
-          background-color: #00FFCA;
-          color: rgba(52, 73, 94, 1);
-        }
-      }
-    }
-  }

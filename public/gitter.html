@@ -2657,9 +2657,13 @@ main {
         border-radius: 5px; }
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort </span><span>&nbsp;|&nbsp;</span><span style="font-weight:bold; font-size:1.2rem;">Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Help</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort </span><span>&nbsp;|&nbsp;</span><span style="font-weight:bold; font-size:1.2rem;">Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Help</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div id="menu-btn"><div class="menu-btn-line"></div><div class="menu-btn-line"></div><div class="menu-btn-line"></div></div></div></div></header><script>document.querySelector("#menu-btn").onclick = (evt) => {
+  document.querySelector(".header .nav").classList.contains('active-touch')
+    ? document.querySelector(".header .nav").classList.remove('active-touch')
+    : document.querySelector(".header .nav").classList.add('active-touch');
+}</script><style>.header {
   background: #34344F;
-  z-index: 2; }
+  z-index: 2000; }
   .header * {
     color: #F8F8F9; }
 
@@ -2693,6 +2697,46 @@ main {
   .footer .nav {
     justify-content: flex-end;
     display: flex; }
+    .header .nav .nav-list li a,
+    .footer .nav .nav-list li a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+    .header .nav .nav-item,
+    .footer .nav .nav-item {
+      padding: 0 1rem; }
+      @media (min-width: 320px) and (max-width: 794px) {
+        .header .nav .nav-item,
+        .footer .nav .nav-item {
+          padding: 1rem 2rem; } }
+      .header .nav .nav-item.active,
+      .footer .nav .nav-item.active {
+        background: #3A3942;
+        border-radius: 4px; }
+        .header .nav .nav-item.active *,
+        .footer .nav .nav-item.active * {
+          color: white; }
+        .header .nav .nav-item.active:hover *,
+        .footer .nav .nav-item.active:hover * {
+          text-decoration: none; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .header .nav,
+      .footer .nav {
+        display: none; }
+        .header .nav.active-touch,
+        .footer .nav.active-touch {
+          display: block;
+          position: fixed;
+          z-index: 2000;
+          top: 4rem;
+          right: 1rem;
+          background: #565684;
+          border: 1px solid white;
+          border-radius: 8px;
+          padding: .5rem; }
+          .header .nav.active-touch li,
+          .footer .nav.active-touch li {
+            display: block; } }
   .header .header-right,
   .header .footer-right,
   .header .nav,
@@ -2700,6 +2744,10 @@ main {
   .footer .footer-right,
   .footer .nav {
     flex: 1; }
+  @media (min-width: 320px) and (max-width: 794px) {
+    .header .header-right,
+    .footer .header-right {
+      justify-content: flex-end; } }
   .header .logo-link,
   .footer .logo-link {
     padding-right: 2rem; }
@@ -2710,34 +2758,44 @@ main {
     .footer .logo-link * {
       display: inline-block;
       vertical-align: baseline; }
-  .header .nav-item,
-  .footer .nav-item {
-    padding: 0 1rem; }
-  .header .nav-item.active,
-  .footer .nav-item.active {
-    background: #3A3942;
-    border-radius: 4px; }
-    .header .nav-item.active *,
-    .footer .nav-item.active * {
-      color: white; }
-    .header .nav-item.active:hover *,
-    .footer .nav-item.active:hover * {
-      text-decoration: none; }
-  .header .nav-list li a,
-  .header .sign-in-link,
-  .header .legal-area a,
-  .footer .nav-list li a,
-  .footer .sign-in-link,
-  .footer .legal-area a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-  .header .legal-area,
-  .footer .legal-area {
-    display: flex; }
-    .header .legal-area a,
-    .footer .legal-area a {
-      margin-left: 2rem; }
+
+/*Menu toggle button*/
+#menu-btn {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  top: 1.5em;
+  background: #565684;
+  border: 3px solid white;
+  border-radius: 100%;
+  transition: all .2s ease-out;
+  z-index: 101;
+  text-align: right;
+  display: none; }
+  @media (min-width: 320px) and (max-width: 794px) {
+    #menu-btn {
+      display: block; } }
+  #menu-btn:hover {
+    cursor: pointer; }
+    #menu-btn:hover .menu-line {
+      background-color: #999999; }
+  #menu-btn:active {
+    box-shadow: 0 0 5px black;
+    background-color: #524a88; }
+
+.menu-btn-line {
+  height: 3px;
+  background-color: white;
+  position: relative;
+  z-index: 20002;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 3px;
+  display: block; }
+  .menu-btn-line:first-child {
+    margin-top: 9px; }
+  .menu-btn-line:last-child {
+    margin-bottom: 0; }
 </style><main class="main gitter"><div class="gitter"><div class="pagewrap"><div class="content"><div class="loading-wrapper-parent"><div class="loading-wrapper"><div class="loader"></div></div><div id="gitterinject"></div></div></div></div></div></main><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
 /* **********************************************
      Begin prism-core.js
