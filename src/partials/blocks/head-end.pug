@@ -245,7 +245,10 @@ include ../mixins/iframeloader
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    > * { display: none; }
+    > * { 
+      display: none;
+      -webkit-overflow-scrolling: touch;
+    }
 
     // &.portal .portal { display: flex; flex-direction: column; flex: 1;}
     &.portal .portal {
