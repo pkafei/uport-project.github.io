@@ -84,15 +84,14 @@ gulp.task('browser-sync', ['pug'], () => {
       //   "/gitter": "gitter.html",
       // }
     },
-    open: false,
-    notify: true
+    open: false
   });
 });
 
 ////////////////////////
 // IMAGES
 ////////////////////////
-gulp.task('image', () => {
+gulp.task('images', () => {
   return gulp.src(paths.images + '*')
     .pipe(image())
     .pipe(gulp.dest(paths.img));

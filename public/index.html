@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><style>/* http://meyerweb.com/eric/tools/css/reset/
+<!DOCTYPE html><html><head><title>UPort Documentation</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5147c3"><meta name="theme-color" content="#ffffff"><link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet"><style>/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -2373,7 +2373,7 @@ pre[class*="language-"] {
   overflow: hidden; }
 
 body {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   color: #555;
   font-size: 100%;
   line-height: 1.5;
@@ -2401,6 +2401,9 @@ a {
 
 li {
   list-style: none; }
+
+button {
+  cursor: pointer; }
 
 h1 {
   font-size: 2rem; }
@@ -2466,11 +2469,8 @@ table {
   table tbody tr:nth-child(odd) {
     background: rgba(171, 189, 203, 0.3); }
 
-pre {
-  margin-bottom: 2rem !important; }
-
 pre[class*="language-"], code {
-  overflow-x: hidden; }
+  overflow-x: scroll; }
 
 iframe {
   position: relative;
@@ -2550,12 +2550,17 @@ main {
   overflow: hidden;
   /*---- iFrame Pages ------ */ }
   main > * {
-    display: none; }
+    display: none;
+    -webkit-overflow-scrolling: touch; }
   main.portal .portal {
     overflow-y: scroll;
     display: block; }
     main.portal .portal .pagewrap {
-      display: block; }
+      display: block;
+      max-width: 100%; }
+      main.portal .portal .pagewrap .inner-row {
+        max-width: 1260px;
+        margin: auto; }
   main.guides .guides,
   main.apidocs .apidocs,
   main.tools .tools,
@@ -2653,17 +2658,21 @@ main {
         border-radius: 5px; }
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort | Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Gitter</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav></div></div></header><style>.header {
-  background: #616069; }
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort </span><span>&nbsp;|&nbsp;</span><span style="font-weight:bold; font-size:1.2rem;">Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Help</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div id="menu-btn"><div class="menu-btn-line"></div><div class="menu-btn-line"></div><div class="menu-btn-line"></div></div></div></div></header><script>document.querySelector("#menu-btn").onclick = (evt) => {
+  document.querySelector(".header .nav").classList.contains('active-touch')
+    ? document.querySelector(".header .nav").classList.remove('active-touch')
+    : document.querySelector(".header .nav").classList.add('active-touch');
+}</script><style>.header {
+  background: #34344F;
+  z-index: 2000; }
   .header * {
-    color: white; }
+    color: #F8F8F9; }
 
 .header,
 .footer {
   position: relative;
-  border-bottom: 1px solid #333;
   justify-content: center;
-  padding: 10px 1rem 10px;
+  padding: 1.5rem 1rem;
   font-size: .8rem; }
   .header *,
   .footer * {
@@ -2685,6 +2694,82 @@ main {
     flex-direction: row;
     max-width: 1260px;
     margin: auto; }
+  .header .nav,
+  .footer .nav {
+    justify-content: flex-end;
+    display: flex; }
+    .header .nav .nav-list li a,
+    .footer .nav .nav-list li a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+    .header .nav .nav-item,
+    .footer .nav .nav-item {
+      padding: 0 1rem; }
+      .header .nav .nav-item .Luser,
+      .footer .nav .nav-item .Luser {
+        position: relative;
+        cursor: pointer; }
+        .header .nav .nav-item .Luser .Luser > *,
+        .footer .nav .nav-item .Luser .Luser > * {
+          display: block; }
+        .header .nav .nav-item .Luser .Luser-pic,
+        .footer .nav .nav-item .Luser .Luser-pic {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: 1px solid white;
+          margin-right: 1rem; }
+        .header .nav .nav-item .Luser .Luser-menu .log-out,
+        .footer .nav .nav-item .Luser .Luser-menu .log-out {
+          display: none;
+          background: #a4005b;
+          text-align: center;
+          border-radius: 8px;
+          border: 1px solid white;
+          position: absolute;
+          padding: .25rem 1rem; }
+          @media (min-width: 320px) and (max-width: 794px) {
+            .header .nav .nav-item .Luser .Luser-menu .log-out,
+            .footer .nav .nav-item .Luser .Luser-menu .log-out {
+              display: block;
+              position: absolute;
+              top: 55px;
+              width: 100%;
+              margin-left: calc(-70px);
+              padding: .5rem 0; } }
+      @media (min-width: 320px) and (max-width: 794px) {
+        .header .nav .nav-item,
+        .footer .nav .nav-item {
+          padding: 1rem 2rem; } }
+      .header .nav .nav-item.active,
+      .footer .nav .nav-item.active {
+        background: #3A3942;
+        border-radius: 4px; }
+        .header .nav .nav-item.active *,
+        .footer .nav .nav-item.active * {
+          color: white; }
+        .header .nav .nav-item.active:hover *,
+        .footer .nav .nav-item.active:hover * {
+          text-decoration: none; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .header .nav,
+      .footer .nav {
+        display: none; }
+        .header .nav.active-touch,
+        .footer .nav.active-touch {
+          display: block;
+          position: fixed;
+          z-index: 2000;
+          top: 4rem;
+          right: 1rem;
+          background: #565684;
+          border: 1px solid white;
+          border-radius: 8px;
+          padding: .5rem; }
+          .header .nav.active-touch li,
+          .footer .nav.active-touch li {
+            display: block; } }
   .header .header-right,
   .header .footer-right,
   .header .nav,
@@ -2692,145 +2777,383 @@ main {
   .footer .footer-right,
   .footer .nav {
     flex: 1; }
+  @media (min-width: 320px) and (max-width: 794px) {
+    .header .header-right,
+    .footer .header-right {
+      justify-content: flex-end; } }
   .header .logo-link,
   .footer .logo-link {
     padding-right: 2rem; }
-  .header .nav-item,
-  .footer .nav-item {
-    padding: 0 1rem; }
-  .header .nav-item.active,
-  .footer .nav-item.active {
-    background: #3A3942;
-    border-radius: 4px; }
-    .header .nav-item.active *,
-    .footer .nav-item.active * {
-      color: white; }
-    .header .nav-item.active:hover *,
-    .footer .nav-item.active:hover * {
-      text-decoration: none; }
-  .header .logo-link,
-  .header .nav-list li a,
-  .header .sign-in-link,
-  .header .legal-area a,
-  .footer .logo-link,
-  .footer .nav-list li a,
-  .footer .sign-in-link,
-  .footer .legal-area a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
-  .header .legal-area,
-  .footer .legal-area {
-    display: flex; }
-    .header .legal-area a,
-    .footer .legal-area a {
-      margin-left: 2rem; }
-</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="splash-focus"><img class="logo" src="img/logo-white-2x.svg"><p class="text-block">Self-sovereign ID enables you to collect verifications, log-in without passwords, digitally sign transactions, and interact with Ethereum applications.</p></div></div><div class="testdrive"><div class="testdrive-focus"><h1>Connect Your uPort ID</h1><div>(with the uPort app) </div><div class="ex-wrap"><div id="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div><div class="banner"><div class="banner-text"><h1>Get started developing with Uport</h1><p class="text-block">uPort is a decentralized identity platform built on Ethereum. Explore our docs for more</p></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><div class="number"><span class="number-text">1</span></div><i class="fa fa-id-badge"></i><div class="step-desc">Download the mobile app</div></a></li><li class="beta"><a href="/guides.html#register-your-app"><div class="number"><span class="number-text">2</span></div><i class="fa fa-id-card"></i><div class="step-desc">Register Your App</div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><div class="number"><span class="number-text">3</span></div><i class="fa fa-laptop"></i><div class="step-desc">Install the Libraries / SDK's</div></a></li></ul></div></div><div class="content-shortcuts"><ul><li class="guides"><div class="shortcut-wrap"><i class="fa fa-newspaper-o"></i><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><i class="fa fa-book"></i><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li></ul></div></div></div><style>.portal {
+    .header .logo-link span:first-child,
+    .footer .logo-link span:first-child {
+      font-size: 1rem; }
+    .header .logo-link *,
+    .footer .logo-link * {
+      display: inline-block;
+      vertical-align: baseline; }
+
+/*Menu toggle button*/
+#menu-btn {
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  top: 1.5em;
+  background: #565684;
+  border: 3px solid white;
+  border-radius: 100%;
+  transition: all .2s ease-out;
+  z-index: 101;
+  text-align: right;
+  display: none; }
+  @media (min-width: 320px) and (max-width: 794px) {
+    #menu-btn {
+      display: block; } }
+  #menu-btn:hover {
+    cursor: pointer; }
+    #menu-btn:hover .menu-line {
+      background-color: #999999; }
+  #menu-btn:active {
+    box-shadow: 0 0 5px black;
+    background-color: #524a88; }
+
+.menu-btn-line {
+  height: 3px;
+  background-color: white;
+  position: relative;
+  z-index: 20002;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 3px;
+  display: block; }
+  .menu-btn-line:first-child {
+    margin-top: 9px; }
+  .menu-btn-line:last-child {
+    margin-bottom: 0; }
+</style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="inner-row"><div class="splash-focus"><div class="floatinglogo"></div><h1>Simple and secure login for your Ethereum app</h1><p class="text-block">Uport ID makes blockchain easy on desktop and mobile</p></div></div></div><div class="area-white alpha"><div class="inner-row"><div class="banner-box"><div class="banner-text"><h2>Start developing today</h2></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><img src="img/download-uport.svg"><div class="step-wrap"><div class="step-title">Download uPort Mobile</div><div class="step-desc">Download the uPort mobile app and create your identity on the blockchain.</div></div></a></li><li class="beta"><a href="/guides.html#register-your-app"><img src="img/register-app.svg"><div class="step-wrap"><div class="step-title">Register your app</div><div class="step-desc">Go to uPort AppManager, connect using uPort mobile and register your applicaton.</div></div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><img src="img/install-sdk.svg"><div class="step-wrap"><div class="step-title">Install the libraries / SDK's</div><div class="step-desc">Get started developing with uPort installing the required libraries and SDK's.</div></div></a></li></ul></div></div><div class="banner-text"><h2>Try Our Demo</h2><p>After you've downloaded uPort, you can try our demo right away or simply review the code.</p></div></div></div><div class="area-lightgray beta"><div class="inner-row"><div class="example-box"><div class="table"><div class="thead"><div class="tr"><div class="td">Code</div><div class="td">Result</div></div></div><div class="tbody"><div class="tr"><div class="td"><pre>// basic code to "log in" a user by
+// requesting certain data attributes
+ 
+ <code>uport.requestCredentials({
+ requested: ['name', 'avatar', 'phone', 'country'],
+ notifcations: true
+})</code></pre></div><div class="td example-demo"><div class="example-demo-wrap"><div class="state-1 choose"><h3>Login with uPort</h3><button class="btn sample-choice" onclick="viewSample()">View sample uPort ID</button><div class="or">or</div><button class="btn connect-choice" onclick="loginRequest()">Connect with your uPort ID</button></div><div class="state-2a sample"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="https://placekitten.com/75/75"><div class="user-name">Phoebe Olson </div></div><div class="user-data-text">User Data</div><pre class="user-data-payload">{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "publicKey": "0x044c31ed1499dce76ee7711c72388fda86e6c1d4f9ecc105c4abe2f63cfe79638822dcf21b7c29b3d208fc01d4e0506d4e8f6234a912727a36cf347e61956d5f2f",
+  "publicEncKey": "Py+NXzHgacNMTzj9Ufe4S2KPuzR39dDMd1o+rWBJnmM=",
+  "name": "Christian Jeria"
+}</pre></div><div class="state-2b1 qr-scan"><h3>Scan QR with uPort Mobile app</h3><div id="kqr"></div></div><div class="state-2b2 results"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="#"><div class="user-name"> </div></div><div class="user-data-text">User Data</div><pre class="user-data-payload"></pre></div></div></div></div></div></div></div><div class="banner-text download"><h2>Download uPort</h2><p>Download uPort to try our demo and beign testing within your app.</p><a href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8"><img src="img/app-store-badge.svg" alt="ios app store"></a><a href="https://play.google.com/store/apps/details?id=com.uportMobile&amp;hl=en"><img src="img/google-play-badge.svg" alt="andoird play store"></a></div></div></div><div class="area-white delta"><div class="inner-row"><h2>Why uPort?</h2><div class="explainer-section"><img class="exp-graphic" src="img/gives-users-control.svg"><div class="exp-text"><h3>Give users control over their identity and data.</h3><p>Uport is Ethereum's identity platform. Self-sovereign, user centric keys and data management using Ethereum smart contracts. Support decentralized identity and user data. Self-sovereign identity platform built using Ethereum. User-centric data and reputation protocol.</p></div></div></div></div><div class="area-lightgray omega"><div class="inner-row"><div class="explainer-section"><img class="exp-graphic mobile-only" src="img/simple-to-integrate.svg"><div class="exp-text"><h3>User onboarding, single sign on, authentication, and signatures.</h3><p>Uport will help you scale your app beyond the technical ethereum developer community to more mainstream users.Ethereum apps force users to manage private keys and deal with complexities like interacting with gas. Uport eliminates most of this complexity from the equation, making your app truly scalable. Support for blockchain or server apps. Uport Connect... Accept digital signatures from users. 2FA, sign terms,</p></div><img class="exp-graphic desktop-only" src="img/simple-to-integrate.svg"></div></div></div><div class="area-white zeta"><div class="inner-row"><div class="explainer-section"><img class="exp-graphic" src="img/hackproof.svg"><div class="exp-text"><h3>Support for blockchain and client-server apps.</h3><p>Your app likely requires users to securely interact with servers and smart contracts. That's why Uport supports users across Ethereum and client-server apps. We bridge Ethereum and the rest of the world.</p></div></div></div></div><div class="content-shortcuts"><div class="inner-row"><img class="logo" src="img/logo-white-2x.svg"><ul><li class="guides"><div class="shortcut-wrap"><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li><script>document.querySelector('header').style.background = 'none'
+document.querySelector('body').style.background = '#34344F'</script></ul></div></div></div></div><style>.portal {
   text-align: center; }
-  .portal .splash {
-    background: #5756C3;
-    color: white; }
-    .portal .splash .splash-focus {
+  .portal .pagewrap .area-white,
+  .portal .pagewrap .area-lightgray {
+    position: relative;
+    z-index: 2;
+    overflow: visible; }
+  .portal .pagewrap .area-white {
+    background: white; }
+  .portal .pagewrap .area-lightgray {
+    background: #F6F6F8; }
+  .portal .pagewrap .area-white *,
+  .portal .pagewrap .area-lightgray * {
+    color: #414141; }
+  .portal .pagewrap .alpha .banner-text {
+    top: -120px;
+    width: 500px; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .pagewrap .alpha .banner-text {
+        width: 100%; } }
+  .portal .pagewrap .alpha .banner-box .banner-text {
+    top: 0px; }
+  .portal .pagewrap .delta h2,
+  .portal .pagewrap .omega h2,
+  .portal .pagewrap .zeta h2 {
+    padding-top: 4rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .pagewrap .delta h2,
+      .portal .pagewrap .omega h2,
+      .portal .pagewrap .zeta h2 {
+        padding-top: 1rem; } }
+  .portal .pagewrap .delta .explainer-section,
+  .portal .pagewrap .omega .explainer-section,
+  .portal .pagewrap .zeta .explainer-section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 850px;
+    margin: auto;
+    padding: 6rem 0; }
+    .portal .pagewrap .delta .explainer-section .exp-graphic,
+    .portal .pagewrap .omega .explainer-section .exp-graphic,
+    .portal .pagewrap .zeta .explainer-section .exp-graphic {
+      width: 250px; }
+      .portal .pagewrap .delta .explainer-section .exp-graphic.mobile-only,
+      .portal .pagewrap .omega .explainer-section .exp-graphic.mobile-only,
+      .portal .pagewrap .zeta .explainer-section .exp-graphic.mobile-only {
+        display: none; }
+        @media (min-width: 320px) and (max-width: 794px) {
+          .portal .pagewrap .delta .explainer-section .exp-graphic.mobile-only,
+          .portal .pagewrap .omega .explainer-section .exp-graphic.mobile-only,
+          .portal .pagewrap .zeta .explainer-section .exp-graphic.mobile-only {
+            display: block; } }
+      @media (min-width: 320px) and (max-width: 794px) {
+        .portal .pagewrap .delta .explainer-section .exp-graphic.desktop-only,
+        .portal .pagewrap .omega .explainer-section .exp-graphic.desktop-only,
+        .portal .pagewrap .zeta .explainer-section .exp-graphic.desktop-only {
+          display: none; } }
+      @media (min-width: 320px) and (max-width: 794px) {
+        .portal .pagewrap .delta .explainer-section .exp-graphic ~ .exp-text,
+        .portal .pagewrap .omega .explainer-section .exp-graphic ~ .exp-text,
+        .portal .pagewrap .zeta .explainer-section .exp-graphic ~ .exp-text {
+          margin-top: 2rem; } }
+      @media (min-width: 320px) and (max-width: 794px) {
+        .portal .pagewrap .delta .explainer-section .exp-graphic,
+        .portal .pagewrap .omega .explainer-section .exp-graphic,
+        .portal .pagewrap .zeta .explainer-section .exp-graphic {
+          width: 100%; } }
+    .portal .pagewrap .delta .explainer-section .exp-text,
+    .portal .pagewrap .omega .explainer-section .exp-text,
+    .portal .pagewrap .zeta .explainer-section .exp-text {
+      width: 500px;
+      text-align: left; }
+      .portal .pagewrap .delta .explainer-section .exp-text p,
+      .portal .pagewrap .omega .explainer-section .exp-text p,
+      .portal .pagewrap .zeta .explainer-section .exp-text p {
+        margin-left: 0; }
+      @media (min-width: 320px) and (max-width: 794px) {
+        .portal .pagewrap .delta .explainer-section .exp-text,
+        .portal .pagewrap .omega .explainer-section .exp-text,
+        .portal .pagewrap .zeta .explainer-section .exp-text {
+          width: 100%; } }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .pagewrap .delta .explainer-section,
+      .portal .pagewrap .omega .explainer-section,
+      .portal .pagewrap .zeta .explainer-section {
+        padding: 1rem 0;
+        flex-direction: column; } }
+  .portal .pagewrap .floatinglogo {
+    position: fixed;
+    top: -3%;
+    left: 50%;
+    margin-left: -30%;
+    background-image: url(img/logo-white-2x.svg);
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    width: 400px;
+    height: 360px;
+    z-index: 1;
+    opacity: .06; }
+  .portal .pagewrap .banner-box {
+    border: 1px solid #D8D8E4;
+    width: 1000px;
+    margin: auto;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+    position: relative;
+    top: -170px;
+    z-index: 2;
+    background: white;
+    padding: 2rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .pagewrap .banner-box {
+        width: 100%; } }
+  .portal .pagewrap .banner-text {
+    position: relative;
+    margin: auto; }
+    .portal .pagewrap .banner-text.download {
+      padding: 0 0 6rem 0; }
+      .portal .pagewrap .banner-text.download img {
+        margin-right: 2rem; }
+      .portal .pagewrap .banner-text.download p {
+        margin: 2rem 0; }
+  .portal .pagewrap .example-box {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+    width: 920px;
+    margin: auto;
+    position: relative;
+    top: -100px; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .pagewrap .example-box {
+        width: 100%; } }
+    .portal .pagewrap .example-box .or {
+      margin: 1rem 0; }
+    .portal .pagewrap .example-box .btn {
+      width: 250px;
+      border-radius: 2px;
+      background-color: #5C58CA;
+      color: #FFFFFF;
+      border-radius: 4px;
+      padding: 1rem;
+      border: none;
+      font-size: 1rem; }
+    .portal .pagewrap .example-box .table {
+      width: 100%;
+      border: none; }
+      .portal .pagewrap .example-box .table pre, .portal .pagewrap .example-box .table code, .portal .pagewrap .example-box .table .thead {
+        text-align: left; }
+      .portal .pagewrap .example-box .table pre {
+        margin: 0;
+        color: #939393;
+        max-width: 100%; }
+      .portal .pagewrap .example-box .table .thead .tr {
+        display: flex; }
+        @media (min-width: 320px) and (max-width: 794px) {
+          .portal .pagewrap .example-box .table .thead .tr {
+            flex-direction: column; } }
+      .portal .pagewrap .example-box .table .thead .td {
+        font-family: courier;
+        background: white;
+        border-bottom: 0.5px solid #DDDDE7; }
+        @media (min-width: 320px) and (max-width: 794px) {
+          .portal .pagewrap .example-box .table .thead .td:nth-child(2) {
+            display: none; } }
+      .portal .pagewrap .example-box .table .tbody .tr {
+        display: flex; }
+        @media (min-width: 320px) and (max-width: 794px) {
+          .portal .pagewrap .example-box .table .tbody .tr {
+            flex-direction: column; } }
+      .portal .pagewrap .example-box .table .tbody .td {
+        padding: 1rem !important;
+        background: white;
+        width: 50%;
+        min-height: 300px; }
+        .portal .pagewrap .example-box .table .tbody .td .example-demo-wrap {
+          overflow-x: hidden; }
+          .portal .pagewrap .example-box .table .tbody .td .example-demo-wrap pre {
+            color: black; }
+        .portal .pagewrap .example-box .table .tbody .td .state-2a,
+        .portal .pagewrap .example-box .table .tbody .td .state-2b1,
+        .portal .pagewrap .example-box .table .tbody .td .state-2b2 {
+          display: none; }
+        .portal .pagewrap .example-box .table .tbody .td .status-text,
+        .portal .pagewrap .example-box .table .tbody .td .user-data-text {
+          text-align: left;
+          margin: 1rem 0; }
+        .portal .pagewrap .example-box .table .tbody .td .status-user-box {
+          border-radius: 4px;
+          border: 0.5px solid #DDDDE7;
+          display: flex;
+          align-items: center;
+          padding: 1rem;
+          margin: 1rem 0; }
+        .portal .pagewrap .example-box .table .tbody .td .status-text {
+          margin-top: 0; }
+        .portal .pagewrap .example-box .table .tbody .td .user-name {
+          font-weight: bold;
+          font-size: 1.3rem; }
+        .portal .pagewrap .example-box .table .tbody .td .user-pic {
+          border-radius: 50%;
+          margin-right: 1rem;
+          height: 75px;
+          width: 75px;
+          background: gray; }
+        .portal .pagewrap .example-box .table .tbody .td .user-data-payload {
+          overflow-y: scroll;
+          overflow-x: hidden;
+          height: 200px; }
+        .portal .pagewrap .example-box .table .tbody .td code {
+          font-family: courier;
+          font-size: 14px;
+          width: 300px;
+          font-weight: bold; }
+        .portal .pagewrap .example-box .table .tbody .td:first-child {
+          background: #F9F9F9; }
+        @media (min-width: 320px) and (max-width: 794px) {
+          .portal .pagewrap .example-box .table .tbody .td {
+            overflow-x: scroll;
+            min-height: 0; } }
+      .portal .pagewrap .example-box .table .td:nth-child(1) {
+        width: 50%; }
+        @media (min-width: 320px) and (max-width: 794px) {
+          .portal .pagewrap .example-box .table .td:nth-child(1) {
+            width: 100%; } }
+      .portal .pagewrap .example-box .table .td:nth-child(2) {
+        width: 50%; }
+        @media (min-width: 320px) and (max-width: 794px) {
+          .portal .pagewrap .example-box .table .td:nth-child(2) {
+            width: 100%; } }
+  .portal .pagewrap h1 {
+    font-size: 32px;
+    width: 400px;
+    margin: auto; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .pagewrap h1 {
+        width: 100%; } }
+  .portal .pagewrap h2, .portal .pagewrap h3, .portal .pagewrap h4 {
+    margin-top: 0; }
+  .portal .pagewrap .splash {
+    color: white;
+    background: #34344F;
+    position: relative;
+    z-index: 1; }
+    .portal .pagewrap .splash .inner-row {
+      margin-bottom: 200px !important; }
+    .portal .pagewrap .splash .text-block {
+      margin-bottom: 0; }
+    .portal .pagewrap .splash .splash-focus {
       margin: auto;
       width: 80%; }
-      .portal .splash .splash-focus img {
+      .portal .pagewrap .splash .splash-focus img {
         display: block;
         margin: auto; }
-      .portal .splash .splash-focus img.logo {
+      .portal .pagewrap .splash .splash-focus img.logo {
         max-width: 200px; }
-  .portal .testdrive {
-    background: #333;
-    color: white; }
-    .portal .testdrive .testdrive-focus {
-      margin: auto; }
-    .portal .testdrive h1 {
-      margin-bottom: 0; }
-    .portal .testdrive .ex-wrap {
-      display: flex;
-      margin: auto;
-      justify-content: center; }
-      .portal .testdrive .ex-wrap #kqr {
-        min-width: 300px;
-        min-height: 307px; }
-      .portal .testdrive .ex-wrap .data-wrap {
-        margin-right: 3rem; }
-      .portal .testdrive .ex-wrap .data-wrap,
-      .portal .testdrive .ex-wrap .user-wrap {
-        display: none; }
-      .portal .testdrive .ex-wrap #userProfileData {
-        overflow: hidden !important;
-        overflow-y: scroll !important;
-        text-align: left;
-        margin: 0;
-        overflow: auto;
-        padding: .5rem;
-        background: #222;
-        border: 3px solid white;
-        border-top-left-radius: 1rem;
-        border-bottom-left-radius: 1rem;
-        color: white;
-        width: 300px;
-        height: 300px; }
-      .portal .testdrive .ex-wrap .avatar-wrap {
-        background: #333;
-        border-radius: 50%;
-        overflow: hidden;
-        position: relative;
-        border: 3px solid white; }
-      .portal .testdrive .ex-wrap .avatar {
-        background: #222;
-        display: block;
-        height: 300px;
-        width: 300px; }
-      .portal .testdrive .ex-wrap .name {
-        position: absolute;
-        top: 70%;
-        z-index: 1;
-        background: rgba(0, 0, 0, 0.5);
-        width: 100%; }
-  .portal .splash,
-  .portal .banner,
-  .portal .testdrive,
-  .portal .content-shortcuts {
+  .portal .pagewrap .splash,
+  .portal .pagewrap .banner,
+  .portal .pagewrap .testdrive,
+  .portal .pagewrap .content-shortcuts,
+  .portal .pagewrap .area-white,
+  .portal .pagewrap .area-lightgray {
     padding: 3rem 5rem; }
     @media (min-width: 320px) and (max-width: 794px) {
-      .portal .splash,
-      .portal .banner,
-      .portal .testdrive,
-      .portal .content-shortcuts {
+      .portal .pagewrap .splash,
+      .portal .pagewrap .banner,
+      .portal .pagewrap .testdrive,
+      .portal .pagewrap .content-shortcuts,
+      .portal .pagewrap .area-white,
+      .portal .pagewrap .area-lightgray {
         padding: 5% 5% !important; } }
-  .portal .banner {
+  .portal .pagewrap .banner {
     background: #3A3942;
     color: white; }
-  .portal .text-block {
+  .portal .pagewrap .banner-text {
+    margin-bottom: 0;
+    padding-bottom: 1rem; }
+  .portal .pagewrap .text-block {
     max-width: 650px;
     margin: 0 auto 3em auto; }
-  .portal .banner-steps * {
-    color: white;
+  .portal .pagewrap .banner-steps li a {
+    display: flex; }
+  .portal .pagewrap .banner-steps * {
+    text-align: left;
     text-decoration: none; }
-  .portal .banner-steps .fa {
-    font-size: 6rem; }
-    @media (min-width: 320px) and (max-width: 794px) {
-      .portal .banner-steps .fa {
-        font-size: 4rem !important; } }
-  .portal .banner-steps .step-desc {
-    margin-top: 2rem;
+  .portal .pagewrap .banner-steps img {
+    display: inline-block;
+    height: 75px;
+    min-width: 84px;
+    margin-right: 1rem; }
+  .portal .pagewrap .banner-steps .step-wrap {
+    display: inline-block; }
+  .portal .pagewrap .banner-steps .step-title {
+    margin-bottom: 1rem;
     font-size: 1.3rem; }
     @media (min-width: 320px) and (max-width: 794px) {
-      .portal .banner-steps .step-desc {
+      .portal .pagewrap .banner-steps .step-title {
         font-size: 1rem !important; } }
-  .portal .banner-steps ul {
+  .portal .pagewrap .banner-steps ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0; }
-  .portal .banner-steps li {
-    width: 25%;
-    margin: 2rem; }
     @media (min-width: 320px) and (max-width: 794px) {
-      .portal .banner-steps li {
+      .portal .pagewrap .banner-steps ul {
+        flex-direction: column; } }
+  .portal .pagewrap .banner-steps li {
+    margin: .5rem; }
+    @media (min-width: 320px) and (max-width: 794px) {
+      .portal .pagewrap .banner-steps li {
         margin: 0rem !important;
-        flex: 1 !important; } }
-    .portal .banner-steps li .number {
+        flex: 1 !important;
+        border-bottom: 1px solid #ccc;
+        padding: 1rem 0; } }
+    .portal .pagewrap .banner-steps li .number {
       position: relative;
       border-radius: 50%;
       border: 5px solid white;
@@ -2838,42 +3161,58 @@ main {
       height: 4rem;
       text-align: center;
       margin: 0 auto 1rem auto; }
-      .portal .banner-steps li .number .number-text {
+      .portal .pagewrap .banner-steps li .number .number-text {
         position: relative;
         top: -.50rem;
         font-size: 3rem; }
-    .portal .banner-steps li .step-img {
+    .portal .pagewrap .banner-steps li .step-img {
       margin: 0 auto 1rem auto; }
-  .portal .content-shortcuts {
+  .portal .pagewrap .content-shortcuts * {
     text-align: left;
-    background: #eaeaea; }
-    .portal .content-shortcuts *[disabled] {
-      color: gray; }
-      .portal .content-shortcuts *[disabled]:hover {
-        text-decoration: none;
-        cursor: no-drop; }
-    .portal .content-shortcuts .fa {
-      font-size: 8rem; }
-    .portal .content-shortcuts img, .portal .content-shortcuts label {
+    color: #FFFFFF; }
+  .portal .pagewrap .content-shortcuts .logo {
+    height: 150px; }
+  .portal .pagewrap .content-shortcuts .inner-row,
+  .portal .pagewrap .content-shortcuts ul {
+    display: flex; }
+    .portal .pagewrap .content-shortcuts .inner-row li,
+    .portal .pagewrap .content-shortcuts .inner-row li *,
+    .portal .pagewrap .content-shortcuts ul li,
+    .portal .pagewrap .content-shortcuts ul li * {
       display: block; }
-    .portal .content-shortcuts label {
-      border-bottom: 3px solid #CCC; }
-    .portal .content-shortcuts ul, .portal .content-shortcuts li {
-      margin: 0;
-      padding: 0; }
-    .portal .content-shortcuts > ul {
-      display: flex;
-      justify-content: center; }
-      .portal .content-shortcuts > ul > li {
-        flex: 1;
-        margin: 0 1rem; }
-    .portal .content-shortcuts .shortcut-wrap {
-      text-align: center; }
-    .portal .content-shortcuts .list-wrap li {
-      border-bottom: 1px solid #AAA; }
-      .portal .content-shortcuts .list-wrap li a {
-        padding: 1rem 0;
-        display: block; }
+  .portal .pagewrap .content-shortcuts .inner-row {
+    justify-content: space-between; }
+    .portal .pagewrap .content-shortcuts .inner-row > ul > li {
+      margin-left: 2rem; }
+  .portal .pagewrap .content-shortcuts *[disabled] {
+    color: gray; }
+    .portal .pagewrap .content-shortcuts *[disabled]:hover {
+      text-decoration: none;
+      cursor: no-drop; }
+  .portal .pagewrap .content-shortcuts .fa {
+    font-size: 8rem; }
+  .portal .pagewrap .content-shortcuts img, .portal .pagewrap .content-shortcuts label {
+    display: block; }
+  .portal .pagewrap .content-shortcuts ul, .portal .pagewrap .content-shortcuts li {
+    margin: 0;
+    padding: 0; }
+  .portal .pagewrap .content-shortcuts ul, .portal .pagewrap .content-shortcuts li {
+    margin-left: 2rem; }
+    .portal .pagewrap .content-shortcuts ul ul, .portal .pagewrap .content-shortcuts ul li, .portal .pagewrap .content-shortcuts li ul, .portal .pagewrap .content-shortcuts li li {
+      margin-left: 0; }
+  .portal .pagewrap .content-shortcuts > ul {
+    display: flex;
+    justify-content: center; }
+    .portal .pagewrap .content-shortcuts > ul > li {
+      flex: 1;
+      margin: 0 1rem; }
+  .portal .pagewrap .content-shortcuts .shortcut-wrap {
+    text-align: center; }
+  .portal .pagewrap .content-shortcuts .list-wrap li a {
+    padding: 1rem 0;
+    display: block;
+    font-size: .8rem;
+    font-weight: 100; }
 </style></main><footer class="footer"><div class="footer-wrap"><div class="footer-left"><a class="logo-link" href="#"><div class="logo-group"><img class="logo-img" src="#"><span>| Uport.me</span></div></a></div><div class="footer-right"><nav class="nav"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>D.I.F.</span></a></li><li class="nav-item"><a class="nav-link" href="#" target="_blank"><span>Github</span></a></li></ul></nav><div class="legal-area"><a class="tos" href="#"><span>Terms of Service</span></a><a class="privacy" href="#"><span>Privacy Policy</span></a></div></div></div></footer><script>
 /* **********************************************
      Begin prism-core.js
@@ -3800,6 +4139,14 @@ const ifPage = (pagename, cb) => {
     : null
 }
 
+const toggleVisible = (elem) => {
+  if(elem.style.display === 'none' || elem.style.display === '') {
+    show(elem)
+  } else {
+    hide(elem)
+  }
+}
+
 //////////////////////
 // DOM HOOKS
 ///////////////////////
@@ -4053,115 +4400,181 @@ function changeNavClass(pagename) {
 }
 
 function changeSideBarLinkClass(sidebarLink) {
-  sidebarLink.closest('.sidebar')
-             .querySelectorAll('li a')
-             .forEach((aLink) => {
-                 aLink.parentElement
-                      .classList
-                      .remove('active')
-             })
+  if(sidebarLink){
+    sidebarLink.closest('.sidebar')
+               .querySelectorAll('li a')
+               .forEach((aLink) => {
+                   aLink.parentElement
+                        .classList
+                        .remove('active')
+               })
 
-  sidebarLink.parentElement
-             .classList
-             .add('active')
+    sidebarLink.parentElement
+               .classList
+               .add('active')
+  }
 }
 
-//////////////////////
-// ROUTER Logic
-//////////////////////
+window.onload = () => { 
 
-ifPage('guides', () => {
-  analyticsPageFire('Guides')  
-  changeNavClass('guides')
+  //////////////////////
+  // ROUTER Logic
+  //////////////////////
 
-  if(WINDOW_WIDTH > '794') {
+  ifPage('', () => {
+    
+    // Scroll area
+    let portalDOM = mainDOM.querySelector('.portal')
+    
+    // Last know position
+    let lastScrollTop = 0;
+    
+    // Event listener
+    portalDOM.onscroll = () => { 
+
+      // Current position
+      let scrolltop = portalDOM.scrollTop;
+
+      // Clear pre-existing page-load state
+      if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}           
+
+      // Logic of scrolling up or down
+      if (scrolltop > lastScrollTop){ lastScrollTop = lastScrollTop + 1}
+      if (scrolltop < lastScrollTop){ lastScrollTop = lastScrollTop - 1}
+
+      // Set last known position
+      lastScrollTop = scrolltop;
+    
+      // Change the color 
+      headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';  
+    }
+  })
+
+  ifPage('guides', () => {
+    analyticsPageFire('Guides')  
+    changeNavClass('guides')
     createSidebars([guideAreaDOM])
-    guideContentDOM.onscroll = () => {
-      iframeLazyLoad()
-      sidebarStateCheckerOnScroll(guideContentDOM)
+
+    if(WINDOW_WIDTH > '794') {
+      guideContentDOM.onscroll = () => {
+        iframeLazyLoad()
+        sidebarStateCheckerOnScroll(guideContentDOM)
+      }
+    } else {
+      loadingWrapperParentDOM.forEach((item) => {
+        const warningText = 'Interactive code playground not available in mobile'
+        const warningDom = document.createElement('p')
+        const warningDomChild = document.createElement('b')
+        warningDomChild.textContent = warningText
+        warningDom.appendChild(warningDomChild)
+        item.parentNode.appendChild(warningDom)
+        item.remove()
+      })
     }
+  })
+
+  ifPage('apidocs', () => {
+    analyticsPageFire('API Docs')
+    changeNavClass('apidocs')
+    if(WINDOW_WIDTH > '794') {
+      createSidebars([docAreaDOM])
+    }
+
+    // Hack for hiding dupe of ConnectCore
+    const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
+    const uch2ccDOM = $$(uch2cc)[0]
+    const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
+    // hide(uch2ccDOM)
+    // uch2ccDOMPlusAll.forEach((el) => {hide(el)})
+
+    uch2ccDOM.remove()
+    uch2ccDOMPlusAll.forEach((el) => {el.remove()})
+
+    if(WINDOW_WIDTH > '794') {
+      const docsContent = $$('.apidocs .content')[0]
+      docsContent.onscroll = () => {
+        sidebarStateCheckerOnScroll(docsContent)
+      }
+    }
+  })
+
+  ifPage('myapps', () => {
+    analyticsPageFire('My Apps')
+    changeNavClass('myapps')
+
+    if (appmanagerInjectDOM.childNodes.length === 0 &&
+      !(appmanagerInjectDOM.src)) {
+        appmanagerInjectDOM.src="https://appmanager.uport.space/"
+    }
+  })
+
+  ifPage('gitter', () => { 
+    analyticsPageFire('Gitter')
+    changeNavClass('gitter')
+
+    if (sidecarScriptInjectDOM === undefined) {
+      const elemID = 'sidecarScriptInject'
+      if (!($$('#' + elemID)[0])) {
+        let sidecarScriptInjectDOM = document.createElement('script')
+        sidecarScriptInjectDOM.id="sidecarScriptInject"
+        sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+        document.body.appendChild(sidecarScriptInjectDOM)
+      }
+    }
+  })
+
+  // Execute Nav if URL is full
+  if (!!location.hash) {
+    const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
+    setTimeout(() => {
+        sidebarLink.click()
+        changeSideBarLinkClass(sidebarLink)
+    },2)
   } else {
-    loadingWrapperParentDOM.forEach((item) => {
-      const warningText = 'Interactive code playground not available in mobile'
-      const warningDom = document.createElement('p')
-      const warningDomChild = document.createElement('b')
-      warningDomChild.textContent = warningText
-      warningDom.appendChild(warningDomChild)
-      item.parentNode.appendChild(warningDom)
-      item.remove()
-    })
+    ifPage('guides', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
+    ifPage('apidocs', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
   }
-})
 
-ifPage('apidocs', () => {
-  analyticsPageFire('API Docs')
-  changeNavClass('apidocs')
-  createSidebars([docAreaDOM])
-
-  // Hack for hiding dupe of ConnectCore
-  const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
-  const uch2ccDOM = $$(uch2cc)[0]
-  const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
-  // hide(uch2ccDOM)
-  // uch2ccDOMPlusAll.forEach((el) => {hide(el)})
-
-  uch2ccDOM.remove()
-  uch2ccDOMPlusAll.forEach((el) => {el.remove()})
-
-  if(WINDOW_WIDTH > '794') {
-    const docsContent = $$('.apidocs .content')[0]
-    docsContent.onscroll = () => {
-      sidebarStateCheckerOnScroll(docsContent)
-    }
+  // ANALYTICS
+  $$('body')[0].onclick = (evt) => {
+    evt.target.href
+      ? analyticsLinkFire(evt.target.href)
+      : null
   }
-})
 
-ifPage('myapps', () => {
-  analyticsPageFire('My Apps')
-  changeNavClass('myapps')
-
-  if (appmanagerInjectDOM.childNodes.length === 0 &&
-    !(appmanagerInjectDOM.src)) {
-      appmanagerInjectDOM.src="https://appmanager.uport.space/"
+  window.unSetUser = () => {
+    window.loggedInUser = {}
+    window.localStorage.getItem('loggedInUser')
+    $$('.nav-item.nav-Luser-area')[0].remove()
   }
-})
 
-ifPage('gitter', () => { 
-  analyticsPageFire('Gitter')
-  changeNavClass('gitter')
-
-  if (sidecarScriptInjectDOM === undefined) {
-    const elemID = 'sidecarScriptInject'
-    if (!($$('#' + elemID)[0])) {
-      let sidecarScriptInjectDOM = document.createElement('script')
-      sidecarScriptInjectDOM.id="sidecarScriptInject"
-      sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-      document.body.appendChild(sidecarScriptInjectDOM)
-    }
+  window.showUserinHeader = () => {
+    let userData = JSON.parse(localStorage.getItem('loggedInUser'))
+    let userTemplate = `
+      <li class="nav-item nav-Luser-area">
+        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}">
+          <img class="Luser-pic" src="${ userData.avatar.uri }">
+          <div class="Luser-menu">
+            <ul>
+              <li class="Luser">
+                <div class="Luser-name"><b>${ userData.name }</b></div>
+                <div class="Luser-addr">${ userData.address.substr(0,10) + '...' }</div>
+              </li>
+              <li class="log-out" onclick="unSetUser()">Log Out</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    `
+    navListDOM.innerHTML += userTemplate
   }
-})
 
-// TODO - Nav highlights in server side style
-// Execute Nav if URL is full
-if (!!location.hash) {
-  const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
-  setTimeout(() => {
-      sidebarLink.click()
-      changeSideBarLinkClass(sidebarLink)
-  },2)
-} else {
-  ifPage('guides', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
-  ifPage('apidocs', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
-}
-
-//////////////////////
-// ANALYTICS
-//////////////////////
-$$('body')[0].onclick = (evt) => {
-  evt.target.href
-    ? analyticsLinkFire(evt.target.href)
+  JSON.parse(localStorage.getItem('loggedInUser'))
+    ? window.showUserinHeader()
     : null
+
 }
+
 ////////////////////
 // uPort Setup
 ////////////////////
@@ -4246,13 +4659,16 @@ window.loginRequest = () => {
       
       const qr = kjua({
         text: uri,
-        fill: '#FFFFFF',
+        fill: '#000000',
         size: 300,
         back: 'rgba(255,255,255,0)'
       })
 
       if(window.location.pathname === '/') {
         console.log(qr)
+
+        document.querySelector('.state-1').style.display='none';
+        document.querySelector('.state-2b1').style.display='block';
 
         // Create wrapping link for mobile touch
         let aTag = document.createElement('a')
@@ -4350,6 +4766,13 @@ function setUser (credentials) {
   // Ropsten (network: 0x3)
   // Rinkeby (network: 0x4)
   // Kovan   (network: 0x42)
+
+  // Put the object into storage
+  localStorage.setItem('loggedInUser', JSON.stringify(window.loggedInUser));
+
+  var retrievedObject = JSON.parse(localStorage.getItem('loggedInUser'));
+
+  console.log('retrievedObject: ', retrievedObject);
   
   console.log("uPort master address: " + window.loggedInUser.address)
   console.log("uPort Rinkeby address: " + window.loggedInUser.rinkebyID)
@@ -4410,26 +4833,28 @@ const pollingLoop = (txHash, response, pendingCB, successCB) => {
 ////////////////////
 
 function togglePostLoggedIn_PORTAL_UI () {
-  
-  $$('#kqr')[0].style.display = 'none'
+
+  $$('.state-2b2')[0].style.display='block';
+  $$('.state-2b1')[0].style.display = 'none'
+
+  console.log(window.loggedInUser)
 
   // JSON DATA
-  $$('#userProfileData')[0].innerHTML = 
+  $$('.state-2b2 .user-data-payload')[0].innerHTML = 
     JSON.stringify(window.loggedInUser, undefined, 2)
   
   // AVATAR
   if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    $$('.user-wrap .avatar')[0].src = 
-      "data:image/png;base64, " + 
-      window.loggedInUser.avatar.data
+    $$('.state-2b2 .status-user-box .user-pic')[0].src = 
+      "data:image/png;base64, " + window.loggedInUser.avatar.data
+  } else {
+     $$('.state-2b2 .status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
   }
 
   // NAME
-  $$('.user-wrap .name')[0].innerHTML = 
-    window.loggedInUser.name;
+  $$('.state-2b2 .status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
 
-  $$('.data-wrap')[0].style.display = 'block'
-  $$('.user-wrap')[0].style.display = 'block'
+  window.showUserinHeader()
 }
 
 // function togglePostLoggedInUI () {
@@ -4443,8 +4868,8 @@ function toggleExistingDataLoad (data) {
   document.querySelectorAll('.sharesArea')[0].style.display = 'block'
 }
 
-
-// window.onload = () => {
-  window.loginRequest();
-// }
+function viewSample () {
+  document.querySelector('.state-2a.sample').style.display='block';
+  document.querySelector('.state-1').style.display='none';
+}
 </script></body></html>

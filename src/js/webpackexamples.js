@@ -82,13 +82,16 @@ window.loginRequest = () => {
       
       const qr = kjua({
         text: uri,
-        fill: '#FFFFFF',
+        fill: '#000000',
         size: 300,
         back: 'rgba(255,255,255,0)'
       })
 
       if(window.location.pathname === '/') {
         console.log(qr)
+
+        document.querySelector('.state-1').style.display='none';
+        document.querySelector('.state-2b1').style.display='block';
 
         // Create wrapping link for mobile touch
         let aTag = document.createElement('a')
@@ -186,6 +189,13 @@ function setUser (credentials) {
   // Ropsten (network: 0x3)
   // Rinkeby (network: 0x4)
   // Kovan   (network: 0x42)
+
+  // Put the object into storage
+  localStorage.setItem('loggedInUser', JSON.stringify(window.loggedInUser));
+
+  var retrievedObject = JSON.parse(localStorage.getItem('loggedInUser'));
+
+  console.log('retrievedObject: ', retrievedObject);
   
   console.log("uPort master address: " + window.loggedInUser.address)
   console.log("uPort Rinkeby address: " + window.loggedInUser.rinkebyID)
@@ -246,26 +256,28 @@ const pollingLoop = (txHash, response, pendingCB, successCB) => {
 ////////////////////
 
 function togglePostLoggedIn_PORTAL_UI () {
-  
-  $$('#kqr')[0].style.display = 'none'
+
+  $$('.state-2b2')[0].style.display='block';
+  $$('.state-2b1')[0].style.display = 'none'
+
+  console.log(window.loggedInUser)
 
   // JSON DATA
-  $$('#userProfileData')[0].innerHTML = 
+  $$('.state-2b2 .user-data-payload')[0].innerHTML = 
     JSON.stringify(window.loggedInUser, undefined, 2)
   
   // AVATAR
   if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    $$('.user-wrap .avatar')[0].src = 
-      "data:image/png;base64, " + 
-      window.loggedInUser.avatar.data
+    $$('.state-2b2 .status-user-box .user-pic')[0].src = 
+      "data:image/png;base64, " + window.loggedInUser.avatar.data
+  } else {
+     $$('.state-2b2 .status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
   }
 
   // NAME
-  $$('.user-wrap .name')[0].innerHTML = 
-    window.loggedInUser.name;
+  $$('.state-2b2 .status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
 
-  $$('.data-wrap')[0].style.display = 'block'
-  $$('.user-wrap')[0].style.display = 'block'
+  window.showUserinHeader()
 }
 
 // function togglePostLoggedInUI () {
@@ -279,7 +291,7 @@ function toggleExistingDataLoad (data) {
   document.querySelectorAll('.sharesArea')[0].style.display = 'block'
 }
 
-
-// window.onload = () => {
-  window.loginRequest();
-// }
+function viewSample () {
+  document.querySelector('.state-2a.sample').style.display='block';
+  document.querySelector('.state-1').style.display='none';
+}

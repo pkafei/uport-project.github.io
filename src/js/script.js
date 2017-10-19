@@ -53,6 +53,14 @@ const ifPage = (pagename, cb) => {
     : null
 }
 
+const toggleVisible = (elem) => {
+  if(elem.style.display === 'none' || elem.style.display === '') {
+    show(elem)
+  } else {
+    hide(elem)
+  }
+}
+
 //////////////////////
 // DOM HOOKS
 ///////////////////////
@@ -306,112 +314,178 @@ function changeNavClass(pagename) {
 }
 
 function changeSideBarLinkClass(sidebarLink) {
-  sidebarLink.closest('.sidebar')
-             .querySelectorAll('li a')
-             .forEach((aLink) => {
-                 aLink.parentElement
-                      .classList
-                      .remove('active')
-             })
+  if(sidebarLink){
+    sidebarLink.closest('.sidebar')
+               .querySelectorAll('li a')
+               .forEach((aLink) => {
+                   aLink.parentElement
+                        .classList
+                        .remove('active')
+               })
 
-  sidebarLink.parentElement
-             .classList
-             .add('active')
+    sidebarLink.parentElement
+               .classList
+               .add('active')
+  }
 }
 
-//////////////////////
-// ROUTER Logic
-//////////////////////
+window.onload = () => { 
 
-ifPage('guides', () => {
-  analyticsPageFire('Guides')  
-  changeNavClass('guides')
+  //////////////////////
+  // ROUTER Logic
+  //////////////////////
 
-  if(WINDOW_WIDTH > '794') {
+  ifPage('', () => {
+    
+    // Scroll area
+    let portalDOM = mainDOM.querySelector('.portal')
+    
+    // Last know position
+    let lastScrollTop = 0;
+    
+    // Event listener
+    portalDOM.onscroll = () => { 
+
+      // Current position
+      let scrolltop = portalDOM.scrollTop;
+
+      // Clear pre-existing page-load state
+      if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}           
+
+      // Logic of scrolling up or down
+      if (scrolltop > lastScrollTop){ lastScrollTop = lastScrollTop + 1}
+      if (scrolltop < lastScrollTop){ lastScrollTop = lastScrollTop - 1}
+
+      // Set last known position
+      lastScrollTop = scrolltop;
+    
+      // Change the color 
+      headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';  
+    }
+  })
+
+  ifPage('guides', () => {
+    analyticsPageFire('Guides')  
+    changeNavClass('guides')
     createSidebars([guideAreaDOM])
-    guideContentDOM.onscroll = () => {
-      iframeLazyLoad()
-      sidebarStateCheckerOnScroll(guideContentDOM)
+
+    if(WINDOW_WIDTH > '794') {
+      guideContentDOM.onscroll = () => {
+        iframeLazyLoad()
+        sidebarStateCheckerOnScroll(guideContentDOM)
+      }
+    } else {
+      loadingWrapperParentDOM.forEach((item) => {
+        const warningText = 'Interactive code playground not available in mobile'
+        const warningDom = document.createElement('p')
+        const warningDomChild = document.createElement('b')
+        warningDomChild.textContent = warningText
+        warningDom.appendChild(warningDomChild)
+        item.parentNode.appendChild(warningDom)
+        item.remove()
+      })
     }
+  })
+
+  ifPage('apidocs', () => {
+    analyticsPageFire('API Docs')
+    changeNavClass('apidocs')
+    if(WINDOW_WIDTH > '794') {
+      createSidebars([docAreaDOM])
+    }
+
+    // Hack for hiding dupe of ConnectCore
+    const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
+    const uch2ccDOM = $$(uch2cc)[0]
+    const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
+    // hide(uch2ccDOM)
+    // uch2ccDOMPlusAll.forEach((el) => {hide(el)})
+
+    uch2ccDOM.remove()
+    uch2ccDOMPlusAll.forEach((el) => {el.remove()})
+
+    if(WINDOW_WIDTH > '794') {
+      const docsContent = $$('.apidocs .content')[0]
+      docsContent.onscroll = () => {
+        sidebarStateCheckerOnScroll(docsContent)
+      }
+    }
+  })
+
+  ifPage('myapps', () => {
+    analyticsPageFire('My Apps')
+    changeNavClass('myapps')
+
+    if (appmanagerInjectDOM.childNodes.length === 0 &&
+      !(appmanagerInjectDOM.src)) {
+        appmanagerInjectDOM.src="https://appmanager.uport.space/"
+    }
+  })
+
+  ifPage('gitter', () => { 
+    analyticsPageFire('Gitter')
+    changeNavClass('gitter')
+
+    if (sidecarScriptInjectDOM === undefined) {
+      const elemID = 'sidecarScriptInject'
+      if (!($$('#' + elemID)[0])) {
+        let sidecarScriptInjectDOM = document.createElement('script')
+        sidecarScriptInjectDOM.id="sidecarScriptInject"
+        sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+        document.body.appendChild(sidecarScriptInjectDOM)
+      }
+    }
+  })
+
+  // Execute Nav if URL is full
+  if (!!location.hash) {
+    const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
+    setTimeout(() => {
+        sidebarLink.click()
+        changeSideBarLinkClass(sidebarLink)
+    },2)
   } else {
-    loadingWrapperParentDOM.forEach((item) => {
-      const warningText = 'Interactive code playground not available in mobile'
-      const warningDom = document.createElement('p')
-      const warningDomChild = document.createElement('b')
-      warningDomChild.textContent = warningText
-      warningDom.appendChild(warningDomChild)
-      item.parentNode.appendChild(warningDom)
-      item.remove()
-    })
+    ifPage('guides', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
+    ifPage('apidocs', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
   }
-})
 
-ifPage('apidocs', () => {
-  analyticsPageFire('API Docs')
-  changeNavClass('apidocs')
-  createSidebars([docAreaDOM])
-
-  // Hack for hiding dupe of ConnectCore
-  const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
-  const uch2ccDOM = $$(uch2cc)[0]
-  const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
-  // hide(uch2ccDOM)
-  // uch2ccDOMPlusAll.forEach((el) => {hide(el)})
-
-  uch2ccDOM.remove()
-  uch2ccDOMPlusAll.forEach((el) => {el.remove()})
-
-  if(WINDOW_WIDTH > '794') {
-    const docsContent = $$('.apidocs .content')[0]
-    docsContent.onscroll = () => {
-      sidebarStateCheckerOnScroll(docsContent)
-    }
+  // ANALYTICS
+  $$('body')[0].onclick = (evt) => {
+    evt.target.href
+      ? analyticsLinkFire(evt.target.href)
+      : null
   }
-})
 
-ifPage('myapps', () => {
-  analyticsPageFire('My Apps')
-  changeNavClass('myapps')
-
-  if (appmanagerInjectDOM.childNodes.length === 0 &&
-    !(appmanagerInjectDOM.src)) {
-      appmanagerInjectDOM.src="https://appmanager.uport.space/"
+  window.unSetUser = () => {
+    window.loggedInUser = {}
+    window.localStorage.getItem('loggedInUser')
+    $$('.nav-item.nav-Luser-area')[0].remove()
   }
-})
 
-ifPage('gitter', () => { 
-  analyticsPageFire('Gitter')
-  changeNavClass('gitter')
-
-  if (sidecarScriptInjectDOM === undefined) {
-    const elemID = 'sidecarScriptInject'
-    if (!($$('#' + elemID)[0])) {
-      let sidecarScriptInjectDOM = document.createElement('script')
-      sidecarScriptInjectDOM.id="sidecarScriptInject"
-      sidecarScriptInjectDOM.src="https://sidecar.gitter.im/dist/sidecar.v1.js"
-      document.body.appendChild(sidecarScriptInjectDOM)
-    }
+  window.showUserinHeader = () => {
+    let userData = JSON.parse(localStorage.getItem('loggedInUser'))
+    let userTemplate = `
+      <li class="nav-item nav-Luser-area">
+        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}">
+          <img class="Luser-pic" src="${ userData.avatar.uri }">
+          <div class="Luser-menu">
+            <ul>
+              <li class="Luser">
+                <div class="Luser-name"><b>${ userData.name }</b></div>
+                <div class="Luser-addr">${ userData.address.substr(0,10) + '...' }</div>
+              </li>
+              <li class="log-out" onclick="unSetUser()">Log Out</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    `
+    navListDOM.innerHTML += userTemplate
   }
-})
 
-// TODO - Nav highlights in server side style
-// Execute Nav if URL is full
-if (!!location.hash) {
-  const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
-  setTimeout(() => {
-      sidebarLink.click()
-      changeSideBarLinkClass(sidebarLink)
-  },2)
-} else {
-  ifPage('guides', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
-  ifPage('apidocs', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
-}
-
-//////////////////////
-// ANALYTICS
-//////////////////////
-$$('body')[0].onclick = (evt) => {
-  evt.target.href
-    ? analyticsLinkFire(evt.target.href)
+  JSON.parse(localStorage.getItem('loggedInUser'))
+    ? window.showUserinHeader()
     : null
+
 }
+

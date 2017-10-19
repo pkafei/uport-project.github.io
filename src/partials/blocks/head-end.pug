@@ -16,7 +16,7 @@ include ../mixins/iframeloader
   }
 
   body {
-    font-family: 'Raleway', Arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     color: #555;
     font-size: 100%;
     line-height: 1.5;
@@ -48,6 +48,8 @@ include ../mixins/iframeloader
   }
   
   li { list-style: none; }
+
+  button { cursor: pointer; }
 
   //////////////////////
   // GLOBAL FONT SIZES
@@ -131,12 +133,9 @@ include ../mixins/iframeloader
     }
   }
 
-  pre {
-    margin-bottom: 2rem !important;
-  }
 
   pre[class*="language-"], code {
-    overflow-x: hidden;
+    overflow-x: scroll;
   }
 
   iframe {
@@ -246,13 +245,23 @@ include ../mixins/iframeloader
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    > * { display: none; }
+    > * { 
+      display: none;
+      -webkit-overflow-scrolling: touch;
+    }
 
     // &.portal .portal { display: flex; flex-direction: column; flex: 1;}
     &.portal .portal {
       overflow-y: scroll;
       display: block;
-      .pagewrap { display:block; }
+      .pagewrap { 
+        display:block; 
+        max-width: 100%;
+        .inner-row {
+          max-width: 1260px;
+          margin: auto;
+        }
+      }
     }
 
     &.guides .guides, 
