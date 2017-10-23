@@ -2,7 +2,9 @@ header.header
   .header-wrap
     .header-left
       a.logo-link(href='/')
-        span uPort | Developers
+        span uPort 
+        span &nbsp;|&nbsp;
+        span(style="font-weight:bold; font-size:1.2rem;") Developers
     .header-right
       nav.nav
         ul.nav-list
@@ -17,24 +19,39 @@ header.header
               span My Apps
           li.nav-item.nav-gitter
             a.nav-link(href='/gitter.html')
-              span Gitter
+              span Help
           li.nav-item.nav-blog
             a.nav-link(href="https://medium.com/uport" target="_blank")
               span Blog
           li.nav-item.nav-github
             a.nav-link(href="https://github.com/uport-project" target="_blank")
               span Github
-:sass
-  .header {
-    background: #616069;
-    * { color: white; }
+      #menu-btn
+        .menu-btn-line
+        .menu-btn-line
+        .menu-btn-line
+script.
+  document.querySelector("#menu-btn").onclick = (evt) => {
+    document.querySelector(".header .nav").classList.contains('active-touch')
+      ? document.querySelector(".header .nav").classList.remove('active-touch')
+      : document.querySelector(".header .nav").classList.add('active-touch');
   }
+:sass
+  @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+  $pair: 320px 794px;
+  
+  .header {
+    background: #34344F;
+    z-index: 2000;
+  
+    * { color: #F8F8F9; }
+  }
+  
   .header,
   .footer {
     position: relative;
-    border-bottom: 1px solid #333;
     justify-content: center;
-    padding: 10px 1rem 10px;
+    padding: 1.5rem 1rem;
     font-size: .8rem;
 
     // Reset
@@ -55,58 +72,161 @@ header.header
       margin: auto;
     }
 
+    .nav {
+      justify-content: flex-end;
+      display: flex;
+
+      .nav-list li a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .nav-item {
+        padding: 0 1rem;
+
+        .Luser {
+          position: relative;
+          cursor: pointer;
+
+          .Luser > * {
+            display: block;
+          }
+          .Luser-pic {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              border: 1px solid white;
+              margin-right: 1rem;
+            }
+          .Luser-menu {
+            
+            .log-out {
+              display: none;
+              background: #a4005b;
+              text-align: center;
+              border-radius: 8px;
+              border: 1px solid white;
+              position: absolute;
+              padding: .25rem 1rem;
+              
+              @include breakpoint($pair) {
+                display: block;
+                position: absolute;
+                top: 55px;
+                width: 100%;
+                margin-left: calc(-70px);
+                padding: .5rem 0;
+              }
+            }
+          }
+        }
+        
+        @include breakpoint($pair) {
+          padding: 1rem 2rem;
+        }
+
+        &.active {
+          background: #3A3942;
+          border-radius: 4px;
+        
+          * { color: white; }
+        
+          &:hover { 
+            * { text-decoration: none; }
+          }
+        }
+      }
+
+      @include breakpoint($pair) {
+        display: none;
+
+        &.active-touch {
+          display: block;
+          position: fixed;
+          z-index: 2000;
+          top: 4rem;
+          right: 1rem;
+          background: lighten(#2E2E46, 20%);
+          border: 1px solid white;
+          border-radius: 8px;
+          padding: .5rem;
+          li { display: block; }
+        }
+      }
+    }
+
     .header-right,
     .footer-right,
     .nav {
       flex: 1;
     }
 
-    .logo-link {
-      padding-right: 2rem;
-    }
-
-    .logo-link,
-    .nav-item {
-      // min-height: 50px;
-    }
-
-    .nav-item {
-      padding: 0 1rem;
-    }
-
-    .nav-list,
-    .nav-list li,
-    .nav-list li a,
-    .user-area,
-    .user-area .sign-in-link,
-    .legal-area a {
-      //- height: 100%;
-    }
-    
-    .nav-item {
-      &.active {
-        background: #3A3942;
-        border-radius: 4px;
-        * { color: white; }
-        &:hover { 
-          * { text-decoration: none; }
-        }
+    .header-right {
+      @include breakpoint($pair) {
+        justify-content: flex-end;
       }
     }
-    
-    .logo-link,
-    .nav-list li a,
-    .sign-in-link,
-    .legal-area a {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
 
-    .legal-area {
-      display: flex;
-      a {
-        margin-left: 2rem;
+    .logo-link {
+      padding-right: 2rem;
+      span:first-child{
+        font-size: 1rem;
+      }
+      * {
+        display: inline-block;
+        vertical-align: baseline;
       }
     }
   }
+
+  /*Menu toggle button*/
+  #menu-btn {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    top: 1.5em;
+    background: lighten(#2E2E46, 20%);
+    border: 3px solid white;
+    border-radius: 100%;
+    transition: all .2s ease-out;
+    z-index: 101;
+    text-align: right;
+    display: none;
+    
+    @include breakpoint($pair) {
+      display: block;
+    }
+
+    &:hover {
+      cursor: pointer;
+      .menu-line {
+        background-color: #999999;
+      }
+    }
+
+    &:active {
+      box-shadow: 0 0 5px black;
+      background-color: #524a88;
+    }
+  }
+
+  .menu-btn-line {
+    height: 3px;
+    background-color: white;
+    position: relative;
+    z-index: 20002;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 3px;
+    display: block;
+
+    &:first-child {
+      margin-top: 9px;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
