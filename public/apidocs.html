@@ -2489,8 +2489,6 @@ iframe {
   background: #ccc;
   width: 100%;
   margin-bottom: 2rem; }
-  .guides .loading-wrapper-parent {
-    max-width: 95%; }
   .gitter .loading-wrapper-parent {
     margin-bottom: 0;
     height: 100%; }
@@ -2576,11 +2574,10 @@ main {
   main .pagewrap {
     display: flex;
     width: 100%;
-    max-width: 1260px;
+    max-width: 1440px;
     margin: auto;
     justify-content: center; }
     main .pagewrap .content {
-      max-width: 900px;
       overflow-y: scroll;
       flex: 1; }
       main .pagewrap .content .lib, main .pagewrap .content .guide {
@@ -5256,7 +5253,7 @@ window.onload = () => {
     let userData = JSON.parse(localStorage.getItem('loggedInUser'))
     let userTemplate = `
       <li class="nav-item nav-Luser-area">
-        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}">
+        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}" style="height: 0;position: relative;top: -25px;">
           <img class="Luser-pic" src="${ userData.avatar.uri }">
           <div class="Luser-menu">
             <ul>
