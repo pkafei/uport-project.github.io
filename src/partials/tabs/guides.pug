@@ -5,11 +5,33 @@
       .guide
         include ../guides/index
 :sass
+  @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
+  $pair: 320px 794px;
+
   .guide {
 
     .testdrive-header * { 
       text-align: center;
       display: block; 
+    }
+
+    .testdrive-webpack {
+      width: 100%;
+      height: 50px;
+      text-align: right;
+      
+      a.btn {
+        display: inline-block;
+        background: darken(#595DC3,20%);
+        color: white;
+        font-size: .9rem;
+        margin: auto;
+        border-radius: .3rem;
+        padding: .4rem .6rem;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+      }
     }
 
     .ex-wrap {
@@ -80,6 +102,74 @@
         padding: .4rem .6rem;
         border: none;
         cursor: pointer;
+      }
+    }
+
+    .example-demo {
+      .example-demo-wrap { 
+        text-align: center;
+        overflow-x: hidden; 
+        pre { color: black; }
+      }
+
+       .or {
+          margin: 1rem 0;
+        }
+        button.btn {
+          // height: 27px;
+          width: 250px;
+          border-radius: 2px;
+          background-color: #5C58CA;
+          color: #FFFFFF;
+          border-radius: 4px;
+          padding: 1rem;
+          border: none;
+          font-size: 1rem;
+        }
+
+      .state-2a,
+      .state-2b1,
+      .state-2b2 { display: none; }
+      
+      .status-text,
+      .user-data-text { text-align: left; margin: 1rem 0;}
+      .status-user-box { 
+        border-radius: 4px; 
+        border: 0.5px solid #DDDDE7;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem 0;
+      }
+      .status-text { margin-top: 0; }
+      .user-name { font-weight: bold; font-size: 1.3rem; }
+      .user-pic { 
+        border-radius: 50%; margin-right: 1rem; 
+        height: 75px;
+        width: 75px;
+        background: gray;
+      }
+      .user-data-payload {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        text-align: left;
+        height: 200px
+      }
+
+      code {
+        font-family: courier;
+        font-size: 14px;
+        width: 300px;
+        font-weight: bold;
+      }
+
+      &:first-child {
+        background: #F9F9F9;
+      }
+
+      @include breakpoint($pair) {
+        overflow-x: scroll;
+        min-height: 0;
       }
     }
     

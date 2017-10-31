@@ -2689,7 +2689,7 @@ main {
   .footer .footer-right {
     display: flex;
     flex-direction: row;
-    max-width: 1260px;
+    max-width: 1440px;
     margin: auto; }
   .header .nav,
   .footer .nav {
@@ -2939,7 +2939,13 @@ uport.requestCredentials()
 <h2>Logging in via Mobile (sdk)</h2>
 <p><strong>Under construction</strong></p>
 <h2>RC Playground</h2>
-<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header" onclick="window.loginRequest()"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="data-wrap"><pre id="userProfileData"></pre></div><div class="user-wrap"><div class="avatar-wrap"><img class="avatar"><div class="name"></div></div></div></div></div></div></section><section><h1>Attesting Credentials</h1>
+<div class="td example-demo"><div class="example-demo-wrap"><div class="state-1 choose"><div><b>Login with uPort</b></div><button class="btn sample-choice" onclick="toggleViewSample()">View sample uPort ID</button><div class="or">or</div><button class="btn connect-choice" onclick="chooseShowQR()">Connect with your uPort ID</button></div><div class="state-2a sample"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="https://placekitten.com/75/75"><div class="user-name">Phoebe Olson </div></div><div class="user-data-text">User Data</div><pre class="user-data-payload">{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "publicKey": "0x044c31ed1499dce76ee7711c72388fda86e6c1d4f9ecc105c4abe2f63cfe79638822dcf21b7c29b3d208fc01d4e0506d4e8f6234a912727a36cf347e61956d5f2f",
+  "publicEncKey": "Py+NXzHgacNMTzj9Ufe4S2KPuzR39dDMd1o+rWBJnmM=",
+  "name": "Christian Jeria"
+}</pre></div><div class="state-2b1 qr-scan"><div><b>Scan QR with uPort Mobile app</b></div><div class="kqr"></div></div><div class="state-2b2 results"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="#"><div class="user-name"> </div></div><div class="user-data-text">User Data</div><pre class="user-data-payload"></pre></div></div><div class="testdrive-webpack"><a class="btn" href="https://www.webpackbin.com/bins/-Kql5WgV-D0sZrabxJ2_" target="_blank">See the code</a></div></div></section><section><h1>Attesting Credentials</h1>
 <p>One of the core needs of Web 3.0 is to build trust in a self-sovereign world. We establish facts which are not mathematically derived by social consensus. To create social consensus, actors must attest to things being true. We can do this with uPort using the <code>uport.attestCredentials</code> function.</p>
 <p><strong>NOTE:</strong> Currently only one credential can be pushed at a time. We are working to fix this soon.</p>
 <h2>Calling the attest method</h2>
@@ -2956,10 +2962,8 @@ uport.requestCredentials()
   exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000,  // Optional expiration
 })
 </code></pre>
-<h2>Attesting multiple credentials</h2>
-<p><strong>Under construction</strong></p>
 <h2>AC Playground</h2>
-<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="attestation-area"><button class="attest" onclick="attestationBtn()">Attest User Read Docs</button><div class="attestMessage">Please accept on your phone.</div></div></div></div></div></section><style>.attestation-area, .attestMessage {
+<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="attestation-area"><button class="attest" onclick="attestationBtn()">Attest User Read Docs</button><div class="attestMessage">Please accept on your phone.</div></div></div></div><div class="testdrive-webpack"><a class="btn" href="https://www.webpackbin.com/bins/-Kql3OAxjMEtK4Vn2M3o" target="_blank">See the code</a></div></div></section><style>.attestation-area, .attestMessage {
   display: none; }
 </style><section><h1>Signing Transactions</h1>
 <p>uPort comes pre-baked with a web3 instance that calls to <a href="https://github.com/ethereumjs/testrpc">Infura</a>, our p2p swarm of nodes we have built so you don't need to stand up your own. All you need to do is grab our <code>web3</code> object and instantiate a smart contract javascript object with a <strong>provided ABI</strong>.</p>
@@ -3033,7 +3037,7 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
 }
 </code></pre>
 <h2>ST Playground</h2>
-<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="signTx-area"><div class="signTxCurrent"><span>You have </span><span class="number"></span><span> shares</span></div><button class="signTxBtn" onclick="signBtn()">Buy 10 Shares</button><div class="signTxMessage">Please accept on your phone.</div><div class="signTxPending pulse animated">Mining... please wait</div><div class="signTxConfirm">Purchase completed</div></div></div></div></div></section><style>.signTx-area,
+<div class="testdrive"><div class="testdrive-focus"><div class="testdrive-header"><span>Connect Your uPort ID</span><div>(with the uPort app) </div></div><div class="ex-wrap"><div class="kqr"></div><div class="signTx-area"><div class="signTxCurrent"><span>You have </span><span class="number"></span><span> shares</span></div><button class="signTxBtn" onclick="signTxBtn()">Buy 10 Shares</button><div class="signTxMessage">Please accept on your phone.</div><div class="signTxPending pulse animated">Mining... please wait</div><div class="signTxConfirm">Purchase completed</div></div></div></div><div class="testdrive-webpack"><a class="btn" href="https://www.webpackbin.com/bins/-Kqcukv7y_qg-05zwEci" target="_blank">See the code</a></div></div></section><style>.signTx-area,
 .signTxMessage,
 .signTxConfirm,
 .signTxPending {
@@ -3117,6 +3121,22 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
   text-align: center;
   display: block; }
 
+.guide .testdrive-webpack {
+  width: 100%;
+  height: 50px;
+  text-align: right; }
+  .guide .testdrive-webpack a.btn {
+    display: inline-block;
+    background: #303486;
+    color: white;
+    font-size: .9rem;
+    margin: auto;
+    border-radius: .3rem;
+    padding: .4rem .6rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none; }
+
 .guide .ex-wrap {
   display: flex;
   margin: auto;
@@ -3176,6 +3196,77 @@ const pollingLoop = (txHash, response, pendingCB, successCB) =&gt; {
     padding: .4rem .6rem;
     border: none;
     cursor: pointer; }
+
+.guide .example-demo .example-demo-wrap {
+  text-align: center;
+  overflow-x: hidden; }
+  .guide .example-demo .example-demo-wrap pre {
+    color: black; }
+
+.guide .example-demo .or {
+  margin: 1rem 0; }
+
+.guide .example-demo button.btn {
+  width: 250px;
+  border-radius: 2px;
+  background-color: #5C58CA;
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem; }
+
+.guide .example-demo .state-2a,
+.guide .example-demo .state-2b1,
+.guide .example-demo .state-2b2 {
+  display: none; }
+
+.guide .example-demo .status-text,
+.guide .example-demo .user-data-text {
+  text-align: left;
+  margin: 1rem 0; }
+
+.guide .example-demo .status-user-box {
+  border-radius: 4px;
+  border: 0.5px solid #DDDDE7;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem 0; }
+
+.guide .example-demo .status-text {
+  margin-top: 0; }
+
+.guide .example-demo .user-name {
+  font-weight: bold;
+  font-size: 1.3rem; }
+
+.guide .example-demo .user-pic {
+  border-radius: 50%;
+  margin-right: 1rem;
+  height: 75px;
+  width: 75px;
+  background: gray; }
+
+.guide .example-demo .user-data-payload {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: left;
+  height: 200px; }
+
+.guide .example-demo code {
+  font-family: courier;
+  font-size: 14px;
+  width: 300px;
+  font-weight: bold; }
+
+.guide .example-demo:first-child {
+  background: #F9F9F9; }
+
+@media (min-width: 320px) and (max-width: 794px) {
+  .guide .example-demo {
+    overflow-x: scroll;
+    min-height: 0; } }
 
 .guide iframe {
   display: flex;

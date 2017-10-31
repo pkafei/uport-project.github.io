@@ -393,7 +393,7 @@ window.loginRequest = () => {
           aTag.href = uri
 
           aTag.appendChild(qrKJUA)
-          $$('#kqr')[0].appendChild(aTag)
+          $$('.kqr')[0].appendChild(aTag)
         }
 
         if(window.location.pathname === '/guides' || 
@@ -418,17 +418,18 @@ window.loginRequest = () => {
         uport.pushToken = getUser().pushToken
 
         if(window.location.pathname === '/') {
-          togglePostLoggedIn_PORTAL()
+          rcExampleLoggedIn()
         }
         if(window.location.pathname === '/guides' || 
            window.location.pathname === '/guides.html') {
+          rcExampleLoggedIn()
           togglePostLoggedIn_GUIDES()
         }
     })
   } else {
     console.log('yes user')
     if(window.location.pathname === '/') {
-      togglePostLoggedIn_PORTAL()
+      rcExampleLoggedIn()
     }
     if(window.location.pathname === '/guides' || 
        window.location.pathname === '/guides.html') {
@@ -437,6 +438,10 @@ window.loginRequest = () => {
   }
 }
 
+function chooseShowQR () {
+  $$('.state-1')[0].style.display='none';
+  $$('.state-2b1')[0].style.display='block';
+}
 
 
 
@@ -458,7 +463,7 @@ window.attestationBtn = () => {
   console.log('show message')
 }
 
-window.signBtn = () => { 
+window.signTxBtn = () => { 
     MyContract.updateShares('10', (error, txHash) => {
       if (error) { throw error }
         waitForMined(txHash, { blockNumber: null }, 
@@ -544,31 +549,9 @@ const pollingLoop = (txHash, response, pendingCB, successCB) => {
 function hideQRs () {
   $$('.kqr').forEach((qr) => qr.style.display = 'none')
 }
-function userProfileDataInjection () {
-  $$('#userProfileData')[0].innerHTML = 
-    JSON.stringify(window.loggedInUser, undefined, 2)
-}
-function avatarSafeInject(domImgElement) {
-  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    domImgElement.src = 
-      "data:image/png;base64, " + 
-      window.loggedInUser.avatar.data
-  } else {
-    domImgElement.src =
-      window.loggedInUser.avatar.uri
-  }
-}
-function injectName () {
-    $$('.user-wrap .name')[0].innerHTML = 
-    window.loggedInUser.name;
-}
-function showDataAndUser () {
-  show($$('.data-wrap')[0])
-  show($$('.user-wrap')[0])
-}
+
 function showAttestationArea() {
   show($$('.attestation-area')[0])
-
 }
 function showSignTxArea() {
   show($$('.signTx-area')[0])
@@ -597,7 +580,7 @@ function showUserinHeader () {
 }
 
 
-function togglePostLoggedIn_PORTAL () {
+function rcExampleLoggedIn () {
 
   $$('.state-2b2')[0].style.display='block';
   $$('.state-2b1')[0].style.display = 'none'
@@ -621,10 +604,6 @@ function togglePostLoggedIn_PORTAL () {
 
 function togglePostLoggedIn_GUIDES () {
   hideQRs()
-  userProfileDataInjection()
-  avatarSafeInject($$('.user-wrap .avatar')[0])
-  injectName()
-  showDataAndUser()
   showAttestationArea()
   showSignTxArea()
   getCurrentDataFromChain(window.loggedInUser.decodedID)
@@ -668,6 +647,7 @@ window.onload = () => {
     analyticsPageFire('Guides')  
     changeNavClass('guides')
     createSidebars([guideAreaDOM])
+    window.loginRequest()
 
     if(WINDOW_WIDTH > '794') {
       guideContentDOM.onscroll = () => {
@@ -754,6 +734,4 @@ window.onload = () => {
   JSON.parse(localStorage.getItem('loggedInUser'))
     ? showUserinHeader()
     : null
-
-  window.loginRequest()
 }
