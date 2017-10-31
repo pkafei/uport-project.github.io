@@ -141,11 +141,10 @@ gulp.task('docs', () => {
 ////////////////////////
 // JS Compiler
 ////////////////////////
-// gulp.task('es6', () => {
-//   return gulp.src(paths.es6 + 'script.js')
-//     .pipe(babel({presets: ['es2015']}))
-//     .pipe(gulp.dest(paths.es6 + 'es2015-compiled/'));
-// });
+gulp.task('es6', () => {
+  return gulp.src(paths.es6 + '*')
+    .pipe(gulp.dest(paths.js));
+});
 
 ////////////////////////
 // JS Reloader

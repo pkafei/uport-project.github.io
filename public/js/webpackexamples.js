@@ -120,10 +120,7 @@ window.loginRequest = () => {
 
         
       }).then((userProfile) => {
-        
         setUser(userProfile)
-        uport.pushToken = getUser().pushToken
-
         if(window.location.pathname === '/') {
           togglePostLoggedIn_PORTAL_UI()
         }
@@ -153,6 +150,7 @@ window.loginRequest = () => {
 
 window.attestationBtn = () => {
   console.log('btn hit')
+  debugger;
   if(!uport.pushToken){
     uport.pushToken = getUser().pushToken
     console.log('push token assigned')

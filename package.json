@@ -62,7 +62,7 @@
     "prismjs": "^1.8.1",
     "reset-css": "^2.2.1",
     "uport": "^0.5.4",
-    "uport-connect": "^0.6.6",
+    "uport-connect": "^0.7.0",
     "uport-lite": "^1.0.1",
     "uport-registry": "^5.1.0"
   }

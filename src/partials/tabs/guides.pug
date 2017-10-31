@@ -6,6 +6,81 @@
         include ../guides/index
 :sass
   .guide {
+
+    .testdrive-header * { 
+      text-align: center;
+      display: block; 
+    }
+
+    .ex-wrap {
+      display: flex;
+      margin: auto;
+      justify-content: center;
+      text-align: center;
+
+      #kqr {
+        min-width: 300px;
+        min-height: 307px;
+      }
+
+      .data-wrap { margin-right: 3rem; }
+
+      .data-wrap, 
+      .user-wrap { 
+        display: none; 
+      }
+      
+      #userProfileData {
+        overflow: hidden !important;
+        overflow-y: scroll !important;
+        text-align: left;
+        margin: 0;
+        overflow: auto; 
+        padding: .5rem;
+        background: #222;
+        border: 3px solid #595DC3;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        color: white;
+        width: 300px;
+        height: 300px;
+      }
+      .avatar-wrap {
+        background: #333;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        border: 3px solid #595DC3;
+      }
+      .avatar { 
+        background: #222; 
+        display: block; 
+        height: 300px;
+        width: 300px;
+      }
+      .name {
+        position: absolute;
+        top: 70%;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        color:white;
+      }
+    }
+
+    .attestation-area {
+      margin-bottom: 2rem;
+      button {
+        background: #595DC3;
+        color: white;
+        font-size: 1.1rem;
+        margin: 1rem auto;
+        border-radius: .3rem;
+        padding: .4rem .6rem;
+        border: none;
+        cursor: pointer;
+      }
+    }
     
     iframe {
       display: flex;
