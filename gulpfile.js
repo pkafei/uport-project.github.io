@@ -17,7 +17,9 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync').create(),
   htmlInjector = require("bs-html-injector"),
   fs = require('fs-then-native'),
-  jsdoc2md = require('jsdoc-to-markdown');
+  jsdoc2md = require('jsdoc-to-markdown'),
+  purgeSourcemaps = require('gulp-purge-sourcemaps'),
+  strip = require('gulp-strip-comments');
 
 ////////////////////////
 // DIRECTORIES
@@ -66,6 +68,8 @@ gulp.task('pug', () => {
       process.stderr.write(err.message + '\n');
       this.emit('end');
     })
+    .pipe(purgeSourcemaps())
+    // .pipe(strip())
     .pipe(gulp.dest(paths.public));
 });
 
@@ -143,6 +147,8 @@ gulp.task('docs', () => {
 ////////////////////////
 gulp.task('es6', () => {
   return gulp.src(paths.es6 + '*')
+    .pipe(purgeSourcemaps())
+    .pipe(strip())
     .pipe(gulp.dest(paths.js));
 });
 
@@ -158,7 +164,7 @@ gulp.task('bsReload', () => {
 ////////////////////////
 gulp.task('watch', () => {
   gulp.watch('./src/**/*.pug',['pug']);
-  gulp.watch('./src/js/*.js', ['pug', 'bsReload']);
+  gulp.watch('./src/js/*.js', ['es6', 'bsReload']);
   gulp.watch('./src/**/*.md', ['pug']);
 });
 

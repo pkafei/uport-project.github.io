@@ -61,9 +61,6 @@ const toggleVisible = (elem) => {
   }
 }
 
-//////////////////////
-// DOM HOOKS
-///////////////////////
 const mainDOM =
   $$('main')[0]
 
@@ -111,9 +108,6 @@ const sidecarScriptInjectDOM =
 
 
 
-///////////////////////
-// iFrame Lazy Loader
-///////////////////////
 
 function iframeLazyLoad () {
   let guidestop = guideContentDOM.scrollTop
@@ -146,22 +140,19 @@ function iframeLazyLoad () {
 }
 
 function sidebarStateCheckerOnScroll (scrollContainer) {
-  
-  // Set visiable area
+
   let topBar = scrollContainer.scrollTop
   let viewArea = document.body.offsetHeight
   let bottomBar = topBar + viewArea
 
   const headers = scrollContainer.querySelectorAll('h1, h2[id], h3')
 
-  // State vars
   let invisibleHeadersByID = []
   let visibleHeadersByID = []
-  
-  headers
+
+    headers
     .forEach((item) => {
 
-     // Specific item's top
      let itemTopBar = item.offsetTop
 
      if(item.id) {
@@ -172,8 +163,7 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
         item.previousElementSibling.querySelectorAll('a[name]')[0].name
       )
      }
-     
-     // List invisible headers
+
     if(item.id) {
       topBar >= itemTopBar
        ? invisibleHeadersByID.push(item.id)
@@ -191,18 +181,15 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
        : null
      }
 
-     // Filter out only visible headers
      for (var i = invisibleHeadersByID.length - 1; i >= 0; i--) {
        invisibleHeadersByID[i] === visibleHeadersByID[visibleHeadersByID.length-1]
          ? visibleHeadersByID.pop()
          : null
      }
   })
-  
-  // Clear any active class
+
   $$('.sidebar *.active').forEach((item) => {item.classList.remove('active')})
-  
-  // Get the current item
+
   let currentSideBarItemToHighlight = $$('a[href="#' + visibleHeadersByID[0] + '"]')[0]
 
   if(currentSideBarItemToHighlight !== undefined) {
@@ -210,9 +197,6 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
   }  
 }
 
-///////////////////////
-// Sidebar Creator
-///////////////////////
 
 function createSidebarList (contextArea, flag) {
 
@@ -305,9 +289,6 @@ function createSidebars (sources) {
   })
 }
 
-///////////////////////
-// Router functions
-///////////////////////
 
 function changeNavClass(pagename) {
   $$('.nav-' + pagename)[0].classList.add('active')
@@ -331,35 +312,24 @@ function changeSideBarLinkClass(sidebarLink) {
 
 window.onload = () => { 
 
-  //////////////////////
-  // ROUTER Logic
-  //////////////////////
 
   ifPage('', () => {
-    
-    // Scroll area
+
     let portalDOM = mainDOM.querySelector('.portal')
-    
-    // Last know position
+
     let lastScrollTop = 0;
-    
-    // Event listener
+
     portalDOM.onscroll = () => { 
 
-      // Current position
       let scrolltop = portalDOM.scrollTop;
 
-      // Clear pre-existing page-load state
       if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}           
 
-      // Logic of scrolling up or down
       if (scrolltop > lastScrollTop){ lastScrollTop = lastScrollTop + 1}
       if (scrolltop < lastScrollTop){ lastScrollTop = lastScrollTop - 1}
 
-      // Set last known position
       lastScrollTop = scrolltop;
-    
-      // Change the color 
+
       headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';  
     }
   })
@@ -394,12 +364,9 @@ window.onload = () => {
       createSidebars([docAreaDOM])
     }
 
-    // Hack for hiding dupe of ConnectCore
     const uch2cc = '#uport-connect .lib-doc > h2:nth-of-type(3)'
     const uch2ccDOM = $$(uch2cc)[0]
     const uch2ccDOMPlusAll = $$(uch2cc + ' ~ *')
-    // hide(uch2ccDOM)
-    // uch2ccDOMPlusAll.forEach((el) => {hide(el)})
 
     uch2ccDOM.remove()
     uch2ccDOMPlusAll.forEach((el) => {el.remove()})
@@ -437,7 +404,6 @@ window.onload = () => {
     }
   })
 
-  // Execute Nav if URL is full
   if (!!location.hash) {
     const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
     setTimeout(() => {
@@ -449,7 +415,6 @@ window.onload = () => {
     ifPage('apidocs', () => { changeSideBarLinkClass($$('.sidebar a:first-child')[0]) })
   }
 
-  // ANALYTICS
   $$('body')[0].onclick = (evt) => {
     evt.target.href
       ? analyticsLinkFire(evt.target.href)
@@ -489,4 +454,347 @@ window.onload = () => {
 
 }
 
-;
+
+
+
+
+const uport = new uportconnect.Connect('uPort Demo', {
+  clientId: '0x2bede7ae69a9aa7684c373ae33fb21162e565e52',
+  signer: uportconnect.SimpleSigner('d2942f08d12611429c0ab9ea39eeda128253553d356b4c9f9f17f95e141cafc8')
+})
+
+const web3 = uport.getWeb3()
+
+
+
+function MyContractSetup () {
+  let MyContractABI = web3.eth.contract([
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "share",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateShares",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "getShares",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ])
+  let MyContractObj = MyContractABI.at("0x71845bbfe5ddfdb919e780febfff5eda62a30fdc")
+  return MyContractObj
+}
+
+const MyContract = MyContractSetup()
+
+
+window.loginRequest = () => {
+
+
+  var hi = getUser()
+  console.log(hi)
+
+  if(!getUser()) {
+    console.log('no user')
+    uport.requestCredentials(
+      {
+        requested: ['name', 'avatar', 'phone', 'country'],
+        notifications: true
+      },
+      (uri) => {
+
+                const qrKJUA = kjua({
+          text: uri,
+          fill: '#000000',
+          size: 300,
+          back: 'rgba(255,255,255,0)'
+        })
+
+        if(window.location.pathname === '/') {
+          console.log(qrKJUA)
+
+          document.querySelector('.state-1').style.display='none';
+          document.querySelector('.state-2b1').style.display='block';
+
+          let aTag = document.createElement('a')
+          aTag.href = uri
+
+          aTag.appendChild(qrKJUA)
+          document.querySelector('#kqr').appendChild(aTag)
+        }
+
+        if(window.location.pathname === '/guides' || 
+           window.location.pathname === '/guides.html') {
+
+          $$('.kqr').forEach((qr) => {
+
+            let aTag = document.createElement('a')
+                aTag.href = uri
+                aTag.style.display = 'block'
+                aTag.appendChild(qrKJUA.cloneNode())
+
+            qr.appendChild(aTag)
+          })
+
+                  }
+
+
+              }).then((userProfile) => {
+
+                setUser(userProfile)
+        uport.pushToken = getUser().pushToken
+
+        if(window.location.pathname === '/') {
+          togglePostLoggedIn_PORTAL_UI()
+        }
+        if(window.location.pathname === '/guides' || 
+           window.location.pathname === '/guides.html') {
+          togglePostLoggedIn_GUIDES()
+        }
+    })
+  } else {
+    console.log('yes user')
+    if(window.location.pathname === '/') {
+      togglePostLoggedIn_PORTAL_UI()
+    }
+    if(window.location.pathname === '/guides' || 
+       window.location.pathname === '/guides.html') {
+      togglePostLoggedIn_GUIDES()
+    }
+  }
+}
+
+
+
+
+
+window.attestationBtn = () => {
+  console.log('btn hit')
+  if(!uport.pushToken){
+    uport.pushToken = getUser().pushToken
+    console.log('push token assigned')
+  }
+  console.log('get ready to call attestCreds')
+  uport.attestCredentials({
+    sub: getUser().address,
+    claim: { "Docs Demo": "Unlocked Achievement" },
+    exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
+  })
+  console.log('called attestCreds')
+  document.querySelectorAll('.attestMessage')[0].style.display = 'block'; 
+  console.log('show message')
+}
+
+
+
+
+
+window.signBtn = () => { 
+    MyContract.updateShares('10', (error, txHash) => {
+      if (error) { throw error }
+        waitForMined(txHash, { blockNumber: null }, 
+        function pendingCB () {
+          document.querySelectorAll('.signTxPending')[0].style.display = 'block';
+        },
+        function successCB (data) {
+          document.querySelectorAll('.signTxComplete')[0].style.display = 'block';
+          getCurrentDataFromChain(window.loggedInUser.rinkebyID)
+          document.querySelectorAll('.signTxConfirm')[0].style.display = 'inline';
+        }
+      )
+    })
+
+        document.querySelectorAll('.signTxMessage')[0].style.display = 'block'; 
+}
+
+
+
+
+
+
+function setUser (credentials) {
+
+  window.loggedInUser = credentials
+
+
+
+    const decodedId = uportconnect.MNID.decode(window.loggedInUser.address)
+  window.loggedInUser.rinkebyID = decodedId.address
+
+    console.log(window.loggedInUser)
+
+
+  localStorage.setItem('loggedInUser', JSON.stringify(window.loggedInUser))
+
+  var retrievedObject = JSON.parse(localStorage.getItem('loggedInUser'))
+
+  console.log('retrievedObject: ', retrievedObject);
+
+    console.log("uPort master address: " + window.loggedInUser.address)
+  console.log("uPort Rinkeby address: " + window.loggedInUser.rinkebyID)
+}
+
+function getUser () {
+  window.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
+  return window.loggedInUser
+}
+
+
+
+
+
+
+
+function getCurrentDataFromChain (userID) {
+  if(userID === undefined) {
+    let user = getUser()
+    userID = user.rinkebyID
+  }
+  MyContract.getShares.call(userID, (error, response) => {
+    if (error) { throw error }
+    console.log(response.c)
+    toggleExistingDataLoad(response.c)
+  })  
+}
+
+
+
+
+
+
+const waitForMined = (txHash, response, pendingCB, successCB) => {
+  if (response.blockNumber) {
+    successCB()
+  } else {
+    pendingCB()
+    pollingLoop(txHash, response, pendingCB, successCB)
+  }
+}
+
+const pollingLoop = (txHash, response, pendingCB, successCB) => {
+  setTimeout(function () {
+    web3.eth.getTransaction(txHash, (error, response) => {
+      if (error) { throw error }
+        if (response === null) {
+          response = { blockNumber: null }
+        } 
+        waitForMined(txHash, response, pendingCB, successCB)
+    })
+  }, 1000) 
+}
+
+
+
+
+
+
+
+function hideQRs () {
+  $$('.kqr').forEach((qr) => qr.style.display = 'none')
+}
+
+function userProfileDataInjection () {
+  $$('#userProfileData')[0].innerHTML = 
+    JSON.stringify(window.loggedInUser, undefined, 2)
+}
+
+function avatarSafeInject(domImgElement) {
+  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
+    domImgElement.src = 
+      "data:image/png;base64, " + 
+      window.loggedInUser.avatar.data
+  } else {
+    domImgElement.src =
+      window.loggedInUser.avatar.uri
+  }
+}
+
+function injectName () {
+    $$('.user-wrap .name')[0].innerHTML = 
+    window.loggedInUser.name;
+}
+
+function showDataAndUser () {
+  show($$('.data-wrap')[0])
+  show($$('.user-wrap')[0])
+}
+
+function showAttestationArea() {
+  show($$('.attestation-area')[0])
+
+}
+function showSignTxArea() {
+  show($$('.signTx-area')[0])
+
+}
+
+
+
+
+
+
+function togglePostLoggedIn_PORTAL_UI () {
+
+  $$('.state-2b2')[0].style.display='block';
+  $$('.state-2b1')[0].style.display = 'none'
+
+  console.log(window.loggedInUser)
+
+  $$('.state-2b2 .user-data-payload')[0].innerHTML = 
+    JSON.stringify(window.loggedInUser, undefined, 2)
+
+  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
+    $$('.state-2b2 .status-user-box .user-pic')[0].src = 
+      "data:image/png;base64, " + window.loggedInUser.avatar.data
+  } else {
+     $$('.state-2b2 .status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
+  }
+
+  $$('.state-2b2 .status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
+
+  window.showUserinHeader()
+}
+function togglePostLoggedIn_GUIDES () {
+  hideQRs()
+  userProfileDataInjection()
+  avatarSafeInject($$('.user-wrap .avatar')[0])
+  injectName()
+  showDataAndUser()
+  showAttestationArea()
+  showSignTxArea()
+  getCurrentDataFromChain(window.loggedInUser.decodedID)
+}
+
+
+function toggleExistingDataLoad (data) {
+  document.querySelectorAll('.signTxCurrent .number')[0].textContent = data
+  document.querySelectorAll('.signTx-area')[0].style.display = 'block'
+}
+
+function viewSample () {
+  document.querySelector('.state-2a.sample').style.display='block';
+  document.querySelector('.state-1').style.display='none';
+}
+
+
+window.loginRequest()
