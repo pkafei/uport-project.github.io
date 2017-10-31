@@ -310,6 +310,336 @@ function changeSideBarLinkClass(sidebarLink) {
   }
 }
 
+
+
+
+
+
+
+const uport = new uportconnect.Connect('uPort Demo', {
+  clientId: '0x2bede7ae69a9aa7684c373ae33fb21162e565e52',
+  signer: uportconnect.SimpleSigner('d2942f08d12611429c0ab9ea39eeda128253553d356b4c9f9f17f95e141cafc8')
+})
+
+const web3 = uport.getWeb3()
+
+
+
+function MyContractSetup () {
+  let MyContractABI = web3.eth.contract([
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "share",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateShares",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "getShares",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ])
+  let MyContractObj = MyContractABI.at("0x71845bbfe5ddfdb919e780febfff5eda62a30fdc")
+  return MyContractObj
+}
+
+const MyContract = MyContractSetup()
+
+
+window.loginRequest = () => {
+
+
+  if(!getUser()) {
+    console.log('no user')
+    uport.requestCredentials(
+      {
+        requested: ['name', 'avatar', 'phone', 'country'],
+        notifications: true
+      },
+      (uri) => {
+
+                const qrKJUA = kjua({
+          text: uri,
+          fill: '#000000',
+          size: 300,
+          back: 'rgba(255,255,255,0)'
+        })
+
+        if(window.location.pathname === '/') {
+          $$('.state-1')[0].style.display='none';
+          $$('.state-2b1')[0].style.display='block';
+
+          let aTag = document.createElement('a')
+          aTag.href = uri
+
+          aTag.appendChild(qrKJUA)
+          $$('#kqr')[0].appendChild(aTag)
+        }
+
+        if(window.location.pathname === '/guides' || 
+           window.location.pathname === '/guides.html') {
+
+          $$('.kqr').forEach((qr) => {
+
+            let aTag = document.createElement('a')
+                aTag.href = uri
+                aTag.style.display = 'block'
+                aTag.appendChild(qrKJUA.cloneNode())
+
+            qr.appendChild(aTag)
+          })
+
+                  }
+
+
+              }).then((userProfile) => {
+
+                setUser(userProfile)
+        uport.pushToken = getUser().pushToken
+
+        if(window.location.pathname === '/') {
+          togglePostLoggedIn_PORTAL()
+        }
+        if(window.location.pathname === '/guides' || 
+           window.location.pathname === '/guides.html') {
+          togglePostLoggedIn_GUIDES()
+        }
+    })
+  } else {
+    console.log('yes user')
+    if(window.location.pathname === '/') {
+      togglePostLoggedIn_PORTAL()
+    }
+    if(window.location.pathname === '/guides' || 
+       window.location.pathname === '/guides.html') {
+      togglePostLoggedIn_GUIDES()
+    }
+  }
+}
+
+
+
+
+
+window.attestationBtn = () => {
+  console.log('btn hit')
+  if(!uport.pushToken){
+    uport.pushToken = getUser().pushToken
+    console.log('push token assigned')
+  }
+  console.log('get ready to call attestCreds')
+  uport.attestCredentials({
+    sub: getUser().address,
+    claim: { "Docs Demo": "Unlocked Achievement" },
+    exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
+  })
+  console.log('called attestCreds')
+  $$('.attestMessage')[0].style.display = 'block'; 
+  console.log('show message')
+}
+
+window.signBtn = () => { 
+    MyContract.updateShares('10', (error, txHash) => {
+      if (error) { throw error }
+        waitForMined(txHash, { blockNumber: null }, 
+        function pendingCB () {
+          $$('.signTxPending')[0].style.display = 'block';
+        },
+        function successCB (data) {
+          $$('.signTxComplete')[0].style.display = 'block';
+          getCurrentDataFromChain(window.loggedInUser.rinkebyID)
+          $$('.signTxConfirm')[0].style.display = 'inline';
+        }
+      )
+    })
+
+        $$('.signTxMessage')[0].style.display = 'block'; 
+}
+function setUser (credentials) {
+
+  window.loggedInUser = credentials
+
+
+
+    const decodedId = uportconnect.MNID.decode(window.loggedInUser.address)
+  window.loggedInUser.rinkebyID = decodedId.address
+
+    console.log(window.loggedInUser)
+
+
+  localStorage.setItem('loggedInUser', JSON.stringify(window.loggedInUser))
+
+  var retrievedObject = JSON.parse(localStorage.getItem('loggedInUser'))
+
+  console.log('retrievedObject: ', retrievedObject);
+
+    console.log("uPort master address: " + window.loggedInUser.address)
+  console.log("uPort Rinkeby address: " + window.loggedInUser.rinkebyID)
+}
+function unSetUser () {
+  window.loggedInUser = {}
+  window.localStorage.removeItem('loggedInUser')
+  $$('.nav-item.nav-Luser-area')[0].remove()
+}
+function getUser () {
+  window.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
+  return window.loggedInUser
+}
+function getCurrentDataFromChain (userID) {
+  if(userID === undefined) {
+    let user = getUser()
+    userID = user.rinkebyID
+  }
+  MyContract.getShares.call(userID, (error, response) => {
+    if (error) { throw error }
+    console.log(response.c)
+    toggleExistingDataLoad(response.c)
+  })  
+}
+const waitForMined = (txHash, response, pendingCB, successCB) => {
+  if (response.blockNumber) {
+    successCB()
+  } else {
+    pendingCB()
+    pollingLoop(txHash, response, pendingCB, successCB)
+  }
+}
+const pollingLoop = (txHash, response, pendingCB, successCB) => {
+  setTimeout(function () {
+    web3.eth.getTransaction(txHash, (error, response) => {
+      if (error) { throw error }
+        if (response === null) {
+          response = { blockNumber: null }
+        } 
+        waitForMined(txHash, response, pendingCB, successCB)
+    })
+  }, 1000) 
+}
+
+
+
+
+
+
+function hideQRs () {
+  $$('.kqr').forEach((qr) => qr.style.display = 'none')
+}
+function userProfileDataInjection () {
+  $$('#userProfileData')[0].innerHTML = 
+    JSON.stringify(window.loggedInUser, undefined, 2)
+}
+function avatarSafeInject(domImgElement) {
+  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
+    domImgElement.src = 
+      "data:image/png;base64, " + 
+      window.loggedInUser.avatar.data
+  } else {
+    domImgElement.src =
+      window.loggedInUser.avatar.uri
+  }
+}
+function injectName () {
+    $$('.user-wrap .name')[0].innerHTML = 
+    window.loggedInUser.name;
+}
+function showDataAndUser () {
+  show($$('.data-wrap')[0])
+  show($$('.user-wrap')[0])
+}
+function showAttestationArea() {
+  show($$('.attestation-area')[0])
+
+}
+function showSignTxArea() {
+  show($$('.signTx-area')[0])
+
+}
+
+function showUserinHeader () {
+  let userData = JSON.parse(localStorage.getItem('loggedInUser'))
+  let userTemplate = `
+    <li class="nav-item nav-Luser-area">
+      <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}" style="height: 0;position: relative;top: -25px;">
+        <img class="Luser-pic" src="${ userData.avatar.uri }">
+        <div class="Luser-menu">
+          <ul>
+            <li class="Luser">
+              <div class="Luser-name"><b>${ userData.name }</b></div>
+              <div class="Luser-addr">${ userData.address.substr(0,10) + '...' }</div>
+            </li>
+            <li class="log-out" onclick="unSetUser()">Log Out</li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  `
+  navListDOM.innerHTML += userTemplate
+}
+
+
+function togglePostLoggedIn_PORTAL () {
+
+  $$('.state-2b2')[0].style.display='block';
+  $$('.state-2b1')[0].style.display = 'none'
+
+  console.log(window.loggedInUser)
+
+  $$('.state-2b2 .user-data-payload')[0].innerHTML = 
+    JSON.stringify(window.loggedInUser, undefined, 2)
+
+  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
+    $$('.state-2b2 .status-user-box .user-pic')[0].src = 
+      "data:image/png;base64, " + window.loggedInUser.avatar.data
+  } else {
+     $$('.state-2b2 .status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
+  }
+
+  $$('.state-2b2 .status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
+
+  window.showUserinHeader()
+}
+
+function togglePostLoggedIn_GUIDES () {
+  hideQRs()
+  userProfileDataInjection()
+  avatarSafeInject($$('.user-wrap .avatar')[0])
+  injectName()
+  showDataAndUser()
+  showAttestationArea()
+  showSignTxArea()
+  getCurrentDataFromChain(window.loggedInUser.decodedID)
+}
+
+function toggleExistingDataLoad (data) {
+  $$('.signTxCurrent .number')[0].textContent = data
+  $$('.signTx-area')[0].style.display = 'block'
+}
+
+function toggleViewSample () {
+  document.querySelector('.state-2a.sample').style.display='block';
+  document.querySelector('.state-1').style.display='none';
+}
+
 window.onload = () => { 
 
 
@@ -404,7 +734,7 @@ window.onload = () => {
     }
   })
 
-  if (!!location.hash) {
+  if (location.hash) {
     const sidebarLink = $$('*[href="'+ location.hash + '"]')[0]
     setTimeout(() => {
         sidebarLink.click()
@@ -421,380 +751,9 @@ window.onload = () => {
       : null
   }
 
-  window.unSetUser = () => {
-    window.loggedInUser = {}
-    window.localStorage.removeItem('loggedInUser')
-    $$('.nav-item.nav-Luser-area')[0].remove()
-  }
-
-  window.showUserinHeader = () => {
-    let userData = JSON.parse(localStorage.getItem('loggedInUser'))
-    let userTemplate = `
-      <li class="nav-item nav-Luser-area">
-        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}" style="height: 0;position: relative;top: -25px;">
-          <img class="Luser-pic" src="${ userData.avatar.uri }">
-          <div class="Luser-menu">
-            <ul>
-              <li class="Luser">
-                <div class="Luser-name"><b>${ userData.name }</b></div>
-                <div class="Luser-addr">${ userData.address.substr(0,10) + '...' }</div>
-              </li>
-              <li class="log-out" onclick="unSetUser()">Log Out</li>
-            </ul>
-          </div>
-        </div>
-      </li>
-    `
-    navListDOM.innerHTML += userTemplate
-  }
-
   JSON.parse(localStorage.getItem('loggedInUser'))
-    ? window.showUserinHeader()
+    ? showUserinHeader()
     : null
 
+  window.loginRequest()
 }
-
-
-
-
-
-const uport = new uportconnect.Connect('uPort Demo', {
-  clientId: '0x2bede7ae69a9aa7684c373ae33fb21162e565e52',
-  signer: uportconnect.SimpleSigner('d2942f08d12611429c0ab9ea39eeda128253553d356b4c9f9f17f95e141cafc8')
-})
-
-const web3 = uport.getWeb3()
-
-
-
-function MyContractSetup () {
-  let MyContractABI = web3.eth.contract([
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "share",
-          "type": "uint256"
-        }
-      ],
-      "name": "updateShares",
-      "outputs": [],
-      "payable": false,
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "addr",
-          "type": "address"
-        }
-      ],
-      "name": "getShares",
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "type": "function"
-    }
-  ])
-  let MyContractObj = MyContractABI.at("0x71845bbfe5ddfdb919e780febfff5eda62a30fdc")
-  return MyContractObj
-}
-
-const MyContract = MyContractSetup()
-
-
-window.loginRequest = () => {
-
-
-  var hi = getUser()
-  console.log(hi)
-
-  if(!getUser()) {
-    console.log('no user')
-    uport.requestCredentials(
-      {
-        requested: ['name', 'avatar', 'phone', 'country'],
-        notifications: true
-      },
-      (uri) => {
-
-                const qrKJUA = kjua({
-          text: uri,
-          fill: '#000000',
-          size: 300,
-          back: 'rgba(255,255,255,0)'
-        })
-
-        if(window.location.pathname === '/') {
-          console.log(qrKJUA)
-
-          document.querySelector('.state-1').style.display='none';
-          document.querySelector('.state-2b1').style.display='block';
-
-          let aTag = document.createElement('a')
-          aTag.href = uri
-
-          aTag.appendChild(qrKJUA)
-          document.querySelector('#kqr').appendChild(aTag)
-        }
-
-        if(window.location.pathname === '/guides' || 
-           window.location.pathname === '/guides.html') {
-
-          $$('.kqr').forEach((qr) => {
-
-            let aTag = document.createElement('a')
-                aTag.href = uri
-                aTag.style.display = 'block'
-                aTag.appendChild(qrKJUA.cloneNode())
-
-            qr.appendChild(aTag)
-          })
-
-                  }
-
-
-              }).then((userProfile) => {
-
-                setUser(userProfile)
-        uport.pushToken = getUser().pushToken
-
-        if(window.location.pathname === '/') {
-          togglePostLoggedIn_PORTAL_UI()
-        }
-        if(window.location.pathname === '/guides' || 
-           window.location.pathname === '/guides.html') {
-          togglePostLoggedIn_GUIDES()
-        }
-    })
-  } else {
-    console.log('yes user')
-    if(window.location.pathname === '/') {
-      togglePostLoggedIn_PORTAL_UI()
-    }
-    if(window.location.pathname === '/guides' || 
-       window.location.pathname === '/guides.html') {
-      togglePostLoggedIn_GUIDES()
-    }
-  }
-}
-
-
-
-
-
-window.attestationBtn = () => {
-  console.log('btn hit')
-  if(!uport.pushToken){
-    uport.pushToken = getUser().pushToken
-    console.log('push token assigned')
-  }
-  console.log('get ready to call attestCreds')
-  uport.attestCredentials({
-    sub: getUser().address,
-    claim: { "Docs Demo": "Unlocked Achievement" },
-    exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
-  })
-  console.log('called attestCreds')
-  document.querySelectorAll('.attestMessage')[0].style.display = 'block'; 
-  console.log('show message')
-}
-
-
-
-
-
-window.signBtn = () => { 
-    MyContract.updateShares('10', (error, txHash) => {
-      if (error) { throw error }
-        waitForMined(txHash, { blockNumber: null }, 
-        function pendingCB () {
-          document.querySelectorAll('.signTxPending')[0].style.display = 'block';
-        },
-        function successCB (data) {
-          document.querySelectorAll('.signTxComplete')[0].style.display = 'block';
-          getCurrentDataFromChain(window.loggedInUser.rinkebyID)
-          document.querySelectorAll('.signTxConfirm')[0].style.display = 'inline';
-        }
-      )
-    })
-
-        document.querySelectorAll('.signTxMessage')[0].style.display = 'block'; 
-}
-
-
-
-
-
-
-function setUser (credentials) {
-
-  window.loggedInUser = credentials
-
-
-
-    const decodedId = uportconnect.MNID.decode(window.loggedInUser.address)
-  window.loggedInUser.rinkebyID = decodedId.address
-
-    console.log(window.loggedInUser)
-
-
-  localStorage.setItem('loggedInUser', JSON.stringify(window.loggedInUser))
-
-  var retrievedObject = JSON.parse(localStorage.getItem('loggedInUser'))
-
-  console.log('retrievedObject: ', retrievedObject);
-
-    console.log("uPort master address: " + window.loggedInUser.address)
-  console.log("uPort Rinkeby address: " + window.loggedInUser.rinkebyID)
-}
-
-function getUser () {
-  window.loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
-  return window.loggedInUser
-}
-
-
-
-
-
-
-
-function getCurrentDataFromChain (userID) {
-  if(userID === undefined) {
-    let user = getUser()
-    userID = user.rinkebyID
-  }
-  MyContract.getShares.call(userID, (error, response) => {
-    if (error) { throw error }
-    console.log(response.c)
-    toggleExistingDataLoad(response.c)
-  })  
-}
-
-
-
-
-
-
-const waitForMined = (txHash, response, pendingCB, successCB) => {
-  if (response.blockNumber) {
-    successCB()
-  } else {
-    pendingCB()
-    pollingLoop(txHash, response, pendingCB, successCB)
-  }
-}
-
-const pollingLoop = (txHash, response, pendingCB, successCB) => {
-  setTimeout(function () {
-    web3.eth.getTransaction(txHash, (error, response) => {
-      if (error) { throw error }
-        if (response === null) {
-          response = { blockNumber: null }
-        } 
-        waitForMined(txHash, response, pendingCB, successCB)
-    })
-  }, 1000) 
-}
-
-
-
-
-
-
-
-function hideQRs () {
-  $$('.kqr').forEach((qr) => qr.style.display = 'none')
-}
-
-function userProfileDataInjection () {
-  $$('#userProfileData')[0].innerHTML = 
-    JSON.stringify(window.loggedInUser, undefined, 2)
-}
-
-function avatarSafeInject(domImgElement) {
-  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    domImgElement.src = 
-      "data:image/png;base64, " + 
-      window.loggedInUser.avatar.data
-  } else {
-    domImgElement.src =
-      window.loggedInUser.avatar.uri
-  }
-}
-
-function injectName () {
-    $$('.user-wrap .name')[0].innerHTML = 
-    window.loggedInUser.name;
-}
-
-function showDataAndUser () {
-  show($$('.data-wrap')[0])
-  show($$('.user-wrap')[0])
-}
-
-function showAttestationArea() {
-  show($$('.attestation-area')[0])
-
-}
-function showSignTxArea() {
-  show($$('.signTx-area')[0])
-
-}
-
-
-
-
-
-
-function togglePostLoggedIn_PORTAL_UI () {
-
-  $$('.state-2b2')[0].style.display='block';
-  $$('.state-2b1')[0].style.display = 'none'
-
-  console.log(window.loggedInUser)
-
-  $$('.state-2b2 .user-data-payload')[0].innerHTML = 
-    JSON.stringify(window.loggedInUser, undefined, 2)
-
-  if(!(window.loggedInUser.avatar.uri.indexOf('ipfs') !== -1)){
-    $$('.state-2b2 .status-user-box .user-pic')[0].src = 
-      "data:image/png;base64, " + window.loggedInUser.avatar.data
-  } else {
-     $$('.state-2b2 .status-user-box .user-pic')[0].src = window.loggedInUser.avatar.uri
-  }
-
-  $$('.state-2b2 .status-user-box .user-name')[0].innerHTML = window.loggedInUser.name;
-
-  window.showUserinHeader()
-}
-function togglePostLoggedIn_GUIDES () {
-  hideQRs()
-  userProfileDataInjection()
-  avatarSafeInject($$('.user-wrap .avatar')[0])
-  injectName()
-  showDataAndUser()
-  showAttestationArea()
-  showSignTxArea()
-  getCurrentDataFromChain(window.loggedInUser.decodedID)
-}
-
-
-function toggleExistingDataLoad (data) {
-  document.querySelectorAll('.signTxCurrent .number')[0].textContent = data
-  document.querySelectorAll('.signTx-area')[0].style.display = 'block'
-}
-
-function viewSample () {
-  document.querySelector('.state-2a.sample').style.display='block';
-  document.querySelector('.state-1').style.display='none';
-}
-
-
-window.loginRequest()
