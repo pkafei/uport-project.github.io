@@ -48,8 +48,8 @@
                   pre
                     | // basic code to "log in" a user by
                     | // requesting certain data attributes
-                    | 
-                    | 
+                    |
+                    |
                     code
                       | uport.requestCredentials({
                       |  requested: ['name', 'avatar', 'phone', 'country'],
@@ -66,7 +66,7 @@
                       .status-text Status: Logged In
                       .status-user-box
                         img.user-pic(src='https://placekitten.com/75/75')
-                        .user-name Phoebe Olson 
+                        .user-name Phoebe Olson
                       .user-data-text User Data
                       pre.user-data-payload
                         | {
@@ -83,11 +83,11 @@
                       .status-text Status: Logged In
                       .status-user-box
                         img.user-pic(src='#')
-                        .user-name 
+                        .user-name
                       .user-data-text User Data
                       pre.user-data-payload
 
-                    
+
         .banner-text.download
           h2 Download uPort
           p Download uPort to try our demo and beign testing within your app.
@@ -101,23 +101,23 @@
         .explainer-section
           img.exp-graphic(src='img/gives-users-control.svg')
           .exp-text
-            h3 Give users control over their identity and data.
-            p Uport is Ethereum's identity platform. Self-sovereign, user centric keys and data management using Ethereum smart contracts. Support decentralized identity and user data. Self-sovereign identity platform built using Ethereum. User-centric data and reputation protocol.
+            h3 Give your users control over their identity, data, and private keys.
+            p Our mission is to empower the individual. uPort’s user-centric identity platform uses Ethereum to enable users to collect, store, and share their private identity data. uPort stores private keys on users’ devices, and therefore easily supports mobile challenge-respone authentication, signatures, 2FA, and blockchain transactions.
     .area-lightgray.omega
       .inner-row
         .explainer-section
           img.exp-graphic.mobile-only(src='img/simple-to-integrate.svg')
           .exp-text
-            h3 User onboarding, single sign on, authentication, and signatures.
-            p Uport will help you scale your app beyond the technical ethereum developer community to more mainstream users.Ethereum apps force users to manage private keys and deal with complexities like interacting with gas. Uport eliminates most of this complexity from the equation, making your app truly scalable. Support for blockchain or server apps. Uport Connect... Accept digital signatures from users. 2FA, sign terms,
+            h3 Accept decentralized user accounts and single sign-on.
+            p uPort Connect allows your users to securely log-in to your app using their mobile uPort ID. They can also use this same uPort ID to log-in to other services.
           img.exp-graphic.desktop-only(src='img/simple-to-integrate.svg')
     .area-white.zeta
       .inner-row
         .explainer-section
           img.exp-graphic(src='img/hackproof.svg')
           .exp-text
-            h3 Support for blockchain and client-server apps.
-            p Your app likely requires users to securely interact with servers and smart contracts. That's why Uport supports users across Ethereum and client-server apps. We bridge Ethereum and the rest of the world.
+            h3 Support blockchain and client-server app interactions.
+            p More and more applications are combining Ethereum smart contract and client-server functionality. uPort is a single identity solution to support both interaction patterns. We provide friendly identity, onboarding, key management, and transaction solutions for your Ethereum app that are simple to integrate.
     .content-shortcuts
       .inner-row
         img.logo(src='img/logo-white-2x.svg')
@@ -154,7 +154,7 @@
 :sass
   @import "node_modules/breakpoint-sass/stylesheets/_breakpoint.scss";
   $pair: 320px 794px;
-  
+
   .portal {
     text-align: center;
 
@@ -174,11 +174,11 @@
       .area-lightgray { * { color: #414141;} }
 
       .alpha {
-        .banner-text  { 
+        .banner-text  {
           top: -120px;
-          width: 500px; 
+          width: 500px;
           @include breakpoint ($pair) {
-            width: 100%; 
+            width: 100%;
           }
         }
         .banner-box .banner-text { top: 0px;}
@@ -187,7 +187,7 @@
       .delta,
       .omega,
       .zeta {
-        
+
         h2 {
           padding-top: 4rem;
 
@@ -195,17 +195,17 @@
             padding-top: 1rem;
           }
         }
-        
+
         .explainer-section {
           display: flex;
           justify-content: space-between;
           max-width: 850px;
           margin: auto;
           padding: 6rem 0;
-          
+
           .exp-graphic {
             width: 250px;
-            
+
             &.mobile-only {
               display: none;
 
@@ -213,7 +213,7 @@
                 display: block;
               }
             }
-            
+
             &.desktop-only {
               @include breakpoint($pair) {
                 display: none;
@@ -225,18 +225,18 @@
                 margin-top: 2rem;
               }
             }
-            
+
             @include breakpoint($pair) {
               width: 100%;
             }
           }
-          
+
           .exp-text {
             width: 500px;
             text-align: left;
-            
+
             p { margin-left: 0; }
-            
+
             @include breakpoint($pair) {
               width: 100%;
             }
@@ -253,7 +253,7 @@
         position: fixed;
         top: -3%;
         left: 50%;
-        margin-left: -30%; 
+        margin-left: -30%;
         background-image: url(img/logo-white-2x.svg);
         background-repeat: no-repeat;
         background-blend-mode: overlay;
@@ -276,7 +276,7 @@
         padding: 2rem;
 
         @include breakpoint ($pair) {
-          width: 100%; 
+          width: 100%;
         }
       }
 
@@ -318,19 +318,19 @@
           border: none;
           font-size: 1rem;
         }
-          .table { 
-            width: 100%; 
+          .table {
+            width: 100%;
             border: none;
             // overflow-x: hidden;
             pre, code, .thead { text-align: left; }
-            pre { 
-              margin: 0; 
+            pre {
+              margin: 0;
               color: #939393;
               max-width: 100%;
             }
             .thead {
-              .tr { 
-                display: flex; 
+              .tr {
+                display: flex;
                 @include breakpoint($pair) {
                   flex-direction: column;
                 }
@@ -340,7 +340,7 @@
                 background: white;
                 border-bottom: 0.5px solid #DDDDE7;
 
-                &:nth-child(2) { 
+                &:nth-child(2) {
                   @include breakpoint($pair) {
                     display: none;
                   }
@@ -348,31 +348,31 @@
               }
             }
             .tbody {
-              .tr { 
+              .tr {
                 display: flex;
                 @include breakpoint($pair) {
                   flex-direction: column;
                 }
               }
-              .td { 
-                padding: 1rem !important; 
+              .td {
+                padding: 1rem !important;
                 background: white;
                 width: 50%;
                 min-height: 300px;
 
-                .example-demo-wrap { 
-                  overflow-x: hidden; 
+                .example-demo-wrap {
+                  overflow-x: hidden;
                   pre { color: black; }
                 }
 
                 .state-2a,
                 .state-2b1,
                 .state-2b2 { display: none; }
-                
+
                 .status-text,
                 .user-data-text { text-align: left; margin: 1rem 0;}
-                .status-user-box { 
-                  border-radius: 4px; 
+                .status-user-box {
+                  border-radius: 4px;
                   border: 0.5px solid #DDDDE7;
                   display: flex;
                   align-items: center;
@@ -381,8 +381,8 @@
                 }
                 .status-text { margin-top: 0; }
                 .user-name { font-weight: bold; font-size: 1.3rem; }
-                .user-pic { 
-                  border-radius: 50%; margin-right: 1rem; 
+                .user-pic {
+                  border-radius: 50%; margin-right: 1rem;
                   height: 75px;
                   width: 75px;
                   background: gray;
@@ -410,13 +410,13 @@
                 }
               }
             }
-            .td:nth-child(1) { 
+            .td:nth-child(1) {
               width: 50%;
               @include breakpoint($pair) {
                 width: 100%;
               }
             }
-            .td:nth-child(2) { 
+            .td:nth-child(2) {
               width: 50%;
               @include breakpoint($pair) {
                 width: 100%;
@@ -444,7 +444,7 @@
         position: relative;
         z-index: 1;
         .inner-row { margin-bottom: 200px !important; }
-        
+
         .text-block { margin-bottom: 0; }
 
         .splash-focus{
@@ -455,7 +455,7 @@
           img.logo { max-width: 200px; }
         }
       }
-      
+
       .splash,
       .banner,
       .testdrive,
@@ -463,7 +463,7 @@
       .area-white,
       .area-lightgray {
         padding: 3rem 5rem;
-        
+
         @include breakpoint($pair) {
           padding: 5% 5% !important;
         }
@@ -495,7 +495,7 @@
           text-align: left;
           text-decoration: none;
         }
-      
+
         img {
           display: inline-block;
           height: 75px;
@@ -506,26 +506,26 @@
         .step-wrap {
           display: inline-block;
         }
-        
+
         .step-title {
           margin-bottom: 1rem;
           font-size: 1.3rem;
-          
+
           @include breakpoint($pair) {
             font-size: 1rem !important;
           }
         }
-        
+
         ul {
           display: flex;
           justify-content: space-between;
           padding: 0;
-          
+
           @include breakpoint($pair) {
             flex-direction: column;
           }
         }
-        
+
         li {
           margin: .5rem;
 
@@ -553,21 +553,21 @@
               font-size: 3rem;
             }
           }
-          
+
           .step-img {
             margin: 0 auto 1rem auto;
           }
         }
       }
-      
+
       .content-shortcuts {
-        
-        * { 
+
+        * {
           text-align: left;
           color: #FFFFFF;
         }
 
-        .logo { 
+        .logo {
           height: 150px;
           // background: gray;
         }
@@ -581,7 +581,7 @@
           }
         }
 
-        .inner-row { 
+        .inner-row {
           justify-content: space-between;
           > ul > li {
             margin-left: 2rem;
@@ -595,7 +595,7 @@
             cursor: no-drop;
           }
         }
-        
+
         .fa {
         font-size: 8rem;
         }
@@ -608,17 +608,17 @@
           padding: 0;
         }
 
-        ul, li { 
-          margin-left: 2rem; 
+        ul, li {
+          margin-left: 2rem;
           ul, li {
-            margin-left: 0; 
+            margin-left: 0;
           }
         }
 
         > ul {
           display: flex;
           justify-content: center;
-          
+
           > li {
             flex: 1;
             margin: 0 1rem;
