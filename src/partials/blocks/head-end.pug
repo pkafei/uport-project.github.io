@@ -46,7 +46,7 @@ include ../mixins/iframeloader
       text-decoration: underline;
     }
   }
-  
+
   li { list-style: none; }
 
   button { cursor: pointer; }
@@ -71,10 +71,6 @@ include ../mixins/iframeloader
     font-size: 1rem;
   }
 
-  a code {
-    font-size: 1.5rem;
-  }
-
   //////////////////////
   // GLOBAL MARGIN SIZES
   //////////////////////
@@ -95,8 +91,8 @@ include ../mixins/iframeloader
     margin: 0;
   }
 
-  p { 
-    margin: 1rem 0 1rem 1rem; 
+  p {
+    margin: 1rem 0 1rem 1rem;
   }
 
   p > code,
@@ -155,7 +151,7 @@ include ../mixins/iframeloader
   ////////////////////////////
   // HACKS
   ////////////////////////////
-  
+
   // TODO: uncomment when footer goes in
   .footer { display: none !important; }
 
@@ -170,7 +166,7 @@ include ../mixins/iframeloader
     margin-bottom: 2rem;
 
     .guides & {
-      max-width: 95%;
+      // max-width: 95%;
     }
     .gitter & {
       margin-bottom: 0;
@@ -237,7 +233,7 @@ include ../mixins/iframeloader
   ////////////////////////////
   // SITE CONTENT
   ////////////////////////////
-  
+
   main {
     border-bottom: 1px solid #333;
     flex: 1;
@@ -245,7 +241,7 @@ include ../mixins/iframeloader
     flex-direction: column;
     height: 100%;
     overflow: hidden;
-    > * { 
+    > * {
       display: none;
       -webkit-overflow-scrolling: touch;
     }
@@ -254,8 +250,8 @@ include ../mixins/iframeloader
     &.portal .portal {
       overflow-y: scroll;
       display: block;
-      .pagewrap { 
-        display:block; 
+      .pagewrap {
+        display:block;
         max-width: 100%;
         .inner-row {
           max-width: 1260px;
@@ -264,11 +260,11 @@ include ../mixins/iframeloader
       }
     }
 
-    &.guides .guides, 
-    &.apidocs .apidocs, 
-    &.tools .tools, 
-    &.myapps .myapps, 
-    &.gitter .gitter { 
+    &.guides .guides,
+    &.apidocs .apidocs,
+    &.tools .tools,
+    &.myapps .myapps,
+    &.gitter .gitter {
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -283,12 +279,12 @@ include ../mixins/iframeloader
     .pagewrap {
       display: flex;
       width: 100%;
-      max-width: 1260px;
+      max-width: 1440px;
       margin: auto;
       justify-content: center;
-      
+
       .content {
-        max-width: 900px;
+        // max-width: 900px;
         overflow-y: scroll;
         flex: 1;
 
@@ -339,7 +335,7 @@ include ../mixins/iframeloader
       padding: 1rem;
       min-width: 360px;
       overflow: auto;
-      
+
       @include breakpoint($pair) {
         display: none !important;
       }
@@ -362,7 +358,7 @@ include ../mixins/iframeloader
         font-size: 1.1rem;
         font-weight: bold;
         margin-bottom: .5rem;
-        
+
         &:first-child {
           margin-top: 0;
         }
@@ -379,12 +375,12 @@ include ../mixins/iframeloader
         display: block;
         padding-left: 10px;
       }
-      
+
       li.active, a.active {
         background: #595DC3;
         border-radius: 5px;
         * { color: white; }
-        &:hover { 
+        &:hover {
           * { text-decoration: none; }
         }
       }
@@ -393,11 +389,11 @@ include ../mixins/iframeloader
         > a {
           border-radius: 10px;
           * { color: white; }
-          h1 { 
-            background: #595DC3; 
+          h1 {
+            background: #595DC3;
             border-radius: 5px;
           }
-          &:hover { 
+          &:hover {
             * { text-decoration: none; }
           }
         }

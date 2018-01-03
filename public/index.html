@@ -2428,9 +2428,6 @@ textarea,
 input {
   font-size: 1rem; }
 
-a code {
-  font-size: 1.5rem; }
-
 h1,
 h2,
 h3,
@@ -2489,8 +2486,6 @@ iframe {
   background: #ccc;
   width: 100%;
   margin-bottom: 2rem; }
-  .guides .loading-wrapper-parent {
-    max-width: 95%; }
   .gitter .loading-wrapper-parent {
     margin-bottom: 0;
     height: 100%; }
@@ -2576,11 +2571,10 @@ main {
   main .pagewrap {
     display: flex;
     width: 100%;
-    max-width: 1260px;
+    max-width: 1440px;
     margin: auto;
     justify-content: center; }
     main .pagewrap .content {
-      max-width: 900px;
       overflow-y: scroll;
       flex: 1; }
       main .pagewrap .content .lib, main .pagewrap .content .guide {
@@ -2831,17 +2825,17 @@ main {
     margin-bottom: 0; }
 </style><main class="main portal"><div class="portal"><div class="pagewrap"><div class="splash"><div class="inner-row"><div class="splash-focus"><div class="floatinglogo"></div><h1>Simple and secure login for your Ethereum app</h1><p class="text-block">Uport ID makes blockchain easy on desktop and mobile</p></div></div></div><div class="area-white alpha"><div class="inner-row"><div class="banner-box"><div class="banner-text"><h2>Start developing today</h2></div><div class="banner-steps"><ul><li class="alpha"><a href="/guides.html#download-the-mobile-app"><img src="img/download-uport.svg"><div class="step-wrap"><div class="step-title">Download uPort Mobile</div><div class="step-desc">Download the uPort mobile app and create your identity on the blockchain.</div></div></a></li><li class="beta"><a href="/guides.html#register-your-app"><img src="img/register-app.svg"><div class="step-wrap"><div class="step-title">Register your app</div><div class="step-desc">Go to uPort AppManager, connect using uPort mobile and register your applicaton.</div></div></a></li><li class="omega"><a href="/guides.html#install-the-library/sdk"><img src="img/install-sdk.svg"><div class="step-wrap"><div class="step-title">Install the libraries / SDK's</div><div class="step-desc">Get started developing with uPort installing the required libraries and SDK's.</div></div></a></li></ul></div></div><div class="banner-text"><h2>Try Our Demo</h2><p>After you've downloaded uPort, you can try our demo right away or simply review the code.</p></div></div></div><div class="area-lightgray beta"><div class="inner-row"><div class="example-box"><div class="table"><div class="thead"><div class="tr"><div class="td">Code</div><div class="td">Result</div></div></div><div class="tbody"><div class="tr"><div class="td"><pre>// basic code to "log in" a user by
 // requesting certain data attributes
- 
- <code>uport.requestCredentials({
+
+<code>uport.requestCredentials({
  requested: ['name', 'avatar', 'phone', 'country'],
  notifcations: true
-})</code></pre></div><div class="td example-demo"><div class="example-demo-wrap"><div class="state-1 choose"><h3>Login with uPort</h3><button class="btn sample-choice" onclick="viewSample()">View sample uPort ID</button><div class="or">or</div><button class="btn connect-choice" onclick="loginRequest()">Connect with your uPort ID</button></div><div class="state-2a sample"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="https://placekitten.com/75/75"><div class="user-name">Phoebe Olson </div></div><div class="user-data-text">User Data</div><pre class="user-data-payload">{
+})</code></pre></div><div class="td example-demo"><div class="example-demo-wrap"><div class="state-1 choose"><h3>Login with uPort</h3><button class="btn sample-choice" onclick="viewSample()">View sample uPort ID</button><div class="or">or</div><button class="btn connect-choice" onclick="loginRequest()">Connect with your uPort ID</button></div><div class="state-2a sample"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="https://placekitten.com/75/75"><div class="user-name">Phoebe Olson</div></div><div class="user-data-text">User Data</div><pre class="user-data-payload">{
   "@context": "http://schema.org",
   "@type": "Person",
   "publicKey": "0x044c31ed1499dce76ee7711c72388fda86e6c1d4f9ecc105c4abe2f63cfe79638822dcf21b7c29b3d208fc01d4e0506d4e8f6234a912727a36cf347e61956d5f2f",
   "publicEncKey": "Py+NXzHgacNMTzj9Ufe4S2KPuzR39dDMd1o+rWBJnmM=",
   "name": "Christian Jeria"
-}</pre></div><div class="state-2b1 qr-scan"><h3>Scan QR with uPort Mobile app</h3><div id="kqr"></div></div><div class="state-2b2 results"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="#"><div class="user-name"> </div></div><div class="user-data-text">User Data</div><pre class="user-data-payload"></pre></div></div></div></div></div></div></div><div class="banner-text download"><h2>Download uPort</h2><p>Download uPort to try our demo and beign testing within your app.</p><a href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8"><img src="img/app-store-badge.svg" alt="ios app store"></a><a href="https://play.google.com/store/apps/details?id=com.uportMobile&amp;hl=en"><img src="img/google-play-badge.svg" alt="andoird play store"></a></div></div></div><div class="area-white delta"><div class="inner-row"><h2>Why uPort?</h2><div class="explainer-section"><img class="exp-graphic" src="img/gives-users-control.svg"><div class="exp-text"><h3>Give users control over their identity and data.</h3><p>Uport is Ethereum's identity platform. Self-sovereign, user centric keys and data management using Ethereum smart contracts. Support decentralized identity and user data. Self-sovereign identity platform built using Ethereum. User-centric data and reputation protocol.</p></div></div></div></div><div class="area-lightgray omega"><div class="inner-row"><div class="explainer-section"><img class="exp-graphic mobile-only" src="img/simple-to-integrate.svg"><div class="exp-text"><h3>User onboarding, single sign on, authentication, and signatures.</h3><p>Uport will help you scale your app beyond the technical ethereum developer community to more mainstream users.Ethereum apps force users to manage private keys and deal with complexities like interacting with gas. Uport eliminates most of this complexity from the equation, making your app truly scalable. Support for blockchain or server apps. Uport Connect... Accept digital signatures from users. 2FA, sign terms,</p></div><img class="exp-graphic desktop-only" src="img/simple-to-integrate.svg"></div></div></div><div class="area-white zeta"><div class="inner-row"><div class="explainer-section"><img class="exp-graphic" src="img/hackproof.svg"><div class="exp-text"><h3>Support for blockchain and client-server apps.</h3><p>Your app likely requires users to securely interact with servers and smart contracts. That's why Uport supports users across Ethereum and client-server apps. We bridge Ethereum and the rest of the world.</p></div></div></div></div><div class="content-shortcuts"><div class="inner-row"><img class="logo" src="img/logo-white-2x.svg"><ul><li class="guides"><div class="shortcut-wrap"><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li><script>document.querySelector('header').style.background = 'none'
+}</pre></div><div class="state-2b1 qr-scan"><h3>Scan QR with uPort Mobile app</h3><div id="kqr"></div></div><div class="state-2b2 results"><div class="status-text">Status: Logged In</div><div class="status-user-box"><img class="user-pic" src="#"><div class="user-name"></div></div><div class="user-data-text">User Data</div><pre class="user-data-payload"></pre></div></div></div></div></div></div></div><div class="banner-text download"><h2>Download uPort</h2><p>Download uPort to try our demo and beign testing within your app.</p><a href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8"><img src="img/app-store-badge.svg" alt="ios app store"></a><a href="https://play.google.com/store/apps/details?id=com.uportMobile&amp;hl=en"><img src="img/google-play-badge.svg" alt="andoird play store"></a></div></div></div><div class="area-white delta"><div class="inner-row"><h2>Why uPort?</h2><div class="explainer-section"><img class="exp-graphic" src="img/gives-users-control.svg"><div class="exp-text"><h3>Give users control over their identity and data.</h3><p>Give your users control over their identity, data, and private keys.</h3><p>Our mission is to empower the individual. uPort’s user-centric identity platform uses Ethereum to enable users to collect, store, and share their private identity data. uPort stores private keys on users’ devices, and therefore easily supports mobile challenge-respone authentication, signatures, 2FA, and blockchain transactions.</p></div></div></div></div><div class="area-lightgray omega"><div class="inner-row"><div class="explainer-section"><img class="exp-graphic mobile-only" src="img/simple-to-integrate.svg"><div class="exp-text"><h3>User onboarding, single sign on, authentication, and signatures.</h3><p>uPort Connect allows your users to securely log-in to your app using their mobile uPort ID. They can also use this same uPort ID to log-in to other services.</p></div><img class="exp-graphic desktop-only" src="img/simple-to-integrate.svg"></div></div></div><div class="area-white zeta"><div class="inner-row"><div class="explainer-section"><img class="exp-graphic" src="img/hackproof.svg"><div class="exp-text"><h3>Support for blockchain and client-server apps.</h3><p>More and more applications are combining Ethereum smart contract and client-server functionality. uPort is a single identity solution to support both interaction patterns. We provide friendly identity, onboarding, key management, and transaction solutions for your Ethereum app that are simple to integrate.</p></div></div></div></div><div class="content-shortcuts"><div class="inner-row"><img class="logo" src="img/logo-white-2x.svg"><ul><li class="guides"><div class="shortcut-wrap"><label>Guides</label></div><div class="list-wrap"><ul><li><a href="/guides.html#getting-started">Getting Started</a></li><li><a href="/guides.html#requesting-credentials">Requesting Credentials</a></li><li><a href="/guides.html#attesting-credentials">Attesting Credentials</a></li><li><a href="/guides.html#signing-transactions">Signing Transactions</a></li></ul></div></li><li class="api-docs"><div class="shortcut-wrap"><label>API Docs</label></div><div class="list-wrap"><ul><li><a href="/apidocs.html#uport-connect">uport-connect</a></li><li><a href="/apidocs.html#uport-js">uport-js</a></li><li><a href="#uport-lite" disabled>uport-lite (coming soon)</a></li><li><a href="#uport-registry" disabled>uport-registry (coming soon)</a></li></ul></div></li><script>document.querySelector('header').style.background = 'none'
 document.querySelector('body').style.background = '#34344F'</script></ul></div></div></div></div><style>.portal {
   text-align: center; }
   .portal .pagewrap .area-white,
@@ -3240,6 +3234,7 @@ var uniqueId = 0;
 
 var _ = _self.Prism = {
 	manual: _self.Prism && _self.Prism.manual,
+	disableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,
 	util: {
 		encode: function (tokens) {
 			if (tokens instanceof Token) {
@@ -3404,11 +3399,13 @@ var _ = _self.Prism = {
 		// Set language on the element, if not present
 		element.className = element.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
 
-		// Set language on the parent, for styling
-		parent = element.parentNode;
+		if (element.parentNode) {
+			// Set language on the parent, for styling
+			parent = element.parentNode;
 
-		if (/pre/i.test(parent.nodeName)) {
-			parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+			if (/pre/i.test(parent.nodeName)) {
+				parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+			}
 		}
 
 		var code = element.textContent;
@@ -3679,10 +3676,6 @@ Token.stringify = function(o, language, parent) {
 		parent: parent
 	};
 
-	if (env.type == 'comment') {
-		env.attributes['spellcheck'] = 'true';
-	}
-
 	if (o.alias) {
 		var aliases = _.util.type(o.alias) === 'Array' ? o.alias : [o.alias];
 		Array.prototype.push.apply(env.classes, aliases);
@@ -3703,18 +3696,21 @@ if (!_self.document) {
 		// in Node.js
 		return _self.Prism;
 	}
- 	// In worker
-	_self.addEventListener('message', function(evt) {
-		var message = JSON.parse(evt.data),
-		    lang = message.language,
-		    code = message.code,
-		    immediateClose = message.immediateClose;
 
-		_self.postMessage(_.highlight(code, _.languages[lang], lang));
-		if (immediateClose) {
-			_self.close();
-		}
-	}, false);
+	if (!_.disableWorkerMessageHandler) {
+		// In worker
+		_self.addEventListener('message', function (evt) {
+			var message = JSON.parse(evt.data),
+				lang = message.language,
+				code = message.code,
+				immediateClose = message.immediateClose;
+
+			_self.postMessage(_.highlight(code, _.languages[lang], lang));
+			if (immediateClose) {
+				_self.close();
+			}
+		}, false);
+	}
 
 	return _self.Prism;
 }
@@ -3763,7 +3759,7 @@ Prism.languages.markup = {
 	'doctype': /<!DOCTYPE[\s\S]+?>/i,
 	'cdata': /<!\[CDATA\[[\s\S]*?]]>/i,
 	'tag': {
-		pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\s\S])*\1|[^\s'">=]+))?)*\s*\/?>/i,
+		pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+))?)*\s*\/?>/i,
 		inside: {
 			'tag': {
 				pattern: /^<\/?[^\s>\/]+/i,
@@ -3773,9 +3769,15 @@ Prism.languages.markup = {
 				}
 			},
 			'attr-value': {
-				pattern: /=(?:('|")[\s\S]*?(\1)|[^\s>]+)/i,
+				pattern: /=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+)/i,
 				inside: {
-					'punctuation': /[=>"']/
+					'punctuation': [
+						/^=/,
+						{
+							pattern: /(^|[^\\])["']/,
+							lookbehind: true
+						}
+					]
 				}
 			},
 			'punctuation': /\/?>/,
@@ -3815,19 +3817,19 @@ Prism.languages.svg = Prism.languages.markup;
 Prism.languages.css = {
 	'comment': /\/\*[\s\S]*?\*\//,
 	'atrule': {
-		pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i,
+		pattern: /@[\w-]+?.*?(?:;|(?=\s*\{))/i,
 		inside: {
 			'rule': /@[\w-]+/
 			// See rest below
 		}
 	},
-	'url': /url\((?:(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
-	'selector': /[^\{\}\s][^\{\};]*?(?=\s*\{)/,
+	'url': /url\((?:(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
+	'selector': /[^{}\s][^{};]*?(?=\s*\{)/,
 	'string': {
-		pattern: /("|')(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		pattern: /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
 		greedy: true
 	},
-	'property': /(\b|\B)[\w-]+(?=\s*:)/i,
+	'property': /[\w-]+(?=\s*:)/i,
 	'important': /\B!important\b/i,
 	'function': /[-a-z0-9]+(?=\()/i,
 	'punctuation': /[(){};:]/
@@ -3847,7 +3849,7 @@ if (Prism.languages.markup) {
 	
 	Prism.languages.insertBefore('inside', 'attr-value', {
 		'style-attr': {
-			pattern: /\s*style=("|').*?\1/i,
+			pattern: /\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,
 			inside: {
 				'attr-name': {
 					pattern: /^\s*style/i,
@@ -3880,18 +3882,18 @@ Prism.languages.clike = {
 		}
 	],
 	'string': {
-		pattern: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
 		greedy: true
 	},
 	'class-name': {
-		pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,
+		pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[\w.\\]+/i,
 		lookbehind: true,
 		inside: {
-			punctuation: /(\.|\\)/
+			punctuation: /[.\\]/
 		}
 	},
-	'keyword': /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
-	'boolean': /\b(true|false)\b/,
+	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
+	'boolean': /\b(?:true|false)\b/,
 	'function': /[a-z0-9_]+(?=\()/i,
 	'number': /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,
 	'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,
@@ -3904,10 +3906,10 @@ Prism.languages.clike = {
 ********************************************** */
 
 Prism.languages.javascript = Prism.languages.extend('clike', {
-	'keyword': /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
-	'number': /\b-?(0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,
+	'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
+	'number': /\b-?(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\d*\.?\d+(?:[Ee][+-]?\d+)?|NaN|Infinity)\b/,
 	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
-	'function': /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i,
+	'function': /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*\()/i,
 	'operator': /-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/
 });
 
@@ -3916,12 +3918,17 @@ Prism.languages.insertBefore('javascript', 'keyword', {
 		pattern: /(^|[^/])\/(?!\/)(\[[^\]\r\n]+]|\\.|[^/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
 		lookbehind: true,
 		greedy: true
+	},
+	// This must be declared before keyword because we use "function" inside the look-forward
+	'function-variable': {
+		pattern: /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)\s*=>))/i,
+		alias: 'function'
 	}
 });
 
 Prism.languages.insertBefore('javascript', 'string', {
 	'template-string': {
-		pattern: /`(?:\\\\|\\?[^\\])*?`/,
+		pattern: /`(?:\\[\s\S]|[^\\`])*`/,
 		greedy: true,
 		inside: {
 			'interpolation': {
@@ -4552,7 +4559,7 @@ window.onload = () => {
     let userData = JSON.parse(localStorage.getItem('loggedInUser'))
     let userTemplate = `
       <li class="nav-item nav-Luser-area">
-        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}">
+        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}" style="height: 0;position: relative;top: -25px;">
           <img class="Luser-pic" src="${ userData.avatar.uri }">
           <div class="Luser-menu">
             <ul>

@@ -466,7 +466,7 @@ window.onload = () => {
     let userData = JSON.parse(localStorage.getItem('loggedInUser'))
     let userTemplate = `
       <li class="nav-item nav-Luser-area">
-        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}">
+        <div class="Luser" onclick="if($$('.log-out')[0]){toggleVisible($$('.log-out')[0])}" style="height: 0;position: relative;top: -25px;">
           <img class="Luser-pic" src="${ userData.avatar.uri }">
           <div class="Luser-menu">
             <ul>
