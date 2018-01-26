@@ -2652,7 +2652,7 @@ main {
         border-radius: 5px; }
       main .sidebar section.active > a:hover * {
         text-decoration: none; }
-</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort </span><span>&nbsp;|&nbsp;</span><span style="font-weight:bold; font-size:1.2rem;">Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Help</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div id="menu-btn"><div class="menu-btn-line"></div><div class="menu-btn-line"></div><div class="menu-btn-line"></div></div></div></div></header><script>document.querySelector("#menu-btn").onclick = (evt) => {
+</style></head><body><header class="header"><div class="header-wrap"><div class="header-left"><a class="logo-link" href="/"><span>uPort </span><span>&nbsp;|&nbsp;</span><span style="font-weight:bold; font-size:1.2rem;">Developers</span></a></div><div class="header-right"><nav class="nav"><ul class="nav-list"><li class="nav-item nav-overview"><a class="nav-link" href="/overview.html"><span>Overview</span></a></li><li class="nav-item nav-guides"><a class="nav-link" href="/guides.html"><span>Guides</span></a></li><li class="nav-item nav-apidocs"><a class="nav-link" href="/apidocs.html"><span>API Docs</span></a></li><li class="nav-item nav-myapps"><a class="nav-link" href="/myapps.html"><span>My Apps</span></a></li><li class="nav-item nav-gitter"><a class="nav-link" href="/gitter.html"><span>Help</span></a></li><li class="nav-item nav-blog"><a class="nav-link" href="https://medium.com/uport" target="_blank"><span>Blog</span></a></li><li class="nav-item nav-github"><a class="nav-link" href="https://github.com/uport-project" target="_blank"><span>Github</span></a></li></ul></nav><div id="menu-btn"><div class="menu-btn-line"></div><div class="menu-btn-line"></div><div class="menu-btn-line"></div></div></div></div></header><script>document.querySelector("#menu-btn").onclick = (evt) => {
   document.querySelector(".header .nav").classList.contains('active-touch')
     ? document.querySelector(".header .nav").classList.remove('active-touch')
     : document.querySelector(".header .nav").classList.add('active-touch');
@@ -2985,6 +2985,10 @@ var _ = _self.Prism = {
 	plugins: {},
 
 	highlightAll: function(async, callback) {
+		_.highlightAllUnder(document, async, callback);
+	},
+
+	highlightAllUnder: function(container, async, callback) {
 		var env = {
 			callback: callback,
 			selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
@@ -2992,7 +2996,7 @@ var _ = _self.Prism = {
 
 		_.hooks.run("before-highlightall", env);
 
-		var elements = env.elements || document.querySelectorAll(env.selector);
+		var elements = env.elements || container.querySelectorAll(env.selector);
 
 		for (var i=0, element; element = elements[i++];) {
 			_.highlightElement(element, async === true, env.callback);
@@ -3445,7 +3449,7 @@ Prism.languages.css = {
 		pattern: /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
 		greedy: true
 	},
-	'property': /[\w-]+(?=\s*:)/i,
+	'property': /[-_a-z\xA0-\uFFFF][-\w\xA0-\uFFFF]*(?=\s*:)/i,
 	'important': /\B!important\b/i,
 	'function': /[-a-z0-9]+(?=\()/i,
 	'punctuation': /[(){};:]/
@@ -3459,10 +3463,11 @@ if (Prism.languages.markup) {
 			pattern: /(<style[\s\S]*?>)[\s\S]*?(?=<\/style>)/i,
 			lookbehind: true,
 			inside: Prism.languages.css,
-			alias: 'language-css'
+			alias: 'language-css',
+			greedy: true
 		}
 	});
-	
+
 	Prism.languages.insertBefore('inside', 'attr-value', {
 		'style-attr': {
 			pattern: /\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,
@@ -3525,7 +3530,7 @@ Prism.languages.javascript = Prism.languages.extend('clike', {
 	'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
 	'number': /\b-?(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\d*\.?\d+(?:[Ee][+-]?\d+)?|NaN|Infinity)\b/,
 	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
-	'function': /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*\()/i,
+	'function': /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*\()/i,
 	'operator': /-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/
 });
 
@@ -3537,7 +3542,7 @@ Prism.languages.insertBefore('javascript', 'keyword', {
 	},
 	// This must be declared before keyword because we use "function" inside the look-forward
 	'function-variable': {
-		pattern: /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)\s*=>))/i,
+		pattern: /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/i,
 		alias: 'function'
 	}
 });
@@ -3568,7 +3573,8 @@ if (Prism.languages.markup) {
 			pattern: /(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i,
 			lookbehind: true,
 			inside: Prism.languages.javascript,
-			alias: 'language-javascript'
+			alias: 'language-javascript',
+			greedy: true
 		}
 	});
 }
@@ -3855,7 +3861,7 @@ function iframeLazyLoad () {
 }
 
 function sidebarStateCheckerOnScroll (scrollContainer) {
-  
+
   // Set visiable area
   let topBar = scrollContainer.scrollTop
   let viewArea = document.body.offsetHeight
@@ -3866,7 +3872,7 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
   // State vars
   let invisibleHeadersByID = []
   let visibleHeadersByID = []
-  
+
   headers
     .forEach((item) => {
 
@@ -3874,14 +3880,14 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
      let itemTopBar = item.offsetTop
 
      if(item.id) {
-      visibleHeadersByID.push(item.id) 
+      visibleHeadersByID.push(item.id)
      }
-     else { 
+     else {
       visibleHeadersByID.push(
         item.previousElementSibling.querySelectorAll('a[name]')[0].name
       )
      }
-     
+
      // List invisible headers
     if(item.id) {
       topBar >= itemTopBar
@@ -3907,16 +3913,16 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
          : null
      }
   })
-  
+
   // Clear any active class
   $$('.sidebar *.active').forEach((item) => {item.classList.remove('active')})
-  
+
   // Get the current item
   let currentSideBarItemToHighlight = $$('a[href="#' + visibleHeadersByID[0] + '"]')[0]
 
   if(currentSideBarItemToHighlight !== undefined) {
-    currentSideBarItemToHighlight.parentElement.classList.add('active')  
-  }  
+    currentSideBarItemToHighlight.parentElement.classList.add('active')
+  }
 }
 
 ///////////////////////
@@ -4038,28 +4044,28 @@ function changeSideBarLinkClass(sidebarLink) {
   }
 }
 
-window.onload = () => { 
+window.onload = () => {
 
   //////////////////////
   // ROUTER Logic
   //////////////////////
 
   ifPage('', () => {
-    
+
     // Scroll area
     let portalDOM = mainDOM.querySelector('.portal')
-    
+
     // Last know position
     let lastScrollTop = 0;
-    
+
     // Event listener
-    portalDOM.onscroll = () => { 
+    portalDOM.onscroll = () => {
 
       // Current position
       let scrolltop = portalDOM.scrollTop;
 
       // Clear pre-existing page-load state
-      if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}           
+      if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}
 
       // Logic of scrolling up or down
       if (scrolltop > lastScrollTop){ lastScrollTop = lastScrollTop + 1}
@@ -4067,14 +4073,14 @@ window.onload = () => {
 
       // Set last known position
       lastScrollTop = scrolltop;
-    
-      // Change the color 
-      headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';  
+
+      // Change the color
+      headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';
     }
   })
 
   ifPage('guides', () => {
-    analyticsPageFire('Guides')  
+    analyticsPageFire('Guides')
     changeNavClass('guides')
     createSidebars([guideAreaDOM])
 
@@ -4093,6 +4099,19 @@ window.onload = () => {
         item.parentNode.appendChild(warningDom)
         item.remove()
       })
+    }
+  })
+
+  ifPage('overview', () => {
+    analyticsPageFire('Overview')
+    changeNavClass('overview')
+    createSidebars([guideAreaDOM])
+
+    if(WINDOW_WIDTH > '794') {
+      guideContentDOM.onscroll = () => {
+        iframeLazyLoad()
+        sidebarStateCheckerOnScroll(guideContentDOM)
+      }
     }
   })
 
@@ -4131,7 +4150,7 @@ window.onload = () => {
     }
   })
 
-  ifPage('gitter', () => { 
+  ifPage('gitter', () => {
     analyticsPageFire('Gitter')
     changeNavClass('gitter')
 
@@ -4197,7 +4216,6 @@ window.onload = () => {
     : null
 
 }
-
 ////////////////////
 // uPort Setup
 ////////////////////

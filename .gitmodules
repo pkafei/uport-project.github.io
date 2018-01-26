@@ -1,3 +1,3 @@
-[submodule "src/docs-src"]
-	path = src/docs-src
-	url = https://github.com/uport-project/docs-src.git
+[submodule "src/docs"]
+	path = src/docs
+	url = https://github.com/uport-project/docs

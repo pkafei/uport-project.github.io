@@ -146,7 +146,7 @@ function iframeLazyLoad () {
 }
 
 function sidebarStateCheckerOnScroll (scrollContainer) {
-  
+
   // Set visiable area
   let topBar = scrollContainer.scrollTop
   let viewArea = document.body.offsetHeight
@@ -157,7 +157,7 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
   // State vars
   let invisibleHeadersByID = []
   let visibleHeadersByID = []
-  
+
   headers
     .forEach((item) => {
 
@@ -165,14 +165,14 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
      let itemTopBar = item.offsetTop
 
      if(item.id) {
-      visibleHeadersByID.push(item.id) 
+      visibleHeadersByID.push(item.id)
      }
-     else { 
+     else {
       visibleHeadersByID.push(
         item.previousElementSibling.querySelectorAll('a[name]')[0].name
       )
      }
-     
+
      // List invisible headers
     if(item.id) {
       topBar >= itemTopBar
@@ -198,16 +198,16 @@ function sidebarStateCheckerOnScroll (scrollContainer) {
          : null
      }
   })
-  
+
   // Clear any active class
   $$('.sidebar *.active').forEach((item) => {item.classList.remove('active')})
-  
+
   // Get the current item
   let currentSideBarItemToHighlight = $$('a[href="#' + visibleHeadersByID[0] + '"]')[0]
 
   if(currentSideBarItemToHighlight !== undefined) {
-    currentSideBarItemToHighlight.parentElement.classList.add('active')  
-  }  
+    currentSideBarItemToHighlight.parentElement.classList.add('active')
+  }
 }
 
 ///////////////////////
@@ -329,28 +329,28 @@ function changeSideBarLinkClass(sidebarLink) {
   }
 }
 
-window.onload = () => { 
+window.onload = () => {
 
   //////////////////////
   // ROUTER Logic
   //////////////////////
 
   ifPage('', () => {
-    
+
     // Scroll area
     let portalDOM = mainDOM.querySelector('.portal')
-    
+
     // Last know position
     let lastScrollTop = 0;
-    
+
     // Event listener
-    portalDOM.onscroll = () => { 
+    portalDOM.onscroll = () => {
 
       // Current position
       let scrolltop = portalDOM.scrollTop;
 
       // Clear pre-existing page-load state
-      if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}           
+      if (headerDOM.style.background = 'none') { headerDOM.style.background = 'rgba(52,52,79,0)';}
 
       // Logic of scrolling up or down
       if (scrolltop > lastScrollTop){ lastScrollTop = lastScrollTop + 1}
@@ -358,14 +358,14 @@ window.onload = () => {
 
       // Set last known position
       lastScrollTop = scrolltop;
-    
-      // Change the color 
-      headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';  
+
+      // Change the color
+      headerDOM.style.background = 'rgba(52,52,79,'+( (lastScrollTop*.01) / 3)+')';
     }
   })
 
   ifPage('guides', () => {
-    analyticsPageFire('Guides')  
+    analyticsPageFire('Guides')
     changeNavClass('guides')
     createSidebars([guideAreaDOM])
 
@@ -384,6 +384,19 @@ window.onload = () => {
         item.parentNode.appendChild(warningDom)
         item.remove()
       })
+    }
+  })
+
+  ifPage('overview', () => {
+    analyticsPageFire('Overview')
+    changeNavClass('overview')
+    createSidebars([guideAreaDOM])
+
+    if(WINDOW_WIDTH > '794') {
+      guideContentDOM.onscroll = () => {
+        iframeLazyLoad()
+        sidebarStateCheckerOnScroll(guideContentDOM)
+      }
     }
   })
 
@@ -422,7 +435,7 @@ window.onload = () => {
     }
   })
 
-  ifPage('gitter', () => { 
+  ifPage('gitter', () => {
     analyticsPageFire('Gitter')
     changeNavClass('gitter')
 
@@ -488,4 +501,3 @@ window.onload = () => {
     : null
 
 }
-
