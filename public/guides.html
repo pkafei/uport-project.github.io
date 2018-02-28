@@ -2911,7 +2911,7 @@ uport.requestCredentials()
 <p>We have had success with the <a href="https://larsjung.de/kjua/">KJUA QR Library</a>. It's also recommended you wrap the QR or create a seperate button for mobile.</p>
 <pre><code class="language-js">uport.requestCredentials({
   requested: ['name', 'avatar', 'phone', 'country'],
-  notifcations: true,
+  notifcations: true },
   (uri) =&gt; {
 
     const qr = kjua({

@@ -2847,7 +2847,7 @@ main {
 Specifications on where identity data and private keys are stored, and more. We don't include them in the core uPort protocols because we believe these features can be implemented as modules that support the underlying standards. Our platform, detailed below, provides simple solutions for private key and data management.</p>
 </section><section><h1>PLATFORM</h1>
 <p>The uPort Platform is our implementation of the uPort Protocol designed to make decentralized identities on Ethereum easy to create and use for developers and users. uPort's modular, open-source components can easily support any Ethereum network, and are available for you to use today.</p>
-<h2><strong>Ethereum Identity Components:</strong></h2>
+<h2><strong>Ethereum Identity Components</strong>:</h2>
 <p>Decentralized identity infrastructure for the Ethereum network, implemented as smart contracts.</p>
 <ul>
 <li>
@@ -2860,7 +2860,7 @@ Specifications on where identity data and private keys are stored, and more. We 
 <p><em><a href="https://github.com/ethereum/EIPs/issues/780">Claims Registry</a>:</em> A general purpose registry where identities can send claims messages for permanent public record. Registry contracts provide a PKI mechanism for identities to publicly claim their official uPort Document, containing critical PKI information and other metadata, in a way that can be publicly searched and discovered by other participants on the network. Actually, registry contracts can be used to store any kind of public claim. Current version is called the Ethereum Claims Registry and we submitted it for consideration as an Ethereum standard in ERC 780.</p>
 </li>
 </ul>
-<h2><strong>Network Microservices:</strong></h2>
+<h2><strong>Network Microservices</strong>:</h2>
 <p>Hosted web services that make using the uPort network simpler. The goal is for these services to be replaced by decentralized alternatives as they become more feasible.</p>
 <ul>
 <li>
@@ -2879,7 +2879,7 @@ Specifications on where identity data and private keys are stored, and more. We 
 <p><em>Identity Creation:</em> Exists to provide an easy way to create uPort identities on the network. Current implementation is called Unnu.</p>
 </li>
 </ul>
-<h2><strong>Libraries:</strong></h2>
+<h2><strong>Libraries</strong>:</h2>
 <p>Open source libraries for developers to quickly start integrating with the uPort network.</p>
 <ul>
 <li>
@@ -2898,18 +2898,38 @@ Specifications on where identity data and private keys are stored, and more. We 
 <p><em>uPort Mobile SDK:</em> Native mobile libraries for uPort-enabled mobile applications. Coming soon.</p>
 </li>
 </ul>
-<h2><strong>Clients (apps)</strong></h2>
-<p>Allow users, developers, and applications to interact with the uPort platform.</p>
+</section><section><h1>SPECS</h1>
+<p><em><a href="https://github.com/uport-project/specs">uPort Platform Specifications</a>:</em> uPort's platform specification repository.</p>
+<h2><strong>Flows</strong></h2>
+<p><em><a href="https://github.com/uport-project/specs/blob/develop/flows/index.md">uPort Request Flows</a>:</em></p>
 <ul>
-<li>
-<p><em><a href="https://itunes.apple.com/us/app/uport-id/id1123434510">uPort Mobile Wallet</a>:</em> Secure mobile self-sovereign identity wallet for end users to create their identity, manage their data, and approve requests.</p>
-</li>
-<li>
-<p><em><a href="http://developer.uport.me/myapps.html">uPort App Manager</a>:</em> Web client for developers to manage the uPort identity of their applications.</p>
-</li>
-<li>
-<p><em><a href="https://github.com/uport-project/uport-js-client">uPort JS Client</a>:</em> JavaScript client for developers to interact with the uPort Platform. Built for testing and development. Can create identities, handle messages, execute signatures, and more.</p>
-</li>
+<li><em><a href="https://github.com/uport-project/specs/tree/develop/flows/selectivedisclosure.md">Selective Disclosure Flow</a></em></li>
+<li><em><a href="https://github.com/uport-project/specs/tree/develop/flows/verification.md">Send Verification Flow</a></em></li>
+<li><em><a href="https://github.com/uport-project/specs/tree/develop/flows/tx.md">Ethereum Transaction Request Flow</a></em></li>
+<li><em><a href="https://github.com/uport-project/specs/tree/develop/flows/privatechain.md">Private Chain Provisioning Flow</a></em></li>
+</ul>
+<h2><strong>Messages</strong></h2>
+<p><em><a href="https://github.com/uport-project/specs/blob/develop/messages/index.md">Off-chain messages</a>:</em> There are several standard message types that the uPort mobile app knows how to handle or create</p>
+<ul>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/messages/sharereq.md">Selective Disclosure Request</a>:</em> for asking private data from a user</li>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/messages/shareresp.md">Selective Disclosure Response</a>:</em> signed by the app as a response to a Selective Disclosure Request</li>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/messages/verification.md">Verification</a>:</em> signed claim by one party about another party</li>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/messages/privatechain.md">Private Chain Provisioning Message</a>:</em> for provisioning an identity on a private Ethereum chain</li>
+</ul>
+<h2><strong>PKI</strong></h2>
+<p><em><a href="https://github.com/uport-project/specs/blob/develop/pki/index.md">uPort PKI</a>:</em> uPort implements a simple yet general purpose decentralized PKI system, making it easy to create and verify off-chain JWT messages.</p>
+<ul>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/pki/identitydocument.md">Identity Document</a>:</em> The Identity document is stored on IPFS and tied to the address using the uport registry</li>
+</ul>
+<h2><strong>Rest APIs</strong></h2>
+<ul>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/rest-apis/fuel-server.md">Fuel Server</a>:</em> We support a transaction fueling service, which will be called if the users account does not have enough funds available to fuel the transaction</li>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/rest-apis/relay-server.md">Relay Server</a></em> We support meta transactions which allows a 3rd party transaction fueling service to fund and relay transactions without requiring pre-funding the users account.</li>
+</ul>
+<h2><strong>Transports</strong></h2>
+<ul>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/transports/index.md#requestresponse-transports">Request/Response Transports</a>:</em> Requests always consist of URLs that are handled by the mobile app. Responses are sent to the callback url included with the Request.</li>
+<li><em><a href="https://github.com/uport-project/specs/blob/develop/transports/push.md">Push Notification Transport</a>:</em> Push notifications is a transport for sending requests to users.</li>
 </ul>
 </section></div></div></div></div><style>.guide h2 {
   padding-top: 1rem;
