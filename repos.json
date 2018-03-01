@@ -1,0 +1,11 @@
+{
+  "docs" : {
+    "githubURL": "https://github.com/uport-project/docs.git",
+    "branch": "move-docs-to-reference"
+  },
+  "specs" : {
+    "githubURL": "https://github.com/uport-project/specs.git",
+    "projectTitle": "uPort Specs",
+    "branch": ""
+  }
+}
