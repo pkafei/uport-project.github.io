@@ -35,6 +35,25 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        // your segment write key for your production environment
+        // when process.env.NODE_ENV === 'production'
+        // required; non-empty string
+        prodKey: config.segmentProdKey,
+
+        // if you have a development env for your segment account, paste that key here
+        // when process.env.NODE_ENV === 'development'
+        // optional; non-empty string
+        devKey: config.segmentDevKey,
+
+        // whether you want to include analytics.page()
+        // optional; boolean that defaults to true
+        // if false, then don't forget to manually add it to your codebase manually!
+        trackPage: true
+      }
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [

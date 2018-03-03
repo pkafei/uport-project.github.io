@@ -8,16 +8,25 @@ import CtaButton from '../components/CtaButton'
 import Navigation from '../components/Layout/Navigation'
 
 class Index extends React.Component {
-
-  render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    navHeadings() {
+        const navHeadings = [];
+        this.props.data.navCategories.edges.forEach(cat => {
+            if (!navHeadings.includes(cat.node.frontmatter.category)){
+                navHeadings.push(cat.node.frontmatter.category);
+            }
+        })
+        return navHeadings
+    }
+    render() {
+      const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <SEO postEdges={postEdges} />
         <main>
           <IndexHeadContainer>
-            <Navigation />
+            <Navigation
+              sections={this.navHeadings()}/>
             <Hero>
               <img src={config.siteLogo} width='150px' />
               <h1>{config.siteTitle}</h1>
@@ -56,15 +65,15 @@ const BodyContainer = styled.div`
   margin: 0 auto;
 `
 
-
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-  query IndexQuery {
+query IndexQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: {type: {eq: "post"}}}
     ) {
-      edges { 
+      edges {
         node {
           fields {
             slug
@@ -80,5 +89,19 @@ export const pageQuery = graphql`
         }
       }
     }
-  }
+    navCategories:
+    allMarkdownRemark(
+        filter: { frontmatter: { category: { ne: null } } }
+    ) {
+        edges {
+            node {
+                excerpt
+                timeToRead
+                frontmatter {
+                    category
+                }
+            }
+        }
+    }
+}
 `;

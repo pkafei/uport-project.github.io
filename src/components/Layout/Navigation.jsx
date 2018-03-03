@@ -33,20 +33,29 @@ const NavContainer = styled.div`
 `
 
 class Navigation extends React.Component {
-
-  render() {
+    navListItems() {
+        const navItems = []
+        this.props.sections.forEach(section => {
+            navItems.push(
+                <Link className='nav-link' to='/' > {section.toUpperCase()} </Link>
+            )
+        })
+        return navItems
+    }
+    render() {
     return (
-      <NavContainer>
-        <section>
-          <Link className='nav-link' to='/' > HOME </Link>
-          <Link className='nav-link' to='/lesson-one' > GUIDES </Link>
-          <Link className='nav-link' to='/about' > OVERVIEW </Link>
-          <Link className='nav-link' to='/post-one' > API DOCS</Link>
-        </section>
-        <span><UserLinks /></span>
-      </NavContainer>
+        <NavContainer>
+            <section>
+                {this.navListItems()}
+            </section>
+            <span><UserLinks /></span>
+        </NavContainer>
     )
-  }
+    }
 }
 
 export default Navigation
+{/* <Link className='nav-link' to='/' > HOME </Link>
+    <Link className='nav-link' to='/lesson-one' > GUIDES </Link>
+    <Link className='nav-link' to='/about' > OVERVIEW </Link>
+    <Link className='nav-link' to='/post-one' > API DOCS</Link> */}

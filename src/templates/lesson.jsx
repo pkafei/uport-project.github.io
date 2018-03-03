@@ -105,14 +105,13 @@ const ToCContainer = styled.div`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-    query LessonBySlug($slug: String!) {
+    query LessonqBySlug($slug: String!) {
         allPostTitles: allMarkdownRemark{
             edges {
                 node {
                     frontmatter {
                         title
                         lesson
-                        chapter
                         type
                     }
                     fields {
