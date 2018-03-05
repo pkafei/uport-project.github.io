@@ -8,80 +8,83 @@ import styled from 'styled-components'
 
 class TableOfContents extends React.Component {
   buildNodes() {
-    const {posts} = this.props
-    const type = this.props.contentsType
-    const postNodes = []
-    posts.forEach(post => {
-      if (post.node.frontmatter.type === type) {
-        const postNode = {
-          title: post.node.frontmatter.title,
-          path: post.node.fields.slug,
-          lessonNumber: post.node.frontmatter.lesson,
-          chapter: post.node.frontmatter.chapter
-        }
-        postNodes.push(postNode)
-      }
-    })
+      const {posts} = this.props
+      const type = this.props.contentsType
+      const {category} = this.props.category
+      const categories = [];
+      this.props.data.postByCategory.edges.forEach(cat => {
+          if(cat.node.frontmatter.category === category){
+              categories.push(cat.node.frontmatter.category)
+          }
+      })
+      const postNodes = []
+      posts.forEach(post => {
+          if (post.node.frontmatter.type === type) {
+              const postNode = {
+                  title: post.node.frontmatter.title,
+                  path: post.node.fields.slug,
+                  lessonNumber: post.node.frontmatter.lesson,
+                  chapter: post.node.frontmatter.chapter
+              }
+              postNodes.push(postNode)
+          }
+      })
 
-    const postNodeChapters = [];
-    postNodes.forEach(post => {
-      if (postNodeChapters[post.chapter]) {
-        postNodeChapters[post.chapter].push(post)
-      } else {
-        postNodeChapters[post.chapter] = [post]
-      }
-    })
+      const postNodeChapters = [];
+      postNodes.forEach(post => {
+          if (postNodeChapters[post.chapter]) {
+              postNodeChapters[post.chapter].push(post)
+          } else {
+              postNodeChapters[post.chapter] = [post]
+          }
+      })
 
-    postNodeChapters.forEach(chapter => {
-      chapter.sort((a, b) => a.lessonNumber > b.lessonNumber)
-    })
-    return postNodeChapters
+      return postNodeChapters
   }
 
     nodeListItems() {
-    // FIXME this assumes a configuration for chapters... re-write chapters to be directories?
-    const postNodeChapters = this.buildNodes()
-    const listItems = []
-    const chapterTitles = this.props.chapterTitles
-    postNodeChapters.forEach((chapter, idx) => {
-      const chapterLessons = []
-      chapter.forEach(node => {
-        chapterLessons.push(
-          <LessonContainer>
-            <Link to={node.path}>
-              <li>
-                <span>
-                    {/* <p>{node.chapter}.{node.lessonNumber} &nbsp;</p> */}
-                  <h6>{node.title}</h6>
-                </span>
-              </li>
-            </Link>
-          </LessonContainer>
-        )
-      })
-      listItems.push(
-        <li className='chapter'>
-          <h5 className='tocHeading'>
-            {chapterTitles[idx].toUpperCase()}
-          </h5>
-          <ul className='chapterItems'>
-            {chapterLessons}
-          </ul>
-        </li>
-      )
-    })
-    return listItems
-  }
+        // FIXME this assumes a configuration for chapters... re-write chapters to be directories?
+        const postNodeChapters = this.buildNodes()
+        const listItems = []
+        const chapterTitles = this.props.chapterTitles
+        postNodeChapters.forEach((chapter, idx) => {
+            const chapterLessons = []
+            chapter.forEach(node => {
+                chapterLessons.push(
+                    <LessonContainer>
+                        <Link to={node.path}>
+                            <li>
+                                <span>
+                                    <h6>{node.title}</h6>
+                                </span>
+                            </li>
+                        </Link>
+                    </LessonContainer>
+                )
+            })
+            listItems.push(
+                <li className='chapter'>
+                    <h5 className='tocHeading'>
+                        {chapterTitles[idx].toUpperCase()}
+                    </h5>
+                    <ul className='chapterItems'>
+                        {chapterLessons}
+                    </ul>
+                </li>
+            )
+        })
+        return listItems
+    }
 
-  render() {
-    return (
-      <TableOfContentsContainer>
-        <ul>
-          {this.nodeListItems()}
-        </ul>
-      </TableOfContentsContainer>
-    )
-  }
+    render() {
+        return (
+            <TableOfContentsContainer>
+                <ul>
+                    {this.nodeListItems()}
+                </ul>
+            </TableOfContentsContainer>
+        )
+    }
 }
 
 const TableOfContentsContainer = styled.div`
@@ -123,5 +126,31 @@ const LessonContainer = styled.div`
     }
   }
 `
+
+/* eslint no-undef: "off"*/
+export const pageQuery = graphql`
+    query ContentsByCategory($category: String) {
+        postByCategory:  allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { category: { eq: $category } } }
+        ) {
+            totalCount
+            edges {
+                node {
+                    fields {
+                        slug
+                    }
+                    excerpt
+                    timeToRead
+                    frontmatter {
+                        title
+                        category
+                        date
+                    }
+                }
+            }
+        }
+    }
+`;
 
 export default TableOfContents

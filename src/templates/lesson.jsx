@@ -13,40 +13,53 @@ export default class LessonTemplate extends React.Component {
     const { slug } = this.props.pathContext;
     const postNode = this.props.data.postBySlug;
     const post = postNode.frontmatter;
+    const category = post.category;
+    const categories = [];
+    const fringeData = this.props.data.postByCategory
+    this.props.data.postByCategory.edges.forEach(cat => {
+        if(cat.node.frontmatter.category === category){
+            categories.push(cat)
+        }
+    })
+    const chapterTitles = [];
+    categories.forEach(cat => {
+      chapterTitles.push(cat.node.frontmatter.title)
+    });
     if (!post.id) {
       post.id = slug;
     }
     if (!post.id) {
       post.category_id = config.postDefaultCategoryID;
     }
-    return (
-      <div>
-        <Helmet>
-          <title>{`${post.title} | ${config.siteTitle}`}</title>
-        </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <BodyGrid>
-          <HeaderContainer>
-            <SiteHeader location={this.props.location} categories={this.props.data.navCategories} />
-          </HeaderContainer>
-          <ToCContainer>
-            <TableOfContents
-              posts={this.props.data.allPostTitles.edges}
-              contentsType="lesson"
-              chapterTitles={config.toCChapters}
-            />
-          </ToCContainer>
-          <BodyContainer>
-            <div>
-              <h1>
-                {post.title}
-              </h1>
-              <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            </div>
-          </BodyContainer>
-        </BodyGrid>
-      </div>
-    );
+      return (
+          <div>
+              <Helmet>
+                  <title>{`${post.title} | ${config.siteTitle}`}</title>
+              </Helmet>
+              <SEO postPath={slug} postNode={postNode} postSEO />
+              <BodyGrid>
+                  <HeaderContainer>
+                      <SiteHeader location={this.props.location} categories={this.props.data.navCategories} />
+                  </HeaderContainer>
+                  <ToCContainer>
+                    <TableOfContents
+                      posts={this.props.data.allPostTitles.edges}
+                      contentsType="lesson"
+                      chapterTitles={chapterTitles}
+                      category={category}
+                      />
+                  </ToCContainer>
+                  <BodyContainer>
+                      <div>
+                          <h1>
+                              {post.title}
+                          </h1>
+                          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                      </div>
+                  </BodyContainer>
+              </BodyGrid>
+          </div>
+      );
   }
 }
 
@@ -106,7 +119,7 @@ const ToCContainer = styled.div`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-    query LessonqBySlug($slug: String!) {
+    query LessonBySlug($slug: String!) {
         allPostTitles: allMarkdownRemark{
             edges {
                 node {
@@ -136,6 +149,10 @@ export const pageQuery = graphql`
             html
             timeToRead
             excerpt
+            headings  {
+                value
+                depth
+            }
             frontmatter {
                 title
                 cover
@@ -147,10 +164,23 @@ export const pageQuery = graphql`
                 slug
             }
         }
-        tocByDirectory:  allDirectory{
+        postByCategory:  allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { category: { ne: null } } }
+        ) {
+            totalCount
             edges {
                 node {
-                    name
+                    fields {
+                        slug
+                    }
+                    excerpt
+                    timeToRead
+                    frontmatter {
+                        title
+                        category
+                        date
+                    }
                 }
             }
         }

@@ -95,8 +95,6 @@ query IndexQuery {
     ) {
         edges {
             node {
-                excerpt
-                timeToRead
                 frontmatter {
                     category
                 }

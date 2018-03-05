@@ -1,6 +1,6 @@
 const theme = {
   // named colors:
-  brand: '#f5f2f0',
+  brand: '#34344F',
   accent: '#ADD2EB',
   accentDark: "#35495E",
   lightGrey: '#F6F6F6',
@@ -9,7 +9,7 @@ const theme = {
   errorRed: '#FF6666',
   codeEditBlue: '#2973b7',
   codeEditGreen: '#42b983',
-
+  themedWhite: '#f5f2f0',
   // content width:
   contentWidthLaptop: '850px',
   sitePadding: "25px",

@@ -33,6 +33,7 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
 exports.createPages = ({graphql, boundActionCreators}) => {
   const {createPage} = boundActionCreators;
 
+  /* add new types of pages for programatic creation here */
   return new Promise((resolve, reject) => {
     const postPage = path.resolve("src/templates/post.jsx");
     const lessonPage = path.resolve("src/templates/lesson.jsx")
