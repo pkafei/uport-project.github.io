@@ -9,6 +9,7 @@ import TableOfContents from "../components/Layout/TableOfContents";
 
 export default class LessonTemplate extends React.Component {
   render() {
+    console.log(this.props.data)
     const { slug } = this.props.pathContext;
     const postNode = this.props.data.postBySlug;
     const post = postNode.frontmatter;
@@ -26,7 +27,7 @@ export default class LessonTemplate extends React.Component {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <BodyGrid>
           <HeaderContainer>
-            <SiteHeader location={this.props.location} />
+            <SiteHeader location={this.props.location} categories={this.props.data.navCategories} />
           </HeaderContainer>
           <ToCContainer>
             <TableOfContents
@@ -116,6 +117,17 @@ export const pageQuery = graphql`
                     }
                     fields {
                         slug
+                    }
+                }
+            }
+        }
+        navCategories: allMarkdownRemark (
+            filter: { frontmatter: { category: { ne: null } } }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        category
                     }
                 }
             }

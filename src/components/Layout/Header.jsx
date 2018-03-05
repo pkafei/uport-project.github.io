@@ -6,9 +6,9 @@ class MainHeader extends React.Component {
 
     navHeadings() {
         const navHeadings = [];
-        this.props.navCategories.forEach(cat => {
-            if (!navHeadings.includes(cat)){
-                navHeadings.push(cat);
+        this.props.categories.edges.forEach(cat => {
+            if (!navHeadings.includes(cat.node.frontmatter.category)){
+                navHeadings.push(cat.node.frontmatter.category);
             }
         })
         return navHeadings
