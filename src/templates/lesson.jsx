@@ -9,13 +9,11 @@ import TableOfContents from "../components/Layout/TableOfContents";
 
 export default class LessonTemplate extends React.Component {
   render() {
-    console.log(this.props.data)
     const { slug } = this.props.pathContext;
     const postNode = this.props.data.postBySlug;
     const post = postNode.frontmatter;
     const category = post.category;
     const categories = [];
-    const fringeData = this.props.data.postByCategory
     this.props.data.postByCategory.edges.forEach(cat => {
         if(cat.node.frontmatter.category === category){
             categories.push(cat)
@@ -43,17 +41,18 @@ export default class LessonTemplate extends React.Component {
                   </HeaderContainer>
                   <ToCContainer>
                     <TableOfContents
-                      posts={this.props.data.allPostTitles.edges}
+                      posts={this.props.data.postByCategory.edges}
                       contentsType="lesson"
                       chapterTitles={chapterTitles}
+                      categories={categories}
                       category={category}
                       />
                   </ToCContainer>
                   <BodyContainer>
                       <div>
-                          <h1>
-                              {post.title}
-                          </h1>
+                        {/* <h1>
+                            {post.title}
+                            </h1> */}
                           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
                       </div>
                   </BodyContainer>
@@ -119,70 +118,76 @@ const ToCContainer = styled.div`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-    query LessonBySlug($slug: String!) {
-        allPostTitles: allMarkdownRemark{
-            edges {
-                node {
-                    frontmatter {
-                        title
-                        lesson
-                        type
-                    }
-                    fields {
-                        slug
-                    }
-                }
-            }
+  query LessonBySlug($slug: String!) {
+    allPostTitles: allMarkdownRemark{
+      edges {
+        node {
+          frontmatter {
+            title
+            lesson
+            type
+          }
+          fields {
+            slug
+          }
         }
-        navCategories: allMarkdownRemark (
-            filter: { frontmatter: { category: { ne: null } } }
-        ) {
-            edges {
-                node {
-                    frontmatter {
-                        category
-                    }
-                }
-            }
-        }
-        postBySlug: markdownRemark(fields: { slug: { eq: $slug } }) {
-            html
-            timeToRead
-            excerpt
-            headings  {
-                value
-                depth
-            }
-            frontmatter {
-                title
-                cover
-                date
-                category
-                tags
-            }
-            fields {
-                slug
-            }
-        }
-        postByCategory:  allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { category: { ne: null } } }
-        ) {
-            totalCount
-            edges {
-                node {
-                    fields {
-                        slug
-                    }
-                    excerpt
-                    timeToRead
-                    frontmatter {
-                        title
-                        category
-                        date
-                    }
-                }
-            }
-        }
+      }
     }
+    navCategories: allMarkdownRemark (
+      filter: { frontmatter: { category: { ne: null } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            category
+          }
+        }
+      }
+    }
+    postBySlug: markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      timeToRead
+      excerpt
+      headings  {
+        value
+        depth
+      }
+      frontmatter {
+        title
+        cover
+        date
+        category
+        tags
+      }
+      fields {
+        slug
+      }
+    }
+    postByCategory:  allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { ne: null } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          fields {
+            slug
+          }
+          headings {
+            value
+            depth
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            category
+            date
+            lesson
+            type
+          }
+        }
+      }
+    }
+  }
 `;

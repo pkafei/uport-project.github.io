@@ -13,7 +13,7 @@ class MainHeader extends React.Component {
         })
         return navHeadings
     }
-    render() {
+  render() {
         return (
             <SiteContainer>
               <Navigation
@@ -31,22 +31,5 @@ const SiteContainer = styled.div`
   height: 100%;
   padding:  25px;
 `
-
-/* eslint no-undef: "off"*/
-export const pageQuery = graphql`
-    query HeaderPage {
-        navCategories: allMarkdownRemark (
-            filter: { frontmatter: { category: { ne: null } } }
-        ) {
-            edges {
-                node {
-                    frontmatter {
-                        category
-                    }
-                }
-            }
-        }
-    }
-`;
 
 export default MainHeader

@@ -1,89 +1,67 @@
 import React from "react"
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import _ from "lodash";
 
-
-// This class should not be used for listing posts, but for chapter based Docs. See PostListing for that.
-// You'll also need to add your chapters to siteConfig
-
-class TableOfContents extends React.Component {
-  buildNodes() {
-      const {posts} = this.props
-      const type = this.props.contentsType
-      const {category} = this.props.category
-      const categories = [];
-      this.props.data.postByCategory.edges.forEach(cat => {
-          if(cat.node.frontmatter.category === category){
-              categories.push(cat.node.frontmatter.category)
-          }
-      })
-      const postNodes = []
-      posts.forEach(post => {
-          if (post.node.frontmatter.type === type) {
-              const postNode = {
-                  title: post.node.frontmatter.title,
-                  path: post.node.fields.slug,
-                  lessonNumber: post.node.frontmatter.lesson,
-                  chapter: post.node.frontmatter.chapter
-              }
-              postNodes.push(postNode)
-          }
-      })
-
-      const postNodeChapters = [];
-      postNodes.forEach(post => {
-          if (postNodeChapters[post.chapter]) {
-              postNodeChapters[post.chapter].push(post)
-          } else {
-              postNodeChapters[post.chapter] = [post]
-          }
-      })
-
-      return postNodeChapters
-  }
-
-    nodeListItems() {
-        // FIXME this assumes a configuration for chapters... re-write chapters to be directories?
-        const postNodeChapters = this.buildNodes()
-        const listItems = []
-        const chapterTitles = this.props.chapterTitles
-        postNodeChapters.forEach((chapter, idx) => {
-            const chapterLessons = []
-            chapter.forEach(node => {
-                chapterLessons.push(
-                    <LessonContainer>
-                        <Link to={node.path}>
-                            <li>
-                                <span>
-                                    <h6>{node.title}</h6>
-                                </span>
-                            </li>
-                        </Link>
-                    </LessonContainer>
-                )
-            })
-            listItems.push(
-                <li className='chapter'>
-                    <h5 className='tocHeading'>
-                        {chapterTitles[idx].toUpperCase()}
-                    </h5>
-                    <ul className='chapterItems'>
-                        {chapterLessons}
-                    </ul>
-                </li>
+export default class TableOfContents extends React.Component {
+  render() {
+    const {posts} = this.props
+    const {category} = this.props
+    const {categories} = this.props
+    const type = this.props.contentsType
+    const postNodes = []
+    categories.forEach(post => {
+      if (((post.node.frontmatter.category === category) && (post.node.frontmatter.type === type))) {
+        const postNode = {
+          title: post.node.frontmatter.title,
+          path: post.node.fields.slug,
+          lessonNumber: post.node.frontmatter.lesson,
+          category: post.node.frontmatter.category,
+          headings: post.node.headings
+        }
+        postNodes.push(postNode)
+      }
+    })
+    const listItems = []
+    postNodes.forEach((cat) => {
+      const chapterLessons = []
+      if(cat.headings){
+        cat.headings.forEach(node => {
+          if (node.depth === 2){
+            chapterLessons.push(
+              <LessonContainer>
+                <Link to={`${cat.path}#${_.kebabCase(node.value)}`}>
+                  <li>
+                    <span>
+                      <h6>{node.value}</h6>
+                    </span>
+                  </li>
+                </Link>
+              </LessonContainer>
             )
+          }
         })
-        return listItems
-    }
-
-    render() {
-        return (
-            <TableOfContentsContainer>
-                <ul>
-                    {this.nodeListItems()}
-                </ul>
-            </TableOfContentsContainer>
-        )
+      }
+      listItems.push(
+        <li className='chapter'>
+          <Link to={`${cat.path}`}>
+            <h5 className='tocHeading'>
+              {cat.title.toUpperCase()}
+            </h5>
+          </Link>
+          <ul className='chapterItems'>
+            {chapterLessons}
+          </ul>
+        </li>
+      )
+    })
+    return (
+      <TableOfContentsContainer>
+        <ul>
+          {listItems}
+        </ul>
+      </TableOfContentsContainer>
+    )
     }
 }
 
@@ -126,31 +104,3 @@ const LessonContainer = styled.div`
     }
   }
 `
-
-/* eslint no-undef: "off"*/
-export const pageQuery = graphql`
-    query ContentsByCategory($category: String) {
-        postByCategory:  allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { category: { eq: $category } } }
-        ) {
-            totalCount
-            edges {
-                node {
-                    fields {
-                        slug
-                    }
-                    excerpt
-                    timeToRead
-                    frontmatter {
-                        title
-                        category
-                        date
-                    }
-                }
-            }
-        }
-    }
-`;
-
-export default TableOfContents
