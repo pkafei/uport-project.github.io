@@ -16,8 +16,7 @@ class MainHeader extends React.Component {
   render() {
         return (
             <SiteContainer>
-              <Navigation
-                sections={this.navHeadings()} />
+              <Navigation sections={this.navHeadings()} data={this.props.categories.edges}/>
             </SiteContainer>
         )
   }

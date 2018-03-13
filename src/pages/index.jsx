@@ -25,8 +25,7 @@ class Index extends React.Component {
         <SEO postEdges={postEdges} />
         <main>
           <IndexHeadContainer>
-            <Navigation
-              sections={this.navHeadings()}/>
+            <Navigation sections={this.navHeadings()} data={this.props.data.navCategories.edges} />
             <Hero>
               <img src={config.siteLogo} width='150px' />
               <h1>{config.siteTitle}</h1>
@@ -34,9 +33,9 @@ class Index extends React.Component {
             </Hero>
           </IndexHeadContainer>
           <BodyContainer>
-            <h2>A Gatsby Template for Content</h2>
-            <p>Made for modern documentation sites. Table of Contents automatically generated from markdown files. </p>
-            <CtaButton to={'/lesson-one'}>See Your First Post</CtaButton>
+            <h2>Simple and secure login for your Ethereum app</h2>
+            <p> Uport ID makes blockchain easy on desktop and mobile </p>
+            {/* <CtaButton to={'/lesson-one'}>See Your First Post</CtaButton> */}
           </BodyContainer>
         </main>
       </div>
@@ -67,11 +66,11 @@ const BodyContainer = styled.div`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-query IndexQuery {
+  query IndexQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: {type: {eq: "post"}}}
+      filter: { frontmatter: {type: {eq: "lesson"}}}
     ) {
       edges {
         node {
@@ -91,15 +90,23 @@ query IndexQuery {
     }
     navCategories:
     allMarkdownRemark(
-        filter: { frontmatter: { category: { ne: null } } }
+      filter: { frontmatter: { category: { ne: null } } }
     ) {
-        edges {
-            node {
-                frontmatter {
-                    category
-                }
-            }
+      edges {
+        node {
+          fields {
+            slug
+          }
+          headings {
+            value
+            depth
+          }
+          frontmatter {
+            category
+            lesson
+          }
         }
+      }
     }
-}
+  }
 `;

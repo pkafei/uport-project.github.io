@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-lesson: 2
+lesson: 0
 chapter: "Getting Started"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
 date: "01/01/2017"

@@ -138,8 +138,16 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          fields {
+            slug
+          }
+          headings {
+            value
+            depth
+          }
           frontmatter {
             category
+            lesson
           }
         }
       }

@@ -1,6 +1,6 @@
 ---
 title: "Attesting Credentials"
-lesson: 0
+lesson: 1
 chapter: "Attesting Credentials"
 cover: "https://unsplash.it/400/300/?random?BoldMage"
 date: "01/01/2017"

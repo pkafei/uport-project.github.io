@@ -34,11 +34,17 @@ const NavContainer = styled.div`
 
 class Navigation extends React.Component {
     navListItems() {
-        const navItems = []
-        this.props.sections.forEach(section => {
-            navItems.push(
-                <Link className='nav-link' to='/' > {section.toUpperCase()} </Link>
-            )
+      const navItems = []
+      this.props.sections.forEach(section => {
+        if(this.props.data){
+          this.props.data.forEach(page => {
+            if((page.node.frontmatter.lesson === 0) && (page.node.frontmatter.category === section)) {
+              navItems.push(
+                <Link className='nav-link' to={`${page.node.fields.slug}`} > {section.toUpperCase()} </Link>
+              )
+            }
+          })
+        }
         })
         return navItems
     }

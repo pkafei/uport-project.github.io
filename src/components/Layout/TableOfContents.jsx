@@ -23,7 +23,7 @@ export default class TableOfContents extends React.Component {
       }
     })
     const listItems = []
-    postNodes.forEach((cat) => {
+    postNodes.sort((a,b) => a.lessonNumber - b.lessonNumber).forEach((cat) => {
       const chapterLessons = []
       if(cat.headings){
         cat.headings.forEach(node => {
