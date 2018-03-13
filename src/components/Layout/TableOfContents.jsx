@@ -5,7 +5,6 @@ import _ from "lodash";
 
 export default class TableOfContents extends React.Component {
   render() {
-    const {posts} = this.props
     const {category} = this.props
     const {categories} = this.props
     const type = this.props.contentsType

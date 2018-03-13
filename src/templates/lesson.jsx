@@ -41,7 +41,6 @@ export default class LessonTemplate extends React.Component {
                   </HeaderContainer>
                   <ToCContainer>
                     <TableOfContents
-                      posts={this.props.data.postByCategory.edges}
                       contentsType="lesson"
                       chapterTitles={chapterTitles}
                       categories={categories}

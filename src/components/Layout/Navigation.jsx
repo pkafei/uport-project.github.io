@@ -39,29 +39,47 @@ class Navigation extends React.Component {
         if(this.props.data){
           this.props.data.forEach(page => {
             if((page.node.frontmatter.lesson === 0) && (page.node.frontmatter.category === section)) {
-              navItems.push(
-                <Link className='nav-link' to={`${page.node.fields.slug}`} > {section.toUpperCase()} </Link>
-              )
+              const link = (<Link className='nav-link' to={`${page.node.fields.slug}`} > {section.charAt(0).toUpperCase() + section.slice(1)} </Link>);
+              switch(section){
+                case "overview":
+                  navItems[0] = link;
+                  break;
+                case "guides":
+                  navItems[1] = link;
+                  break;
+                case "reference":
+                  navItems[2] = link;
+                  break;
+                default:
+                  // keep adding links at index 3 (the first available)
+                  const idx = navItems.length - 1;
+                  if(idx >= 2){
+                    navItems.push = (link);  // push at will if the first 3 index's are filled
+                  } else {
+                    navItems.splice(3, 0, link);  // shift entries already assigned to index 3 to the right.
+                  };
+              }
             }
           })
         }
-        })
-        return navItems
+      })
+
+      return navItems
     }
-    render() {
+  render() {
     return (
-        <NavContainer>
-            <section>
-                {this.navListItems()}
-            </section>
-            <span><UserLinks /></span>
-        </NavContainer>
+      <NavContainer>
+        <section>
+          {this.navListItems()}
+          <a href="https://appmanager.uport.me" className='nav-link' target='_blank'> App Manager </a>
+          <a href="https://gitter.im/uport-project/Lobby" className='nav-link' target='_blank'> Help </a>
+          <a href="https://medium.com/uport" className='nav-link' target='_blank'> Blog </a>
+          <a href="https://github.com/uport-project" className='nav-link' target='_blank'> GitHub </a>
+        </section>
+        <span><UserLinks /></span>
+      </NavContainer>
     )
-    }
+  }
 }
 
-export default Navigation
-{/* <Link className='nav-link' to='/' > HOME </Link>
-    <Link className='nav-link' to='/lesson-one' > GUIDES </Link>
-    <Link className='nav-link' to='/about' > OVERVIEW </Link>
-    <Link className='nav-link' to='/post-one' > API DOCS</Link> */}
+                     export default Navigation
