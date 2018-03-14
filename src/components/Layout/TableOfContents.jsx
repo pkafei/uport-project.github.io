@@ -45,7 +45,7 @@ export default class TableOfContents extends React.Component {
         <li className='chapter'>
           <Link to={`${cat.path}`}>
             <h5 className='tocHeading'>
-              {cat.title.toUpperCase()}
+              {cat.title.charAt(0).toUpperCase() + cat.title.slice(1)}
             </h5>
           </Link>
           <ul className='chapterItems'>
