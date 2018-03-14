@@ -69,8 +69,8 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: {type: {eq: "lesson"}}}
+      sort: { fields: [frontmatter___date], order: DESC}
+      filter: { frontmatter: { type: { eq: "lesson" }}}
     ) {
       edges {
         node {
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
     }
     navCategories:
     allMarkdownRemark(
-      filter: { frontmatter: { category: { ne: null } } }
+      filter: { frontmatter: { category: { ne: null }}}
     ) {
       edges {
         node {
