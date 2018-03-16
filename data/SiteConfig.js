@@ -1,6 +1,4 @@
 module.exports = {
-  blogPostDir: "posts", // The name of directory that contains your posts.
-  lessonsDir: "lessons", // The name of the directory that contains lessons or docs.
   siteTitle: "Simple and secure login for your Ethereum app", // Site title.
   siteTitleAlt: "Uport ID makes blockchain easy on desktop and mobile", // Alternative site title for SEO.
   siteLogo: "/logos/uport-logo-purple@3x.png", // Logo used for SEO and manifest.
@@ -20,6 +18,6 @@ module.exports = {
   segmentProdKey: "TP9aPQLX69CtFXTtQtRmqGjUjNgRiRo3",
   segmentDevKey: "boMqWSoJzbLPUMwFuAmxjrVdcjKhxh3j",
   copyright: "Copyright © 2018", // Copyright string for the footer of the website and RSS feed.
-  themeColor: "#34344F", // Used for setting manifest and progress theme colors.
+  themeColor: "#5c50ca", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 };

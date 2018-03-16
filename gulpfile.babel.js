@@ -23,7 +23,7 @@ gulp.task('copy-files', done => {
   // gulp.src("./repos/specs/*").pipe($g.sym(repoToSrc, {force: true, relative: true}));
 
   gulp.src(['./repos/docs/reference/*', './repos/docs/guides/*', './repos/docs/overview/*', './repos/specs/*.md', './repos/specs/**/*.md'])
-    .pipe(gulp.dest('./content/lessons/'));
+    .pipe(gulp.dest('./content/public/'));
 
 });
 

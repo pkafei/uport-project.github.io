@@ -69,7 +69,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       limit: 2000
-      filter: { frontmatter: { type: { eq: "lesson" }}}
+      filter: { frontmatter: { type: { eq: "content" }}}
     ) {
       edges {
         node {
@@ -102,7 +102,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             category
-            lesson
+            index
           }
         }
       }

@@ -7,7 +7,7 @@ import SiteHeader from '../components/Layout/Header'
 import config from "../../data/SiteConfig"
 import TableOfContents from "../components/Layout/TableOfContents";
 
-export default class LessonTemplate extends React.Component {
+export default class ContentTemplate extends React.Component {
   render() {
     const { slug } = this.props.pathContext;
     const postNode = this.props.data.postBySlug;
@@ -41,7 +41,7 @@ export default class LessonTemplate extends React.Component {
                   </HeaderContainer>
                   <ToCContainer>
                     <TableOfContents
-                      contentsType="lesson"
+                      contentsType={post.type}
                       chapterTitles={chapterTitles}
                       categories={categories}
                       category={category}
@@ -117,13 +117,13 @@ const ToCContainer = styled.div`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-  query LessonBySlug($slug: String!) {
+  query ContentBySlug($slug: String!) {
     allPostTitles: allMarkdownRemark{
       edges {
         node {
           frontmatter {
             title
-            lesson
+            index
             type
           }
           fields {
@@ -146,7 +146,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             category
-            lesson
+            index
           }
         }
       }
@@ -165,6 +165,7 @@ export const pageQuery = graphql`
         date
         category
         tags
+        type
       }
       fields {
         slug
@@ -172,7 +173,7 @@ export const pageQuery = graphql`
     }
     postByCategory:  allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { ne: null } } }
+      filter: { frontmatter: { category: { ne: null }, prefix: { eq: null } } }
     ) {
       totalCount
       edges {
@@ -190,8 +191,9 @@ export const pageQuery = graphql`
             title
             category
             date
-            lesson
+            index
             type
+            prefix
           }
         }
       }

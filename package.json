@@ -21,6 +21,7 @@
     "gatsby-plugin-styled-components": "^2.0.9",
     "gatsby-plugin-twitter": "^1.0.18",
     "gatsby-remark-autolink-headers": "^1.4.13",
+    "gatsby-remark-copy-images": "^0.2.1",
     "gatsby-remark-copy-linked-files": "^1.5.30",
     "gatsby-remark-images": "^1.5.55",
     "gatsby-remark-prismjs": "^1.2.17",
@@ -92,7 +93,7 @@
     "clean": "rm -rf public",
     "lint:js": "eslint --ext .js,.jsx --ignore-pattern public,static .",
     "lint:md": "remark content/posts/",
-    "write-good": "write-good $(glob 'content/posts/**/*.md')",
+    "write-good": "write-good $(glob 'content/public/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write"
   },
   "remarkConfig": {

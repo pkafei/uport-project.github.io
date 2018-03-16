@@ -14,7 +14,7 @@ export default class TableOfContents extends React.Component {
         const postNode = {
           title: post.node.frontmatter.title,
           path: post.node.fields.slug,
-          lessonNumber: post.node.frontmatter.lesson,
+          indexNumber: post.node.frontmatter.index,
           category: post.node.frontmatter.category,
           headings: post.node.headings
         }
@@ -22,13 +22,13 @@ export default class TableOfContents extends React.Component {
       }
     })
     const listItems = []
-    postNodes.sort((a,b) => a.lessonNumber - b.lessonNumber).forEach((cat) => {
-      const chapterLessons = []
+    postNodes.sort((a,b) => a.indexNumber - b.indexNumber).forEach((cat) => {
+      const chapterContents = []
       if(cat.headings){
         cat.headings.forEach(node => {
           if (node.depth === 2){
-            chapterLessons.push(
-              <LessonContainer>
+            chapterContents.push(
+              <ContentContainer>
                 <Link to={`${cat.path}#${_.kebabCase(node.value)}`}>
                   <li>
                     <span>
@@ -36,7 +36,7 @@ export default class TableOfContents extends React.Component {
                     </span>
                   </li>
                 </Link>
-              </LessonContainer>
+              </ContentContainer>
             )
           }
         })
@@ -49,7 +49,7 @@ export default class TableOfContents extends React.Component {
             </h5>
           </Link>
           <ul className='chapterItems'>
-            {chapterLessons}
+            {chapterContents}
           </ul>
         </li>
       )
@@ -86,7 +86,7 @@ const TableOfContentsContainer = styled.div`
   }
 `
 
-const LessonContainer = styled.div`
+const ContentContainer = styled.div`
   h6, p {
     color: black;
     margin: 0;
