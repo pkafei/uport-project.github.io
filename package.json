@@ -82,8 +82,9 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "clean:repos": "rm -rf repos/*",
     "fetch": "gulp git:clone",
-    "setup": "npm run fetch && gulp copy-files",
+    "setup": "npm run clean:repos && npm run fetch && gulp copy-files",
     "develop": "gatsby develop",
     "dev": "npm run develop",
     "serve": "gatsby serve",
