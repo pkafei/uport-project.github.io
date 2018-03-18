@@ -6,6 +6,6 @@
   "specs" : {
     "githubURL": "https://github.com/uport-project/specs.git",
     "projectTitle": "uPort Specs",
-    "branch": ""
+    "branch": "update-specs-for-docs-site"
   }
 }
