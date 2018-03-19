@@ -8,32 +8,40 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
-    if (
-      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, "slug")
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-    }
-    if (
-      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
-    ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
-    } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
-    } else if (parsedFilePath.dir === "") {
-      slug = `/${parsedFilePath.name}/`;
-    } else {
-      slug = `/${parsedFilePath.dir}/`;
-    }
-    console.log(slug)
-    if ( Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
-         Object.prototype.hasOwnProperty.call(node.frontmatter, "prefix")){
-      createNodeField({node, name: "slug", value: `${node.frontmatter.prefix}${slug}`});
-    } else {
-      createNodeField({node, name: "slug", value: slug});
-    }
-    console.log(slug)
+
+    // if (
+    //   Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+    //   Object.prototype.hasOwnProperty.call(node.frontmatter, "slug")
+    // ) {
+    //   slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+    // }
+
+    // if (
+    //   Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+    //   Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
+    // ) {
+    //   slug = `/${_.kebabCase(node.frontmatter.title)}`;
+    // } else
+
+    // if (// parsedFilePath.name !== "index" &&
+    //     parsedFilePath.dir !== "" && parsedFilePath.dir !== null) {
+
+    // } // else if (parsedFilePath.dir === "") {
+    //   slug = `/${parsedFilePath.name}/`;
+    // } else {
+    //   slug = `/${parsedFilePath.dir}/`;
+    // }
+    // console.log(parsedFilePath);
+    slug = `${_.trim(parsedFilePath.dir, 'public/')}/${_.trim(_.toLower(parsedFilePath.name))}`;
+    console.log(slug);
+    // if ( Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+    //      Object.prototype.hasOwnProperty.call(node.frontmatter, "prefix")){
+    //   createNodeField({node, name: "slug", value: `${node.frontmatter.prefix}${slug}`});
+    // } else {
+    //   createNodeField({node, name: "slug", value: slug});
+    // }
+    createNodeField({node, name: "slug", value: slug});
+    //console.log(slug)
   }
 };
 
@@ -77,8 +85,8 @@ exports.createPages = ({graphql, boundActionCreators}) => {
 
         const tagSet = new Set();
         const categorySet = new Set();
-        console.log(result.data.allMarkdownRemark.edges.length)
-        console.log(JSON.stringify(result.data.allMarkdownRemark.edges))
+        // console.log(result.data.allMarkdownRemark.edges.length)
+        // console.log(JSON.stringify(result.data.allMarkdownRemark.edges))
         result.data.allMarkdownRemark.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
@@ -89,11 +97,11 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           if (edge.node.frontmatter.category) {
             categorySet.add(edge.node.frontmatter.category);
           }
-          console.log(JSON.stringify(edge.node.frontmatter))
+         //console.log(JSON.stringify(edge.node.frontmatter))
           if (edge.node.frontmatter.type === 'content') {
-            console.log("********************************")
-            console.log(JSON.stringify(edge.node.frontmatter));
-
+            // console.log("********************************")
+            // console.log(JSON.stringify(edge.node.frontmatter));
+            console.log(edge.node.fields.slug);
             createPage({
               path: edge.node.fields.slug,
               component: contentPage,
@@ -103,7 +111,6 @@ exports.createPages = ({graphql, boundActionCreators}) => {
             });
           }
 
-          // if (eddge.node.frontmatter.type === 'subcontent')
         });
 
         const tagList = Array.from(tagSet);

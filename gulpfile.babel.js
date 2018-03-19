@@ -22,7 +22,10 @@ gulp.task('copy-files', done => {
   // safeSymlink("../repos/docs/overview", "content/lessons/overview");
   // gulp.src("./repos/specs/*").pipe($g.sym(repoToSrc, {force: true, relative: true}));
 
-  gulp.src(['./repos/docs/reference/*', './repos/docs/guides/*', './repos/docs/overview/*', './repos/specs/*.md', './repos/specs/**/*.md'])
+  gulp.src(['./repos/docs/reference/*',
+            './repos/docs/guides/*',
+            './repos/docs/overview/*',
+            './repos/specs/**/*'])
     .pipe(gulp.dest('./content/public/'));
 
 });

@@ -39,7 +39,8 @@
     "react-share": "^1.19.1",
     "react-twitter-widgets": "^1.4.0",
     "styled-components": "^2.4.0",
-    "sugarss": "^1.0.1"
+    "sugarss": "^1.0.1",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
