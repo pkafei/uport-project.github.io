@@ -69,9 +69,11 @@ module.exports = {
           "gatsby-remark-prismjs",
           {
             resolve: "gatsby-remark-copy-linked-files",
-            //options: ["pdf"]
+            options: {
+              ignoreRelativeMarkdownLinks: true
+            }
           },
-          'gatsby-remark-relative-linker',
+          'gatsby-remark-catch-relative-markdown-links',
           "gatsby-remark-autolink-headers",
           "gatsby-remark-copy-images",
         ]

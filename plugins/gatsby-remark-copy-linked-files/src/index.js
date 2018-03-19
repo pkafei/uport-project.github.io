@@ -58,6 +58,8 @@ module.exports = (
     ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
   }
   const { destinationDir } = pluginOptions
+  const { ignoreRelativeMarkdownLinks } = pluginOptions;
+
   if (!validateDestinationDir(destinationDir))
     return Promise.reject(invalidDestinationDirMessage(destinationDir))
 
@@ -88,7 +90,15 @@ module.exports = (
         if (linkPath === newFilePath) return
 
         const linkURL = newLinkURL(linkNode, options.destinationDir)
-        link.url = linkURL
+
+        //we don't want to modify links for relative markdown docs.
+        const ext = link.url.split(`.`).pop();
+        if (['md', 'markdown'].includes(ext) && ignoreRelativeMarkdownLinks) {
+          console.log(`ignoring relative markdown link: ${link.url}`);
+          return;
+        } else {
+          link.url = linkURL;
+        }
         filesToCopy.set(linkPath, newFilePath)
       }
     }

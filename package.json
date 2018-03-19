@@ -85,7 +85,10 @@
   "scripts": {
     "clean:repos": "rm -rf repos/*",
     "fetch": "gulp git:clone",
-    "setup": "npm run clean:repos && npm run fetch && gulp copy-files",
+    "install:plugins": "cd ./plugins/gatsby-remark-copy-linked-files && npm install && cd ../gatsby-remark-catch-relative-markdown-links && npm install && cd ../../",
+    "update:docs:local": "gulp copy-files",
+    "update:docs:remote": "npm run clean:repos && npm run fetch && gulp copy-files",
+    "setup": "npm run install:plugins && npm run update:docs:remote",
     "develop": "gatsby develop",
     "dev": "npm run develop",
     "serve": "gatsby serve",
@@ -94,7 +97,7 @@
     "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
     "clean": "rm -rf public",
     "lint:js": "eslint --ext .js,.jsx --ignore-pattern public,static .",
-    "lint:md": "remark content/posts/",
+    "lint:md": "remark content/public/",
     "write-good": "write-good $(glob 'content/public/**/*.md')",
     "format:js": "prettier '**/*.{js,jsx}' --write"
   },

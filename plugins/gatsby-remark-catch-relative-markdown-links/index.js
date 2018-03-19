@@ -1,17 +1,11 @@
 const visit = require('unist-util-visit');
+const isRelativeUrl = require(`is-relative-url`);
 const grayMatter = require(`gray-matter`);
 const _ = require("lodash");
 
 module.exports = ({ markdownAST }) => {
   visit(markdownAST, 'link', node => {
-    if (
-      node.url &&
-        !node.url.startsWith('//') &&
-        !node.url.startsWith('http') &&
-        node.url.startsWith('/') ||
-        node.url.startsWith('../')
-    ) {
-
+    if (node.url && isRelativeUrl(node.url)) {
       //convert frontmatter to YAML so grayMatter can read.
       var data = grayMatter(`---\n${markdownAST.children[0]['value'].toString()}\n---\n`)['data'];
       //console.log(data['title']);

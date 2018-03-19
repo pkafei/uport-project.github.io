@@ -26,14 +26,20 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
     // if (// parsedFilePath.name !== "index" &&
     //     parsedFilePath.dir !== "" && parsedFilePath.dir !== null) {
 
-    // } // else if (parsedFilePath.dir === "") {
-    //   slug = `/${parsedFilePath.name}/`;
+    // } // else
+
+    // if (parsedFilePath.dir === "") {
+    //   //slug = `/${parsedFilePath.name}/`;
+    //   slug = `${_.trim(parsedFilePath.dir, 'public/')}/${_.trim(_.toLower(parsedFilePath.name))}`;
     // } else {
-    //   slug = `/${parsedFilePath.dir}/`;
+    //   //slug = `/${parsedFilePath.dir}/`;
+    //   slug = `${_.trim(parsedFilePath.dir, 'public/')}`;
     // }
-    // console.log(parsedFilePath);
+
     slug = `${_.trim(parsedFilePath.dir, 'public/')}/${_.trim(_.toLower(parsedFilePath.name))}`;
-    console.log(slug);
+    // console.log(parsedFilePath);
+
+    // console.log(slug);
     // if ( Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
     //      Object.prototype.hasOwnProperty.call(node.frontmatter, "prefix")){
     //   createNodeField({node, name: "slug", value: `${node.frontmatter.prefix}${slug}`});
@@ -52,7 +58,6 @@ exports.createPages = ({graphql, boundActionCreators}) => {
   return new Promise((resolve, reject) => {
     // const postPage = path.resolve("src/templates/post.jsx");
     const contentPage = path.resolve("src/templates/content.jsx");
-    // new subcontent page
     const tagPage = path.resolve("src/templates/tag.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     resolve(
@@ -99,9 +104,8 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           }
          //console.log(JSON.stringify(edge.node.frontmatter))
           if (edge.node.frontmatter.type === 'content') {
-            // console.log("********************************")
-            // console.log(JSON.stringify(edge.node.frontmatter));
-            console.log(edge.node.fields.slug);
+            //console.log(JSON.stringify(edge.node.frontmatter));
+            //console.log(edge.node.fields.slug);
             createPage({
               path: edge.node.fields.slug,
               component: contentPage,
