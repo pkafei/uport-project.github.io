@@ -8,9 +8,9 @@ module.exports = ({ markdownAST }) => {
     if (node.url && isRelativeUrl(node.url)) {
       //convert frontmatter to YAML so grayMatter can read.
       var data = grayMatter(`---\n${markdownAST.children[0]['value'].toString()}\n---\n`)['data'];
+
       //console.log(data['title']);
       // if(data['prefix'] && data['prefix'] != ""){
-      //   console.log("***************************************************");
       //   console.log(data);
       //   //setup URL here, add the prefix and fix link.
       //   //assume prefix's always start with '/'
@@ -20,9 +20,11 @@ module.exports = ({ markdownAST }) => {
       //   //node.url = `/${_.kebabCase(data['title'])}`;
       // }
 
-      node.url = _.trim(node.url, '.md');
-//      console.log(node.url);
-      //console.log(JSON.stringify(markdownAST));
+      node.url = _.replace(node.url, '.md', '');
+      node.url = _.replace(node.url, '../', '');
+      node.url = _.replace(node.url, './', '');
+
+      //console.log(`Node url ${node.url}`);
 
     }
   });

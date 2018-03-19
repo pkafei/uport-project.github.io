@@ -94,7 +94,7 @@ module.exports = (
         //we don't want to modify links for relative markdown docs.
         const ext = link.url.split(`.`).pop();
         if (['md', 'markdown'].includes(ext) && ignoreRelativeMarkdownLinks) {
-          console.log(`ignoring relative markdown link: ${link.url}`);
+          //console.log(`ignoring relative markdown link: ${link.url}`);
           return;
         } else {
           link.url = linkURL;

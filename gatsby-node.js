@@ -36,10 +36,15 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
     //   slug = `${_.trim(parsedFilePath.dir, 'public/')}`;
     // }
 
-    slug = `${_.trim(parsedFilePath.dir, 'public/')}/${_.trim(_.toLower(parsedFilePath.name))}`;
+    let dir = `${_.replace(parsedFilePath.dir, 'public', '')}`;
+    console.log(dir);
+    let name = `${_.trim(_.toLower(parsedFilePath.name))}`;
+    console.log(name);
+    slug = `${dir}/${name}`;
+
     // console.log(parsedFilePath);
 
-    // console.log(slug);
+    //console.log(slug);
     // if ( Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
     //      Object.prototype.hasOwnProperty.call(node.frontmatter, "prefix")){
     //   createNodeField({node, name: "slug", value: `${node.frontmatter.prefix}${slug}`});
