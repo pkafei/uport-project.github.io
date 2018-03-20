@@ -80,16 +80,13 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             title
-            tags
-            cover
-            date
           }
         }
       }
     }
     navCategories:
     allMarkdownRemark(
-      filter: { frontmatter: { category: { ne: null }}}
+      filter: { frontmatter: { category: { ne: null }, index: { ne: null }}}
     ) {
       edges {
         node {

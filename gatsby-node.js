@@ -37,11 +37,9 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
     // }
 
     let dir = `${_.replace(parsedFilePath.dir, 'public', '')}`;
-    console.log(dir);
     let name = `${_.trim(_.toLower(parsedFilePath.name))}`;
-    console.log(name);
     slug = `${dir}/${name}`;
-
+    //console.log(slug)
     // console.log(parsedFilePath);
 
     //console.log(slug);
@@ -52,7 +50,6 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
     //   createNodeField({node, name: "slug", value: slug});
     // }
     createNodeField({node, name: "slug", value: slug});
-    //console.log(slug)
   }
 };
 
@@ -63,7 +60,7 @@ exports.createPages = ({graphql, boundActionCreators}) => {
   return new Promise((resolve, reject) => {
     // const postPage = path.resolve("src/templates/post.jsx");
     const contentPage = path.resolve("src/templates/content.jsx");
-    const tagPage = path.resolve("src/templates/tag.jsx");
+    //const tagPage = path.resolve("src/templates/tag.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     resolve(
       graphql(
@@ -73,10 +70,8 @@ exports.createPages = ({graphql, boundActionCreators}) => {
             edges {
               node {
                 frontmatter {
-                  tags
                   category
                   type
-                  prefix
                 }
                 fields {
                   slug
@@ -93,16 +88,16 @@ exports.createPages = ({graphql, boundActionCreators}) => {
           reject(result.errors);
         }
 
-        const tagSet = new Set();
+        //const tagSet = new Set();
         const categorySet = new Set();
         // console.log(result.data.allMarkdownRemark.edges.length)
         // console.log(JSON.stringify(result.data.allMarkdownRemark.edges))
         result.data.allMarkdownRemark.edges.forEach(edge => {
-          if (edge.node.frontmatter.tags) {
-            edge.node.frontmatter.tags.forEach(tag => {
-              tagSet.add(tag);
-            });
-          }
+          // if (edge.node.frontmatter.tags) {
+          //   edge.node.frontmatter.tags.forEach(tag => {
+          //     tagSet.add(tag);
+          //   });
+          // }
 
           if (edge.node.frontmatter.category) {
             categorySet.add(edge.node.frontmatter.category);
@@ -122,16 +117,16 @@ exports.createPages = ({graphql, boundActionCreators}) => {
 
         });
 
-        const tagList = Array.from(tagSet);
-        tagList.forEach(tag => {
-          createPage({
-            path: `/tags/${_.kebabCase(tag)}/`,
-            component: tagPage,
-            context: {
-              tag
-            }
-          });
-        });
+        // const tagList = Array.from(tagSet);
+        // tagList.forEach(tag => {
+        //   createPage({
+        //     path: `/tags/${_.kebabCase(tag)}/`,
+        //     component: tagPage,
+        //     context: {
+        //       tag
+        //     }
+        //   });
+        // });
 
         const categoryList = Array.from(categorySet);
         categoryList.forEach(category => {

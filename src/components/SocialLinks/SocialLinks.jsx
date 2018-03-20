@@ -58,7 +58,7 @@ class SocialLinks extends Component {
         <FacebookShareButton
           url={url}
           title={post.title}
-          picture={post.cover}
+        {/* picture={post.cover} */}
           description={postNode.excerpt}
         >
           <FacebookIcon round size={iconSize} />

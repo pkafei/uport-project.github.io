@@ -118,7 +118,9 @@ const ToCContainer = styled.div`
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
   query ContentBySlug($slug: String!) {
-    allPostTitles: allMarkdownRemark{
+    allPostTitles: allMarkdownRemark(
+      filter: { frontmatter: { index: { ne: null } } }
+    ){
       edges {
         node {
           frontmatter {
@@ -161,10 +163,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
-        cover
-        date
         category
-        tags
         type
       }
       fields {
@@ -172,8 +171,7 @@ export const pageQuery = graphql`
       }
     }
     postByCategory:  allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { ne: null }, prefix: { eq: null } } }
+      filter: { frontmatter: { category: { ne: null }, index: { ne: null } } }
     ) {
       totalCount
       edges {
@@ -190,10 +188,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             category
-            date
             index
             type
-            prefix
           }
         }
       }
