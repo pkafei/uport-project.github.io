@@ -1,4 +1,4 @@
-webpackJsonp([244850935622216],[
+webpackJsonp([213534597649335],[
 /* 0 */,
 /* 1 */,
 /* 2 */
@@ -4152,7 +4152,7 @@ webpackJsonp([244850935622216],[
 	          if (page.node.frontmatter.index === 0 && page.node.frontmatter.category === section) {
 	            var link = _react2.default.createElement(
 	              _gatsbyLink2.default,
-	              { className: 'nav-link', to: page.node.fields.slug + '/', key: section },
+	              { className: 'nav-link', to: '' + page.node.fields.slug, key: section },
 	              ' ',
 	              section.charAt(0).toUpperCase() + section.slice(1),
 	              ' '
@@ -70630,75 +70630,7 @@ webpackJsonp([244850935622216],[
 /* 1696 */,
 /* 1697 */,
 /* 1698 */,
-/* 1699 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	exports.__esModule = true;
-	
-	var _templateObject = _taggedTemplateLiteralLoose(['\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ', ';\n  height: 100%;\n  padding:  25px;\n'], ['\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ', ';\n  height: 100%;\n  padding:  25px;\n']);
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _styledComponents = __webpack_require__(16);
-	
-	var _styledComponents2 = _interopRequireDefault(_styledComponents);
-	
-	var _Navigation = __webpack_require__(82);
-	
-	var _Navigation2 = _interopRequireDefault(_Navigation);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _taggedTemplateLiteralLoose(strings, raw) { strings.raw = raw; return strings; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var MainHeader = function (_React$Component) {
-	    _inherits(MainHeader, _React$Component);
-	
-	    function MainHeader() {
-	        _classCallCheck(this, MainHeader);
-	
-	        return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
-	    }
-	
-	    MainHeader.prototype.navHeadings = function navHeadings() {
-	        var navHeadings = [];
-	        this.props.categories.edges.forEach(function (cat) {
-	            if (!navHeadings.includes(cat.node.frontmatter.category)) {
-	                navHeadings.push(cat.node.frontmatter.category);
-	            }
-	        });
-	        return navHeadings;
-	    };
-	
-	    MainHeader.prototype.render = function render() {
-	        return _react2.default.createElement(
-	            SiteContainer,
-	            null,
-	            _react2.default.createElement(_Navigation2.default, { sections: this.navHeadings(), data: this.props.categories.edges })
-	        );
-	    };
-	
-	    return MainHeader;
-	}(_react2.default.Component);
-	
-	var SiteContainer = _styledComponents2.default.div(_templateObject, function (props) {
-	    return props.theme.brand;
-	});
-	
-	exports.default = MainHeader;
-	module.exports = exports['default'];
-
-/***/ }),
+/* 1699 */,
 /* 1700 */,
 /* 1701 */,
 /* 1702 */,
@@ -70823,20 +70755,14 @@ webpackJsonp([244850935622216],[
 /* 1821 */,
 /* 1822 */,
 /* 1823 */,
-/* 1824 */,
-/* 1825 */
+/* 1824 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	exports.__esModule = true;
 	
-	var _kebabCase2 = __webpack_require__(2028);
-	
-	var _kebabCase3 = _interopRequireDefault(_kebabCase2);
-	
-	var _templateObject = _taggedTemplateLiteralLoose(['\n  padding: ', ';\n\n  & > ul, .chapterItems {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n  }\n\n  p, h6 {\n    display: inline-block;\n    font-weight: 200;\n    margin: 0;\n  }\n\n  .tocHeading {\n     font-weight: 200;\n     color: ', ';\n     margin-bottom: 10px;\n  }\n'], ['\n  padding: ', ';\n\n  & > ul, .chapterItems {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n  }\n\n  p, h6 {\n    display: inline-block;\n    font-weight: 200;\n    margin: 0;\n  }\n\n  .tocHeading {\n     font-weight: 200;\n     color: ', ';\n     margin-bottom: 10px;\n  }\n']),
-	    _templateObject2 = _taggedTemplateLiteralLoose(['\n  h6, p {\n    color: black;\n    margin: 0;\n    line-height: 1.5;\n  }\n  li {\n    margin: 0;\n  }\n  &:hover {\n    li {\n      span {\n        border-bottom: 1px solid black;\n      }\n    }\n  }\n'], ['\n  h6, p {\n    color: black;\n    margin: 0;\n    line-height: 1.5;\n  }\n  li {\n    margin: 0;\n  }\n  &:hover {\n    li {\n      span {\n        border-bottom: 1px solid black;\n      }\n    }\n  }\n']);
+	var _templateObject = _taggedTemplateLiteralLoose(['\n  border: 1px solid ', ';\n  border-radius: 3px;\n  padding: 25px;\n  font-size: 2rem;\n  color: ', ';\n  display: inline-block;\n  transition: all .3s ease;\n  \n  &:hover {\n    color: white;\n    background: ', ';\n  }\n'], ['\n  border: 1px solid ', ';\n  border-radius: 3px;\n  padding: 25px;\n  font-size: 2rem;\n  color: ', ';\n  display: inline-block;\n  transition: all .3s ease;\n  \n  &:hover {\n    color: white;\n    background: ', ';\n  }\n']);
 	
 	var _react = __webpack_require__(1);
 	
@@ -70860,118 +70786,51 @@ webpackJsonp([244850935622216],[
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var TableOfContents = function (_React$Component) {
-	  _inherits(TableOfContents, _React$Component);
+	var ctaButton = function (_Component) {
+	  _inherits(ctaButton, _Component);
 	
-	  function TableOfContents() {
-	    _classCallCheck(this, TableOfContents);
+	  function ctaButton() {
+	    _classCallCheck(this, ctaButton);
 	
-	    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+	    return _possibleConstructorReturn(this, _Component.apply(this, arguments));
 	  }
 	
-	  TableOfContents.prototype.render = function render() {
-	    var category = this.props.category;
-	    var categories = this.props.categories;
+	  ctaButton.prototype.render = function render() {
+	    var children = this.props.children;
 	
-	    var type = this.props.contentsType;
-	    var postNodes = [];
-	    categories.forEach(function (post) {
-	      if (post.node.frontmatter.category === category && post.node.frontmatter.type === type) {
-	        var postNode = {
-	          title: post.node.frontmatter.title,
-	          path: post.node.fields.slug,
-	          indexNumber: post.node.frontmatter.index,
-	          category: post.node.frontmatter.category,
-	          headings: post.node.headings
-	        };
-	        postNodes.push(postNode);
-	      }
-	    });
-	    var listItems = [];
-	    postNodes.sort(function (a, b) {
-	      return a.indexNumber - b.indexNumber;
-	    }).forEach(function (cat) {
-	      var chapterContents = [];
-	      if (cat.headings) {
-	        cat.headings.forEach(function (node) {
-	          if (node.depth === 2) {
-	            chapterContents.push(_react2.default.createElement(
-	              ContentContainer,
-	              { key: '' + node.value },
-	              _react2.default.createElement(
-	                _gatsbyLink2.default,
-	                { to: cat.path + '#' + (0, _kebabCase3.default)(node.value) },
-	                _react2.default.createElement(
-	                  'li',
-	                  null,
-	                  _react2.default.createElement(
-	                    'span',
-	                    null,
-	                    _react2.default.createElement(
-	                      'h6',
-	                      null,
-	                      node.value
-	                    )
-	                  )
-	                )
-	              )
-	            ));
-	          }
-	        });
-	      }
-	      listItems.push(_react2.default.createElement(
-	        'li',
-	        { className: 'chapter', key: '' + cat.path },
-	        _react2.default.createElement(
-	          _gatsbyLink2.default,
-	          { to: cat.path + '/' },
-	          _react2.default.createElement(
-	            'h5',
-	            { className: 'tocHeading' },
-	            cat.title.charAt(0).toUpperCase() + cat.title.slice(1)
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'ul',
-	          { className: 'chapterItems' },
-	          chapterContents
-	        )
-	      ));
-	    });
 	    return _react2.default.createElement(
-	      TableOfContentsContainer,
-	      null,
+	      _gatsbyLink2.default,
+	      { style: { border: 'none' }, to: this.props.to },
 	      _react2.default.createElement(
-	        'ul',
+	        ButtonContainer,
 	        null,
-	        listItems
+	        children
 	      )
 	    );
 	  };
 	
-	  return TableOfContents;
-	}(_react2.default.Component);
+	  return ctaButton;
+	}(_react.Component);
 	
-	exports.default = TableOfContents;
+	exports.default = ctaButton;
 	
 	
-	var TableOfContentsContainer = _styledComponents2.default.div(_templateObject, function (props) {
-	  return props.theme.sitePadding;
+	var ButtonContainer = _styledComponents2.default.div(_templateObject, function (props) {
+	  return props.theme.brand;
+	}, function (props) {
+	  return props.theme.brand;
 	}, function (props) {
 	  return props.theme.brand;
 	});
-	
-	var ContentContainer = _styledComponents2.default.div(_templateObject2);
 	module.exports = exports['default'];
 
 /***/ }),
+/* 1825 */,
 /* 1826 */,
 /* 1827 */,
 /* 1828 */,
 /* 1829 */,
-/* 1830 */,
-/* 1831 */,
-/* 1832 */
+/* 1830 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -70979,10 +70838,9 @@ webpackJsonp([244850935622216],[
 	exports.__esModule = true;
 	exports.pageQuery = undefined;
 	
-	var _templateObject = _taggedTemplateLiteralLoose(["\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 75px 1fr;\n  grid-template-columns: 300px 1fr;\n\n  @media screen and (max-width: 600px) {\n    display: flex;\n    flex-direction: column;\n    height: inherit;\n  }\n"], ["\n  height: 100vh;\n  display: grid;\n  grid-template-rows: 75px 1fr;\n  grid-template-columns: 300px 1fr;\n\n  @media screen and (max-width: 600px) {\n    display: flex;\n    flex-direction: column;\n    height: inherit;\n  }\n"]),
-	    _templateObject2 = _taggedTemplateLiteralLoose(["\n  grid-column: 2 / 3;\n  grid-row: 2 / 3;\n  overflow: scroll;\n  justify-self: center;\n  width: 100%;\n  padding: ", ";\n  @media screen and (max-width: 600px) {\n    order: 2;\n  }\n\n  & > div {\n    max-width: ", ";\n    margin: auto;\n  }\n\n  & > h1 {\n    color: ", ";\n  }\n"], ["\n  grid-column: 2 / 3;\n  grid-row: 2 / 3;\n  overflow: scroll;\n  justify-self: center;\n  width: 100%;\n  padding: ", ";\n  @media screen and (max-width: 600px) {\n    order: 2;\n  }\n\n  & > div {\n    max-width: ", ";\n    margin: auto;\n  }\n\n  & > h1 {\n    color: ", ";\n  }\n"]),
-	    _templateObject3 = _taggedTemplateLiteralLoose(["\n  grid-column: 1 / 3;\n  grid-row: 1 / 2;\n  z-index: 2;\n   @media screen and (max-width: 600px) {\n    order: 1;\n  }\n"], ["\n  grid-column: 1 / 3;\n  grid-row: 1 / 2;\n  z-index: 2;\n   @media screen and (max-width: 600px) {\n    order: 1;\n  }\n"]),
-	    _templateObject4 = _taggedTemplateLiteralLoose(["\n  grid-column: 1 / 2;\n  grid-row: 2 / 3;\n  background: ", ";\n  overflow: scroll;\n   @media screen and (max-width: 600px) {\n    order: 3;\n    overflow: inherit;\n  }\n"], ["\n  grid-column: 1 / 2;\n  grid-row: 2 / 3;\n  background: ", ";\n  overflow: scroll;\n   @media screen and (max-width: 600px) {\n    order: 3;\n    overflow: inherit;\n  }\n"]);
+	var _templateObject = _taggedTemplateLiteralLoose(["\n  background: ", ";\n  padding: ", ";\n  text-align: center;\n"], ["\n  background: ", ";\n  padding: ", ";\n  text-align: center;\n"]),
+	    _templateObject2 = _taggedTemplateLiteralLoose(["\n  padding: 50px 0;\n  & > h1 {\n    font-weight: 600;\n  }\n"], ["\n  padding: 50px 0;\n  & > h1 {\n    font-weight: 600;\n  }\n"]),
+	    _templateObject3 = _taggedTemplateLiteralLoose(["\n  padding: ", ";\n  max-width: ", ";\n  margin: 0 auto;\n"], ["\n  padding: ", ";\n  max-width: ", ";\n  margin: 0 auto;\n"]);
 	
 	var _react = __webpack_require__(1);
 	
@@ -71000,17 +70858,17 @@ webpackJsonp([244850935622216],[
 	
 	var _SEO2 = _interopRequireDefault(_SEO);
 	
-	var _Header = __webpack_require__(1699);
-	
-	var _Header2 = _interopRequireDefault(_Header);
-	
 	var _SiteConfig = __webpack_require__(38);
 	
 	var _SiteConfig2 = _interopRequireDefault(_SiteConfig);
 	
-	var _TableOfContents = __webpack_require__(1825);
+	var _CtaButton = __webpack_require__(1824);
 	
-	var _TableOfContents2 = _interopRequireDefault(_TableOfContents);
+	var _CtaButton2 = _interopRequireDefault(_CtaButton);
+	
+	var _Navigation = __webpack_require__(82);
+	
+	var _Navigation2 = _interopRequireDefault(_Navigation);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -71022,603 +70880,96 @@ webpackJsonp([244850935622216],[
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var ContentTemplate = function (_React$Component) {
-	  _inherits(ContentTemplate, _React$Component);
+	var Index = function (_React$Component) {
+	  _inherits(Index, _React$Component);
 	
-	  function ContentTemplate() {
-	    _classCallCheck(this, ContentTemplate);
+	  function Index() {
+	    _classCallCheck(this, Index);
 	
 	    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
 	  }
 	
-	  ContentTemplate.prototype.render = function render() {
-	    var slug = this.props.pathContext.slug;
-	
-	    var postNode = this.props.data.postBySlug;
-	    var post = postNode.frontmatter;
-	    var category = post.category;
-	    var categories = [];
-	    this.props.data.postByCategory.edges.forEach(function (cat) {
-	      if (cat.node.frontmatter.category === category) {
-	        categories.push(cat);
+	  Index.prototype.navHeadings = function navHeadings() {
+	    var navHeadings = [];
+	    this.props.data.navCategories.edges.forEach(function (cat) {
+	      if (!navHeadings.includes(cat.node.frontmatter.category)) {
+	        navHeadings.push(cat.node.frontmatter.category);
 	      }
 	    });
-	    var chapterTitles = [];
-	    categories.forEach(function (cat) {
-	      chapterTitles.push(cat.node.frontmatter.title);
-	    });
-	    if (!post.id) {
-	      post.id = slug;
-	    }
-	    if (!post.id) {
-	      post.category_id = _SiteConfig2.default.postDefaultCategoryID;
-	    }
+	    return navHeadings;
+	  };
+	
+	  Index.prototype.render = function render() {
+	    var postEdges = this.props.data.allMarkdownRemark.edges;
 	    return _react2.default.createElement(
 	      "div",
-	      null,
+	      { className: "index-container" },
+	      _react2.default.createElement(_reactHelmet2.default, { title: _SiteConfig2.default.siteTitle }),
+	      _react2.default.createElement(_SEO2.default, { postEdges: postEdges }),
 	      _react2.default.createElement(
-	        _reactHelmet2.default,
+	        "main",
 	        null,
 	        _react2.default.createElement(
-	          "title",
+	          IndexHeadContainer,
 	          null,
-	          post.title + " | " + _SiteConfig2.default.siteTitle
-	        )
-	      ),
-	      _react2.default.createElement(_SEO2.default, { postPath: slug, postNode: postNode, postSEO: true }),
-	      _react2.default.createElement(
-	        BodyGrid,
-	        null,
-	        _react2.default.createElement(
-	          HeaderContainer,
-	          null,
-	          _react2.default.createElement(_Header2.default, { location: this.props.location, categories: this.props.data.navCategories })
-	        ),
-	        _react2.default.createElement(
-	          ToCContainer,
-	          null,
-	          _react2.default.createElement(_TableOfContents2.default, {
-	            contentsType: post.type,
-	            chapterTitles: chapterTitles,
-	            categories: categories,
-	            category: category
-	          })
+	          _react2.default.createElement(_Navigation2.default, { sections: this.navHeadings(), data: this.props.data.navCategories.edges }),
+	          _react2.default.createElement(
+	            Hero,
+	            null,
+	            _react2.default.createElement("img", { src: _SiteConfig2.default.siteLogo, width: "150px" }),
+	            _react2.default.createElement(
+	              "h1",
+	              null,
+	              _SiteConfig2.default.siteTitle
+	            ),
+	            _react2.default.createElement(
+	              "h4",
+	              null,
+	              _SiteConfig2.default.siteDescription
+	            )
+	          )
 	        ),
 	        _react2.default.createElement(
 	          BodyContainer,
 	          null,
 	          _react2.default.createElement(
-	            "div",
+	            "h2",
 	            null,
-	            _react2.default.createElement("div", { dangerouslySetInnerHTML: { __html: postNode.html } })
+	            "Simple and secure login for your Ethereum app"
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            " Uport ID makes blockchain easy on desktop and mobile "
 	          )
 	        )
 	      )
 	    );
 	  };
 	
-	  return ContentTemplate;
+	  return Index;
 	}(_react2.default.Component);
 	
-	exports.default = ContentTemplate;
+	exports.default = Index;
 	
 	
-	var BodyGrid = _styledComponents2.default.div(_templateObject);
+	var IndexHeadContainer = _styledComponents2.default.div(_templateObject, function (props) {
+	  return props.theme.brand;
+	}, function (props) {
+	  return props.theme.sitePadding;
+	});
 	
-	var BodyContainer = _styledComponents2.default.div(_templateObject2, function (props) {
+	var Hero = _styledComponents2.default.div(_templateObject2);
+	
+	var BodyContainer = _styledComponents2.default.div(_templateObject3, function (props) {
 	  return props.theme.sitePadding;
 	}, function (props) {
 	  return props.theme.contentWidthLaptop;
-	}, function (props) {
-	  return props.theme.accentDark;
-	});
-	
-	var HeaderContainer = _styledComponents2.default.div(_templateObject3);
-	
-	var ToCContainer = _styledComponents2.default.div(_templateObject4, function (props) {
-	  return props.theme.lightGrey;
 	});
 	
 	/* eslint no-undef: "off"*/
 	var pageQuery = exports.pageQuery = "** extracted graphql fragment **";
 
-/***/ }),
-/* 1833 */,
-/* 1834 */,
-/* 1835 */,
-/* 1836 */,
-/* 1837 */,
-/* 1838 */,
-/* 1839 */,
-/* 1840 */,
-/* 1841 */,
-/* 1842 */,
-/* 1843 */,
-/* 1844 */,
-/* 1845 */,
-/* 1846 */,
-/* 1847 */,
-/* 1848 */,
-/* 1849 */,
-/* 1850 */,
-/* 1851 */,
-/* 1852 */,
-/* 1853 */,
-/* 1854 */,
-/* 1855 */,
-/* 1856 */,
-/* 1857 */,
-/* 1858 */,
-/* 1859 */,
-/* 1860 */,
-/* 1861 */,
-/* 1862 */,
-/* 1863 */,
-/* 1864 */,
-/* 1865 */,
-/* 1866 */,
-/* 1867 */,
-/* 1868 */,
-/* 1869 */,
-/* 1870 */,
-/* 1871 */,
-/* 1872 */,
-/* 1873 */,
-/* 1874 */,
-/* 1875 */,
-/* 1876 */,
-/* 1877 */,
-/* 1878 */,
-/* 1879 */,
-/* 1880 */,
-/* 1881 */,
-/* 1882 */,
-/* 1883 */,
-/* 1884 */,
-/* 1885 */,
-/* 1886 */,
-/* 1887 */,
-/* 1888 */,
-/* 1889 */,
-/* 1890 */,
-/* 1891 */,
-/* 1892 */,
-/* 1893 */,
-/* 1894 */,
-/* 1895 */,
-/* 1896 */,
-/* 1897 */,
-/* 1898 */,
-/* 1899 */,
-/* 1900 */,
-/* 1901 */,
-/* 1902 */,
-/* 1903 */,
-/* 1904 */,
-/* 1905 */,
-/* 1906 */,
-/* 1907 */,
-/* 1908 */,
-/* 1909 */,
-/* 1910 */,
-/* 1911 */,
-/* 1912 */,
-/* 1913 */,
-/* 1914 */,
-/* 1915 */,
-/* 1916 */,
-/* 1917 */,
-/* 1918 */,
-/* 1919 */,
-/* 1920 */,
-/* 1921 */,
-/* 1922 */,
-/* 1923 */,
-/* 1924 */,
-/* 1925 */,
-/* 1926 */,
-/* 1927 */,
-/* 1928 */,
-/* 1929 */,
-/* 1930 */,
-/* 1931 */,
-/* 1932 */,
-/* 1933 */,
-/* 1934 */,
-/* 1935 */,
-/* 1936 */,
-/* 1937 */,
-/* 1938 */,
-/* 1939 */,
-/* 1940 */,
-/* 1941 */,
-/* 1942 */,
-/* 1943 */,
-/* 1944 */,
-/* 1945 */,
-/* 1946 */,
-/* 1947 */,
-/* 1948 */,
-/* 1949 */,
-/* 1950 */,
-/* 1951 */,
-/* 1952 */,
-/* 1953 */,
-/* 1954 */,
-/* 1955 */,
-/* 1956 */,
-/* 1957 */,
-/* 1958 */,
-/* 1959 */,
-/* 1960 */,
-/* 1961 */,
-/* 1962 */,
-/* 1963 */,
-/* 1964 */,
-/* 1965 */,
-/* 1966 */,
-/* 1967 */,
-/* 1968 */,
-/* 1969 */,
-/* 1970 */,
-/* 1971 */,
-/* 1972 */,
-/* 1973 */,
-/* 1974 */,
-/* 1975 */,
-/* 1976 */,
-/* 1977 */,
-/* 1978 */,
-/* 1979 */,
-/* 1980 */,
-/* 1981 */,
-/* 1982 */,
-/* 1983 */,
-/* 1984 */,
-/* 1985 */,
-/* 1986 */,
-/* 1987 */,
-/* 1988 */,
-/* 1989 */,
-/* 1990 */,
-/* 1991 */,
-/* 1992 */,
-/* 1993 */,
-/* 1994 */,
-/* 1995 */,
-/* 1996 */,
-/* 1997 */,
-/* 1998 */,
-/* 1999 */,
-/* 2000 */,
-/* 2001 */,
-/* 2002 */,
-/* 2003 */,
-/* 2004 */,
-/* 2005 */,
-/* 2006 */,
-/* 2007 */,
-/* 2008 */,
-/* 2009 */,
-/* 2010 */,
-/* 2011 */,
-/* 2012 */,
-/* 2013 */,
-/* 2014 */,
-/* 2015 */,
-/* 2016 */,
-/* 2017 */,
-/* 2018 */,
-/* 2019 */,
-/* 2020 */,
-/* 2021 */,
-/* 2022 */
-/***/ (function(module, exports) {
-
-	/**
-	 * A specialized version of `_.reduce` for arrays without support for
-	 * iteratee shorthands.
-	 *
-	 * @private
-	 * @param {Array} [array] The array to iterate over.
-	 * @param {Function} iteratee The function invoked per iteration.
-	 * @param {*} [accumulator] The initial value.
-	 * @param {boolean} [initAccum] Specify using the first element of `array` as
-	 *  the initial value.
-	 * @returns {*} Returns the accumulated value.
-	 */
-	function arrayReduce(array, iteratee, accumulator, initAccum) {
-	  var index = -1,
-	      length = array == null ? 0 : array.length;
-	
-	  if (initAccum && length) {
-	    accumulator = array[++index];
-	  }
-	  while (++index < length) {
-	    accumulator = iteratee(accumulator, array[index], index, array);
-	  }
-	  return accumulator;
-	}
-	
-	module.exports = arrayReduce;
-
-
-/***/ }),
-/* 2023 */
-/***/ (function(module, exports) {
-
-	/** Used to match words composed of alphanumeric characters. */
-	var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
-	
-	/**
-	 * Splits an ASCII `string` into an array of its words.
-	 *
-	 * @private
-	 * @param {string} The string to inspect.
-	 * @returns {Array} Returns the words of `string`.
-	 */
-	function asciiWords(string) {
-	  return string.match(reAsciiWord) || [];
-	}
-	
-	module.exports = asciiWords;
-
-
-/***/ }),
-/* 2024 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var arrayReduce = __webpack_require__(2022),
-	    deburr = __webpack_require__(2027),
-	    words = __webpack_require__(2030);
-	
-	/** Used to compose unicode capture groups. */
-	var rsApos = "['\u2019]";
-	
-	/** Used to match apostrophes. */
-	var reApos = RegExp(rsApos, 'g');
-	
-	/**
-	 * Creates a function like `_.camelCase`.
-	 *
-	 * @private
-	 * @param {Function} callback The function to combine each word.
-	 * @returns {Function} Returns the new compounder function.
-	 */
-	function createCompounder(callback) {
-	  return function(string) {
-	    return arrayReduce(words(deburr(string).replace(reApos, '')), callback, '');
-	  };
-	}
-	
-	module.exports = createCompounder;
-
-
-/***/ }),
-/* 2025 */
-/***/ (function(module, exports) {
-
-	/** Used to detect strings that need a more robust regexp to match words. */
-	var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
-	
-	/**
-	 * Checks if `string` contains a word composed of Unicode symbols.
-	 *
-	 * @private
-	 * @param {string} string The string to inspect.
-	 * @returns {boolean} Returns `true` if a word is found, else `false`.
-	 */
-	function hasUnicodeWord(string) {
-	  return reHasUnicodeWord.test(string);
-	}
-	
-	module.exports = hasUnicodeWord;
-
-
-/***/ }),
-/* 2026 */
-/***/ (function(module, exports) {
-
-	/** Used to compose unicode character classes. */
-	var rsAstralRange = '\\ud800-\\udfff',
-	    rsComboMarksRange = '\\u0300-\\u036f',
-	    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
-	    rsComboSymbolsRange = '\\u20d0-\\u20ff',
-	    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
-	    rsDingbatRange = '\\u2700-\\u27bf',
-	    rsLowerRange = 'a-z\\xdf-\\xf6\\xf8-\\xff',
-	    rsMathOpRange = '\\xac\\xb1\\xd7\\xf7',
-	    rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
-	    rsPunctuationRange = '\\u2000-\\u206f',
-	    rsSpaceRange = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000',
-	    rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
-	    rsVarRange = '\\ufe0e\\ufe0f',
-	    rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
-	
-	/** Used to compose unicode capture groups. */
-	var rsApos = "['\u2019]",
-	    rsBreak = '[' + rsBreakRange + ']',
-	    rsCombo = '[' + rsComboRange + ']',
-	    rsDigits = '\\d+',
-	    rsDingbat = '[' + rsDingbatRange + ']',
-	    rsLower = '[' + rsLowerRange + ']',
-	    rsMisc = '[^' + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + ']',
-	    rsFitz = '\\ud83c[\\udffb-\\udfff]',
-	    rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
-	    rsNonAstral = '[^' + rsAstralRange + ']',
-	    rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}',
-	    rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
-	    rsUpper = '[' + rsUpperRange + ']',
-	    rsZWJ = '\\u200d';
-	
-	/** Used to compose unicode regexes. */
-	var rsMiscLower = '(?:' + rsLower + '|' + rsMisc + ')',
-	    rsMiscUpper = '(?:' + rsUpper + '|' + rsMisc + ')',
-	    rsOptContrLower = '(?:' + rsApos + '(?:d|ll|m|re|s|t|ve))?',
-	    rsOptContrUpper = '(?:' + rsApos + '(?:D|LL|M|RE|S|T|VE))?',
-	    reOptMod = rsModifier + '?',
-	    rsOptVar = '[' + rsVarRange + ']?',
-	    rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
-	    rsOrdLower = '\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])',
-	    rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])',
-	    rsSeq = rsOptVar + reOptMod + rsOptJoin,
-	    rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq;
-	
-	/** Used to match complex or compound words. */
-	var reUnicodeWord = RegExp([
-	  rsUpper + '?' + rsLower + '+' + rsOptContrLower + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
-	  rsMiscUpper + '+' + rsOptContrUpper + '(?=' + [rsBreak, rsUpper + rsMiscLower, '$'].join('|') + ')',
-	  rsUpper + '?' + rsMiscLower + '+' + rsOptContrLower,
-	  rsUpper + '+' + rsOptContrUpper,
-	  rsOrdUpper,
-	  rsOrdLower,
-	  rsDigits,
-	  rsEmoji
-	].join('|'), 'g');
-	
-	/**
-	 * Splits a Unicode `string` into an array of its words.
-	 *
-	 * @private
-	 * @param {string} The string to inspect.
-	 * @returns {Array} Returns the words of `string`.
-	 */
-	function unicodeWords(string) {
-	  return string.match(reUnicodeWord) || [];
-	}
-	
-	module.exports = unicodeWords;
-
-
-/***/ }),
-/* 2027 */
-/***/ (function(module, exports) {
-
-	/**
-	 * This method returns the first argument it receives.
-	 *
-	 * @static
-	 * @since 0.1.0
-	 * @memberOf _
-	 * @category Util
-	 * @param {*} value Any value.
-	 * @returns {*} Returns `value`.
-	 * @example
-	 *
-	 * var object = { 'a': 1 };
-	 *
-	 * console.log(_.identity(object) === object);
-	 * // => true
-	 */
-	function identity(value) {
-	  return value;
-	}
-	
-	module.exports = identity;
-
-
-/***/ }),
-/* 2028 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var createCompounder = __webpack_require__(2024);
-	
-	/**
-	 * Converts `string` to
-	 * [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 3.0.0
-	 * @category String
-	 * @param {string} [string=''] The string to convert.
-	 * @returns {string} Returns the kebab cased string.
-	 * @example
-	 *
-	 * _.kebabCase('Foo Bar');
-	 * // => 'foo-bar'
-	 *
-	 * _.kebabCase('fooBar');
-	 * // => 'foo-bar'
-	 *
-	 * _.kebabCase('__FOO_BAR__');
-	 * // => 'foo-bar'
-	 */
-	var kebabCase = createCompounder(function(result, word, index) {
-	  return result + (index ? '-' : '') + word.toLowerCase();
-	});
-	
-	module.exports = kebabCase;
-
-
-/***/ }),
-/* 2029 */
-/***/ (function(module, exports) {
-
-	/**
-	 * This method returns the first argument it receives.
-	 *
-	 * @static
-	 * @since 0.1.0
-	 * @memberOf _
-	 * @category Util
-	 * @param {*} value Any value.
-	 * @returns {*} Returns `value`.
-	 * @example
-	 *
-	 * var object = { 'a': 1 };
-	 *
-	 * console.log(_.identity(object) === object);
-	 * // => true
-	 */
-	function identity(value) {
-	  return value;
-	}
-	
-	module.exports = identity;
-
-
-/***/ }),
-/* 2030 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var asciiWords = __webpack_require__(2023),
-	    hasUnicodeWord = __webpack_require__(2025),
-	    toString = __webpack_require__(2029),
-	    unicodeWords = __webpack_require__(2026);
-	
-	/**
-	 * Splits `string` into an array of its words.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 3.0.0
-	 * @category String
-	 * @param {string} [string=''] The string to inspect.
-	 * @param {RegExp|string} [pattern] The pattern to match words.
-	 * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
-	 * @returns {Array} Returns the words of `string`.
-	 * @example
-	 *
-	 * _.words('fred, barney, & pebbles');
-	 * // => ['fred', 'barney', 'pebbles']
-	 *
-	 * _.words('fred, barney, & pebbles', /[^, ]+/g);
-	 * // => ['fred', 'barney', '&', 'pebbles']
-	 */
-	function words(string, pattern, guard) {
-	  string = toString(string);
-	  pattern = guard ? undefined : pattern;
-	
-	  if (pattern === undefined) {
-	    return hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
-	  }
-	  return string.match(pattern) || [];
-	}
-	
-	module.exports = words;
-
-
 /***/ })
 ]);
-//# sourceMappingURL=component---src-templates-content-jsx-4b0f8168bd4cfd7853e4.js.map
+//# sourceMappingURL=component---src-pages-index-jsx-d891939407a15a2c0f6e.js.map
