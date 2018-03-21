@@ -1269,7 +1269,7 @@ webpackJsonp([231608221292675],{
 	  addPagesArray: function addPagesArray(newPages) {
 	    pages = newPages;
 	    if (true) {
-	      if (true) pathPrefix = ("/docs-site");
+	      if (true) pathPrefix = ("");
 	    }
 	    findPage = (0, _findPage2.default)(newPages, pathPrefix);
 	  },
@@ -1784,7 +1784,7 @@ webpackJsonp([231608221292675],{
 	
 	var pathPrefix = "/";
 	if (true) {
-	  pathPrefix = ("/docs-site") + "/";
+	  pathPrefix = ("") + "/";
 	}
 	
 	if ("serviceWorker" in navigator) {

@@ -90,7 +90,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/docs-site/";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// expose the chunks object
 /******/ 	__webpack_require__.s = installedChunks;
@@ -1598,7 +1598,7 @@
 	/*global __PREFIX_PATHS__, __PATH_PREFIX__ */
 	var pathPrefix = "/";
 	if (true) {
-	  pathPrefix = ("/docs-site");
+	  pathPrefix = ("");
 	}
 	
 	function withPrefix(path) {
@@ -2067,7 +2067,7 @@
 	  siteTitleAlt: "Uport ID makes blockchain easy on desktop and mobile", // Alternative site title for SEO.
 	  siteLogo: "/logos/uport-logo-purple@3x.png", // Logo used for SEO and manifest.
 	  siteUrl: "https://rekt.uport.space", // Domain of your website without pathPrefix.
-	  pathPrefix: "/docs-site", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+	  pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 	  siteDescription: "Uport ID makes blockchain easy on desktop and mobile", // Website description used for RSS feeds/meta description tag.
 	  siteRss: "/rss.xml", // Path to the RSS file.
 	  siteFBAppID: "", // FB Application ID for using app insights
@@ -32895,4 +32895,4 @@
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=commons-cc4c614e74377445838c.js.map
+//# sourceMappingURL=commons-79a191dbd45b4d8873cb.js.map

@@ -69,8 +69,8 @@
       "path---protocol-05c24b52339445b0e28a.js.map"
     ],
     "component---src-pages-about-jsx": [
-      "component---src-pages-about-jsx-dd9c21535edbef65d7c0.js",
-      "component---src-pages-about-jsx-dd9c21535edbef65d7c0.js.map"
+      "component---src-pages-about-jsx-d56f9f1a03e8feb85d60.js",
+      "component---src-pages-about-jsx-d56f9f1a03e8feb85d60.js.map"
     ],
     "path---flows-tx": [
       "path---flows-tx-fe2caf089ce7ebbede2d.js",
@@ -81,8 +81,8 @@
       "path---rest-apis-fuel-server-80e752b05b6ba5b6f026.js.map"
     ],
     "commons": [
-      "commons-cc4c614e74377445838c.js",
-      "commons-cc4c614e74377445838c.js.map"
+      "commons-79a191dbd45b4d8873cb.js",
+      "commons-79a191dbd45b4d8873cb.js.map"
     ],
     "path---categories-overview": [
       "path---categories-overview-e648369f2cb864fd2a7a.js",
@@ -121,8 +121,8 @@
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-index-jsx": [
-      "component---src-pages-index-jsx-d891939407a15a2c0f6e.js",
-      "component---src-pages-index-jsx-d891939407a15a2c0f6e.js.map"
+      "component---src-pages-index-jsx-da784631ed7ef22706fc.js",
+      "component---src-pages-index-jsx-da784631ed7ef22706fc.js.map"
     ],
     "path---uport-connect-docs": [
       "path---uport-connect-docs-68cd11e47e4d9dac378b.js",
@@ -143,8 +143,8 @@
       "path---messages-privatechain-656a13e0e3979d34fb15.js.map"
     ],
     "component---src-templates-content-jsx": [
-      "component---src-templates-content-jsx-429166a47f3543217557.js",
-      "component---src-templates-content-jsx-429166a47f3543217557.js.map"
+      "component---src-templates-content-jsx-4b0f8168bd4cfd7853e4.js",
+      "component---src-templates-content-jsx-4b0f8168bd4cfd7853e4.js.map"
     ],
     "path---attestcredentials": [
       "path---attestcredentials-32d248eeb52be62f00dc.js",
