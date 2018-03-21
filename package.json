@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-docs-starter",
-  "description": "GatsbyJS starter designed with documentation and tutorial websites in mind.",
+  "name": "uport-site-generator",
+  "description": "Uport documentation generator",
   "version": "1.0.1",
-  "author": "Eric Windmill <eric@ericwindmill.com>",
+  "author": "team@uport.me",
   "dependencies": {
     "babel-register": "^6.26.0",
     "gatsby": "^1.9.223",
@@ -80,7 +80,7 @@
     "ipfs",
     "identity"
   ],
-  "license": "MIT",
+  "license": "Apache 2.0",
   "main": "n/a",
   "scripts": {
     "clean:repos": "rm -rf repos/*",
@@ -88,7 +88,7 @@
     "install:plugins": "cd ./plugins/gatsby-remark-copy-linked-files && npm install && cd ../gatsby-remark-catch-relative-markdown-links && npm install && cd ../../",
     "update:docs:local": "gulp copy-files",
     "update:docs:remote": "npm run clean:repos && npm run fetch && gulp copy-files",
-    "setup": "npm run install:plugins && npm run update:docs:remote",
+    "setup": "npm run install:plugins && npm run clean && npm run update:docs:remote",
     "develop": "gatsby develop",
     "dev": "npm run develop",
     "serve": "gatsby serve",
