@@ -1,11 +1,2 @@
-webpackJsonp([273950069227526],{
-
-/***/ 1987:
-/***/ (function(module, exports) {
-
-	module.exports = {"pathContext":{}}
-
-/***/ })
-
-});
+webpackJsonp([0xf927f8900006],{1981:function(t,n){t.exports={pathContext:{}}}});
 //# sourceMappingURL=path---about-a0e39f21c11f6a62c5ab.js.map
