@@ -1,0 +1,186 @@
+/**********
+ Reset
+***********/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/**********
+ Text
+***********/
+html {
+    font-size: 10px;
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, a,
+li, ul {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+    margin: 30px 0;
+}
+
+li, li > *, dt, dd {
+    margin: 10px 0;
+}
+
+pre, code {
+    font-family: 'Source Code Pro', monospace;
+}
+
+h1 {font-size: 4rem;}
+h2 {font-size: 3.5rem;}
+h3 {font-size: 3rem;}
+h4 {font-size: 2.4rem;}
+h5 {font-size: 2rem;}
+h6 {font-size: 1.6rem;}
+
+p, a, li, dt, dd, tr, th {
+    font-size: 1.8rem;
+}
+
+a {
+    color: #2973b7;
+    text-decoration: none;
+}
+a:hover {
+    border-bottom: 1px solid black;
+}
+/**
+ * modified okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * original author: ocodia
+ */
+
+.gatsby-highlight {
+    padding-bottom: 30px;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #f8f8f2;
+    background: none;
+    font-family: 'Source Code Pro', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.87;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    box-shadow: 0.05555555555555555rem 0.05555555555555555rem 1.1111111111111112rem rgba(20,20,20,0.37);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border-radius: 0;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: #1D1F27;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #b5bec3;
+}
+
+.token.punctuation {
+    color: #f8f8f2;
+}
+
+.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+    color: #EFC090;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #DC78DC;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+    color: #BED6FF;
+}
+
+.token.keyword {
+    color: #00D0D0;
+}
+
+.token.regex,
+.token.important {
+    color: #CCDF32;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+/*# sourceMappingURL=build-js-styles.css.map*/

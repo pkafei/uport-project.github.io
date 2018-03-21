@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://developer.uport.me/attestcredentials</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/gettingstarted</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/readme</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/requestcredentials</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/signtransactions</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/clients</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/overview</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/platform</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/protocol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/uport-connect-docs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/uport-js-docs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/messages/index</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/messages/privatechain</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/messages/sharereq</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/messages/shareresp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/messages/verification</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/rest-apis/fuel-server</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/rest-apis/relay-server</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/pki/identitydocument</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/pki/index</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/transports/index</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/transports/push</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/flows/index</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/flows/privatechain</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/flows/selectivedisclosure</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/flows/tx</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/flows/verification</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/categories/guides/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/categories/reference/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/categories/overview/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://developer.uport.me/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
