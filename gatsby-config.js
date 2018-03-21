@@ -17,7 +17,6 @@ module.exports = {
     }
   },
   plugins: [
-    'gatsby-plugin-debug-build',
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
     {
