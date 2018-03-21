@@ -2,8 +2,8 @@ module.exports = {
   siteTitle: "Simple and secure login for your Ethereum app", // Site title.
   siteTitleAlt: "Uport ID makes blockchain easy on desktop and mobile", // Alternative site title for SEO.
   siteLogo: "/logos/uport-logo-purple@3x.png", // Logo used for SEO and manifest.
-  siteUrl: "https://developer.uport.me", // Domain of your website without pathPrefix.
-  pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  siteUrl: "https://rekt.uport.space", // Domain of your website without pathPrefix.
+  pathPrefix: "/docs-site", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Uport ID makes blockchain easy on desktop and mobile", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights

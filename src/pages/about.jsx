@@ -18,12 +18,12 @@ class AboutPage extends React.Component {
       <div className="index-container">
         <Helmet title={config.siteTitle} />
         <main>
-          <MainHeader
-            siteTitle={config.siteTitle}
-            siteDescription={config.siteDescription}
-            location={this.props.location}
-            logo={config.siteLogo}
-          />
+          {/* <MainHeader
+              siteTitle={config.siteTitle}
+              siteDescription={config.siteDescription}
+              location={this.props.location}
+              logo={config.siteLogo}
+              /> */}
           <BodyContainer>
             <About />
           </BodyContainer>

@@ -28,7 +28,7 @@ export default class TableOfContents extends React.Component {
         cat.headings.forEach(node => {
           if (node.depth === 2){
             chapterContents.push(
-              <ContentContainer>
+              <ContentContainer key={`${node.value}`}>
                 <Link to={`${cat.path}#${_.kebabCase(node.value)}`}>
                   <li>
                     <span>
@@ -42,7 +42,7 @@ export default class TableOfContents extends React.Component {
         })
       }
       listItems.push(
-        <li className='chapter'>
+        <li className='chapter' key={`${cat.path}`}>
           <Link to={`${cat.path}`}>
             <h5 className='tocHeading'>
               {cat.title.charAt(0).toUpperCase() + cat.title.slice(1)}
