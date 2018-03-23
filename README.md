@@ -72,8 +72,10 @@ const theme = {
 export default theme;
 ```
 
-
-**Note:** Code highlighting is done with PrismJS.  [Prism Themes](https://github.com/PrismJS/prism-themes) have been installed, and is utilized in `/src/layouts/index.jsx`
+**Note:**
+1. Code highlighting is done with PrismJS.  [Prism Themes](https://github.com/PrismJS/prism-themes) have been installed, and is utilized in `/src/layouts/index.jsx`
+1. Our CSS is imported from weblow.
+1. The only CSS file that should be modified directly is `src/layours/css/index.css`.  Use this to make changes to the defaults that are imported.
 
 
 ### Content configuration
@@ -190,4 +192,4 @@ The deployment steps for uPort are:
 1. `npm run build:gh`
 1. Go to https://github.com/uport-project/docs-site/settings and update the custom domain to reflect our documentation home (developer.uport.me or .space).
 
-Optionally, manual deployment can be done.  Simply build the site and copy the output to its destination.  To build the site execute  `npm run build`.  This command will build the site and copy files to the `/public` folder.  Depending on the deployment source (S3, Netflify), this command can be modified however it is trivial to copy to the contents of the public folder to it's destination.
+Optionally, manual deployment can be done.  Simply build the site and copy the output to its destination.  To build the site execute  `npm run build`.  This command will build the site and copy files to the `/public` folder.  Depending on the deployment source (S3, Netflify**, this command can be modified however it is trivial to copy to the contents of the public folder to it's destination.

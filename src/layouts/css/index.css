@@ -1,7 +1,15 @@
+/* Theme customizations for code blocks */
 pre, code {
     font-family: 'Source Code Pro', monospace;
+    /* background: #F6F6F6; */
 }
 
+code[class*="language-"],
+pre[class*="language-"] {
+    background: #F6F6F6;
+}
+
+/* Customizations for markdown */
 h1,
 h2,
 h3,
@@ -42,4 +50,5 @@ h6 {
 p {
     margin-top: 0;
     margin-bottom: 10px;
+    line-height: 1.7;
 }

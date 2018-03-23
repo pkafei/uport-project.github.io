@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import _ from "lodash";
 
 export default class TableOfContents extends React.Component {
+
   render() {
     const {category} = this.props
     const {categories} = this.props
@@ -79,13 +80,13 @@ const TableOfContentsContainer = styled.div`
 
  h5 {
    font-weight: 400;
-   font-size: 1em;
+   font-size: 16px;
  }
 
  p, h6 {
    display: inline-block;
    font-weight: 400;
-   font-size: .9em;
+   font-size: 14px;
  }
 
   .tocHeading {
