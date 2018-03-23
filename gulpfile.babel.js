@@ -17,11 +17,11 @@ const PATH_PREFIX = argv.pathPrefix || '';
 import "./gulp/git";
 
 gulp.task('copy-files', done => {
-  // safeSymlink("../repos/docs/reference", "content/lessons/reference");
-  // safeSymlink("../repos/docs/guides", "content/lessons/guides");
-  // safeSymlink("../repos/docs/overview", "content/lessons/overview");
-  // gulp.src("./repos/specs/*").pipe($g.sym(repoToSrc, {force: true, relative: true}));
 
+  // Symlink files
+  // safeSymlink("./src/images", "./static/images");
+
+  // Copy files.
   gulp.src(['./repos/docs/reference/*',
             './repos/docs/guides/*',
             './repos/docs/overview/*',
@@ -29,46 +29,3 @@ gulp.task('copy-files', done => {
     .pipe(gulp.dest('./content/public/'));
 
 });
-
-// function repoToSrc(file) {
-//   let project = file.relative.split(path.sep)[0];
-//   return path.join("content/lessons/", project);
-// }
-
-// gulp.task('docs', () => {
-//   var filesConnectArray = [
-//     paths.nodeMods + 'uport-connect/src/Connect.js',
-//     paths.nodeMods + 'uport-connect/src/ConnectCore.js'
-//   ]
-//   var filesJSArray = [
-//     // paths.nodeMods + 'uport/src/JWT.js',
-//     paths.nodeMods + 'uport/src/Credentials.js',
-//     paths.nodeMods + 'uport/src/SimpleSigner.js'
-//   ]
-
-//   var optionsBP = {
-//     "no-gfm": true,
-//     "separators": true
-//   }
-
-//   var optionsConnect = Object.create(optionsBP)
-//   var optionsJS = Object.create(optionsBP)
-//   optionsConnect.files = filesConnectArray
-//   optionsJS.files = filesJSArray
-
-//   jsdoc2md.render(optionsConnect)
-//     .then((output) => {
-//       fs.writeFile(
-//         paths.partials + 'docs/uport-connect-docs.md',
-//         output
-//       )
-//     })
-
-//   jsdoc2md.render(optionsJS)
-//     .then((output) => {
-//       fs.writeFile(
-//         paths.partials + 'docs/uport-js-docs.md',
-//         output
-//       )
-//     })
-// })

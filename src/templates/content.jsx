@@ -30,33 +30,36 @@ export default class ContentTemplate extends React.Component {
       post.category_id = config.postDefaultCategoryID;
     }
       return (
-          <div>
-              <Helmet>
-                  <title>{`${post.title} | ${config.siteTitle}`}</title>
-              </Helmet>
-              <SEO postPath={slug} postNode={postNode} postSEO />
-              <BodyGrid>
-                  <HeaderContainer>
-                      <SiteHeader location={this.props.location} categories={this.props.data.navCategories} />
-                  </HeaderContainer>
-                  <ToCContainer>
-                    <TableOfContents
-                      contentsType={post.type}
-                      chapterTitles={chapterTitles}
-                      categories={categories}
-                      category={category}
-                      />
-                  </ToCContainer>
-                  <BodyContainer>
-                      <div>
-                        {/* <h1>
-                            {post.title}
-                            </h1> */}
-                          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-                      </div>
-                  </BodyContainer>
-              </BodyGrid>
-          </div>
+        <div>
+          <Helmet>
+            <title>{`${post.title} | ${config.siteTitle}`}</title>
+          </Helmet>
+          <SEO postPath={slug} postNode={postNode} postSEO />
+          <BodyGrid>
+            <HeaderContainer>
+              <SiteHeader
+                location={this.props.location}
+                categories={this.props.data.navCategories}
+              />
+            </HeaderContainer>
+            <ToCContainer>
+              <TableOfContents
+                contentsType={post.type}
+                chapterTitles={chapterTitles}
+                categories={categories}
+                category={category}
+              />
+            </ToCContainer>
+            <BodyContainer>
+              <div>
+                {/* <h1>
+                    {post.title}
+                    </h1> */}
+                <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+              </div>
+            </BodyContainer>
+          </BodyGrid>
+        </div>
       );
   }
 }
@@ -107,8 +110,24 @@ const HeaderContainer = styled.div`
 const ToCContainer = styled.div`
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  background: ${props => props.theme.lightGrey};
+  /* background: ${props => props.theme.themedWhite};*/
   overflow: scroll;
+
+  ::-webkit-scrollbar-track
+  {
+    background: ${props => props.theme.lightGrey};
+  }
+
+  ::-webkit-scrollbar
+  {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+    background: ${props => props.theme.secondaryBrand};
+  }
+
    @media screen and (max-width: 600px) {
     order: 3;
     overflow: inherit;

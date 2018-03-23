@@ -25,8 +25,10 @@ class Index extends React.Component {
         <SEO postEdges={postEdges} />
         <main>
           <IndexHeadContainer>
-            <Navigation sections={this.navHeadings()} data={this.props.data.navCategories.edges} />
-            <Hero>
+            <NavContainer>
+              <Navigation sections={this.navHeadings()} data={this.props.data.navCategories.edges} />
+            </NavContainer>
+            <Hero className={`home-hero headline-wrapper`}>
               <img src={config.siteLogo} width='150px' />
               <h1>{config.siteTitle}</h1>
               <h4>{config.siteDescription}</h4>
@@ -40,19 +42,24 @@ class Index extends React.Component {
         </main>
       </div>
     );
-  }
+    }
 }
 
 export default Index;
 
 const IndexHeadContainer = styled.div`
   background: ${props => props.theme.brand};
-  padding: ${props => props.theme.sitePadding};
+`
+
+const NavContainer = styled.div`
+  padding-right: 20px;
+  padding-top: 8px;
+  margin-right: -8px;
   text-align: center;
 `
 
 const Hero = styled.div`
-  padding: 50px 0;
+padding: 50px 0;
   & > h1 {
     font-weight: 600;
   }

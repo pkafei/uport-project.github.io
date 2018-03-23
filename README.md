@@ -73,6 +73,9 @@ export default theme;
 ```
 
 
+**Note:** Code highlighting is done with PrismJS.  [Prism Themes](https://github.com/PrismJS/prism-themes) have been installed, and is utilized in `/src/layouts/index.jsx`
+
+
 ### Content configuration
 
 Our content is stored in remote repositories which are configured in a file called `repos.json`.   In this file any repository that is configured will be cloned into the `/repos` folder.  For convenience this folder has been added to `.gitingore`.

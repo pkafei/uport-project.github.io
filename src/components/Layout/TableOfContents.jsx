@@ -61,45 +61,54 @@ export default class TableOfContents extends React.Component {
         </ul>
       </TableOfContentsContainer>
     )
-    }
+  }
 }
 
 const TableOfContentsContainer = styled.div`
   padding: ${props => props.theme.sitePadding};
 
-  & > ul, .chapterItems {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+ & > ul, .chapterItems {
+   list-style: none;
+   padding: 0;
+   margin-left: 30px;
+ }
 
-  p, h6 {
-    display: inline-block;
-    font-weight: 200;
-    margin: 0;
-  }
+ a {
+   text-decoration: none;
+ }
+
+ h5 {
+   font-weight: 400;
+   font-size: 1em;
+ }
+
+ p, h6 {
+   display: inline-block;
+   font-weight: 400;
+   font-size: .9em;
+ }
 
   .tocHeading {
-     font-weight: 200;
+     font-weight: 400;
      color: ${props => props.theme.brand};
-     margin-bottom: 10px;
+     margin-top: 25px;
   }
 `
 
 const ContentContainer = styled.div`
-  h6, p {
-    color: black;
-    margin: 0;
-    line-height: 1.5;
-  }
-  li {
-    margin: 0;
-  }
-  &:hover {
-    li {
-      span {
-        border-bottom: 1px solid black;
-      }
-    }
-  }
+   h6, p {
+   color: ${props => props.theme.darkGrey};
+   line-height: 1.2;
+ }
+ li {
+   margin-left:-10px;
+ }
+
+ &:hover {
+   li {
+     span {
+       border-bottom: 1px solid ${props => props.theme.secondaryBrand};
+     }
+   }
+ }
 `

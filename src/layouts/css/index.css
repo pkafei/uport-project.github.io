@@ -1,61 +1,45 @@
-/**********
- Reset
-***********/
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-table {
-    border-collapse: collapse;
-}
-table, th, td {
-    border: 1px solid black;
-    padding: 5px;
-}
-
-/**********
- Text
-***********/
-html {
-    font-size: 10px;
-}
-
-body,
-h1, h2, h3, h4, h5, h6,
-p, a,
-li, ul {
-    font-family: 'Nunito Sans', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
-    margin: 30px 0;
-}
-
-li, li > *, dt, dd {
-    margin: 10px 0;
-}
-
 pre, code {
     font-family: 'Source Code Pro', monospace;
 }
 
-h1 {font-size: 4rem;}
-h2 {font-size: 3.5rem;}
-h3 {font-size: 3rem;}
-h4 {font-size: 2.4rem;}
-h5 {font-size: 2rem;}
-h6 {font-size: 1.6rem;}
-
-p, a, li, dt, dd, tr, th {
-    font-size: 1.8rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
-
-a {
-    color: #2973b7;
-    text-decoration: none;
+h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-a:hover {
-    border-bottom: 1px solid black;
+h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+h3 {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+h4 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+h5 {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+h6 {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 10px;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
 }

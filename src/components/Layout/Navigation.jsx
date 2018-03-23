@@ -2,6 +2,7 @@ import React from "react"
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import UserLinks from '../UserLinks'
+import bannerImg from '../../images/Horizontal-Logo.svg'
 
 const NavContainer = styled.div`
   display: flex;
@@ -9,21 +10,9 @@ const NavContainer = styled.div`
   width: 100%;
   background: ${props => props.theme.brand};
 
-  .nav-link {
-    font-size: 1.6rem;
-    margin-right: 10px;
-    font-weight: 200;
-    color: ${props => props.theme.themedWhite};
-  }
-
   @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    section {
-      margin-bottom: 20px;
-    }
 
     span {
       display: none;
@@ -40,7 +29,7 @@ class Navigation extends React.Component {
       if(this.props.data){
         this.props.data.forEach(page => {
           if((page.node.frontmatter.index === 0) && (page.node.frontmatter.category === section)) {
-            const link = (<Link className='nav-link' to={`${page.node.fields.slug}`} key={section}> {section.charAt(0).toUpperCase() + section.slice(1)} </Link>);
+            const link = (<Link className={`w-nav-link nav-link`} to={`${page.node.fields.slug}`} key={section}> {section.charAt(0).toUpperCase() + section.slice(1)} </Link>);
             switch(section){
               case "overview":
                 navItems[0] = link;
@@ -70,17 +59,15 @@ class Navigation extends React.Component {
   render() {
     return (
       <NavContainer>
-        <section>
-          <Link className='nav-link' to='/'> uPort | Developers </Link>
-        </section>
+        <span>&nbsp;</span>
         <section>
           {this.navListItems()}
-          <a href="https://appmanager.uport.me" className='nav-link' target='_blank'> App Manager </a>
-          <a href="https://gitter.im/uport-project/Lobby" className='nav-link' target='_blank'> Help </a>
-          <a href="https://medium.com/uport" className='nav-link' target='_blank'> Blog </a>
+          <a href="https://appmanager.uport.me" className={`nav-link w-nav-link`} target='_blank'> App Manager </a>
+          <a href="https://gitter.im/uport-project/Lobby" className={`nav-link w-nav-link`} target='_blank'> Help </a>
+          <a href="https://medium.com/uport" className={`nav-link w-nav-link`} target='_blank'> Blog </a>
           {/* <a href="https://github.com/uport-project" className='nav-link' target='_blank'> GitHub </a> */}
         </section>
-        <span><UserLinks /></span>
+        {/* <span><UserLinks /></span> */}
       </NavContainer>
     )
   }
