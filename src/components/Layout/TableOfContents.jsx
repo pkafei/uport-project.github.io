@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import _ from "lodash";
+import _ from 'lodash'
 
 export default class TableOfContents extends React.Component {
-
-  render() {
+  render () {
+    let urlHash = window.location.hash.replace('#', '')
     const {category} = this.props
     const {categories} = this.props
     const type = this.props.contentsType
@@ -23,17 +23,20 @@ export default class TableOfContents extends React.Component {
       }
     })
     const listItems = []
-    postNodes.sort((a,b) => a.indexNumber - b.indexNumber).forEach((cat) => {
+    postNodes.sort((a, b) => a.indexNumber - b.indexNumber).forEach((cat) => {
       const chapterContents = []
-      if(cat.headings){
+      if (cat.headings) {
         cat.headings.forEach(node => {
-          if (node.depth === 2){
+          if (node.depth === 2) {
             chapterContents.push(
               <ContentContainer key={`${node.value}`}>
                 <Link to={`${cat.path}#${_.kebabCase(node.value)}`}>
                   <li>
                     <span>
-                      <h6>{node.value}</h6>
+                      {_.kebabCase(node.value) === urlHash
+                        ? <h6 className='active'>{node.value}</h6>
+                        : <h6>{node.value}</h6>
+                      }
                     </span>
                   </li>
                 </Link>
@@ -87,6 +90,10 @@ const TableOfContentsContainer = styled.div`
    display: inline-block;
    font-weight: 400;
    font-size: 14px;
+ }
+
+ h6.active {
+  text-decoration: underline;
  }
 
   .tocHeading {
