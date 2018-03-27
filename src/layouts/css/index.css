@@ -1,7 +1,11 @@
 /* Theme customizations for code blocks */
 pre, code {
     font-family: 'Source Code Pro', monospace;
-    /* background: #F6F6F6; */
+}
+
+pre > code.highlight {
+    outline: .4em solid #91a2a3;
+    outline-offset: .4em;
 }
 
 code[class*="language-"],
@@ -49,6 +53,13 @@ code.language-scss,
     color: #728fcb;
 }
 
+tr {
+    background: #f9f9fa;
+}
+td {
+    padding: 3px;
+}
+
 /* Customizations for markdown */
 h1,
 h2,
@@ -78,17 +89,18 @@ h4 {
     margin-top: 10px;
 }
 h5 {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
     margin-top: 10px;
 }
 h6 {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 18px;
     margin-top: 10px;
 }
 p {
     margin-top: 0;
     margin-bottom: 10px;
-    line-height: 1.7;
+    line-height: 1.9;
+    font-size: 16px;
 }
