@@ -22,7 +22,8 @@ const NavContainer = styled.div`
 `
 const StyledLink = styled(Link)`
   &.active {
-    text-decoration: underline
+    font-weight: 400;
+    color: ${props => props.theme.themedWhite};
   }
 `
 
@@ -34,7 +35,8 @@ class Navigation extends React.Component {
       if(this.props.data){
         this.props.data.forEach(page => {
           if((page.node.frontmatter.index === 0) && (page.node.frontmatter.category === section)) {
-            const link = (<StyledLink className={`w-nav-link nav-link`} to={`${page.node.fields.slug}`} activeClassName={'active'} key={section}> {section.charAt(0).toUpperCase() + section.slice(1)} </StyledLink>);
+            const link = (<StyledLink className={`w-nav-link nav-link ${this.props.activeCategory === section ? 'active' : ''}`} to={`${page.node.fields.slug}`} activeClassName={'active'} key={section}> {section.charAt(0).toUpperCase() + section.slice(1)} </StyledLink>);
+
             switch(section){
               case "overview":
                 navItems[0] = link;

@@ -48,9 +48,12 @@ export default class TableOfContents extends React.Component {
       listItems.push(
         <li className='chapter' key={`${cat.path}`}>
           <Link to={`${cat.path}`}>
-            <h5 className='tocHeading'>
-              {cat.title.charAt(0).toUpperCase() + cat.title.slice(1)}
-            </h5>
+            <span>
+              {(window.location.pathname === cat.path)
+               ? <h5 className={`active tocHeading`}>{cat.title.charAt(0).toUpperCase() + cat.title.slice(1)}</h5>
+               : <h5 className='tocHeading'>{cat.title.charAt(0).toUpperCase() + cat.title.slice(1)}</h5>
+              }
+            </span>
           </Link>
           <ul className='chapterItems'>
             {chapterContents}
@@ -81,32 +84,35 @@ const TableOfContentsContainer = styled.div`
    text-decoration: none;
  }
 
- h5 {
-   font-weight: 400;
-   font-size: 16px;
- }
-
  p, h6 {
    display: inline-block;
    font-weight: 400;
    font-size: 14px;
  }
 
- h6.active {
-  text-decoration: underline;
+ h5.active {
+   color: ${props => props.theme.brand};
  }
 
-  .tocHeading {
-     font-weight: 400;
-     color: ${props => props.theme.brand};
-     margin-top: 25px;
-  }
+ h5:hover {
+   color: ${props => props.theme.brand};
+ }
+
+ h6.active {
+   color: ${props => props.theme.brandHighlight};
+ }
+
+ .tocHeading {
+   font-weight: 400;
+   color: ${props => props.theme.darkGrey};
+   margin-top: 25px;
+   font-size: 16px;
+ }
 `
 
 const ContentContainer = styled.div`
    h6, p {
    color: ${props => props.theme.darkGrey};
-   line-height: 1.2;
  }
  li {
    margin-left:-10px;
@@ -115,7 +121,7 @@ const ContentContainer = styled.div`
  &:hover {
    li {
      span {
-       border-bottom: 1px solid ${props => props.theme.secondaryBrand};
+       border-bottom: 1px solid ${props => props.theme.tocAccent};
      }
    }
  }

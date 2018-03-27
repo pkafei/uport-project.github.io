@@ -23,7 +23,11 @@ class MainHeader extends React.Component {
                 <img src={bannerImg}></img>
               </Link>
             </span>
-            <Navigation className={`w-nav`} sections={this.navHeadings()} data={this.props.categories.edges}/>
+            <Navigation
+              className={`w-nav`}
+              sections={this.navHeadings()}
+              data={this.props.categories.edges}
+              activeCategory={this.props.activeCategory} />
           </SiteContainer>
         )
   }

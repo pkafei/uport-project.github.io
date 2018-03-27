@@ -29,7 +29,7 @@ export default class ContentTemplate extends React.Component {
     if (!post.id) {
       post.category_id = config.postDefaultCategoryID;
     }
-      return (
+    return (
         <div>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
@@ -38,6 +38,7 @@ export default class ContentTemplate extends React.Component {
           <BodyGrid>
             <HeaderContainer>
               <SiteHeader
+                activeCategory={category}
                 location={this.props.location}
                 categories={this.props.data.navCategories}
               />
@@ -110,7 +111,6 @@ const HeaderContainer = styled.div`
 const ToCContainer = styled.div`
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  /* background: ${props => props.theme.themedWhite};*/
   overflow: scroll;
 
   ::-webkit-scrollbar-track
@@ -125,7 +125,7 @@ const ToCContainer = styled.div`
 
   ::-webkit-scrollbar-thumb
   {
-    background: ${props => props.theme.secondaryBrand};
+    background: ${props => props.theme.tocAccent};
   }
 
    @media screen and (max-width: 600px) {

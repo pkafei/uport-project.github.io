@@ -1,7 +1,9 @@
 const theme = {
   // named colors:
   brand: '#5c50ca',
-  secondaryBrand: 'rgba(230, 224, 248)',
+  secondaryBrand: '#827cff',
+  brandHighlight: '#7958d8',
+  tocAccent: 'rgba(230, 224, 248)',
   accent: '#ADD2EB',
   accentDark: "#35495E",
   lightGrey: '#F6F6F6',
@@ -10,7 +12,8 @@ const theme = {
   errorRed: '#FF6666',
   codeEditBlue: '#2973b7',
   codeEditGreen: '#42b983',
-  themedWhite: '#f5f2f0',
+  // themedWhite: '#f5f2f0',
+  themedWhite: '#FFF',
   // content width:
   contentWidthLaptop: '850px',
   sitePadding: "25px",

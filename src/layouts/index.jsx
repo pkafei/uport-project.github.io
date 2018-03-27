@@ -6,7 +6,7 @@ import "./css/normalize.css"
 import "./css/webflow.css"
 import "./css/uport-51f8fe-896815bc956b8e53e437c9c3db.webflow.css"
 /* import "./css/prism-okaidia.css"*/
-import "../../node_modules/prism-themes/themes/prism-duotone-dark.css"
+import "../../node_modules/prism-themes/themes/prism-duotone-light.css"
 import "./css/index.css";
 import theme from './theme'
 

@@ -6,7 +6,47 @@ pre, code {
 
 code[class*="language-"],
 pre[class*="language-"] {
-    background: #F6F6F6;
+    background: #f9f9fa;
+    color: #5c50ca;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.punctuation {
+    color: #a4a1b5;
+}
+
+.token.tag,
+.token.operator,
+.token.number {
+    color: #afa0fe;
+}
+
+.token.property,
+.token.function {
+    color: #827cff;
+}
+
+code.language-css,
+code.language-scss,
+.token.boolean,
+.token.string,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.language-scss .token.string,
+.style .token.string,
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit,
+.token.statement,
+.token.regex,
+.token.atrule {
+    color: #728fcb;
 }
 
 /* Customizations for markdown */
