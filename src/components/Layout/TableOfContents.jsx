@@ -6,8 +6,10 @@ import _ from 'lodash'
 export default class TableOfContents extends React.Component {
   render () {
     let urlHash = ''
+    let pathName = ''
     if (typeof window !== 'undefined') {
       urlHash = window.location.hash.replace('#', '')
+      pathName = window.location.pathname
     }
     const {category} = this.props
     const {categories} = this.props
@@ -51,9 +53,9 @@ export default class TableOfContents extends React.Component {
       listItems.push(
         <li className='chapter' key={`${cat.path}`}>
           <Link to={`${cat.path}`}>
-            <h5 className='tocHeading'>
-              {cat.title.charAt(0).toUpperCase() + cat.title.slice(1)}
-            </h5>
+            <span>
+              {<h5 className={`tocHeading ${(pathName === cat.path) ? 'active' : ''}`}>{cat.title.charAt(0).toUpperCase() + cat.title.slice(1)}</h5>}
+            </span>
           </Link>
           <ul className='chapterItems'>
             {chapterContents}
@@ -84,32 +86,36 @@ const TableOfContentsContainer = styled.div`
    text-decoration: none;
  }
 
- h5 {
-   font-weight: 400;
-   font-size: 16px;
- }
-
  p, h6 {
    display: inline-block;
    font-weight: 400;
    font-size: 14px;
+   margin-bottom: 8px;
+ }
+
+ h5.active {
+   color: ${props => props.theme.brandHighlight};
+ }
+
+ h5:hover {
+   color: ${props => props.theme.brandHighlight};
  }
 
  h6.active {
-  text-decoration: underline;
+   color: ${props => props.theme.secondaryBrand};
  }
 
-  .tocHeading {
-     font-weight: 400;
-     color: ${props => props.theme.brand};
-     margin-top: 25px;
-  }
+ .tocHeading {
+   font-weight: 400;
+   color: ${props => props.theme.darkGrey};
+   margin-top: 25px;
+   font-size: 16px;
+ }
 `
 
 const ContentContainer = styled.div`
    h6, p {
    color: ${props => props.theme.darkGrey};
-   line-height: 1.2;
  }
  li {
    margin-left:-10px;
@@ -118,7 +124,7 @@ const ContentContainer = styled.div`
  &:hover {
    li {
      span {
-       border-bottom: 1px solid ${props => props.theme.secondaryBrand};
+       border-bottom: 1px solid ${props => props.theme.tocAccent};
      }
    }
  }
