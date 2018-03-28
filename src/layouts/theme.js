@@ -15,7 +15,7 @@ const theme = {
   // themedWhite: '#f5f2f0',
   themedWhite: '#FFF',
   // content width:
-  contentWidthLaptop: '80ch',
+  contentWidthLaptop: '95ch',
   sitePadding: "25px",
 
 }
