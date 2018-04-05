@@ -109,7 +109,8 @@ The `gatsby-config.js` file bootstraps all the plugins that are utilized by Gats
 There are a few tasks that are included to aide in the development of the site:
 
 1. `npm run setup`
-1. `npm run update:docs:local`
+1. `npm run copy:markdown`
+1. `npm run watch:repos`
 1. `npm run update:docs:remote`
 1. `npm run dev`
 
@@ -125,10 +126,13 @@ Running this command will do the following:
 1. Cleans the `/public` folder.
 1. Copies cloned content from `/repos` to `/content/public`
 
-#### `npm run update:docs:local`
+#### `npm run copy:markdown`
 
 Periodically it will be necessary to apply updates to the documentation markdown contained within the `/repos` folder.  When a local development instance of the site is running, this changes can be applied by running this command to copy the files from `/repos` to `/content/public`.
 
+#### `npm run watch:repos`
+
+This command watches the `/repos` folder for updates.  Any time an update happens it will run `copy:markdown`.  This enables live updates of markdown in development mode when compbined with `npm run dev`.
 
 #### `npm run update:docs:remote`
 
