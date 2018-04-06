@@ -17,7 +17,7 @@ const theme = {
   // content width:
   contentWidthLaptop: '95ch',
   sitePadding: "25px",
-
+  bobbysLeftMarginPreference: "15%"
 }
 
 export default theme;

@@ -91,7 +91,10 @@ const BodyContainer = styled.div`
 
   & > div {
     max-width: ${props => props.theme.contentWidthLaptop};
-    margin: auto;
+    margin-left: ${props => props.theme.bobbysLeftMarginPreference};
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
   }
 
   & > h1 {
