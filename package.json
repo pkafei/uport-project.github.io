@@ -96,7 +96,7 @@
     "setup": "npm run install:plugins && npm run clean && npm run update:remote:docs",
     "develop": "gatsby develop",
     "dev": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve & ngrok http 9000 && kill $!",
     "build": "gatsby build",
     "build:pp": "gatsby build --prefix-paths",
     "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
