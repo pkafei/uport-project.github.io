@@ -17,7 +17,7 @@ class MainHeader extends React.Component {
     }
   render() {
         return (
-          <SiteContainer className={`w-nav-container`}>
+          <SiteContainer>
             <span className={`brand w-nav-brand`}>
               <Link to='/'>
                 <img src={bannerImg}></img>
@@ -38,6 +38,7 @@ const SiteContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${props => props.theme.brand};
+  height: auto;
 
   img {
     padding-left: 25px;
