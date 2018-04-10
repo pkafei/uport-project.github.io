@@ -104,3 +104,250 @@ p {
     line-height: 1.9;
     font-size: 16px;
 }
+
+.banner-left {
+    color: #f9f9fa;
+    margin: auto;
+    display: table;
+}
+
+.banner-left-title {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-left-title h1 {
+    margin-bottom: 25px;
+}
+
+.banner-left-buttons {
+    display: table-row;
+}
+
+.banner-left-buttons a {
+    /* margin-top: 50px; */
+}
+
+
+.banner-platform-button, .banner-started-button {
+    float: left;
+    text-decoration: none;
+    display: table-cell;
+    width: 180px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.banner-platform-button {
+    background: #7958d8;
+    color: #f9f9fa;
+    border: 2px solid #5c50ca;
+    border-radius: 4px;
+
+}
+
+.banner-started-button {
+    background:  #f9f9fa;
+    border: 2px solid #5c50ca;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+.banner-right {
+    margin: auto;
+}
+
+.banner-list {
+    float: left;
+    padding-left: 0;
+    white-space:nowrap;
+    list-style-type:none;
+}
+
+.banner-steps {
+    border-radius: 8px;
+    background: #f9f9fa;
+    border: 2px solid #5c50ca;
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.banner-link {
+    padding:0.2em 1em;
+    text-decoration:none;
+}
+
+.home-hero {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  /* height: 80vh; */
+  margin-top: 0px;
+  /* padding-top: 20px; */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: #5c50ca;
+  background-image: -webkit-linear-gradient(270deg, rgba(92, 80, 202, 0) 71%, #5c50ca), -webkit-linear-gradient(270deg, #afa0fe, rgba(92, 80, 202, 0)), url('../../images/Fingerprint-Swirl-2.svg'), -webkit-linear-gradient(270deg, #afa0fe, #5c50ca);
+  background-image: linear-gradient(180deg, rgba(92, 80, 202, 0) 71%, #5c50ca), linear-gradient(180deg, #afa0fe, rgba(92, 80, 202, 0)), url('../../images/Fingerprint-Swirl-2.svg'), linear-gradient(180deg, #afa0fe, #5c50ca);
+  background-position: 0px 0px, 0px 0px, -17px -247px, 0px 0px;
+  background-size: auto, auto, cover, auto;
+  background-repeat: repeat, repeat, no-repeat, repeat;
+  background-attachment: scroll, scroll, fixed, scroll;
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+
+.headline-wrapper {
+    background-color: transparent;
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    max-width:75vw;
+    margin: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.step-img {
+    width: 105px;
+}
+
+.step-img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+}
+
+.step-title {
+    font-weight: 600;
+    font-size: 1.2em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+.w-nav-container {
+    height: 75px;
+}
+
+/* Media queries for index page */
+@media (max-width: 767px) {
+
+    .headline-wrapper {
+        display: table;
+        flex: 0;
+        /* flex-direction: column; */
+        padding: 0px;
+        margin: 5px;
+    }
+
+    .home-hero {
+        height: 90vh;
+    }
+
+    .step-img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .headline-wrapper {
+        display: table;
+        margin: auto;
+    }
+
+    .home-hero {
+        height: auto;
+    }
+
+    .step-img {
+        width: 20%;
+        margin: auto;
+        padding-left: 10px;
+    }
+
+    .smaller {
+        width: 16%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+    }
+
+    .step-title {
+        font-weight: 400;
+        font-size: initial;
+    }
+
+    .step-wrap {
+        padding-left: 10px;
+        width: 100%;
+    }
+
+    .banner-list {
+        width: 290px;
+        white-space: initial;
+    }
+
+    .banner-steps {
+        margin: auto;
+        height: 100px;
+    }
+
+    .banner-started-button {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+}
+
+/* /\* Large desktop *\/ */
+/* @media (min-width: 1200px) { ... } */
+
+/* /\* Portrait tablet to landscape and desktop *\/ */
+/* @media (min-width: 768px) and (max-width: 979px) { ... } */
+
+/* /\* Landscape phone to portrait tablet *\/ */
+/* @media (max-width: 767px) { ... } */
+
+/* /\* Landscape phones and down *\/ */
+/* @media (max-width: 480px) { ... } */
