@@ -18,27 +18,24 @@ class Index extends React.Component {
         <main>
           <IndexHeadContainer>
             <SiteHeader
-              activeCategory={""}
-              location={this.props.location}
-              categories={this.props.data.navCategories} />
+            activeCategory={""}
+            location={this.props.location}
+            categories={this.props.data.navCategories} />
             <Hero className={`home-hero`}>
-              {/* <img src={config.siteLogo} width='150px' /> */}
               <div className={`headline-wrapper`}>
                 <div className={`banner-left`}>
                   <div className={`banner-left-title`}>
-                    {/* <h1>{config.siteTitle}</h1>
-                        <h1>{config.siteDescription}</h1> */}
                     <h1>Self Sovereign</h1>
                     <h1>Privacy Preserving</h1>
                     <h1>Identity Network</h1>
                   </div>
                   <div className={`banner-left-buttons`}>
-                    <a href=''>
+                    <a href='/platform' className={`banner-link`}>
                       <div className={`banner-platform-button`}>
                         PLATFORM OVERVIEW
                       </div>
                     </a>
-                    <a href=''>
+                    <a href='/gettingstarted' className={`banner-link`}>
                       <div className={`banner-started-button`}>
                         GETTING STARTED
                       </div>
@@ -47,7 +44,7 @@ class Index extends React.Component {
                 </div>
                 <div className={`banner-right`}>
                   <ul className={`banner-list`}>
-                    <a href='' className={`banner-link`}>
+                    <a href='/gettingstarted#download-the-mobile-app' className={`banner-link`}>
                       <li className={`banner-steps`}>
                         <div className={`step-img smaller`}>
                           <img src={downloadUport} />
@@ -56,13 +53,10 @@ class Index extends React.Component {
                           <div className={`step-title`}>
                             1. Download uPort Mobile
                           </div>
-                          {/* <p className={`step-desc`}>
-                              Download the uPort mobile app and create your identity on the blockchain.
-                              </p> */}
                         </div>
                       </li>
                     </a>
-                    <a href='' className={`banner-link`}>
+                    <a href='/gettingstarted#register-your-app' className={`banner-link`}>
                       <li className={`banner-steps`}>
                         <div className={`step-img`}>
                           <img src={registerApp} />
@@ -71,13 +65,10 @@ class Index extends React.Component {
                           <div className={`step-title`}>
                             2. Configure Your App
                           </div>
-                          {/* <p className={`step-desc`}>
-                              Go to uPort AppManager, connect using uPort mobile and register your applicaton.
-                              </p> */}
                         </div>
                       </li>
                     </a>
-                    <a href='' className={`banner-link`}>
+                    <a href='/gettingstarted#install-the-librarysdk' className={`banner-link`}>
                       <li className={`banner-steps`}>
                         <div className={`step-img`}>
                           <img src={installSDK} />
@@ -86,9 +77,6 @@ class Index extends React.Component {
                           <div className={`step-title`}>
                             3. Install the libraries & SDK's
                           </div>
-                          {/* <p className={`step-desc`}>
-                              Get started developing with uPort installing the required libraries and SDK's.
-                              </p> */}
                         </div>
                       </li>
                     </a>

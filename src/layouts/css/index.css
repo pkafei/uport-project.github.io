@@ -104,6 +104,9 @@ p {
     line-height: 1.9;
     font-size: 16px;
 }
+a {
+    color: #5c50ca;
+}
 
 .banner-left {
     color: #f9f9fa;
@@ -138,6 +141,7 @@ p {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: center;
+    font-weight: 400;
 }
 
 .banner-platform-button {
@@ -179,6 +183,8 @@ p {
 .banner-link {
     padding:0.2em 1em;
     text-decoration:none;
+    font-weight: 400;
+    color: #7958d8;
 }
 
 .home-hero {
