@@ -1,8 +1,7 @@
 import React from "react"
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import UserLinks from '../UserLinks'
-import bannerImg from '../../images/Horizontal-Logo.svg'
+import Menu from 'react-burger-menu/lib/menus/slide'
 
 const NavContainer = styled.div`
   display: flex;
@@ -13,8 +12,18 @@ const NavContainer = styled.div`
   @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
-
     span {
+      display: none;
+    }
+    #topNav {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: column;
+
+    #responsiveNavContainer {
       display: none;
     }
 
@@ -67,14 +76,20 @@ class Navigation extends React.Component {
     return (
       <NavContainer>
         <span>&nbsp;</span>
-        <section>
+        <section id='topNav'>
           {this.navListItems()}
-          <a href="https://appmanager.uport.me" className={`nav-link w-nav-link`} target='_blank'> App Manager </a>
-          <a href="https://gitter.im/uport-project/Lobby" className={`nav-link w-nav-link`} target='_blank'> Help </a>
-          <a href="https://medium.com/uport" className={`nav-link w-nav-link`} target='_blank'> Blog </a>
-          {/* <a href="https://github.com/uport-project" className='nav-link' target='_blank'> GitHub </a> */}
+          <a href='https://appmanager.uport.me' className={`nav-link w-nav-link`} target='_blank'> App Manager </a>
+          <a href='https://gitter.im/uport-project/Lobby' className={`nav-link w-nav-link`} target='_blank'> Help </a>
+          <a href='https://medium.com/uport' className={`nav-link w-nav-link`} target='_blank'> Blog </a>
         </section>
-        {/* <span><UserLinks /></span> */}
+        <div id="responsiveNavContainer">
+          <Menu right isOpen={false}>
+            {this.navListItems()}
+            <a href='https://appmanager.uport.me' className={`menu-item`} target='_blank'> App Manager </a>
+            <a href='https://gitter.im/uport-project/Lobby' className={`menu-item`} target='_blank'> Help </a>
+            <a href='https://medium.com/uport' className={`menu-item`} target='_blank'> Blog </a>
+          </Menu>
+        </div>
       </NavContainer>
     )
   }
