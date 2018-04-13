@@ -2,11 +2,13 @@ import React from "react"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import SEO from "../components/SEO/SEO"
+import SiteHeader from '../components/Layout/Header'
+import Demo from '../components/Demo'
 import config from "../../data/SiteConfig"
 import downloadUport from '../images/download-uport.svg'
 import registerApp from '../images/register-app.svg'
 import installSDK from '../images/install-sdk.svg'
-import SiteHeader from '../components/Layout/Header'
+
 
 class Index extends React.Component {
   render() {
@@ -18,9 +20,9 @@ class Index extends React.Component {
         <main>
           <IndexHeadContainer>
             <SiteHeader
-            activeCategory={""}
-            location={this.props.location}
-            categories={this.props.data.navCategories} />
+              activeCategory={""}
+              location={this.props.location}
+              categories={this.props.data.navCategories} />
             <Hero className={`home-hero`}>
               <div className={`headline-wrapper`}>
                 <div className={`banner-left`}>
@@ -86,7 +88,7 @@ class Index extends React.Component {
             </Hero>
           </IndexHeadContainer>
           <BodyContainer>
-
+            <Demo></Demo>
           </BodyContainer>
         </main>
       </div>
@@ -101,7 +103,6 @@ const IndexHeadContainer = styled.div`
 `
 
 const Hero = styled.div`
-/* padding: 50px 0;*/
   & > h1 {
     font-weight: 600;
   }

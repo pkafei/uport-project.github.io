@@ -192,7 +192,7 @@ This is a custom plugin that is used to re-write the relative links to markdown 
 
 - ngrok
 
-Because we are using GitHub pages, we do not have a staging site.  ![Ngrok](https://ngrok.com) Should be used to serve a production version of the site for feedback.
+Because we are using GitHub pages, we do not have a staging site.  [Ngrok](https://ngrok.com) Should be used to serve a production version of the site for feedback.
 
 The current site is configured for Github Pages deployment.  Deploying the documentation site is easy with the provided task `npm run build:gh`.  This will read configuration details about path prefix, and site urls to statically compile links for production.
 
@@ -204,4 +204,4 @@ The deployment steps for uPort are:
 1. After validating the production build using ngrok, build and deploy: `npm run build:gh`
 1. Go to https://github.com/uport-project/docs-site/settings and update the custom domain to reflect our documentation home (developer.uport.me or .space).
 
-Optionally, manual deployment can be done.  Simply build the site and copy the output to its destination.  To build the site execute  `npm run build`.  This command will build the site and copy files to the `/public` folder.  Depending on the deployment source (S3, Netflify**, this command can be modified however it is trivial to copy to the contents of the public folder to it's destination.
+Optionally, manual deployment can be done.  Simply build the site and copy the output to its destination.  To build the site execute  `npm run build`.  This command will build the site and copy files to the `/public` folder.  Depending on the deployment source (S3, Netflify, **), this command can be modified if it is not trivial to copy to the contents of the public folder to it's destination.
