@@ -14,10 +14,6 @@ pre[class*="language-"] {
     color: #5c50ca;
 }
 
-pre language-javascript demo {
-    color: #a4a1b5;
-}
-
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -118,11 +114,6 @@ a {
     display: table;
 }
 
-.banner-left-code {
-    margin: auto;
-    display: table;
-}
-
 .banner-left-title {
     display: table-row;
     width: 100%;
@@ -171,14 +162,6 @@ a {
 .banner-right {
     margin: auto;
     /* display: table; */
-}
-
-.banner-right-demo {
-    width: 400px;
-    height: 275px;
-    margin: 0;
-    padding: 0;
-    display: table;
 }
 
 .banner-list {
@@ -267,66 +250,6 @@ a {
     flex: 1;
 }
 
-.demo-wrapper {
-    /* background-color: transparent; */
-    position: relative;
-    top: 0px;
-    bottom: 0px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    /* width: auto; */
-    /* max-width:75vw; */
-    margin: auto;
-    padding-right: 16px;
-    padding-left: 16px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: row;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    max-width: 800px;
-}
-
-.demo-qr {
-    min-width: 245px;
-    height: 245px;
-    margin: auto;
-}
-
-.demo {
-    /* white-space: pre-wrap;       /\* css-3 *\/ */
-    /* white-space: -moz-pre-wrap;  /\* Mozilla, since 1999 *\/ */
-    /* white-space: -pre-wrap;      /\* Opera 4-6 *\/ */
-    /* white-space: -o-pre-wrap;    /\* Opera 7 *\/ */
-    /* word-wrap: break-word; */
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    height: 275px;
-    width: 400px;
-}
-
-.demo-json {
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    height: 275px;
-    width: 400px;
-}
 
 .step-img {
     width: 105px;

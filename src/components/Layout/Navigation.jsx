@@ -75,7 +75,6 @@ class Navigation extends React.Component {
   render() {
     return (
       <NavContainer>
-        <span>&nbsp;</span>
         <section id='topNav'>
           {this.navListItems()}
           <a href='https://appmanager.uport.me' className={`nav-link w-nav-link`} target='_blank'> App Manager </a>
