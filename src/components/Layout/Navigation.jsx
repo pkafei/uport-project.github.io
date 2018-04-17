@@ -3,18 +3,70 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import Menu from 'react-burger-menu/lib/menus/slide'
 
-const NavContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  background: ${props => props.theme.brand};
+const styles = {
+  bmMenuWrap: {
+    width: '220px',
+    marginTop: '-30px'
+  },
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '30px',
+    height: '22px',
+    right: '36px',
+    top: '20px'
+  },
+  bmBurgerBars: {
+    background: '#fff',
+    borderRadius: '2px'
+  },
+  bmCrossButton: {
+    height: '28px',
+    width: '28px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenu: {
+    background: '#373a47',
+    padding: '8px 10 8px 20px',
+    fontSize: '1.15em'
+  },
+  bmMorphShape: {
+    fill: '#373a47'
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+    padding: '0.8em'
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)'
+  }
+}
+
+const NavContainer = styled.nav`
+  
+
+  #topNav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: ${props => props.theme.brand};
+  }
+
+  .bm-menu {
+    padding-top: 20px;
+    .menu-item {
+      font-size: 16px;
+      text-decoration: none;
+      color: #efefef;
+      padding: 10px 20px;
+    }
+  }
 
   @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    span {
-      display: none;
-    }
+    
     #topNav {
       display: none;
     }
@@ -44,7 +96,7 @@ class Navigation extends React.Component {
       if(this.props.data){
         this.props.data.forEach(page => {
           if((page.node.frontmatter.index === 0) && (page.node.frontmatter.category === section)) {
-            const link = (<StyledLink className={`w-nav-link nav-link ${this.props.activeCategory === section ? 'active' : ''}`} to={`${page.node.fields.slug}`} activeClassName={'active'} key={section}> {section.charAt(0).toUpperCase() + section.slice(1)} </StyledLink>);
+            const link = (<StyledLink className={`w-nav-link nav-link menu-item ${this.props.activeCategory === section ? 'active' : ''}`} to={`${page.node.fields.slug}`} activeClassName={'active'} key={section}> {section.charAt(0).toUpperCase() + section.slice(1)} </StyledLink>);
 
             switch(section){
               case "overview":
@@ -82,7 +134,7 @@ class Navigation extends React.Component {
           <a href='https://medium.com/uport' className={`nav-link w-nav-link`} target='_blank'> Blog </a>
         </section>
         <div id="responsiveNavContainer">
-          <Menu right isOpen={false}>
+          <Menu right isOpen={false} styles={styles}>
             {this.navListItems()}
             <a href='https://appmanager.uport.me' className={`menu-item`} target='_blank'> App Manager </a>
             <a href='https://gitter.im/uport-project/Lobby' className={`menu-item`} target='_blank'> Help </a>
