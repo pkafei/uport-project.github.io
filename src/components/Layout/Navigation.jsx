@@ -10,10 +10,10 @@ const styles = {
   },
   bmBurgerButton: {
     position: 'fixed',
-    width: '30px',
-    height: '22px',
+    width: '16px',
+    height: '12px',
     right: '36px',
-    top: '20px'
+    top: '26px'
   },
   bmBurgerBars: {
     background: '#fff',
@@ -27,7 +27,7 @@ const styles = {
     background: '#bdc3c7'
   },
   bmMenu: {
-    background: '#373a47',
+    background: '#5c50ca',
     padding: '8px 10 8px 20px',
     fontSize: '1.15em'
   },
@@ -63,7 +63,7 @@ const NavContainer = styled.nav`
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1200px) {
     display: flex;
     flex-direction: column;
     
@@ -71,7 +71,7 @@ const NavContainer = styled.nav`
       display: none;
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 1200px) {
     display: flex;
     flex-direction: column;
 
