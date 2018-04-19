@@ -3,6 +3,7 @@ import Helmet from "react-helmet"
 import styled from "styled-components"
 import SEO from "../components/SEO/SEO"
 import SiteHeader from '../components/Layout/Header'
+import SiteFooter from '../components/Layout/Footer'
 import Demo from '../components/Demo'
 import config from "../../data/SiteConfig"
 import downloadUport from '../images/download-uport.svg'
@@ -88,8 +89,11 @@ class Index extends React.Component {
             </Hero>
           </IndexHeadContainer>
           <BodyContainer>
-            <Demo></Demo>
+            <Demo />
           </BodyContainer>
+          <FooterContainer>
+            <SiteFooter />
+          </FooterContainer>
         </main>
       </div>
     );
@@ -112,6 +116,9 @@ const BodyContainer = styled.div`
   padding: ${props => props.theme.sitePadding};
   /* max-width: ${props => props.theme.contentWidthLaptop};*/
   margin: 0 auto;
+`
+const FooterContainer = styled.footer`
+  background-color: #6c59cf;
 `
 
 /* eslint no-undef: "off"*/
