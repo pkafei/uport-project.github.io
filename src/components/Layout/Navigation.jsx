@@ -63,7 +63,7 @@ const NavContainer = styled.nav`
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
     
@@ -71,7 +71,7 @@ const NavContainer = styled.nav`
       display: none;
     }
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 600px) {
     display: flex;
     flex-direction: column;
 
