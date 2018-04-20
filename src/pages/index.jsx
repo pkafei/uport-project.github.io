@@ -28,62 +28,81 @@ class Index extends React.Component {
               <div className={`headline-wrapper`}>
                 <div className={`banner-left`}>
                   <div className={`banner-left-title`}>
-                    <h1>Self Sovereign</h1>
-                    <h1>Privacy Preserving</h1>
-                    <h1>Identity Network</h1>
+                    <h1>Build with uPort</h1>
+                    <p>Bootstrap your app with single sign on,</p>
+                    <p>reusable credentials, mobile signing, and more.</p>
                   </div>
                   <div className={`banner-left-buttons`}>
-                    <a href='/platform' className={`banner-link`}>
-                      <div className={`banner-platform-button`}>
-                        PLATFORM OVERVIEW
+                    <div className={`banner-button-left`}>
+                      <h2>Privacy Preserving Single</h2>
+                      <h2>Sign-On</h2>
+                      <br/>
+                      <p>Enable your ethereum or server app</p>
+                      <p>to securely authenticate users.</p>
+                      <br/>
+                      <div className={`banner-button`}>
+                        <a href='/platform' className={`banner-link`}>
+                          Learn More >
+                        </a>
                       </div>
-                    </a>
-                    <a href='/gettingstarted' className={`banner-link`}>
-                      <div className={`banner-started-button`}>
-                        GETTING STARTED
+                    </div>
+                    <div className={`banner-button-right`}>
+                      <h2>Exchange Verifiable</h2>
+                      <h2>Credentials</h2>
+                      <br/>
+                      <p>Issue, request, and verify reusable</p>
+                      <p>identity credentials to your users.</p>
+                      <br/>
+                      <div className={`banner-button`}>
+                        <a href='/gettingstarted' className={`banner-link`}>
+                          Learn More >
+                        </a>
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
                 <div className={`banner-right`}>
-                  <ul className={`banner-list`}>
-                    <a href='/gettingstarted#download-the-mobile-app' className={`banner-link`}>
+                  <div className={`circle`}>
+                    &nbsp;
+                  </div>
+                  {/* <ul className={`banner-list`}>
+                      <a href='/gettingstarted#download-the-mobile-app' className={`banner-link`}>
                       <li className={`banner-steps`}>
-                        <div className={`step-img smaller`}>
-                          <img src={downloadUport} />
-                        </div>
-                        <div className={`step-wrap`}>
-                          <div className={`step-title`}>
-                            1. Download uPort Mobile
-                          </div>
-                        </div>
+                      <div className={`step-img smaller`}>
+                      <img src={downloadUport} />
+                      </div>
+                      <div className={`step-wrap`}>
+                      <div className={`step-title`}>
+                      1. Download uPort Mobile
+                      </div>
+                      </div>
                       </li>
-                    </a>
-                    <a href='/gettingstarted#register-your-app' className={`banner-link`}>
+                      </a>
+                      <a href='/gettingstarted#register-your-app' className={`banner-link`}>
                       <li className={`banner-steps`}>
-                        <div className={`step-img`}>
-                          <img src={registerApp} />
-                        </div>
-                        <div className={`step-wrap`}>
-                          <div className={`step-title`}>
-                            2. Configure Your App
-                          </div>
-                        </div>
+                      <div className={`step-img`}>
+                      <img src={registerApp} />
+                      </div>
+                      <div className={`step-wrap`}>
+                      <div className={`step-title`}>
+                      2. Configure Your App
+                      </div>
+                      </div>
                       </li>
-                    </a>
-                    <a href='/gettingstarted#install-the-librarysdk' className={`banner-link`}>
+                      </a>
+                      <a href='/gettingstarted#install-the-librarysdk' className={`banner-link`}>
                       <li className={`banner-steps`}>
-                        <div className={`step-img`}>
-                          <img src={installSDK} />
-                        </div>
-                        <div className={`step-wrap`}>
-                          <div className={`step-title`}>
-                            3. Install the libraries & SDK's
-                          </div>
-                        </div>
+                      <div className={`step-img`}>
+                      <img src={installSDK} />
+                      </div>
+                      <div className={`step-wrap`}>
+                      <div className={`step-title`}>
+                      3. Install the libraries & SDK's
+                      </div>
+                      </div>
                       </li>
-                    </a>
-                  </ul>
+                      </a>
+                      </ul> */}
                 </div>
               </div>
             </Hero>

@@ -185,7 +185,6 @@ ${JSON.stringify(this.state.profile, null, 2)}
               {(this.state.showImage === false) && (
                 <div className={`demo-button-container`}>
                   {this.state.showResult === false && (<h2>Test The uPort Login</h2>)}
-                  {this.state.showResult && (<h2>Your Request Payload</h2>)}
                   <div className={`demo-step-wrap`}>
                     <div className={`demo-button`}>
                       <a href='' className={`demo-banner-link left-btn`} onClick={(e) => { this.state.showResult ? this.resetDemo(e) : this.loginRequest(e)}}>
