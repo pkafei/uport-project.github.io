@@ -113,7 +113,7 @@ const Hero = styled.div`
 `
 
 const BodyContainer = styled.div`
-  padding: ${props => props.theme.sitePadding};
+  /* padding: ${props => props.theme.sitePadding};*/
   /* max-width: ${props => props.theme.contentWidthLaptop};*/
   margin: 0 auto;
 `

@@ -1,17 +1,14 @@
-.demo-wrapper {
-    /* background-color: transparent; */
+.demo-container {
     position: relative;
-    top: 0px;
-    bottom: 0px;
+    background: #f9f9fa;
+    background-size: auto, auto, cover, auto;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    /* width: auto; */
-    /* max-width:75vw; */
-    /* margin: auto; */
-    padding-right: 16px;
-    padding-left: 16px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: row;
     -webkit-flex-direction: row;
@@ -29,15 +26,155 @@
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+}
+
+.demo-wrapper {
+    margin: auto;
+    position: relative;
+    display: -webkit-box;
+    height: 60vh;
+    max-width:60vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: white;
+    align-self: center;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 3px;
+}
+
+.v-separator {
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 100%;
+    overflow: hidden;
+    border-left: 3px solid #f2f2f2;
+    padding: 0;
+}
+
+.left-demo {
+    max-width: 600px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.left-demo p {
+    padding-top: 50px;
+}
+
+.demo-code h4 {
+    text-align: center;
+    color: grey;
+}
+
+.demo-json {
+    padding: 0;
+    margin: 0;
     width: 100%;
-    background: #f9f9fa;
-    background-size: auto, auto, cover, auto;
+    height: 100%;
+}
+
+.demo-json, pre[class*="language-"] {
+    background: initial;
+    color: initial;
+    margin: 0;
+    padding: 0;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+    height: 100%;
+}
+
+.demo-json code, pre  {
+    background: white;
+}
+
+.demo-step-img {
+    width: 20%;
+    margin: auto;
+    padding-left: 10px;
+}
+
+.demo-code {
+    margin: 0;
+    /* position: relative; */
+    padding: 5% 0;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.demo-results-wrapper {
+
+
+}
+
+.demo-results {
+
+
+
+}
+
+.right-demo {
+    max-width: 400px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.demo-qr-container {
+    position: absolute;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .demo-qr  {
-    height: 260px;
-    width: 260px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -47,129 +184,60 @@
     color: #5c50ca;
 }
 
-.demo-buttons h4 {
-    text-align: left;
+.right-demo h4 {
+    text-align: center;
     color: grey;
     margin: 0;
-    background: #f9f9fa;
+    padding-bottom: 10px;
 }
 
-.demo-code h4 {
-    text-align: left;
+.demo-button-container {
+    padding: 10px;
+    position: absolute;
+}
+
+.demo-button-container h2 {
+    text-align: center;
+    display: table;
     color: grey;
+    padding-bottom: 30px;
 }
 
-.demo-json {
-    background: #FFFFFF;
-    max-width: 400px;
-    min-height: 270px;
-    padding: 0;
-    margin: 0;
-}
-
-code .demo-json {
-    background: white;
-}
-
-.demo-json pre {
-    background: white;
-}
-
-.banner-left-code {
-    max-width: 400px;
+.demo-step-wrap {
+    width: 100%;
     height: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.banner-right-demo {
-    /* height: 100%; */
-    margin: 0;
-    padding-left: 25px;
     display: table;
 }
 
-.banner-left-code p {
-    padding-top: 50px;
-}
+.demo-button {
+    padding: 10px;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
 
-.demo-banner-list {
-    float: left;
-    padding-left: 0;
-    white-space:nowrap;
-    list-style-type:none;
-}
-
-.demo-banner-steps {
-    float: left;
-    border-radius: 1px;
-    display: flex;
-    flex-direction: row;
 }
 
 .demo-banner-link {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
     text-decoration:none;
     font-weight: 400;
-    color: #7958d8;
-    background: #f9f9fa;
-}
-
-.demo-step-img {
-    width: 20%;
-    margin: auto;
-    padding-left: 10px;
+    font-size: initial;
+    height: 50px;
+    width: 200px;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 3px;
 }
 
 .left-btn {
     background:  #7958d8;
-}
-
-.right-btn {
-    background: #a4a1b5;
-}
-
-.demo-step-title {
-    font-weight: 400;
-    font-size: initial;
-    margin: auto;
-}
-
-.demo-step-wrap {
-    width: 50%;
-}
-
-.demo-banner-list {
-    width: 290px;
-    white-space: initial;
-}
-
-.demo-banner-steps {
-    height: 50px;
     color: #f9f9fa;
 }
 
-.banner-started-button {
-    margin-top: 10px;
-    margin-left: 0px;
-}
-
-.demo-buttons {
-    width: 100%;
-    float: left;
-}
-
-.demo-code {
-    padding-top: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 25px;
-}
-
-.demo-results-wrapper {
-    width: 100%;
-}
-
-.demo-results {
+.right-btn {
     background: white;
-    min-width: 400px;
+    color: #5c50ca;
 }

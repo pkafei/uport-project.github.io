@@ -204,13 +204,11 @@ a {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  background-color: #5c50ca;
-  background-image: -webkit-linear-gradient(270deg, rgba(92, 80, 202, 0) 71%, #5c50ca), -webkit-linear-gradient(270deg, #afa0fe, rgba(92, 80, 202, 0)), url('../../images/Fingerprint-Swirl-2.svg'), -webkit-linear-gradient(270deg, #afa0fe, #5c50ca);
-  background-image: linear-gradient(180deg, rgba(92, 80, 202, 0) 71%, #5c50ca), linear-gradient(180deg, #afa0fe, rgba(92, 80, 202, 0)), url('../../images/Fingerprint-Swirl-2.svg'), linear-gradient(180deg, #afa0fe, #5c50ca);
+  background-color: #eee;
   background-position: 0px 0px, 0px 0px, -17px -247px, 0px 0px;
   background-size: auto, auto, cover, auto;
-  background-repeat: repeat, repeat, no-repeat, repeat;
-  background-attachment: scroll, scroll, fixed, scroll;
+  /* background-repeat: repeat, repeat, no-repeat, repeat; */
+  /* background-attachment: scroll, scroll, fixed, scroll; */
   opacity: 1;
   -webkit-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
