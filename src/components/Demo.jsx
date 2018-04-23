@@ -85,14 +85,11 @@ class Demo extends Component {
       // basic code to "log in" a user by
       // requesting certain data attributes
 
-      connect.requestCredentials({ requested: ['name', 'avatar'],
-                                   notifications: true }, (uri) => {
+      connect.requestCredentials({ requested: ['name']}, (uri) => {
           // do something with the uri,
           // like construct a link or QR code
-
       }).then((payload) => {
           // use the payload for authentication
-
         console.log(JSON.stringify(payload))
       })
                       `}
