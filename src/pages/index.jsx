@@ -61,10 +61,10 @@ class Index extends React.Component {
                     </div>
                   </div>
                 </div>
-      <div className={`banner-right`}>
-        <div className={`hero-img`}>
-          <img src={heroImg} />
-        </div>
+                <div className={`banner-right`}>
+                  <div className={`hero-img`}>
+                    <img src={heroImg} />
+                  </div>
                   {/* <ul className={`banner-list`}>
                       <a href='/gettingstarted#download-the-mobile-app' className={`banner-link`}>
                       <li className={`banner-steps`}>
@@ -107,7 +107,7 @@ class Index extends React.Component {
               </div>
             </Hero>
           </IndexHeadContainer>
-          <BodyContainer>
+          <BodyContainer className={`body-container`}>
             <Demo />
           </BodyContainer>
           <FooterContainer>

@@ -140,7 +140,6 @@ a {
 
 .banner-left-buttons {
     display: table-row;
-    /* color: grey; */
     margin-bottom: 25px;
 }
 
@@ -440,14 +439,26 @@ a {
   }
 
 /* Media queries for index page */
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
+      .demo-container,
+      .demo-wrapper,
+      .left-demo,
+      .demo-code,
+      .demo-results-wrapper,
+      .demo-results,
+      .hero-img,
+      .body-container {
+          visibility: hidden;
+          display: none;
+    }
 
     .headline-wrapper {
         display: table;
         flex: 0;
-        /* flex-direction: column; */
+        flex-direction: column;
         padding: 0px;
         margin: 5px;
+        height: auto;
     }
 
     .home-hero {
@@ -456,6 +467,45 @@ a {
 
     .step-img {
         width: 80%;
+    }
+
+    .banner-button-right {
+        padding: 0;
+        margin-top: 50px;
+    }
+
+    .banner-left-title {
+        margin: auto;
+    }
+
+    .banner-left-title h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .banner-left-title p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .banner-left-buttons {
+        display: table-row;
+        margin-bottom: 25px;
+    }
+
+    .banner-left-buttons p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .banner-left-buttons h2  {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .banner-left-buttons a {
+        font-size: 14px;
+        line-height: 22px;
     }
 
 }

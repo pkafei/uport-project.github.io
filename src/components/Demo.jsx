@@ -113,7 +113,6 @@ class Demo extends Component {
                   <code style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
                     {`
 
-
       // Here we use qrcode.react to generate a QR
       // from the resulting URI
 
