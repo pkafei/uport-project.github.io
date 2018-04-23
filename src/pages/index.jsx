@@ -6,10 +6,10 @@ import SiteHeader from '../components/Layout/Header'
 import SiteFooter from '../components/Layout/Footer'
 import Demo from '../components/Demo'
 import config from "../../data/SiteConfig"
-import downloadUport from '../images/download-uport.svg'
-import registerApp from '../images/register-app.svg'
-import installSDK from '../images/install-sdk.svg'
-
+/* import downloadUport from '../images/download-uport.svg'
+ * import registerApp from '../images/register-app.svg'
+ * import installSDK from '../images/install-sdk.svg'*/
+import heroImg from '../images/hero-img.svg'
 
 class Index extends React.Component {
   render() {
@@ -42,7 +42,7 @@ class Index extends React.Component {
                       <br/>
                       <div className={`banner-button`}>
                         <a href='/platform' className={`banner-link`}>
-                          Learn More >
+                          Enable Single Sign-On
                         </a>
                       </div>
                     </div>
@@ -55,16 +55,16 @@ class Index extends React.Component {
                       <br/>
                       <div className={`banner-button`}>
                         <a href='/gettingstarted' className={`banner-link`}>
-                          Learn More >
+                          Start Using Credentials
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className={`banner-right`}>
-                  <div className={`circle`}>
-                    &nbsp;
-                  </div>
+      <div className={`banner-right`}>
+        <div className={`hero-img`}>
+          <img src={heroImg} />
+        </div>
                   {/* <ul className={`banner-list`}>
                       <a href='/gettingstarted#download-the-mobile-app' className={`banner-link`}>
                       <li className={`banner-steps`}>
@@ -134,6 +134,8 @@ const Hero = styled.div`
 const BodyContainer = styled.div`
   /* padding: ${props => props.theme.sitePadding};*/
   /* max-width: ${props => props.theme.contentWidthLaptop};*/
+  height: 679px;
+  background-color: #F9F9FA;
   margin: 0 auto;
 `
 const FooterContainer = styled.footer`
@@ -142,7 +144,7 @@ const FooterContainer = styled.footer`
 
 /* eslint no-undef: "off"*/
 export const pageQuery = graphql`
-  query IndexQuery {
+query IndexQuery {
     allMarkdownRemark(
       limit: 2000
       filter: { frontmatter: { type: { eq: "content" }}}
