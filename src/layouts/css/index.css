@@ -122,11 +122,13 @@ a {
 
 .banner-left-title h1 {
     font-family: "Nunito Sans";
-    font-size: 80px;
-    font-weight: 800;
+    font-size: 64px;
+    font-weight: 700;
     line-height: 80px;
     color: #8986A0;
     margin-bottom: 25px;
+    white-space: nowrap;
+    color: #5c54c7;
 }
 
 .banner-left-title p {
@@ -171,12 +173,11 @@ a {
 
 .banner-button-right {
     float: left;
-    width: 449px;
-    padding-left: 100px;
+    width: 50%;
 }
 
 .banner-button-left {
-    width: 449px;
+    width: 50%;
     float: left;
 }
 
