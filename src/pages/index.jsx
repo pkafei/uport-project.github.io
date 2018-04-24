@@ -1,19 +1,20 @@
-import React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-import SEO from "../components/SEO/SEO"
+import React from 'react'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import SEO from '../components/SEO/SEO'
 import SiteHeader from '../components/Layout/Header'
 import SiteFooter from '../components/Layout/Footer'
 import Demo from '../components/Demo'
-import config from "../../data/SiteConfig"
+import BuildingBlocks from '../components/BuildingBlocks'
+import config from '../../data/SiteConfig'
 /* import downloadUport from '../images/download-uport.svg'
  * import registerApp from '../images/register-app.svg'
  * import installSDK from '../images/install-sdk.svg'*/
 import heroImg from '../images/hero-img.svg'
 
 class Index extends React.Component {
-  render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+  render () {
+    const postEdges = this.props.data.allMarkdownRemark.edges
     return (
       <div className="index-container">
         <Helmet title={config.siteTitle} />
@@ -101,6 +102,7 @@ class Index extends React.Component {
           </IndexHeadContainer>
           <BodyContainer className={`body-container`}>
             <Demo />
+            <BuildingBlocks />
           </BodyContainer>
           <FooterContainer>
             <SiteFooter />
@@ -126,12 +128,12 @@ const Hero = styled.div`
 const BodyContainer = styled.div`
   /* padding: ${props => props.theme.sitePadding};*/
   /* max-width: ${props => props.theme.contentWidthLaptop};*/
-  height: 679px;
   background-color: #F9F9FA;
   margin: 0 auto;
 `
 const FooterContainer = styled.footer`
   background-color: #6c59cf;
+  clear: all;
 `
 
 /* eslint no-undef: "off"*/

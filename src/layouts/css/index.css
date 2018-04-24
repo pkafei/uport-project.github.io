@@ -141,7 +141,6 @@ a {
 }
 
 .banner-left-buttons {
-
     margin: 40px 0;
 }
 
@@ -495,7 +494,7 @@ a {
     }
 
     .banner-left-buttons p {
-        font-size: 12px;
+        font-size: 16px;
         line-height: 20px;
     }
 
@@ -559,6 +558,13 @@ a {
         margin-left: 0px;
     }
 
+    .banner-left-buttons {
+      margin: 10 0;
+    }
+    .banner-button-right, .banner-button-left {
+      float: none;
+      width: 100%;
+    }
 
 }
 
