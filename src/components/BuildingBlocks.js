@@ -38,7 +38,6 @@ class BuildingBlocks extends Component {
       <Container>
         <div>
           <h2>Identity Building Blocks</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur efficitur enim vitae enim dapibus, non pharetra dui placerat. Nullam eu bibendum tellus. Ut ante quam, viverra sit amet nulla vel, convallis rutrum leo.</p>
           <div>
             <div className={'building-blocks-left'}>
               <h3>Libraries</h3>
