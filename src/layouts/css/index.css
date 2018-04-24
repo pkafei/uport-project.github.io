@@ -141,8 +141,8 @@ a {
 }
 
 .banner-left-buttons {
-    display: table-row;
-    margin-bottom: 25px;
+
+    margin: 40px 0;
 }
 
 .banner-left-buttons p {

@@ -34,12 +34,8 @@ class Index extends React.Component {
                   </div>
                   <div className={`banner-left-buttons`}>
                     <div className={`banner-button-left`}>
-                      <h2>Privacy Preserving Single</h2>
-                      <h2>Sign-On</h2>
-                      <br/>
-                      <p>Enable your ethereum or server app</p>
-                      <p>to securely authenticate users.</p>
-                      <br/>
+                      <h2>Privacy Preserving Single Sign-On</h2>
+                      <p>Enable your ethereum or server app to securely authenticate users.</p>
                       <div className={`banner-button`}>
                         <a href='/platform' className={`banner-link`}>
                           Enable Single Sign-On
@@ -47,12 +43,8 @@ class Index extends React.Component {
                       </div>
                     </div>
                     <div className={`banner-button-right`}>
-                      <h2>Exchange Verifiable</h2>
-                      <h2>Credentials</h2>
-                      <br/>
-                      <p>Issue, request, and verify reusable</p>
-                      <p>identity credentials to your users.</p>
-                      <br/>
+                      <h2>Exchange Verifiable Credentials</h2>
+                      <p>Issue, request, and verify reusable identity credentials to your users.</p>
                       <div className={`banner-button`}>
                         <a href='/gettingstarted' className={`banner-link`}>
                           Start Using Credentials
