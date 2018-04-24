@@ -22,9 +22,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`nunito sans:400, 400i, 700, 700i`,
-          `space mono:400,700`,
-        ],
+        fonts: [`nunito sans:400,400i,700,700i,800,800i`,
+          `space mono:400,700`
+        ]
       }
     },
     {
