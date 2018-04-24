@@ -12,6 +12,7 @@ const Container = styled.div`
     align-items: center;
     max-width: 100%;
     align-self: center;
+
 `
 
 const connect = new Connect('uPort Demo', {
@@ -77,26 +78,26 @@ class Demo extends Component {
             <div className={`left-demo`}>
               <div className={`demo-code`}>
                 {(this.state.showImage === false && this.state.showResult === false && this.state.showExample === false) && (
-                <div>
-                  <pre style={{background: "#FFFFFF"}} className={`language-javascript demo line-numbers`}>
-                    <code style={{background: "#FFFFFF"}} className={`language-javascript demo line-numbers`}>
-                      {`
+                   <div>
+                     <pre style={{background: "#FFFFFF"}} className={`language-javascript demo line-numbers`}>
+                       <code style={{background: "#FFFFFF"}} className={`language-javascript demo line-numbers`}>
+                         {`
 
-      // basic code to "log in" a user by
-      // requesting certain data attributes
+      // basic code to "log in" a user by requesting a name
+      // 1 - construct a link or QR with the URI
+      // 2 - use the payload for authentication
 
       connect.requestCredentials({ requested: ['name']}, (uri) => {
-          // do something with the uri,
-          // like construct a link or QR code
+        //1...
       }).then((payload) => {
-          // use the payload for authentication
+        //2...
         console.log(JSON.stringify(payload))
       })
                       `}
-                    </code>
-                  </pre>
-                </div>
-               )}
+                       </code>
+                     </pre>
+                   </div>
+                )}
                 {/* {this.state.showResult && (
                     <pre style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
                     <code style={{background: "#FFFFFF"}} className={`language-javascript demo demo-code`}>{`
@@ -106,27 +107,34 @@ class Demo extends Component {
                     </pre>
                     )} */}
                 {(this.state.showImage && this.state.showResult === false && this.state.showExample === false) && (
-                <pre style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
-                  <code style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
-                    {`
+                   <pre style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
+                     <code style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
+                       {`
+      // 1...
+      // here we use the qrcode.react library to generate
+      // a QR from the URI string
 
-      // Here we use qrcode.react to generate a QR
-      // from the resulting URI
+      // scanning with the uport app will open a dialogue requesting
+      // to share information which will be shared when approved
 
-      <QRCode value=uri
-              size=260
-              bgColor=rgba(230, 224, 248)
-              fgColor=#5c50ca />
+      <QRCode value = uri
+              size = 260
+              bgColor = rgba(230, 224, 248)
+              fgColor = #5c50ca />
+
+
                     `}
-                  </code>
-                </pre>
+                     </code>
+                   </pre>
                 )}
               </div>
               <div className={`demo-results-wrapper`}>
                 <div className={`demo-results`}>
                   {(this.state.showExample && this.state.showResult === false) && (
-                  <pre className={`language-json demo-json`}>
-                    <code className={`language-json demo-json`}>{`
+                     <pre className={`language-json demo-json`}>
+                       <code className={`language-json demo-json`}>{`
+
+
 
 {
 
@@ -140,21 +148,19 @@ class Demo extends Component {
 
 
 
-
                       `}
-                    </code>
-                  </pre>
+                       </code>
+                     </pre>
                   )}
                   {this.state.showResult && (
-                  <pre className={`language-json demo-json`}>
-                    <code className={`language-json demo-json`}>
+                  <pre className={`demo-json`}>
+                    <code className={`language-json`}>
                       {`
+// 2...
+// this is your data returned by the credential request,
+// which some dApps may find useful for authentication
+
 ${JSON.stringify(this.state.profile, null, 2)}
-
-
-
-
-
 `}
                     </code>
                   </pre>
@@ -165,37 +171,42 @@ ${JSON.stringify(this.state.profile, null, 2)}
             <div className={`v-separator`} />
             <div className={`right-demo`}>
               {(this.state.showImage && this.state.showResult === false) && (
-                <div className={`demo-qr-container`}>
-                  <h4>Scan to provide credentials</h4>
-                  <a href={this.state.uri}>
-                    <QRCode
-                      className={`demo-qr`}
-                      value={this.state.uri}
-                      size={`250`}
-                      bgColor={`#f9f9fa`}
-                      fgColor={`#5c50ca`}
-                    />
-                  </a>
-                </div>
+                 <div className={`demo-qr-container`}>
+                   <h4>Scan to provide credentials</h4>
+                   <a href={this.state.uri}>
+                     <QRCode
+                       className={`demo-qr`}
+                       value={this.state.uri}
+                       size={`230`}
+                       bgColor={`#f9f9fa`}
+                       fgColor={`#5c50ca`}
+                     />
+                   </a>
+                   <div className={`demo-button`}>
+                     <a href='' onClick={(e) => {this.resetDemo(e)}}>
+                       Reset
+                     </a>
+                   </div>
+                 </div>
               )}
               {(this.state.showImage === false) && (
-                <div className={`demo-button-container`}>
-                  {this.state.showResult === false && (<h2>Test The uPort Login</h2>)}
-                  <div className={`demo-step-wrap`}>
-                    <div className={`demo-button`}>
-                      <a href='' className={`demo-banner-link left-btn`} onClick={(e) => { this.state.showResult ? this.resetDemo(e) : this.loginRequest(e)}}>
-                        {this.state.showResult === false && (`Connect with uPort`)}
-                        {this.state.showResult && (`Reset`)}
-                      </a>
-                    </div>
-                    <div className={`demo-button`}>
-                      <a href='' className={`demo-banner-link right-btn`} onClick={(e) => {this.showSample(e)}}>
-                      See Sample Login
-                      </a>
-                    </div>
-                  </div>
-                  </div>
-                )}
+                 <div className={`demo-button-container`}>
+                   {this.state.showResult === false && (<h2>Test The uPort Login</h2>)}
+                   <div className={`demo-step-wrap`}>
+                     <div className={`demo-button`}>
+                       <a href='' className={`demo-banner-link left-btn`} onClick={(e) => { this.state.showResult ? this.resetDemo(e) : this.loginRequest(e)}}>
+                         {this.state.showResult === false && (`Connect with uPort`)}
+                         {this.state.showResult && (`Reset`)}
+                       </a>
+                     </div>
+                     <div className={`demo-button`}>
+                       <a href='' className={`demo-banner-link right-btn`} onClick={(e) => {this.showSample(e)}}>
+                         See Sample Login
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              )}
             </div>
           </div>
         </div>
