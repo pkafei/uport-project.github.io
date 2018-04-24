@@ -99,7 +99,7 @@
     width: 100%;
 }
 
-.demo-json, pre[class*="language-"] {
+.demo-json pre[class*="language-"] {
     background: initial;
     color: initial;
     margin: 0;
@@ -108,7 +108,11 @@
     min-width: 100%;
 }
 
-.demo-json code, pre  {
+.demo-json pre {
+    background: white;
+}
+
+.demo-json code {
     background: white;
 }
 
@@ -176,7 +180,7 @@
     position: relative;
 }
 
-.demo-qr-text h3, h6 {
+.demo-qr-text h3, .demo-qr-text h6  {
     text-align: center;
     color: #5c50ca;
 }

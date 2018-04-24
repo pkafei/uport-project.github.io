@@ -79,8 +79,8 @@ class Demo extends Component {
               <div className={`demo-code`}>
                 {(this.state.showImage === false && this.state.showResult === false && this.state.showExample === false) && (
                    <div>
-                     <pre style={{background: "#FFFFFF"}} className={`language-javascript demo line-numbers`}>
-                       <code style={{background: "#FFFFFF"}} className={`language-javascript demo line-numbers`}>
+                     <pre>
+                       <code style={{background: "#FFFFFF"}} className={`language-javascript`}>
                          {`
 
       // basic code to "log in" a user by requesting a name
@@ -107,8 +107,8 @@ class Demo extends Component {
                     </pre>
                     )} */}
                 {(this.state.showImage && this.state.showResult === false && this.state.showExample === false) && (
-                   <pre style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
-                     <code style={{background: "#FFFFFF"}} className={`language-javascript demo`}>
+                   <pre>
+                     <code style={{background: "#FFFFFF"}} className={`language-javascript`}>
                        {`
       // 1...
       // here we use the qrcode.react library to generate
@@ -131,39 +131,38 @@ class Demo extends Component {
               <div className={`demo-results-wrapper`}>
                 <div className={`demo-results`}>
                   {(this.state.showExample && this.state.showResult === false) && (
-                     <pre className={`language-json demo-json`}>
-                       <code className={`language-json demo-json`}>{`
+                     <pre>
+                       <code style={{background: "#FFFFFF"}} className={`language-json demo-json`}>{`
 
 
 
-{
+ {
 
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "publicKey": "0x044c31ed1499dce76ee7711c72388fda86e6c1d4f9ecc105c4abe2f63cfe79638822dcf21b7c29b3d208fc01d4e0506d4e8f6234a912727a36cf347e61956d5f2f",
-  "publicEncKey": "Py+NXzHgacNMTzj9Ufe4S2KPuzR39dDMd1o+rWBJnmM=",
-  "name": "First Last"
+   "@context": "http://schema.org",
+   "@type": "Person",
+   "publicKey": "0x044c31ed1499dce76ee7711c72388fda86e6c1d4f9ecc105c4abe2f63cfe79638822dcf21b7c29b3d208fc01d4e0506d4e8f6234a912727a36cf347e61956d5f2f",
+   "publicEncKey": "Py+NXzHgacNMTzj9Ufe4S2KPuzR39dDMd1o+rWBJnmM=",
+   "name": "First Last"
 
-}
+ }
 
-
-
-                      `}
+`}
+                         <br/>
                        </code>
                      </pre>
                   )}
                   {this.state.showResult && (
-                  <pre className={`demo-json`}>
-                    <code className={`language-json`}>
-                      {`
-// 2...
-// this is your data returned by the credential request,
-// which some dApps may find useful for authentication
+                     <pre>
+                       <code style={{background: "#FFFFFF"}} className={`language-json demo-json`}>
+                         {`
+ // 2...
+ // this is your data returned by the credential request,
+ // which some dApps may find useful for authentication
 
 ${JSON.stringify(this.state.profile, null, 2)}
 `}
-                    </code>
-                  </pre>
+                       </code>
+                     </pre>
                   )}
                 </div>
               </div>
@@ -175,11 +174,11 @@ ${JSON.stringify(this.state.profile, null, 2)}
                    <h4>Scan to provide credentials</h4>
                    <a href={this.state.uri}>
                      <QRCode
-                       className={`demo-qr`}
-                       value={this.state.uri}
-                       size={`230`}
-                       bgColor={`#f9f9fa`}
-                       fgColor={`#5c50ca`}
+                     className={`demo-qr`}
+                     value={this.state.uri}
+                     size={`230`}
+                     bgColor={`#f9f9fa`}
+                     fgColor={`#5c50ca`}
                      />
                    </a>
                    <div className={`demo-button`}>
