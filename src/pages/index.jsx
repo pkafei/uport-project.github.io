@@ -26,76 +26,37 @@ class Index extends React.Component {
               location={this.props.location}
               categories={this.props.data.navCategories} />
             <Hero className={`home-hero`}>
-              <div className={`headline-wrapper`}>
-                <div className={`banner-left`}>
-                  <div className={`banner-left-title`}>
-                    <h1>Build with uPort</h1>
-                    <p>Bootstrap your app with single sign on,</p>
-                    <p>reusable credentials, mobile signing, and more.</p>
-                  </div>
-                  <div className={`banner-left-buttons`}>
-                    <div className={`banner-button-left`}>
-                      <h2>Privacy Preserving Single Sign-On</h2>
-                      <p>Enable your ethereum or server app to securely authenticate users.</p>
-                      <div className={`banner-button`}>
-                        <a href='/platform' className={`banner-link`}>
-                          Enable Single Sign-On
-                        </a>
+              <div className={`hero-wrapper`}>
+                <div className={'Grid Grid--gutters'}>
+                  <div className='Grid-cell'>
+                    <h1 className='hero-title'>Build with uPort</h1>
+                    <p className='hero-subheading'>Bootstrap your app with single sign on, reusable credentials, mobile signing, and more.</p>
+                    <div className={'Grid Grid--gutters hero-features'}>
+                      <div className='Grid-cell'>
+                        <h2>Privacy Preserving Single Sign-On</h2>
+                        <p>Enable your ethereum or server app to securely authenticate users.</p>
+                        <div className={`hero-button`}>
+                          <a href='/platform' className={`banner-link`}>
+                            Enable Single Sign-On
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                    <div className={`banner-button-right`}>
-                      <h2>Exchange Verifiable Credentials</h2>
+                      <div className='Grid-cell'>
+                        <h2>Exchange Verifiable Credentials</h2>
                       <p>Issue, request, and verify reusable identity credentials to your users.</p>
-                      <div className={`banner-button`}>
+                      <div className={`hero-button`}>
                         <a href='/gettingstarted' className={`banner-link`}>
                           Start Using Credentials
                         </a>
                       </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className={`banner-right`}>
-                  <div className={`hero-img`}>
-                    <img src={heroImg} />
+                  <div className='Grid-cell hero-img-wrap'>
+                    <div className={`hero-img`}>
+                      <img src={heroImg} />
+                    </div>
                   </div>
-                  {/* <ul className={`banner-list`}>
-                      <a href='/gettingstarted#download-the-mobile-app' className={`banner-link`}>
-                      <li className={`banner-steps`}>
-                      <div className={`step-img smaller`}>
-                      <img src={downloadUport} />
-                      </div>
-                      <div className={`step-wrap`}>
-                      <div className={`step-title`}>
-                      1. Download uPort Mobile
-                      </div>
-                      </div>
-                      </li>
-                      </a>
-                      <a href='/gettingstarted#register-your-app' className={`banner-link`}>
-                      <li className={`banner-steps`}>
-                      <div className={`step-img`}>
-                      <img src={registerApp} />
-                      </div>
-                      <div className={`step-wrap`}>
-                      <div className={`step-title`}>
-                      2. Configure Your App
-                      </div>
-                      </div>
-                      </li>
-                      </a>
-                      <a href='/gettingstarted#install-the-librarysdk' className={`banner-link`}>
-                      <li className={`banner-steps`}>
-                      <div className={`step-img`}>
-                      <img src={installSDK} />
-                      </div>
-                      <div className={`step-wrap`}>
-                      <div className={`step-title`}>
-                      3. Install the libraries & SDK's
-                      </div>
-                      </div>
-                      </li>
-                      </a>
-                      </ul> */}
                 </div>
               </div>
             </Hero>
@@ -120,8 +81,14 @@ const IndexHeadContainer = styled.div`
 `
 
 const Hero = styled.div`
-  & > h1 {
-    font-weight: 600;
+  background-color: #fff;
+  .hero-wrapper {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+  .hero-img-wrap {
+    flex: 0 0 42%
   }
 `
 
