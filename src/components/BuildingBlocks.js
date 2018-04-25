@@ -9,8 +9,7 @@ const Container = styled.section`
     max-width: 100%;
     align-self: center;
     background-color: #fff;
-    padding: 40px 0;
-    
+    padding: 60px 0;
 
     h2 {
       font-size: 32px;
@@ -19,7 +18,7 @@ const Container = styled.section`
     }
 
     div:first-child {
-      max-width: 80vw;
+      max-width: 95vw;
       margin: auto;
     }
 
@@ -29,6 +28,34 @@ const Container = styled.section`
     .building-blocks-right {
       float: right;
     }
+    h3, h4 {
+      color: #8986A0;
+      font-size: 24px;
+      line-height: 32px;
+    }
+    h4 {
+      color: #5C50CA;
+    }
+    p {
+      max-width: 80%;
+    }
+    .code-block {
+      background-color: #f9f9fa;
+      padding: 12px 16px;
+      margin-left: -5px;
+      max-width: 80%;
+      font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+      color: #3db77d;
+    }
+    @media (max-width: 900px) {
+      .building-blocks-left {
+        float:none;
+      } 
+      .building-blocks-right {
+        float: none;
+    }
+  }
+
 
 `
 
