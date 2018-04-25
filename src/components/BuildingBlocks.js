@@ -47,6 +47,27 @@ const Container = styled.section`
       font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
       color: #3db77d;
     }
+    h4.alpha {
+      position:relative;
+      &::after {
+        content: "ALPHA";
+        margin-left: 20px;
+        font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+        font-size: 12px;
+        border: 1px solid #8380fc;
+        border-radius: 10px;
+        position: absolute;
+        font-weight: normal;
+        top: 7px;
+        height: 19px;
+        width: 40px;
+        padding: 0px 15px 0px 16px;
+        text-align: center;
+        letter-spacing: 0.75px;
+        line-height: 22px;
+      }
+    }
+
     @media (max-width: 900px) {
       .building-blocks-left {
         float:none;
