@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Container = styled.section`
     background-color: #fff;
     .building-blocks-wrapper {
-      max-width: 70vw;
+      max-width: 52vw;
       margin: 0 auto;
       padding: 60px 0;
     }

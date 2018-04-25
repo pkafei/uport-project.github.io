@@ -95,7 +95,6 @@ class Demo extends Component {
     return (
       <Container>
         <h1>A Focus On Developers</h1>
-        <p>&nbsp;</p>
         <div className={`demo-container`}>
           <div className={`demo-wrapper`}>
             <div className={`left-demo`}>
