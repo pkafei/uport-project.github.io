@@ -25,6 +25,8 @@ const Container = styled.section`
       max-width: 80%;
     }
     .code-block {
+      text-align: center;
+      border-radius: 4px;
       background-color: #f9f9fa;
       padding: 12px 16px;
       margin-left: -5px;
