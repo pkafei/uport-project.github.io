@@ -399,7 +399,7 @@ p.hero-subheading {
 }
 
 @media (max-width: 600px) {
-    
+
     .home-hero {
         height: auto;
     }
@@ -466,7 +466,7 @@ p.hero-subheading {
 }
 
 .Grid-cell {
-  flex: 1;
+  /* flex: 1; */
 }
 
 /* With gutters */
