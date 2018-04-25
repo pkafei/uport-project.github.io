@@ -3,7 +3,7 @@
     background: #f9f9fa;
     background-size: auto, auto, cover, auto;
     width: 100%;
-    height: 680px;
+    height: 480px;
     justify-content: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -33,20 +33,12 @@
     position: relative;
     display: -webkit-box;
     min-height: 344px;
-    max-height: 40vh;
-    max-width:60vw;
+    max-width: 52vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: row;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -72,7 +64,6 @@
 
 .left-demo {
     max-width: 600px;
-    /* height: 100vh; */
     padding: 0;
     margin: 0;
     -webkit-box-flex: 1;
@@ -141,7 +132,6 @@
 }
 
 .right-demo {
-    max-width: 400px;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -193,7 +183,7 @@
 }
 
 .demo-button-container {
-    padding: 10px;
+    padding-top: 56px;
     position: absolute;
 }
 
@@ -208,6 +198,7 @@
     width: 100%;
     height: 100%;
     display: table;
+    padding-bottom: 75px;
 }
 
 .demo-button {
