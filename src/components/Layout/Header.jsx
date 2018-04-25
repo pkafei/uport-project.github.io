@@ -40,9 +40,10 @@ const SiteContainer = styled.header`
   justify-content: space-between;
   background: ${props => props.theme.brand};
   height: auto;
+  max-width: 90vw;
+  margin: 0 auto;
 
   img {
-    padding-left: 25px;
     padding-bottom: 20px;
   }
 `

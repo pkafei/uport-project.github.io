@@ -44,11 +44,7 @@ const styles = {
 }
 
 const NavContainer = styled.nav`
-  
-
   #topNav {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     background: ${props => props.theme.brand};
   }
@@ -72,9 +68,6 @@ const NavContainer = styled.nav`
     }
   }
   @media screen and (min-width: 600px) {
-    display: flex;
-    flex-direction: column;
-
     #responsiveNavContainer {
       display: none;
     }
@@ -124,7 +117,7 @@ class Navigation extends React.Component {
     return navItems
   }
 
-  render() {
+  render () {
     return (
       <NavContainer>
         <section id='topNav'>
@@ -133,7 +126,7 @@ class Navigation extends React.Component {
           <a href='https://gitter.im/uport-project/Lobby' className={`nav-link w-nav-link`} target='_blank'> Help </a>
           <a href='https://medium.com/uport' className={`nav-link w-nav-link`} target='_blank'> Blog </a>
         </section>
-        <div id="responsiveNavContainer">
+        <div id='responsiveNavContainer'>
           <Menu right isOpen={false} styles={styles}>
             {this.navListItems()}
             <a href='https://appmanager.uport.me' className={`menu-item`} target='_blank'> App Manager </a>
