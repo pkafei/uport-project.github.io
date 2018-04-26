@@ -22,7 +22,7 @@ class Index extends React.Component {
         <main>
           <IndexHeadContainer>
             <SiteHeader
-              activeCategory={""}
+              activeCategory={''}
               location={this.props.location}
               categories={this.props.data.navCategories} />
             <Hero className={`home-hero`}>
@@ -43,12 +43,12 @@ class Index extends React.Component {
                       </div>
                       <div className='Grid-cell'>
                         <h2>Exchange Verifiable Credentials</h2>
-                      <p>Issue, request, and verify reusable identity credentials to your users.</p>
-                      <div className={`hero-button`}>
-                        <a href='/gettingstarted' className={`banner-link`}>
-                          Start Using Credentials
-                        </a>
-                      </div>
+                        <p>Issue, request, and verify reusable identity credentials to your users.</p>
+                        <div className={`hero-button`}>
+                          <a href='/gettingstarted' className={`banner-link`}>
+                           Start Using Credentials
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default Index
 
 const IndexHeadContainer = styled.div`
   background: ${props => props.theme.brand};

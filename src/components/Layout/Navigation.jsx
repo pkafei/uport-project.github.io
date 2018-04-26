@@ -5,8 +5,7 @@ import Menu from 'react-burger-menu/lib/menus/slide'
 
 const styles = {
   bmMenuWrap: {
-    width: '220px',
-    marginTop: '-30px'
+    width: '280px'
   },
   bmBurgerButton: {
     position: 'fixed',
