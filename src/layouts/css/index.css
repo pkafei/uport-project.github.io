@@ -192,6 +192,37 @@ p.hero-subheading {
 
 /* END: Building Blocks styles */
 
+/* START: Footer styles */
+.footer-menu-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 70vw;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.button-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+footer .button-wrap button {
+  padding: 12px 20px 12px 22px;
+  border-radius: 4px;
+  color: #5c50ca;
+  font-weight: 700;
+}
+
+footer .button-wrap .Grid-cell:first-child {
+  text-align: right;
+  margin-right: 20px;
+}
+
+
+/* END: Footer styles */
+
 .step-img {
     width: 105px;
 }
@@ -517,6 +548,23 @@ https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
   }
   .hero-wrapper .Grid {
     flex-direction: column;
+  }
+  .footer-menu-wrap {
+    max-width: 90vw;
+  }
+  footer .button-wrap {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer .button-wrap .Grid-cell button {
+    min-width: 50vw;
+  }
+  footer .button-wrap .Grid-cell:first-child {
+    text-align: center;
+    margin: 10px 0;
+  }
+  footer .button-wrap .Grid-cell:last-child {
+    margin: 10px 0;
   }
 }
 

@@ -10,25 +10,6 @@ const FooterContainer = styled.section`
     color: #fff;
     padding: 40px 0 20px  ;
   }
-  .button-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 40px;
-    button {
-      padding: 12px 20px 12px 22px;
-      border-radius: 4px;
-      color: #5c50ca;
-      font-weight: 700;
-    }
-  }
-  .footer-menu-wrap {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-width: 70vw;
-    margin: 0 auto;
-  }
   .footer-menu {
     color: #fff;
     padding: 0 40px;
@@ -44,10 +25,6 @@ const FooterContainer = styled.section`
     h4 {
       text-transform: uppercase;
     }
-  }
-  .button-wrap .Grid-cell:first-child {
-   text-align: right;
-   margin-right: 20px;
   }
   .button-wrap .Grid-cell:last-child {
    margin-left: 20px;
