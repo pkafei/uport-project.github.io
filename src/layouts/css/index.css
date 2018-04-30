@@ -108,6 +108,7 @@ a {
     color: #5c50ca;
 }
 
+/*  START: Hero styles */
 h1.hero-title {
     font-family: "Nunito Sans";
     font-size: 64px;
@@ -125,7 +126,6 @@ p.hero-subheading {
     font-weight: 700;
     line-height: 28px;
     margin-top: -12px;
-    max-width: 78%;
 }
 
 .hero-features p {
@@ -177,6 +177,20 @@ p.hero-subheading {
     height: auto;
     margin-top: 6.5em;
 }
+
+/* END: Hero styles */
+
+/* START: Building Blocks styles */
+
+.building-blocks-wrapper {
+  padding: 20px;
+}
+.building-blocks-wrapper .Grid {
+  flex-direction: column;
+}
+
+
+/* END: Building Blocks styles */
 
 .step-img {
     width: 105px;
@@ -327,14 +341,58 @@ p.hero-subheading {
     border-top: 1px solid;
   }
 
+
+/* Grid Classes */
+*, :after, :before {
+    box-sizing: border-box;
+}
+.Grid {
+  display: flex;
+}
+
+.Grid-cell {
+  flex: 1;
+}
+
+/* With gutters */
+.Grid--gutters {
+  margin: -1em 0 0 -1em;
+}
+.Grid--gutters > .Grid-cell {
+  padding: 1em 0 0 1em;
+}
+
+/* Base classes for all media */
+.Grid--fit > .Grid-cell {
+  flex: 1;
+}
+.Grid--full > .Grid-cell {
+  flex: 0 0 100%;
+}
+
+/* Small to medium screens */
+@media (min-width: 24em) {
+  .small-Grid--fit > .Grid-cell {
+    flex: 1;
+  }
+  .small-Grid--full > .Grid-cell {
+    flex: 0 0 100%;
+  }
+}
+
+/* Large screens */
+@media (min-width: 48em) {
+  .large-Grid--fit > .Grid-cell {
+    flex: 1;
+  }
+  .large-Grid--full > .Grid-cell {
+    flex: 0 0 100%;
+  }
+}
+
 /* Media queries for index page */
   @media (max-width: 767px) {
-      .demo-container,
-      .demo-wrapper,
-      .left-demo,
-      .demo-code,
-      .demo-results-wrapper,
-      .demo-results,
+      section.demo, 
       .hero-img {
           visibility: hidden;
           display: none;
@@ -350,7 +408,7 @@ p.hero-subheading {
     }
 
     .home-hero {
-        height: 90vh;
+        /* height: 90vh; */
     }
 
     .step-img {
@@ -444,85 +502,51 @@ p.hero-subheading {
 
 }
 
-/* /\* Large desktop *\/ */
-/* @media (min-width: 1200px) { ... } */
-
-/* /\* Portrait tablet to landscape and desktop *\/ */
-/* @media (min-width: 768px) and (max-width: 979px) { ... } */
-
-/* /\* Landscape phone to portrait tablet *\/ */
-/* @media (max-width: 767px) { ... } */
-
-/* /\* Landscape phones and down *\/ */
-/* @media (max-width: 480px) { ... } */
 
 
-/* Testing a Grid */
-*, :after, :before {
-    box-sizing: border-box;
-}
-.Grid {
-  display: flex;
-}
+/* 
+Media query breakpoints adapted from Twitter Bootstrap 
+https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
+*/
 
-.Grid-cell {
-  /* flex: 1; */
-}
 
-/* With gutters */
-.Grid--gutters {
-  margin: -1em 0 0 -1em;
-}
-.Grid--gutters > .Grid-cell {
-  padding: 1em 0 0 1em;
-}
-
-/* Alignment per row */
-.Grid--top {
-  align-items: flex-start;
-}
-.Grid--bottom {
-  align-items: flex-end;
-}
-.Grid--center {
-  align-items: center;
-}
-
-/* Alignment per cell */
-.Grid-cell--top {
-  align-self: flex-start;
-}
-.Grid-cell--bottom {
-  align-self: flex-end;
-}
-.Grid-cell--center {
-  align-self: center;
-}
-
-/* Base classes for all media */
-.Grid--fit > .Grid-cell {
-  flex: 1;
-}
-.Grid--full > .Grid-cell {
-  flex: 0 0 100%;
-}
-
-/* Small to medium screens */
-@media (min-width: 24em) {
-  .small-Grid--fit > .Grid-cell {
-    flex: 1;
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  h1.hero-title {
+    font-size: 46px;
   }
-  .small-Grid--full > .Grid-cell {
-    flex: 0 0 100%;
+  .hero-wrapper .Grid {
+    flex-direction: column;
   }
 }
 
-/* Large screens */
-@media (min-width: 48em) {
-  .large-Grid--fit > .Grid-cell {
-    flex: 1;
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .building-blocks-wrapper {
+    max-width: 80vw;
   }
-  .large-Grid--full > .Grid-cell {
-    flex: 0 0 100%;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  p.hero-subheading {
+    max-width: 78%;
   }
+  .building-blocks-wrapper {
+    padding: 60px 0;
+    max-width: 52vw;
+  }
+  .building-blocks-wrapper .Grid {
+    max-width: 70vw;
+    flex-direction: row;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }

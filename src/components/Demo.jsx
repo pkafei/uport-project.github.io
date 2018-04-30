@@ -5,7 +5,7 @@ import "../layouts/css/demo.css"
 
 const QRCode = require('qrcode.react');
 
-const Container = styled.div`
+const Container = styled.section`
     position: relative;
     display: -webkit-box;
     display: -webkit-flex;
@@ -93,7 +93,7 @@ class Demo extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className='demo'>
         <h1>A Focus On Developers</h1>
         <div className={`demo-container`}>
           <div className={`demo-wrapper`}>
