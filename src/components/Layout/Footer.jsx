@@ -21,14 +21,13 @@ const FooterContainer = styled.section`
       color: #5c50ca;
       font-weight: 700;
     }
-    button:first-child {
-      margin-right: 40px;
-    }
   }
   .footer-menu-wrap {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    max-width: 70vw;
+    margin: 0 auto;
   }
   .footer-menu {
     color: #fff;
@@ -46,6 +45,13 @@ const FooterContainer = styled.section`
       text-transform: uppercase;
     }
   }
+  .button-wrap .Grid-cell:first-child {
+   text-align: right;
+   margin-right: 20px;
+  }
+  .button-wrap .Grid-cell:last-child {
+   margin-left: 20px;
+  }
 `
 
 class Footer extends React.Component {
@@ -53,19 +59,27 @@ class Footer extends React.Component {
   render () {
     return (
       <FooterContainer>
-        <h2>Join A Network Of Developers Building on uPort</h2>
-        <div className='button-wrap'>
-          <button>Join The Community</button>
-          <button>Explore uPort Projects</button>
+        <div className={'Grid Grid--gutters'}>
+          <div className='Grid-cell'>
+            <h2>Join A Network Of Developers Building on uPort</h2>
+          </div>
         </div>
-        <div className='footer-menu-wrap'>
-          <div className='footer-menu'>
+        <div className={'Grid Grid--gutters button-wrap'}>
+          <div className='Grid-cell'>
+            <button>Join The Community</button>
+          </div>
+          <div className='Grid-cell'>
+            <button>Explore uPort Projects</button>
+          </div>
+        </div>
+        <div className='footer-menu-wrap Grid'>
+          <div className='footer-menu Grid-cell'>
             <h4>Apps</h4>
             <ul>
               <li>Wallet</li>
             </ul>
           </div>
-          <div className='footer-menu'>
+          <div className='footer-menu Grid-cell'>
             <h4>Platform</h4>
             <ul>
               <li>Overview</li>
@@ -73,7 +87,7 @@ class Footer extends React.Component {
               <li>Platform</li>
             </ul>
           </div>
-          <div className='footer-menu'>
+          <div className='footer-menu Grid-cell'>
             <h4>Solutions</h4>
             <ul>
               <li>Private Credentials</li>
@@ -82,7 +96,7 @@ class Footer extends React.Component {
               <li>Mobile Signing / 2FA</li>
             </ul>
           </div>
-          <div className='footer-menu'>
+          <div className='footer-menu Grid-cell'>
             <h4>Guides</h4>
             <ul>
               <li>Build a hybrid dapp</li>
@@ -90,7 +104,7 @@ class Footer extends React.Component {
               <li>Issue Credentials</li>
             </ul>
           </div>
-          <div className='footer-menu'>
+          <div className='footer-menu Grid-cell'>
             <h4>About</h4>
             <ul>
               <li>Mission</li>

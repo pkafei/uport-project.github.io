@@ -57,7 +57,7 @@ const Container = styled.section`
 class BuildingBlocks extends Component {
   render () {
     return (
-      <Container>
+      <Container className='building-blocks'>
         <div className='building-blocks-wrapper'>
           <div className={'Grid Grid--gutters'}>
             <div className='Grid-cell'>
