@@ -26,7 +26,7 @@ class MainHeader extends React.Component {
               </Link>
             </span>
           </div>
-          <div className='Grid-cell'>
+          <div className='Grid-cell nav-wrap'>
             <Navigation
               className={`w-nav`}
               sections={this.navHeadings()}
@@ -46,9 +46,11 @@ const SiteContainer = styled.header`
   .Grid {
     max-width: 90vw;
     margin: 0 auto;
-    justify-content: space-between;
   }
 
+  .nav-wrap {
+    text-align: right;
+  }
   .Grid-cell {
     padding: 0;
   }

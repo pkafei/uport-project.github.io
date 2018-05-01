@@ -88,7 +88,8 @@ const Hero = styled.div`
     padding: 60px 0;
   }
   .hero-img-wrap {
-    flex: 0 0 42%
+    flex: 0 0 42%;
+    align-self: center;
   }
 `
 
