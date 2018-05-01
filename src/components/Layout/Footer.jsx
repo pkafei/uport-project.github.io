@@ -43,51 +43,51 @@ class Footer extends React.Component {
         </div>
         <div className={'Grid Grid--gutters button-wrap'}>
           <div className='Grid-cell'>
-            <button>Join The Community</button>
+            <a href='https://chat.uport.me/'><button>Join The Community</button></a>
           </div>
           <div className='Grid-cell'>
-            <button>Explore uPort Projects</button>
+            <a href='https://github.com/uport-project'><button>Explore uPort Projects</button></a>
           </div>
         </div>
         <div className='footer-menu-wrap Grid'>
           <div className='footer-menu Grid-cell'>
             <h4>Apps</h4>
             <ul>
-              <li>Wallet</li>
+              <li><a href='https://itunes.apple.com/us/app/uport-id/id1123434510'>Wallet</a></li>
             </ul>
           </div>
           <div className='footer-menu Grid-cell'>
             <h4>Platform</h4>
             <ul>
-              <li>Overview</li>
-              <li>Protocols</li>
-              <li>Platform</li>
+              <li><a href='http://developer.uport.me/overview.html'>Overview</a></li>
+              <li><a href='http://developer.uport.me/overview.html#protocols'>Protocols</a></li>
+              <li><a href='http://developer.uport.me/overview.html#platform'>Platform</a></li>
             </ul>
           </div>
           <div className='footer-menu Grid-cell'>
             <h4>Solutions</h4>
             <ul>
-              <li>Private Credentials</li>
-              <li>Authentication</li>
-              <li>Ethereum Apps</li>
-              <li>Mobile Signing / 2FA</li>
+              <li><a href='http://developer.uport.me/guides.html#private-chain-deployment'>Private Credentials</a></li>
+              <li><a href='https://github.com/uport-project/uport-connect/'>Authentication</a></li>
+              {/* <li><a href='#'>Ethereum Apps</a></li>  */}
+              <li><a href='http://developer.uport.me/guides.html#signing-transactions'>Mobile Signing / 2FA</a></li>
             </ul>
           </div>
           <div className='footer-menu Grid-cell'>
             <h4>Guides</h4>
             <ul>
-              <li>Build a hybrid dapp</li>
-              <li>Authenticate Wallet</li>
-              <li>Issue Credentials</li>
+              {/* <li><a href='#'>Build a hybrid dapp</a></li> */}
+              {/* <li><a href='#'>Authenticate Wallet</a></li> */}
+              <li><a href='http://developer.uport.me/guides.html#attesting-credentials'>Issue Credentials</a></li>
             </ul>
           </div>
           <div className='footer-menu Grid-cell'>
             <h4>About</h4>
             <ul>
-              <li>Mission</li>
-              <li>Team</li>
-              <li>Jobs (We're Hiring)</li>
-              <li>ConsenSys</li>
+              {/* <li><a href='#'>Mission</a></li> */}
+              {/* <li><a href='#'>Team</a></li> */}
+              <li><a href='https://www.uport.me/job-listings'>Jobs (We're Hiring)</a></li>
+              <li><a href='https://consensys.net'>ConsenSys</a></li>
             </ul>
         </div>
         </div>

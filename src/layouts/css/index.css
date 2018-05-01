@@ -219,6 +219,12 @@ footer .button-wrap .Grid-cell:first-child {
   margin-right: 20px;
 }
 
+footer .footer-menu-wrap a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
 
 /* END: Footer styles */
 
@@ -564,6 +570,7 @@ https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
   }
   footer .button-wrap .Grid-cell:last-child {
     margin: 10px 0;
+    margin-left: 0 !important;
   }
   .building-blocks-wrapper {
     max-width: 95vw;
