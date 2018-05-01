@@ -48,8 +48,9 @@ const SiteContainer = styled.header`
     margin: 0 auto;
   }
 
-  .nav-wrap {
+  .nav-wrap #topNav {
     text-align: right;
+    white-space: nowrap;
   }
   .Grid-cell {
     padding: 0;
@@ -57,6 +58,9 @@ const SiteContainer = styled.header`
 
   img {
     padding-bottom: 20px;
+  }
+  .bm-overlay {
+    display:none;
   }
 `
 

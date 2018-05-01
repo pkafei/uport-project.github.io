@@ -31,6 +31,7 @@ const Container = styled.section`
       max-width: 80%;
       font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
       color: #3db77d;
+      white-space: nowrap;
     }
     h4.alpha {
       position:relative;
@@ -59,11 +60,7 @@ class BuildingBlocks extends Component {
     return (
       <Container className='building-blocks'>
         <div className='building-blocks-wrapper'>
-          <div className={'Grid Grid--gutters'}>
-            <div className='Grid-cell'>
-              <h2>Identity Building Blocks</h2>
-            </div>
-          </div>
+          <h2>Identity Building Blocks</h2>
           <div className={'Grid Grid--gutters'}>
             <div className='Grid-cell'>
               <div>

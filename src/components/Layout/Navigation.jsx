@@ -58,6 +58,10 @@ const NavContainer = styled.nav`
     }
   }
 
+  nav.bm-item-list a {
+    text-transform: none;
+  }
+
   @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;

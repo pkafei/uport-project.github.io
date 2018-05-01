@@ -565,6 +565,9 @@ https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
   footer .button-wrap .Grid-cell:last-child {
     margin: 10px 0;
   }
+  .building-blocks-wrapper {
+    max-width: 95vw;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up)*/
@@ -581,19 +584,30 @@ https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
   }
   .building-blocks-wrapper {
     padding: 60px 0;
-    max-width: 52vw;
+    max-width: 80vw;
   }
   .building-blocks-wrapper .Grid {
-    max-width: 70vw;
     flex-direction: row;
+  }
+  div.hero-left {
+    padding-right: 30px !important;
+  }
+  section.demo {
+    max-width: 80vw;
+    margin: 0 auto;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  section.demo, .building-blocks-wrapper {
+    max-width: 70vw;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+  .building-blocks-wrapper, section.demo {
+    max-width: 60vw;
+  }
 }

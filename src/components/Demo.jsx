@@ -23,8 +23,6 @@ const Container = styled.section`
 
    h1 {
     padding-top: 80px;
-    width: 52vw;
-    margin: auto;
     position: relative;
    }
 

@@ -33,7 +33,6 @@
     position: relative;
     display: -webkit-box;
     min-height: 344px;
-    max-width: 52vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: row;
     -webkit-flex-direction: row;

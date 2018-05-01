@@ -16,7 +16,7 @@ class Index extends React.Component {
   render () {
     const postEdges = this.props.data.allMarkdownRemark.edges
     return (
-      <div className="index-container">
+      <div className='index-container'>
         <Helmet title={config.siteTitle} />
         <SEO postEdges={postEdges} />
         <main>
@@ -28,7 +28,7 @@ class Index extends React.Component {
             <Hero className={`home-hero`}>
               <div className={`hero-wrapper`}>
                 <div className={'Grid Grid--gutters'}>
-                  <div className='Grid-cell'>
+                  <div className='Grid-cell hero-left'>
                     <h1 className='hero-title'>Build with uPort</h1>
                     <p className='hero-subheading'>Bootstrap your app with single sign on, reusable credentials, mobile signing, and more.</p>
                     <div className={'Grid Grid--gutters hero-features'}>
