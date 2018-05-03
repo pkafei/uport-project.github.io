@@ -1,4 +1,4 @@
-uPort Documentation Generation
+uPort Static Site Generator
 ============
 
   This is our documentation site generator, built with [GatsbyJS](https://www.gatsbyjs.org) and a heavily modified fork of [gatsby-starter-docs](https://github.com/ericwindmill/gatsby-starter-docs).
@@ -188,6 +188,10 @@ This is a custom plugin that is used to re-write the relative links to markdown 
 
 ## Deployment
 
+We deploy the github pages from the master branch.  This means that the `develop` branch is our main source of development.
+
+This presents some changes to the normal Git Flow cycle of pushing releases to master.  We will still use Git Flow, but push releases to develop only because master is the deploy branch.
+
 ###### Requirements:
 
 - ngrok
@@ -199,9 +203,12 @@ The current site is configured for Github Pages deployment.  Deploying the docum
 For our purposes it is also necessary to update the DNS name within the repositories settings after each publish to the `gh-pages` branch:  https://github.com/uport-project/docs-site/settings.
 
 The deployment steps for uPort are:
+1. Check out the latest release tag.
 1. Build a production version of the site: `npm run build`
 1. Serve the production built site on a public DNS (ngrok) for feedback `npm run serve`
 1. After validating the production build using ngrok, build and deploy: `npm run build:gh`
-1. Go to https://github.com/uport-project/docs-site/settings and update the custom domain to reflect our documentation home (developer.uport.me or .space).
+1. Go to https://github.com/uport-project/docs-site/settings and update the custom domain to reflect our documentation home (developer.uport.me**.
+
+**Always build from a release tag.  Don't deploy from develop**
 
 Optionally, manual deployment can be done.  Simply build the site and copy the output to its destination.  To build the site execute  `npm run build`.  This command will build the site and copy files to the `/public` folder.  Depending on the deployment source (S3, Netflify, **), this command can be modified if it is not trivial to copy to the contents of the public folder to it's destination.
