@@ -7,7 +7,12 @@ module.exports = ({ markdownAST }) => {
   visit(markdownAST, 'link', node => {
     if (node.url && isRelativeUrl(node.url)) {
       //convert frontmatter to YAML so grayMatter can read.
-      var data = grayMatter(`---\n${markdownAST.children[0]['value'].toString()}\n---\n`)['data'];
+      var _data = markdownAST.children[0]['value']
+      var data = "";
+
+      if(_data){
+        data = grayMatter(`---\n${_data.toString()}\n---\n`)['data'];
+      }
 
       //console.log(data['title']);
       // if(data['prefix'] && data['prefix'] != ""){
