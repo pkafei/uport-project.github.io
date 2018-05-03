@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Self Sovereign]]></title><description><![CDATA[Privacy Preserving Identity Network]]></description><link>https://rekt.uport.space</link><image><url>https://rekt.uport.space/logos/logo-512.png</url><title>Self Sovereign</title><link>https://rekt.uport.space</link></image><generator>GatsbyJS Material Starter</generator><lastBuildDate>Wed, 02 May 2018 17:52:12 GMT</lastBuildDate><atom:link href="https://rekt.uport.space/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[uPort]]></author><copyright><![CDATA[Copyright © 2018]]></copyright><item><title><![CDATA[Attesting Credentials]]></title><description><![CDATA[Attesting Credentials * If the user consents, the uPort app saves the attestation token to their device. Browser displays a QR code (if…]]></description><link>https://rekt.uport.space/attestcredentials</link><guid isPermaLink="false">https://rekt.uport.space/attestcredentials</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;attesting-credentials&quot;&gt;&lt;a href=&quot;#attesting-credentials&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Attesting Credentials&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Self Sovereign]]></title><description><![CDATA[Privacy Preserving Identity Network]]></description><link>https://rekt.uport.space</link><image><url>https://rekt.uport.space/logos/logo-512.png</url><title>Self Sovereign</title><link>https://rekt.uport.space</link></image><generator>GatsbyJS Material Starter</generator><lastBuildDate>Thu, 03 May 2018 02:21:39 GMT</lastBuildDate><atom:link href="https://rekt.uport.space/rss.xml" rel="self" type="application/rss+xml"/><author><![CDATA[uPort]]></author><copyright><![CDATA[Copyright © 2018]]></copyright><item><title><![CDATA[Attesting Credentials]]></title><description><![CDATA[Attesting Credentials * If the user consents, the uPort app saves the attestation token to their device. Browser displays a QR code (if…]]></description><link>https://rekt.uport.space/attestcredentials</link><guid isPermaLink="false">https://rekt.uport.space/attestcredentials</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;attesting-credentials&quot;&gt;&lt;a href=&quot;#attesting-credentials&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Attesting Credentials&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;/diag3-285c038c41d7f64d11df8a9d0db2bf5b.svg&quot; alt=&quot;diag&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;*&lt;em&gt;If the user consents, the uPort app saves the attestation token to their device.&lt;/em&gt;&lt;/li&gt;
@@ -180,7 +180,36 @@ Please email &lt;a href=&quot;mailto:privatechain@uport.me&quot;&gt;privatechain
 &lt;h3 id=&quot;more-about-signing-ethereum-transactions&quot;&gt;&lt;a href=&quot;#more-about-signing-ethereum-transactions&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;flows/tx&quot;&gt;More about Signing Ethereum transactions&lt;/a&gt;&lt;/h3&gt;
 &lt;h2 id=&quot;uport-pki&quot;&gt;&lt;a href=&quot;#uport-pki&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;uPort PKI&lt;/h2&gt;
 &lt;p&gt;uPort implements a simple yet general purpose decentralized PKI system making it easy to create and verify off-chain JWT messages.&lt;/p&gt;
-&lt;h3 id=&quot;more-about-the-uport-pki&quot;&gt;&lt;a href=&quot;#more-about-the-uport-pki&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;pki/index&quot;&gt;More about the uPort PKI&lt;/a&gt;&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[Requesting Credentials]]></title><description><![CDATA[Requesting Credentials The first and most basic step you should take is to allow your user to connect their uPort to your app. Uport-connect…]]></description><link>https://rekt.uport.space/requestcredentials</link><guid isPermaLink="false">https://rekt.uport.space/requestcredentials</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;requesting-credentials&quot;&gt;&lt;a href=&quot;#requesting-credentials&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Requesting Credentials&lt;/h1&gt;
+&lt;h3 id=&quot;more-about-the-uport-pki&quot;&gt;&lt;a href=&quot;#more-about-the-uport-pki&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;pki/index&quot;&gt;More about the uPort PKI&lt;/a&gt;&lt;/h3&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Self Overview The Self platform** Self is the most advanced self ID platform.  Self is a decentralized, self ID platform built on the…]]></description><link>https://rekt.uport.space/selfoverview</link><guid isPermaLink="false">https://rekt.uport.space/selfoverview</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;self-overview&quot;&gt;&lt;a href=&quot;#self-overview&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Self Overview&lt;/h1&gt;
+&lt;h2 id=&quot;the-self-platform&quot;&gt;&lt;a href=&quot;#the-self-platform&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The Self platform**&lt;/h2&gt;
+&lt;p&gt;Self is the most advanced self ID platform. &lt;/p&gt;
+&lt;p&gt;Self is a decentralized, self ID platform built on the Ethereum blockchain. By enabling users to manage their identities through the implementation of a. We achieve this by implementing a robust private key management system. &lt;/p&gt;
+&lt;p&gt;We believe that identity is everything and we empower people to be their best by making identity free and open. Mission Vision. To understand our benefits there are some terms you must first understand.&lt;/p&gt;
+&lt;h2 id=&quot;what-is-self-id&quot;&gt;&lt;a href=&quot;#what-is-self-id&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is Self ID?**&lt;/h2&gt;
+&lt;p&gt;This is where we briefly describe a self-sovereign identity, private keys that are fully controlled by the user.&lt;/p&gt;
+&lt;h2 id=&quot;the-self-network&quot;&gt;&lt;a href=&quot;#the-self-network&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The Self network**&lt;/h2&gt;
+&lt;p&gt;This is where we briefly describe the Self network of partners that share data via the user and partner on bringing in the future of user-controlled, self iD.&lt;/p&gt;
+&lt;h2 id=&quot;what-does-it-enable&quot;&gt;&lt;a href=&quot;#what-does-it-enable&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What does it enable?**&lt;/h2&gt;
+&lt;p&gt;Self enables you to interact with users&apos; self IDs in many new and interesting ways.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enable users to login to your client-server app with their Self ID&lt;/li&gt;
+&lt;li&gt;Issue signed data to users&apos; Self ID&lt;/li&gt;
+&lt;li&gt;Request data from users&apos; Self ID&lt;/li&gt;
+&lt;li&gt;Request legally-binding signatures from a Self ID&lt;/li&gt;
+&lt;li&gt;Enable users to interact with your Ethereum app&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;a-range-of-use-cases&quot;&gt;&lt;a href=&quot;#a-range-of-use-cases&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;A Range of Use Cases**&lt;/h2&gt;
+&lt;p&gt;We have integrated Self with a wide range of applications from Ethereum dapps, to nation-state identity systems.&lt;/p&gt;
+&lt;p&gt;Sample scenarios:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Dapp integration use case in a sentence or two&lt;/li&gt;
+&lt;li&gt;Zug use case in a sentence or two (with a link to press or demo)&lt;/li&gt;
+&lt;li&gt;Use case 3 in a sentence or two&lt;/li&gt;
+&lt;li&gt;Use case 4 in a sentence or two&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;introduction-to-web-30&quot;&gt;&lt;a href=&quot;#introduction-to-web-30&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Introduction to Web 3.0**&lt;/h2&gt;
+&lt;p&gt;If you&apos;re still reading, it means you&apos;re interested in leaning how Self can improve your application. If you have never interacted with Web 3.0 before, or if you need a quick refreshed, you might want to keep the following in mind:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Web 3.0 and decentralized applications *require a fundamental rethinking&lt;/em&gt; of the moving parts of the web so it is important to read everything or you may miss some important elements around the design decisions of what you are working with.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Requesting Credentials]]></title><description><![CDATA[Requesting Credentials The first and most basic step you should take is to allow your user to connect their uPort to your app. Uport-connect…]]></description><link>https://rekt.uport.space/requestcredentials</link><guid isPermaLink="false">https://rekt.uport.space/requestcredentials</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;requesting-credentials&quot;&gt;&lt;a href=&quot;#requesting-credentials&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Requesting Credentials&lt;/h1&gt;
 &lt;p&gt;The first and most basic step you should take is to allow your user to connect their uPort to your app. Uport-connect&apos;s &lt;code&gt;requestCredentials&lt;/code&gt; method is how you accomplish this, similar in concept to logging in , except there is no server session for you to manage. All you need to do to &quot;connect&quot; is to disclose the requested credentials you have in your uPort identity.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/diag1a-fcb6d01dc49e48c491272ac0ea4fca0f.svg&quot; alt=&quot;small-diag&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;desktop-web&quot;&gt;&lt;a href=&quot;#desktop-web&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Desktop web&lt;/h3&gt;
@@ -284,36 +313,7 @@ uport&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span clas
 &lt;/code&gt;&lt;/pre&gt;
       &lt;/div&gt;
 &lt;h2 id=&quot;logging-in-via-mobile-sdk&quot;&gt;&lt;a href=&quot;#logging-in-via-mobile-sdk&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Logging in via Mobile (sdk)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Under construction&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[Self Overview The Self platform** Self is the most advanced self ID platform.  Self is a decentralized, self ID platform built on the…]]></description><link>https://rekt.uport.space/selfoverview</link><guid isPermaLink="false">https://rekt.uport.space/selfoverview</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;self-overview&quot;&gt;&lt;a href=&quot;#self-overview&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Self Overview&lt;/h1&gt;
-&lt;h2 id=&quot;the-self-platform&quot;&gt;&lt;a href=&quot;#the-self-platform&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The Self platform**&lt;/h2&gt;
-&lt;p&gt;Self is the most advanced self ID platform. &lt;/p&gt;
-&lt;p&gt;Self is a decentralized, self ID platform built on the Ethereum blockchain. By enabling users to manage their identities through the implementation of a. We achieve this by implementing a robust private key management system. &lt;/p&gt;
-&lt;p&gt;We believe that identity is everything and we empower people to be their best by making identity free and open. Mission Vision. To understand our benefits there are some terms you must first understand.&lt;/p&gt;
-&lt;h2 id=&quot;what-is-self-id&quot;&gt;&lt;a href=&quot;#what-is-self-id&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What is Self ID?**&lt;/h2&gt;
-&lt;p&gt;This is where we briefly describe a self-sovereign identity, private keys that are fully controlled by the user.&lt;/p&gt;
-&lt;h2 id=&quot;the-self-network&quot;&gt;&lt;a href=&quot;#the-self-network&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;The Self network**&lt;/h2&gt;
-&lt;p&gt;This is where we briefly describe the Self network of partners that share data via the user and partner on bringing in the future of user-controlled, self iD.&lt;/p&gt;
-&lt;h2 id=&quot;what-does-it-enable&quot;&gt;&lt;a href=&quot;#what-does-it-enable&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What does it enable?**&lt;/h2&gt;
-&lt;p&gt;Self enables you to interact with users&apos; self IDs in many new and interesting ways.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Enable users to login to your client-server app with their Self ID&lt;/li&gt;
-&lt;li&gt;Issue signed data to users&apos; Self ID&lt;/li&gt;
-&lt;li&gt;Request data from users&apos; Self ID&lt;/li&gt;
-&lt;li&gt;Request legally-binding signatures from a Self ID&lt;/li&gt;
-&lt;li&gt;Enable users to interact with your Ethereum app&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;a-range-of-use-cases&quot;&gt;&lt;a href=&quot;#a-range-of-use-cases&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;A Range of Use Cases**&lt;/h2&gt;
-&lt;p&gt;We have integrated Self with a wide range of applications from Ethereum dapps, to nation-state identity systems.&lt;/p&gt;
-&lt;p&gt;Sample scenarios:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Dapp integration use case in a sentence or two&lt;/li&gt;
-&lt;li&gt;Zug use case in a sentence or two (with a link to press or demo)&lt;/li&gt;
-&lt;li&gt;Use case 3 in a sentence or two&lt;/li&gt;
-&lt;li&gt;Use case 4 in a sentence or two&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;introduction-to-web-30&quot;&gt;&lt;a href=&quot;#introduction-to-web-30&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Introduction to Web 3.0**&lt;/h2&gt;
-&lt;p&gt;If you&apos;re still reading, it means you&apos;re interested in leaning how Self can improve your application. If you have never interacted with Web 3.0 before, or if you need a quick refreshed, you might want to keep the following in mind:&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Web 3.0 and decentralized applications *require a fundamental rethinking&lt;/em&gt; of the moving parts of the web so it is important to read everything or you may miss some important elements around the design decisions of what you are working with.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Signing Transactions]]></title><description><![CDATA[Signing Transactions Browser displays QR code with randomly generated sessionID in a URI Browser starts polling chasqui using the sessionId…]]></description><link>https://rekt.uport.space/signtransactions</link><guid isPermaLink="false">https://rekt.uport.space/signtransactions</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;signing-transactions&quot;&gt;&lt;a href=&quot;#signing-transactions&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Signing Transactions&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Under construction&lt;/strong&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Signing Transactions]]></title><description><![CDATA[Signing Transactions Browser displays QR code with randomly generated sessionID in a URI Browser starts polling chasqui using the sessionId…]]></description><link>https://rekt.uport.space/signtransactions</link><guid isPermaLink="false">https://rekt.uport.space/signtransactions</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;signing-transactions&quot;&gt;&lt;a href=&quot;#signing-transactions&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Signing Transactions&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;/diag2-97b1c43ad988d091ea936a05aafdc5e2.svg&quot; alt=&quot;diag&quot;&gt;&lt;/p&gt;
 &lt;div class=&quot;overview-list&quot; markdown=1&gt;
 &lt;ol&gt;
@@ -487,7 +487,39 @@ MyContract&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span
 &lt;/ul&gt;
 &lt;p&gt;The uPort Protocol is compatible with the Decentralized Identifier (DID) specification created through the Rebooting Web of Trust workshops as well as the identity related standardization efforts by the Decentralized Identity Foundation and the W3C Credentials Community group.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;What&apos;s not included?&lt;/em&gt;
-Specifications on where identity data and private keys are stored, and more. We don&apos;t include them in the core uPort protocols because we believe these features can be implemented as modules that support the underlying standards. Our platform, detailed below, provides simple solutions for private key and data management.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Uport Connect]]></title><description><![CDATA[Classes Connect ⇐  ConnectCore Primary object for frontend interactions with uPort. Bundles all neccesary functionality. Kind : global class…]]></description><link>https://rekt.uport.space/uport-connect-docs</link><guid isPermaLink="false">https://rekt.uport.space/uport-connect-docs</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h2 id=&quot;classes&quot;&gt;&lt;a href=&quot;#classes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Classes&lt;/h2&gt;
+Specifications on where identity data and private keys are stored, and more. We don&apos;t include them in the core uPort protocols because we believe these features can be implemented as modules that support the underlying standards. Our platform, detailed below, provides simple solutions for private key and data management.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[SPECS   uPort Platform Specifications :  uPort's platform specification repository. Flows   uPort Request Flows : Selective Disclosure Flow…]]></description><link>https://rekt.uport.space/specs</link><guid isPermaLink="false">https://rekt.uport.space/specs</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;specs&quot;&gt;&lt;a href=&quot;#specs&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;SPECS&lt;/h1&gt;
+&lt;p&gt; &lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs&quot;&gt;uPort Platform Specifications&lt;/a&gt;:&lt;/em&gt; uPort&apos;s platform specification repository.&lt;/p&gt;
+&lt;h2 id=&quot;flows&quot;&gt;&lt;a href=&quot;#flows&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Flows&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt; &lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/flows/index.md&quot;&gt;uPort Request Flows&lt;/a&gt;:&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/tree/develop/flows/selectivedisclosure.md&quot;&gt;Selective Disclosure Flow&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/tree/develop/flows/verification.md&quot;&gt;Send Verification Flow&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/tree/develop/flows/tx.md&quot;&gt;Ethereum Transaction Request Flow&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/tree/develop/flows/privatechain.md&quot;&gt;Private Chain Provisioning Flow&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;messages&quot;&gt;&lt;a href=&quot;#messages&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Messages&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt; &lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/messages/index.md&quot;&gt;Off-chain messages&lt;/a&gt;:&lt;/em&gt; There are several standard message types that the uPort mobile app knows how to handle or create&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/messages/sharereq.md&quot;&gt;Selective Disclosure Request&lt;/a&gt;:&lt;/em&gt; for asking private data from a user&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/messages/shareresp.md&quot;&gt;Selective Disclosure Response&lt;/a&gt;:&lt;/em&gt; signed by the app as a response to a Selective Disclosure Request&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/messages/verification.md&quot;&gt;Verification&lt;/a&gt;:&lt;/em&gt; signed claim by one party about another party&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/messages/privatechain.md&quot;&gt;Private Chain Provisioning Message&lt;/a&gt;:&lt;/em&gt; for provisioning an identity on a private Ethereum chain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;pki&quot;&gt;&lt;a href=&quot;#pki&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;PKI&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;  &lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/pki/index.md&quot;&gt;uPort PKI&lt;/a&gt;:&lt;/em&gt; uPort implements a simple yet general purpose decentralized PKI system, making it easy to create and verify off-chain JWT messages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/pki/identitydocument.md&quot;&gt;Identity Document&lt;/a&gt;:&lt;/em&gt; The Identity document is stored on IPFS and tied to the address using the uport registry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;rest-apis&quot;&gt;&lt;a href=&quot;#rest-apis&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Rest APIs&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/rest-apis/fuel-server.md&quot;&gt;Fuel Server&lt;/a&gt;:&lt;/em&gt; We support a transaction fueling service, which will be called if the users account does not have enough funds available to fuel the transaction&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/rest-apis/relay-server.md&quot;&gt;Relay Server&lt;/a&gt;&lt;/em&gt; We support meta transactions which allows a 3rd party transaction fueling service to fund and relay transactions without requiring pre-funding the users account.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;transports&quot;&gt;&lt;a href=&quot;#transports&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;strong&gt;Transports&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/transports/index.md#requestresponse-transports&quot;&gt;Request/Response Transports&lt;/a&gt;:&lt;/em&gt; Requests always consist of URLs that are handled by the mobile app. Responses are sent to the callback url included with the Request.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/uport-project/specs/blob/develop/transports/push.md&quot;&gt;Push Notification Transport&lt;/a&gt;:&lt;/em&gt; Push notifications is a transport for sending requests to users.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Uport Connect]]></title><description><![CDATA[Classes Connect ⇐  ConnectCore Primary object for frontend interactions with uPort. Bundles all neccesary functionality. Kind : global class…]]></description><link>https://rekt.uport.space/uport-connect-docs</link><guid isPermaLink="false">https://rekt.uport.space/uport-connect-docs</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h2 id=&quot;classes&quot;&gt;&lt;a href=&quot;#classes&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Classes&lt;/h2&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href=&quot;#Connect&quot;&gt;Connect&lt;/a&gt; ⇐ &lt;code&gt;&lt;a href=&quot;#ConnectCore&quot;&gt;ConnectCore&lt;/a&gt;&lt;/code&gt;&lt;/dt&gt;
 &lt;dd&gt;&lt;p&gt;Primary object for frontend interactions with uPort. Bundles all neccesary functionality.&lt;/p&gt;
@@ -1819,7 +1851,401 @@ String
     &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Off-chain Messages]]></title><description><![CDATA[Off-chain Messages Most request and responses are performed privately off-chain between the different parties to a flow. JSON Web Token Most…]]></description><link>https://rekt.uport.space/messages/index</link><guid isPermaLink="false">https://rekt.uport.space/messages/index</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;off-chain-messages&quot;&gt;&lt;a href=&quot;#off-chain-messages&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Off-chain Messages&lt;/h1&gt;
+      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Uport Request Flows]]></title><description><![CDATA[Uport Request Flows A request will typically be signed by a client app and sent to mobile app using this generic request flow: Specific…]]></description><link>https://rekt.uport.space/flows/index</link><guid isPermaLink="false">https://rekt.uport.space/flows/index</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;uport-request-flows&quot;&gt;&lt;a href=&quot;#uport-request-flows&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Uport Request Flows&lt;/h1&gt;
+&lt;p&gt;A request will typically be signed by a client app and sent to mobile app using this generic request flow:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/generic-e4978409abe7d647a502b311c3a8d0cf-972f3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 390px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 87.17948717948718%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsSAAALEgHS3X78AAACAElEQVQ4y51SaXOjMAzl//+r7pF7U5I2IYRgDOZKINwYB2OoCGmadnZmj/dBY8uSrCc9qXtA27aapum67nmeoii2bWOMN5sNQgg88FSW5RDGGJhWekhswXZ/ASG68Xc3DBLp88/XGu+4ur483a6rpZ1lVOK8tUliIAcbnmOfj346PEchs8yTif2DZlmmb+FQiFtq03QWTimtJTitZP3nj8V0Io9H8mFPhgjfy8aj5/ls/e1pOh4tZ5MXAe1eYaB+EOdz3LdNKcuyMgwi1z3GcZTnOQwmy3Lb9pIoLfIqS2lZVsNgwDLGIAZqfXAOglhRDrpOttuDqmJk2OpOd+yC17+dYt+F9D5Ace/qEUDK9wJNQ4S40Ii2RxgTxwkq2nwkQz9N04AdqjyMXNDyQizPdU+uGxDie+4pjlie8T//DM4wqHXdNhAxsYt0QiyfVQ3nn34WaUoRMjA2TdNirB4Wy3s0XyoObfbJvaxEfw9PTRSxKCriuKgor2jLqq4s2n697S1mAGQ2gvfy5HWna6ft5qDtDdCJ68S34R+pusN7Fa/knboz9jvnzgsbxnq9SZJUEk23fcUghsX8FVQB9IaIo59NxvLzUplNV4v5y/KXck8GUY6enJu2gdXlUtc1ry9AVdyJgWfwgx1I3iEvSZoUUvfvgJ0aelyBtv8vGdZRX/gb+DfLVjW6td4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Generic uPort Request Flow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/generic-e4978409abe7d647a502b311c3a8d0cf-972f3.png&quot;
+        srcset=&quot;/static/generic-e4978409abe7d647a502b311c3a8d0cf-3e967.png 173w,
+/static/generic-e4978409abe7d647a502b311c3a8d0cf-da385.png 345w,
+/static/generic-e4978409abe7d647a502b311c3a8d0cf-972f3.png 390w&quot;
+        sizes=&quot;(max-width: 390px) 100vw, 390px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;specific-application-flows&quot;&gt;&lt;a href=&quot;#specific-application-flows&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Specific Application flows&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;selectivedisclosure&quot;&gt;Selective Disclosure Flow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;verification&quot;&gt;Send Verification Flow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;tx&quot;&gt;Ethereum Transaction Request Flow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;privatechain&quot;&gt;Private Chain Provisioning Flow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;errors&quot;&gt;&lt;a href=&quot;#errors&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Errors&lt;/h2&gt;
+&lt;p&gt;Wherever possible errors are based on &lt;a href=&quot;https://tools.ietf.org/html/rfc6749#section-4.1.2.1&quot;&gt;OAuth 2.0 RFC 6749 Authorization Errors&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An &lt;code&gt;error&lt;/code&gt; parameter is returned as the response to the Client App, containing one of following:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Error&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;access_denied&lt;/td&gt;
+&lt;td&gt;User denies the request&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Private Chain Provisioning Flows]]></title><description><![CDATA[Private Chain Provisioning Flow Experimental support for supporting Ethereum Accounts on private chains. The following shows the basic flow…]]></description><link>https://rekt.uport.space/flows/privatechain</link><guid isPermaLink="false">https://rekt.uport.space/flows/privatechain</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;private-chain-provisioning-flow&quot;&gt;&lt;a href=&quot;#private-chain-provisioning-flow&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Private Chain Provisioning Flow&lt;/h1&gt;
+&lt;p&gt;Experimental support for supporting Ethereum Accounts on private chains.&lt;/p&gt;
+&lt;p&gt;The following shows the basic flow:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-bdb5e.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 690px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 87.21136767317938%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsSAAALEgHS3X78AAACBklEQVQ4y31T2W7bMBDU//9YH4qiQVO0eQoSW7JFiZco3pc6kmLXdooSC4Jc7jE7y22WTyvGGkKS2xJCcM5yzg82OadScmN0OHWsP4sQsrVhIIL0whpf64KDFBqmpVRCBB0nXPszYi1t+5vSrjm82R/fx69fjr+eOSFymibvA6xzrkJMWptaaymLUhpna72UKufivXfON3hIsQxEcjZxLq1xOcG6LAu8lv+sEGIDC1ihKjiklFeJ5fDet8ceFV1N67aWm5B/nW9DIso0zfNsnItKzcYYILbW/tsZ1oIrKRRn0hhf8soQ9CGU4IEk74iuEO6cAZlRyZikVMyzhUMtC2QrHoHWM2oBZ0C0v6a1nR+Zq7XOGIcdOLV26Mo48IeaN1rKxuWy4YoNVGDrwscqW80KeeAshMIRdlBuzh/U4uZcaGJMaCyevY/vr+b5iT59Iy8/BRCqCVx5wLkY3O1A2lw5wJbSYm2cpHt77Y+Hs57d5/ZeCUPW5vZ+6UXdsxkTx5GjabBDNkhd+bth+8H5tufwoZQzJlD/+j1nU3KdlZVyNtrFGO9g7/GEkHrWyADxLjjrd4av0fdfsMLGbGGY8Jm2hoWupYf30/k0MKrGYR0jKNfmUQWN4Bo7uBB8woRgJF3XEghmGNpTN5Ae4+HREUQhhCFLSqVrh/5MGZ1AZAylbV8wkn8ARkvadp+NPtcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Private Chain Provisioning Flow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-44d6a.png&quot;
+        srcset=&quot;/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-f4799.png 173w,
+/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-b3b1d.png 345w,
+/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-44d6a.png 690w,
+/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-bc0f7.png 1035w,
+/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-bdb5e.png 1126w&quot;
+        sizes=&quot;(max-width: 690px) 100vw, 690px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;requirements&quot;&gt;&lt;a href=&quot;#requirements&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ethereum compatible blockchain&lt;/li&gt;
+&lt;li&gt;Public facing JSON RPC endpoint&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/uport-project/uport-identity/blob/develop/contracts/MetaIdentityManager.sol&quot;&gt;MetaIdentityManager&lt;/a&gt; contract deployed on private blockchain&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/uport-project/uport-identity/blob/develop/contracts/TxRelay.sol&quot;&gt;TxRelay&lt;/a&gt; contract deployed on private blockchain&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/rest-apis/relay-server&quot;&gt;Relay Server&lt;/a&gt; for funding and relaying transactions on private chain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;provisioning-methodology&quot;&gt;&lt;a href=&quot;#provisioning-methodology&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Provisioning Methodology&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Use &lt;a href=&quot;selectivedisclosure&quot;&gt;Selective Disclosure Flow&lt;/a&gt; to request primary identity address of user as well as the deviceKey to create a new identity on the private blockchain&lt;/li&gt;
+&lt;li&gt;Create transaction on IdentityManager contract calling &lt;code&gt;createIdentity&lt;/code&gt; with the devicekey as the &lt;code&gt;owner&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Lookup the &lt;code&gt;identity&lt;/code&gt; field from the &lt;code&gt;LogIdentityCreated&lt;/code&gt; event in the receipt from above transaction&lt;/li&gt;
+&lt;li&gt;Create a valid signed &lt;a href=&quot;/messages/privatechain&quot;&gt;Private Chain Provisioning Message&lt;/a&gt; and send it to the uPort mobile app&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;NOTE: We will provide a better way of provisioning a owner address in future versions of this spec.&lt;/p&gt;
+&lt;h2 id=&quot;endpoint&quot;&gt;&lt;a href=&quot;#endpoint&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Endpoint&lt;/h2&gt;
+&lt;p&gt;The request should be sent to one of the following URLs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;me.uport:net/[JWT]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://id.uport.me/net/[JWT]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;client-callback&quot;&gt;&lt;a href=&quot;#client-callback&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Client Callback&lt;/h2&gt;
+&lt;p&gt;The client app SHOULD include a URL where the response is returned from the user. This can be a https url or a custom app url which receives the response.&lt;/p&gt;
+&lt;p&gt;Responses are param appended to a url fragment. If the callback requires the response as a HTTP POST, it is sent as a JSON POST request to the callback url instead.&lt;/p&gt;
+&lt;h3 id=&quot;successful-response&quot;&gt;&lt;a href=&quot;#successful-response&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Successful Response&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;param&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;status&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ok&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The client app SHOULD verify that the transaction has been successfully included in a block.&lt;/p&gt;
+&lt;h3 id=&quot;errors&quot;&gt;&lt;a href=&quot;#errors&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Errors&lt;/h3&gt;
+&lt;p&gt;An &lt;code&gt;error&lt;/code&gt; parameter is returned as the response to the Client App, containing one of following:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Error&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;access_denied&lt;/td&gt;
+&lt;td&gt;User denies the request&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Ethereum Transaction Flow]]></title><description><![CDATA[Ethereum Transaction Flow A client application can request that a user signs an Ethereum transaction. The following shows the basic flow: We…]]></description><link>https://rekt.uport.space/flows/tx</link><guid isPermaLink="false">https://rekt.uport.space/flows/tx</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;ethereum-transaction-flow&quot;&gt;&lt;a href=&quot;#ethereum-transaction-flow&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ethereum Transaction Flow&lt;/h1&gt;
+&lt;p&gt;A client application can request that a user signs an Ethereum transaction.&lt;/p&gt;
+&lt;p&gt;The following shows the basic flow:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/tx-13f51541fdf6b21de34a5b6d85111b06-a5240.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 632px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 79.11392405063292%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsSAAALEgHS3X78AAACDElEQVQoz41Ta4+bMBDk//+pSq3UL62ay12SI0p0gUCwedoOxgY/SCfQO3FKK3UVrcx6Z9c7OwluCxvHEZ4Qco7Pp9MJhywjcRxfLpckSZxzt88W3B7MWmuM0Vo7Zy4JP8fFODpE5tKztW0tJQu0tqxpq1L0vR0GV1cta6QQQHokVYUSXPe9Y0wizllnBot4knw/HL4GCD2v9z9/vNQ179rhafX6tNptN8dhMFNSer1KkjWrX9vndbjdHKREXReG6+Nxd3+292NOa0LK8zkTvLf20wje+yUj8wEQWDB/oBi+/RSrK44qSULgWaNmyATwC2qR6YPHi6Zu4yiNojRNaa/t3PABvOi8vMipwBSMNUJw3Cyy/wNc5JyQqiybpkaVKs8rY3yvvTHznsd/gnHGSpXS+A29UR32NIAKCATryLK8qhpKS+wM08wi+UPV9LBRiBbXVcnQFovxDpyPYF0r1LJKWXjBjHfvhJUFv6QQY55ltG2lMXYiH5j7HtAEfpbNTP59OX4Co3ZVKpKVlNY5ZZTUgkvMAUWawaGtcygEAF4Ij7m81vclBFDfPoxf1kfOO9macBeFu7fjIYVaUTeOLhBvkV9327d9GCHeSajIha+bJDlB26bImywrOqmgbQp6aVXktZ24TRNBCdeqp6REEJng7140/haGX/7yr3pf5SwYdRX6Y9QPkxJCKH4DvVaXisRbSB0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Ethereum Transaction Flow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/tx-13f51541fdf6b21de34a5b6d85111b06-a5240.png&quot;
+        srcset=&quot;/static/tx-13f51541fdf6b21de34a5b6d85111b06-ff717.png 173w,
+/static/tx-13f51541fdf6b21de34a5b6d85111b06-5a133.png 345w,
+/static/tx-13f51541fdf6b21de34a5b6d85111b06-a5240.png 632w&quot;
+        sizes=&quot;(max-width: 632px) 100vw, 632px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;We currently only support unsigned Ethereum Transaction Requests that are a superset of &lt;a href=&quot;https://github.com/ethereum/EIPs/issues/67&quot;&gt;ERC 67&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;endpoint&quot;&gt;&lt;a href=&quot;#endpoint&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Endpoint&lt;/h2&gt;
+&lt;p&gt;The request should be sent to one of the following URLs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;me.uport:[ADDRESS]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ethereum:[ADDRESS]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://id.uport.me/[ADDRESS]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;addresses&quot;&gt;&lt;a href=&quot;#addresses&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Addresses&lt;/h2&gt;
+&lt;p&gt;Addresses SHOULD be &lt;a href=&quot;https://github.com/uport-project/mnid&quot;&gt;MNID&lt;/a&gt; encoded so they have the correct network specified with them.&lt;/p&gt;
+&lt;p&gt;DEPRECATED: For backwards compatibility any hex address passed along will be interpreted as being on the Ropsten (0x3) network. This will be removed soon.&lt;/p&gt;
+&lt;h2 id=&quot;erc-67&quot;&gt;&lt;a href=&quot;#erc-67&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ERC 67&lt;/h2&gt;
+&lt;p&gt;To perform an unsigned selective disclosure request append the request parameters as URL encoded query parameters to one of the above endpoints and open it. Eg.:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;me.uport:2oDZvNUgn77w2BKTkd9qKpMeUo8EL94QL5V?transfer(address%200xdeadbeef%2C%20uint%205)&amp;#x26;callback_url=https://mysite.com/callback&amp;#x26;label=My%20Site&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The following&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Required&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;value&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;hex encoded value in wei&lt;/td&gt;
+&lt;td&gt;yes *&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;function&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Solidity function call eg. 
+&lt;code&gt;transfer(address 0xdeadbeef, uint 5)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;yes *&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bytecode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Hex encoded data field of transaction&lt;/td&gt;
+&lt;td&gt;yes *&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;callback_url&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The URL that receives the response&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;callback_type&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Valid values 
+&lt;code&gt;post&lt;/code&gt;
+ or 
+&lt;code&gt;redirect&lt;/code&gt;
+. Determines if callback should be sent as a HTTP POST or open the link (
+&lt;code&gt;redirect&lt;/code&gt;
+). If unspecified the mobile app will attempt to pick the correct one&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;client_id&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The 
+&lt;a href=&quot;https://github.com/uport-project/mnid&quot;&gt;MNID&lt;/a&gt;
+ of the requesting identity&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;label&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Plain text name of client to be displayed to user&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Either &lt;code&gt;value&lt;/code&gt;, &lt;code&gt;function&lt;/code&gt; or &lt;code&gt;bytecode&lt;/code&gt; is required.&lt;/p&gt;
+&lt;h2 id=&quot;client-callback&quot;&gt;&lt;a href=&quot;#client-callback&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Client Callback&lt;/h2&gt;
+&lt;p&gt;The client app SHOULD include a URL where the response is returned from the user. This can be a https url or a custom app url which receives the response.&lt;/p&gt;
+&lt;p&gt;Responses are param appended to a url fragment. If the callback requires the response as a HTTP POST, it is sent as a JSON POST request to the callback url instead.&lt;/p&gt;
+&lt;h3 id=&quot;successful-response&quot;&gt;&lt;a href=&quot;#successful-response&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Successful Response&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;param&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Ethereum Transaction Hash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The client app SHOULD verify that the transaction has been successfully included in a block.&lt;/p&gt;
+&lt;h3 id=&quot;errors&quot;&gt;&lt;a href=&quot;#errors&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Errors&lt;/h3&gt;
+&lt;p&gt;An &lt;code&gt;error&lt;/code&gt; parameter is returned as the response to the Client App, containing one of following:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Error&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;access_denied&lt;/td&gt;
+&lt;td&gt;User denies the request&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;processing_error&lt;/td&gt;
+&lt;td&gt;Something went wrong submitting transaction to the blockchain&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Send Verification Flow]]></title><description><![CDATA[Send Verification Flow A client application can verify information about a user The following shows the basic flow: A more complete example…]]></description><link>https://rekt.uport.space/flows/verification</link><guid isPermaLink="false">https://rekt.uport.space/flows/verification</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;send-verification-flow&quot;&gt;&lt;a href=&quot;#send-verification-flow&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Send Verification Flow&lt;/h1&gt;
+&lt;p&gt;A client application can verify information about a user&lt;/p&gt;
+&lt;p&gt;The following shows the basic flow:&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/verification-65407be8826b4238d7bc9ce8a8090e1b-53d46.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 351px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 96.86609686609685%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAACY0lEQVQ4y51TaW+jMBDl//+ilXa1X5e02hDScIbDYI5ypeGwuWzYAdK0Vfula42sQfbMe/P8EOZ1TdMEu2EYoigGQbDf7xVFsSxLlmVI4NO27fP5DAljDO6Ow3JfmL+zVoiZknn/GFNKhY9nE+d82+HrXfD1cGIMkrkqx98/DUpbAa41FWvp1NSM0mHrAqzgBml4VQ5NPcIRadajFblruanlC23GZlOPlZNhaJ6ph2stp2R63GmnJ+Nhd9iJknzQn2QE067seBTlHkqapl1oI+dZ2qtH2cT4eaPPxsk0fE11DB3Brir22fQ3Un3f67pmWWZVlcI2KmNjXddpmlwuF9/HSZLkeR6Gge/7kGdZGsdRHMdpmo7juHBbRJmFTUAYLMQ0DNI4KjBOgyALcIrc0LExciLsJ8iNbStwnaiphyQaymv39lTQCePAcRBCPkIeJXRhxOehn758s23+W/HQs0tBirzOsypNS2hMyFi+DM8x7TrarosQ0nUtBCBt5IX3nT77AZqqqq2pIJh3lHVNc56OuudeW8o/0CaEgjFBHhAGdIqiCPKqqj93bFvWtf2bYHU1em7teZFjh6CKrrm6hmwrLIr6XnOzyCvYUgz7peguRXt96W82AoeNc3VlYJUsabK0yTP6UtCteBgGD0CicPE2Z7OhYfkgKyddPaHNQ5TwnShL0kH88yCKj5J0POzPGxpjg2350l8XfLHMjP1MVVzl5EZh8orMTSPQVGQa2NB9TYER/Dv/ppp+/bCahnzvl9xW245HKQAimz3vMb0X9mNMd+S6HGyzgFf8H2TOOBvBGfwfBqA37L43LJQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Verification Flow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/verification-65407be8826b4238d7bc9ce8a8090e1b-53d46.png&quot;
+        srcset=&quot;/static/verification-65407be8826b4238d7bc9ce8a8090e1b-d29f4.png 173w,
+/static/verification-65407be8826b4238d7bc9ce8a8090e1b-87ebb.png 345w,
+/static/verification-65407be8826b4238d7bc9ce8a8090e1b-53d46.png 351w&quot;
+        sizes=&quot;(max-width: 351px) 100vw, 351px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;A more complete example of using this with a simple Identify Verification service can be seen here. In this case the user starts with a &lt;a href=&quot;selectivedisclosure&quot;&gt;Selective Disclosure Flow&lt;/a&gt; to an issuer. An offline process could be in place where the user now shows their passport to the Issuer after which they will receive an identity verification in their mobile app.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-84677.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 527px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 94.87666034155598%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAACI0lEQVQ4y5VUiXKbMBDl//+tnbZJfXXMJYnTNrKRQDd9YMd10mQy2VkWAXrSvrdaounFQgiIZVlut9s0TRGTJCGE7Ha7OI7xBuPptUVX4OKzKaWEEMMwIEopx3FAHBYbx3HZY57WVOPpKKMQpi/ZNUGanxnlUX8xz7/2m1XurL8v7GzYrMjPH5vv31ar58wY8xrvGTt2JxGp0cYx3W5iJIZJGmYUMkwTliYk3pMsK5x1j2BrLaWUcz5zds5XZVsUTcFaRmvG6ixjTXMcZPB+lsM5BwDiw+az38DhPerWIr06zxglJbJo6qMxQWsP55323s9g3P4Dh2XRqSp5nhWU1HFMhFDOTsBbM6nR38Af7excIKRK0xwMGWMFiDUt7oSwruO3OmMNSIWSKo0yj/M1Io5SqrYepTBuIWxfG/aLFm6B5C1YUVJBqqo8MNaQvGybLvjwUbVvaRvtC8oXtZuyaMEK3OxCbxisUv7qWoe7K+VewMZlWRnvc9QJStxc+Qu3mPHJzt47jN8tFaWQuiA5y1LS9xKy4iWEHKS9g6fD4QxFIWOa5FXV4DPmoYJaO2OQBZK3YGfnOoFU0CrMguHhdBxKhk7ScCGgs8UxOB3VoRE4wKLXbwoJ5c/nEyoSid5sN/vNOrbG/msMF/7s8vV69/S0Xv1OtNJvGgNtw2gb4YR0XX/m4s3y/WXgneBcXi7y8dN1zHJR0HM0TV/t5+VnUIOR/AtO+Eh+foPUtwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Example Identity Verification Flow&quot;
+        title=&quot;&quot;
+        src=&quot;/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-84677.png&quot;
+        srcset=&quot;/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-d4560.png 173w,
+/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-56431.png 345w,
+/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-84677.png 527w&quot;
+        sizes=&quot;(max-width: 527px) 100vw, 527px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;endpoint&quot;&gt;&lt;a href=&quot;#endpoint&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Endpoint&lt;/h2&gt;
+&lt;p&gt;The request should be sent to one of the following URLs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;me.uport:add&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;https://id.uport.me/add&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;send-verifications&quot;&gt;&lt;a href=&quot;#send-verifications&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Send Verifications&lt;/h2&gt;
+&lt;p&gt;Create one or more &lt;a href=&quot;/messages/verification&quot;&gt;Verification&apos;s&lt;/a&gt; and send it to the uPort mobile app in the &lt;code&gt;attestations&lt;/code&gt; query parameter. Multiple verifications can be included by comma separating them.&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;me.uport:add?attestations=eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJp...&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;client-callback&quot;&gt;&lt;a href=&quot;#client-callback&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Client Callback&lt;/h2&gt;
+&lt;p&gt;The client app MAY include a URL where the response is returned from the user. This can be a HTTPS URL or a custom app URL which receives the response. The callback is strictly optional and is mainly used if you need to acknowledge in your UX that the attestation has been received.&lt;/p&gt;
+&lt;h3 id=&quot;successful-response&quot;&gt;&lt;a href=&quot;#successful-response&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Successful Response&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;param&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;status&lt;/td&gt;
+&lt;td&gt;always 
+&lt;code&gt;ok&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Off-chain Messages]]></title><description><![CDATA[Off-chain Messages Most request and responses are performed privately off-chain between the different parties to a flow. JSON Web Token Most…]]></description><link>https://rekt.uport.space/messages/index</link><guid isPermaLink="false">https://rekt.uport.space/messages/index</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;off-chain-messages&quot;&gt;&lt;a href=&quot;#off-chain-messages&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Off-chain Messages&lt;/h1&gt;
 &lt;p&gt;Most request and responses are performed privately off-chain between the different parties to a flow.&lt;/p&gt;
 &lt;h2 id=&quot;json-web-token&quot;&gt;&lt;a href=&quot;#json-web-token&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;JSON Web Token&lt;/h2&gt;
 &lt;p&gt;Most off-chain messages consist of signed JWTs (JSON Web Tokens) as defined in &lt;a href=&quot;https://tools.ietf.org/html/rfc7519&quot;&gt;RFC 7519&lt;/a&gt;.&lt;/p&gt;
@@ -2657,401 +3083,7 @@ contract MyContract &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&g
 &lt;li&gt;Publish Identity Document to IPFS&lt;/li&gt;
 &lt;li&gt;Decode IPFS hash returned to get the raw 32 byte hash value&lt;/li&gt;
 &lt;li&gt;Create a transaction on the IdentityManager that forwards a transaction to the &lt;a href=&quot;https://github.com/uport-project/uport-registry&quot;&gt;uport-registry&lt;/a&gt; calling the function &lt;code&gt;set(&quot;uPortProfileIPFS1220&quot;, address, hash)&lt;/code&gt; signed by your Key Pair&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Uport Request Flows]]></title><description><![CDATA[Uport Request Flows A request will typically be signed by a client app and sent to mobile app using this generic request flow: Specific…]]></description><link>https://rekt.uport.space/flows/index</link><guid isPermaLink="false">https://rekt.uport.space/flows/index</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;uport-request-flows&quot;&gt;&lt;a href=&quot;#uport-request-flows&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Uport Request Flows&lt;/h1&gt;
-&lt;p&gt;A request will typically be signed by a client app and sent to mobile app using this generic request flow:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/generic-e4978409abe7d647a502b311c3a8d0cf-972f3.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; ; max-width: 390px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 87.17948717948718%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsSAAALEgHS3X78AAACAElEQVQ4y51SaXOjMAzl//+r7pF7U5I2IYRgDOZKINwYB2OoCGmadnZmj/dBY8uSrCc9qXtA27aapum67nmeoii2bWOMN5sNQgg88FSW5RDGGJhWekhswXZ/ASG68Xc3DBLp88/XGu+4ur483a6rpZ1lVOK8tUliIAcbnmOfj346PEchs8yTif2DZlmmb+FQiFtq03QWTimtJTitZP3nj8V0Io9H8mFPhgjfy8aj5/ls/e1pOh4tZ5MXAe1eYaB+EOdz3LdNKcuyMgwi1z3GcZTnOQwmy3Lb9pIoLfIqS2lZVsNgwDLGIAZqfXAOglhRDrpOttuDqmJk2OpOd+yC17+dYt+F9D5Ace/qEUDK9wJNQ4S40Ii2RxgTxwkq2nwkQz9N04AdqjyMXNDyQizPdU+uGxDie+4pjlie8T//DM4wqHXdNhAxsYt0QiyfVQ3nn34WaUoRMjA2TdNirB4Wy3s0XyoObfbJvaxEfw9PTRSxKCriuKgor2jLqq4s2n697S1mAGQ2gvfy5HWna6ft5qDtDdCJ68S34R+pusN7Fa/knboz9jvnzgsbxnq9SZJUEk23fcUghsX8FVQB9IaIo59NxvLzUplNV4v5y/KXck8GUY6enJu2gdXlUtc1ry9AVdyJgWfwgx1I3iEvSZoUUvfvgJ0aelyBtv8vGdZRX/gb+DfLVjW6td4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Generic uPort Request Flow&quot;
-        title=&quot;&quot;
-        src=&quot;/static/generic-e4978409abe7d647a502b311c3a8d0cf-972f3.png&quot;
-        srcset=&quot;/static/generic-e4978409abe7d647a502b311c3a8d0cf-3e967.png 173w,
-/static/generic-e4978409abe7d647a502b311c3a8d0cf-da385.png 345w,
-/static/generic-e4978409abe7d647a502b311c3a8d0cf-972f3.png 390w&quot;
-        sizes=&quot;(max-width: 390px) 100vw, 390px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;h2 id=&quot;specific-application-flows&quot;&gt;&lt;a href=&quot;#specific-application-flows&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Specific Application flows&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;selectivedisclosure&quot;&gt;Selective Disclosure Flow&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;verification&quot;&gt;Send Verification Flow&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;tx&quot;&gt;Ethereum Transaction Request Flow&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;privatechain&quot;&gt;Private Chain Provisioning Flow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;errors&quot;&gt;&lt;a href=&quot;#errors&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Errors&lt;/h2&gt;
-&lt;p&gt;Wherever possible errors are based on &lt;a href=&quot;https://tools.ietf.org/html/rfc6749#section-4.1.2.1&quot;&gt;OAuth 2.0 RFC 6749 Authorization Errors&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;An &lt;code&gt;error&lt;/code&gt; parameter is returned as the response to the Client App, containing one of following:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Error&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;access_denied&lt;/td&gt;
-&lt;td&gt;User denies the request&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Private Chain Provisioning Flows]]></title><description><![CDATA[Private Chain Provisioning Flow Experimental support for supporting Ethereum Accounts on private chains. The following shows the basic flow…]]></description><link>https://rekt.uport.space/flows/privatechain</link><guid isPermaLink="false">https://rekt.uport.space/flows/privatechain</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;private-chain-provisioning-flow&quot;&gt;&lt;a href=&quot;#private-chain-provisioning-flow&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Private Chain Provisioning Flow&lt;/h1&gt;
-&lt;p&gt;Experimental support for supporting Ethereum Accounts on private chains.&lt;/p&gt;
-&lt;p&gt;The following shows the basic flow:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-bdb5e.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; ; max-width: 690px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 87.21136767317938%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAAsSAAALEgHS3X78AAACBklEQVQ4y31T2W7bMBDU//9YH4qiQVO0eQoSW7JFiZco3pc6kmLXdooSC4Jc7jE7y22WTyvGGkKS2xJCcM5yzg82OadScmN0OHWsP4sQsrVhIIL0whpf64KDFBqmpVRCBB0nXPszYi1t+5vSrjm82R/fx69fjr+eOSFymibvA6xzrkJMWptaaymLUhpna72UKufivXfON3hIsQxEcjZxLq1xOcG6LAu8lv+sEGIDC1ihKjiklFeJ5fDet8ceFV1N67aWm5B/nW9DIso0zfNsnItKzcYYILbW/tsZ1oIrKRRn0hhf8soQ9CGU4IEk74iuEO6cAZlRyZikVMyzhUMtC2QrHoHWM2oBZ0C0v6a1nR+Zq7XOGIcdOLV26Mo48IeaN1rKxuWy4YoNVGDrwscqW80KeeAshMIRdlBuzh/U4uZcaGJMaCyevY/vr+b5iT59Iy8/BRCqCVx5wLkY3O1A2lw5wJbSYm2cpHt77Y+Hs57d5/ZeCUPW5vZ+6UXdsxkTx5GjabBDNkhd+bth+8H5tufwoZQzJlD/+j1nU3KdlZVyNtrFGO9g7/GEkHrWyADxLjjrd4av0fdfsMLGbGGY8Jm2hoWupYf30/k0MKrGYR0jKNfmUQWN4Bo7uBB8woRgJF3XEghmGNpTN5Ae4+HREUQhhCFLSqVrh/5MGZ1AZAylbV8wkn8ARkvadp+NPtcAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Private Chain Provisioning Flow&quot;
-        title=&quot;&quot;
-        src=&quot;/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-44d6a.png&quot;
-        srcset=&quot;/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-f4799.png 173w,
-/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-b3b1d.png 345w,
-/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-44d6a.png 690w,
-/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-bc0f7.png 1035w,
-/static/privatechain-9c5fe4c0f60ecf38277d634a4e3b6f6b-bdb5e.png 1126w&quot;
-        sizes=&quot;(max-width: 690px) 100vw, 690px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;h2 id=&quot;requirements&quot;&gt;&lt;a href=&quot;#requirements&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Requirements&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Ethereum compatible blockchain&lt;/li&gt;
-&lt;li&gt;Public facing JSON RPC endpoint&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/uport-project/uport-identity/blob/develop/contracts/MetaIdentityManager.sol&quot;&gt;MetaIdentityManager&lt;/a&gt; contract deployed on private blockchain&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/uport-project/uport-identity/blob/develop/contracts/TxRelay.sol&quot;&gt;TxRelay&lt;/a&gt; contract deployed on private blockchain&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/rest-apis/relay-server&quot;&gt;Relay Server&lt;/a&gt; for funding and relaying transactions on private chain&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;provisioning-methodology&quot;&gt;&lt;a href=&quot;#provisioning-methodology&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Provisioning Methodology&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Use &lt;a href=&quot;selectivedisclosure&quot;&gt;Selective Disclosure Flow&lt;/a&gt; to request primary identity address of user as well as the deviceKey to create a new identity on the private blockchain&lt;/li&gt;
-&lt;li&gt;Create transaction on IdentityManager contract calling &lt;code&gt;createIdentity&lt;/code&gt; with the devicekey as the &lt;code&gt;owner&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Lookup the &lt;code&gt;identity&lt;/code&gt; field from the &lt;code&gt;LogIdentityCreated&lt;/code&gt; event in the receipt from above transaction&lt;/li&gt;
-&lt;li&gt;Create a valid signed &lt;a href=&quot;/messages/privatechain&quot;&gt;Private Chain Provisioning Message&lt;/a&gt; and send it to the uPort mobile app&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;NOTE: We will provide a better way of provisioning a owner address in future versions of this spec.&lt;/p&gt;
-&lt;h2 id=&quot;endpoint&quot;&gt;&lt;a href=&quot;#endpoint&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Endpoint&lt;/h2&gt;
-&lt;p&gt;The request should be sent to one of the following URLs:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;me.uport:net/[JWT]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;https://id.uport.me/net/[JWT]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;client-callback&quot;&gt;&lt;a href=&quot;#client-callback&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Client Callback&lt;/h2&gt;
-&lt;p&gt;The client app SHOULD include a URL where the response is returned from the user. This can be a https url or a custom app url which receives the response.&lt;/p&gt;
-&lt;p&gt;Responses are param appended to a url fragment. If the callback requires the response as a HTTP POST, it is sent as a JSON POST request to the callback url instead.&lt;/p&gt;
-&lt;h3 id=&quot;successful-response&quot;&gt;&lt;a href=&quot;#successful-response&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Successful Response&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;param&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;status&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;ok&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The client app SHOULD verify that the transaction has been successfully included in a block.&lt;/p&gt;
-&lt;h3 id=&quot;errors&quot;&gt;&lt;a href=&quot;#errors&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Errors&lt;/h3&gt;
-&lt;p&gt;An &lt;code&gt;error&lt;/code&gt; parameter is returned as the response to the Client App, containing one of following:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Error&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;access_denied&lt;/td&gt;
-&lt;td&gt;User denies the request&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Ethereum Transaction Flow]]></title><description><![CDATA[Ethereum Transaction Flow A client application can request that a user signs an Ethereum transaction. The following shows the basic flow: We…]]></description><link>https://rekt.uport.space/flows/tx</link><guid isPermaLink="false">https://rekt.uport.space/flows/tx</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;ethereum-transaction-flow&quot;&gt;&lt;a href=&quot;#ethereum-transaction-flow&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ethereum Transaction Flow&lt;/h1&gt;
-&lt;p&gt;A client application can request that a user signs an Ethereum transaction.&lt;/p&gt;
-&lt;p&gt;The following shows the basic flow:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/tx-13f51541fdf6b21de34a5b6d85111b06-a5240.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; ; max-width: 632px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 79.11392405063292%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsSAAALEgHS3X78AAACDElEQVQoz41Ta4+bMBDk//+pSq3UL62ay12SI0p0gUCwedoOxgY/SCfQO3FKK3UVrcx6Z9c7OwluCxvHEZ4Qco7Pp9MJhywjcRxfLpckSZxzt88W3B7MWmuM0Vo7Zy4JP8fFODpE5tKztW0tJQu0tqxpq1L0vR0GV1cta6QQQHokVYUSXPe9Y0wizllnBot4knw/HL4GCD2v9z9/vNQ179rhafX6tNptN8dhMFNSer1KkjWrX9vndbjdHKREXReG6+Nxd3+292NOa0LK8zkTvLf20wje+yUj8wEQWDB/oBi+/RSrK44qSULgWaNmyATwC2qR6YPHi6Zu4yiNojRNaa/t3PABvOi8vMipwBSMNUJw3Cyy/wNc5JyQqiybpkaVKs8rY3yvvTHznsd/gnHGSpXS+A29UR32NIAKCATryLK8qhpKS+wM08wi+UPV9LBRiBbXVcnQFovxDpyPYF0r1LJKWXjBjHfvhJUFv6QQY55ltG2lMXYiH5j7HtAEfpbNTP59OX4Co3ZVKpKVlNY5ZZTUgkvMAUWawaGtcygEAF4Ij7m81vclBFDfPoxf1kfOO9macBeFu7fjIYVaUTeOLhBvkV9327d9GCHeSajIha+bJDlB26bImywrOqmgbQp6aVXktZ24TRNBCdeqp6REEJng7140/haGX/7yr3pf5SwYdRX6Y9QPkxJCKH4DvVaXisRbSB0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Ethereum Transaction Flow&quot;
-        title=&quot;&quot;
-        src=&quot;/static/tx-13f51541fdf6b21de34a5b6d85111b06-a5240.png&quot;
-        srcset=&quot;/static/tx-13f51541fdf6b21de34a5b6d85111b06-ff717.png 173w,
-/static/tx-13f51541fdf6b21de34a5b6d85111b06-5a133.png 345w,
-/static/tx-13f51541fdf6b21de34a5b6d85111b06-a5240.png 632w&quot;
-        sizes=&quot;(max-width: 632px) 100vw, 632px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;We currently only support unsigned Ethereum Transaction Requests that are a superset of &lt;a href=&quot;https://github.com/ethereum/EIPs/issues/67&quot;&gt;ERC 67&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;endpoint&quot;&gt;&lt;a href=&quot;#endpoint&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Endpoint&lt;/h2&gt;
-&lt;p&gt;The request should be sent to one of the following URLs:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;me.uport:[ADDRESS]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ethereum:[ADDRESS]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;https://id.uport.me/[ADDRESS]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;addresses&quot;&gt;&lt;a href=&quot;#addresses&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Addresses&lt;/h2&gt;
-&lt;p&gt;Addresses SHOULD be &lt;a href=&quot;https://github.com/uport-project/mnid&quot;&gt;MNID&lt;/a&gt; encoded so they have the correct network specified with them.&lt;/p&gt;
-&lt;p&gt;DEPRECATED: For backwards compatibility any hex address passed along will be interpreted as being on the Ropsten (0x3) network. This will be removed soon.&lt;/p&gt;
-&lt;h2 id=&quot;erc-67&quot;&gt;&lt;a href=&quot;#erc-67&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ERC 67&lt;/h2&gt;
-&lt;p&gt;To perform an unsigned selective disclosure request append the request parameters as URL encoded query parameters to one of the above endpoints and open it. Eg.:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;me.uport:2oDZvNUgn77w2BKTkd9qKpMeUo8EL94QL5V?transfer(address%200xdeadbeef%2C%20uint%205)&amp;#x26;callback_url=https://mysite.com/callback&amp;#x26;label=My%20Site&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;The following&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;th&gt;Required&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;value&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;hex encoded value in wei&lt;/td&gt;
-&lt;td&gt;yes *&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;function&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Solidity function call eg. 
-&lt;code&gt;transfer(address 0xdeadbeef, uint 5)&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;yes *&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;bytecode&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Hex encoded data field of transaction&lt;/td&gt;
-&lt;td&gt;yes *&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;callback_url&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The URL that receives the response&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;callback_type&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Valid values 
-&lt;code&gt;post&lt;/code&gt;
- or 
-&lt;code&gt;redirect&lt;/code&gt;
-. Determines if callback should be sent as a HTTP POST or open the link (
-&lt;code&gt;redirect&lt;/code&gt;
-). If unspecified the mobile app will attempt to pick the correct one&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;client_id&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;The 
-&lt;a href=&quot;https://github.com/uport-project/mnid&quot;&gt;MNID&lt;/a&gt;
- of the requesting identity&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;label&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Plain text name of client to be displayed to user&lt;/td&gt;
-&lt;td&gt;no&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Either &lt;code&gt;value&lt;/code&gt;, &lt;code&gt;function&lt;/code&gt; or &lt;code&gt;bytecode&lt;/code&gt; is required.&lt;/p&gt;
-&lt;h2 id=&quot;client-callback&quot;&gt;&lt;a href=&quot;#client-callback&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Client Callback&lt;/h2&gt;
-&lt;p&gt;The client app SHOULD include a URL where the response is returned from the user. This can be a https url or a custom app url which receives the response.&lt;/p&gt;
-&lt;p&gt;Responses are param appended to a url fragment. If the callback requires the response as a HTTP POST, it is sent as a JSON POST request to the callback url instead.&lt;/p&gt;
-&lt;h3 id=&quot;successful-response&quot;&gt;&lt;a href=&quot;#successful-response&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Successful Response&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;param&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;tx&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;Ethereum Transaction Hash&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The client app SHOULD verify that the transaction has been successfully included in a block.&lt;/p&gt;
-&lt;h3 id=&quot;errors&quot;&gt;&lt;a href=&quot;#errors&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Errors&lt;/h3&gt;
-&lt;p&gt;An &lt;code&gt;error&lt;/code&gt; parameter is returned as the response to the Client App, containing one of following:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Error&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;access_denied&lt;/td&gt;
-&lt;td&gt;User denies the request&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;processing_error&lt;/td&gt;
-&lt;td&gt;Something went wrong submitting transaction to the blockchain&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Send Verification Flow]]></title><description><![CDATA[Send Verification Flow A client application can verify information about a user The following shows the basic flow: A more complete example…]]></description><link>https://rekt.uport.space/flows/verification</link><guid isPermaLink="false">https://rekt.uport.space/flows/verification</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;send-verification-flow&quot;&gt;&lt;a href=&quot;#send-verification-flow&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Send Verification Flow&lt;/h1&gt;
-&lt;p&gt;A client application can verify information about a user&lt;/p&gt;
-&lt;p&gt;The following shows the basic flow:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/verification-65407be8826b4238d7bc9ce8a8090e1b-53d46.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; ; max-width: 351px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 96.86609686609685%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAACY0lEQVQ4y51TaW+jMBDl//+ilXa1X5e02hDScIbDYI5ypeGwuWzYAdK0Vfula42sQfbMe/P8EOZ1TdMEu2EYoigGQbDf7xVFsSxLlmVI4NO27fP5DAljDO6Ow3JfmL+zVoiZknn/GFNKhY9nE+d82+HrXfD1cGIMkrkqx98/DUpbAa41FWvp1NSM0mHrAqzgBml4VQ5NPcIRadajFblruanlC23GZlOPlZNhaJ6ph2stp2R63GmnJ+Nhd9iJknzQn2QE067seBTlHkqapl1oI+dZ2qtH2cT4eaPPxsk0fE11DB3Brir22fQ3Un3f67pmWWZVlcI2KmNjXddpmlwuF9/HSZLkeR6Gge/7kGdZGsdRHMdpmo7juHBbRJmFTUAYLMQ0DNI4KjBOgyALcIrc0LExciLsJ8iNbStwnaiphyQaymv39lTQCePAcRBCPkIeJXRhxOehn758s23+W/HQs0tBirzOsypNS2hMyFi+DM8x7TrarosQ0nUtBCBt5IX3nT77AZqqqq2pIJh3lHVNc56OuudeW8o/0CaEgjFBHhAGdIqiCPKqqj93bFvWtf2bYHU1em7teZFjh6CKrrm6hmwrLIr6XnOzyCvYUgz7peguRXt96W82AoeNc3VlYJUsabK0yTP6UtCteBgGD0CicPE2Z7OhYfkgKyddPaHNQ5TwnShL0kH88yCKj5J0POzPGxpjg2350l8XfLHMjP1MVVzl5EZh8orMTSPQVGQa2NB9TYER/Dv/ppp+/bCahnzvl9xW245HKQAimz3vMb0X9mNMd+S6HGyzgFf8H2TOOBvBGfwfBqA37L43LJQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Verification Flow&quot;
-        title=&quot;&quot;
-        src=&quot;/static/verification-65407be8826b4238d7bc9ce8a8090e1b-53d46.png&quot;
-        srcset=&quot;/static/verification-65407be8826b4238d7bc9ce8a8090e1b-d29f4.png 173w,
-/static/verification-65407be8826b4238d7bc9ce8a8090e1b-87ebb.png 345w,
-/static/verification-65407be8826b4238d7bc9ce8a8090e1b-53d46.png 351w&quot;
-        sizes=&quot;(max-width: 351px) 100vw, 351px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;A more complete example of using this with a simple Identify Verification service can be seen here. In this case the user starts with a &lt;a href=&quot;selectivedisclosure&quot;&gt;Selective Disclosure Flow&lt;/a&gt; to an issuer. An offline process could be in place where the user now shows their passport to the Issuer after which they will receive an identity verification in their mobile app.&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-84677.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block; ; max-width: 527px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
-    &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 94.87666034155598%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAAsSAAALEgHS3X78AAACI0lEQVQ4y5VUiXKbMBDl//+tnbZJfXXMJYnTNrKRQDd9YMd10mQy2VkWAXrSvrdaounFQgiIZVlut9s0TRGTJCGE7Ha7OI7xBuPptUVX4OKzKaWEEMMwIEopx3FAHBYbx3HZY57WVOPpKKMQpi/ZNUGanxnlUX8xz7/2m1XurL8v7GzYrMjPH5vv31ar58wY8xrvGTt2JxGp0cYx3W5iJIZJGmYUMkwTliYk3pMsK5x1j2BrLaWUcz5zds5XZVsUTcFaRmvG6ixjTXMcZPB+lsM5BwDiw+az38DhPerWIr06zxglJbJo6qMxQWsP55323s9g3P4Dh2XRqSp5nhWU1HFMhFDOTsBbM6nR38Af7excIKRK0xwMGWMFiDUt7oSwruO3OmMNSIWSKo0yj/M1Io5SqrYepTBuIWxfG/aLFm6B5C1YUVJBqqo8MNaQvGybLvjwUbVvaRvtC8oXtZuyaMEK3OxCbxisUv7qWoe7K+VewMZlWRnvc9QJStxc+Qu3mPHJzt47jN8tFaWQuiA5y1LS9xKy4iWEHKS9g6fD4QxFIWOa5FXV4DPmoYJaO2OQBZK3YGfnOoFU0CrMguHhdBxKhk7ScCGgs8UxOB3VoRE4wKLXbwoJ5c/nEyoSid5sN/vNOrbG/msMF/7s8vV69/S0Xv1OtNJvGgNtw2gb4YR0XX/m4s3y/WXgneBcXi7y8dN1zHJR0HM0TV/t5+VnUIOR/AtO+Eh+foPUtwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Example Identity Verification Flow&quot;
-        title=&quot;&quot;
-        src=&quot;/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-84677.png&quot;
-        srcset=&quot;/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-d4560.png 173w,
-/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-56431.png 345w,
-/static/identityverification-2eaa8ba9997a445fc777ecc26ef2d78e-84677.png 527w&quot;
-        sizes=&quot;(max-width: 527px) 100vw, 527px&quot;
-      /&gt;
-    &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;h2 id=&quot;endpoint&quot;&gt;&lt;a href=&quot;#endpoint&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Endpoint&lt;/h2&gt;
-&lt;p&gt;The request should be sent to one of the following URLs:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;me.uport:add&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;https://id.uport.me/add&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;send-verifications&quot;&gt;&lt;a href=&quot;#send-verifications&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Send Verifications&lt;/h2&gt;
-&lt;p&gt;Create one or more &lt;a href=&quot;/messages/verification&quot;&gt;Verification&apos;s&lt;/a&gt; and send it to the uPort mobile app in the &lt;code&gt;attestations&lt;/code&gt; query parameter. Multiple verifications can be included by comma separating them.&lt;/p&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;me.uport:add?attestations=eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJp...&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;client-callback&quot;&gt;&lt;a href=&quot;#client-callback&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Client Callback&lt;/h2&gt;
-&lt;p&gt;The client app MAY include a URL where the response is returned from the user. This can be a HTTPS URL or a custom app URL which receives the response. The callback is strictly optional and is mainly used if you need to acknowledge in your UX that the attestation has been received.&lt;/p&gt;
-&lt;h3 id=&quot;successful-response&quot;&gt;&lt;a href=&quot;#successful-response&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Successful Response&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;param&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;status&lt;/td&gt;
-&lt;td&gt;always 
-&lt;code&gt;ok&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;</content:encoded></item><item><title><![CDATA[Transaction Fueling Server]]></title><description><![CDATA[Transaction Fueling Server All transactions on Ethereum like networks are paid using transaction fees known as  gas . To avoid the…]]></description><link>https://rekt.uport.space/rest-apis/fuel-server</link><guid isPermaLink="false">https://rekt.uport.space/rest-apis/fuel-server</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;transaction-fueling-server&quot;&gt;&lt;a href=&quot;#transaction-fueling-server&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Transaction Fueling Server&lt;/h1&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Transaction Fueling Server]]></title><description><![CDATA[Transaction Fueling Server All transactions on Ethereum like networks are paid using transaction fees known as  gas . To avoid the…]]></description><link>https://rekt.uport.space/rest-apis/fuel-server</link><guid isPermaLink="false">https://rekt.uport.space/rest-apis/fuel-server</guid><dc:creator><![CDATA[uPort]]></dc:creator><content:encoded>&lt;h1 id=&quot;transaction-fueling-server&quot;&gt;&lt;a href=&quot;#transaction-fueling-server&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Transaction Fueling Server&lt;/h1&gt;
 &lt;p&gt;All transactions on Ethereum like networks are paid using transaction fees known as &lt;code&gt;gas&lt;/code&gt;. To avoid the requirement for all end users to fund themselves with ETH on their respective networks we support a transaction fueling service, which will be called if the users account does not have enough funds available to fuel the transaction&lt;/p&gt;
 &lt;h2 id=&quot;api-description&quot;&gt;&lt;a href=&quot;#api-description&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;API Description&lt;/h2&gt;
 &lt;h3 id=&quot;fuel-token&quot;&gt;&lt;a href=&quot;#fuel-token&quot; aria-hidden=&quot;true&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Fuel Token&lt;/h3&gt;
