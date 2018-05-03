@@ -213,7 +213,7 @@
     vertical-align: middle;
     text-align: center;
     text-decoration:none;
-    font-weight: 400;
+    font-weight: 800;
     font-size: initial;
     height: 50px;
     width: 200px;
@@ -221,6 +221,8 @@
     -webkit-box-shadow: 0 0 3px #ccc;
     box-shadow: 0 0 10px #ccc;
     border-radius: 3px;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 .left-btn {

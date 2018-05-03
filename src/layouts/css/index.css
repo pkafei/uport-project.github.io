@@ -211,7 +211,7 @@ footer .button-wrap button {
   padding: 12px 20px 12px 22px;
   border-radius: 4px;
   color: #5c50ca;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 footer .button-wrap .Grid-cell:first-child {
@@ -221,7 +221,7 @@ footer .button-wrap .Grid-cell:first-child {
 
 footer .footer-menu-wrap a {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
 }
 
