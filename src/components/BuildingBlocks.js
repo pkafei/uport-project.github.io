@@ -15,6 +15,9 @@ const Container = styled.section`
       color: #8986A0;
       font-size: 24px;
       line-height: 32px;
+      a {
+        text-decoration: none;
+      }
     }
     h4 {
       color: #5C50CA;
@@ -23,10 +26,9 @@ const Container = styled.section`
       max-width: 80%;
     }
     .code-block {
-      text-align: center;
       border-radius: 4px;
       background-color: #f9f9fa;
-      padding: 12px 16px;
+      padding: 10px 16px 1px 30px;
       margin-left: -5px;
       max-width: 80%;
       font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
@@ -53,6 +55,9 @@ const Container = styled.section`
         line-height: 20px;
       }
     }
+    .block-item {
+      padding-bottom: 40px;
+    }
 `
 
 class BuildingBlocks extends Component {
@@ -65,15 +70,15 @@ class BuildingBlocks extends Component {
             <div className='Grid-cell'>
               <div>
                 <h3>Libraries</h3>
-                <div>
-                  <h4>uPort Connect</h4>
+                <div className='block-item'>
+                  <h4><a href='https://github.com/uport-project/uport-connect'>uPort Connect</a></h4>
                   <p>Single sign-on and transaction signing for your client-side app</p>
                   <div className={'code-block'}>
                     <p>npm -i uport-connect</p>
                   </div>
                 </div>
                 <div>
-                  <h4>uPort JS</h4>
+                  <h4><a href='https://github.com/uport-project/uport-js'>uPort JS</a></h4>
                   <p>Rquest, sign, and issue credentials from your app server</p>
                   <div className={'code-block'}>
                     <p>npm -i uport-js</p>
@@ -84,18 +89,18 @@ class BuildingBlocks extends Component {
             <div className='Grid-cell'>
               <div>
                 <h3>Tools</h3>
-                <div>
-                  <h4>uPort JavaScript Client</h4>
+                <div className='block-item'>
+                  <h4><a href='https://github.com/uport-project/uport-js-client'>uPort JavaScript Client</a></h4>
                   <p>Single sign-on and transaction signing for your client-side app</p>
                   <div className={'code-block'}>
                     <p>npm -i uport-js-client</p>
                   </div>
                 </div>
                 <div>
-                  <h4 className={'alpha'}>uPort Identity CLI</h4>
+                  <h4 className={'alpha'}><a href='https://github.com/uport-project/uport-cli-client'>uPort Identity CLI</a></h4>
                   <p>Create and manage uPort identities from the command line</p>
                   <div className={'code-block'}>
-                    <p>npm -i uport-js-client</p>
+                    <p>npm -i uport-cli-client</p>
                   </div>
                 </div>
               </div>
