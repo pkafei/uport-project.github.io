@@ -59,18 +59,18 @@ class Footer extends React.Component {
           <div className='footer-menu Grid-cell'>
             <h4>Platform</h4>
             <ul>
-              <li><a href='http://developer.uport.me/overview.html'>Overview</a></li>
-              <li><a href='http://developer.uport.me/overview.html#protocols'>Protocols</a></li>
-              <li><a href='http://developer.uport.me/overview.html#platform'>Platform</a></li>
+              <li><a href='/overview'>Overview</a></li>
+              <li><a href='/protocol'>Protocols</a></li>
+              <li><a href='/platform'>Platform</a></li>
             </ul>
           </div>
           <div className='footer-menu Grid-cell'>
             <h4>Solutions</h4>
             <ul>
-              <li><a href='http://developer.uport.me/guides.html#private-chain-deployment'>Private Credentials</a></li>
+              <li><a href='/flows/privatechain'>Private Credentials</a></li>
               <li><a href='https://github.com/uport-project/uport-connect/'>Authentication</a></li>
               {/* <li><a href='#'>Ethereum Apps</a></li>  */}
-              <li><a href='http://developer.uport.me/guides.html#signing-transactions'>Mobile Signing / 2FA</a></li>
+              <li><a href='/signtransactions'>Mobile Signing / 2FA</a></li>
             </ul>
           </div>
           <div className='footer-menu Grid-cell'>
@@ -78,7 +78,7 @@ class Footer extends React.Component {
             <ul>
               {/* <li><a href='#'>Build a hybrid dapp</a></li> */}
               {/* <li><a href='#'>Authenticate Wallet</a></li> */}
-              <li><a href='http://developer.uport.me/guides.html#attesting-credentials'>Issue Credentials</a></li>
+              <li><a href='/attestcredentials'>Issue Credentials</a></li>
             </ul>
           </div>
           <div className='footer-menu Grid-cell'>
