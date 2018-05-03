@@ -1,0 +1,50 @@
+diff a/src/components/Layout/TableOfContents.jsx b/src/components/Layout/TableOfContents.jsx	(rejected hunks)
+@@ -81,36 +84,32 @@ const TableOfContentsContainer = styled.div`
+    text-decoration: none;
+  }
+ 
++ h5 {
++   font-weight: 400;
++   font-size: 16px;
++ }
++
+  p, h6 {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+-   margin-bottom: 8px;
+- }
+-
+- h5.active {
+-   color: ${props => props.theme.brandHighlight};
+- }
+-
+- h5:hover {
+-   color: ${props => props.theme.brandHighlight};
+  }
+ 
+  h6.active {
+-   color: ${props => props.theme.secondaryBrand};
++  text-decoration: underline;
+  }
+ 
+- .tocHeading {
+-   font-weight: 400;
+-   color: ${props => props.theme.darkGrey};
+-   margin-top: 25px;
+-   font-size: 16px;
+- }
++  .tocHeading {
++     font-weight: 400;
++     color: ${props => props.theme.brand};
++     margin-top: 25px;
++  }
+ `
+ 
+ const ContentContainer = styled.div`
+    h6, p {
+    color: ${props => props.theme.darkGrey};
++   line-height: 1.2;
+  }
+  li {
+    margin-left:-10px;

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "gray-matter": "^3.1.1",
+    "is-relative-url": "^2.0.0",
+    "lodash": "^4.17.5",
+    "yamljs": "^0.3.0"
+  }
+}
