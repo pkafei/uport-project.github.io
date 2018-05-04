@@ -1,4 +1,4 @@
-uPort Static Site Generator
+uPort Developer Portal
 ============
 
   This is our documentation site generator, built with [GatsbyJS](https://www.gatsbyjs.org) and a heavily modified fork of [gatsby-starter-docs](https://github.com/ericwindmill/gatsby-starter-docs).
