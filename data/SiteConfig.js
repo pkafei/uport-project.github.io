@@ -1,10 +1,10 @@
 module.exports = {
-  siteTitle: "Self Sovereign", // Site title.
-  siteTitleAlt: "Privacy Preserving Identity Network", // Alternative site title for SEO.
+  siteTitle: "uPort Developer Portal", // Site title.
+  siteTitleAlt: "Decentralized Identity System on Ethereum", // Alternative site title for SEO.
   siteLogo: "/logos/uport-logo-purple@3x.png", // Logo used for SEO and manifest.
   siteUrl: "https://developer.uport.me", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription: "Privacy Preserving Identity Network", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "Decentralized Identity System on Ethereum", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "", // FB Application ID for using app insights
   googleAnalyticsID: "UA-82159716-1", // GA tracking ID.
