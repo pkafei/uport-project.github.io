@@ -9,7 +9,8 @@ uPort Developer Portal
 Check out the repository and from the root of the project:
 
 1. `npm install`
-1. Edit repos.json to list markdown sources
+1. Edit `repos.json` to list markdown sources
+1. Edit `gulp/copy.js` to copy the desired folders from your remote repo to the `/content/public` folder
 1. `npm run setup`
 1. `npm run dev`
 
@@ -190,6 +191,7 @@ It is configured within `gatsby-config.js` and now accepts a new option `ignoreR
 ##### `gatsby-remark-catch-relative-markdown-links`
 
 This is a custom plugin that is used to re-write the relative links to markdown documents.  It detects if a link is a relative link and is a markdown document then updates the link to point to the new location within the `/public` folder.
+
 
 
 #### Notes

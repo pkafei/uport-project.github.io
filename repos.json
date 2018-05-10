@@ -1,11 +1,15 @@
 {
   "docs" : {
     "githubURL": "git@github.com:uport-project/docs.git",
-    "branch": "master"
+    "branch": "feature/did-jwt-breaking-changes"
   },
   "specs" : {
     "githubURL": "git@github.com:uport-project/specs.git",
     "projectTitle": "uPort Specs",
-    "branch": "master"
+    "branch": "feature/did-jwt-breaking-changes"
+  },
+  "did-jwt": {
+    "githubURL": "git@github.com:uport-project/did-jwt.git",
+    "branch": "updates-for-docsite"
   }
 }
