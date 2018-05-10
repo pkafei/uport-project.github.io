@@ -9,7 +9,8 @@ uPort Developer Portal
 Check out the repository and from the root of the project:
 
 1. `npm install`
-1. Edit repos.json to list markdown sources
+1. Edit `repos.json` to list markdown sources
+1. Edit `gulp/copy.js` to copy the desired folders from your remote repo to the `/content/public` folder
 1. `npm run setup`
 1. `npm run dev`
 
@@ -192,6 +193,7 @@ It is configured within `gatsby-config.js` and now accepts a new option `ignoreR
 This is a custom plugin that is used to re-write the relative links to markdown documents.  It detects if a link is a relative link and is a markdown document then updates the link to point to the new location within the `/public` folder.
 
 
+
 #### Notes
 
 There are a few things to take note of, or would be good to know while working with this repository.
@@ -224,6 +226,7 @@ We deploy the github pages from the ``master`` branch.  That meands we work off 
 **Always run the `build:gh` from a release tag.  Never from the develop branch**
 
 1. Check out the latest release tag.
+1. Clean the project and pull content: `npm run setup`
 1. Build a production version of the site: `npm run build`
 1. Serve the production built site on a public DNS (ngrok) for feedback `npm run serve`
 1. After validating the build with ngrok, build and deploy: `npm run build:gh`
