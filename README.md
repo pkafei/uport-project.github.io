@@ -13,6 +13,20 @@ Check out the repository and from the root of the project:
 1. `npm run setup`
 1. `npm run dev`
 
+## Requirements
+
+1. Node v10.1.0
+1. NPM v6.0.1
+1. Ngrok (for deployment steps)
+
+There is a known issue with Node 10 and gulp https://github.com/gulpjs/gulp/issues/2162
+
+Resolution:
+```sh
+rm -rf node_modules/
+rm -rf package-lock.json
+sudo npm install --unsafe-perm=true
+```
 
 ### Commands
 
