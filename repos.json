@@ -11,5 +11,9 @@
   "did-jwt": {
     "githubURL": "git@github.com:uport-project/did-jwt.git",
     "branch": "updates-for-docsite"
+  },
+  "uport-connect": {
+    "githubURL": "git@github.com:uport-project/uport-connect.git",
+    "branch": "feat/doc-structure-changes"
   }
 }

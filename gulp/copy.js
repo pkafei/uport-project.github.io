@@ -19,5 +19,12 @@ gulp.task('copy-markdown', (done) => {
   // Add DID-JWT work
   gulp.src(['./repos/did-jwt/docs/**/*'])
     .pipe(gulp.dest('./content/public/did-jwt'));
+
+  // Add Uport Connect
+  gulp.src(['./repos/uport-connect/docs/**/*'])
+    .pipe(gulp.dest('./content/public/uport-connect'));
+
   done();
+
+
 });
