@@ -65,7 +65,7 @@ const NavContainer = styled.nav`
   @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    
+
     #topNav {
       display: none;
     }
@@ -93,7 +93,6 @@ class Navigation extends React.Component {
         this.props.data.forEach(page => {
           if((page.node.frontmatter.index === 0) && (page.node.frontmatter.category === section)) {
             const link = (<StyledLink className={`w-nav-link nav-link menu-item ${this.props.activeCategory === section ? 'active' : ''}`} to={`${page.node.fields.slug}`} activeClassName={'active'} key={section}> {section.charAt(0).toUpperCase() + section.slice(1)} </StyledLink>);
-
             switch(section){
               case "overview":
                 navItems[0] = link;
@@ -108,7 +107,7 @@ class Navigation extends React.Component {
                 // keep adding links at index 3 (the first available)
                 const idx = navItems.length - 1;
                 if(idx >= 2){
-                  navItems.push = (link);  // push at will if the first 3 index's are filled
+                  navItems[navItems.length] = link;  // push at will if the first 3 index's are filled
                 } else {
                   navItems.splice(3, 0, link);  // shift entries already assigned to index 3 to the right.
                 };
