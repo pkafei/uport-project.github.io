@@ -24,6 +24,10 @@ gulp.task('copy-markdown', (done) => {
   gulp.src(['./repos/uport-connect/docs/**/*'])
     .pipe(gulp.dest('./content/public/uport-connect'));
 
+  // Add Uport JS
+  gulp.src(['./repos/uport-js/docs/**/*'])
+    .pipe(gulp.dest('./content/public/uport-js'));
+
   done();
 
 
