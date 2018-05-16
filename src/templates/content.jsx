@@ -30,38 +30,38 @@ export default class ContentTemplate extends React.Component {
       post.category_id = config.postDefaultCategoryID;
     }
     return (
-        <div>
-          <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
-          </Helmet>
-          <SEO postPath={slug} postNode={postNode} postSEO />
-          <BodyGrid>
-            <HeaderContainer>
-              <SiteHeader
-                activeCategory={category}
-                location={this.props.location}
-                categories={this.props.data.navCategories}
-              />
-            </HeaderContainer>
-            <ToCContainer>
-              <TableOfContents
-                contentsType={post.type}
-                chapterTitles={chapterTitles}
-                categories={categories}
-                category={category}
-              />
-            </ToCContainer>
-            <BodyContainer>
-              <div>
-                {/* <h1>
-                    {post.title}
-                    </h1> */}
-                <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-              </div>
-            </BodyContainer>
-          </BodyGrid>
-        </div>
-      );
+      <div>
+        <Helmet>
+          <title>{`${post.title} | ${config.siteTitle}`}</title>
+        </Helmet>
+        <SEO postPath={slug} postNode={postNode} postSEO />
+        <BodyGrid>
+          <HeaderContainer>
+            <SiteHeader
+            activeCategory={category}
+            location={this.props.location}
+            categories={this.props.data.navCategories}
+            />
+          </HeaderContainer>
+          <ToCContainer>
+            <TableOfContents
+            contentsType={post.type}
+            chapterTitles={chapterTitles}
+            categories={categories}
+            category={category}
+            />
+          </ToCContainer>
+          <BodyContainer>
+            <div>
+              {/* <h1>
+                  {post.title}
+                  </h1> */}
+              <div className={`docSearch-content`} dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            </div>
+          </BodyContainer>
+        </BodyGrid>
+      </div>
+    );
   }
 }
 
