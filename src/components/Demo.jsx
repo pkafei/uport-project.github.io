@@ -95,8 +95,8 @@ class Demo extends Component {
       <Container className='demo'>
         <h1>A Focus On Developers</h1>
         <div className={`demo-container`}>
-          <div className={`demo-wrapper`}>
-            <div className={`left-demo`}>
+          <div className={`demo-wrapper Grid Grid--gutters`}>
+            <div className={'left-demo Grid-cell'}>
               <div className={`demo-code`}>
                 {(this.state.showImage === false && this.state.showResult === false && this.state.showExample === false) && (
                    <div>
@@ -189,8 +189,7 @@ ${JSON.stringify(this.state.profile, null, 2)}
           </div>
         </div>
         </div>
-        <div className={`v-separator`} />
-        <div className={`right-demo`}>
+        <div className={'right-demo Grid-cell'}>
           {(this.state.showImage && this.state.showResult === false) && (
              <div className={`demo-qr-container`}>
                <h4>Scan to provide credentials</h4>
