@@ -14,10 +14,14 @@
   },
   "uport-js": {
     "githubURL": "git@github.com:uport-project/uport-js.git",
-    "branch": "feature/structural-unification-changes-for-docs"
+    "branch": "develop"
   },
   "lambda-olorun": {
     "githubURL": "git@github.com:uport-project/lambda-olorun.git",
     "branch": "master"
-  }
+  },
+  "uport-connect": {
+    "githubURL": "git@github.com:uport-project/uport-connect.git",
+    "branch": "develop"
+  },
 }
