@@ -259,7 +259,6 @@ footer .footer-menu-wrap a {
   .overview-list ol, ul{
       margin-left: 0;
       padding-right: 0;
-      list-style-type: none;
   }
 
   .overview-list li {
