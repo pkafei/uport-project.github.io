@@ -1,7 +1,7 @@
 {
   "name": "uport-site-generator",
   "description": "Uport documentation generator",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "author": "team@uport.me",
   "dependencies": {
     "babel-register": "^6.26.0",
