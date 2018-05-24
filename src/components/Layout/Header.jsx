@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Navigation from './Navigation'
+import Search from '../Search'
 import bannerImg from '../../images/Horizontal-Logo.svg'
 
 class MainHeader extends React.Component {
-
   navHeadings () {
     const navHeadings = []
     this.props.categories.edges.forEach(cat => {
@@ -32,6 +32,9 @@ class MainHeader extends React.Component {
               sections={this.navHeadings()}
               data={this.props.categories.edges}
               activeCategory={this.props.activeCategory} />
+          </div>
+          <div className='Grid-cell'>
+            <Search />
           </div>
         </div>
       </SiteContainer>

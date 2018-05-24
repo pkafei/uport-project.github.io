@@ -575,6 +575,9 @@ https://getbootstrap.com/docs/4.1/layout/overview/#responsive-breakpoints
   .building-blocks-wrapper {
     max-width: 95vw;
   }
+  .search-wrap {
+    display: none;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up)*/
