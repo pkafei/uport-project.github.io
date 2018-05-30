@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import _ from 'lodash'
+import { cleanDoubleByteChars } from '../../helpers/cleanDoubleByteChars'
 
 export default class TableOfContents extends React.Component {
   render () {
@@ -35,10 +36,10 @@ export default class TableOfContents extends React.Component {
           if (node.depth === 2) {
             chapterContents.push(
               <ContentContainer key={`${node.value}`}>
-                <Link to={`${cat.path}#${_.kebabCase(node.value)}`}>
+                <Link to={`${cat.path}#${cleanDoubleByteChars(_.kebabCase(node.value))}`}>
                   <li>
                     <span>
-                      {_.kebabCase(node.value) === urlHash
+                      {cleanDoubleByteChars(_.kebabCase(node.value)) === urlHash
                         ? <h6 className='active'>{node.value}</h6>
                         : <h6>{node.value}</h6>
                       }
