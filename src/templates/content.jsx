@@ -1,33 +1,41 @@
-import React from "react";
-import Helmet from "react-helmet";
-import styled from "styled-components"
+import React from 'react'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import RehypeReact from 'rehype-react'
 
-import SEO from "../components/SEO/SEO"
+import SEO from '../components/SEO/SEO'
 import SiteHeader from '../components/Layout/Header'
-import config from "../../data/SiteConfig"
-import TableOfContents from "../components/Layout/TableOfContents";
+import config from '../../data/SiteConfig'
+import TableOfContents from '../components/Layout/TableOfContents'
+import SecondaryTitle from '../components/Layout/html/SecondaryTitle'
 
 export default class ContentTemplate extends React.Component {
-  render() {
-    const { slug } = this.props.pathContext;
-    const postNode = this.props.data.postBySlug;
-    const post = postNode.frontmatter;
-    const category = post.category;
-    const categories = [];
+  render () {
+    const renderAst = new RehypeReact({
+      createElement: React.createElement,
+      components: {
+        'h2': SecondaryTitle
+      }
+    }).Compiler
+    const { slug } = this.props.pathContext
+    const postNode = this.props.data.postBySlug
+    const post = postNode.frontmatter
+    const category = post.category
+    const categories = []
     this.props.data.postByCategory.edges.forEach(cat => {
-        if(cat.node.frontmatter.category === category){
-            categories.push(cat)
-        }
+      if (cat.node.frontmatter.category === category) {
+        categories.push(cat)
+      }
     })
-    const chapterTitles = [];
+    const chapterTitles = []
     categories.forEach(cat => {
       chapterTitles.push(cat.node.frontmatter.title)
-    });
+    })
     if (!post.id) {
-      post.id = slug;
+      post.id = slug
     }
     if (!post.id) {
-      post.category_id = config.postDefaultCategoryID;
+      post.category_id = config.postDefaultCategoryID
     }
     return (
       <div>
@@ -38,30 +46,27 @@ export default class ContentTemplate extends React.Component {
         <BodyGrid>
           <HeaderContainer>
             <SiteHeader
-            activeCategory={category}
-            location={this.props.location}
-            categories={this.props.data.navCategories}
+              activeCategory={category}
+              location={this.props.location}
+              categories={this.props.data.navCategories}
             />
           </HeaderContainer>
           <ToCContainer>
             <TableOfContents
-            contentsType={post.type}
-            chapterTitles={chapterTitles}
-            categories={categories}
-            category={category}
+              contentsType={post.type}
+              chapterTitles={chapterTitles}
+              categories={categories}
+              category={category}
             />
           </ToCContainer>
           <BodyContainer>
-            <div>
-              {/* <h1>
-                  {post.title}
-                  </h1> */}
-              <div className={`docSearch-content`} dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <div className={`docSearch-content`}>
+              { renderAst(postNode.htmlAst) }
             </div>
           </BodyContainer>
         </BodyGrid>
       </div>
-    );
+    )
   }
 }
 
@@ -137,7 +142,7 @@ const ToCContainer = styled.div`
   }
 `
 
-/* eslint no-undef: "off"*/
+/* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query ContentBySlug($slug: String!) {
     allPostTitles: allMarkdownRemark(
@@ -176,7 +181,7 @@ export const pageQuery = graphql`
       }
     }
     postBySlug: markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       timeToRead
       excerpt
       headings  {
