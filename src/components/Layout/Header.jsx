@@ -26,15 +26,15 @@ class MainHeader extends React.Component {
               </Link>
             </span>
           </div>
+          <div className='Grid-cell'>
+            <Search />
+          </div>
           <div className='Grid-cell nav-wrap'>
             <Navigation
               className={`w-nav`}
               sections={this.navHeadings()}
               data={this.props.categories.edges}
               activeCategory={this.props.activeCategory} />
-          </div>
-          <div className='Grid-cell'>
-            <Search />
           </div>
         </div>
       </SiteContainer>
